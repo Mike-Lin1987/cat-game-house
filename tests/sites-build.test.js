@@ -67,3 +67,28 @@ test('Sites worker 保留靜態資源並只對 HTML GET 提供入口 fallback', 
   assert.equal(fallback.status, 200);
   assert.deepEqual(calls, ['/unknown', '/index.html']);
 });
+
+test('Sites worker 直接提供 index.html，避免正式站重新導向中斷', async () => {
+  const worker = (await import('../worker/index.mjs')).default;
+  const calls = [];
+  const response = await worker.fetch(
+    new Request('https://example.test/games/cat-grid/index.html', {
+      headers: { accept: 'text/html' },
+    }),
+    {
+      ASSETS: {
+        fetch: async (request) => {
+          const pathname = new URL(request.url).pathname;
+          calls.push(pathname);
+          return new Response(pathname === '/games/cat-grid/' ? 'game' : null, {
+            status: pathname === '/games/cat-grid/' ? 200 : 307,
+          });
+        },
+      },
+    },
+  );
+
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), 'game');
+  assert.deepEqual(calls, ['/games/cat-grid/']);
+});
