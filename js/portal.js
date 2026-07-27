@@ -35,6 +35,13 @@
     return list;
   }
 
+  function resolveRuntimeHref(href) {
+    if (window.location.protocol === 'file:') {
+      return href;
+    }
+    return href.replace(/\/index\.html(?=$|[?#])/, '/');
+  }
+
   function createGameCard(game) {
     const card = document.createElement('article');
     card.className = 'game-card';
@@ -62,7 +69,7 @@
 
     const link = document.createElement('a');
     link.className = 'play-link';
-    link.href = game.href;
+    link.href = resolveRuntimeHref(game.href);
     link.append(createTextElement('span', '', '開始遊戲'));
 
     const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

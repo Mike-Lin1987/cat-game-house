@@ -77,3 +77,13 @@ test('PWA 腳本在 file 協定不註冊，並支援原生安裝提示', () => {
   assert.match(pwa, /navigator\.serviceWorker\.register/);
   assert.match(pwa, /data-install-app/);
 });
+
+test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () => {
+  const portalScript = read('js/portal.js');
+  const gameScript = read('js/app.js');
+
+  assert.match(portalScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
+  assert.match(portalScript, /\/index\\\.html/);
+  assert.match(gameScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
+  assert.match(gameScript, /const PORTAL_HREF/);
+});

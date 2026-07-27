@@ -6,6 +6,8 @@
   const levels = window.CAT_PUZZLE_LEVELS;
   const STORAGE_KEY = 'cat-grid-game:v1';
   const PAGE_SIZE = 10;
+  const PORTAL_HREF =
+    window.location.protocol === 'file:' ? '../../index.html' : '../../';
   const REGION_COLORS = [
     '#ffd0ad',
     '#ffe47f',
@@ -203,7 +205,7 @@
           ${
             options.back
               ? brand
-              : `<a class="portal-home-link" href="../../index.html" aria-label="返回遊戲小屋">${brand}</a>`
+              : `<a class="portal-home-link" href="${PORTAL_HREF}" aria-label="返回遊戲小屋">${brand}</a>`
           }
         </div>
         <h1>${title}</h1>
@@ -333,7 +335,7 @@
         <footer class="storage-note ${storageAvailable ? '' : 'is-warning'}">
           ${catIcon(1, 2)}
           <span>${storageAvailable ? '進度會儲存在這台裝置' : '目前無法儲存進度，但遊戲仍可正常操作'}</span>
-          <a class="portal-return-link" href="../../index.html">返回遊戲小屋</a>
+          <a class="portal-return-link" href="${PORTAL_HREF}">返回遊戲小屋</a>
           ${icon('paw')}
         </footer>
       </div>
