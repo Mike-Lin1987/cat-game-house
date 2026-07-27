@@ -2,7 +2,7 @@
 
 ## Status
 
-Superseded by ADR-0002
+Superseded by ADR-0003
 
 ## Decision
 
