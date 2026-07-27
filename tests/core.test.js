@@ -173,6 +173,6 @@ test('解鎖 ID 在新增關卡與難度重排後不會倒退', () => {
   );
   assert.deepEqual(
     Core.normalizeUnlockedLevelIds(expandedLevels, 2),
-    ['pack-001', 'pack-016', 'pack-002'],
+    ['pack-001', 'pack-016'],
   );
 });

@@ -55,3 +55,20 @@ test('每個關卡包依 difficultyScore 由簡至難排列', () => {
     });
   }
 });
+
+test('舊數字解鎖進度只遷移目前排序的前 N 關', () => {
+  for (const pack of packs) {
+    const packLevels = levels.filter((level) => level.packId === pack.id);
+
+    assert.equal(
+      Core.normalizeUnlockedLevelIds(packLevels, 1).length,
+      1,
+      `${pack.id} 的舊預設值只能解鎖 1 關`,
+    );
+    assert.equal(
+      Core.normalizeUnlockedLevelIds(packLevels, 2).length,
+      2,
+      `${pack.id} 的舊 frontier 2 只能解鎖 2 關`,
+    );
+  }
+});

@@ -254,11 +254,7 @@
     } else {
       const legacyFrontier = Math.max(1, Math.floor(Number(storedValue) || 1));
       for (const level of packLevels) {
-        const stableSequence = Number(level.id.match(/-(\d+)$/)?.[1]);
-        if (
-          level.ordinal <= legacyFrontier ||
-          (Number.isFinite(stableSequence) && stableSequence <= legacyFrontier)
-        ) {
+        if (level.ordinal <= legacyFrontier) {
           unlockedIds.add(level.id);
         }
       }
