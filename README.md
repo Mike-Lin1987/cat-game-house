@@ -155,3 +155,7 @@ npm run generate-levels
 - `reports/cat-color-connect/`：100 關獨立求解及唯一性驗證報告。
 - `worker/`、`scripts/build-site.js`：GPT Sites 靜態託管包裝，不參與本機遊戲 runtime。
 - `docs/design/`：核准概念圖與視覺 fidelity ledger。
+
+## 授權
+
+本專案採用 [MIT License](./LICENSE)，可自由使用、修改與散布；使用時請保留原始版權與授權聲明。
