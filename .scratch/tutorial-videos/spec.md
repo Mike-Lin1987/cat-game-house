@@ -33,4 +33,3 @@
 - catalog、離線資源與 Sites build 自動化測試。
 - `ffprobe` 不可用時，以 Chrome `<video>` metadata 驗證可播放、尺寸及 duration。
 - Chrome 實際點擊兩個入口連結、播放兩支影片、檢查桌面與 320px 版面及 console。
-
