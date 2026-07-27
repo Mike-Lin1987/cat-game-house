@@ -1,8 +1,8 @@
 {
-  "name": "cat-grid-game",
-  "version": "1.0.0",
+  "name": "game-house",
+  "version": "1.1.0",
   "private": true,
-  "description": "可完全離線執行的貓咪區域邏輯填格遊戲",
+  "description": "可安裝、可離線且可持續新增遊戲的單機網頁遊戲入口",
   "scripts": {
     "test": "node --test",
     "generate-levels": "node scripts/generate-levels.js",

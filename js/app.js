@@ -194,13 +194,17 @@
     const backButton = options.back
       ? `<button class="icon-button" data-action="back-select" aria-label="返回選關">${icon('back')}</button>`
       : '';
+    const brand = `${catIcon(0, 0, 'brand-cat')}<span class="brand-name">貓咪方格</span>`;
 
     return `
       <header class="top-bar">
         <div class="brand-zone">
           ${backButton}
-          ${catIcon(0, 0, 'brand-cat')}
-          <span class="brand-name">貓咪方格</span>
+          ${
+            options.back
+              ? brand
+              : `<a class="portal-home-link" href="../../index.html" aria-label="返回遊戲小屋">${brand}</a>`
+          }
         </div>
         <h1>${title}</h1>
         <button class="icon-button" data-action="settings" aria-label="開啟設定">
@@ -329,6 +333,7 @@
         <footer class="storage-note ${storageAvailable ? '' : 'is-warning'}">
           ${catIcon(1, 2)}
           <span>${storageAvailable ? '進度會儲存在這台裝置' : '目前無法儲存進度，但遊戲仍可正常操作'}</span>
+          <a class="portal-return-link" href="../../index.html">返回遊戲小屋</a>
           ${icon('paw')}
         </footer>
       </div>

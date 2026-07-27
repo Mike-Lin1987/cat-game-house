@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">貓咪方格遊戲預覽</title>
+  <desc id="desc">柔和粉彩色方格中放著黑白貓咪</desc>
+  <rect width="760" height="430" rx="44" fill="#fff8ef"/>
+  <g transform="translate(64 44)">
+    <rect width="342" height="342" rx="28" fill="#fff" stroke="#e2b985" stroke-width="8"/>
+    <path d="M114 0v342M228 0v342M0 114h342M0 228h342" stroke="#d6b184" stroke-width="4"/>
+    <path d="M0 0h228v114H114v114H0Z" fill="#f7d477"/>
+    <path d="M228 0h114v228H228Z" fill="#addfd9"/>
+    <path d="M0 228h228v114H0Z" fill="#c9bce7"/>
+    <path d="M114 114h114v114H114Z" fill="#f3a3b8"/>
+    <path d="M228 228h114v114H228Z" fill="#9ccfe3"/>
+    <g transform="translate(132 131)">
+      <path d="M12 27 7 4l20 13a44 44 0 0 1 24 0L71 4l-5 23c8 7 12 16 12 26 0 18-17 29-39 29S0 71 0 53c0-10 4-19 12-26Z" fill="#45322d"/>
+      <path d="m12 11 14 10-12 7Zm54 0-14 10 12 7Z" fill="#f69a88"/>
+      <path d="M39 19c12 0 23 5 29 13v24c0 13-13 21-29 21S10 69 10 56V32c6-8 17-13 29-13Z" fill="#fff8ee"/>
+      <path d="M10 32c6-8 17-13 29-13v28c-12 2-22-2-29-10Z" fill="#45322d"/>
+      <ellipse cx="27" cy="48" rx="5" ry="7" fill="#2e2421"/>
+      <ellipse cx="52" cy="48" rx="5" ry="7" fill="#2e2421"/>
+      <circle cx="29" cy="46" r="2" fill="#fff"/>
+      <circle cx="54" cy="46" r="2" fill="#fff"/>
+      <path d="m39 57-5 3 5 4 5-4Z" fill="#ef7d79"/>
+    </g>
+  </g>
+  <g fill="#8f5f54">
+    <text x="462" y="148" font-family="system-ui, sans-serif" font-size="34" font-weight="800">每列一隻</text>
+    <text x="462" y="205" font-family="system-ui, sans-serif" font-size="34" font-weight="800">每欄一隻</text>
+    <text x="462" y="262" font-family="system-ui, sans-serif" font-size="34" font-weight="800">每區一隻</text>
+  </g>
+  <path d="M493 317c19-14 43-17 64-4 18 11 38 8 59-9" fill="none" stroke="#ff8e68" stroke-linecap="round" stroke-width="12"/>
+  <circle cx="485" cy="323" r="13" fill="#ff8e68"/>
+</svg>

@@ -1,0 +1,425 @@
+:root {
+  color-scheme: light;
+  --background: #fff9ef;
+  --surface: #fffefb;
+  --surface-soft: #fff4e6;
+  --ink: #4b3024;
+  --muted: #856f63;
+  --line: #edcda7;
+  --coral: #f27d72;
+  --apricot: #f39a46;
+  --focus: #1687d9;
+  --shadow-soft: 0 12px 30px rgb(100 65 35 / 11%);
+  --shadow-raised: 0 20px 46px rgb(100 65 35 / 16%);
+  --font-ui:
+    "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--background);
+  color: var(--ink);
+  font-family: var(--font-ui);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 8% 7%, rgb(244 177 129 / 18%), transparent 25rem),
+    radial-gradient(circle at 91% 78%, rgb(159 207 190 / 18%), transparent 28rem),
+    var(--background);
+}
+
+a,
+button {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.portal-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.portal-shell {
+  width: min(100%, 1280px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: clamp(12px, 2.4vw, 32px);
+}
+
+.portal-header {
+  display: flex;
+  min-height: 86px;
+  padding: 12px clamp(14px, 2vw, 26px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgb(255 254 251 / 94%);
+  box-shadow: var(--shadow-soft);
+}
+
+.portal-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.portal-brand img {
+  width: clamp(48px, 6vw, 64px);
+  height: clamp(48px, 6vw, 64px);
+  filter: drop-shadow(0 5px 5px rgb(86 55 38 / 15%));
+}
+
+.install-button,
+.dialog-primary {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--coral);
+  color: #fff;
+  box-shadow: 0 8px 16px rgb(221 102 91 / 24%);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.install-button svg {
+  width: 23px;
+  height: 23px;
+}
+
+.portal-intro {
+  padding: clamp(52px, 8vw, 106px) clamp(6px, 3vw, 38px) clamp(28px, 4vw, 48px);
+}
+
+.portal-kicker {
+  display: flex;
+  margin: 0 0 12px;
+  align-items: center;
+  gap: 8px;
+  color: var(--coral);
+  font-size: clamp(0.82rem, 1.4vw, 1rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.portal-kicker svg {
+  width: 22px;
+  height: 22px;
+}
+
+.portal-intro h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 5.7rem);
+  line-height: 1.04;
+  letter-spacing: 0.02em;
+}
+
+.portal-intro > p:last-child {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 2vw, 1.35rem);
+}
+
+.game-catalog {
+  padding: 0 clamp(0px, 2vw, 22px);
+}
+
+.game-list {
+  display: grid;
+  gap: 24px;
+}
+
+.game-card {
+  --game-accent: var(--coral);
+  display: grid;
+  grid-template-columns: minmax(280px, 1.08fr) minmax(280px, 0.92fr);
+  overflow: hidden;
+  min-height: 420px;
+  border: 2px solid color-mix(in srgb, var(--game-accent) 42%, white);
+  border-radius: 32px;
+  background: rgb(255 254 251 / 94%);
+  box-shadow: var(--shadow-raised);
+}
+
+.game-cover-wrap {
+  display: grid;
+  min-width: 0;
+  padding: clamp(18px, 3vw, 34px);
+  place-items: center;
+  border-right: 1px dashed color-mix(in srgb, var(--game-accent) 42%, white);
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--game-accent) 12%, white), #fff9ef);
+}
+
+.game-cover {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 24px;
+  filter: drop-shadow(0 12px 18px rgb(84 53 36 / 11%));
+}
+
+.game-card-body {
+  display: flex;
+  min-width: 0;
+  padding: clamp(30px, 5vw, 64px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.game-eyebrow {
+  margin: 0 0 12px;
+  color: var(--game-accent);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.game-card h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 1.08;
+}
+
+.game-description {
+  max-width: 30rem;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.8;
+}
+
+.game-meta {
+  display: flex;
+  margin: 26px 0 32px;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.game-meta li {
+  padding: 8px 13px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 30%, white);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--game-accent) 10%, white);
+  color: #785348;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.play-link {
+  display: inline-flex;
+  min-height: 54px;
+  padding: 0 22px;
+  align-items: center;
+  gap: 12px;
+  border-radius: 17px;
+  background: var(--game-accent);
+  color: #fff;
+  box-shadow: 0 9px 18px color-mix(in srgb, var(--game-accent) 30%, transparent);
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.play-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 24px color-mix(in srgb, var(--game-accent) 36%, transparent);
+}
+
+.play-link svg {
+  width: 22px;
+  height: 22px;
+}
+
+.coming-soon {
+  display: flex;
+  margin-top: 24px;
+  padding: 22px 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 1px dashed #d9b989;
+  border-radius: 24px;
+  background: rgb(255 254 251 / 70%);
+  text-align: left;
+}
+
+.coming-soon > span {
+  font-size: 2.2rem;
+}
+
+.coming-soon strong {
+  font-size: 1.08rem;
+}
+
+.coming-soon p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.portal-footer {
+  display: flex;
+  padding: 42px 12px 22px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.portal-footer svg {
+  width: 21px;
+  height: 21px;
+  color: var(--coral);
+}
+
+.install-dialog {
+  width: min(calc(100% - 28px), 520px);
+  padding: 0;
+  border: 0;
+  border-radius: 28px;
+  background: transparent;
+  color: var(--ink);
+}
+
+.install-dialog::backdrop {
+  background: rgb(70 48 38 / 48%);
+  backdrop-filter: blur(4px);
+}
+
+.install-dialog form {
+  position: relative;
+  padding: 34px;
+  border: 2px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow-raised);
+}
+
+.install-dialog h2 {
+  margin: 8px 0 20px;
+  font-size: 1.8rem;
+}
+
+.install-dialog [data-install-content] {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.dialog-primary {
+  width: 100%;
+  margin-top: 12px;
+}
+
+@media (max-width: 720px) {
+  .portal-shell {
+    padding: 10px;
+  }
+
+  .portal-header {
+    min-height: 74px;
+    border-radius: 20px;
+  }
+
+  .install-button {
+    width: 48px;
+    padding: 0;
+  }
+
+  .install-button span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .portal-intro {
+    padding-top: 48px;
+  }
+
+  .game-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: 26px;
+  }
+
+  .game-cover-wrap {
+    padding: 16px;
+    border-right: 0;
+    border-bottom: 1px dashed color-mix(in srgb, var(--game-accent) 42%, white);
+  }
+
+  .game-card-body {
+    padding: 28px 24px 30px;
+  }
+
+  .game-meta {
+    margin: 22px 0 26px;
+  }
+
+  .play-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .coming-soon {
+    padding: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

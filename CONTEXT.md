@@ -1,4 +1,4 @@
-# 貓咪方格 Domain Context
+# 遊戲小屋 Domain Context
 
 ## Glossary
 
@@ -11,8 +11,14 @@
 - **衝突（conflict）**：列、欄、區域超量或發生接觸。
 - **提示（hint）**：高亮尚未正確放置的答案格，不代替玩家落子。
 - **紀錄（record）**：特定關卡的完成狀態、最佳星級、時間與步數。
+- **遊戲 catalog**：入口卡片、遊戲路由與離線資源的單一資料來源。
+- **入口（portal）**：根目錄的多遊戲選擇頁。
+- **安裝（install）**：透過 Web App Manifest 將遊戲小屋加入手機主畫面。
+- **離線快取（offline cache）**：Service Worker 預先保存入口與 catalog 宣告的遊戲資源。
 
 ## Public seams
 
-1. `CatPuzzleCore`／CommonJS public API：所有純規則、驗證、求解與格式化。
-2. 真實 `file://` 瀏覽器 UI：畫面、互動、localStorage、響應式與無障礙。
+1. `CAT_GAME_CATALOG`／CommonJS：入口卡片、路由與各遊戲離線資源。
+2. `CatPuzzleCore`／CommonJS public API：所有純規則、驗證、求解與格式化。
+3. `manifest.webmanifest` 與 `service-worker.js`：安裝及同來源離線快取 contract。
+4. 真實瀏覽器 UI：入口、畫面、互動、localStorage、響應式、無障礙與離線重載。

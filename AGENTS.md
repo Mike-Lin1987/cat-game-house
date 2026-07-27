@@ -1,10 +1,11 @@
-# 貓咪方格專案規範
+# 遊戲小屋專案規範
 
 - 與使用者溝通及專案文件使用繁體中文。
 - 遊戲執行階段只能使用純 HTML、CSS、JavaScript 與專案內資源。
-- 不使用框架、CDN、第三方 dependencies、ES Module、`fetch()`、後端或建置流程。
+- 不使用框架、CDN、第三方 dependencies、ES Module、後端或建置流程。
+- 一般頁面 runtime 不使用 `fetch()`；只有 `service-worker.js` 可為離線快取對同來源 GET 使用 `fetch()`。
 - 所有關卡必須是固定資料，並由求解器重新驗證唯一解、區域連通與不重複。
-- 核心規則透過 CommonJS 與瀏覽器全域雙介面測試；UI 需以真實 `file://` 瀏覽器驗證。
+- 遊戲 catalog 與核心規則透過 CommonJS／瀏覽器全域雙介面測試；UI 需以真實瀏覽器驗證，並保留 `file://` 直接開啟能力。
 - 修改後必須執行產生器重現性、離線稽核、完整 Node 測試與瀏覽器 QA。
 
 ## Agent skills
