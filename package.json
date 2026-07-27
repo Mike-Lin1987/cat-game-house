@@ -1,0 +1,13 @@
+{
+  "name": "cat-grid-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "可完全離線執行的貓咪區域邏輯填格遊戲",
+  "scripts": {
+    "test": "node --test",
+    "generate-levels": "node scripts/generate-levels.js",
+    "validate-levels": "node --test tests/levels.test.js tests/packs.test.js",
+    "validate-offline": "node scripts/validate-offline.js",
+    "verify": "npm run validate-offline && npm test"
+  }
+}
