@@ -610,6 +610,7 @@ button:disabled {
   aspect-ratio: 1;
   margin: 0 auto;
   grid-template-columns: repeat(var(--board-size), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--board-size), minmax(0, 1fr));
   overflow: hidden;
   border: 3px solid var(--line-strong);
   border-radius: clamp(10px, 1.6vw, 18px);
