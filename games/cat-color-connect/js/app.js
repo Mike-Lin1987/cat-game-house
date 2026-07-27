@@ -1,6 +1,13 @@
 (function initializeCatConnectApp() {
   'use strict';
 
+  const PORTAL_HREF =
+    window.location.protocol === 'file:' ? '../../index.html' : '../../';
+  const portalHomeLink = document.querySelector('[data-portal-home]');
+  if (portalHomeLink) {
+    portalHomeLink.href = PORTAL_HREF;
+  }
+
   const Config = window.CAT_CONNECT_CONFIG;
   const Core = window.CatConnectCore;
   const Storage = window.CatConnectStorage;
