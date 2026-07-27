@@ -27,6 +27,21 @@ const REQUIRED_FILES = [
   'assets/icons/icon-192.png',
   'assets/icons/icon-512.png',
   'assets/game-covers/cat-grid.svg',
+  'games/cat-color-connect/index.html',
+  'games/cat-color-connect/styles.css',
+  'games/cat-color-connect/js/config.js',
+  'games/cat-color-connect/js/core.js',
+  'games/cat-color-connect/js/storage.js',
+  'games/cat-color-connect/js/renderer.js',
+  'games/cat-color-connect/js/app.js',
+  'games/cat-color-connect/js/levels-6x6.js',
+  'games/cat-color-connect/js/levels-8x8.js',
+  'games/cat-color-connect/js/levels-10x10.js',
+  'games/cat-color-connect/js/levels-6x8.js',
+  'games/cat-color-connect/js/levels-6x10.js',
+  'games/cat-color-connect/js/levels-8x10.js',
+  'games/cat-color-connect/js/levels.js',
+  'assets/game-covers/cat-color-connect.svg',
 ];
 const TEXT_RUNTIME_FILES = REQUIRED_FILES.filter(
   (relativePath) =>

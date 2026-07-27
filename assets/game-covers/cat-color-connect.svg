@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">貓咪彩色連線</title>
+  <desc id="desc">糖果色棋盤上，多隻貓咪由彎曲彩色路線相連</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#d9fff5"/>
+      <stop offset="1" stop-color="#fff0c8"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#174e48" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="760" height="430" rx="46" fill="url(#bg)"/>
+  <g opacity=".16" fill="#148b82">
+    <circle cx="76" cy="78" r="15"/><circle cx="116" cy="57" r="11"/><circle cx="132" cy="92" r="12"/>
+    <circle cx="670" cy="350" r="15"/><circle cx="710" cy="329" r="11"/><circle cx="726" cy="364" r="12"/>
+  </g>
+  <g transform="translate(185 48)" filter="url(#shadow)">
+    <rect width="390" height="334" rx="30" fill="#fff" stroke="#fff" stroke-width="12"/>
+    <g stroke="#cfe4df" stroke-width="2">
+      <path d="M65 0v334M130 0v334M195 0v334M260 0v334M325 0v334"/>
+      <path d="M0 55.7h390M0 111.4h390M0 167.1h390M0 222.8h390M0 278.5h390"/>
+    </g>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="28">
+      <path d="M32 28h130v56h130v56h65" stroke="#e45151"/>
+      <path d="M32 140h65v56h130v56h130" stroke="#287bc1"/>
+      <path d="M32 306h65v-55h65v-56h130v111h65" stroke="#3b9363"/>
+      <path d="M32 84v111h65v111" stroke="#d79a18"/>
+    </g>
+    <g font-family="Segoe UI Emoji, sans-serif" font-size="43" text-anchor="middle" dominant-baseline="middle">
+      <text x="32" y="28">🐱</text><text x="357" y="140">🐱</text>
+      <text x="32" y="140">🐱</text><text x="357" y="252">🐱</text>
+      <text x="32" y="306">🐱</text><text x="357" y="306">🐱</text>
+      <text x="32" y="84">🐱</text><text x="97" y="306">🐱</text>
+    </g>
+  </g>
+  <g transform="translate(64 324)" font-family="Microsoft JhengHei, sans-serif">
+    <rect width="195" height="64" rx="28" fill="#0d8178"/>
+    <text x="98" y="42" text-anchor="middle" fill="#fff" font-size="26" font-weight="700">100 關離線挑戰</text>
+  </g>
+</svg>

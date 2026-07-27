@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#e9fffa">
+    <meta name="description" content="連接相同貓咪並讓彩色路線填滿整個棋盤。100 關完全離線遊玩。">
+    <title>貓咪彩色連線</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/config.js" defer></script>
+    <script src="./js/levels-6x6.js" defer></script>
+    <script src="./js/levels-8x8.js" defer></script>
+    <script src="./js/levels-10x10.js" defer></script>
+    <script src="./js/levels-6x8.js" defer></script>
+    <script src="./js/levels-6x10.js" defer></script>
+    <script src="./js/levels-8x10.js" defer></script>
+    <script src="./js/levels.js" defer></script>
+    <script src="./js/core.js" defer></script>
+    <script src="./js/storage.js" defer></script>
+    <script src="./js/renderer.js" defer></script>
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="icon-button home-link" href="../../index.html" aria-label="返回遊戲小屋">⌂</a>
+        <div class="brand">
+          <span class="brand-cat" aria-hidden="true">🐱</span>
+          <span><strong>貓咪彩色連線</strong><small>把每一格都變成彩色小路</small></span>
+        </div>
+        <button class="icon-button" type="button" data-action="settings" aria-label="開啟設定">⚙</button>
+      </header>
+
+      <main>
+        <section class="screen home-screen" data-screen="home">
+          <div class="hero-card">
+            <div class="hero-art" aria-hidden="true"><span>🐱</span><i></i><span>🐱</span></div>
+            <p class="eyebrow">100 個彩色謎題</p>
+            <h1>一起把貓咪<br>牽到好朋友身邊</h1>
+            <p>連接相同符號的貓咪，路線不能交叉，並且要填滿每一格。</p>
+            <div class="home-actions">
+              <button class="primary-button" type="button" data-action="start">開始遊戲</button>
+              <button class="secondary-button" type="button" data-action="continue" hidden>繼續上次關卡</button>
+              <button class="text-button" type="button" data-action="levels">選擇關卡</button>
+            </div>
+          </div>
+          <div class="progress-card">
+            <div><strong data-progress-complete>0/100</strong><span>完成關卡</span></div>
+            <div><strong data-progress-stars>0/300</strong><span>累積星星</span></div>
+          </div>
+          <div class="pack-progress" data-pack-progress></div>
+        </section>
+
+        <section class="screen levels-screen" data-screen="levels" hidden>
+          <div class="section-heading">
+            <button class="icon-button" type="button" data-action="home" aria-label="返回首頁">←</button>
+            <div><p class="eyebrow">挑戰地圖</p><h1>選擇關卡</h1></div>
+          </div>
+          <div class="pack-list" data-pack-list></div>
+        </section>
+
+        <section class="screen game-screen" data-screen="game" hidden>
+          <div class="game-heading">
+            <button class="icon-button" type="button" data-action="levels" aria-label="返回選關">←</button>
+            <div><p data-level-pack>6×6</p><h1 data-level-title>第 1 關</h1></div>
+            <button class="icon-button" type="button" data-action="restart" aria-label="重新開始">↻</button>
+          </div>
+          <div class="game-stats" aria-label="本局統計">
+            <span>時間 <strong data-time>00:00</strong></span>
+            <span>操作 <strong data-moves>0</strong></span>
+            <span>完成 <strong data-coverage>0%</strong></span>
+          </div>
+          <div class="board-wrap">
+            <div class="connect-board" data-board aria-label="彩色連線棋盤"></div>
+          </div>
+          <div class="game-actions">
+            <button type="button" data-action="undo">↶<span>復原</span></button>
+            <button type="button" data-action="clear">⌫<span>清線</span></button>
+            <button type="button" data-action="hint">💡<span>提示</span></button>
+          </div>
+          <details class="rules">
+            <summary>玩法說明</summary>
+            <p>從一隻貓咪拖到相同符號的貓咪；路線不可重疊，最後必須填滿棋盤。也可用方向鍵、Enter、Backspace 與 Delete 操作。</p>
+          </details>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="modal" data-settings-dialog>
+      <form method="dialog">
+        <button class="dialog-close" value="close" aria-label="關閉設定">×</button>
+        <p class="eyebrow">遊戲偏好</p>
+        <h2>設定</h2>
+        <label class="setting-row"><span>動畫效果</span><input type="checkbox" data-setting="animations"></label>
+        <label class="setting-row"><span>顯示格線</span><input type="checkbox" data-setting="gridLines"></label>
+        <button class="danger-button" type="button" data-action="reset-progress">重設全部進度</button>
+        <p class="reset-confirm" data-reset-confirm hidden>再按一次確認重設；這不會改變上面的設定。</p>
+      </form>
+    </dialog>
+
+    <dialog class="modal completion-modal" data-completion-dialog>
+      <div>
+        <div class="completion-cat" aria-hidden="true">😸</div>
+        <p class="eyebrow">路線全部接通</p>
+        <h2>太厲害了！</h2>
+        <div class="stars" data-completion-stars>★★★</div>
+        <dl>
+          <div><dt>時間</dt><dd data-completion-time>00:00</dd></div>
+          <div><dt>操作</dt><dd data-completion-moves>0</dd></div>
+          <div><dt>提示</dt><dd data-completion-hints>0</dd></div>
+        </dl>
+        <button class="primary-button" type="button" data-action="next-level">下一關</button>
+        <button class="text-button" type="button" data-action="levels">回到選關</button>
+      </div>
+    </dialog>
+    <p class="sr-only" aria-live="polite" data-live-region></p>
+  </body>
+</html>

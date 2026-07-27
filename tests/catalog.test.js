@@ -14,9 +14,9 @@ const {
 
 test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () => {
   assert.equal(Array.isArray(CAT_GAME_CATALOG), true);
-  assert.equal(CAT_GAME_CATALOG.length, 1);
+  assert.equal(CAT_GAME_CATALOG.length, 2);
 
-  const [game] = CAT_GAME_CATALOG;
+  const [game, secondGame] = CAT_GAME_CATALOG;
   assert.deepEqual(
     {
       id: game.id,
@@ -31,6 +31,22 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       title: '貓咪方格',
       eyebrow: '邏輯益智 · 單人',
       href: './games/cat-grid/index.html',
+      levelCount: 100,
+      offline: true,
+    },
+  );
+  assert.deepEqual(
+    {
+      id: secondGame.id,
+      title: secondGame.title,
+      href: secondGame.href,
+      levelCount: secondGame.levelCount,
+      offline: secondGame.offline,
+    },
+    {
+      id: 'cat-color-connect',
+      title: '貓咪彩色連線',
+      href: './games/cat-color-connect/index.html',
       levelCount: 100,
       offline: true,
     },
