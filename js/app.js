@@ -43,7 +43,12 @@
 
   function createDefaultProgress() {
     return {
-      unlockedByPack: Object.fromEntries(packs.map((pack) => [pack.id, 1])),
+      unlockedByPack: Object.fromEntries(
+        packs.map((pack) => [
+          pack.id,
+          Core.normalizeUnlockedLevelIds(levelsByPack.get(pack.id) || [], []),
+        ]),
+      ),
       records: {},
       settings: {
         autoCheck: true,
@@ -58,15 +63,16 @@
       return defaults;
     }
 
-    for (const pack of packs) {
-      const storedValue = Number(rawProgress.unlockedByPack?.[pack.id]);
-      defaults.unlockedByPack[pack.id] = Number.isFinite(storedValue)
-        ? Math.min(pack.levelCount, Math.max(1, Math.floor(storedValue)))
-        : 1;
-    }
-
     if (rawProgress.records && typeof rawProgress.records === 'object') {
       defaults.records = rawProgress.records;
+    }
+
+    for (const pack of packs) {
+      defaults.unlockedByPack[pack.id] = Core.normalizeUnlockedLevelIds(
+        levelsByPack.get(pack.id) || [],
+        rawProgress.unlockedByPack?.[pack.id],
+        defaults.records,
+      );
     }
 
     defaults.settings.autoCheck =
@@ -229,7 +235,8 @@
           .map((level) => {
             const record = progress.records[level.id];
             const unlocked =
-              level.ordinal <= progress.unlockedByPack[pack.id];
+              progress.unlockedByPack[pack.id].includes(level.id) ||
+              record?.completed;
             const status = record?.completed
               ? `已完成，${record.stars} 顆星`
               : unlocked
@@ -634,9 +641,10 @@
       bestMoves: state.moves,
     });
     if (nextLevel) {
-      progress.unlockedByPack[pack.id] = Math.max(
-        progress.unlockedByPack[pack.id],
-        nextLevel.ordinal,
+      progress.unlockedByPack[pack.id] = Core.normalizeUnlockedLevelIds(
+        packLevels,
+        [...progress.unlockedByPack[pack.id], nextLevel.id],
+        progress.records,
       );
     }
     saveProgress();

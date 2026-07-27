@@ -237,6 +237,54 @@
     return null;
   }
 
+  function normalizeUnlockedLevelIds(packLevels, storedValue, records = {}) {
+    if (!Array.isArray(packLevels) || packLevels.length === 0) {
+      return [];
+    }
+
+    const levelById = new Map(packLevels.map((level) => [level.id, level]));
+    const unlockedIds = new Set();
+
+    if (Array.isArray(storedValue)) {
+      for (const levelId of storedValue) {
+        if (levelById.has(levelId)) {
+          unlockedIds.add(levelId);
+        }
+      }
+    } else {
+      const legacyFrontier = Math.max(1, Math.floor(Number(storedValue) || 1));
+      for (const level of packLevels) {
+        const stableSequence = Number(level.id.match(/-(\d+)$/)?.[1]);
+        if (
+          level.ordinal <= legacyFrontier ||
+          (Number.isFinite(stableSequence) && stableSequence <= legacyFrontier)
+        ) {
+          unlockedIds.add(level.id);
+        }
+      }
+    }
+
+    unlockedIds.add(packLevels[0].id);
+    for (const level of packLevels) {
+      if (records[level.id]?.completed) {
+        unlockedIds.add(level.id);
+      }
+    }
+
+    const frontier = Math.max(
+      ...Array.from(unlockedIds, (levelId) => levelById.get(levelId)?.ordinal || 1),
+    );
+    for (const level of packLevels) {
+      if (level.ordinal <= frontier) {
+        unlockedIds.add(level.id);
+      }
+    }
+
+    return packLevels
+      .filter((level) => unlockedIds.has(level.id))
+      .map((level) => level.id);
+  }
+
   function validateLevelDefinition(level) {
     const errors = [];
 
@@ -403,6 +451,7 @@
     validateLevelDefinition,
     countSolutions,
     getHintCell,
+    normalizeUnlockedLevelIds,
     formatElapsedTime,
   });
 });

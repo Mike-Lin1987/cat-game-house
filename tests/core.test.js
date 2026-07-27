@@ -158,3 +158,21 @@ test('經過時間使用分鐘與秒數格式化', () => {
   assert.equal(Core.formatElapsedTime(125), '02:05');
   assert.equal(Core.formatElapsedTime(3605), '60:05');
 });
+
+test('解鎖 ID 在新增關卡與難度重排後不會倒退', () => {
+  const expandedLevels = [
+    { id: 'pack-001', ordinal: 1 },
+    { id: 'pack-016', ordinal: 2 },
+    { id: 'pack-002', ordinal: 3 },
+    { id: 'pack-003', ordinal: 4 },
+  ];
+
+  assert.deepEqual(
+    Core.normalizeUnlockedLevelIds(expandedLevels, ['pack-002']),
+    ['pack-001', 'pack-016', 'pack-002'],
+  );
+  assert.deepEqual(
+    Core.normalizeUnlockedLevelIds(expandedLevels, 2),
+    ['pack-001', 'pack-016', 'pack-002'],
+  );
+});

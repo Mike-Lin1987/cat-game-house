@@ -54,7 +54,7 @@ npm run generate-levels
 
 ## 儲存與相容性
 
-- 進度保存在瀏覽器的 `localStorage`，key 為 `cat-grid-game:v1`。
+- 進度保存在瀏覽器的 `localStorage`，key 為 `cat-grid-game:v1`；`unlockedByPack` 保存穩定 level ID，舊數字格式會自動遷移。
 - 儲存空間不可用時，遊戲仍可完整遊玩，但重新整理後不會保留進度。
 - 已實際驗證 Chrome 150 與 Edge 150 的 `file://` 執行。
 - 實作採標準 HTML、CSS、JavaScript，預期可在現代 Safari 執行，但目前未在 Windows 上宣稱 Safari 實機驗證。
