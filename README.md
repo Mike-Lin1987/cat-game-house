@@ -142,7 +142,7 @@ npm run generate-levels
 - `manifest.webmanifest`、`service-worker.js`、`js/pwa.js`：安裝與離線能力。
 - `games/cat-grid/index.html`：貓咪方格獨立入口。
 - `games/cat-color-connect/`：貓咪彩色連線獨立 runtime、固定關卡及資料驅動 UI。
-- `tutorials/*.html`、`games/*/tutorial.webm`：各遊戲的離線教學頁與影片。
+- `tutorials/*/index.html`、`games/*/tutorial.webm`：各遊戲的離線教學頁與影片。
 - `assets/tutorials/`、`scripts/tutorial-videos/`：共用教學頁樣式及可重現影片產製工具。
 - `styles.css`、`js/app.js`：貓咪方格 UI 與遊戲流程。
 - `js/packs.js`、`js/core.js`、`js/levels.js`：關卡設定、規則與固定 100 關。
