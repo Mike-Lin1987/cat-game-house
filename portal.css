@@ -147,6 +147,129 @@ button:focus-visible {
   font-size: clamp(1.02rem, 2vw, 1.35rem);
 }
 
+.progress-keeper {
+  display: flex;
+  margin: 0 clamp(0px, 2vw, 22px) 28px;
+  padding: 20px clamp(18px, 3vw, 30px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px dashed #d9b989;
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgb(255 254 251 / 94%), rgb(255 241 220 / 88%));
+  box-shadow: var(--shadow-soft);
+}
+
+.progress-keeper-copy {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 16px;
+}
+
+.progress-keeper-copy h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.progress-keeper-copy p {
+  max-width: 38rem;
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.progress-keeper-icon,
+.dialog-progress-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--coral);
+  box-shadow: 0 8px 18px rgb(111 68 40 / 12%);
+}
+
+.progress-keeper-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.progress-keeper-icon svg,
+.dialog-progress-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.progress-keeper-controls {
+  flex: 0 0 auto;
+}
+
+.progress-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.progress-button,
+.dialog-secondary {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.progress-button.is-primary {
+  border-color: var(--coral);
+  background: var(--coral);
+  color: #fff;
+  box-shadow: 0 8px 16px rgb(221 102 91 / 22%);
+}
+
+.progress-button svg {
+  width: 21px;
+  height: 21px;
+}
+
+.progress-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.progress-status {
+  min-height: 1.35em;
+  margin: 7px 2px 0;
+  color: #567469;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.progress-status:empty {
+  margin-top: 0;
+  min-height: 0;
+}
+
+.progress-status.is-error {
+  color: #ad4138;
+}
+
 .game-catalog {
   padding: 0 clamp(0px, 2vw, 22px);
 }
@@ -373,6 +496,32 @@ button:focus-visible {
   line-height: 1.7;
 }
 
+.dialog-progress-icon {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 12px;
+  background: var(--surface-soft);
+}
+
+.dialog-progress-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.restore-summary {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.restore-warning {
+  margin: 10px 0 0;
+  color: #9a4d42;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 .dialog-close {
   position: absolute;
   top: 18px;
@@ -390,6 +539,19 @@ button:focus-visible {
 .dialog-primary {
   width: 100%;
   margin-top: 12px;
+}
+
+.dialog-actions {
+  display: flex;
+  margin-top: 22px;
+  gap: 10px;
+}
+
+.dialog-actions .dialog-primary,
+.dialog-actions .dialog-secondary {
+  width: auto;
+  margin: 0;
+  flex: 1 1 0;
 }
 
 @media (max-width: 720px) {
@@ -434,6 +596,25 @@ button:focus-visible {
     padding-top: 48px;
   }
 
+  .progress-keeper {
+    padding: 20px;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .progress-actions {
+    justify-content: stretch;
+  }
+
+  .progress-button {
+    flex: 1 1 0;
+  }
+
+  .progress-status {
+    text-align: left;
+  }
+
   .game-card {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -465,6 +646,34 @@ button:focus-visible {
 }
 
 @media (max-width: 420px) {
+  .progress-keeper-copy {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .progress-keeper-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+  }
+
+  .progress-keeper-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .progress-keeper-copy p {
+    font-size: 0.88rem;
+  }
+
+  .progress-actions {
+    flex-direction: column;
+  }
+
+  .progress-button {
+    width: 100%;
+  }
+
   .game-title-row {
     gap: 8px;
   }

@@ -5,7 +5,18 @@
   const serviceWorkerPath = script?.dataset.serviceWorker;
   const installButtons = [...document.querySelectorAll('[data-install-app]')];
   const installDialog = document.querySelector('#install-dialog');
+  const ProgressBackup = window.CatGameProgressBackup;
   let deferredInstallPrompt = null;
+
+  function protectProgress() {
+    if (
+      window.location.protocol === 'file:' ||
+      !ProgressBackup?.requestPersistentStorage
+    ) {
+      return Promise.resolve();
+    }
+    return ProgressBackup.requestPersistentStorage(navigator.storage);
+  }
 
   function openInstallHelp() {
     if (installDialog?.showModal) {
@@ -15,6 +26,7 @@
 
   for (const button of installButtons) {
     button.addEventListener('click', async () => {
+      await protectProgress();
       if (!deferredInstallPrompt) {
         openInstallHelp();
         return;
@@ -32,6 +44,7 @@
   });
 
   window.addEventListener('appinstalled', () => {
+    protectProgress();
     deferredInstallPrompt = null;
     for (const button of installButtons) {
       button.hidden = true;
@@ -47,6 +60,7 @@
   }
 
   window.addEventListener('load', () => {
+    protectProgress();
     navigator.serviceWorker.register(serviceWorkerPath).catch(() => {
       // Service Worker 不可用時不影響一般線上或 file:// 遊玩。
     });

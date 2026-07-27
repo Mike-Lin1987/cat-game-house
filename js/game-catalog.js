@@ -17,6 +17,7 @@
       description: '在每列、每欄與每個彩色區域放入一隻貓咪',
       href: './games/cat-grid/index.html',
       tutorialHref: './tutorials/cat-grid/index.html',
+      storageKey: 'cat-grid-game:v1',
       cover: './assets/game-covers/cat-grid.svg',
       levelCount: 100,
       offline: true,
@@ -42,6 +43,7 @@
       description: '連接相同貓咪，讓繽紛路線填滿每一格',
       href: './games/cat-color-connect/index.html',
       tutorialHref: './tutorials/cat-color-connect/index.html',
+      storageKey: 'cat-color-connect:v1',
       cover: './assets/game-covers/cat-color-connect.svg',
       levelCount: 100,
       offline: true,
@@ -100,6 +102,7 @@
   function validateGameCatalog(catalog) {
     const errors = [];
     const ids = new Set();
+    const storageKeys = new Set();
 
     if (!Array.isArray(catalog)) {
       return ['catalog 必須是陣列'];
@@ -124,6 +127,17 @@
         if (typeof game[field] !== 'string' || game[field].trim() === '') {
           errors.push(`${label} 缺少 ${field}`);
         }
+      }
+
+      if (
+        typeof game.storageKey !== 'string' ||
+        !/^[a-z0-9-]+:v[1-9]\d*$/.test(game.storageKey)
+      ) {
+        errors.push(`${label} 的 storageKey 格式無效`);
+      } else if (storageKeys.has(game.storageKey)) {
+        errors.push(`${label} 的 storageKey 重複`);
+      } else {
+        storageKeys.add(game.storageKey);
       }
 
       for (const field of ['href', 'tutorialHref', 'cover']) {

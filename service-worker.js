@@ -3,7 +3,7 @@
 importScripts('./js/game-catalog.js');
 
 const CACHE_PREFIX = 'game-house';
-const CACHE_VERSION = 'v10';
+const CACHE_VERSION = 'v11';
 const CACHE_NAME = `${CACHE_PREFIX}:${CACHE_VERSION}`;
 const PORTAL_ASSETS = [
   './',
@@ -11,6 +11,8 @@ const PORTAL_ASSETS = [
   './portal.css',
   './manifest.webmanifest',
   './js/game-catalog.js',
+  './js/progress-backup.js',
+  './js/progress-ui.js',
   './js/portal.js',
   './js/pwa.js',
   './assets/icons/icon.svg',

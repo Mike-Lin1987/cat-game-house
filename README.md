@@ -17,6 +17,8 @@
 
 首次完整載入後，入口與已收錄遊戲會由 Service Worker 保存，可在沒有網路時再次開啟。進度保存在目前裝置的瀏覽器。
 
+入口網站的「保護遊戲進度」可一次備份兩款遊戲。重新安裝或更換手機前，請下載 JSON 備份檔；安裝完成後回到入口網站選擇「還原進度」即可繼續遊玩。備份與還原都在裝置本機完成，不會上傳資料。
+
 ## 目前遊戲
 
 入口網站的每款遊戲名稱旁都有「教學影片」連結。兩支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
@@ -69,7 +71,7 @@
 
 1. 在 `games/<game-id>/` 放入可直接執行的遊戲頁與資源。
 2. 在 `assets/game-covers/` 加入入口卡片封面。
-3. 在 `CAT_GAME_CATALOG` 新增一筆資料，包含穩定 `id`、標題、卡片眉題 `eyebrow`、說明、明確 HTML 入口 `href`、教學頁 `tutorialHref`、封面與 `offlineAssets`。
+3. 在 `CAT_GAME_CATALOG` 新增一筆資料，包含穩定 `id`、標題、卡片眉題 `eyebrow`、說明、明確 HTML 入口 `href`、教學頁 `tutorialHref`、進度用 `storageKey`、封面與 `offlineAssets`。
 4. 執行 `npm run verify`。
 
 入口 UI 與 Service Worker 都會依 catalog 自動處理新遊戲，不需要修改核心程式。
@@ -131,6 +133,9 @@ npm run generate-levels
 
 - 貓咪方格進度使用 `localStorage` key `cat-grid-game:v1`，搬到獨立路由後仍保持相同資料結構。
 - 貓咪彩色連線進度使用 `localStorage` key `cat-color-connect:v1`，包含各尺寸解鎖、最佳紀錄、設定與未完成 session。
+- 入口會在 HTTPS 環境自動向瀏覽器申請 persistent storage，降低系統因容量壓力自動清除進度的機率。
+- 「備份進度」會將 catalog 宣告的全部遊戲進度匯出成單一 JSON；「還原進度」只接受目前 catalog 中 storage key 相符的遊戲，寫入失敗時會回復原值。
+- persistent storage 不能抵抗使用者清除網站資料；iPhone／iPad 的新主畫面圖示也可能使用獨立儲存空間，因此重新安裝前仍應保留備份檔。
 - 儲存空間不可用時仍可完整遊玩，但重新整理後不會保留進度。
 - `file://` 可直接遊玩；PWA 安裝與離線快取需要 HTTPS 或 localhost。
 - 使用標準 Web App Manifest、Service Worker、HTML、CSS 與 JavaScript；Safari 實機相容性不在 Windows 上虛報。

@@ -17,6 +17,8 @@ const BASE_RUNTIME_FILES = [
   'games/cat-grid/index.html',
   'styles.css',
   'js/game-catalog.js',
+  'js/progress-backup.js',
+  'js/progress-ui.js',
   'js/portal.js',
   'js/pwa.js',
   'js/packs.js',

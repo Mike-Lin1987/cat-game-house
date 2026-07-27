@@ -14,7 +14,9 @@
     <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
     <link rel="stylesheet" href="./portal.css">
     <script src="./js/game-catalog.js" defer></script>
+    <script src="./js/progress-backup.js" defer></script>
     <script src="./js/portal.js" defer></script>
+    <script src="./js/progress-ui.js" defer></script>
     <script src="./js/pwa.js" data-service-worker="./service-worker.js" defer></script>
   </head>
   <body>
@@ -35,6 +37,12 @@
       <symbol id="portal-play" viewBox="0 0 48 48">
         <circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="3"/>
         <path d="m20 16 13 8-13 8Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="portal-backup" viewBox="0 0 48 48">
+        <path d="M24 7v22m-9-9 9 9 9-9M9 34v7h30v-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </symbol>
+      <symbol id="portal-restore" viewBox="0 0 48 48">
+        <path d="M24 41V19m-9 9 9-9 9 9M9 14V7h30v7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
       </symbol>
     </svg>
 
@@ -58,6 +66,38 @@
           </p>
           <h1 id="portal-heading">選擇遊戲</h1>
           <p>挑一款喜歡的遊戲，隨時開始挑戰。</p>
+        </section>
+
+        <section class="progress-keeper" aria-labelledby="progress-heading">
+          <div class="progress-keeper-copy">
+            <span class="progress-keeper-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><use href="#portal-backup"></use></svg>
+            </span>
+            <div>
+              <h2 id="progress-heading">保護遊戲進度</h2>
+              <p>重新安裝前先備份，之後即可離線還原兩款遊戲的進度。</p>
+            </div>
+          </div>
+          <div class="progress-keeper-controls">
+            <div class="progress-actions">
+              <button class="progress-button is-primary" type="button" data-backup-progress>
+                <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#portal-backup"></use></svg>
+                <span>備份進度</span>
+              </button>
+              <button class="progress-button" type="button" data-restore-progress>
+                <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#portal-restore"></use></svg>
+                <span>還原進度</span>
+              </button>
+              <input
+                class="progress-file-input"
+                type="file"
+                accept="application/json,.json"
+                data-progress-file
+                aria-label="選擇遊戲進度備份檔"
+              >
+            </div>
+            <p class="progress-status" data-progress-status role="status" aria-live="polite"></p>
+          </div>
         </section>
 
         <section class="game-catalog" aria-label="遊戲列表">
@@ -88,7 +128,7 @@
 
       <footer class="portal-footer">
         <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#portal-paw"></use></svg>
-        <span>進度會儲存在這台裝置</span>
+        <span>進度儲存在這台裝置，也可以備份後帶走</span>
       </footer>
     </div>
 
@@ -103,6 +143,23 @@
           <p><strong>Android：</strong>用 Chrome 開啟後，點選單再選「安裝應用程式」或「新增至主畫面」。</p>
         </div>
         <button class="dialog-primary" value="close">知道了</button>
+      </form>
+    </dialog>
+
+    <dialog id="restore-dialog" class="install-dialog progress-dialog">
+      <form method="dialog">
+        <button class="dialog-close" value="cancel" aria-label="關閉">×</button>
+        <span class="dialog-progress-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><use href="#portal-restore"></use></svg>
+        </span>
+        <p class="portal-kicker">進度保護</p>
+        <h2>還原遊戲進度</h2>
+        <p class="restore-summary" data-restore-summary></p>
+        <p class="restore-warning">這會覆蓋此裝置中相同遊戲的目前進度。</p>
+        <div class="dialog-actions">
+          <button class="dialog-secondary" value="cancel">先不要</button>
+          <button class="dialog-primary" type="button" data-confirm-restore>確認還原</button>
+        </div>
       </form>
     </dialog>
   </body>

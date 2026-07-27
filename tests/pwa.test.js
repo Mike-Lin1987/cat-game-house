@@ -78,6 +78,30 @@ test('PWA 腳本在 file 協定不註冊，並支援原生安裝提示', () => {
   assert.match(pwa, /data-install-app/);
 });
 
+test('入口提供全部遊戲進度的備份與還原操作', () => {
+  const portal = read('index.html');
+  const serviceWorker = read('service-worker.js');
+
+  assert.match(portal, /src="\.\/js\/progress-backup\.js"/);
+  assert.match(portal, /src="\.\/js\/progress-ui\.js"/);
+  assert.match(portal, /data-backup-progress/);
+  assert.match(portal, /data-restore-progress/);
+  assert.match(portal, /data-progress-file/);
+  assert.match(serviceWorker, /\.\/js\/progress-backup\.js/);
+  assert.match(serviceWorker, /\.\/js\/progress-ui\.js/);
+
+  const progressUi = read('js/progress-ui.js');
+  assert.match(progressUi, /restoreButton\.focus\(\)/);
+});
+
+test('PWA 安裝流程會自動申請持久化儲存空間', () => {
+  const pwa = read('js/pwa.js');
+
+  assert.match(pwa, /CatGameProgressBackup/);
+  assert.match(pwa, /requestPersistentStorage/);
+  assert.match(pwa, /navigator\.storage/);
+});
+
 test('手機版安裝按鈕保留可見的「安裝到手機」文字', () => {
   const portal = read('index.html');
   const styles = read('portal.css');
