@@ -15,6 +15,7 @@ Accepted
 - `service-worker.js` 只在 HTTPS 或 localhost 註冊，且只能為快取與離線回應對同來源 GET 使用 `fetch()`。
 - `CAT_GAME_CATALOG` 是入口卡片、遊戲 HTML 路徑與離線資源的單一資料來源；所有路徑必須位於專案內。
 - GPT Sites 可執行零依賴的靜態複製 build，產生 `dist/client` 與 Worker entrypoint；source runtime 不依賴此輸出。
+- Sites 要求的 `worker/index.mjs` 是唯一 ESM／Worker 例外；它只能無狀態轉交靜態資源及對 HTML GET/HEAD 提供入口 fallback，不得承載應用 API、資料或外部連線。
 
 ## Consequences
 
