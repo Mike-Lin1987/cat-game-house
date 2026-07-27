@@ -2,14 +2,12 @@
   'use strict';
 
   const isFileRuntime = window.location.protocol === 'file:';
-  const portalLink = document.querySelector('[data-portal-home]');
-  const gameLinks = document.querySelectorAll('[data-game-home]');
-
-  if (portalLink) {
-    portalLink.href = isFileRuntime ? '../../index.html' : '../../';
+  for (const link of document.querySelectorAll('[data-runtime-link]')) {
+    const target = isFileRuntime
+      ? link.dataset.fileHref
+      : link.dataset.hostHref;
+    if (target) {
+      link.href = target;
+    }
   }
-  for (const gameLink of gameLinks) {
-    gameLink.href = isFileRuntime ? './index.html' : './';
-  }
-
 })();

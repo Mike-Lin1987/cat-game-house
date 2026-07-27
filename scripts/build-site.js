@@ -14,6 +14,7 @@ const STATIC_ENTRIES = [
   'service-worker.js',
   'js',
   'games',
+  'tutorials',
   'assets',
 ];
 

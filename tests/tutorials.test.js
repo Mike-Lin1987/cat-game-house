@@ -25,8 +25,17 @@ test('入口依 catalog 在遊戲名稱旁建立教學影片連結', () => {
 });
 
 test('兩款遊戲各有可離線播放的教學頁與 WebM', () => {
+  assert.deepEqual(
+    CAT_GAME_CATALOG.map((game) => game.tutorialHref),
+    [
+      './tutorials/cat-grid.html',
+      './tutorials/cat-color-connect.html',
+    ],
+    '教學頁應使用不與遊戲 index 路由衝突的獨立 hosted 路徑',
+  );
+
   for (const game of CAT_GAME_CATALOG) {
-    assert.match(game.tutorialHref, /^\.\/games\/[^/]+\/tutorial\.html$/);
+    assert.match(game.tutorialHref, /^\.\/tutorials\/[^/]+\.html$/);
     const tutorialPath = path.join(ROOT, game.tutorialHref.slice(2));
     assert.equal(fs.existsSync(tutorialPath), true, `${game.id} 缺少教學頁`);
 
