@@ -19,15 +19,28 @@
     CAT: 2,
   });
 
-  function cycleCellState(currentState, elapsedSincePreviousClick = Infinity) {
+  function cycleCellState(currentState) {
     if (currentState === CELL_STATE.EMPTY) {
       return CELL_STATE.X;
     }
 
     if (currentState === CELL_STATE.X) {
-      return elapsedSincePreviousClick <= 500
-        ? CELL_STATE.CAT
-        : CELL_STATE.EMPTY;
+      return CELL_STATE.CAT;
+    }
+
+    return CELL_STATE.EMPTY;
+  }
+
+  function resolveTimedCellState(
+    currentState,
+    elapsedSincePreviousClick = Infinity,
+  ) {
+    if (currentState === CELL_STATE.EMPTY) {
+      return CELL_STATE.X;
+    }
+
+    if (elapsedSincePreviousClick <= 500) {
+      return currentState === CELL_STATE.X ? CELL_STATE.CAT : currentState;
     }
 
     return CELL_STATE.EMPTY;
@@ -441,6 +454,7 @@
   return Object.freeze({
     CELL_STATE,
     cycleCellState,
+    resolveTimedCellState,
     canonicalizeRegions,
     isRegionConnected,
     findConflicts,

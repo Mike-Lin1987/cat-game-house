@@ -37,19 +37,27 @@ function reasonSet(result, row, column) {
   return new Set(cell ? cell.reasons : []);
 }
 
-test('單擊空白格會標記 X，只有 0.5 秒內再次點擊 X 才放置貓咪', () => {
+test('既有格子循環公開介面維持向下相容', () => {
   const { CELL_STATE, cycleCellState } = Core;
 
   assert.equal(cycleCellState(CELL_STATE.EMPTY), CELL_STATE.X);
-  assert.equal(cycleCellState(CELL_STATE.X, 500), CELL_STATE.CAT);
-  assert.equal(cycleCellState(CELL_STATE.X, 501), CELL_STATE.EMPTY);
+  assert.equal(cycleCellState(CELL_STATE.X), CELL_STATE.CAT);
+  assert.equal(cycleCellState(CELL_STATE.CAT), CELL_STATE.EMPTY);
 });
 
-test('再次點擊貓咪會取消為空白', () => {
-  const { CELL_STATE, cycleCellState } = Core;
+test('計時點擊只有在 0.5 秒內再次點擊 X 才放置貓咪', () => {
+  const { CELL_STATE, resolveTimedCellState } = Core;
 
-  assert.equal(cycleCellState(CELL_STATE.CAT, 100), CELL_STATE.EMPTY);
-  assert.equal(cycleCellState(CELL_STATE.CAT), CELL_STATE.EMPTY);
+  assert.equal(resolveTimedCellState(CELL_STATE.EMPTY), CELL_STATE.X);
+  assert.equal(resolveTimedCellState(CELL_STATE.X, 500), CELL_STATE.CAT);
+  assert.equal(resolveTimedCellState(CELL_STATE.X, 501), CELL_STATE.EMPTY);
+});
+
+test('貓咪必須停留超過 0.5 秒後再點擊才會取消', () => {
+  const { CELL_STATE, resolveTimedCellState } = Core;
+
+  assert.equal(resolveTimedCellState(CELL_STATE.CAT, 500), CELL_STATE.CAT);
+  assert.equal(resolveTimedCellState(CELL_STATE.CAT, 501), CELL_STATE.EMPTY);
 });
 
 test('同一橫列的所有貓咪都被標示為衝突', () => {

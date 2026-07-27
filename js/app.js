@@ -683,11 +683,15 @@
       ? clickedAt - state.lastCellClick.clickedAt
       : Infinity;
     const previousState = state.board[row][column];
-    const nextState = Core.cycleCellState(
+    const nextState = Core.resolveTimedCellState(
       previousState,
       elapsedSincePreviousClick,
     );
     state.lastCellClick = { row, column, clickedAt };
+    if (nextState === previousState) {
+      return;
+    }
+
     state.history.push({ row, column, previousState, nextState });
     state.board[row][column] = nextState;
     state.moves += 1;
@@ -778,6 +782,7 @@
   app.addEventListener('click', (event) => {
     const button = event.target.closest('[data-action]');
     if (!button) {
+      state.lastCellClick = null;
       return;
     }
 
