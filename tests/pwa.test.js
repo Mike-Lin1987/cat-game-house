@@ -47,6 +47,7 @@ test('入口與遊戲頁共用 manifest 並以正確相對路徑註冊 Service W
   assert.match(game, /href="\.\.\/\.\.\/manifest\.webmanifest"/);
   assert.match(game, /src="\.\.\/\.\.\/js\/pwa\.js"/);
   assert.match(game, /data-service-worker="\.\.\/\.\.\/service-worker\.js"/);
+  assert.match(portal, /href="\.\/games\/cat-grid\/index\.html"/);
 });
 
 test('Service Worker 從 catalog 衍生遊戲快取且只代理同來源 GET', () => {

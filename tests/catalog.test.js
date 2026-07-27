@@ -6,7 +6,11 @@ const path = require('node:path');
 const test = require('node:test');
 
 const ROOT = path.resolve(__dirname, '..');
-const { CAT_GAME_CATALOG, validateGameCatalog } = require('../js/game-catalog.js');
+const {
+  CAT_GAME_CATALOG,
+  normalizeLocalAssetPath,
+  validateGameCatalog,
+} = require('../js/game-catalog.js');
 
 test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () => {
   assert.equal(Array.isArray(CAT_GAME_CATALOG), true);
@@ -17,6 +21,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
     {
       id: game.id,
       title: game.title,
+      eyebrow: game.eyebrow,
       href: game.href,
       levelCount: game.levelCount,
       offline: game.offline,
@@ -24,7 +29,8 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
     {
       id: 'cat-grid',
       title: '貓咪方格',
-      href: './games/cat-grid/',
+      eyebrow: '邏輯益智 · 單人',
+      href: './games/cat-grid/index.html',
       levelCount: 100,
       offline: true,
     },
@@ -39,9 +45,8 @@ test('catalog 的頁面、封面與離線資源全部位於專案內', () => {
     const paths = [game.href, game.cover, ...game.offlineAssets];
     for (const relativePath of paths) {
       assert.doesNotMatch(relativePath, /^(?:https?:)?\/\//i);
-      const normalized = relativePath
-        .replace(/^\.\//, '')
-        .replace(/\/$/, '/index.html');
+      const normalized = normalizeLocalAssetPath(relativePath);
+      assert.notEqual(normalized, null, `${game.id} 路徑無效：${relativePath}`);
       assert.equal(
         fs.existsSync(path.join(ROOT, normalized)),
         true,
@@ -62,8 +67,14 @@ test('catalog 驗證器會拒絕重複 id 與不安全的遠端路徑', () => {
     id: 'remote-game',
     href: 'https://example.com/game',
   };
+  const traversal = {
+    ...valid,
+    id: 'outside-game',
+    href: './../outside/index.html',
+  };
 
-  const errors = validateGameCatalog([valid, duplicate, remote]);
+  const errors = validateGameCatalog([valid, duplicate, remote, traversal]);
   assert.equal(errors.some((message) => message.includes('重複')), true);
   assert.equal(errors.some((message) => message.includes('本機相對路徑')), true);
+  assert.equal(normalizeLocalAssetPath('./../outside/index.html'), null);
 });

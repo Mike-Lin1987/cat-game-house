@@ -13,14 +13,14 @@
     Object.freeze({
       id: 'cat-grid',
       title: '貓咪方格',
+      eyebrow: '邏輯益智 · 單人',
       description: '在每列、每欄與每個彩色區域放入一隻貓咪',
-      href: './games/cat-grid/',
+      href: './games/cat-grid/index.html',
       cover: './assets/game-covers/cat-grid.svg',
       levelCount: 100,
       offline: true,
       accent: '#ff8e68',
       offlineAssets: Object.freeze([
-        './games/cat-grid/',
         './games/cat-grid/index.html',
         './styles.css',
         './js/packs.js',
@@ -32,13 +32,31 @@
     }),
   ]);
 
+  function normalizeLocalAssetPath(value) {
+    if (
+      typeof value !== 'string' ||
+      !value.startsWith('./') ||
+      /^(?:https?:)?\/\//i.test(value) ||
+      /[\\?#:]/.test(value)
+    ) {
+      return null;
+    }
+
+    const segments = value.slice(2).split('/');
+    if (
+      segments.length === 0 ||
+      segments.some(
+        (segment) => segment === '' || segment === '.' || segment === '..',
+      )
+    ) {
+      return null;
+    }
+
+    return segments.join('/');
+  }
+
   function isLocalRelativePath(value) {
-    return (
-      typeof value === 'string' &&
-      value.startsWith('./') &&
-      !/^(?:https?:)?\/\//i.test(value) &&
-      !value.includes('\\')
-    );
+    return normalizeLocalAssetPath(value) !== null;
   }
 
   function validateGameCatalog(catalog) {
@@ -64,7 +82,7 @@
         ids.add(game.id);
       }
 
-      for (const field of ['title', 'description']) {
+      for (const field of ['title', 'eyebrow', 'description']) {
         if (typeof game[field] !== 'string' || game[field].trim() === '') {
           errors.push(`${label} 缺少 ${field}`);
         }
@@ -96,6 +114,7 @@
 
   return {
     CAT_GAME_CATALOG,
+    normalizeLocalAssetPath,
     validateGameCatalog,
   };
 });

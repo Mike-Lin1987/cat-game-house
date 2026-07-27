@@ -54,7 +54,7 @@
     const body = document.createElement('div');
     body.className = 'game-card-body';
     body.append(
-      createTextElement('p', 'game-eyebrow', '邏輯益智 · 單人'),
+      createTextElement('p', 'game-eyebrow', game.eyebrow),
       createTextElement('h2', '', game.title),
       createTextElement('p', 'game-description', game.description),
       createMetadata(game),

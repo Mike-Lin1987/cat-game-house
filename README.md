@@ -44,7 +44,7 @@
 
 1. 在 `games/<game-id>/` 放入可直接執行的遊戲頁與資源。
 2. 在 `assets/game-covers/` 加入入口卡片封面。
-3. 在 `CAT_GAME_CATALOG` 新增一筆資料，包含穩定 `id`、標題、說明、入口 `href`、封面與 `offlineAssets`。
+3. 在 `CAT_GAME_CATALOG` 新增一筆資料，包含穩定 `id`、標題、卡片眉題 `eyebrow`、說明、明確 HTML 入口 `href`、封面與 `offlineAssets`。
 4. 執行 `npm run verify`。
 
 入口 UI 與 Service Worker 都會依 catalog 自動處理新遊戲，不需要修改核心程式。

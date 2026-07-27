@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {
   CAT_GAME_CATALOG,
+  normalizeLocalAssetPath,
   validateGameCatalog,
 } = require('../js/game-catalog.js');
 
@@ -93,10 +94,18 @@ errors.push(...validateGameCatalog(CAT_GAME_CATALOG));
 for (const game of CAT_GAME_CATALOG) {
   const gamePaths = [game.href, game.cover, ...game.offlineAssets];
   for (const relativePath of gamePaths) {
-    const normalized = relativePath
-      .replace(/^\.\//, '')
-      .replace(/\/$/, '/index.html');
-    if (!fs.existsSync(path.join(ROOT, normalized))) {
+    const normalized = normalizeLocalAssetPath(relativePath);
+    if (!normalized) {
+      continue;
+    }
+
+    const absolutePath = path.resolve(ROOT, normalized);
+    if (!absolutePath.startsWith(`${ROOT}${path.sep}`)) {
+      errors.push(`${game.id} catalog 指向專案外：${relativePath}`);
+      continue;
+    }
+
+    if (!fs.existsSync(absolutePath)) {
       errors.push(`${game.id} catalog 指向不存在的檔案：${normalized}`);
     }
   }

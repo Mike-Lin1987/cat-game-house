@@ -28,7 +28,7 @@
     {
       "name": "貓咪方格",
       "short_name": "貓咪方格",
-      "url": "./games/cat-grid/",
+      "url": "./games/cat-grid/index.html",
       "icons": [
         {
           "src": "./assets/icons/icon-192.png",
