@@ -509,6 +509,7 @@
 
   function showDialog(dialog, trigger) {
     lastDialogTrigger = trigger || document.activeElement;
+    dialog.returnValue = '';
     dialog.showModal();
     window.requestAnimationFrame(() => {
       const target =
@@ -517,6 +518,51 @@
         dialog.querySelector('button:not([disabled])');
       target?.focus();
     });
+  }
+
+  function restoreDialogTrigger() {
+    if (lastDialogTrigger?.isConnected) {
+      lastDialogTrigger.focus();
+      return;
+    }
+
+    const action = lastDialogTrigger?.dataset?.action;
+    if (action) {
+      app.querySelector(`[data-action="${action}"]`)?.focus();
+    }
+  }
+
+  function createFocusToken(element = document.activeElement) {
+    if (!element || !app.contains(element) || !element.dataset.action) {
+      return null;
+    }
+
+    const token = { action: element.dataset.action };
+    for (const key of ['packId', 'direction', 'levelId', 'row', 'column']) {
+      if (element.dataset[key] !== undefined) {
+        token[key] = element.dataset[key];
+      }
+    }
+    return token;
+  }
+
+  function restoreAppFocus(token, fallbackSelector = '') {
+    let target = null;
+
+    if (token) {
+      const selector = Object.entries(token)
+        .map(([key, value]) => {
+          const attribute = key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+          return `[data-${attribute}="${value}"]`;
+        })
+        .join('');
+      target = app.querySelector(selector);
+    }
+
+    if (!target || target.disabled) {
+      target = fallbackSelector ? app.querySelector(fallbackSelector) : null;
+    }
+    target?.focus();
   }
 
   function openSettings(trigger) {
@@ -638,7 +684,7 @@
       ?.focus();
   }
 
-  function useHint() {
+  function useHint(trigger) {
     if (state.completed) {
       return;
     }
@@ -651,18 +697,22 @@
 
     state.hints += 1;
     state.hintCell = hintCell;
+    const triggerToken = createFocusToken(trigger);
     render();
+    restoreAppFocus(triggerToken, '[data-action="hint"]');
     announce(`提示：請留意第 ${hintCell.row + 1} 橫列。`);
     window.clearTimeout(hintTimeout);
     hintTimeout = window.setTimeout(() => {
       state.hintCell = null;
       if (state.screen === 'game') {
+        const activeToken = createFocusToken();
         render();
+        restoreAppFocus(activeToken);
       }
     }, 4000);
   }
 
-  function undoMove() {
+  function undoMove(trigger) {
     const move = state.history.pop();
     if (!move || state.completed) {
       return;
@@ -670,7 +720,9 @@
 
     state.board[move.row][move.column] = move.previousState;
     state.hintCell = null;
+    const triggerToken = createFocusToken(trigger);
     render();
+    restoreAppFocus(triggerToken, '[data-action="hint"]');
     announce(`已復原第 ${move.row + 1} 橫列的上一步。`);
   }
 
@@ -710,15 +762,23 @@
     if (action === 'settings') {
       openSettings(button);
     } else if (action === 'toggle-pack') {
+      const triggerToken = createFocusToken(button);
       state.expandedPackId =
         state.expandedPackId === button.dataset.packId
           ? null
           : button.dataset.packId;
       render();
+      restoreAppFocus(triggerToken);
     } else if (action === 'page-pack') {
       const packId = button.dataset.packId;
+      const direction = Number(button.dataset.direction);
+      const triggerToken = createFocusToken(button);
       state.pageByPack[packId] += Number(button.dataset.direction);
       render();
+      restoreAppFocus(
+        triggerToken,
+        `[data-action="page-pack"][data-pack-id="${packId}"][data-direction="${-direction}"]:not(:disabled)`,
+      );
     } else if (action === 'open-level') {
       const level = levels.find(
         (candidate) => candidate.id === button.dataset.levelId,
@@ -729,9 +789,9 @@
     } else if (action === 'cycle-cell') {
       cycleCell(Number(button.dataset.row), Number(button.dataset.column));
     } else if (action === 'hint') {
-      useHint();
+      useHint(button);
     } else if (action === 'undo') {
-      undoMove();
+      undoMove(button);
     } else if (action === 'replay') {
       requestReplay(button);
     } else if (action === 'back-select') {
@@ -757,7 +817,8 @@
 
   document
     .querySelector('#reset-progress-button')
-    .addEventListener('click', (event) => {
+    .addEventListener('click', () => {
+      const settingsTrigger = lastDialogTrigger;
       settingsDialog.close();
       window.setTimeout(() => {
         openConfirm(
@@ -783,12 +844,12 @@
                       announce('全部進度已重設。');
                     },
                   },
-                  event.currentTarget,
+                  settingsTrigger,
                 );
               }, 0);
             },
           },
-          event.currentTarget,
+          settingsTrigger,
         );
       }, 0);
     });
@@ -801,11 +862,11 @@
       return;
     }
     pendingConfirmAction = null;
-    lastDialogTrigger?.focus();
+    restoreDialogTrigger();
   });
 
   settingsDialog.addEventListener('close', () => {
-    lastDialogTrigger?.focus();
+    restoreDialogTrigger();
   });
 
   completionDialog.addEventListener('close', () => {

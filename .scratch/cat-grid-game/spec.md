@@ -1,6 +1,6 @@
 # 貓咪方格 100 關可擴充版
 
-**Status:** ready-for-agent
+**Status:** done
 
 ## Problem Statement
 

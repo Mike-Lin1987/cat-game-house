@@ -15,7 +15,7 @@
 
   return [
   {
-    "id": "beginner-6-001",
+    "id": "beginner-6-015",
     "packId": "beginner-6",
     "ordinal": 1,
     "size": 6,
@@ -81,7 +81,7 @@
     "seed": 610014
   },
   {
-    "id": "beginner-6-002",
+    "id": "beginner-6-004",
     "packId": "beginner-6",
     "ordinal": 2,
     "size": 6,
@@ -213,7 +213,7 @@
     "seed": 610002
   },
   {
-    "id": "beginner-6-004",
+    "id": "beginner-6-013",
     "packId": "beginner-6",
     "ordinal": 4,
     "size": 6,
@@ -279,7 +279,7 @@
     "seed": 610012
   },
   {
-    "id": "beginner-6-005",
+    "id": "beginner-6-010",
     "packId": "beginner-6",
     "ordinal": 5,
     "size": 6,
@@ -411,7 +411,7 @@
     "seed": 610005
   },
   {
-    "id": "beginner-6-007",
+    "id": "beginner-6-005",
     "packId": "beginner-6",
     "ordinal": 7,
     "size": 6,
@@ -609,7 +609,7 @@
     "seed": 610008
   },
   {
-    "id": "beginner-6-010",
+    "id": "beginner-6-001",
     "packId": "beginner-6",
     "ordinal": 10,
     "size": 6,
@@ -675,7 +675,7 @@
     "seed": 610000
   },
   {
-    "id": "beginner-6-011",
+    "id": "beginner-6-002",
     "packId": "beginner-6",
     "ordinal": 11,
     "size": 6,
@@ -807,7 +807,7 @@
     "seed": 610011
   },
   {
-    "id": "beginner-6-013",
+    "id": "beginner-6-007",
     "packId": "beginner-6",
     "ordinal": 13,
     "size": 6,
@@ -873,7 +873,7 @@
     "seed": 610006
   },
   {
-    "id": "beginner-6-014",
+    "id": "beginner-6-011",
     "packId": "beginner-6",
     "ordinal": 14,
     "size": 6,
@@ -939,7 +939,7 @@
     "seed": 610010
   },
   {
-    "id": "beginner-6-015",
+    "id": "beginner-6-014",
     "packId": "beginner-6",
     "ordinal": 15,
     "size": 6,
@@ -1005,7 +1005,7 @@
     "seed": 610013
   },
   {
-    "id": "advanced-8-001",
+    "id": "advanced-8-003",
     "packId": "advanced-8",
     "ordinal": 1,
     "size": 8,
@@ -1105,7 +1105,7 @@
     "seed": 820002
   },
   {
-    "id": "advanced-8-002",
+    "id": "advanced-8-013",
     "packId": "advanced-8",
     "ordinal": 2,
     "size": 8,
@@ -1205,7 +1205,7 @@
     "seed": 820012
   },
   {
-    "id": "advanced-8-003",
+    "id": "advanced-8-002",
     "packId": "advanced-8",
     "ordinal": 3,
     "size": 8,
@@ -1305,7 +1305,7 @@
     "seed": 820001
   },
   {
-    "id": "advanced-8-004",
+    "id": "advanced-8-006",
     "packId": "advanced-8",
     "ordinal": 4,
     "size": 8,
@@ -1405,7 +1405,7 @@
     "seed": 820005
   },
   {
-    "id": "advanced-8-005",
+    "id": "advanced-8-018",
     "packId": "advanced-8",
     "ordinal": 5,
     "size": 8,
@@ -1505,7 +1505,7 @@
     "seed": 820018
   },
   {
-    "id": "advanced-8-006",
+    "id": "advanced-8-009",
     "packId": "advanced-8",
     "ordinal": 6,
     "size": 8,
@@ -1605,7 +1605,7 @@
     "seed": 820008
   },
   {
-    "id": "advanced-8-007",
+    "id": "advanced-8-014",
     "packId": "advanced-8",
     "ordinal": 7,
     "size": 8,
@@ -1705,7 +1705,7 @@
     "seed": 820013
   },
   {
-    "id": "advanced-8-008",
+    "id": "advanced-8-017",
     "packId": "advanced-8",
     "ordinal": 8,
     "size": 8,
@@ -1805,7 +1805,7 @@
     "seed": 820016
   },
   {
-    "id": "advanced-8-009",
+    "id": "advanced-8-005",
     "packId": "advanced-8",
     "ordinal": 9,
     "size": 8,
@@ -1905,7 +1905,7 @@
     "seed": 820004
   },
   {
-    "id": "advanced-8-010",
+    "id": "advanced-8-007",
     "packId": "advanced-8",
     "ordinal": 10,
     "size": 8,
@@ -2005,7 +2005,7 @@
     "seed": 820006
   },
   {
-    "id": "advanced-8-011",
+    "id": "advanced-8-012",
     "packId": "advanced-8",
     "ordinal": 11,
     "size": 8,
@@ -2105,7 +2105,7 @@
     "seed": 820011
   },
   {
-    "id": "advanced-8-012",
+    "id": "advanced-8-008",
     "packId": "advanced-8",
     "ordinal": 12,
     "size": 8,
@@ -2205,7 +2205,7 @@
     "seed": 820007
   },
   {
-    "id": "advanced-8-013",
+    "id": "advanced-8-011",
     "packId": "advanced-8",
     "ordinal": 13,
     "size": 8,
@@ -2305,7 +2305,7 @@
     "seed": 820010
   },
   {
-    "id": "advanced-8-014",
+    "id": "advanced-8-016",
     "packId": "advanced-8",
     "ordinal": 14,
     "size": 8,
@@ -2405,7 +2405,7 @@
     "seed": 820015
   },
   {
-    "id": "advanced-8-015",
+    "id": "advanced-8-001",
     "packId": "advanced-8",
     "ordinal": 15,
     "size": 8,
@@ -2505,7 +2505,7 @@
     "seed": 820000
   },
   {
-    "id": "advanced-8-016",
+    "id": "advanced-8-004",
     "packId": "advanced-8",
     "ordinal": 16,
     "size": 8,
@@ -2605,7 +2605,7 @@
     "seed": 820003
   },
   {
-    "id": "advanced-8-017",
+    "id": "advanced-8-019",
     "packId": "advanced-8",
     "ordinal": 17,
     "size": 8,
@@ -2705,7 +2705,7 @@
     "seed": 820019
   },
   {
-    "id": "advanced-8-018",
+    "id": "advanced-8-020",
     "packId": "advanced-8",
     "ordinal": 18,
     "size": 8,
@@ -2805,7 +2805,7 @@
     "seed": 820020
   },
   {
-    "id": "advanced-8-019",
+    "id": "advanced-8-010",
     "packId": "advanced-8",
     "ordinal": 19,
     "size": 8,
@@ -2905,7 +2905,7 @@
     "seed": 820009
   },
   {
-    "id": "advanced-8-020",
+    "id": "advanced-8-015",
     "packId": "advanced-8",
     "ordinal": 20,
     "size": 8,
@@ -3005,7 +3005,7 @@
     "seed": 820014
   },
   {
-    "id": "challenge-10-001",
+    "id": "challenge-10-010",
     "packId": "challenge-10",
     "ordinal": 1,
     "size": 10,
@@ -3147,7 +3147,7 @@
     "seed": 1030009
   },
   {
-    "id": "challenge-10-002",
+    "id": "challenge-10-006",
     "packId": "challenge-10",
     "ordinal": 2,
     "size": 10,
@@ -3289,7 +3289,7 @@
     "seed": 1030005
   },
   {
-    "id": "challenge-10-003",
+    "id": "challenge-10-016",
     "packId": "challenge-10",
     "ordinal": 3,
     "size": 10,
@@ -3573,7 +3573,7 @@
     "seed": 1030003
   },
   {
-    "id": "challenge-10-005",
+    "id": "challenge-10-019",
     "packId": "challenge-10",
     "ordinal": 5,
     "size": 10,
@@ -3715,7 +3715,7 @@
     "seed": 1030018
   },
   {
-    "id": "challenge-10-006",
+    "id": "challenge-10-005",
     "packId": "challenge-10",
     "ordinal": 6,
     "size": 10,
@@ -3857,7 +3857,7 @@
     "seed": 1030004
   },
   {
-    "id": "challenge-10-007",
+    "id": "challenge-10-026",
     "packId": "challenge-10",
     "ordinal": 7,
     "size": 10,
@@ -3999,7 +3999,7 @@
     "seed": 1030025
   },
   {
-    "id": "challenge-10-008",
+    "id": "challenge-10-011",
     "packId": "challenge-10",
     "ordinal": 8,
     "size": 10,
@@ -4141,7 +4141,7 @@
     "seed": 1030010
   },
   {
-    "id": "challenge-10-009",
+    "id": "challenge-10-024",
     "packId": "challenge-10",
     "ordinal": 9,
     "size": 10,
@@ -4283,7 +4283,7 @@
     "seed": 1030023
   },
   {
-    "id": "challenge-10-010",
+    "id": "challenge-10-027",
     "packId": "challenge-10",
     "ordinal": 10,
     "size": 10,
@@ -4425,7 +4425,7 @@
     "seed": 1030026
   },
   {
-    "id": "challenge-10-011",
+    "id": "challenge-10-003",
     "packId": "challenge-10",
     "ordinal": 11,
     "size": 10,
@@ -4567,7 +4567,7 @@
     "seed": 1030002
   },
   {
-    "id": "challenge-10-012",
+    "id": "challenge-10-028",
     "packId": "challenge-10",
     "ordinal": 12,
     "size": 10,
@@ -4851,7 +4851,7 @@
     "seed": 1030012
   },
   {
-    "id": "challenge-10-014",
+    "id": "challenge-10-007",
     "packId": "challenge-10",
     "ordinal": 14,
     "size": 10,
@@ -5135,7 +5135,7 @@
     "seed": 1030014
   },
   {
-    "id": "challenge-10-016",
+    "id": "challenge-10-008",
     "packId": "challenge-10",
     "ordinal": 16,
     "size": 10,
@@ -5277,7 +5277,7 @@
     "seed": 1030007
   },
   {
-    "id": "challenge-10-017",
+    "id": "challenge-10-009",
     "packId": "challenge-10",
     "ordinal": 17,
     "size": 10,
@@ -5419,7 +5419,7 @@
     "seed": 1030008
   },
   {
-    "id": "challenge-10-018",
+    "id": "challenge-10-012",
     "packId": "challenge-10",
     "ordinal": 18,
     "size": 10,
@@ -5561,7 +5561,7 @@
     "seed": 1030011
   },
   {
-    "id": "challenge-10-019",
+    "id": "challenge-10-030",
     "packId": "challenge-10",
     "ordinal": 19,
     "size": 10,
@@ -5703,7 +5703,7 @@
     "seed": 1030029
   },
   {
-    "id": "challenge-10-020",
+    "id": "challenge-10-022",
     "packId": "challenge-10",
     "ordinal": 20,
     "size": 10,
@@ -5845,7 +5845,7 @@
     "seed": 1030021
   },
   {
-    "id": "challenge-10-021",
+    "id": "challenge-10-020",
     "packId": "challenge-10",
     "ordinal": 21,
     "size": 10,
@@ -5987,7 +5987,7 @@
     "seed": 1030019
   },
   {
-    "id": "challenge-10-022",
+    "id": "challenge-10-029",
     "packId": "challenge-10",
     "ordinal": 22,
     "size": 10,
@@ -6271,7 +6271,7 @@
     "seed": 1030022
   },
   {
-    "id": "challenge-10-024",
+    "id": "challenge-10-014",
     "packId": "challenge-10",
     "ordinal": 24,
     "size": 10,
@@ -6413,7 +6413,7 @@
     "seed": 1030013
   },
   {
-    "id": "challenge-10-025",
+    "id": "challenge-10-018",
     "packId": "challenge-10",
     "ordinal": 25,
     "size": 10,
@@ -6555,7 +6555,7 @@
     "seed": 1030017
   },
   {
-    "id": "challenge-10-026",
+    "id": "challenge-10-021",
     "packId": "challenge-10",
     "ordinal": 26,
     "size": 10,
@@ -6697,7 +6697,7 @@
     "seed": 1030020
   },
   {
-    "id": "challenge-10-027",
+    "id": "challenge-10-001",
     "packId": "challenge-10",
     "ordinal": 27,
     "size": 10,
@@ -6839,7 +6839,7 @@
     "seed": 1030000
   },
   {
-    "id": "challenge-10-028",
+    "id": "challenge-10-017",
     "packId": "challenge-10",
     "ordinal": 28,
     "size": 10,
@@ -6981,7 +6981,7 @@
     "seed": 1030016
   },
   {
-    "id": "challenge-10-029",
+    "id": "challenge-10-002",
     "packId": "challenge-10",
     "ordinal": 29,
     "size": 10,
@@ -7123,7 +7123,7 @@
     "seed": 1030001
   },
   {
-    "id": "challenge-10-030",
+    "id": "challenge-10-025",
     "packId": "challenge-10",
     "ordinal": 30,
     "size": 10,
@@ -7265,7 +7265,7 @@
     "seed": 1030024
   },
   {
-    "id": "master-12-001",
+    "id": "master-12-033",
     "packId": "master-12",
     "ordinal": 1,
     "size": 12,
@@ -7457,7 +7457,7 @@
     "seed": 1235038
   },
   {
-    "id": "master-12-002",
+    "id": "master-12-013",
     "packId": "master-12",
     "ordinal": 2,
     "size": 12,
@@ -7649,7 +7649,7 @@
     "seed": 1235016
   },
   {
-    "id": "master-12-003",
+    "id": "master-12-035",
     "packId": "master-12",
     "ordinal": 3,
     "size": 12,
@@ -7841,7 +7841,7 @@
     "seed": 1235040
   },
   {
-    "id": "master-12-004",
+    "id": "master-12-007",
     "packId": "master-12",
     "ordinal": 4,
     "size": 12,
@@ -8033,7 +8033,7 @@
     "seed": 1235006
   },
   {
-    "id": "master-12-005",
+    "id": "master-12-001",
     "packId": "master-12",
     "ordinal": 5,
     "size": 12,
@@ -8225,7 +8225,7 @@
     "seed": 1235000
   },
   {
-    "id": "master-12-006",
+    "id": "master-12-029",
     "packId": "master-12",
     "ordinal": 6,
     "size": 12,
@@ -8417,7 +8417,7 @@
     "seed": 1235034
   },
   {
-    "id": "master-12-007",
+    "id": "master-12-004",
     "packId": "master-12",
     "ordinal": 7,
     "size": 12,
@@ -8609,7 +8609,7 @@
     "seed": 1235003
   },
   {
-    "id": "master-12-008",
+    "id": "master-12-026",
     "packId": "master-12",
     "ordinal": 8,
     "size": 12,
@@ -8801,7 +8801,7 @@
     "seed": 1235030
   },
   {
-    "id": "master-12-009",
+    "id": "master-12-020",
     "packId": "master-12",
     "ordinal": 9,
     "size": 12,
@@ -8993,7 +8993,7 @@
     "seed": 1235023
   },
   {
-    "id": "master-12-010",
+    "id": "master-12-011",
     "packId": "master-12",
     "ordinal": 10,
     "size": 12,
@@ -9185,7 +9185,7 @@
     "seed": 1235013
   },
   {
-    "id": "master-12-011",
+    "id": "master-12-021",
     "packId": "master-12",
     "ordinal": 11,
     "size": 12,
@@ -9377,7 +9377,7 @@
     "seed": 1235024
   },
   {
-    "id": "master-12-012",
+    "id": "master-12-025",
     "packId": "master-12",
     "ordinal": 12,
     "size": 12,
@@ -9569,7 +9569,7 @@
     "seed": 1235028
   },
   {
-    "id": "master-12-013",
+    "id": "master-12-016",
     "packId": "master-12",
     "ordinal": 13,
     "size": 12,
@@ -9761,7 +9761,7 @@
     "seed": 1235019
   },
   {
-    "id": "master-12-014",
+    "id": "master-12-012",
     "packId": "master-12",
     "ordinal": 14,
     "size": 12,
@@ -9953,7 +9953,7 @@
     "seed": 1235014
   },
   {
-    "id": "master-12-015",
+    "id": "master-12-022",
     "packId": "master-12",
     "ordinal": 15,
     "size": 12,
@@ -10145,7 +10145,7 @@
     "seed": 1235025
   },
   {
-    "id": "master-12-016",
+    "id": "master-12-015",
     "packId": "master-12",
     "ordinal": 16,
     "size": 12,
@@ -10337,7 +10337,7 @@
     "seed": 1235018
   },
   {
-    "id": "master-12-017",
+    "id": "master-12-032",
     "packId": "master-12",
     "ordinal": 17,
     "size": 12,
@@ -10529,7 +10529,7 @@
     "seed": 1235037
   },
   {
-    "id": "master-12-018",
+    "id": "master-12-023",
     "packId": "master-12",
     "ordinal": 18,
     "size": 12,
@@ -10721,7 +10721,7 @@
     "seed": 1235026
   },
   {
-    "id": "master-12-019",
+    "id": "master-12-028",
     "packId": "master-12",
     "ordinal": 19,
     "size": 12,
@@ -10913,7 +10913,7 @@
     "seed": 1235033
   },
   {
-    "id": "master-12-020",
+    "id": "master-12-031",
     "packId": "master-12",
     "ordinal": 20,
     "size": 12,
@@ -11105,7 +11105,7 @@
     "seed": 1235036
   },
   {
-    "id": "master-12-021",
+    "id": "master-12-030",
     "packId": "master-12",
     "ordinal": 21,
     "size": 12,
@@ -11297,7 +11297,7 @@
     "seed": 1235035
   },
   {
-    "id": "master-12-022",
+    "id": "master-12-024",
     "packId": "master-12",
     "ordinal": 22,
     "size": 12,
@@ -11489,7 +11489,7 @@
     "seed": 1235027
   },
   {
-    "id": "master-12-023",
+    "id": "master-12-003",
     "packId": "master-12",
     "ordinal": 23,
     "size": 12,
@@ -11681,7 +11681,7 @@
     "seed": 1235002
   },
   {
-    "id": "master-12-024",
+    "id": "master-12-034",
     "packId": "master-12",
     "ordinal": 24,
     "size": 12,
@@ -11873,7 +11873,7 @@
     "seed": 1235039
   },
   {
-    "id": "master-12-025",
+    "id": "master-12-019",
     "packId": "master-12",
     "ordinal": 25,
     "size": 12,
@@ -12065,7 +12065,7 @@
     "seed": 1235022
   },
   {
-    "id": "master-12-026",
+    "id": "master-12-017",
     "packId": "master-12",
     "ordinal": 26,
     "size": 12,
@@ -12257,7 +12257,7 @@
     "seed": 1235020
   },
   {
-    "id": "master-12-027",
+    "id": "master-12-006",
     "packId": "master-12",
     "ordinal": 27,
     "size": 12,
@@ -12449,7 +12449,7 @@
     "seed": 1235005
   },
   {
-    "id": "master-12-028",
+    "id": "master-12-008",
     "packId": "master-12",
     "ordinal": 28,
     "size": 12,
@@ -12641,7 +12641,7 @@
     "seed": 1235007
   },
   {
-    "id": "master-12-029",
+    "id": "master-12-005",
     "packId": "master-12",
     "ordinal": 29,
     "size": 12,
@@ -12833,7 +12833,7 @@
     "seed": 1235004
   },
   {
-    "id": "master-12-030",
+    "id": "master-12-014",
     "packId": "master-12",
     "ordinal": 30,
     "size": 12,
@@ -13025,7 +13025,7 @@
     "seed": 1235017
   },
   {
-    "id": "master-12-031",
+    "id": "master-12-027",
     "packId": "master-12",
     "ordinal": 31,
     "size": 12,
@@ -13217,7 +13217,7 @@
     "seed": 1235031
   },
   {
-    "id": "master-12-032",
+    "id": "master-12-018",
     "packId": "master-12",
     "ordinal": 32,
     "size": 12,
@@ -13409,7 +13409,7 @@
     "seed": 1235021
   },
   {
-    "id": "master-12-033",
+    "id": "master-12-010",
     "packId": "master-12",
     "ordinal": 33,
     "size": 12,
@@ -13601,7 +13601,7 @@
     "seed": 1235011
   },
   {
-    "id": "master-12-034",
+    "id": "master-12-009",
     "packId": "master-12",
     "ordinal": 34,
     "size": 12,
@@ -13793,7 +13793,7 @@
     "seed": 1235008
   },
   {
-    "id": "master-12-035",
+    "id": "master-12-002",
     "packId": "master-12",
     "ordinal": 35,
     "size": 12,

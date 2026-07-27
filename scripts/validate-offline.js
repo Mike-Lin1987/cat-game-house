@@ -31,8 +31,23 @@ for (const { relativePath, content } of RUNTIME_FILES) {
   if (/\bfetch\s*\(/.test(content)) {
     errors.push(`${relativePath} 使用 fetch()`);
   }
+  if (/\bXMLHttpRequest\b/.test(content)) {
+    errors.push(`${relativePath} 使用 XMLHttpRequest`);
+  }
+  if (/\b(?:WebSocket|EventSource)\s*\(/.test(content)) {
+    errors.push(`${relativePath} 使用持續網路連線 API`);
+  }
+  if (/\bnavigator\s*\.\s*sendBeacon\s*\(/.test(content)) {
+    errors.push(`${relativePath} 使用 sendBeacon()`);
+  }
+  if (/(?:src|href)\s*=\s*["']\s*\/\//i.test(content)) {
+    errors.push(`${relativePath} 包含 protocol-relative 外部資源`);
+  }
   if (/type\s*=\s*["']module["']/i.test(content)) {
     errors.push(`${relativePath} 使用 ES Module`);
+  }
+  if (/\bimport\s*\(/.test(content)) {
+    errors.push(`${relativePath} 使用 dynamic import()`);
   }
   if (/^\s*(?:import|export)\s/m.test(content)) {
     errors.push(`${relativePath} 包含 import/export`);

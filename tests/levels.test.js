@@ -45,7 +45,7 @@ test('每個關卡包依 difficultyScore 由簡至難排列', () => {
 
     packLevels.forEach((level, index) => {
       assert.equal(level.ordinal, index + 1);
-      assert.equal(level.id, `${pack.id}-${String(index + 1).padStart(3, '0')}`);
+      assert.match(level.id, new RegExp(`^${pack.id}-\\d{3}$`));
       if (index > 0) {
         assert.ok(
           level.difficultyScore >= packLevels[index - 1].difficultyScore,

@@ -218,6 +218,28 @@ function buildBoundaryMoves(regions, solution, random, alternative = null) {
   return shuffle(moves, random);
 }
 
+function tryBoundaryMoves(regions, moves, seenLayouts) {
+  for (const move of moves) {
+    const sourceRegion = regions[move.row][move.column];
+    if (
+      tryReassignCell(
+        regions,
+        move.row,
+        move.column,
+        move.destinationRegion,
+      )
+    ) {
+      const nextSignature = JSON.stringify(Core.canonicalizeRegions(regions));
+      if (!seenLayouts.has(nextSignature)) {
+        return true;
+      }
+      regions[move.row][move.column] = sourceRegion;
+    }
+  }
+
+  return false;
+}
+
 function refineRegionsToUnique(regions, solution, random) {
   const level = {
     size: regions.length,
@@ -239,49 +261,18 @@ function refineRegionsToUnique(regions, solution, random) {
     const alternative =
       solved.solutions.find((candidate) => !sameSolution(candidate, solution)) ||
       solved.solutions[0];
-    let changed = false;
-
-    if (alternative) {
-      for (const move of buildBoundaryMoves(regions, solution, random, alternative)) {
-        const sourceRegion = regions[move.row][move.column];
-        if (
-          tryReassignCell(
-            regions,
-            move.row,
-            move.column,
-            move.destinationRegion,
-          )
-        ) {
-          const nextSignature = JSON.stringify(Core.canonicalizeRegions(regions));
-          if (!seenLayouts.has(nextSignature)) {
-            changed = true;
-            break;
-          }
-          regions[move.row][move.column] = sourceRegion;
-        }
-      }
-    }
-
-    if (!changed) {
-      for (const move of buildBoundaryMoves(regions, solution, random)) {
-        const sourceRegion = regions[move.row][move.column];
-        if (
-          tryReassignCell(
-            regions,
-            move.row,
-            move.column,
-            move.destinationRegion,
-          )
-        ) {
-          const nextSignature = JSON.stringify(Core.canonicalizeRegions(regions));
-          if (!seenLayouts.has(nextSignature)) {
-            changed = true;
-            break;
-          }
-          regions[move.row][move.column] = sourceRegion;
-        }
-      }
-    }
+    const changed =
+      (alternative &&
+        tryBoundaryMoves(
+          regions,
+          buildBoundaryMoves(regions, solution, random, alternative),
+          seenLayouts,
+        )) ||
+      tryBoundaryMoves(
+        regions,
+        buildBoundaryMoves(regions, solution, random),
+        seenLayouts,
+      );
 
     if (!changed) {
       return null;
@@ -291,9 +282,8 @@ function refineRegionsToUnique(regions, solution, random) {
   return null;
 }
 
-function generatePack(pack) {
+function generatePack(pack, signatures = new Set(), onProgress = () => {}) {
   const accepted = [];
-  const signatures = new Set();
   let attempts = 0;
 
   while (accepted.length < pack.levelCount) {
@@ -347,12 +337,13 @@ function generatePack(pack) {
     }
 
     signatures.add(signature);
+    candidate.id = `${pack.id}-${String(accepted.length + 1).padStart(3, '0')}`;
     candidate.solution = solved.firstSolution;
     candidate.difficultyScore =
       solved.nodesVisited + solved.backtracks * pack.size;
     accepted.push(candidate);
-    process.stdout.write(
-      `${pack.title}：${accepted.length}/${pack.levelCount}（嘗試 ${attempts}）\n`,
+    onProgress(
+      `${pack.title}：${accepted.length}/${pack.levelCount}（嘗試 ${attempts}）`,
     );
   }
 
@@ -363,7 +354,6 @@ function generatePack(pack) {
     )
     .map((level, index) => ({
       ...level,
-      id: `${pack.id}-${String(index + 1).padStart(3, '0')}`,
       ordinal: index + 1,
     }));
 }
@@ -400,9 +390,22 @@ function main() {
     throw new Error(`找不到關卡包：${process.env.CAT_PACK_ID}`);
   }
 
-  const levels = selectedPacks.flatMap(generatePack);
+  const signatures = new Set();
+  const levels = selectedPacks.flatMap((pack) =>
+    generatePack(pack, signatures, (message) =>
+      process.stdout.write(`${message}\n`),
+    ),
+  );
   fs.writeFileSync(OUTPUT_PATH, serializeLevels(levels), 'utf8');
   process.stdout.write(`已寫入 ${levels.length} 關：${OUTPUT_PATH}\n`);
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = Object.freeze({
+  createPrng,
+  generatePack,
+  serializeLevels,
+});
