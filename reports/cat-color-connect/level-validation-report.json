@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T19:56:55.592Z",
+  "generatedAt": "2026-07-27T19:59:21.983Z",
   "generatorVersion": "1.0.0",
   "masterSeed": 1128354866,
   "expectedCount": 100,
@@ -7,7 +7,7 @@
   "uniqueEndpointCount": 100,
   "uniqueSolutionCount": 100,
   "failureCount": 0,
-  "durationMs": 17153,
+  "durationMs": 16923,
   "distribution": {
     "6x6": 40,
     "8x8": 35,
@@ -31,7 +31,7 @@
       "backtracks": 0,
       "difficultyScore": 190,
       "coverage": 100,
-      "validationMs": 5
+      "validationMs": 4
     },
     {
       "id": "6x6-002",
@@ -136,7 +136,7 @@
       "backtracks": 5,
       "difficultyScore": 283,
       "coverage": 100,
-      "validationMs": 2
+      "validationMs": 1
     },
     {
       "id": "6x6-009",
@@ -166,7 +166,7 @@
       "backtracks": 10,
       "difficultyScore": 370,
       "coverage": 100,
-      "validationMs": 2
+      "validationMs": 1
     },
     {
       "id": "6x6-011",
@@ -196,7 +196,7 @@
       "backtracks": 11,
       "difficultyScore": 400,
       "coverage": 100,
-      "validationMs": 2
+      "validationMs": 1
     },
     {
       "id": "6x6-013",
@@ -226,7 +226,7 @@
       "backtracks": 18,
       "difficultyScore": 508,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 3
     },
     {
       "id": "6x6-015",
@@ -241,7 +241,7 @@
       "backtracks": 17,
       "difficultyScore": 514,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 2
     },
     {
       "id": "6x6-016",
@@ -271,7 +271,7 @@
       "backtracks": 19,
       "difficultyScore": 536,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 0
     },
     {
       "id": "6x6-018",
@@ -286,7 +286,7 @@
       "backtracks": 20,
       "difficultyScore": 547,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 2
     },
     {
       "id": "6x6-019",
@@ -331,7 +331,7 @@
       "backtracks": 23,
       "difficultyScore": 602,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 2
     },
     {
       "id": "6x6-022",
@@ -361,7 +361,7 @@
       "backtracks": 26,
       "difficultyScore": 653,
       "coverage": 100,
-      "validationMs": 3
+      "validationMs": 2
     },
     {
       "id": "6x6-024",
@@ -391,7 +391,7 @@
       "backtracks": 30,
       "difficultyScore": 719,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 2
     },
     {
       "id": "6x6-026",
@@ -421,7 +421,7 @@
       "backtracks": 40,
       "difficultyScore": 888,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 2
     },
     {
       "id": "6x6-028",
@@ -436,7 +436,7 @@
       "backtracks": 42,
       "difficultyScore": 951,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 2
     },
     {
       "id": "6x6-029",
@@ -451,7 +451,7 @@
       "backtracks": 44,
       "difficultyScore": 977,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 3
     },
     {
       "id": "6x6-030",
@@ -466,7 +466,7 @@
       "backtracks": 54,
       "difficultyScore": 1141,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 3
     },
     {
       "id": "6x6-031",
@@ -481,7 +481,7 @@
       "backtracks": 53,
       "difficultyScore": 1151,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 3
     },
     {
       "id": "6x6-032",
@@ -496,7 +496,7 @@
       "backtracks": 61,
       "difficultyScore": 1244,
       "coverage": 100,
-      "validationMs": 2
+      "validationMs": 1
     },
     {
       "id": "6x6-033",
@@ -511,7 +511,7 @@
       "backtracks": 59,
       "difficultyScore": 1256,
       "coverage": 100,
-      "validationMs": 5
+      "validationMs": 1
     },
     {
       "id": "6x6-034",
@@ -586,7 +586,7 @@
       "backtracks": 112,
       "difficultyScore": 2109,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 3
     },
     {
       "id": "6x6-039",
@@ -601,7 +601,7 @@
       "backtracks": 149,
       "difficultyScore": 2785,
       "coverage": 100,
-      "validationMs": 4
+      "validationMs": 7
     },
     {
       "id": "6x6-040",
@@ -616,7 +616,7 @@
       "backtracks": 168,
       "difficultyScore": 3171,
       "coverage": 100,
-      "validationMs": 4
+      "validationMs": 6
     },
     {
       "id": "8x8-001",
@@ -631,7 +631,7 @@
       "backtracks": 29,
       "difficultyScore": 843,
       "coverage": 100,
-      "validationMs": 3
+      "validationMs": 4
     },
     {
       "id": "8x8-002",
@@ -661,7 +661,7 @@
       "backtracks": 40,
       "difficultyScore": 1048,
       "coverage": 100,
-      "validationMs": 2
+      "validationMs": 3
     },
     {
       "id": "8x8-004",
@@ -676,7 +676,7 @@
       "backtracks": 58,
       "difficultyScore": 1382,
       "coverage": 100,
-      "validationMs": 5
+      "validationMs": 2
     },
     {
       "id": "8x8-005",
@@ -691,7 +691,7 @@
       "backtracks": 70,
       "difficultyScore": 1596,
       "coverage": 100,
-      "validationMs": 4
+      "validationMs": 5
     },
     {
       "id": "8x8-006",
@@ -706,7 +706,7 @@
       "backtracks": 87,
       "difficultyScore": 1896,
       "coverage": 100,
-      "validationMs": 3
+      "validationMs": 4
     },
     {
       "id": "8x8-007",
@@ -721,7 +721,7 @@
       "backtracks": 97,
       "difficultyScore": 2071,
       "coverage": 100,
-      "validationMs": 6
+      "validationMs": 4
     },
     {
       "id": "8x8-008",
@@ -736,7 +736,7 @@
       "backtracks": 120,
       "difficultyScore": 2491,
       "coverage": 100,
-      "validationMs": 3
+      "validationMs": 5
     },
     {
       "id": "8x8-009",
@@ -751,7 +751,7 @@
       "backtracks": 127,
       "difficultyScore": 2611,
       "coverage": 100,
-      "validationMs": 6
+      "validationMs": 5
     },
     {
       "id": "8x8-010",
@@ -766,7 +766,7 @@
       "backtracks": 197,
       "difficultyScore": 3818,
       "coverage": 100,
-      "validationMs": 19
+      "validationMs": 11
     },
     {
       "id": "8x8-011",
@@ -781,7 +781,7 @@
       "backtracks": 264,
       "difficultyScore": 4907,
       "coverage": 100,
-      "validationMs": 10
+      "validationMs": 6
     },
     {
       "id": "8x8-012",
@@ -796,7 +796,7 @@
       "backtracks": 305,
       "difficultyScore": 5833,
       "coverage": 100,
-      "validationMs": 27
+      "validationMs": 18
     },
     {
       "id": "8x8-013",
@@ -811,7 +811,7 @@
       "backtracks": 314,
       "difficultyScore": 5952,
       "coverage": 100,
-      "validationMs": 18
+      "validationMs": 19
     },
     {
       "id": "8x8-014",
@@ -826,7 +826,7 @@
       "backtracks": 358,
       "difficultyScore": 6783,
       "coverage": 100,
-      "validationMs": 18
+      "validationMs": 24
     },
     {
       "id": "8x8-015",
@@ -841,7 +841,7 @@
       "backtracks": 386,
       "difficultyScore": 7298,
       "coverage": 100,
-      "validationMs": 17
+      "validationMs": 9
     },
     {
       "id": "8x8-016",
@@ -856,7 +856,7 @@
       "backtracks": 509,
       "difficultyScore": 9404,
       "coverage": 100,
-      "validationMs": 39
+      "validationMs": 34
     },
     {
       "id": "8x8-017",
@@ -871,7 +871,7 @@
       "backtracks": 534,
       "difficultyScore": 9790,
       "coverage": 100,
-      "validationMs": 34
+      "validationMs": 30
     },
     {
       "id": "8x8-018",
@@ -886,7 +886,7 @@
       "backtracks": 568,
       "difficultyScore": 10455,
       "coverage": 100,
-      "validationMs": 27
+      "validationMs": 23
     },
     {
       "id": "8x8-019",
@@ -901,7 +901,7 @@
       "backtracks": 686,
       "difficultyScore": 12682,
       "coverage": 100,
-      "validationMs": 29
+      "validationMs": 25
     },
     {
       "id": "8x8-020",
@@ -916,7 +916,7 @@
       "backtracks": 815,
       "difficultyScore": 14972,
       "coverage": 100,
-      "validationMs": 47
+      "validationMs": 54
     },
     {
       "id": "8x8-021",
@@ -931,7 +931,7 @@
       "backtracks": 1068,
       "difficultyScore": 19346,
       "coverage": 100,
-      "validationMs": 33
+      "validationMs": 39
     },
     {
       "id": "8x8-022",
@@ -946,7 +946,7 @@
       "backtracks": 1077,
       "difficultyScore": 19493,
       "coverage": 100,
-      "validationMs": 58
+      "validationMs": 63
     },
     {
       "id": "8x8-023",
@@ -961,7 +961,7 @@
       "backtracks": 1214,
       "difficultyScore": 21041,
       "coverage": 100,
-      "validationMs": 35
+      "validationMs": 37
     },
     {
       "id": "8x8-024",
@@ -976,7 +976,7 @@
       "backtracks": 1203,
       "difficultyScore": 21705,
       "coverage": 100,
-      "validationMs": 60
+      "validationMs": 67
     },
     {
       "id": "8x8-025",
@@ -991,7 +991,7 @@
       "backtracks": 1461,
       "difficultyScore": 26223,
       "coverage": 100,
-      "validationMs": 45
+      "validationMs": 49
     },
     {
       "id": "8x8-026",
@@ -1006,7 +1006,7 @@
       "backtracks": 1721,
       "difficultyScore": 30202,
       "coverage": 100,
-      "validationMs": 48
+      "validationMs": 88
     },
     {
       "id": "8x8-027",
@@ -1021,7 +1021,7 @@
       "backtracks": 1725,
       "difficultyScore": 30831,
       "coverage": 100,
-      "validationMs": 61
+      "validationMs": 80
     },
     {
       "id": "8x8-028",
@@ -1036,7 +1036,7 @@
       "backtracks": 1781,
       "difficultyScore": 32310,
       "coverage": 100,
-      "validationMs": 69
+      "validationMs": 63
     },
     {
       "id": "8x8-029",
@@ -1051,7 +1051,7 @@
       "backtracks": 2589,
       "difficultyScore": 46962,
       "coverage": 100,
-      "validationMs": 90
+      "validationMs": 88
     },
     {
       "id": "8x8-030",
@@ -1066,7 +1066,7 @@
       "backtracks": 2685,
       "difficultyScore": 47851,
       "coverage": 100,
-      "validationMs": 127
+      "validationMs": 87
     },
     {
       "id": "8x8-031",
@@ -1081,7 +1081,7 @@
       "backtracks": 3318,
       "difficultyScore": 58821,
       "coverage": 100,
-      "validationMs": 106
+      "validationMs": 126
     },
     {
       "id": "8x8-032",
@@ -1096,7 +1096,7 @@
       "backtracks": 3741,
       "difficultyScore": 64566,
       "coverage": 100,
-      "validationMs": 82
+      "validationMs": 85
     },
     {
       "id": "8x8-033",
@@ -1111,7 +1111,7 @@
       "backtracks": 10288,
       "difficultyScore": 182185,
       "coverage": 100,
-      "validationMs": 358
+      "validationMs": 343
     },
     {
       "id": "8x8-034",
@@ -1126,7 +1126,7 @@
       "backtracks": 12190,
       "difficultyScore": 213217,
       "coverage": 100,
-      "validationMs": 286
+      "validationMs": 386
     },
     {
       "id": "8x8-035",
@@ -1141,7 +1141,7 @@
       "backtracks": 24707,
       "difficultyScore": 433732,
       "coverage": 100,
-      "validationMs": 692
+      "validationMs": 601
     },
     {
       "id": "10x10-001",
@@ -1156,7 +1156,7 @@
       "backtracks": 31293,
       "difficultyScore": 561630,
       "coverage": 100,
-      "validationMs": 2195
+      "validationMs": 2212
     },
     {
       "id": "10x10-002",
@@ -1171,7 +1171,7 @@
       "backtracks": 105079,
       "difficultyScore": 1820046,
       "coverage": 100,
-      "validationMs": 4793
+      "validationMs": 4934
     },
     {
       "id": "10x10-003",
@@ -1186,7 +1186,7 @@
       "backtracks": 202690,
       "difficultyScore": 3591125,
       "coverage": 100,
-      "validationMs": 6653
+      "validationMs": 6501
     },
     {
       "id": "6x8-001",
@@ -1201,7 +1201,7 @@
       "backtracks": 0,
       "difficultyScore": 236,
       "coverage": 100,
-      "validationMs": 0
+      "validationMs": 1
     },
     {
       "id": "6x8-002",
@@ -1216,7 +1216,7 @@
       "backtracks": 0,
       "difficultyScore": 240,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 0
     },
     {
       "id": "6x8-003",
@@ -1231,7 +1231,7 @@
       "backtracks": 1,
       "difficultyScore": 262,
       "coverage": 100,
-      "validationMs": 0
+      "validationMs": 1
     },
     {
       "id": "6x8-004",
@@ -1246,7 +1246,7 @@
       "backtracks": 2,
       "difficultyScore": 270,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 0
     },
     {
       "id": "6x8-005",
@@ -1261,7 +1261,7 @@
       "backtracks": 13,
       "difficultyScore": 481,
       "coverage": 100,
-      "validationMs": 0
+      "validationMs": 1
     },
     {
       "id": "6x8-006",
@@ -1276,7 +1276,7 @@
       "backtracks": 33,
       "difficultyScore": 831,
       "coverage": 100,
-      "validationMs": 3
+      "validationMs": 2
     },
     {
       "id": "6x8-007",
@@ -1306,7 +1306,7 @@
       "backtracks": 61,
       "difficultyScore": 1337,
       "coverage": 100,
-      "validationMs": 2
+      "validationMs": 1
     },
     {
       "id": "6x8-009",
@@ -1321,7 +1321,7 @@
       "backtracks": 78,
       "difficultyScore": 1614,
       "coverage": 100,
-      "validationMs": 3
+      "validationMs": 2
     },
     {
       "id": "6x8-010",
@@ -1336,7 +1336,7 @@
       "backtracks": 124,
       "difficultyScore": 2439,
       "coverage": 100,
-      "validationMs": 5
+      "validationMs": 4
     },
     {
       "id": "6x10-001",
@@ -1366,7 +1366,7 @@
       "backtracks": 1,
       "difficultyScore": 310,
       "coverage": 100,
-      "validationMs": 1
+      "validationMs": 0
     },
     {
       "id": "6x10-003",
@@ -1396,7 +1396,7 @@
       "backtracks": 357,
       "difficultyScore": 6729,
       "coverage": 100,
-      "validationMs": 12
+      "validationMs": 8
     },
     {
       "id": "6x10-005",
@@ -1411,7 +1411,7 @@
       "backtracks": 815,
       "difficultyScore": 14913,
       "coverage": 100,
-      "validationMs": 33
+      "validationMs": 27
     },
     {
       "id": "6x10-006",
@@ -1426,7 +1426,7 @@
       "backtracks": 1100,
       "difficultyScore": 19109,
       "coverage": 100,
-      "validationMs": 45
+      "validationMs": 22
     },
     {
       "id": "8x10-001",
@@ -1456,7 +1456,7 @@
       "backtracks": 2,
       "difficultyScore": 438,
       "coverage": 100,
-      "validationMs": 3
+      "validationMs": 1
     },
     {
       "id": "8x10-003",
@@ -1471,7 +1471,7 @@
       "backtracks": 26,
       "difficultyScore": 880,
       "coverage": 100,
-      "validationMs": 6
+      "validationMs": 2
     },
     {
       "id": "8x10-004",
@@ -1486,7 +1486,7 @@
       "backtracks": 305,
       "difficultyScore": 5892,
       "coverage": 100,
-      "validationMs": 42
+      "validationMs": 21
     },
     {
       "id": "8x10-005",
@@ -1501,7 +1501,7 @@
       "backtracks": 2385,
       "difficultyScore": 43364,
       "coverage": 100,
-      "validationMs": 108
+      "validationMs": 86
     },
     {
       "id": "8x10-006",
@@ -1516,7 +1516,7 @@
       "backtracks": 15915,
       "difficultyScore": 278875,
       "coverage": 100,
-      "validationMs": 680
+      "validationMs": 505
     }
   ]
 }

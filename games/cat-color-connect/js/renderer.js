@@ -72,10 +72,12 @@
       for (const className of ['route-line-shadow', 'route-line']) {
         const line = document.createElementNS(SVG_NS, 'polyline');
         line.setAttribute('points', points);
-        line.setAttribute('vector-effect', 'non-scaling-stroke');
         line.classList.add(className);
         if (className === 'route-line') {
+          line.setAttribute('stroke-width', '0.56');
           line.style.setProperty('--route-color', color.value);
+        } else {
+          line.setAttribute('stroke-width', '0.72');
         }
         fragments.push(line);
       }
