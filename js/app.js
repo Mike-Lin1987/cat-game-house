@@ -109,6 +109,7 @@
     elapsed: 0,
     completed: false,
     hintCell: null,
+    lastCellClick: null,
   };
 
   function saveProgress() {
@@ -452,7 +453,7 @@
             ${renderBoard()}
             <p class="game-status">
               ${icon(state.completed ? 'star' : 'fish')}
-              <span>${state.completed ? '關卡完成！棋盤已鎖定。' : '進行中：點一下標記 X，再點一下放置貓咪。'}</span>
+              <span>${state.completed ? '關卡完成！棋盤已鎖定。' : '進行中：點一下標記 X，0.5 秒內再點一下放置貓咪；稍後再點可取消。'}</span>
             </p>
           </section>
         </div>
@@ -509,6 +510,7 @@
     state.elapsed = 0;
     state.completed = false;
     state.hintCell = null;
+    state.lastCellClick = null;
     render();
     announce(`${getPack(level.packId).title}第 ${level.ordinal} 關開始。`);
     app.querySelector('.board-cell')?.focus();
@@ -673,8 +675,19 @@
       return;
     }
 
+    const clickedAt = Date.now();
+    const isSameCell =
+      state.lastCellClick?.row === row &&
+      state.lastCellClick?.column === column;
+    const elapsedSincePreviousClick = isSameCell
+      ? clickedAt - state.lastCellClick.clickedAt
+      : Infinity;
     const previousState = state.board[row][column];
-    const nextState = Core.cycleCellState(previousState);
+    const nextState = Core.cycleCellState(
+      previousState,
+      elapsedSincePreviousClick,
+    );
+    state.lastCellClick = { row, column, clickedAt };
     state.history.push({ row, column, previousState, nextState });
     state.board[row][column] = nextState;
     state.moves += 1;
@@ -728,6 +741,7 @@
 
     state.board[move.row][move.column] = move.previousState;
     state.hintCell = null;
+    state.lastCellClick = null;
     const triggerToken = createFocusToken(trigger);
     render();
     restoreAppFocus(triggerToken, '[data-action="hint"]');
@@ -739,6 +753,7 @@
     state.screen = 'select';
     state.currentLevel = null;
     state.hintCell = null;
+    state.lastCellClick = null;
     render();
     app.querySelector('.pack-header')?.focus();
   }
@@ -767,6 +782,10 @@
     }
 
     const action = button.dataset.action;
+    if (action !== 'cycle-cell') {
+      state.lastCellClick = null;
+    }
+
     if (action === 'settings') {
       openSettings(button);
     } else if (action === 'toggle-pack') {

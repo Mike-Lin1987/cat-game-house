@@ -37,11 +37,18 @@ function reasonSet(result, row, column) {
   return new Set(cell ? cell.reasons : []);
 }
 
-test('格子狀態依空白、X、貓咪、空白循環', () => {
+test('單擊空白格會標記 X，只有 0.5 秒內再次點擊 X 才放置貓咪', () => {
   const { CELL_STATE, cycleCellState } = Core;
 
   assert.equal(cycleCellState(CELL_STATE.EMPTY), CELL_STATE.X);
-  assert.equal(cycleCellState(CELL_STATE.X), CELL_STATE.CAT);
+  assert.equal(cycleCellState(CELL_STATE.X, 500), CELL_STATE.CAT);
+  assert.equal(cycleCellState(CELL_STATE.X, 501), CELL_STATE.EMPTY);
+});
+
+test('再次點擊貓咪會取消為空白', () => {
+  const { CELL_STATE, cycleCellState } = Core;
+
+  assert.equal(cycleCellState(CELL_STATE.CAT, 100), CELL_STATE.EMPTY);
   assert.equal(cycleCellState(CELL_STATE.CAT), CELL_STATE.EMPTY);
 });
 

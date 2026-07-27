@@ -19,13 +19,15 @@
     CAT: 2,
   });
 
-  function cycleCellState(currentState) {
+  function cycleCellState(currentState, elapsedSincePreviousClick = Infinity) {
     if (currentState === CELL_STATE.EMPTY) {
       return CELL_STATE.X;
     }
 
     if (currentState === CELL_STATE.X) {
-      return CELL_STATE.CAT;
+      return elapsedSincePreviousClick <= 500
+        ? CELL_STATE.CAT
+        : CELL_STATE.EMPTY;
     }
 
     return CELL_STATE.EMPTY;
