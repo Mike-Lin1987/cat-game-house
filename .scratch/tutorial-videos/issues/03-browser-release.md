@@ -1,6 +1,6 @@
 # 03 瀏覽器 QA 與發布
 
-Status: in_progress
+Status: done
 
 Blocked by: 02-video-assets
 
