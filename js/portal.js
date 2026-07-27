@@ -4,6 +4,7 @@
   const catalog = window.CAT_GAME_CATALOG || [];
   const gameList = document.querySelector('#game-list');
   const arrowSymbol = document.querySelector('#portal-arrow');
+  const playSymbol = document.querySelector('#portal-play');
 
   if (!gameList) {
     return;
@@ -60,9 +61,25 @@
 
     const body = document.createElement('div');
     body.className = 'game-card-body';
+    const titleRow = document.createElement('div');
+    titleRow.className = 'game-title-row';
+    titleRow.append(createTextElement('h2', '', game.title));
+
+    const tutorialLink = document.createElement('a');
+    tutorialLink.className = 'tutorial-link';
+    tutorialLink.href = resolveRuntimeHref(game.tutorialHref);
+    tutorialLink.setAttribute('aria-label', `${game.title}教學影片`);
+
+    const tutorialIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    tutorialIcon.setAttribute('viewBox', playSymbol.getAttribute('viewBox'));
+    tutorialIcon.setAttribute('aria-hidden', 'true');
+    tutorialIcon.innerHTML = playSymbol.innerHTML;
+    tutorialLink.append(tutorialIcon, createTextElement('span', '', '教學影片'));
+
+    titleRow.append(tutorialLink);
     body.append(
       createTextElement('p', 'game-eyebrow', game.eyebrow),
-      createTextElement('h2', '', game.title),
+      titleRow,
       createTextElement('p', 'game-description', game.description),
       createMetadata(game),
     );

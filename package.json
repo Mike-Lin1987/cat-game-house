@@ -8,6 +8,7 @@
     "test": "node --test",
     "generate-levels": "node scripts/generate-levels.js",
     "generate-cat-connect-levels": "node scripts/cat-color-connect/generate-levels.js",
+    "fix-tutorial-video-duration": "node scripts/tutorial-videos/fix-webm-duration.js --duration-ms 24500 games/cat-grid/tutorial.webm games/cat-color-connect/tutorial.webm",
     "validate-cat-connect-levels": "node scripts/cat-color-connect/validate-levels.js",
     "validate-levels": "node --test tests/levels.test.js tests/packs.test.js",
     "validate-offline": "node scripts/validate-offline.js",

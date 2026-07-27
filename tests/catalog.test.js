@@ -23,6 +23,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       title: game.title,
       eyebrow: game.eyebrow,
       href: game.href,
+      tutorialHref: game.tutorialHref,
       levelCount: game.levelCount,
       offline: game.offline,
     },
@@ -31,6 +32,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       title: '貓咪方格',
       eyebrow: '邏輯益智 · 單人',
       href: './games/cat-grid/index.html',
+      tutorialHref: './games/cat-grid/tutorial.html',
       levelCount: 100,
       offline: true,
     },
@@ -40,6 +42,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       id: secondGame.id,
       title: secondGame.title,
       href: secondGame.href,
+      tutorialHref: secondGame.tutorialHref,
       levelCount: secondGame.levelCount,
       offline: secondGame.offline,
     },
@@ -47,6 +50,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       id: 'cat-color-connect',
       title: '貓咪彩色連線',
       href: './games/cat-color-connect/index.html',
+      tutorialHref: './games/cat-color-connect/tutorial.html',
       levelCount: 100,
       offline: true,
     },
@@ -58,7 +62,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
 
 test('catalog 的頁面、封面與離線資源全部位於專案內', () => {
   for (const game of CAT_GAME_CATALOG) {
-    const paths = [game.href, game.cover, ...game.offlineAssets];
+    const paths = [game.href, game.tutorialHref, game.cover, ...game.offlineAssets];
     for (const relativePath of paths) {
       assert.doesNotMatch(relativePath, /^(?:https?:)?\/\//i);
       const normalized = normalizeLocalAssetPath(relativePath);

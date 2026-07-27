@@ -19,6 +19,8 @@
 
 ## 目前遊戲
 
+入口網站的每款遊戲名稱旁都有「教學影片」連結。兩支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
+
 ### 貓咪方格
 
 規則：
@@ -67,7 +69,7 @@
 
 1. 在 `games/<game-id>/` 放入可直接執行的遊戲頁與資源。
 2. 在 `assets/game-covers/` 加入入口卡片封面。
-3. 在 `CAT_GAME_CATALOG` 新增一筆資料，包含穩定 `id`、標題、卡片眉題 `eyebrow`、說明、明確 HTML 入口 `href`、封面與 `offlineAssets`。
+3. 在 `CAT_GAME_CATALOG` 新增一筆資料，包含穩定 `id`、標題、卡片眉題 `eyebrow`、說明、明確 HTML 入口 `href`、教學頁 `tutorialHref`、封面與 `offlineAssets`。
 4. 執行 `npm run verify`。
 
 入口 UI 與 Service Worker 都會依 catalog 自動處理新遊戲，不需要修改核心程式。
@@ -111,6 +113,14 @@ npm run build
 
 `npm run build` 是 GPT Sites 專用的零依賴靜態複製步驟，輸出至忽略版控的 `dist/`；直接雙擊 source `index.html` 不需要先建置。
 
+教學影片的可重現 Canvas 場景位於 `scripts/tutorial-videos/`。以本機靜態伺服器開啟 `generator.html`，分別產生兩支 WebM 後放回各遊戲目錄，再執行：
+
+```powershell
+npm run fix-tutorial-video-duration
+```
+
+此步驟會補上 Chrome MediaRecorder 輸出缺少的 24.5 秒 duration metadata，讓播放控制列可正確顯示與拖曳。
+
 完整關卡重建約需數分鐘：
 
 ```powershell
@@ -132,6 +142,8 @@ npm run generate-levels
 - `manifest.webmanifest`、`service-worker.js`、`js/pwa.js`：安裝與離線能力。
 - `games/cat-grid/index.html`：貓咪方格獨立入口。
 - `games/cat-color-connect/`：貓咪彩色連線獨立 runtime、固定關卡及資料驅動 UI。
+- `games/*/tutorial.html`、`tutorial.webm`：各遊戲的離線教學頁與影片。
+- `assets/tutorials/`、`scripts/tutorial-videos/`：共用教學頁樣式及可重現影片產製工具。
 - `styles.css`、`js/app.js`：貓咪方格 UI 與遊戲流程。
 - `js/packs.js`、`js/core.js`、`js/levels.js`：關卡設定、規則與固定 100 關。
 - `scripts/`、`tests/`：產生、離線稽核與自動化驗證。

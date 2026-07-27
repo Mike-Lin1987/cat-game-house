@@ -16,13 +16,18 @@
       eyebrow: '邏輯益智 · 單人',
       description: '在每列、每欄與每個彩色區域放入一隻貓咪',
       href: './games/cat-grid/index.html',
+      tutorialHref: './games/cat-grid/tutorial.html',
       cover: './assets/game-covers/cat-grid.svg',
       levelCount: 100,
       offline: true,
       accent: '#ff8e68',
       offlineAssets: Object.freeze([
         './games/cat-grid/index.html',
+        './games/cat-grid/tutorial.html',
+        './games/cat-grid/tutorial.webm',
         './styles.css',
+        './assets/tutorials/tutorial.css',
+        './js/tutorial-page.js',
         './js/packs.js',
         './js/core.js',
         './js/levels.js',
@@ -36,13 +41,18 @@
       eyebrow: '路線益智 · 單人',
       description: '連接相同貓咪，讓繽紛路線填滿每一格',
       href: './games/cat-color-connect/index.html',
+      tutorialHref: './games/cat-color-connect/tutorial.html',
       cover: './assets/game-covers/cat-color-connect.svg',
       levelCount: 100,
       offline: true,
       accent: '#118a83',
       offlineAssets: Object.freeze([
         './games/cat-color-connect/index.html',
+        './games/cat-color-connect/tutorial.html',
+        './games/cat-color-connect/tutorial.webm',
         './games/cat-color-connect/styles.css',
+        './assets/tutorials/tutorial.css',
+        './js/tutorial-page.js',
         './games/cat-color-connect/js/config.js',
         './games/cat-color-connect/js/core.js',
         './games/cat-color-connect/js/storage.js',
@@ -116,7 +126,7 @@
         }
       }
 
-      for (const field of ['href', 'cover']) {
+      for (const field of ['href', 'tutorialHref', 'cover']) {
         if (!isLocalRelativePath(game[field])) {
           errors.push(`${label} 的 ${field} 必須是本機相對路徑`);
         }

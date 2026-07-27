@@ -9,7 +9,7 @@ const {
 } = require('../js/game-catalog.js');
 
 const ROOT = path.resolve(__dirname, '..');
-const REQUIRED_FILES = [
+const BASE_RUNTIME_FILES = [
   'index.html',
   'portal.css',
   'manifest.webmanifest',
@@ -43,10 +43,16 @@ const REQUIRED_FILES = [
   'games/cat-color-connect/js/levels.js',
   'assets/game-covers/cat-color-connect.svg',
 ];
+const CATALOG_RUNTIME_FILES = CAT_GAME_CATALOG.flatMap((game) =>
+  [game.href, game.tutorialHref, game.cover, ...game.offlineAssets]
+    .map(normalizeLocalAssetPath)
+    .filter(Boolean),
+);
+const REQUIRED_FILES = [
+  ...new Set([...BASE_RUNTIME_FILES, ...CATALOG_RUNTIME_FILES]),
+];
 const TEXT_RUNTIME_FILES = REQUIRED_FILES.filter(
-  (relativePath) =>
-    !relativePath.endsWith('.webmanifest') &&
-    !relativePath.endsWith('.png'),
+  (relativePath) => /\.(?:css|html|js|svg)$/i.test(relativePath),
 );
 const errors = [];
 
@@ -107,7 +113,7 @@ if (
 
 errors.push(...validateGameCatalog(CAT_GAME_CATALOG));
 for (const game of CAT_GAME_CATALOG) {
-  const gamePaths = [game.href, game.cover, ...game.offlineAssets];
+  const gamePaths = [game.href, game.tutorialHref, game.cover, ...game.offlineAssets];
   for (const relativePath of gamePaths) {
     const normalized = normalizeLocalAssetPath(relativePath);
     if (!normalized) {
