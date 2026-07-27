@@ -71,7 +71,10 @@ npm test
 npm run validate-levels
 npm run validate-offline
 npm run verify
+npm run build
 ```
+
+`npm run build` 是 GPT Sites 專用的零依賴靜態複製步驟，輸出至忽略版控的 `dist/`；直接雙擊 source `index.html` 不需要先建置。
 
 完整關卡重建約需數分鐘：
 
@@ -95,4 +98,5 @@ npm run generate-levels
 - `styles.css`、`js/app.js`：貓咪方格 UI 與遊戲流程。
 - `js/packs.js`、`js/core.js`、`js/levels.js`：關卡設定、規則與固定 100 關。
 - `scripts/`、`tests/`：產生、離線稽核與自動化驗證。
+- `worker/`、`scripts/build-site.js`：GPT Sites 靜態託管包裝，不參與本機遊戲 runtime。
 - `docs/design/`：核准概念圖與視覺 fidelity ledger。
