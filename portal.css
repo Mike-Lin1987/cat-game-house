@@ -399,20 +399,35 @@ button:focus-visible {
 
   .portal-header {
     min-height: 74px;
+    padding: 10px;
+    gap: 8px;
     border-radius: 20px;
   }
 
-  .install-button {
-    width: 48px;
-    padding: 0;
+  .portal-brand {
+    gap: 6px;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
   }
 
-  .install-button span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+  .portal-brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .install-button {
+    min-height: 44px;
+    padding: 0 10px;
+    flex: 0 0 auto;
+    gap: 6px;
+    border-radius: 14px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .install-button svg {
+    width: 20px;
+    height: 20px;
   }
 
   .portal-intro {

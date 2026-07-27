@@ -78,6 +78,24 @@ test('PWA 腳本在 file 協定不註冊，並支援原生安裝提示', () => {
   assert.match(pwa, /data-install-app/);
 });
 
+test('手機版安裝按鈕保留可見的「安裝到手機」文字', () => {
+  const portal = read('index.html');
+  const styles = read('portal.css');
+
+  assert.match(
+    portal,
+    /data-install-app[\s\S]*?<span>安裝到手機<\/span>/,
+  );
+  assert.doesNotMatch(
+    styles,
+    /\.install-button span\s*\{[^}]*clip:\s*rect\(0,\s*0,\s*0,\s*0\)/s,
+  );
+  assert.match(
+    styles,
+    /@media \(max-width: 720px\)[\s\S]*?\.install-button\s*\{[^}]*white-space:\s*nowrap/s,
+  );
+});
+
 test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () => {
   const portalScript = read('js/portal.js');
   const gameScript = read('js/app.js');
