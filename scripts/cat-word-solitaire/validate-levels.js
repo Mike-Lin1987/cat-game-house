@@ -3,6 +3,13 @@
 const Core = require('../../games/cat-word-solitaire/js/core.js');
 const Solver = require('../../games/cat-word-solitaire/js/solver.js');
 const LEVELS = require('../../games/cat-word-solitaire/js/data/levels-index.js');
+const {
+  GENERATOR_VERSION,
+  DIFFICULTY_PROFILES,
+  MAX_SOLVER_NODES,
+  MOVE_BUFFERS,
+  calculateDifficultyScore,
+} = require('./generate-layouts.js');
 
 const EXPECTED_HEIGHTS = Object.freeze([2, 3, 4, 5, 6]);
 const EXPECTED_TOTAL_CARDS = 54;
@@ -62,6 +69,11 @@ function analyzeLevels(levels = LEVELS) {
     }
     if (level.layoutVersion !== 2) {
       errors.push('layoutVersion 不是 2');
+    }
+    if (level.generatorVersion !== GENERATOR_VERSION) {
+      errors.push(
+        `generatorVersion 應為 ${GENERATOR_VERSION}，實際 ${level.generatorVersion}`,
+      );
     }
     if (level.cards.length !== EXPECTED_TOTAL_CARDS) {
       errors.push(`每關必須正好 ${EXPECTED_TOTAL_CARDS} 張牌，實際 ${level.cards.length}`);
@@ -154,7 +166,7 @@ function analyzeLevels(levels = LEVELS) {
     if (!known.solved) {
       errors.push('knownSolution 無法依實際規則完成');
     }
-    const solution = Solver.solveLevel(level, { maxNodes: 300000 });
+    const solution = Solver.solveLevel(level, { maxNodes: MAX_SOLVER_NODES });
     if (!solution.solved) {
       errors.push(`獨立求解失敗：${solution.reason}`);
     }
@@ -166,6 +178,42 @@ function analyzeLevels(levels = LEVELS) {
     }
     if (level.parMoves !== Core.calculateParMoves(level)) {
       errors.push('parMoves 公式錯誤');
+    }
+    const profile = DIFFICULTY_PROFILES[level.chapter - 1];
+    const expectedMoveLimit =
+      level.parMoves + MOVE_BUFFERS[level.chapter - 1];
+    if (level.moveLimit !== expectedMoveLimit) {
+      errors.push(
+        `moveLimit 應為 parMoves + ${MOVE_BUFFERS[level.chapter - 1]}`,
+      );
+    }
+    if (solution.nodesVisited < profile.minNodes) {
+      errors.push(`Solver 節點低於門檻 ${profile.minNodes}`);
+    }
+    if (solution.nodesVisited > MAX_SOLVER_NODES) {
+      errors.push(`Solver 節點超過上限 ${MAX_SOLVER_NODES}`);
+    }
+    if (solution.backtracks < profile.minBacktracks) {
+      errors.push(`Solver 回溯低於門檻 ${profile.minBacktracks}`);
+    }
+    if (solution.branchingStates < profile.minBranchingStates) {
+      errors.push(`Solver 分支低於門檻 ${profile.minBranchingStates}`);
+    }
+    for (const field of [
+      'nodesVisited',
+      'backtracks',
+      'branchingStates',
+      'dealDecisionStates',
+      'forcedMoves',
+    ]) {
+      if (level.solverStats?.[field] !== solution[field]) {
+        errors.push(`保存的 solverStats.${field} 與重新求解不符`);
+      }
+    }
+    if (
+      level.difficultyScore !== calculateDifficultyScore(solution, profile)
+    ) {
+      errors.push('difficultyScore 與真實搜尋統計不符');
     }
 
     levelResults.push({
@@ -189,6 +237,9 @@ function analyzeLevels(levels = LEVELS) {
       solverMoves: solution.movesUsed,
       solverNodes: solution.nodesVisited,
       solverBacktracks: solution.backtracks,
+      solverBranchingStates: solution.branchingStates,
+      solverDealDecisionStates: solution.dealDecisionStates,
+      solverForcedMoves: solution.forcedMoves,
       solverMaxDepth: solution.maxDepth,
       solverDurationMs: solution.durationMs,
       maxActiveCategories: solution.maxActiveCategories,

@@ -27,6 +27,7 @@ function createMemoryStorage(initial = null, throws = false) {
 function fiveColumnSession() {
   return {
     levelId: 'L018',
+    layoutSignature: 'layout-hard-v3-l018',
     state: {
       levelId: 'L018',
       columns: [[], [], [], [], []],
@@ -87,6 +88,31 @@ test('五欄 session 可保存與載回', () => {
   const session = Storage.loadSession(storage);
   assert.equal(session.state.columns.length, 5);
   assert.equal(session.state.categorySlots.length, 5);
+  assert.equal(session.layoutSignature, 'layout-hard-v3-l018');
+});
+
+test('session 只有在關卡 ID 與 layout signature 都相同時才相容', () => {
+  const session = fiveColumnSession();
+  const level = {
+    id: 'L018',
+    layoutSignature: 'layout-hard-v3-l018',
+  };
+
+  assert.equal(Storage.isSessionCompatible(session, level), true);
+  assert.equal(
+    Storage.isSessionCompatible(
+      { ...session, layoutSignature: 'layout-old-v2-l018' },
+      level,
+    ),
+    false,
+  );
+  assert.equal(
+    Storage.isSessionCompatible(
+      { ...session, layoutSignature: null },
+      level,
+    ),
+    false,
+  );
 });
 
 test('舊版四欄 session 被清除但完成紀錄與設定保留', () => {
@@ -149,4 +175,3 @@ test('儲存設定會正規化布林值', () => {
     largeText: true,
   });
 });
-

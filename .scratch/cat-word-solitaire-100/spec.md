@@ -70,6 +70,16 @@ movesUsed = Math.max(current.movesUsed, snapshot.movesUsed + 1)
 Solver 必須做真實發牌與五槽模擬、以 memoization 防止循環，找到一條
 符合 `moveLimit` 的完整解即可。關卡不要求唯一操作順序。
 
+### v3 難度強化
+
+- `generatorVersion: 3.0.0`，`layoutVersion` 維持 `2`。
+- 五章最低節點為 90／180／350／700／1,200；最低回溯為
+  1／5／15／40／80；最低分支狀態為 1／2／3／4／5。
+- 單關最多 25,000 節點，步數容錯依章為 `parMoves + 5／4／3／2／1`。
+- Solver 額外保存 `branchingStates`、`dealDecisionStates` 與
+  `forcedMoves`；分數同時使用真實搜尋統計及章節最低節點基準。
+- session 必須保存 `layoutSignature`；簽章不相容時只清除 session。
+
 ### `CatWordStorage`
 
 保存 `unlockedByChapter`、`records`、`settings` 與 `session`。舊四欄

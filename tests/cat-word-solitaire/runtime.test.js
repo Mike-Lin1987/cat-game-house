@@ -78,3 +78,18 @@ test('手機斷點仍保留五槽在左、牌庫在右', () => {
   assert.notEqual(mobileRule, null);
   assert.match(mobileRule[1], /\.slots-and-deck\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s+auto;/s);
 });
+
+test('新版關卡只恢復 layout signature 相同的未完成牌局', () => {
+  const app = read('games/cat-word-solitaire/js/app.js');
+
+  assert.match(app, /layoutSignature:\s*currentLevel\.layoutSignature/);
+  assert.match(app, /Storage\.isSessionCompatible\(session,\s*level\)/);
+  assert.match(app, /關卡難度已更新，未完成牌局已重新開始/);
+});
+
+test('規則與教學提醒過早發牌可能壓住關鍵牌', () => {
+  const game = read('games/cat-word-solitaire/index.html');
+  const tutorial = read('tutorials/cat-word-solitaire/index.html');
+  assert.match(game, /過早發牌可能把關鍵牌壓住/);
+  assert.match(tutorial, /過早發牌可能把關鍵牌壓住/);
+});

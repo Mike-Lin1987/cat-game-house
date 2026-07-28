@@ -54,12 +54,12 @@ ${summary.chapterAverages
 
 ## 逐關摘要
 
-| 關卡 | 章 | 總牌 | 分類 | 提示 | 圖片 | 開局欄高 | 發牌批次 | par | 上限 | 求解步數 | 節點 | 回溯 | 分數 | 結果 |
-| --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 關卡 | 章 | 總牌 | 分類 | 提示 | 圖片 | 開局欄高 | 發牌批次 | par | 上限 | 求解步數 | 節點 | 回溯 | 分支 | 發牌選擇 | 強制步 | 分數 | 結果 |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 ${analysis.levels
   .map(
     (level) =>
-      `| ${level.id} | ${level.chapter} | ${level.totalCardCount} | ${level.categoryCount} | ${level.itemCardCount} | ${level.imageCardCount} | ${level.columnHeights.join('/')} | ${level.drawBatchCount} | ${level.parMoves} | ${level.moveLimit} | ${level.solverMoves} | ${level.solverNodes} | ${level.solverBacktracks} | ${level.difficultyScore} | ${level.errors.length === 0 ? '通過' : '失敗'} |`,
+      `| ${level.id} | ${level.chapter} | ${level.totalCardCount} | ${level.categoryCount} | ${level.itemCardCount} | ${level.imageCardCount} | ${level.columnHeights.join('/')} | ${level.drawBatchCount} | ${level.parMoves} | ${level.moveLimit} | ${level.solverMoves} | ${level.solverNodes} | ${level.solverBacktracks} | ${level.solverBranchingStates} | ${level.solverDealDecisionStates} | ${level.solverForcedMoves} | ${level.difficultyScore} | ${level.errors.length === 0 ? '通過' : '失敗'} |`,
   )
   .join('\n')}
 `;
@@ -83,6 +83,11 @@ ${analysis.levels
     'moveLimit',
     'solverSolved',
     'solverMoves',
+    'solverNodes',
+    'solverBacktracks',
+    'solverBranchingStates',
+    'solverDealDecisionStates',
+    'solverForcedMoves',
     'maxActiveCategories',
     'contentReviewChecked',
     'ambiguityNotes',

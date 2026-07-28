@@ -184,6 +184,7 @@
     if (!currentLevel || !gameState || gameState.completed) return;
     Storage.saveSession({
       levelId: currentLevel.id,
+      layoutSignature: currentLevel.layoutSignature,
       state: gameState,
       undoStack: undoStack.slice(-Config.maxUndoStates),
     });
@@ -315,12 +316,17 @@
       return;
     }
     const level = levelsById.get(session.levelId);
-    const restored = level
+    const compatible = level && Storage.isSessionCompatible(session, level);
+    const restored = compatible
       ? Core.deserializeSession(session.state, level)
       : null;
-    if (!level || !restored) {
+    if (!level || !compatible || !restored) {
       Storage.clearSession();
-      showToast('未完成牌局格式已更新，已安全重新開始。');
+      showToast(
+        compatible
+          ? '未完成牌局格式已更新，已安全重新開始。'
+          : '關卡難度已更新，未完成牌局已重新開始。',
+      );
       startFresh(`L${String(progress.unlockedLevel).padStart(3, '0')}`);
       return;
     }
@@ -1004,5 +1010,23 @@
       Storage.saveProgress(progress);
     }, 350);
   }
+  const startupSession = progress.currentSession;
+  const startupLevel = startupSession
+    ? levelsById.get(startupSession.levelId)
+    : null;
+  const staleDifficultySession = Boolean(
+    startupSession &&
+      (!startupLevel ||
+        !Storage.isSessionCompatible(startupSession, startupLevel)),
+  );
+  if (staleDifficultySession) {
+    Storage.clearSession();
+    progress = Storage.loadProgress();
+  }
   renderHome();
+  if (staleDifficultySession) {
+    window.setTimeout(() => {
+      showToast('關卡難度已更新，未完成牌局已重新開始。');
+    }, 350);
+  }
 })();

@@ -88,6 +88,20 @@ test('求解器可完成六分類牌局並遵守最多五槽', () => {
   );
 });
 
+test('求解器公開實際搜尋中的分支、發牌決策與強制步統計', () => {
+  const level = createWaveLevel(6);
+  const result = Solver.solveLevel(level);
+
+  assert.equal(result.solved, true);
+  assert.equal(result.branchingStates >= 1, true);
+  assert.equal(result.dealDecisionStates >= 1, true);
+  assert.equal(result.forcedMoves >= 1, true);
+  assert.equal(
+    result.branchingStates + result.forcedMoves <= result.nodesVisited,
+    true,
+  );
+});
+
 test('求解器會使用第五欄與第五槽', () => {
   const level = createWaveLevel(5);
   level.categories.forEach((category) => {

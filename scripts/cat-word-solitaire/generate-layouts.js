@@ -15,9 +15,46 @@ const OUTPUT_DIRECTORY = path.join(
   'js',
   'data',
 );
-const GENERATOR_VERSION = '2.1.0';
+const GENERATOR_VERSION = '3.0.0';
 const TOTAL_CARDS_PER_LEVEL = 54;
 const INITIAL_COLUMN_HEIGHTS = Object.freeze([2, 3, 4, 5, 6]);
+const MAX_CANDIDATE_ATTEMPTS = 500;
+const MAX_SOLVER_NODES = 25000;
+const CANDIDATE_SEARCH_NODE_LIMITS = Object.freeze([
+  1500,
+  3000,
+  5000,
+  8000,
+  12000,
+]);
+const MOVE_BUFFERS = Object.freeze([5, 4, 3, 2, 1]);
+const DIFFICULTY_PROFILES = Object.freeze([
+  Object.freeze({
+    minNodes: 90,
+    minBacktracks: 1,
+    minBranchingStates: 1,
+  }),
+  Object.freeze({
+    minNodes: 180,
+    minBacktracks: 5,
+    minBranchingStates: 2,
+  }),
+  Object.freeze({
+    minNodes: 350,
+    minBacktracks: 15,
+    minBranchingStates: 3,
+  }),
+  Object.freeze({
+    minNodes: 700,
+    minBacktracks: 40,
+    minBranchingStates: 4,
+  }),
+  Object.freeze({
+    minNodes: 1200,
+    minBacktracks: 80,
+    minBranchingStates: 5,
+  }),
+]);
 const CHAPTER_TITLES = Object.freeze([
   '日常入門',
   '生活聯想',
@@ -59,6 +96,74 @@ function chunk(values, size) {
     result.push(values.slice(index, index + size));
   }
   return result;
+}
+
+function moveLimitForChapter(parMoves, chapter) {
+  return parMoves + MOVE_BUFFERS[chapter - 1];
+}
+
+function meetsDifficultyProfile(stats, profile) {
+  return Boolean(
+    stats?.solved &&
+      stats.nodesVisited >= profile.minNodes &&
+      stats.nodesVisited <= MAX_SOLVER_NODES &&
+      stats.backtracks >= profile.minBacktracks &&
+      stats.branchingStates >= profile.minBranchingStates,
+  );
+}
+
+function calculateDifficultyScore(stats, profile = null) {
+  return Math.max(
+    0,
+    Math.round(
+      (profile?.minNodes || 0) * 100 +
+        stats.nodesVisited +
+        stats.backtracks * 8 +
+        stats.branchingStates * 30 +
+        stats.dealDecisionStates * 45 +
+        stats.maxActiveCategories * 25 -
+        Math.min(stats.forcedMoves, 250) * 2,
+    ),
+  );
+}
+
+function difficultyDistance(stats, profile) {
+  return (
+    stats.nodesVisited - profile.minNodes +
+    (stats.backtracks - profile.minBacktracks) * 8 +
+    (stats.branchingStates - profile.minBranchingStates) * 30
+  );
+}
+
+function attemptFromSeed(ordinal, seed) {
+  const attempt = (seed - 910000 - ordinal * 7919) / 104729;
+  return Number.isInteger(attempt) &&
+    attempt >= 0 &&
+    attempt < MAX_CANDIDATE_ATTEMPTS
+    ? attempt
+    : null;
+}
+
+function loadPublishedAttemptHints() {
+  try {
+    const published = require(path.join(OUTPUT_DIRECTORY, 'levels-index.js'));
+    if (
+      published.length !== 100 ||
+      published.some((level) => level.generatorVersion !== GENERATOR_VERSION)
+    ) {
+      return new Map();
+    }
+    return new Map(
+      published
+        .map((level) => [
+          level.ordinal,
+          attemptFromSeed(level.ordinal, level.seed),
+        ])
+        .filter(([, attempt]) => attempt !== null),
+    );
+  } catch {
+    return new Map();
+  }
 }
 
 function categoryCountForLevel(ordinal) {
@@ -181,54 +286,175 @@ function buildContent(levelId, selections) {
   return { categories, cards, idsByCategory };
 }
 
-function buildLayout(levelId, selections, idsByCategory, seed) {
-  const random = createPrng(seed);
-  const firstWave = selections.slice(0, 5);
-  const firstWaveItems = firstWave.flatMap((selection) => {
-    const ids = idsByCategory.get(selection.definition.id);
-    return ids.itemCardIds.slice(0, 3);
-  });
-  const shuffledInitialItems = shuffle(firstWaveItems, random);
-  const columns = INITIAL_COLUMN_HEIGHTS.map((height) =>
-    shuffledInitialItems.splice(0, height - 1),
+function buildSemanticCardOrder(selections, idsByCategory, random, chapter) {
+  const inactive = shuffle(
+    selections.map((selection) => {
+      const ids = idsByCategory.get(selection.definition.id);
+      return {
+        categoryId: selection.definition.id,
+        categoryCardId: ids.categoryCardId,
+        remainingItemIds: shuffle(ids.itemCardIds, random),
+      };
+    }),
+    random,
   );
-  const categoryOrder = shuffle(firstWave, random);
-  for (let columnIndex = 0; columnIndex < 5; columnIndex += 1) {
-    columns[columnIndex].push(
-      idsByCategory.get(categoryOrder[columnIndex].definition.id).categoryCardId,
-    );
-  }
+  const active = [];
+  const cardOrder = [];
+  const activationProbability =
+    0.1 + random() * 0.3 + chapter * 0.015;
 
-  const drawBatches = [];
-  const firstWaveRemainingItems = firstWave.flatMap((selection) => {
-    const ids = idsByCategory.get(selection.definition.id);
-    return ids.itemCardIds.slice(3);
-  });
-  for (const batch of chunk(shuffle(firstWaveRemainingItems, random), 5)) {
-    drawBatches.push(batch);
-  }
+  while (inactive.length > 0 || active.length > 0) {
+    const canActivate = inactive.length > 0 && active.length < 5;
+    const shouldActivate =
+      canActivate &&
+      (active.length === 0 ||
+        random() < activationProbability);
 
-  for (let start = 5; start < selections.length; start += 5) {
-    const wave = selections.slice(start, start + 5);
-    const shuffledWave = shuffle(wave, random);
-    drawBatches.push(
-      shuffledWave.map(
-        (selection) =>
-          idsByCategory.get(selection.definition.id).categoryCardId,
-      ),
-    );
-    const itemCards = wave.flatMap(
-      (selection) => idsByCategory.get(selection.definition.id).itemCardIds,
-    );
-    for (const batch of chunk(shuffle(itemCards, random), 5)) {
-      drawBatches.push(batch);
+    if (shouldActivate) {
+      const next = inactive.shift();
+      active.push(next);
+      cardOrder.push(next.categoryCardId);
+      continue;
+    }
+
+    const categoryIndex = Math.floor(random() * active.length);
+    const category = active[categoryIndex];
+    cardOrder.push(category.remainingItemIds.pop());
+    if (category.remainingItemIds.length === 0) {
+      active.splice(categoryIndex, 1);
     }
   }
 
-  return { initialColumns: columns, drawBatches };
+  return cardOrder;
 }
 
-function createCandidate(ordinal, selections, attempt) {
+function buildPhysicalSchedule(random, chapter) {
+  let tokenOrdinal = 0;
+  const initialColumns = INITIAL_COLUMN_HEIGHTS.map((height) =>
+    Array.from({ length: height }, () => `t${tokenOrdinal++}`),
+  );
+  const drawBatches = chunk(
+    Array.from(
+      { length: TOTAL_CARDS_PER_LEVEL - 20 },
+      () => `t${tokenOrdinal++}`,
+    ),
+    5,
+  );
+  const columns = initialColumns.map((column) => [...column]);
+  const schedule = [];
+  let drawBatchIndex = 0;
+  let poppedCards = 0;
+  const earlyDealProbability =
+    0.025 + random() * 0.12 + chapter * 0.008;
+
+  while (poppedCards < TOTAL_CARDS_PER_LEVEL) {
+    const playableColumns = columns
+      .map((column, columnIndex) => (column.length > 0 ? columnIndex : -1))
+      .filter((columnIndex) => columnIndex >= 0);
+    const canDeal = drawBatchIndex < drawBatches.length;
+    const shouldDeal =
+      canDeal &&
+      (playableColumns.length === 0 ||
+        (poppedCards >= 3 && random() < earlyDealProbability));
+
+    if (shouldDeal) {
+      const batch = drawBatches[drawBatchIndex];
+      batch.forEach((token, columnIndex) => columns[columnIndex].push(token));
+      schedule.push({ type: 'deal', batchIndex: drawBatchIndex });
+      drawBatchIndex += 1;
+      continue;
+    }
+
+    const columnIndex =
+      playableColumns[Math.floor(random() * playableColumns.length)];
+    schedule.push({
+      type: 'pop',
+      columnIndex,
+      token: columns[columnIndex].pop(),
+    });
+    poppedCards += 1;
+  }
+
+  return { initialColumns, drawBatches, schedule };
+}
+
+function buildLayout(levelId, selections, idsByCategory, seed, chapter = 1) {
+  const random = createPrng(seed);
+  const cardOrder = buildSemanticCardOrder(
+    selections,
+    idsByCategory,
+    random,
+    chapter,
+  );
+  const physical = buildPhysicalSchedule(random, chapter);
+  const cardByToken = new Map();
+  let cardIndex = 0;
+
+  for (const step of physical.schedule) {
+    if (step.type === 'pop') {
+      cardByToken.set(step.token, cardOrder[cardIndex]);
+      cardIndex += 1;
+    }
+  }
+
+  if (cardIndex !== TOTAL_CARDS_PER_LEVEL) {
+    throw new Error(`${levelId} 實體牌序沒有涵蓋全部卡牌`);
+  }
+
+  return {
+    initialColumns: physical.initialColumns.map((column) =>
+      column.map((token) => cardByToken.get(token)),
+    ),
+    drawBatches: physical.drawBatches.map((batch) =>
+      batch.map((token) => cardByToken.get(token)),
+    ),
+    solutionSchedule: physical.schedule,
+  };
+}
+
+function replaySolutionSchedule(level, solutionSchedule) {
+  let state = Core.createInitialState(level);
+  const actions = [];
+
+  for (const step of solutionSchedule) {
+    let action;
+    if (step.type === 'deal') {
+      action = { type: 'deal', batchIndex: state.drawBatchIndex };
+    } else {
+      const cardId = state.columns[step.columnIndex].at(-1);
+      const card = Core.getCardById(level, cardId);
+      if (card?.cardType === 'category') {
+        action = {
+          type: 'activateCategory',
+          cardId,
+          categoryId: card.categoryId,
+          slotIndex: state.categorySlots.indexOf(null),
+          columnIndex: step.columnIndex,
+        };
+      } else {
+        action = {
+          type: 'placeItem',
+          cardId,
+          categoryId: card?.categoryId,
+          columnIndex: step.columnIndex,
+        };
+      }
+    }
+    const result = Core.applyLegalAction(state, level, action);
+    if (
+      result.state === state ||
+      result.outcome === Core.OUTCOME.INVALID_ACTION
+    ) {
+      return null;
+    }
+    state = result.state;
+    actions.push(action);
+  }
+
+  return Core.isLevelComplete(state, level) ? actions : null;
+}
+
+function createCandidate(ordinal, selections, attempt, options = {}) {
   const levelId = `L${String(ordinal).padStart(3, '0')}`;
   const chapter = Math.ceil(ordinal / 20);
   const seed = 910000 + ordinal * 7919 + attempt * 104729;
@@ -236,9 +462,19 @@ function createCandidate(ordinal, selections, attempt) {
     levelId,
     selections,
   );
-  const layout = buildLayout(levelId, selections, idsByCategory, seed);
+  const generatedLayout = buildLayout(
+    levelId,
+    selections,
+    idsByCategory,
+    seed,
+    chapter,
+  );
+  const solutionSchedule = generatedLayout.solutionSchedule;
+  const layout = {
+    initialColumns: generatedLayout.initialColumns,
+    drawBatches: generatedLayout.drawBatches,
+  };
   const parMoves = cards.length + layout.drawBatches.length;
-  const chapterBuffer = [10, 9, 8, 7, 6][chapter - 1];
   const level = {
     id: levelId,
     ordinal,
@@ -249,7 +485,7 @@ function createCandidate(ordinal, selections, attempt) {
     seed,
     generatorVersion: GENERATOR_VERSION,
     layoutVersion: 2,
-    moveLimit: parMoves + chapterBuffer,
+    moveLimit: moveLimitForChapter(parMoves, chapter),
     parMoves,
     categories,
     cards,
@@ -265,13 +501,21 @@ function createCandidate(ordinal, selections, attempt) {
   if (definitionErrors.length > 0) {
     throw new Error(`${levelId} 資料錯誤：${definitionErrors.join('；')}`);
   }
-  const solution = Solver.solveLevel(level, { maxNodes: 300000 });
-  if (!solution.solved) {
+  const knownSolution = replaySolutionSchedule(level, solutionSchedule);
+  if (!knownSolution) {
     return null;
   }
-  const maxDepth = Math.max(...layout.initialColumns.map((column) => column.length));
-  const slotPressure = Math.min(5, categories.length);
-  level.knownSolution = solution.actions;
+  const solution = Solver.solveLevel(level, {
+    maxNodes: Math.min(
+      MAX_SOLVER_NODES,
+      Number.isInteger(options.maxNodes) ? options.maxNodes : MAX_SOLVER_NODES,
+    ),
+  });
+  const profile = DIFFICULTY_PROFILES[chapter - 1];
+  if (!meetsDifficultyProfile(solution, profile)) {
+    return null;
+  }
+  level.knownSolution = knownSolution;
   level.solverStats = {
     solved: true,
     movesUsed: solution.movesUsed,
@@ -279,16 +523,15 @@ function createCandidate(ordinal, selections, attempt) {
     backtracks: solution.backtracks,
     maxDepth: solution.maxDepth,
     maxActiveCategories: solution.maxActiveCategories,
+    branchingStates: solution.branchingStates,
+    dealDecisionStates: solution.dealDecisionStates,
+    forcedMoves: solution.forcedMoves,
   };
-  level.difficultyScore =
-    chapter * 120 +
-    categories.length * 40 +
-    cards.length * 6 +
-    layout.drawBatches.length * 18 +
-    maxDepth * 8 +
-    slotPressure * 12 +
-    solution.nodesVisited +
-    solution.backtracks * 5;
+  level.difficultyScore = calculateDifficultyScore(
+    level.solverStats,
+    profile,
+  );
+  level.difficultyDistance = difficultyDistance(level.solverStats, profile);
   return level;
 }
 
@@ -340,31 +583,86 @@ function generateLevels() {
   const { categorySelections, usageByCategory } = selectContent();
   const signatures = new Set();
   const levels = [];
+  const publishedAttemptHints = loadPublishedAttemptHints();
 
   for (let ordinal = 1; ordinal <= 100; ordinal += 1) {
     let accepted = null;
-    for (let attempt = 0; attempt < 200; attempt += 1) {
+    let usedPublishedHint = false;
+    const chapter = Math.ceil(ordinal / 20);
+    const publishedAttempt = publishedAttemptHints.get(ordinal);
+    if (publishedAttempt !== undefined) {
       const candidate = createCandidate(
         ordinal,
         categorySelections[ordinal - 1],
-        attempt,
+        publishedAttempt,
+        { maxNodes: MAX_SOLVER_NODES },
       );
-      if (!candidate) {
-        continue;
+      if (candidate) {
+        const signature = Solver.createLayoutSignature(candidate);
+        if (!signatures.has(signature)) {
+          candidate.layoutSignature = signature;
+          accepted = candidate;
+          usedPublishedHint = true;
+        }
       }
-      const signature = Solver.createLayoutSignature(candidate);
-      if (signatures.has(signature)) {
-        continue;
+    }
+    const baseNodeLimit = CANDIDATE_SEARCH_NODE_LIMITS[chapter - 1];
+    const nodeLimits = [
+      baseNodeLimit,
+      Math.min(MAX_SOLVER_NODES, baseNodeLimit * 2),
+      MAX_SOLVER_NODES,
+    ].filter((limit, index, limits) => limits.indexOf(limit) === index);
+    for (const nodeLimit of accepted ? [] : nodeLimits) {
+      for (
+        let attempt = 0;
+        attempt < MAX_CANDIDATE_ATTEMPTS;
+        attempt += 1
+      ) {
+        const candidate = createCandidate(
+          ordinal,
+          categorySelections[ordinal - 1],
+          attempt,
+          { maxNodes: nodeLimit },
+        );
+        if (!candidate) {
+          continue;
+        }
+        const signature = Solver.createLayoutSignature(candidate);
+        if (signatures.has(signature)) {
+          continue;
+        }
+        candidate.layoutSignature = signature;
+        if (
+          !accepted ||
+          candidate.difficultyDistance < accepted.difficultyDistance
+        ) {
+          accepted = candidate;
+        }
+        const profile = DIFFICULTY_PROFILES[candidate.chapter - 1];
+        const closeEnough =
+          candidate.solverStats.nodesVisited <= profile.minNodes * 1.5 &&
+          candidate.solverStats.backtracks <=
+            Math.max(profile.minBacktracks + 20, profile.minBacktracks * 2.5);
+        if (closeEnough) {
+          break;
+        }
       }
-      candidate.layoutSignature = signature;
-      signatures.add(signature);
-      accepted = candidate;
-      break;
+      if (accepted) {
+        break;
+      }
     }
     if (!accepted) {
       throw new Error(`無法為 L${String(ordinal).padStart(3, '0')} 產生不重複可解牌局`);
     }
+    signatures.add(accepted.layoutSignature);
+    delete accepted.difficultyDistance;
     levels.push(accepted);
+    console.log(
+      `${accepted.id}：節點 ${accepted.solverStats.nodesVisited}、` +
+        `回溯 ${accepted.solverStats.backtracks}、` +
+        `分支 ${accepted.solverStats.branchingStates}` +
+        (usedPublishedHint ? '（已驗證發布 seed）' : ''),
+    );
   }
 
   const maximumUsage = Math.max(...usageByCategory.values());
@@ -420,9 +718,21 @@ module.exports = Object.freeze({
   GENERATOR_VERSION,
   TOTAL_CARDS_PER_LEVEL,
   INITIAL_COLUMN_HEIGHTS,
+  MAX_CANDIDATE_ATTEMPTS,
+  MAX_SOLVER_NODES,
+  CANDIDATE_SEARCH_NODE_LIMITS,
+  MOVE_BUFFERS,
+  DIFFICULTY_PROFILES,
   categoryCountForLevel,
   itemCountForLevel,
   selectContent,
+  moveLimitForChapter,
+  meetsDifficultyProfile,
+  calculateDifficultyScore,
+  attemptFromSeed,
+  loadPublishedAttemptHints,
+  buildSemanticCardOrder,
+  buildPhysicalSchedule,
   buildLayout,
   createCandidate,
   generateLevels,

@@ -6,6 +6,12 @@ const {
   analyzeLevels,
   assertValid,
 } = require('../../scripts/cat-word-solitaire/validate-levels.js');
+const {
+  GENERATOR_VERSION,
+  DIFFICULTY_PROFILES,
+  MAX_SOLVER_NODES,
+  MOVE_BUFFERS,
+} = require('../../scripts/cat-word-solitaire/generate-layouts.js');
 
 const analysis = analyzeLevels(LEVELS);
 
@@ -59,6 +65,27 @@ test('獨立求解器逐關完成且不超過五槽與步數上限', () => {
   assert.equal(analysis.summary.solvableWithFiveSlots, 100);
   assert.equal(analysis.summary.unsolved, 0);
   assert.equal(analysis.summary.overMoveLimit, 0);
+});
+
+test('v3 全關卡符合各章節分支、回溯、節點與步數門檻', () => {
+  for (const [index, level] of LEVELS.entries()) {
+    const result = analysis.levels[index];
+    const profile = DIFFICULTY_PROFILES[level.chapter - 1];
+    assert.equal(level.generatorVersion, GENERATOR_VERSION);
+    assert.equal(level.moveLimit, level.parMoves + MOVE_BUFFERS[level.chapter - 1]);
+    assert.equal(result.solverNodes >= profile.minNodes, true, level.id);
+    assert.equal(
+      result.solverBacktracks >= profile.minBacktracks,
+      true,
+      level.id,
+    );
+    assert.equal(
+      result.solverBranchingStates >= profile.minBranchingStates,
+      true,
+      level.id,
+    );
+    assert.equal(result.solverNodes <= MAX_SOLVER_NODES, true, level.id);
+  }
 });
 
 test('分類與提示重複限制、相鄰十關及牌局去重皆通過', () => {

@@ -16,11 +16,11 @@
     "chapter": 2,
     "title": "生活聯想 1",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1076299,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 25274,
+    "seed": 2856692,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -488,242 +488,134 @@
     "layout": {
       "initialColumns": [
         [
-          "L021-topic-182-item-1",
-          "L021-topic-181-category"
+          "L021-topic-187-item-2",
+          "L021-topic-186-category"
         ],
         [
-          "L021-topic-181-item-1",
-          "L021-topic-183-item-2",
+          "L021-topic-184-item-1",
+          "L021-topic-189-item-1",
           "L021-topic-182-category"
         ],
         [
-          "L021-topic-184-item-3",
-          "L021-topic-182-item-3",
-          "L021-topic-181-item-2",
+          "L021-topic-184-item-5",
+          "L021-topic-187-item-1",
+          "L021-topic-189-item-2",
           "L021-topic-185-category"
         ],
         [
-          "L021-topic-185-item-1",
-          "L021-topic-182-item-2",
-          "L021-topic-185-item-3",
+          "L021-topic-183-item-4",
           "L021-topic-184-item-2",
-          "L021-topic-184-category"
+          "L021-topic-187-item-5",
+          "L021-topic-183-category",
+          "L021-topic-185-item-2"
         ],
         [
-          "L021-topic-181-item-3",
-          "L021-topic-185-item-2",
-          "L021-topic-183-item-3",
-          "L021-topic-183-item-1",
-          "L021-topic-184-item-1",
-          "L021-topic-183-category"
+          "L021-topic-185-item-5",
+          "L021-topic-186-item-4",
+          "L021-topic-182-item-1",
+          "L021-topic-187-category",
+          "L021-topic-188-category",
+          "L021-topic-186-item-1"
         ]
       ],
       "drawBatches": [
         [
-          "L021-topic-184-item-4",
-          "L021-topic-185-item-4",
-          "L021-topic-182-item-5",
-          "L021-topic-181-item-4",
-          "L021-topic-181-item-5"
-        ],
-        [
-          "L021-topic-185-item-5",
-          "L021-topic-183-item-4",
-          "L021-topic-183-item-5",
-          "L021-topic-182-item-4",
-          "L021-topic-184-item-5"
-        ],
-        [
-          "L021-topic-187-category",
-          "L021-topic-186-category",
-          "L021-topic-189-category",
-          "L021-topic-188-category"
-        ],
-        [
-          "L021-topic-189-item-5",
-          "L021-topic-186-item-3",
-          "L021-topic-187-item-2",
-          "L021-topic-188-item-1",
-          "L021-topic-186-item-4"
-        ],
-        [
+          "L021-topic-185-item-1",
           "L021-topic-188-item-2",
-          "L021-topic-186-item-2",
-          "L021-topic-189-item-4",
-          "L021-topic-188-item-4",
-          "L021-topic-188-item-3"
+          "L021-topic-182-item-5",
+          "L021-topic-185-item-3",
+          "L021-topic-185-item-4"
         ],
         [
-          "L021-topic-189-item-2",
-          "L021-topic-187-item-1",
-          "L021-topic-186-item-1",
-          "L021-topic-189-item-3",
-          "L021-topic-187-item-4"
+          "L021-topic-182-item-4",
+          "L021-topic-188-item-4",
+          "L021-topic-184-category",
+          "L021-topic-186-item-2",
+          "L021-topic-188-item-5"
         ],
         [
           "L021-topic-186-item-5",
-          "L021-topic-187-item-5",
-          "L021-topic-187-item-3",
-          "L021-topic-189-item-1",
-          "L021-topic-188-item-5"
+          "L021-topic-187-item-4",
+          "L021-topic-189-item-5",
+          "L021-topic-188-item-3",
+          "L021-topic-182-item-2"
+        ],
+        [
+          "L021-topic-181-item-1",
+          "L021-topic-189-category",
+          "L021-topic-181-category",
+          "L021-topic-181-item-4",
+          "L021-topic-182-item-3"
+        ],
+        [
+          "L021-topic-181-item-5",
+          "L021-topic-188-item-1",
+          "L021-topic-189-item-3",
+          "L021-topic-181-item-3",
+          "L021-topic-186-item-3"
+        ],
+        [
+          "L021-topic-183-item-3",
+          "L021-topic-181-item-2",
+          "L021-topic-184-item-4",
+          "L021-topic-189-item-4",
+          "L021-topic-187-item-3"
+        ],
+        [
+          "L021-topic-183-item-5",
+          "L021-topic-184-item-3",
+          "L021-topic-183-item-2",
+          "L021-topic-183-item-1"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L021-topic-181-category",
-        "categoryId": "topic-181",
+        "cardId": "L021-topic-186-category",
+        "categoryId": "topic-186",
         "slotIndex": 0,
         "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-186-item-1",
+        "categoryId": "topic-186",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L021-topic-188-category",
+        "categoryId": "topic-188",
+        "slotIndex": 1,
+        "columnIndex": 4
       },
       {
         "type": "activateCategory",
         "cardId": "L021-topic-182-category",
         "categoryId": "topic-182",
-        "slotIndex": 1,
+        "slotIndex": 2,
         "columnIndex": 1
       },
       {
-        "type": "placeItem",
-        "cardId": "L021-topic-182-item-1",
-        "categoryId": "topic-182",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L021-topic-187-category",
+        "categoryId": "topic-187",
+        "slotIndex": 3,
+        "columnIndex": 4
       },
       {
         "type": "activateCategory",
         "cardId": "L021-topic-185-category",
         "categoryId": "topic-185",
-        "slotIndex": 2,
+        "slotIndex": 4,
         "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-181-item-2",
-        "categoryId": "topic-181",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-182-item-3",
-        "categoryId": "topic-182",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L021-topic-184-category",
-        "categoryId": "topic-184",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-184-item-3",
-        "categoryId": "topic-184",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-184-item-2",
-        "categoryId": "topic-184",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-185-item-3",
-        "categoryId": "topic-185",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-182-item-2",
-        "categoryId": "topic-182",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-185-item-1",
-        "categoryId": "topic-185",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L021-topic-183-category",
-        "categoryId": "topic-183",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-183-item-2",
-        "categoryId": "topic-183",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-181-item-1",
-        "categoryId": "topic-181",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-184-item-1",
-        "categoryId": "topic-184",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-183-item-1",
-        "categoryId": "topic-183",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-183-item-3",
-        "categoryId": "topic-183",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-185-item-2",
-        "categoryId": "topic-185",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-181-item-3",
-        "categoryId": "topic-181",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L021-topic-187-item-2",
+        "categoryId": "topic-187",
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -731,119 +623,89 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-184-item-4",
-        "categoryId": "topic-184",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L021-topic-182-item-5",
+        "categoryId": "topic-182",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L021-topic-185-item-4",
         "categoryId": "topic-185",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-182-item-5",
+        "cardId": "L021-topic-182-item-1",
         "categoryId": "topic-182",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-181-item-4",
-        "categoryId": "topic-181",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L021-topic-186-item-4",
+        "categoryId": "topic-186",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-181-item-5",
-        "categoryId": "topic-181",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L021-topic-185-item-3",
+        "categoryId": "topic-185",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-185-item-5",
+        "categoryId": "topic-185",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-185-item-1",
+        "categoryId": "topic-185",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-185-item-2",
+        "categoryId": "topic-185",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-188-item-2",
+        "categoryId": "topic-188",
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 1
       },
       {
-        "type": "placeItem",
-        "cardId": "L021-topic-185-item-5",
-        "categoryId": "topic-185",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-182-item-4",
-        "categoryId": "topic-182",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-184-item-5",
-        "categoryId": "topic-184",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-183-item-4",
-        "categoryId": "topic-183",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-183-item-5",
-        "categoryId": "topic-183",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L021-topic-187-category",
-        "categoryId": "topic-187",
-        "slotIndex": 0,
-        "columnIndex": 0
+        "type": "placeItem",
+        "cardId": "L021-topic-182-item-2",
+        "categoryId": "topic-182",
+        "columnIndex": 4
       },
       {
-        "type": "activateCategory",
-        "cardId": "L021-topic-186-category",
-        "categoryId": "topic-186",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L021-topic-189-category",
-        "categoryId": "topic-189",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L021-topic-188-category",
+        "type": "placeItem",
+        "cardId": "L021-topic-188-item-5",
         "categoryId": "topic-188",
-        "slotIndex": 3,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-188-item-3",
+        "categoryId": "topic-188",
         "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-186-item-5",
+        "categoryId": "topic-186",
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -851,43 +713,53 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-189-item-5",
+        "cardId": "L021-topic-182-item-3",
+        "categoryId": "topic-182",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L021-topic-181-category",
+        "categoryId": "topic-181",
+        "slotIndex": 4,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-181-item-1",
+        "categoryId": "topic-181",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-182-item-4",
+        "categoryId": "topic-182",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-181-item-4",
+        "categoryId": "topic-181",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L021-topic-189-category",
         "categoryId": "topic-189",
         "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-186-item-3",
-        "categoryId": "topic-186",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-187-item-2",
+        "cardId": "L021-topic-187-item-4",
         "categoryId": "topic-187",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-188-item-1",
-        "categoryId": "topic-188",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-186-item-4",
+        "cardId": "L021-topic-186-item-2",
         "categoryId": "topic-186",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -895,43 +767,71 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-188-item-2",
-        "categoryId": "topic-188",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-186-item-2",
-        "categoryId": "topic-186",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-189-item-4",
+        "cardId": "L021-topic-189-item-3",
         "categoryId": "topic-189",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-189-item-5",
+        "categoryId": "topic-189",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-186-item-3",
+        "categoryId": "topic-186",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L021-topic-184-category",
+        "categoryId": "topic-184",
+        "slotIndex": 0,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-181-item-3",
+        "categoryId": "topic-181",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-189-item-2",
+        "categoryId": "topic-189",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-188-item-1",
+        "categoryId": "topic-188",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L021-topic-188-item-4",
         "categoryId": "topic-188",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L021-topic-183-category",
+        "categoryId": "topic-183",
+        "slotIndex": 1,
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-188-item-3",
-        "categoryId": "topic-188",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L021-topic-181-item-5",
+        "categoryId": "topic-181",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-189-item-1",
+        "categoryId": "topic-189",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -939,43 +839,51 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-189-item-2",
-        "categoryId": "topic-189",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L021-topic-183-item-3",
+        "categoryId": "topic-183",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-187-item-3",
+        "categoryId": "topic-187",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-181-item-2",
+        "categoryId": "topic-181",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-184-item-4",
+        "categoryId": "topic-184",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L021-topic-187-item-1",
         "categoryId": "topic-187",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-186-item-1",
-        "categoryId": "topic-186",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L021-topic-189-item-3",
+        "cardId": "L021-topic-189-item-4",
         "categoryId": "topic-189",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-187-item-4",
+        "cardId": "L021-topic-187-item-5",
         "categoryId": "topic-187",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-184-item-1",
+        "categoryId": "topic-184",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -983,58 +891,63 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-186-item-5",
-        "categoryId": "topic-186",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": true
+        "cardId": "L021-topic-183-item-5",
+        "categoryId": "topic-183",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-189-item-1",
-        "categoryId": "topic-189",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L021-topic-183-item-2",
+        "categoryId": "topic-183",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-188-item-5",
-        "categoryId": "topic-188",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L021-topic-184-item-3",
+        "categoryId": "topic-184",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-187-item-5",
-        "categoryId": "topic-187",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L021-topic-183-item-1",
+        "categoryId": "topic-183",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L021-topic-187-item-3",
-        "categoryId": "topic-187",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L021-topic-184-item-5",
+        "categoryId": "topic-184",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-184-item-2",
+        "categoryId": "topic-184",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L021-topic-183-item-4",
+        "categoryId": "topic-183",
+        "columnIndex": 3
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 210,
+      "backtracks": 148,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 108,
+      "dealDecisionStates": 57,
+      "forcedMoves": 25
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I1.5,I2.5,C0.5|I1.5,I3.5,I2.5,I2.5,I4.5,C2.5|I3.5,I0.5,I3.5,I4.5,C4.5|I4.5,I0.5,I1.5,C3.5#I4.5,I3.5,I1.5,I1.5,I0.5|I3.5,I2.5,I4.5,I0.5,I2.5|C5.5,C6.5,_,C7.5,C8.5|I8.5,I6.5,I6.5,I7.5,I5.5|I7.5,I6.5,I7.5,I7.5,I8.5|I8.5,I5.5,I5.5,I8.5,I6.5|I6.5,I5.5,I7.5,I8.5,I5.5"
+    "layoutSignature": "9#I0.5,C1.5|I2.5,I0.5,I3.5,C4.5|I2.5,I3.5,C5.5|I4.5,I1.5,I5.5,C0.5,C6.5,I1.5|I7.5,I2.5,I0.5,C7.5,I4.5#I4.5,I5.5,I6.5,I4.5,I4.5|I5.5,C2.5,I6.5,I6.5,I1.5|I1.5,I3.5,I0.5,I5.5,I6.5|I8.5,C8.5,C3.5,I5.5,I8.5|I8.5,I3.5,I6.5,I1.5,I8.5|I7.5,I2.5,I8.5,I0.5,I3.5|I7.5,I7.5,I2.5,_,I7.5"
   },
   {
     "id": "L022",
@@ -1042,11 +955,11 @@
     "chapter": 2,
     "title": "生活聯想 2",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1084218,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 28770,
+    "seed": 4016630,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -1532,242 +1445,213 @@
     "layout": {
       "initialColumns": [
         [
-          "L022-topic-191-item-3",
-          "L022-topic-190-category"
+          "L022-topic-198-item-4",
+          "L022-topic-194-category"
+        ],
+        [
+          "L022-topic-195-category",
+          "L022-topic-196-item-1",
+          "L022-topic-196-category"
+        ],
+        [
+          "L022-topic-198-item-3",
+          "L022-topic-195-item-2",
+          "L022-topic-198-item-5",
+          "L022-topic-198-item-2"
         ],
         [
           "L022-topic-193-item-1",
-          "L022-topic-192-item-1",
-          "L022-topic-191-category"
-        ],
-        [
-          "L022-topic-190-item-3",
-          "L022-topic-192-item-2",
-          "L022-topic-193-item-3",
-          "L022-topic-193-category"
-        ],
-        [
-          "L022-topic-190-item-2",
-          "L022-topic-194-item-3",
-          "L022-topic-193-item-2",
-          "L022-topic-194-item-1",
-          "L022-topic-192-category"
-        ],
-        [
+          "L022-topic-193-category",
+          "L022-topic-196-item-5",
           "L022-topic-194-item-2",
-          "L022-topic-190-item-1",
-          "L022-topic-192-item-3",
-          "L022-topic-191-item-2",
-          "L022-topic-191-item-1",
-          "L022-topic-194-category"
+          "L022-topic-197-category"
+        ],
+        [
+          "L022-topic-193-item-4",
+          "L022-topic-195-item-4",
+          "L022-topic-196-item-2",
+          "L022-topic-198-item-1",
+          "L022-topic-196-item-3",
+          "L022-topic-198-category"
         ]
       ],
       "drawBatches": [
         [
-          "L022-topic-193-item-5",
-          "L022-topic-192-item-5",
+          "L022-topic-197-item-5",
+          "L022-topic-193-item-3",
+          "L022-topic-196-item-4",
           "L022-topic-194-item-5",
-          "L022-topic-190-item-4",
-          "L022-topic-191-item-5"
+          "L022-topic-195-item-1"
         ],
         [
-          "L022-topic-190-item-5",
-          "L022-topic-193-item-4",
-          "L022-topic-192-item-4",
-          "L022-topic-191-item-4",
+          "L022-topic-197-item-4",
+          "L022-topic-192-item-5",
+          "L022-topic-190-category",
+          "L022-topic-191-item-2",
+          "L022-topic-193-item-5"
+        ],
+        [
+          "L022-topic-195-item-3",
+          "L022-topic-191-item-3",
+          "L022-topic-197-item-1",
+          "L022-topic-191-category",
+          "L022-topic-197-item-2"
+        ],
+        [
+          "L022-topic-193-item-2",
+          "L022-topic-191-item-5",
+          "L022-topic-197-item-3",
+          "L022-topic-195-item-5",
           "L022-topic-194-item-4"
         ],
         [
-          "L022-topic-196-category",
-          "L022-topic-197-category",
-          "L022-topic-198-category",
-          "L022-topic-195-category"
+          "L022-topic-192-category",
+          "L022-topic-190-item-1",
+          "L022-topic-192-item-1",
+          "L022-topic-194-item-1",
+          "L022-topic-191-item-4"
         ],
         [
-          "L022-topic-195-item-2",
-          "L022-topic-197-item-2",
-          "L022-topic-195-item-1",
-          "L022-topic-196-item-5",
-          "L022-topic-196-item-1"
+          "L022-topic-191-item-1",
+          "L022-topic-194-item-3",
+          "L022-topic-192-item-3",
+          "L022-topic-192-item-4",
+          "L022-topic-192-item-2"
         ],
         [
-          "L022-topic-196-item-2",
-          "L022-topic-197-item-5",
-          "L022-topic-198-item-4",
-          "L022-topic-198-item-2",
-          "L022-topic-196-item-4"
-        ],
-        [
-          "L022-topic-198-item-3",
-          "L022-topic-197-item-4",
-          "L022-topic-195-item-3",
-          "L022-topic-195-item-5",
-          "L022-topic-198-item-5"
-        ],
-        [
-          "L022-topic-195-item-4",
-          "L022-topic-197-item-1",
-          "L022-topic-196-item-3",
-          "L022-topic-198-item-1",
-          "L022-topic-197-item-3"
+          "L022-topic-190-item-3",
+          "L022-topic-190-item-5",
+          "L022-topic-190-item-2",
+          "L022-topic-190-item-4"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L022-topic-190-category",
-        "categoryId": "topic-190",
+        "cardId": "L022-topic-196-category",
+        "categoryId": "topic-196",
         "slotIndex": 0,
-        "columnIndex": 0
+        "columnIndex": 1
       },
       {
         "type": "activateCategory",
-        "cardId": "L022-topic-191-category",
-        "categoryId": "topic-191",
+        "cardId": "L022-topic-198-category",
+        "categoryId": "topic-198",
         "slotIndex": 1,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-196-item-3",
+        "categoryId": "topic-196",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-198-item-1",
+        "categoryId": "topic-198",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-196-item-1",
+        "categoryId": "topic-196",
         "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-191-item-3",
-        "categoryId": "topic-191",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L022-topic-196-item-2",
+        "categoryId": "topic-196",
+        "columnIndex": 4
       },
       {
         "type": "activateCategory",
-        "cardId": "L022-topic-193-category",
-        "categoryId": "topic-193",
+        "cardId": "L022-topic-195-category",
+        "categoryId": "topic-195",
         "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-193-item-3",
-        "categoryId": "topic-193",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L022-topic-192-category",
-        "categoryId": "topic-192",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-192-item-1",
-        "categoryId": "topic-192",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-193-item-1",
-        "categoryId": "topic-193",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-192-item-2",
-        "categoryId": "topic-192",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-190-item-3",
-        "categoryId": "topic-190",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "activateCategory",
         "cardId": "L022-topic-194-category",
         "categoryId": "topic-194",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-194-item-1",
-        "categoryId": "topic-194",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-193-item-2",
-        "categoryId": "topic-193",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-194-item-3",
-        "categoryId": "topic-194",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-190-item-2",
-        "categoryId": "topic-190",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-191-item-1",
-        "categoryId": "topic-191",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-191-item-2",
-        "categoryId": "topic-191",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-192-item-3",
-        "categoryId": "topic-192",
         "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
-        "type": "placeItem",
-        "cardId": "L022-topic-190-item-1",
-        "categoryId": "topic-190",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L022-topic-197-category",
+        "categoryId": "topic-197",
+        "slotIndex": 4,
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
         "cardId": "L022-topic-194-item-2",
         "categoryId": "topic-194",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-198-item-4",
+        "categoryId": "topic-198",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-198-item-2",
+        "categoryId": "topic-198",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-198-item-5",
+        "categoryId": "topic-198",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-195-item-2",
+        "categoryId": "topic-195",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-198-item-3",
+        "categoryId": "topic-198",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-196-item-5",
+        "categoryId": "topic-196",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L022-topic-193-category",
+        "categoryId": "topic-193",
+        "slotIndex": 1,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-195-item-4",
+        "categoryId": "topic-195",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-193-item-4",
+        "categoryId": "topic-193",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-193-item-1",
+        "categoryId": "topic-193",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -1775,119 +1659,72 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-193-item-5",
-        "categoryId": "topic-193",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L022-topic-197-item-5",
+        "categoryId": "topic-197",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-192-item-5",
-        "categoryId": "topic-192",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L022-topic-193-item-3",
+        "categoryId": "topic-193",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L022-topic-194-item-5",
         "categoryId": "topic-194",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-190-item-4",
-        "categoryId": "topic-190",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L022-topic-195-item-1",
+        "categoryId": "topic-195",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-191-item-5",
-        "categoryId": "topic-191",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L022-topic-196-item-4",
+        "categoryId": "topic-196",
+        "columnIndex": 2
       },
       {
         "type": "deal",
         "batchIndex": 1
       },
       {
-        "type": "placeItem",
-        "cardId": "L022-topic-190-item-5",
-        "categoryId": "topic-190",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-193-item-4",
-        "categoryId": "topic-193",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-192-item-4",
-        "categoryId": "topic-192",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-191-item-4",
-        "categoryId": "topic-191",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-194-item-4",
-        "categoryId": "topic-194",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L022-topic-196-category",
-        "categoryId": "topic-196",
-        "slotIndex": 0,
+        "type": "placeItem",
+        "cardId": "L022-topic-195-item-3",
+        "categoryId": "topic-195",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-197-item-4",
+        "categoryId": "topic-197",
         "columnIndex": 0
       },
       {
         "type": "activateCategory",
-        "cardId": "L022-topic-197-category",
-        "categoryId": "topic-197",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L022-topic-198-category",
-        "categoryId": "topic-198",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L022-topic-195-category",
-        "categoryId": "topic-195",
-        "slotIndex": 3,
+        "cardId": "L022-topic-191-category",
+        "categoryId": "topic-191",
+        "slotIndex": 0,
         "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-197-item-2",
+        "categoryId": "topic-197",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-191-item-3",
+        "categoryId": "topic-191",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -1895,43 +1732,58 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-195-item-2",
-        "categoryId": "topic-195",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L022-topic-191-item-5",
+        "categoryId": "topic-191",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-197-item-2",
+        "cardId": "L022-topic-194-item-4",
+        "categoryId": "topic-194",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-197-item-3",
         "categoryId": "topic-197",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-195-item-1",
+        "cardId": "L022-topic-197-item-1",
+        "categoryId": "topic-197",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L022-topic-190-category",
+        "categoryId": "topic-190",
+        "slotIndex": 4,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-193-item-2",
+        "categoryId": "topic-193",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-195-item-5",
         "categoryId": "topic-195",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-196-item-5",
-        "categoryId": "topic-196",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L022-topic-191-item-2",
+        "categoryId": "topic-191",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-196-item-1",
-        "categoryId": "topic-196",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L022-topic-193-item-5",
+        "categoryId": "topic-193",
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -1939,43 +1791,40 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-196-item-2",
-        "categoryId": "topic-196",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L022-topic-194-item-1",
+        "categoryId": "topic-194",
+        "columnIndex": 3
       },
       {
-        "type": "placeItem",
-        "cardId": "L022-topic-197-item-5",
-        "categoryId": "topic-197",
+        "type": "activateCategory",
+        "cardId": "L022-topic-192-category",
+        "categoryId": "topic-192",
         "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-198-item-4",
-        "categoryId": "topic-198",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L022-topic-191-item-4",
+        "categoryId": "topic-191",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-198-item-2",
-        "categoryId": "topic-198",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L022-topic-192-item-1",
+        "categoryId": "topic-192",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-196-item-4",
-        "categoryId": "topic-196",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L022-topic-190-item-1",
+        "categoryId": "topic-190",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L022-topic-192-item-5",
+        "categoryId": "topic-192",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -1983,43 +1832,33 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-198-item-3",
-        "categoryId": "topic-198",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L022-topic-192-item-4",
+        "categoryId": "topic-192",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-197-item-4",
-        "categoryId": "topic-197",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L022-topic-194-item-3",
+        "categoryId": "topic-194",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-195-item-3",
-        "categoryId": "topic-195",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L022-topic-191-item-1",
+        "categoryId": "topic-191",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-195-item-5",
-        "categoryId": "topic-195",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L022-topic-192-item-2",
+        "categoryId": "topic-192",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-198-item-5",
-        "categoryId": "topic-198",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L022-topic-192-item-3",
+        "categoryId": "topic-192",
+        "columnIndex": 2
       },
       {
         "type": "deal",
@@ -2027,58 +1866,45 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-195-item-4",
-        "categoryId": "topic-195",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": true
+        "cardId": "L022-topic-190-item-2",
+        "categoryId": "topic-190",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-196-item-3",
-        "categoryId": "topic-196",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L022-topic-190-item-5",
+        "categoryId": "topic-190",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-198-item-1",
-        "categoryId": "topic-198",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L022-topic-190-item-4",
+        "categoryId": "topic-190",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L022-topic-197-item-1",
-        "categoryId": "topic-197",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L022-topic-197-item-3",
-        "categoryId": "topic-197",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L022-topic-190-item-3",
+        "categoryId": "topic-190",
+        "columnIndex": 0
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 390,
+      "backtracks": 328,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 168,
+      "dealDecisionStates": 59,
+      "forcedMoves": 32
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I1.5,I2.5,I3.5,C3.5|I1.5,I4.5,I3.5,I4.5,C2.5|I3.5,I2.5,C0.5|I4.5,I1.5,I2.5,I0.5,I0.5,C4.5#I3.5,I4.5,I1.5,I2.5,I0.5|I1.5,I2.5,I0.5,I3.5,I4.5|C5.5,C6.5,C7.5,C8.5,_|I7.5,I7.5,I5.5,I8.5,I5.5|I5.5,I6.5,I6.5,I8.5,I5.5|I6.5,I7.5,I7.5,I8.5,I6.5|I7.5,I5.5,I6.5,I8.5,I8.5"
+    "layoutSignature": "9#C0.5,I1.5,C1.5|I2.5,C2.5,I1.5,I3.5,C4.5|I2.5,I0.5,I1.5,I5.5,I1.5,C5.5|I5.5,C3.5|I5.5,I0.5,I5.5,I5.5#I2.5,I3.5,I0.5,I4.5,I1.5|I6.5,I7.5,I2.5,I4.5,C8.5|I7.5,C7.5,I4.5,I0.5,I4.5|I7.5,I0.5,I3.5,I2.5,I4.5|I8.5,I3.5,I7.5,C6.5,I6.5|I3.5,I6.5,I6.5,I7.5,I6.5|I8.5,I8.5,_,I8.5,I8.5"
   },
   {
     "id": "L023",
@@ -2086,11 +1912,11 @@
     "chapter": 2,
     "title": "生活聯想 3",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1092137,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 36195,
+    "seed": 5386026,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -2576,362 +2402,187 @@
     "layout": {
       "initialColumns": [
         [
-          "L023-topic-199-item-3",
-          "L023-topic-201-category"
-        ],
-        [
-          "L023-topic-199-item-2",
-          "L023-topic-203-item-1",
-          "L023-topic-202-category"
-        ],
-        [
-          "L023-topic-201-item-3",
-          "L023-topic-202-item-2",
-          "L023-topic-200-item-3",
-          "L023-topic-200-category"
-        ],
-        [
           "L023-topic-201-item-1",
-          "L023-topic-200-item-1",
-          "L023-topic-202-item-1",
-          "L023-topic-199-item-1",
-          "L023-topic-199-category"
+          "L023-topic-207-item-5"
         ],
         [
-          "L023-topic-200-item-2",
+          "L023-topic-202-category",
+          "L023-topic-204-item-1",
+          "L023-topic-207-item-1"
+        ],
+        [
+          "L023-topic-199-item-4",
+          "L023-topic-206-item-5",
           "L023-topic-203-item-3",
-          "L023-topic-203-item-2",
-          "L023-topic-201-item-2",
-          "L023-topic-202-item-3",
-          "L023-topic-203-category"
+          "L023-topic-206-item-1"
+        ],
+        [
+          "L023-topic-202-item-4",
+          "L023-topic-199-item-5",
+          "L023-topic-204-item-5",
+          "L023-topic-206-item-4",
+          "L023-topic-199-item-2"
+        ],
+        [
+          "L023-topic-203-item-5",
+          "L023-topic-205-item-5",
+          "L023-topic-207-item-2",
+          "L023-topic-207-item-3",
+          "L023-topic-207-item-4",
+          "L023-topic-207-category"
         ]
       ],
       "drawBatches": [
         [
-          "L023-topic-202-item-5",
-          "L023-topic-200-item-4",
-          "L023-topic-199-item-5",
-          "L023-topic-201-item-5",
-          "L023-topic-203-item-5"
+          "L023-topic-205-item-2",
+          "L023-topic-206-item-3",
+          "L023-topic-204-item-4",
+          "L023-topic-203-item-1",
+          "L023-topic-201-item-4"
         ],
         [
-          "L023-topic-202-item-4",
-          "L023-topic-201-item-4",
-          "L023-topic-203-item-4",
-          "L023-topic-199-item-4",
-          "L023-topic-200-item-5"
+          "L023-topic-204-category",
+          "L023-topic-205-item-4",
+          "L023-topic-205-category",
+          "L023-topic-206-item-2",
+          "L023-topic-203-category"
         ],
         [
           "L023-topic-206-category",
-          "L023-topic-204-category",
-          "L023-topic-207-category",
-          "L023-topic-205-category"
-        ],
-        [
-          "L023-topic-207-item-5",
-          "L023-topic-205-item-5",
-          "L023-topic-207-item-2",
-          "L023-topic-205-item-4",
-          "L023-topic-206-item-2"
-        ],
-        [
-          "L023-topic-207-item-1",
-          "L023-topic-205-item-2",
-          "L023-topic-206-item-3",
-          "L023-topic-207-item-4",
-          "L023-topic-206-item-1"
-        ],
-        [
-          "L023-topic-206-item-4",
-          "L023-topic-205-item-3",
-          "L023-topic-204-item-5",
-          "L023-topic-205-item-1",
-          "L023-topic-206-item-5"
-        ],
-        [
-          "L023-topic-204-item-1",
-          "L023-topic-204-item-3",
-          "L023-topic-207-item-3",
           "L023-topic-204-item-2",
-          "L023-topic-204-item-4"
+          "L023-topic-205-item-1",
+          "L023-topic-205-item-3",
+          "L023-topic-201-category"
+        ],
+        [
+          "L023-topic-201-item-3",
+          "L023-topic-204-item-3",
+          "L023-topic-199-item-3",
+          "L023-topic-199-category",
+          "L023-topic-201-item-2"
+        ],
+        [
+          "L023-topic-199-item-1",
+          "L023-topic-201-item-5",
+          "L023-topic-202-item-2",
+          "L023-topic-202-item-1",
+          "L023-topic-200-category"
+        ],
+        [
+          "L023-topic-203-item-4",
+          "L023-topic-202-item-3",
+          "L023-topic-202-item-5",
+          "L023-topic-203-item-2",
+          "L023-topic-200-item-2"
+        ],
+        [
+          "L023-topic-200-item-5",
+          "L023-topic-200-item-4",
+          "L023-topic-200-item-1",
+          "L023-topic-200-item-3"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L023-topic-201-category",
-        "categoryId": "topic-201",
+        "cardId": "L023-topic-207-category",
+        "categoryId": "topic-207",
         "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L023-topic-202-category",
-        "categoryId": "topic-202",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L023-topic-200-category",
-        "categoryId": "topic-200",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-200-item-3",
-        "categoryId": "topic-200",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-202-item-2",
-        "categoryId": "topic-202",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-201-item-3",
-        "categoryId": "topic-201",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L023-topic-199-category",
-        "categoryId": "topic-199",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-199-item-3",
-        "categoryId": "topic-199",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-199-item-1",
-        "categoryId": "topic-199",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-202-item-1",
-        "categoryId": "topic-202",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-200-item-1",
-        "categoryId": "topic-200",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-201-item-1",
-        "categoryId": "topic-201",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L023-topic-203-category",
-        "categoryId": "topic-203",
-        "slotIndex": 4,
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-203-item-1",
-        "categoryId": "topic-203",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L023-topic-207-item-5",
+        "categoryId": "topic-207",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-199-item-2",
-        "categoryId": "topic-199",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L023-topic-207-item-1",
+        "categoryId": "topic-207",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-202-item-3",
-        "categoryId": "topic-202",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L023-topic-207-item-4",
+        "categoryId": "topic-207",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-201-item-2",
-        "categoryId": "topic-201",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L023-topic-207-item-3",
+        "categoryId": "topic-207",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-203-item-2",
-        "categoryId": "topic-203",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-203-item-3",
-        "categoryId": "topic-203",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-200-item-2",
-        "categoryId": "topic-200",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L023-topic-207-item-2",
+        "categoryId": "topic-207",
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 0
       },
       {
-        "type": "placeItem",
-        "cardId": "L023-topic-202-item-5",
-        "categoryId": "topic-202",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-200-item-4",
-        "categoryId": "topic-200",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-199-item-5",
-        "categoryId": "topic-199",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-201-item-5",
-        "categoryId": "topic-201",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-203-item-5",
-        "categoryId": "topic-203",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
         "type": "deal",
         "batchIndex": 1
       },
       {
-        "type": "placeItem",
-        "cardId": "L023-topic-202-item-4",
-        "categoryId": "topic-202",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-201-item-4",
-        "categoryId": "topic-201",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-203-item-4",
-        "categoryId": "topic-203",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-199-item-4",
-        "categoryId": "topic-199",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-200-item-5",
-        "categoryId": "topic-200",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "deal",
-        "batchIndex": 2
-      },
-      {
         "type": "activateCategory",
-        "cardId": "L023-topic-206-category",
-        "categoryId": "topic-206",
+        "cardId": "L023-topic-205-category",
+        "categoryId": "topic-205",
         "slotIndex": 0,
-        "columnIndex": 0
+        "columnIndex": 2
       },
       {
         "type": "activateCategory",
         "cardId": "L023-topic-204-category",
         "categoryId": "topic-204",
         "slotIndex": 1,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-205-item-2",
+        "categoryId": "topic-205",
+        "columnIndex": 0
+      },
+      {
+        "type": "deal",
+        "batchIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-205-item-1",
+        "categoryId": "topic-205",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-205-item-3",
+        "categoryId": "topic-205",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-204-item-2",
+        "categoryId": "topic-204",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-205-item-4",
+        "categoryId": "topic-205",
         "columnIndex": 1
       },
       {
         "type": "activateCategory",
-        "cardId": "L023-topic-207-category",
-        "categoryId": "topic-207",
+        "cardId": "L023-topic-201-category",
+        "categoryId": "topic-201",
         "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L023-topic-205-category",
-        "categoryId": "topic-205",
-        "slotIndex": 3,
-        "columnIndex": 3
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -2939,87 +2590,198 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-207-item-5",
-        "categoryId": "topic-207",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L023-topic-204-item-3",
+        "categoryId": "topic-204",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-201-item-2",
+        "categoryId": "topic-201",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L023-topic-203-category",
+        "categoryId": "topic-203",
+        "slotIndex": 3,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-201-item-4",
+        "categoryId": "topic-201",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
         "cardId": "L023-topic-205-item-5",
         "categoryId": "topic-205",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L023-topic-199-category",
+        "categoryId": "topic-199",
+        "slotIndex": 0,
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-207-item-2",
-        "categoryId": "topic-207",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L023-topic-201-item-3",
+        "categoryId": "topic-201",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-205-item-4",
-        "categoryId": "topic-205",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L023-topic-199-item-3",
+        "categoryId": "topic-199",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L023-topic-206-category",
+        "categoryId": "topic-206",
+        "slotIndex": 4,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-203-item-5",
+        "categoryId": "topic-203",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-204-item-4",
+        "categoryId": "topic-204",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-206-item-3",
+        "categoryId": "topic-206",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-206-item-1",
+        "categoryId": "topic-206",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L023-topic-206-item-2",
         "categoryId": "topic-206",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-203-item-3",
+        "categoryId": "topic-203",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-203-item-1",
+        "categoryId": "topic-203",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-201-item-1",
+        "categoryId": "topic-201",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-199-item-2",
+        "categoryId": "topic-199",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-206-item-5",
+        "categoryId": "topic-206",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-199-item-4",
+        "categoryId": "topic-199",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-206-item-4",
+        "categoryId": "topic-206",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-204-item-1",
+        "categoryId": "topic-204",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L023-topic-202-category",
+        "categoryId": "topic-202",
+        "slotIndex": 4,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-204-item-5",
+        "categoryId": "topic-204",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-199-item-5",
+        "categoryId": "topic-199",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L023-topic-202-item-4",
+        "categoryId": "topic-202",
+        "columnIndex": 3
       },
       {
         "type": "deal",
         "batchIndex": 4
       },
       {
-        "type": "placeItem",
-        "cardId": "L023-topic-207-item-1",
-        "categoryId": "topic-207",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L023-topic-200-category",
+        "categoryId": "topic-200",
+        "slotIndex": 1,
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-205-item-2",
-        "categoryId": "topic-205",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L023-topic-201-item-5",
+        "categoryId": "topic-201",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-206-item-3",
-        "categoryId": "topic-206",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L023-topic-199-item-1",
+        "categoryId": "topic-199",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-207-item-4",
-        "categoryId": "topic-207",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L023-topic-202-item-2",
+        "categoryId": "topic-202",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-206-item-1",
-        "categoryId": "topic-206",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L023-topic-202-item-1",
+        "categoryId": "topic-202",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -3027,43 +2789,33 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-206-item-4",
-        "categoryId": "topic-206",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L023-topic-203-item-2",
+        "categoryId": "topic-203",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-206-item-5",
-        "categoryId": "topic-206",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L023-topic-202-item-5",
+        "categoryId": "topic-202",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-205-item-3",
-        "categoryId": "topic-205",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L023-topic-202-item-3",
+        "categoryId": "topic-202",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-205-item-1",
-        "categoryId": "topic-205",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L023-topic-203-item-4",
+        "categoryId": "topic-203",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-204-item-5",
-        "categoryId": "topic-204",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L023-topic-200-item-2",
+        "categoryId": "topic-200",
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -3071,58 +2823,45 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-207-item-3",
-        "categoryId": "topic-207",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L023-topic-200-item-4",
+        "categoryId": "topic-200",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-204-item-1",
-        "categoryId": "topic-204",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L023-topic-200-item-5",
+        "categoryId": "topic-200",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-204-item-3",
-        "categoryId": "topic-204",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L023-topic-200-item-3",
+        "categoryId": "topic-200",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L023-topic-204-item-2",
-        "categoryId": "topic-204",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L023-topic-204-item-4",
-        "categoryId": "topic-204",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L023-topic-200-item-1",
+        "categoryId": "topic-200",
+        "columnIndex": 2
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 531,
+      "backtracks": 469,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 186,
+      "dealDecisionStates": 183,
+      "forcedMoves": 14
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,C3.5|I1.5,I3.5,I4.5,C4.5|I1.5,I4.5,I3.5,I0.5,C0.5|I4.5,I2.5,I2.5,I1.5,I3.5,C2.5#I3.5,I4.5,I0.5,I1.5,I2.5|I3.5,I1.5,I2.5,I0.5,I4.5|C5.5,C6.5,C7.5,C8.5,_|I7.5,I8.5,I7.5,I8.5,I5.5|I7.5,I8.5,I5.5,I7.5,I5.5|I5.5,I8.5,I6.5,I8.5,I5.5|I6.5,I6.5,I7.5,I6.5,I6.5"
+    "layoutSignature": "9#C0.5,I1.5,I2.5|I0.5,I3.5,I1.5,I4.5,I3.5|I3.5,I4.5,I5.5,I4.5|I5.5,I6.5,I2.5,I2.5,I2.5,C2.5|I7.5,I2.5#I4.5,I5.5,I1.5,I7.5,I6.5|I6.5,I4.5,C6.5,C5.5,C1.5|I1.5,I6.5,I6.5,C7.5,C4.5|I1.5,C3.5,I3.5,I7.5,I7.5|I7.5,I0.5,I0.5,C8.5,I3.5|I0.5,I5.5,I0.5,I8.5,I5.5|I8.5,I8.5,I8.5,_,I8.5"
   },
   {
     "id": "L024",
@@ -3130,11 +2869,11 @@
     "chapter": 2,
     "title": "生活聯想 4",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1100056,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 27086,
+    "seed": 19322902,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -3620,341 +3359,100 @@
     "layout": {
       "initialColumns": [
         [
-          "L024-topic-208-item-3",
-          "L024-topic-209-category"
+          "L024-topic-214-item-1",
+          "L024-topic-214-item-5"
         ],
         [
-          "L024-topic-212-item-1",
-          "L024-topic-210-item-3",
-          "L024-topic-210-category"
+          "L024-topic-212-item-5",
+          "L024-topic-216-category",
+          "L024-topic-213-item-2"
         ],
         [
-          "L024-topic-212-item-2",
-          "L024-topic-209-item-3",
-          "L024-topic-209-item-1",
-          "L024-topic-208-category"
-        ],
-        [
-          "L024-topic-210-item-2",
           "L024-topic-211-item-2",
-          "L024-topic-212-item-3",
-          "L024-topic-208-item-1",
+          "L024-topic-216-item-4",
+          "L024-topic-208-item-5",
           "L024-topic-212-category"
         ],
         [
-          "L024-topic-208-item-2",
+          "L024-topic-209-item-3",
+          "L024-topic-214-item-4",
           "L024-topic-209-item-2",
-          "L024-topic-211-item-1",
-          "L024-topic-210-item-1",
-          "L024-topic-211-item-3",
-          "L024-topic-211-category"
+          "L024-topic-209-item-4",
+          "L024-topic-210-item-4"
+        ],
+        [
+          "L024-topic-214-item-3",
+          "L024-topic-208-item-4",
+          "L024-topic-210-item-3",
+          "L024-topic-212-item-1",
+          "L024-topic-215-category",
+          "L024-topic-213-category"
         ]
       ],
       "drawBatches": [
         [
-          "L024-topic-208-item-5",
-          "L024-topic-211-item-5",
-          "L024-topic-209-item-4",
-          "L024-topic-211-item-4",
-          "L024-topic-209-item-5"
-        ],
-        [
-          "L024-topic-208-item-4",
-          "L024-topic-212-item-4",
-          "L024-topic-210-item-4",
-          "L024-topic-212-item-5",
-          "L024-topic-210-item-5"
-        ],
-        [
-          "L024-topic-213-category",
-          "L024-topic-216-category",
-          "L024-topic-215-category",
-          "L024-topic-214-category"
-        ],
-        [
-          "L024-topic-213-item-4",
-          "L024-topic-213-item-1",
-          "L024-topic-216-item-1",
-          "L024-topic-215-item-3",
-          "L024-topic-216-item-3"
-        ],
-        [
-          "L024-topic-214-item-4",
-          "L024-topic-216-item-5",
-          "L024-topic-215-item-5",
-          "L024-topic-213-item-5",
-          "L024-topic-214-item-3"
-        ],
-        [
+          "L024-topic-216-item-3",
+          "L024-topic-211-category",
+          "L024-topic-212-item-2",
           "L024-topic-215-item-2",
-          "L024-topic-215-item-1",
-          "L024-topic-213-item-3",
-          "L024-topic-214-item-5",
-          "L024-topic-214-item-2"
+          "L024-topic-211-item-5"
         ],
         [
+          "L024-topic-215-item-1",
+          "L024-topic-213-item-5",
+          "L024-topic-213-item-3",
+          "L024-topic-212-item-3",
+          "L024-topic-211-item-4"
+        ],
+        [
+          "L024-topic-216-item-1",
+          "L024-topic-211-item-1",
           "L024-topic-216-item-2",
-          "L024-topic-216-item-4",
-          "L024-topic-214-item-1",
-          "L024-topic-213-item-2",
-          "L024-topic-215-item-4"
+          "L024-topic-215-item-5",
+          "L024-topic-215-item-3"
+        ],
+        [
+          "L024-topic-213-item-1",
+          "L024-topic-213-item-4",
+          "L024-topic-208-item-1",
+          "L024-topic-212-item-4",
+          "L024-topic-208-item-2"
+        ],
+        [
+          "L024-topic-216-item-5",
+          "L024-topic-215-item-4",
+          "L024-topic-214-category",
+          "L024-topic-209-category",
+          "L024-topic-211-item-3"
+        ],
+        [
+          "L024-topic-210-item-1",
+          "L024-topic-210-item-5",
+          "L024-topic-210-category",
+          "L024-topic-208-category",
+          "L024-topic-208-item-3"
+        ],
+        [
+          "L024-topic-214-item-2",
+          "L024-topic-209-item-1",
+          "L024-topic-209-item-5",
+          "L024-topic-210-item-2"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L024-topic-209-category",
-        "categoryId": "topic-209",
+        "cardId": "L024-topic-213-category",
+        "categoryId": "topic-213",
         "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L024-topic-210-category",
-        "categoryId": "topic-210",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-210-item-3",
-        "categoryId": "topic-210",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L024-topic-208-category",
-        "categoryId": "topic-208",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-208-item-3",
-        "categoryId": "topic-208",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-209-item-1",
-        "categoryId": "topic-209",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-209-item-3",
-        "categoryId": "topic-209",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L024-topic-212-category",
-        "categoryId": "topic-212",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-212-item-1",
-        "categoryId": "topic-212",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-212-item-2",
-        "categoryId": "topic-212",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-208-item-1",
-        "categoryId": "topic-208",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-212-item-3",
-        "categoryId": "topic-212",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L024-topic-211-category",
-        "categoryId": "topic-211",
-        "slotIndex": 4,
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L024-topic-211-item-2",
-        "categoryId": "topic-211",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-210-item-2",
-        "categoryId": "topic-210",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-211-item-3",
-        "categoryId": "topic-211",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-210-item-1",
-        "categoryId": "topic-210",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-211-item-1",
-        "categoryId": "topic-211",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-209-item-2",
-        "categoryId": "topic-209",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-208-item-2",
-        "categoryId": "topic-208",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-208-item-5",
-        "categoryId": "topic-208",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-211-item-5",
-        "categoryId": "topic-211",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-211-item-4",
-        "categoryId": "topic-211",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-209-item-4",
-        "categoryId": "topic-209",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-209-item-5",
-        "categoryId": "topic-209",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "deal",
-        "batchIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-208-item-4",
-        "categoryId": "topic-208",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-212-item-4",
-        "categoryId": "topic-212",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-212-item-5",
-        "categoryId": "topic-212",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-210-item-4",
-        "categoryId": "topic-210",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-210-item-5",
-        "categoryId": "topic-210",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "deal",
-        "batchIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L024-topic-213-category",
+        "cardId": "L024-topic-213-item-2",
         "categoryId": "topic-213",
-        "slotIndex": 0,
-        "columnIndex": 0
+        "columnIndex": 1
       },
       {
         "type": "activateCategory",
@@ -3965,17 +3463,108 @@
       },
       {
         "type": "activateCategory",
-        "cardId": "L024-topic-215-category",
-        "categoryId": "topic-215",
+        "cardId": "L024-topic-212-category",
+        "categoryId": "topic-212",
         "slotIndex": 2,
         "columnIndex": 2
       },
       {
+        "type": "deal",
+        "batchIndex": 0
+      },
+      {
         "type": "activateCategory",
-        "cardId": "L024-topic-214-category",
-        "categoryId": "topic-214",
+        "cardId": "L024-topic-211-category",
+        "categoryId": "topic-211",
         "slotIndex": 3,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-216-item-3",
+        "categoryId": "topic-216",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-211-item-5",
+        "categoryId": "topic-211",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L024-topic-215-category",
+        "categoryId": "topic-215",
+        "slotIndex": 4,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-212-item-2",
+        "categoryId": "topic-212",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-215-item-2",
+        "categoryId": "topic-215",
         "columnIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-213-item-3",
+        "categoryId": "topic-213",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-213-item-5",
+        "categoryId": "topic-213",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-212-item-5",
+        "categoryId": "topic-212",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-212-item-3",
+        "categoryId": "topic-212",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-215-item-1",
+        "categoryId": "topic-215",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-211-item-4",
+        "categoryId": "topic-211",
+        "columnIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-215-item-3",
+        "categoryId": "topic-215",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-212-item-1",
+        "categoryId": "topic-212",
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -3983,43 +3572,33 @@
       },
       {
         "type": "placeItem",
+        "cardId": "L024-topic-212-item-4",
+        "categoryId": "topic-212",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-215-item-5",
+        "categoryId": "topic-215",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
         "cardId": "L024-topic-213-item-4",
         "categoryId": "topic-213",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-211-item-1",
+        "categoryId": "topic-211",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L024-topic-213-item-1",
         "categoryId": "topic-213",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-216-item-1",
-        "categoryId": "topic-216",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-215-item-3",
-        "categoryId": "topic-215",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-216-item-3",
-        "categoryId": "topic-216",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -4027,87 +3606,137 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L024-topic-214-item-4",
-        "categoryId": "topic-214",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-216-item-5",
-        "categoryId": "topic-216",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-215-item-5",
+        "cardId": "L024-topic-215-item-4",
         "categoryId": "topic-215",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L024-topic-213-item-5",
-        "categoryId": "topic-213",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-214-item-3",
-        "categoryId": "topic-214",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L024-topic-211-item-3",
+        "categoryId": "topic-211",
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 5
       },
       {
-        "type": "placeItem",
-        "cardId": "L024-topic-215-item-2",
-        "categoryId": "topic-215",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-215-item-1",
-        "categoryId": "topic-215",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-213-item-3",
-        "categoryId": "topic-213",
+        "type": "activateCategory",
+        "cardId": "L024-topic-208-category",
+        "categoryId": "topic-208",
         "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L024-topic-210-category",
+        "categoryId": "topic-210",
+        "slotIndex": 2,
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L024-topic-214-item-5",
+        "cardId": "L024-topic-210-item-5",
+        "categoryId": "topic-210",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L024-topic-214-category",
         "categoryId": "topic-214",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "slotIndex": 4,
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L024-topic-214-item-2",
-        "categoryId": "topic-214",
+        "cardId": "L024-topic-208-item-1",
+        "categoryId": "topic-208",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-216-item-2",
+        "categoryId": "topic-216",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-208-item-3",
+        "categoryId": "topic-208",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-208-item-2",
+        "categoryId": "topic-208",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-208-item-5",
+        "categoryId": "topic-208",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-216-item-4",
+        "categoryId": "topic-216",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-211-item-2",
+        "categoryId": "topic-211",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-210-item-3",
+        "categoryId": "topic-210",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L024-topic-209-category",
+        "categoryId": "topic-209",
         "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-208-item-4",
+        "categoryId": "topic-208",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-214-item-3",
+        "categoryId": "topic-214",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-210-item-1",
+        "categoryId": "topic-210",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-210-item-4",
+        "categoryId": "topic-210",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-216-item-5",
+        "categoryId": "topic-216",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-216-item-1",
+        "categoryId": "topic-216",
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -4115,58 +3744,81 @@
       },
       {
         "type": "placeItem",
+        "cardId": "L024-topic-210-item-2",
+        "categoryId": "topic-210",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-214-item-2",
+        "categoryId": "topic-214",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-209-item-1",
+        "categoryId": "topic-209",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-209-item-5",
+        "categoryId": "topic-209",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-209-item-4",
+        "categoryId": "topic-209",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-209-item-2",
+        "categoryId": "topic-209",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-214-item-5",
+        "categoryId": "topic-214",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L024-topic-214-item-4",
+        "categoryId": "topic-214",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
         "cardId": "L024-topic-214-item-1",
         "categoryId": "topic-214",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": true
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L024-topic-213-item-2",
-        "categoryId": "topic-213",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-215-item-4",
-        "categoryId": "topic-215",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-216-item-2",
-        "categoryId": "topic-216",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L024-topic-216-item-4",
-        "categoryId": "topic-216",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L024-topic-209-item-3",
+        "categoryId": "topic-209",
+        "columnIndex": 3
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 308,
+      "backtracks": 246,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 139,
+      "dealDecisionStates": 57,
+      "forcedMoves": 25
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I1.5,I2.5,I3.5,I2.5,C2.5|I3.5,I2.5,I4.5,I0.5,C4.5|I4.5,I1.5,I1.5,C0.5|I4.5,I3.5,C3.5#I0.5,I1.5,I2.5,I1.5,I2.5|I0.5,I3.5,I4.5,I3.5,I4.5|C5.5,_,C6.5,C7.5,C8.5|I5.5,I8.5,I7.5,I8.5,I5.5|I6.5,I6.5,I5.5,I7.5,I8.5|I7.5,I6.5,I6.5,I5.5,I7.5|I8.5,I7.5,I5.5,I6.5,I8.5"
+    "layoutSignature": "9#I0.5,C1.5,I2.5|I3.5,I1.5,I4.5,C0.5|I5.5,I4.5,I6.5,I0.5,C7.5,C2.5|I5.5,I5.5|I8.5,I5.5,I8.5,I8.5,I6.5#C3.5,I0.5,I3.5,I1.5,I7.5|I2.5,I2.5,I3.5,I7.5,I0.5|I3.5,I1.5,I7.5,I1.5,I7.5|I2.5,I4.5,I4.5,I2.5,I0.5|I7.5,C5.5,I3.5,I1.5,C8.5|I6.5,C6.5,I4.5,I6.5,C4.5|I8.5,I8.5,_,I5.5,I6.5"
   },
   {
     "id": "L025",
@@ -4174,11 +3826,11 @@
     "chapter": 2,
     "title": "生活聯想 5",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1107975,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 24287,
+    "seed": 16922054,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -4664,242 +4316,118 @@
     "layout": {
       "initialColumns": [
         [
-          "L025-topic-219-item-1",
-          "L025-topic-217-category"
-        ],
-        [
-          "L025-topic-220-item-3",
-          "L025-topic-218-item-3",
-          "L025-topic-220-category"
-        ],
-        [
-          "L025-topic-219-item-2",
           "L025-topic-218-item-1",
-          "L025-topic-217-item-2",
-          "L025-topic-218-category"
+          "L025-topic-223-item-5"
         ],
         [
-          "L025-topic-218-item-2",
-          "L025-topic-217-item-1",
-          "L025-topic-217-item-3",
-          "L025-topic-220-item-2",
-          "L025-topic-219-category"
+          "L025-topic-218-item-5",
+          "L025-topic-224-item-3",
+          "L025-topic-224-category"
         ],
         [
-          "L025-topic-219-item-3",
-          "L025-topic-220-item-1",
-          "L025-topic-221-item-2",
+          "L025-topic-219-category",
           "L025-topic-221-item-1",
-          "L025-topic-221-item-3",
+          "L025-topic-221-item-4",
           "L025-topic-221-category"
+        ],
+        [
+          "L025-topic-222-item-3",
+          "L025-topic-223-item-4",
+          "L025-topic-219-item-3",
+          "L025-topic-222-item-4",
+          "L025-topic-221-item-2"
+        ],
+        [
+          "L025-topic-217-item-3",
+          "L025-topic-218-item-2",
+          "L025-topic-224-item-5",
+          "L025-topic-220-category",
+          "L025-topic-224-item-4",
+          "L025-topic-221-item-5"
         ]
       ],
       "drawBatches": [
         [
-          "L025-topic-219-item-5",
-          "L025-topic-217-item-5",
-          "L025-topic-221-item-4",
-          "L025-topic-218-item-4",
-          "L025-topic-217-item-4"
-        ],
-        [
-          "L025-topic-220-item-4",
-          "L025-topic-218-item-5",
-          "L025-topic-220-item-5",
-          "L025-topic-219-item-4",
-          "L025-topic-221-item-5"
-        ],
-        [
+          "L025-topic-221-item-3",
+          "L025-topic-223-item-2",
+          "L025-topic-217-category",
           "L025-topic-222-category",
-          "L025-topic-223-category",
-          "L025-topic-224-category",
+          "L025-topic-223-category"
+        ],
+        [
+          "L025-topic-218-category",
+          "L025-topic-222-item-2",
+          "L025-topic-222-item-1",
+          "L025-topic-223-item-3",
+          "L025-topic-219-item-1"
+        ],
+        [
+          "L025-topic-217-item-4",
+          "L025-topic-223-item-1",
+          "L025-topic-222-item-5",
+          "L025-topic-219-item-2",
+          "L025-topic-218-item-3"
+        ],
+        [
+          "L025-topic-217-item-2",
+          "L025-topic-217-item-5",
+          "L025-topic-224-item-2",
+          "L025-topic-217-item-1",
           "L025-topic-225-category"
         ],
         [
-          "L025-topic-223-item-5",
-          "L025-topic-222-item-2",
-          "L025-topic-224-item-5",
-          "L025-topic-224-item-4",
-          "L025-topic-223-item-2"
-        ],
-        [
-          "L025-topic-224-item-2",
-          "L025-topic-224-item-3",
-          "L025-topic-225-item-2",
-          "L025-topic-224-item-1",
-          "L025-topic-225-item-1"
-        ],
-        [
-          "L025-topic-223-item-4",
-          "L025-topic-225-item-4",
-          "L025-topic-222-item-4",
-          "L025-topic-223-item-3",
-          "L025-topic-222-item-5"
-        ],
-        [
-          "L025-topic-223-item-1",
+          "L025-topic-220-item-4",
+          "L025-topic-218-item-4",
+          "L025-topic-219-item-5",
           "L025-topic-225-item-3",
-          "L025-topic-222-item-3",
-          "L025-topic-222-item-1",
-          "L025-topic-225-item-5"
+          "L025-topic-219-item-4"
+        ],
+        [
+          "L025-topic-224-item-1",
+          "L025-topic-225-item-5",
+          "L025-topic-225-item-4",
+          "L025-topic-220-item-5",
+          "L025-topic-225-item-2"
+        ],
+        [
+          "L025-topic-220-item-2",
+          "L025-topic-220-item-3",
+          "L025-topic-220-item-1",
+          "L025-topic-225-item-1"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L025-topic-217-category",
-        "categoryId": "topic-217",
+        "cardId": "L025-topic-221-category",
+        "categoryId": "topic-221",
         "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L025-topic-220-category",
-        "categoryId": "topic-220",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L025-topic-218-category",
-        "categoryId": "topic-218",
-        "slotIndex": 2,
         "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-218-item-3",
-        "categoryId": "topic-218",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-220-item-3",
-        "categoryId": "topic-220",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-217-item-2",
-        "categoryId": "topic-217",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-218-item-1",
-        "categoryId": "topic-218",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L025-topic-219-category",
-        "categoryId": "topic-219",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-219-item-1",
-        "categoryId": "topic-219",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-219-item-2",
-        "categoryId": "topic-219",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-220-item-2",
-        "categoryId": "topic-220",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-217-item-3",
-        "categoryId": "topic-217",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-217-item-1",
-        "categoryId": "topic-217",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-218-item-2",
-        "categoryId": "topic-218",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L025-topic-221-category",
+        "cardId": "L025-topic-221-item-4",
         "categoryId": "topic-221",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-221-item-3",
-        "categoryId": "topic-221",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L025-topic-221-item-1",
         "categoryId": "topic-221",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L025-topic-221-item-2",
         "categoryId": "topic-221",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-220-item-1",
-        "categoryId": "topic-220",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-219-item-3",
-        "categoryId": "topic-219",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L025-topic-221-item-5",
+        "categoryId": "topic-221",
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -4907,163 +4435,202 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-219-item-5",
-        "categoryId": "topic-219",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-217-item-5",
-        "categoryId": "topic-217",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-217-item-4",
-        "categoryId": "topic-217",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-221-item-4",
+        "cardId": "L025-topic-221-item-3",
         "categoryId": "topic-221",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-218-item-4",
-        "categoryId": "topic-218",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-218-item-5",
-        "categoryId": "topic-218",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-219-item-4",
-        "categoryId": "topic-219",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-221-item-5",
-        "categoryId": "topic-221",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-220-item-4",
-        "categoryId": "topic-220",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-220-item-5",
-        "categoryId": "topic-220",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "deal",
-        "batchIndex": 2
+        "columnIndex": 0
       },
       {
         "type": "activateCategory",
         "cardId": "L025-topic-222-category",
         "categoryId": "topic-222",
         "slotIndex": 0,
-        "columnIndex": 0
+        "columnIndex": 3
       },
       {
         "type": "activateCategory",
         "cardId": "L025-topic-223-category",
         "categoryId": "topic-223",
         "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L025-topic-224-category",
-        "categoryId": "topic-224",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L025-topic-225-category",
-        "categoryId": "topic-225",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "deal",
-        "batchIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-223-item-5",
-        "categoryId": "topic-223",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-222-item-2",
-        "categoryId": "topic-222",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-224-item-5",
-        "categoryId": "topic-224",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-224-item-4",
-        "categoryId": "topic-224",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
         "cardId": "L025-topic-223-item-2",
         "categoryId": "topic-223",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L025-topic-217-category",
+        "categoryId": "topic-217",
+        "slotIndex": 2,
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L025-topic-219-category",
+        "categoryId": "topic-219",
+        "slotIndex": 3,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-223-item-5",
+        "categoryId": "topic-223",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-222-item-4",
+        "categoryId": "topic-222",
+        "columnIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L025-topic-218-category",
+        "categoryId": "topic-218",
+        "slotIndex": 4,
+        "columnIndex": 0
+      },
+      {
+        "type": "deal",
+        "batchIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-222-item-5",
+        "categoryId": "topic-222",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-223-item-1",
+        "categoryId": "topic-223",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-219-item-2",
+        "categoryId": "topic-219",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-222-item-2",
+        "categoryId": "topic-222",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-222-item-1",
+        "categoryId": "topic-222",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-223-item-3",
+        "categoryId": "topic-223",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-218-item-3",
+        "categoryId": "topic-218",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-219-item-3",
+        "categoryId": "topic-219",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-223-item-4",
+        "categoryId": "topic-223",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-217-item-4",
+        "categoryId": "topic-217",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-222-item-3",
+        "categoryId": "topic-222",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-219-item-1",
+        "categoryId": "topic-219",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-218-item-1",
+        "categoryId": "topic-218",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L025-topic-224-category",
+        "categoryId": "topic-224",
+        "slotIndex": 0,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-224-item-4",
+        "categoryId": "topic-224",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L025-topic-220-category",
+        "categoryId": "topic-220",
         "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-224-item-3",
+        "categoryId": "topic-224",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-224-item-5",
+        "categoryId": "topic-224",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-218-item-5",
+        "categoryId": "topic-218",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-218-item-2",
+        "categoryId": "topic-218",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-217-item-3",
+        "categoryId": "topic-217",
+        "columnIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 3
       },
       {
         "type": "deal",
@@ -5071,43 +4638,64 @@
       },
       {
         "type": "placeItem",
+        "cardId": "L025-topic-219-item-4",
+        "categoryId": "topic-219",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-218-item-4",
+        "categoryId": "topic-218",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L025-topic-225-category",
+        "categoryId": "topic-225",
+        "slotIndex": 4,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-220-item-4",
+        "categoryId": "topic-220",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-217-item-2",
+        "categoryId": "topic-217",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L025-topic-219-item-5",
+        "categoryId": "topic-219",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
         "cardId": "L025-topic-224-item-2",
         "categoryId": "topic-224",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-224-item-3",
-        "categoryId": "topic-224",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L025-topic-217-item-5",
+        "categoryId": "topic-217",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-224-item-1",
-        "categoryId": "topic-224",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-225-item-2",
+        "cardId": "L025-topic-225-item-3",
         "categoryId": "topic-225",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-225-item-1",
-        "categoryId": "topic-225",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L025-topic-217-item-1",
+        "categoryId": "topic-217",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -5115,43 +4703,33 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-223-item-4",
-        "categoryId": "topic-223",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L025-topic-225-item-5",
+        "categoryId": "topic-225",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L025-topic-225-item-4",
         "categoryId": "topic-225",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-222-item-4",
-        "categoryId": "topic-222",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L025-topic-224-item-1",
+        "categoryId": "topic-224",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-223-item-3",
-        "categoryId": "topic-223",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L025-topic-220-item-5",
+        "categoryId": "topic-220",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-222-item-5",
-        "categoryId": "topic-222",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L025-topic-225-item-2",
+        "categoryId": "topic-225",
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -5159,58 +4737,45 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-223-item-1",
-        "categoryId": "topic-223",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L025-topic-225-item-3",
+        "cardId": "L025-topic-225-item-1",
         "categoryId": "topic-225",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-225-item-5",
-        "categoryId": "topic-225",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L025-topic-220-item-1",
+        "categoryId": "topic-220",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-222-item-3",
-        "categoryId": "topic-222",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L025-topic-220-item-2",
+        "categoryId": "topic-220",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L025-topic-222-item-1",
-        "categoryId": "topic-222",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L025-topic-220-item-3",
+        "categoryId": "topic-220",
+        "columnIndex": 1
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 194,
+      "backtracks": 132,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 97,
+      "dealDecisionStates": 46,
+      "forcedMoves": 34
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,I1.5,C2.5|I0.5,I3.5,I4.5,I4.5,I4.5,C4.5|I2.5,I1.5,I1.5,I3.5,C0.5|I3.5,I2.5,C3.5#I0.5,I4.5,I1.5,I2.5,I1.5|I3.5,I3.5,I4.5,I0.5,I2.5|C5.5,C6.5,_,C7.5,C8.5|I8.5,I6.5,I8.5,I6.5,I5.5|I6.5,I7.5,I7.5,I6.5,I6.5|I8.5,I5.5,I5.5,I8.5,I7.5|I8.5,I5.5,I7.5,I5.5,I7.5"
+    "layoutSignature": "9#C0.5,I1.5,I1.5,C1.5|I2.5,I3.5,C3.5|I2.5,I4.5|I5.5,I2.5,I3.5,C6.5,I3.5,I1.5|I7.5,I4.5,I0.5,I7.5,I1.5#C5.5,I4.5,I1.5,C4.5,C7.5|I7.5,I7.5,C2.5,I0.5,I4.5|I7.5,I4.5,I5.5,I2.5,I0.5|I3.5,I5.5,I5.5,C8.5,I5.5|I0.5,I2.5,I6.5,I0.5,I8.5|I8.5,I8.5,I3.5,I8.5,I6.5|I6.5,I6.5,I6.5,_,I8.5"
   },
   {
     "id": "L026",
@@ -5218,11 +4783,11 @@
     "chapter": 2,
     "title": "生活聯想 6",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1115894,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 128183,
+    "seed": 48453402,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -5698,102 +5263,126 @@
     "layout": {
       "initialColumns": [
         [
-          "L026-topic-228-item-1",
-          "L026-topic-228-category"
-        ],
-        [
-          "L026-topic-229-item-3",
-          "L026-topic-227-item-1",
-          "L026-topic-226-category"
-        ],
-        [
-          "L026-topic-226-item-3",
-          "L026-topic-229-item-1",
-          "L026-topic-229-item-2",
-          "L026-topic-227-category"
-        ],
-        [
-          "L026-topic-228-item-3",
-          "L026-topic-230-item-1",
           "L026-topic-226-item-1",
-          "L026-topic-228-item-2",
-          "L026-topic-229-category"
+          "L026-topic-229-item-5"
+        ],
+        [
+          "L026-topic-004-item-2",
+          "L026-topic-004-item-1",
+          "L026-topic-003-item-3"
         ],
         [
           "L026-topic-230-item-3",
-          "L026-topic-226-item-2",
           "L026-topic-230-item-2",
-          "L026-topic-227-item-3",
-          "L026-topic-227-item-2",
-          "L026-topic-230-category"
+          "L026-topic-004-item-5",
+          "L026-topic-228-item-3"
+        ],
+        [
+          "L026-topic-230-item-1",
+          "L026-topic-230-item-5",
+          "L026-topic-230-item-4",
+          "L026-topic-230-category",
+          "L026-topic-003-category"
+        ],
+        [
+          "L026-topic-004-item-4",
+          "L026-topic-001-item-2",
+          "L026-topic-228-item-1",
+          "L026-topic-228-item-4",
+          "L026-topic-227-item-4",
+          "L026-topic-003-item-1"
         ]
       ],
       "drawBatches": [
         [
-          "L026-topic-229-item-4",
-          "L026-topic-227-item-4",
-          "L026-topic-226-item-5",
-          "L026-topic-230-item-4",
-          "L026-topic-228-item-4"
-        ],
-        [
-          "L026-topic-230-item-5",
-          "L026-topic-229-item-5",
-          "L026-topic-227-item-5",
-          "L026-topic-226-item-4",
-          "L026-topic-228-item-5"
-        ],
-        [
-          "L026-topic-004-category",
-          "L026-topic-003-category",
-          "L026-topic-002-category",
-          "L026-topic-001-category"
-        ],
-        [
-          "L026-topic-001-item-4",
-          "L026-topic-001-item-5",
-          "L026-topic-002-item-2",
-          "L026-topic-003-item-1",
-          "L026-topic-002-item-4"
-        ],
-        [
-          "L026-topic-002-item-5",
-          "L026-topic-003-item-4",
-          "L026-topic-003-item-3",
-          "L026-topic-001-item-3",
-          "L026-topic-004-item-2"
-        ],
-        [
-          "L026-topic-002-item-3",
-          "L026-topic-004-item-1",
           "L026-topic-003-item-2",
-          "L026-topic-004-item-5",
-          "L026-topic-004-item-4"
+          "L026-topic-004-category",
+          "L026-topic-228-item-5",
+          "L026-topic-004-item-3",
+          "L026-topic-003-item-5"
         ],
         [
+          "L026-topic-226-item-2",
+          "L026-topic-226-category",
+          "L026-topic-003-item-4",
           "L026-topic-001-item-1",
+          "L026-topic-226-item-4"
+        ],
+        [
+          "L026-topic-229-item-3",
+          "L026-topic-227-item-5",
+          "L026-topic-228-item-2",
+          "L026-topic-002-category",
+          "L026-topic-001-item-4"
+        ],
+        [
           "L026-topic-002-item-1",
-          "L026-topic-003-item-5",
-          "L026-topic-004-item-3",
-          "L026-topic-001-item-2"
+          "L026-topic-227-category",
+          "L026-topic-228-category",
+          "L026-topic-002-item-4",
+          "L026-topic-227-item-2"
+        ],
+        [
+          "L026-topic-229-category",
+          "L026-topic-229-item-2",
+          "L026-topic-002-item-3",
+          "L026-topic-226-item-5",
+          "L026-topic-002-item-5"
+        ],
+        [
+          "L026-topic-229-item-1",
+          "L026-topic-002-item-2",
+          "L026-topic-226-item-3",
+          "L026-topic-227-item-1",
+          "L026-topic-229-item-4"
+        ],
+        [
+          "L026-topic-001-item-5",
+          "L026-topic-001-category",
+          "L026-topic-001-item-3",
+          "L026-topic-227-item-3"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L026-topic-228-category",
-        "categoryId": "topic-228",
+        "cardId": "L026-topic-003-category",
+        "categoryId": "topic-003",
         "slotIndex": 0,
-        "columnIndex": 0
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-228-item-1",
-        "categoryId": "topic-228",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L026-topic-003-item-3",
+        "categoryId": "topic-003",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-003-item-1",
+        "categoryId": "topic-003",
+        "columnIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-003-item-5",
+        "categoryId": "topic-003",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-003-item-2",
+        "categoryId": "topic-003",
+        "columnIndex": 0
+      },
+      {
+        "type": "deal",
+        "batchIndex": 1
       },
       {
         "type": "activateCategory",
@@ -5803,225 +5392,22 @@
         "columnIndex": 1
       },
       {
-        "type": "activateCategory",
-        "cardId": "L026-topic-227-category",
-        "categoryId": "topic-227",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
         "type": "placeItem",
-        "cardId": "L026-topic-227-item-1",
-        "categoryId": "topic-227",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L026-topic-229-category",
-        "categoryId": "topic-229",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-229-item-3",
-        "categoryId": "topic-229",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-229-item-2",
-        "categoryId": "topic-229",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-229-item-1",
-        "categoryId": "topic-229",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-226-item-3",
+        "cardId": "L026-topic-226-item-4",
         "categoryId": "topic-226",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-228-item-2",
-        "categoryId": "topic-228",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-226-item-1",
-        "categoryId": "topic-226",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L026-topic-230-category",
-        "categoryId": "topic-230",
-        "slotIndex": 4,
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-230-item-1",
-        "categoryId": "topic-230",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-228-item-3",
-        "categoryId": "topic-228",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-227-item-2",
-        "categoryId": "topic-227",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-227-item-3",
-        "categoryId": "topic-227",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-230-item-2",
-        "categoryId": "topic-230",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L026-topic-003-item-4",
+        "categoryId": "topic-003",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L026-topic-226-item-2",
         "categoryId": "topic-226",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-230-item-3",
-        "categoryId": "topic-230",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-229-item-4",
-        "categoryId": "topic-229",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-227-item-4",
-        "categoryId": "topic-227",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-226-item-5",
-        "categoryId": "topic-226",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-230-item-4",
-        "categoryId": "topic-230",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-228-item-4",
-        "categoryId": "topic-228",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-230-item-5",
-        "categoryId": "topic-230",
-        "slotIndex": 4,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-229-item-5",
-        "categoryId": "topic-229",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-227-item-5",
-        "categoryId": "topic-227",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-226-item-4",
-        "categoryId": "topic-226",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-228-item-5",
-        "categoryId": "topic-228",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -6029,30 +5415,9 @@
       },
       {
         "type": "activateCategory",
-        "cardId": "L026-topic-004-category",
-        "categoryId": "topic-004",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L026-topic-003-category",
-        "categoryId": "topic-003",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
         "cardId": "L026-topic-002-category",
         "categoryId": "topic-002",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L026-topic-001-category",
-        "categoryId": "topic-001",
-        "slotIndex": 3,
+        "slotIndex": 0,
         "columnIndex": 3
       },
       {
@@ -6061,43 +5426,9 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-001-item-4",
-        "categoryId": "topic-001",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-001-item-5",
-        "categoryId": "topic-001",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-002-item-2",
+        "cardId": "L026-topic-002-item-1",
         "categoryId": "topic-002",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-003-item-1",
-        "categoryId": "topic-003",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-002-item-4",
-        "categoryId": "topic-002",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -6105,43 +5436,46 @@
       },
       {
         "type": "placeItem",
+        "cardId": "L026-topic-226-item-5",
+        "categoryId": "topic-226",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L026-topic-229-category",
+        "categoryId": "topic-229",
+        "slotIndex": 2,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-229-item-3",
+        "categoryId": "topic-229",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
         "cardId": "L026-topic-002-item-5",
         "categoryId": "topic-002",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-003-item-4",
-        "categoryId": "topic-003",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L026-topic-229-item-5",
+        "categoryId": "topic-229",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-003-item-3",
-        "categoryId": "topic-003",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L026-topic-226-item-1",
+        "categoryId": "topic-226",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-001-item-3",
-        "categoryId": "topic-001",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-004-item-2",
-        "categoryId": "topic-004",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L026-topic-002-item-4",
+        "categoryId": "topic-002",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -6149,102 +5483,246 @@
       },
       {
         "type": "placeItem",
+        "cardId": "L026-topic-226-item-3",
+        "categoryId": "topic-226",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-002-item-2",
+        "categoryId": "topic-002",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-229-item-1",
+        "categoryId": "topic-229",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-229-item-2",
+        "categoryId": "topic-229",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L026-topic-227-category",
+        "categoryId": "topic-227",
+        "slotIndex": 1,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-229-item-4",
+        "categoryId": "topic-229",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
         "cardId": "L026-topic-002-item-3",
         "categoryId": "topic-002",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-004-item-1",
-        "categoryId": "topic-004",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L026-topic-227-item-1",
+        "categoryId": "topic-227",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L026-topic-003-item-2",
-        "categoryId": "topic-003",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-004-item-5",
-        "categoryId": "topic-004",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-004-item-4",
-        "categoryId": "topic-004",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L026-topic-227-item-2",
+        "categoryId": "topic-227",
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 6
       },
       {
-        "type": "placeItem",
-        "cardId": "L026-topic-002-item-1",
-        "categoryId": "topic-002",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-003-item-5",
-        "categoryId": "topic-003",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L026-topic-004-item-3",
-        "categoryId": "topic-004",
+        "type": "activateCategory",
+        "cardId": "L026-topic-001-category",
+        "categoryId": "topic-001",
         "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": true
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-001-item-4",
+        "categoryId": "topic-001",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-227-item-4",
+        "categoryId": "topic-227",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-227-item-5",
+        "categoryId": "topic-227",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-001-item-3",
+        "categoryId": "topic-001",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L026-topic-228-category",
+        "categoryId": "topic-228",
+        "slotIndex": 2,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-001-item-5",
+        "categoryId": "topic-001",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-227-item-3",
+        "categoryId": "topic-227",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
         "cardId": "L026-topic-001-item-1",
         "categoryId": "topic-001",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-228-item-4",
+        "categoryId": "topic-228",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-228-item-2",
+        "categoryId": "topic-228",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-228-item-5",
+        "categoryId": "topic-228",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-228-item-1",
+        "categoryId": "topic-228",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-228-item-3",
+        "categoryId": "topic-228",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L026-topic-001-item-2",
         "categoryId": "topic-001",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L026-topic-004-category",
+        "categoryId": "topic-004",
+        "slotIndex": 0,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-004-item-1",
+        "categoryId": "topic-004",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-004-item-2",
+        "categoryId": "topic-004",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-004-item-4",
+        "categoryId": "topic-004",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-004-item-3",
+        "categoryId": "topic-004",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-004-item-5",
+        "categoryId": "topic-004",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L026-topic-230-category",
+        "categoryId": "topic-230",
+        "slotIndex": 0,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-230-item-4",
+        "categoryId": "topic-230",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-230-item-2",
+        "categoryId": "topic-230",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-230-item-5",
+        "categoryId": "topic-230",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-230-item-1",
+        "categoryId": "topic-230",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L026-topic-230-item-3",
+        "categoryId": "topic-230",
+        "columnIndex": 2
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 4496,
+      "backtracks": 4434,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 1294,
+      "dealDecisionStates": 706,
+      "forcedMoves": 1095
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C0.5|I0.5,I1.5,I2.5,I0.5,C3.5|I1.5,I2.5,I1.5,I4.5,I4.5,C1.5|I2.5,I3.5,I3.5,C4.5|I3.5,I4.5,C2.5#I3.5,I1.5,I0.5,I2.5,I4.5|I1.5,I2.5,I0.5,I4.5,I3.5|C5.5,C6.5,_,C7.5,C8.5|I6.5,I8.5,I7.5,I7.5,I6.5|I7.5,I6.5,I5.5,I8.5,I8.5|I7.5,I5.5,I5.5,I8.5,I5.5|I6.5,I5.5,I6.5,I8.5,I7.5"
+    "layoutSignature": "9#I0.5,I0.5,I0.5,C0.5,C1.5|I0.5,I0.5,I2.5,I3.5|I2.5,I2.5,I1.5|I2.5,I4.5,I3.5,I3.5,I5.5,I1.5|I6.5,I7.5#I2.5,I3.5,C2.5,I1.5,I1.5|I4.5,I1.5,C6.5,I6.5,I6.5|C8.5,I3.5,I5.5,I4.5,I7.5|I8.5,C3.5,C5.5,I5.5,I8.5|I6.5,I8.5,I7.5,I8.5,C7.5|I5.5,I6.5,I8.5,I7.5,I7.5|I5.5,I4.5,C4.5,_,I4.5"
   },
   {
     "id": "L027",
@@ -6252,11 +5730,11 @@
     "chapter": 2,
     "title": "生活聯想 7",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1123813,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 31768,
+    "seed": 6046076,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -6724,84 +6202,84 @@
     "layout": {
       "initialColumns": [
         [
-          "L027-topic-007-item-3",
+          "L027-topic-009-item-2",
           "L027-topic-005-category"
         ],
         [
-          "L027-topic-006-item-3",
+          "L027-topic-007-item-1",
+          "L027-topic-013-item-4",
+          "L027-topic-005-item-1"
+        ],
+        [
+          "L027-topic-010-item-2",
+          "L027-topic-010-item-4",
           "L027-topic-007-item-2",
-          "L027-topic-007-category"
+          "L027-topic-007-item-5"
         ],
         [
           "L027-topic-009-item-1",
-          "L027-topic-008-item-2",
-          "L027-topic-007-item-1",
-          "L027-topic-008-category"
+          "L027-topic-013-item-1",
+          "L027-topic-013-item-2",
+          "L027-topic-009-item-3",
+          "L027-topic-005-item-5"
         ],
         [
           "L027-topic-006-item-1",
-          "L027-topic-009-item-2",
-          "L027-topic-005-item-1",
-          "L027-topic-005-item-3",
-          "L027-topic-006-category"
-        ],
-        [
-          "L027-topic-005-item-2",
-          "L027-topic-006-item-2",
-          "L027-topic-008-item-3",
-          "L027-topic-008-item-1",
-          "L027-topic-009-item-3",
-          "L027-topic-009-category"
+          "L027-topic-011-item-5",
+          "L027-topic-007-item-4",
+          "L027-topic-011-item-3",
+          "L027-topic-012-item-3",
+          "L027-topic-012-item-5"
         ]
       ],
       "drawBatches": [
         [
-          "L027-topic-005-item-4",
-          "L027-topic-008-item-4",
-          "L027-topic-008-item-5",
-          "L027-topic-009-item-5",
-          "L027-topic-009-item-4"
-        ],
-        [
-          "L027-topic-006-item-5",
-          "L027-topic-006-item-4",
-          "L027-topic-007-item-4",
-          "L027-topic-005-item-5",
-          "L027-topic-007-item-5"
-        ],
-        [
-          "L027-topic-011-category",
-          "L027-topic-013-category",
-          "L027-topic-010-category",
-          "L027-topic-012-category"
-        ],
-        [
-          "L027-topic-010-item-2",
-          "L027-topic-011-item-3",
-          "L027-topic-011-item-2",
           "L027-topic-013-item-3",
-          "L027-topic-013-item-1"
+          "L027-topic-010-item-1",
+          "L027-topic-010-item-5",
+          "L027-topic-010-category",
+          "L027-topic-005-item-2"
         ],
         [
-          "L027-topic-012-item-2",
-          "L027-topic-011-item-4",
+          "L027-topic-009-item-4",
+          "L027-topic-009-item-5",
+          "L027-topic-010-item-3",
           "L027-topic-013-item-5",
-          "L027-topic-011-item-1",
+          "L027-topic-005-item-3"
+        ],
+        [
+          "L027-topic-006-item-4",
+          "L027-topic-012-item-2",
+          "L027-topic-006-item-2",
+          "L027-topic-005-item-4",
           "L027-topic-012-item-4"
         ],
         [
-          "L027-topic-010-item-4",
-          "L027-topic-011-item-5",
-          "L027-topic-013-item-2",
-          "L027-topic-012-item-1",
-          "L027-topic-010-item-5"
+          "L027-topic-011-item-1",
+          "L027-topic-006-item-3",
+          "L027-topic-009-category",
+          "L027-topic-011-item-4",
+          "L027-topic-012-category"
         ],
         [
-          "L027-topic-013-item-4",
-          "L027-topic-010-item-1",
-          "L027-topic-010-item-3",
-          "L027-topic-012-item-5",
-          "L027-topic-012-item-3"
+          "L027-topic-011-category",
+          "L027-topic-006-category",
+          "L027-topic-011-item-2",
+          "L027-topic-013-category",
+          "L027-topic-008-item-3"
+        ],
+        [
+          "L027-topic-008-category",
+          "L027-topic-008-item-1",
+          "L027-topic-008-item-5",
+          "L027-topic-008-item-2",
+          "L027-topic-008-item-4"
+        ],
+        [
+          "L027-topic-006-item-5",
+          "L027-topic-012-item-1",
+          "L027-topic-007-item-3",
+          "L027-topic-007-category"
         ]
       ]
     },
@@ -6814,152 +6292,16 @@
         "columnIndex": 0
       },
       {
-        "type": "activateCategory",
-        "cardId": "L027-topic-007-category",
-        "categoryId": "topic-007",
-        "slotIndex": 1,
+        "type": "placeItem",
+        "cardId": "L027-topic-005-item-1",
+        "categoryId": "topic-005",
         "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L027-topic-007-item-3",
-        "categoryId": "topic-007",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-007-item-2",
-        "categoryId": "topic-007",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L027-topic-008-category",
-        "categoryId": "topic-008",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-007-item-1",
-        "categoryId": "topic-007",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-008-item-2",
-        "categoryId": "topic-008",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L027-topic-006-category",
-        "categoryId": "topic-006",
-        "slotIndex": 3,
+        "cardId": "L027-topic-005-item-5",
+        "categoryId": "topic-005",
         "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-006-item-3",
-        "categoryId": "topic-006",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-005-item-3",
-        "categoryId": "topic-005",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-005-item-1",
-        "categoryId": "topic-005",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L027-topic-009-category",
-        "categoryId": "topic-009",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-009-item-1",
-        "categoryId": "topic-009",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-009-item-2",
-        "categoryId": "topic-009",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-006-item-1",
-        "categoryId": "topic-006",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-009-item-3",
-        "categoryId": "topic-009",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-008-item-1",
-        "categoryId": "topic-008",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-008-item-3",
-        "categoryId": "topic-008",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-006-item-2",
-        "categoryId": "topic-006",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-005-item-2",
-        "categoryId": "topic-005",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -6967,43 +6309,9 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L027-topic-005-item-4",
+        "cardId": "L027-topic-005-item-2",
         "categoryId": "topic-005",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-008-item-4",
-        "categoryId": "topic-008",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-008-item-5",
-        "categoryId": "topic-008",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-009-item-5",
-        "categoryId": "topic-009",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-009-item-4",
-        "categoryId": "topic-009",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -7011,47 +6319,68 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L027-topic-005-item-5",
+        "cardId": "L027-topic-005-item-3",
         "categoryId": "topic-005",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-006-item-5",
-        "categoryId": "topic-006",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-006-item-4",
-        "categoryId": "topic-006",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-007-item-4",
-        "categoryId": "topic-007",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-007-item-5",
-        "categoryId": "topic-007",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-005-item-4",
+        "categoryId": "topic-005",
+        "columnIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 5
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L027-topic-008-category",
+        "categoryId": "topic-008",
+        "slotIndex": 0,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-008-item-1",
+        "categoryId": "topic-008",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-008-item-4",
+        "categoryId": "topic-008",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-008-item-5",
+        "categoryId": "topic-008",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-008-item-2",
+        "categoryId": "topic-008",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-008-item-3",
+        "categoryId": "topic-008",
+        "columnIndex": 4
       },
       {
         "type": "activateCategory",
@@ -7062,156 +6391,17 @@
       },
       {
         "type": "activateCategory",
-        "cardId": "L027-topic-013-category",
-        "categoryId": "topic-013",
+        "cardId": "L027-topic-006-category",
+        "categoryId": "topic-006",
         "slotIndex": 1,
         "columnIndex": 1
       },
       {
         "type": "activateCategory",
-        "cardId": "L027-topic-010-category",
-        "categoryId": "topic-010",
+        "cardId": "L027-topic-013-category",
+        "categoryId": "topic-013",
         "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L027-topic-012-category",
-        "categoryId": "topic-012",
-        "slotIndex": 3,
         "columnIndex": 3
-      },
-      {
-        "type": "deal",
-        "batchIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-010-item-2",
-        "categoryId": "topic-010",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-011-item-3",
-        "categoryId": "topic-011",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-011-item-2",
-        "categoryId": "topic-011",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-013-item-3",
-        "categoryId": "topic-013",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-013-item-1",
-        "categoryId": "topic-013",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-012-item-2",
-        "categoryId": "topic-012",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-011-item-4",
-        "categoryId": "topic-011",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-013-item-5",
-        "categoryId": "topic-013",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-011-item-1",
-        "categoryId": "topic-011",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-012-item-4",
-        "categoryId": "topic-012",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 5
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-011-item-5",
-        "categoryId": "topic-011",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-010-item-4",
-        "categoryId": "topic-010",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-013-item-2",
-        "categoryId": "topic-013",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-012-item-1",
-        "categoryId": "topic-012",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L027-topic-010-item-5",
-        "categoryId": "topic-010",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -7219,58 +6409,259 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L027-topic-013-item-4",
-        "categoryId": "topic-013",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": true
+        "cardId": "L027-topic-006-item-5",
+        "categoryId": "topic-006",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L027-topic-010-item-1",
-        "categoryId": "topic-010",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L027-topic-011-item-1",
+        "categoryId": "topic-011",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L027-topic-012-category",
+        "categoryId": "topic-012",
+        "slotIndex": 3,
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L027-topic-010-item-3",
-        "categoryId": "topic-010",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L027-topic-012-item-4",
+        "categoryId": "topic-012",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-012-item-1",
+        "categoryId": "topic-012",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L027-topic-012-item-5",
         "categoryId": "topic-012",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L027-topic-007-category",
+        "categoryId": "topic-007",
+        "slotIndex": 4,
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
         "cardId": "L027-topic-012-item-3",
         "categoryId": "topic-012",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-011-item-4",
+        "categoryId": "topic-011",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-007-item-3",
+        "categoryId": "topic-007",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-011-item-2",
+        "categoryId": "topic-011",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-011-item-3",
+        "categoryId": "topic-011",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-007-item-4",
+        "categoryId": "topic-007",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-006-item-3",
+        "categoryId": "topic-006",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-013-item-5",
+        "categoryId": "topic-013",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-012-item-2",
+        "categoryId": "topic-012",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-006-item-4",
+        "categoryId": "topic-006",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-011-item-5",
+        "categoryId": "topic-011",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-006-item-1",
+        "categoryId": "topic-006",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L027-topic-009-category",
+        "categoryId": "topic-009",
+        "slotIndex": 0,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-009-item-4",
+        "categoryId": "topic-009",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-006-item-2",
+        "categoryId": "topic-006",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L027-topic-010-category",
+        "categoryId": "topic-010",
+        "slotIndex": 1,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-013-item-3",
+        "categoryId": "topic-013",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-009-item-3",
+        "categoryId": "topic-009",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-009-item-2",
+        "categoryId": "topic-009",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-009-item-5",
+        "categoryId": "topic-009",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-010-item-1",
+        "categoryId": "topic-010",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-013-item-2",
+        "categoryId": "topic-013",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-010-item-3",
+        "categoryId": "topic-010",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-010-item-5",
+        "categoryId": "topic-010",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-013-item-1",
+        "categoryId": "topic-013",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-009-item-1",
+        "categoryId": "topic-009",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-013-item-4",
+        "categoryId": "topic-013",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-007-item-5",
+        "categoryId": "topic-007",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-007-item-2",
+        "categoryId": "topic-007",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-007-item-1",
+        "categoryId": "topic-007",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-010-item-4",
+        "categoryId": "topic-010",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L027-topic-010-item-2",
+        "categoryId": "topic-010",
+        "columnIndex": 2
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 573,
+      "backtracks": 511,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 215,
+      "dealDecisionStates": 62,
+      "forcedMoves": 129
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I1.5,I2.5,I3.5,I3.5,I4.5,C4.5|I2.5,I0.5,C0.5|I2.5,I4.5,I1.5,I1.5,C2.5|I4.5,I3.5,I0.5,C3.5#I1.5,I4.5,I3.5,I4.5,I3.5|I2.5,I0.5,I2.5,I1.5,I0.5|C5.5,_,C6.5,C7.5,C8.5|I8.5,I6.5,I5.5,I6.5,I5.5|I7.5,I7.5,I5.5,I5.5,I6.5|I8.5,I8.5,I5.5,I7.5,I6.5|I6.5,I7.5,I8.5,I7.5,I8.5"
+    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,I2.5,I0.5,I1.5|I3.5,I2.5,I1.5|I4.5,I4.5,I3.5,I3.5|I5.5,I6.5,I3.5,I6.5,I7.5,I7.5#I2.5,C4.5,I4.5,I4.5,I1.5|I0.5,I2.5,I0.5,I4.5,I1.5|I5.5,I1.5,I7.5,I5.5,I7.5|I6.5,I6.5,I5.5,C0.5,C7.5|C6.5,C2.5,C5.5,I6.5,I8.5|C8.5,I8.5,I8.5,I8.5,I8.5|I5.5,C3.5,I7.5,I3.5,_"
   },
   {
     "id": "L028",
@@ -7278,11 +6669,11 @@
     "chapter": 2,
     "title": "生活聯想 8",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1131732,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 26015,
+    "seed": 36634863,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -7768,286 +7159,150 @@
     "layout": {
       "initialColumns": [
         [
-          "L028-topic-016-item-1",
-          "L028-topic-014-category"
+          "L028-topic-022-item-1",
+          "L028-topic-022-category"
         ],
         [
-          "L028-topic-018-item-3",
-          "L028-topic-014-item-3",
-          "L028-topic-018-category"
-        ],
-        [
-          "L028-topic-015-item-1",
-          "L028-topic-014-item-1",
+          "L028-topic-017-item-4",
           "L028-topic-017-item-1",
-          "L028-topic-016-category"
+          "L028-topic-021-category"
         ],
         [
-          "L028-topic-015-item-2",
-          "L028-topic-014-item-2",
-          "L028-topic-017-item-3",
-          "L028-topic-017-item-2",
+          "L028-topic-016-item-5",
+          "L028-topic-016-item-4",
+          "L028-topic-021-item-2",
+          "L028-topic-020-item-5"
+        ],
+        [
+          "L028-topic-017-item-5",
+          "L028-topic-018-item-4",
+          "L028-topic-015-item-3",
+          "L028-topic-016-item-2",
           "L028-topic-015-category"
         ],
         [
-          "L028-topic-018-item-2",
-          "L028-topic-015-item-3",
-          "L028-topic-016-item-2",
+          "L028-topic-018-item-5",
+          "L028-topic-018-item-3",
+          "L028-topic-016-item-1",
+          "L028-topic-015-item-2",
           "L028-topic-018-item-1",
-          "L028-topic-016-item-3",
-          "L028-topic-017-category"
+          "L028-topic-018-item-2"
         ]
       ],
       "drawBatches": [
         [
-          "L028-topic-016-item-5",
-          "L028-topic-018-item-5",
+          "L028-topic-014-category",
+          "L028-topic-022-item-5",
+          "L028-topic-020-category",
           "L028-topic-015-item-5",
-          "L028-topic-017-item-5",
-          "L028-topic-016-item-4"
+          "L028-topic-018-category"
         ],
         [
           "L028-topic-014-item-4",
-          "L028-topic-015-item-4",
-          "L028-topic-017-item-4",
-          "L028-topic-018-item-4",
-          "L028-topic-014-item-5"
-        ],
-        [
-          "L028-topic-019-category",
-          "L028-topic-020-category",
-          "L028-topic-021-category",
-          "L028-topic-022-category"
-        ],
-        [
-          "L028-topic-019-item-5",
-          "L028-topic-021-item-1",
-          "L028-topic-021-item-3",
-          "L028-topic-019-item-2",
-          "L028-topic-022-item-1"
-        ],
-        [
-          "L028-topic-021-item-2",
           "L028-topic-021-item-5",
-          "L028-topic-020-item-2",
-          "L028-topic-022-item-2",
-          "L028-topic-021-item-4"
+          "L028-topic-014-item-2",
+          "L028-topic-016-item-3",
+          "L028-topic-021-item-3"
         ],
         [
           "L028-topic-020-item-1",
-          "L028-topic-019-item-4",
-          "L028-topic-022-item-4",
-          "L028-topic-019-item-1",
-          "L028-topic-020-item-5"
+          "L028-topic-014-item-3",
+          "L028-topic-015-item-1",
+          "L028-topic-017-category",
+          "L028-topic-019-item-3"
         ],
         [
-          "L028-topic-020-item-3",
-          "L028-topic-022-item-5",
+          "L028-topic-014-item-5",
+          "L028-topic-021-item-1",
+          "L028-topic-020-item-2",
+          "L028-topic-022-item-3",
+          "L028-topic-022-item-4"
+        ],
+        [
+          "L028-topic-019-item-5",
+          "L028-topic-017-item-2",
+          "L028-topic-021-item-4",
+          "L028-topic-016-category",
+          "L028-topic-019-category"
+        ],
+        [
+          "L028-topic-014-item-1",
+          "L028-topic-022-item-2",
           "L028-topic-020-item-4",
-          "L028-topic-019-item-3",
-          "L028-topic-022-item-3"
+          "L028-topic-019-item-1",
+          "L028-topic-019-item-4"
+        ],
+        [
+          "L028-topic-015-item-4",
+          "L028-topic-017-item-3",
+          "L028-topic-019-item-2",
+          "L028-topic-020-item-3"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L028-topic-014-category",
-        "categoryId": "topic-014",
+        "cardId": "L028-topic-022-category",
+        "categoryId": "topic-022",
         "slotIndex": 0,
         "columnIndex": 0
       },
       {
+        "type": "placeItem",
+        "cardId": "L028-topic-022-item-1",
+        "categoryId": "topic-022",
+        "columnIndex": 0
+      },
+      {
         "type": "activateCategory",
-        "cardId": "L028-topic-018-category",
-        "categoryId": "topic-018",
+        "cardId": "L028-topic-021-category",
+        "categoryId": "topic-021",
         "slotIndex": 1,
         "columnIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-014-item-3",
-        "categoryId": "topic-014",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-018-item-3",
-        "categoryId": "topic-018",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L028-topic-016-category",
-        "categoryId": "topic-016",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-016-item-1",
-        "categoryId": "topic-016",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
       },
       {
         "type": "activateCategory",
         "cardId": "L028-topic-015-category",
         "categoryId": "topic-015",
-        "slotIndex": 3,
+        "slotIndex": 2,
         "columnIndex": 3
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L028-topic-017-category",
-        "categoryId": "topic-017",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-017-item-1",
-        "categoryId": "topic-017",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-014-item-1",
-        "categoryId": "topic-014",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-015-item-1",
-        "categoryId": "topic-015",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-017-item-2",
-        "categoryId": "topic-017",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-017-item-3",
-        "categoryId": "topic-017",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-014-item-2",
-        "categoryId": "topic-014",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-015-item-2",
-        "categoryId": "topic-015",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-016-item-3",
-        "categoryId": "topic-016",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-018-item-1",
-        "categoryId": "topic-018",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-016-item-2",
-        "categoryId": "topic-016",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-015-item-3",
-        "categoryId": "topic-015",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-018-item-2",
-        "categoryId": "topic-018",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
       },
       {
         "type": "deal",
         "batchIndex": 0
       },
       {
-        "type": "placeItem",
-        "cardId": "L028-topic-016-item-5",
-        "categoryId": "topic-016",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L028-topic-020-category",
+        "categoryId": "topic-020",
+        "slotIndex": 3,
+        "columnIndex": 2
       },
       {
-        "type": "placeItem",
-        "cardId": "L028-topic-016-item-4",
-        "categoryId": "topic-016",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-018-item-5",
-        "categoryId": "topic-018",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L028-topic-014-category",
+        "categoryId": "topic-014",
+        "slotIndex": 4,
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L028-topic-015-item-5",
         "categoryId": "topic-015",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-017-item-5",
-        "categoryId": "topic-017",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L028-topic-022-item-5",
+        "categoryId": "topic-022",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-020-item-5",
+        "categoryId": "topic-020",
+        "columnIndex": 2
       },
       {
         "type": "deal",
@@ -8055,75 +7310,37 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-015-item-4",
-        "categoryId": "topic-015",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-017-item-4",
-        "categoryId": "topic-017",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-018-item-4",
-        "categoryId": "topic-018",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
         "cardId": "L028-topic-014-item-4",
         "categoryId": "topic-014",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-014-item-5",
+        "cardId": "L028-topic-014-item-2",
         "categoryId": "topic-014",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-021-item-3",
+        "categoryId": "topic-021",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-021-item-5",
+        "categoryId": "topic-021",
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L028-topic-019-category",
-        "categoryId": "topic-019",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L028-topic-020-category",
-        "categoryId": "topic-020",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L028-topic-021-category",
-        "categoryId": "topic-021",
-        "slotIndex": 2,
+        "type": "placeItem",
+        "cardId": "L028-topic-015-item-1",
+        "categoryId": "topic-015",
         "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L028-topic-022-category",
-        "categoryId": "topic-022",
-        "slotIndex": 3,
-        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -8131,43 +7348,45 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-019-item-5",
-        "categoryId": "topic-019",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L028-topic-014-item-5",
+        "categoryId": "topic-014",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L028-topic-021-item-1",
         "categoryId": "topic-021",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-021-item-3",
-        "categoryId": "topic-021",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L028-topic-020-item-1",
+        "categoryId": "topic-020",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-019-item-2",
-        "categoryId": "topic-019",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L028-topic-020-item-2",
+        "categoryId": "topic-020",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-022-item-1",
+        "cardId": "L028-topic-022-item-3",
         "categoryId": "topic-022",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-014-item-3",
+        "categoryId": "topic-014",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-021-item-2",
+        "categoryId": "topic-021",
+        "columnIndex": 2
       },
       {
         "type": "deal",
@@ -8175,43 +7394,16 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-021-item-2",
-        "categoryId": "topic-021",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-021-item-5",
-        "categoryId": "topic-021",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
         "cardId": "L028-topic-021-item-4",
         "categoryId": "topic-021",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 2
       },
       {
-        "type": "placeItem",
-        "cardId": "L028-topic-020-item-2",
-        "categoryId": "topic-020",
+        "type": "activateCategory",
+        "cardId": "L028-topic-019-category",
+        "categoryId": "topic-019",
         "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-022-item-2",
-        "categoryId": "topic-022",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -8219,43 +7411,39 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-020-item-1",
+        "cardId": "L028-topic-020-item-4",
         "categoryId": "topic-020",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L028-topic-019-item-4",
         "categoryId": "topic-019",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-014-item-1",
+        "categoryId": "topic-014",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-019-item-5",
+        "categoryId": "topic-019",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-022-item-2",
+        "categoryId": "topic-022",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L028-topic-022-item-4",
         "categoryId": "topic-022",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-019-item-1",
-        "categoryId": "topic-019",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-020-item-5",
-        "categoryId": "topic-020",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -8263,58 +7451,174 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-019-item-3",
-        "categoryId": "topic-019",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
         "cardId": "L028-topic-020-item-3",
         "categoryId": "topic-020",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-019-item-2",
+        "categoryId": "topic-019",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-019-item-3",
+        "categoryId": "topic-019",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L028-topic-018-category",
+        "categoryId": "topic-018",
+        "slotIndex": 0,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-019-item-1",
+        "categoryId": "topic-019",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-018-item-2",
+        "categoryId": "topic-018",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-015-item-4",
+        "categoryId": "topic-015",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-018-item-1",
+        "categoryId": "topic-018",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-015-item-2",
+        "categoryId": "topic-015",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L028-topic-016-category",
+        "categoryId": "topic-016",
         "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
-        "type": "placeItem",
-        "cardId": "L028-topic-020-item-4",
-        "categoryId": "topic-020",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L028-topic-022-item-5",
-        "categoryId": "topic-022",
+        "type": "activateCategory",
+        "cardId": "L028-topic-017-category",
+        "categoryId": "topic-017",
         "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L028-topic-022-item-3",
-        "categoryId": "topic-022",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L028-topic-016-item-1",
+        "categoryId": "topic-016",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-018-item-3",
+        "categoryId": "topic-018",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-017-item-3",
+        "categoryId": "topic-017",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-018-item-5",
+        "categoryId": "topic-018",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-016-item-4",
+        "categoryId": "topic-016",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-016-item-3",
+        "categoryId": "topic-016",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-016-item-2",
+        "categoryId": "topic-016",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-015-item-3",
+        "categoryId": "topic-015",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-016-item-5",
+        "categoryId": "topic-016",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-017-item-2",
+        "categoryId": "topic-017",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-017-item-1",
+        "categoryId": "topic-017",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-018-item-4",
+        "categoryId": "topic-018",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-017-item-4",
+        "categoryId": "topic-017",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L028-topic-017-item-5",
+        "categoryId": "topic-017",
+        "columnIndex": 3
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 256,
+      "backtracks": 194,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 108,
+      "dealDecisionStates": 66,
+      "forcedMoves": 64
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I2.5,I1.5,C2.5|I2.5,I3.5,I0.5,I2.5,I0.5,C4.5|I3.5,I1.5,I4.5,C0.5|I3.5,I1.5,I4.5,I4.5,C3.5#I0.5,I2.5,I0.5,I3.5,I4.5|I1.5,I3.5,I1.5,I4.5,I2.5|C5.5,C6.5,_,C7.5,C8.5|I5.5,I7.5,I8.5,I7.5,I5.5|I7.5,I7.5,I7.5,I6.5,I8.5|I6.5,I5.5,I6.5,I8.5,I5.5|I6.5,I8.5,I8.5,I6.5,I5.5"
+    "layoutSignature": "9#I0.5,C0.5|I1.5,I1.5,C2.5|I1.5,I3.5,I4.5,I5.5,C4.5|I3.5,I3.5,I5.5,I4.5,I3.5,I3.5|I5.5,I5.5,I2.5,I6.5#C7.5,I0.5,I4.5,C3.5,C6.5|I7.5,I2.5,I5.5,I2.5,I7.5|I6.5,I7.5,C1.5,I8.5,I4.5|I7.5,I2.5,I0.5,I0.5,I6.5|I8.5,I1.5,C5.5,C8.5,I2.5|I7.5,I0.5,I8.5,I8.5,I6.5|I4.5,I1.5,I6.5,_,I8.5"
   },
   {
     "id": "L029",
@@ -8322,11 +7626,11 @@
     "chapter": 2,
     "title": "生活聯想 9",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1139651,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 30888,
+    "seed": 5747727,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -8812,88 +8116,346 @@
     "layout": {
       "initialColumns": [
         [
-          "L029-topic-027-item-3",
-          "L029-topic-023-category"
-        ],
-        [
-          "L029-topic-024-item-2",
-          "L029-topic-027-item-1",
-          "L029-topic-026-category"
-        ],
-        [
-          "L029-topic-023-item-3",
           "L029-topic-025-item-3",
-          "L029-topic-026-item-2",
-          "L029-topic-024-category"
+          "L029-topic-025-category"
         ],
         [
-          "L029-topic-023-item-1",
-          "L029-topic-027-item-2",
-          "L029-topic-026-item-3",
-          "L029-topic-024-item-1",
+          "L029-topic-030-item-3",
+          "L029-topic-024-item-5",
           "L029-topic-027-category"
         ],
         [
-          "L029-topic-025-item-1",
-          "L029-topic-026-item-1",
-          "L029-topic-023-item-2",
-          "L029-topic-025-item-2",
-          "L029-topic-024-item-3",
-          "L029-topic-025-category"
+          "L029-topic-025-item-5",
+          "L029-topic-027-item-1",
+          "L029-topic-030-item-1",
+          "L029-topic-027-item-4"
+        ],
+        [
+          "L029-topic-026-category",
+          "L029-topic-030-item-2",
+          "L029-topic-031-item-3",
+          "L029-topic-029-category",
+          "L029-topic-025-item-1"
+        ],
+        [
+          "L029-topic-024-item-1",
+          "L029-topic-027-item-5",
+          "L029-topic-028-item-2",
+          "L029-topic-025-item-4",
+          "L029-topic-031-category",
+          "L029-topic-025-item-2"
         ]
       ],
       "drawBatches": [
         [
-          "L029-topic-026-item-4",
-          "L029-topic-025-item-4",
-          "L029-topic-027-item-4",
-          "L029-topic-023-item-4",
-          "L029-topic-027-item-5"
-        ],
-        [
-          "L029-topic-023-item-5",
-          "L029-topic-026-item-5",
-          "L029-topic-024-item-4",
-          "L029-topic-025-item-5",
-          "L029-topic-024-item-5"
-        ],
-        [
-          "L029-topic-031-category",
-          "L029-topic-029-category",
+          "L029-topic-028-category",
+          "L029-topic-028-item-3",
           "L029-topic-030-category",
-          "L029-topic-028-category"
+          "L029-topic-027-item-3",
+          "L029-topic-030-item-5"
+        ],
+        [
+          "L029-topic-028-item-5",
+          "L029-topic-031-item-2",
+          "L029-topic-027-item-2",
+          "L029-topic-030-item-4",
+          "L029-topic-024-category"
+        ],
+        [
+          "L029-topic-024-item-4",
+          "L029-topic-031-item-5",
+          "L029-topic-029-item-1",
+          "L029-topic-028-item-1",
+          "L029-topic-028-item-4"
+        ],
+        [
+          "L029-topic-023-category",
+          "L029-topic-024-item-2",
+          "L029-topic-024-item-3",
+          "L029-topic-029-item-2",
+          "L029-topic-029-item-5"
         ],
         [
           "L029-topic-031-item-1",
-          "L029-topic-031-item-5",
-          "L029-topic-028-item-5",
-          "L029-topic-031-item-3",
-          "L029-topic-029-item-1"
-        ],
-        [
-          "L029-topic-030-item-2",
-          "L029-topic-030-item-5",
+          "L029-topic-026-item-2",
           "L029-topic-031-item-4",
-          "L029-topic-028-item-3",
-          "L029-topic-030-item-4"
+          "L029-topic-029-item-4",
+          "L029-topic-029-item-3"
         ],
         [
-          "L029-topic-029-item-3",
-          "L029-topic-030-item-1",
-          "L029-topic-028-item-4",
-          "L029-topic-029-item-5",
-          "L029-topic-029-item-4"
+          "L029-topic-023-item-3",
+          "L029-topic-023-item-4",
+          "L029-topic-026-item-5",
+          "L029-topic-026-item-4",
+          "L029-topic-026-item-1"
         ],
         [
-          "L029-topic-031-item-2",
-          "L029-topic-029-item-2",
-          "L029-topic-028-item-1",
-          "L029-topic-030-item-3",
-          "L029-topic-028-item-2"
+          "L029-topic-023-item-1",
+          "L029-topic-023-item-5",
+          "L029-topic-023-item-2",
+          "L029-topic-026-item-3"
         ]
       ]
     },
     "knownSolution": [
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-025-category",
+        "categoryId": "topic-025",
+        "slotIndex": 0,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-025-item-2",
+        "categoryId": "topic-025",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-025-item-3",
+        "categoryId": "topic-025",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-027-category",
+        "categoryId": "topic-027",
+        "slotIndex": 1,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-027-item-4",
+        "categoryId": "topic-027",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-025-item-1",
+        "categoryId": "topic-025",
+        "columnIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-028-category",
+        "categoryId": "topic-028",
+        "slotIndex": 2,
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-030-category",
+        "categoryId": "topic-030",
+        "slotIndex": 3,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-030-item-5",
+        "categoryId": "topic-030",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-028-item-3",
+        "categoryId": "topic-028",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-030-item-1",
+        "categoryId": "topic-030",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-031-category",
+        "categoryId": "topic-031",
+        "slotIndex": 4,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-027-item-3",
+        "categoryId": "topic-027",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-027-item-1",
+        "categoryId": "topic-027",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-025-item-5",
+        "categoryId": "topic-025",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-025-item-4",
+        "categoryId": "topic-025",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-028-item-2",
+        "categoryId": "topic-028",
+        "columnIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-024-category",
+        "categoryId": "topic-024",
+        "slotIndex": 0,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-027-item-2",
+        "categoryId": "topic-027",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-028-item-5",
+        "categoryId": "topic-028",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-030-item-4",
+        "categoryId": "topic-030",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-027-item-5",
+        "categoryId": "topic-027",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-031-item-2",
+        "categoryId": "topic-031",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-024-item-1",
+        "categoryId": "topic-024",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-029-category",
+        "categoryId": "topic-029",
+        "slotIndex": 1,
+        "columnIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-029-item-1",
+        "categoryId": "topic-029",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-024-item-4",
+        "categoryId": "topic-024",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-031-item-5",
+        "categoryId": "topic-031",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-028-item-1",
+        "categoryId": "topic-028",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-024-item-5",
+        "categoryId": "topic-024",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-030-item-3",
+        "categoryId": "topic-030",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-031-item-3",
+        "categoryId": "topic-031",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-030-item-2",
+        "categoryId": "topic-030",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L029-topic-026-category",
+        "categoryId": "topic-026",
+        "slotIndex": 3,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-028-item-4",
+        "categoryId": "topic-028",
+        "columnIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-024-item-3",
+        "categoryId": "topic-024",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-029-item-2",
+        "categoryId": "topic-029",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-024-item-2",
+        "categoryId": "topic-024",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-029-item-5",
+        "categoryId": "topic-029",
+        "columnIndex": 4
+      },
       {
         "type": "activateCategory",
         "cardId": "L029-topic-023-category",
@@ -8902,360 +8464,38 @@
         "columnIndex": 0
       },
       {
-        "type": "activateCategory",
-        "cardId": "L029-topic-026-category",
-        "categoryId": "topic-026",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L029-topic-024-category",
-        "categoryId": "topic-024",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-026-item-2",
-        "categoryId": "topic-026",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L029-topic-027-category",
-        "categoryId": "topic-027",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-027-item-3",
-        "categoryId": "topic-027",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-027-item-1",
-        "categoryId": "topic-027",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-024-item-2",
-        "categoryId": "topic-024",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-024-item-1",
-        "categoryId": "topic-024",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-026-item-3",
-        "categoryId": "topic-026",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-027-item-2",
-        "categoryId": "topic-027",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-023-item-1",
-        "categoryId": "topic-023",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L029-topic-025-category",
-        "categoryId": "topic-025",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-025-item-3",
-        "categoryId": "topic-025",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-023-item-3",
-        "categoryId": "topic-023",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-024-item-3",
-        "categoryId": "topic-024",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-025-item-2",
-        "categoryId": "topic-025",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-023-item-2",
-        "categoryId": "topic-023",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-026-item-1",
-        "categoryId": "topic-026",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-025-item-1",
-        "categoryId": "topic-025",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-026-item-4",
-        "categoryId": "topic-026",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-025-item-4",
-        "categoryId": "topic-025",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-027-item-4",
-        "categoryId": "topic-027",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-027-item-5",
-        "categoryId": "topic-027",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-023-item-4",
-        "categoryId": "topic-023",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-023-item-5",
-        "categoryId": "topic-023",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-026-item-5",
-        "categoryId": "topic-026",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-025-item-5",
-        "categoryId": "topic-025",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-024-item-4",
-        "categoryId": "topic-024",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-024-item-5",
-        "categoryId": "topic-024",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "deal",
-        "batchIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L029-topic-031-category",
-        "categoryId": "topic-031",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L029-topic-029-category",
-        "categoryId": "topic-029",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L029-topic-030-category",
-        "categoryId": "topic-030",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L029-topic-028-category",
-        "categoryId": "topic-028",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "deal",
-        "batchIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-031-item-1",
-        "categoryId": "topic-031",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-031-item-5",
-        "categoryId": "topic-031",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-028-item-5",
-        "categoryId": "topic-028",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-031-item-3",
-        "categoryId": "topic-031",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-029-item-1",
-        "categoryId": "topic-029",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
         "type": "deal",
         "batchIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-030-item-2",
-        "categoryId": "topic-030",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-030-item-5",
-        "categoryId": "topic-030",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
         "cardId": "L029-topic-031-item-4",
         "categoryId": "topic-031",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-028-item-3",
-        "categoryId": "topic-028",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L029-topic-031-item-1",
+        "categoryId": "topic-031",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-030-item-4",
-        "categoryId": "topic-030",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L029-topic-029-item-3",
+        "categoryId": "topic-029",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-029-item-4",
+        "categoryId": "topic-029",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L029-topic-026-item-2",
+        "categoryId": "topic-026",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -9263,43 +8503,33 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-029-item-3",
-        "categoryId": "topic-029",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L029-topic-023-item-3",
+        "categoryId": "topic-023",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-030-item-1",
-        "categoryId": "topic-030",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L029-topic-023-item-4",
+        "categoryId": "topic-023",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-028-item-4",
-        "categoryId": "topic-028",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L029-topic-026-item-5",
+        "categoryId": "topic-026",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-029-item-5",
-        "categoryId": "topic-029",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L029-topic-026-item-1",
+        "categoryId": "topic-026",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-029-item-4",
-        "categoryId": "topic-029",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L029-topic-026-item-4",
+        "categoryId": "topic-026",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -9307,58 +8537,45 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-031-item-2",
-        "categoryId": "topic-031",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": true
+        "cardId": "L029-topic-023-item-2",
+        "categoryId": "topic-023",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-029-item-2",
-        "categoryId": "topic-029",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L029-topic-026-item-3",
+        "categoryId": "topic-026",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-030-item-3",
-        "categoryId": "topic-030",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L029-topic-023-item-5",
+        "categoryId": "topic-023",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L029-topic-028-item-1",
-        "categoryId": "topic-028",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L029-topic-028-item-2",
-        "categoryId": "topic-028",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L029-topic-023-item-1",
+        "categoryId": "topic-023",
+        "columnIndex": 0
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 454,
+      "backtracks": 392,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 202,
+      "dealDecisionStates": 71,
+      "forcedMoves": 41
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I1.5,I0.5,I2.5,I3.5,C0.5|I1.5,I4.5,I2.5,C3.5|I3.5,I0.5,C2.5|I4.5,I2.5,I1.5,I4.5,I3.5,C4.5#I2.5,I1.5,I0.5,I4.5,I0.5|I1.5,I4.5,I3.5,I2.5,I3.5|C5.5,C6.5,C7.5,C8.5,_|I5.5,I5.5,I6.5,I5.5,I8.5|I7.5,I6.5,I5.5,I7.5,I7.5|I8.5,I8.5,I6.5,I7.5,I8.5|I5.5,I7.5,I6.5,I8.5,I6.5"
+    "layoutSignature": "9#C0.5,I1.5,I2.5,C3.5,I4.5|I1.5,I5.5,C6.5|I4.5,C4.5|I4.5,I6.5,I1.5,I6.5|I5.5,I6.5,I7.5,I4.5,C2.5,I4.5#I6.5,I7.5,C7.5,C1.5,I1.5|I1.5,I2.5,I7.5,I6.5,C5.5|I7.5,I2.5,I5.5,I3.5,I7.5|I3.5,I5.5,C8.5,I5.5,I3.5|I3.5,I0.5,I2.5,I2.5,I3.5|I0.5,I8.5,I8.5,I0.5,I0.5|I0.5,I8.5,I8.5,I8.5,_"
   },
   {
     "id": "L030",
@@ -9366,11 +8583,11 @@
     "chapter": 2,
     "title": "生活聯想 10",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1147570,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 26036,
+    "seed": 49532368,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -9856,242 +9073,113 @@
     "layout": {
       "initialColumns": [
         [
-          "L030-topic-034-item-1",
-          "L030-topic-035-category"
-        ],
-        [
-          "L030-topic-035-item-2",
-          "L030-topic-036-item-2",
-          "L030-topic-036-category"
-        ],
-        [
-          "L030-topic-034-item-2",
-          "L030-topic-036-item-3",
-          "L030-topic-033-item-3",
-          "L030-topic-034-category"
-        ],
-        [
-          "L030-topic-033-item-1",
-          "L030-topic-036-item-1",
-          "L030-topic-034-item-3",
-          "L030-topic-033-item-2",
-          "L030-topic-032-category"
-        ],
-        [
-          "L030-topic-035-item-1",
-          "L030-topic-032-item-1",
-          "L030-topic-035-item-3",
-          "L030-topic-032-item-3",
           "L030-topic-032-item-2",
+          "L030-topic-039-item-1"
+        ],
+        [
+          "L030-topic-040-item-5",
+          "L030-topic-034-item-2",
+          "L030-topic-039-category"
+        ],
+        [
+          "L030-topic-034-item-3",
+          "L030-topic-032-item-3",
+          "L030-topic-040-item-1",
+          "L030-topic-037-item-1"
+        ],
+        [
+          "L030-topic-037-item-3",
+          "L030-topic-038-item-4",
+          "L030-topic-038-item-5",
+          "L030-topic-033-item-5",
           "L030-topic-033-category"
+        ],
+        [
+          "L030-topic-040-item-2",
+          "L030-topic-032-item-5",
+          "L030-topic-036-item-4",
+          "L030-topic-034-item-5",
+          "L030-topic-037-item-4",
+          "L030-topic-039-item-4"
         ]
       ],
       "drawBatches": [
         [
-          "L030-topic-034-item-5",
-          "L030-topic-036-item-5",
-          "L030-topic-035-item-4",
-          "L030-topic-034-item-4",
-          "L030-topic-032-item-4"
-        ],
-        [
-          "L030-topic-033-item-4",
-          "L030-topic-035-item-5",
-          "L030-topic-033-item-5",
-          "L030-topic-032-item-5",
-          "L030-topic-036-item-4"
-        ],
-        [
-          "L030-topic-038-category",
-          "L030-topic-037-category",
-          "L030-topic-040-category",
-          "L030-topic-039-category"
-        ],
-        [
-          "L030-topic-039-item-3",
-          "L030-topic-037-item-1",
-          "L030-topic-039-item-2",
-          "L030-topic-037-item-2",
-          "L030-topic-039-item-4"
-        ],
-        [
           "L030-topic-040-item-3",
-          "L030-topic-037-item-4",
-          "L030-topic-038-item-4",
+          "L030-topic-034-item-1",
+          "L030-topic-032-item-4",
           "L030-topic-039-item-5",
+          "L030-topic-040-item-4"
+        ],
+        [
+          "L030-topic-032-category",
+          "L030-topic-039-item-3",
+          "L030-topic-032-item-1",
+          "L030-topic-035-category",
+          "L030-topic-033-item-4"
+        ],
+        [
+          "L030-topic-035-item-3",
+          "L030-topic-034-item-4",
+          "L030-topic-037-category",
+          "L030-topic-038-item-2",
           "L030-topic-037-item-5"
         ],
         [
-          "L030-topic-038-item-1",
-          "L030-topic-040-item-2",
-          "L030-topic-040-item-5",
-          "L030-topic-037-item-3",
-          "L030-topic-038-item-2"
+          "L030-topic-036-item-1",
+          "L030-topic-034-category",
+          "L030-topic-033-item-3",
+          "L030-topic-033-item-2",
+          "L030-topic-038-item-1"
+        ],
+        [
+          "L030-topic-036-item-3",
+          "L030-topic-035-item-1",
+          "L030-topic-035-item-2",
+          "L030-topic-039-item-2",
+          "L030-topic-036-item-5"
+        ],
+        [
+          "L030-topic-035-item-5",
+          "L030-topic-035-item-4",
+          "L030-topic-040-category",
+          "L030-topic-036-item-2",
+          "L030-topic-036-category"
         ],
         [
           "L030-topic-038-item-3",
-          "L030-topic-038-item-5",
-          "L030-topic-039-item-1",
-          "L030-topic-040-item-4",
-          "L030-topic-040-item-1"
+          "L030-topic-037-item-2",
+          "L030-topic-033-item-1",
+          "L030-topic-038-category"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L030-topic-035-category",
-        "categoryId": "topic-035",
+        "cardId": "L030-topic-039-category",
+        "categoryId": "topic-039",
         "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L030-topic-036-category",
-        "categoryId": "topic-036",
-        "slotIndex": 1,
         "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-036-item-2",
-        "categoryId": "topic-036",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L030-topic-039-item-4",
+        "categoryId": "topic-039",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-035-item-2",
-        "categoryId": "topic-035",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L030-topic-034-category",
-        "categoryId": "topic-034",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-034-item-1",
-        "categoryId": "topic-034",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L030-topic-032-category",
-        "categoryId": "topic-032",
-        "slotIndex": 3,
-        "columnIndex": 3
+        "cardId": "L030-topic-039-item-1",
+        "categoryId": "topic-039",
+        "columnIndex": 0
       },
       {
         "type": "activateCategory",
         "cardId": "L030-topic-033-category",
         "categoryId": "topic-033",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-033-item-3",
-        "categoryId": "topic-033",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-036-item-3",
-        "categoryId": "topic-036",
         "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-034-item-2",
-        "categoryId": "topic-034",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-033-item-2",
-        "categoryId": "topic-033",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-034-item-3",
-        "categoryId": "topic-034",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-036-item-1",
-        "categoryId": "topic-036",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-033-item-1",
-        "categoryId": "topic-033",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-032-item-2",
-        "categoryId": "topic-032",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-032-item-3",
-        "categoryId": "topic-032",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-035-item-3",
-        "categoryId": "topic-035",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-032-item-1",
-        "categoryId": "topic-032",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-035-item-1",
-        "categoryId": "topic-035",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -10099,43 +9187,15 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-034-item-5",
-        "categoryId": "topic-034",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L030-topic-039-item-5",
+        "categoryId": "topic-039",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-034-item-4",
-        "categoryId": "topic-034",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-036-item-5",
-        "categoryId": "topic-036",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-035-item-4",
-        "categoryId": "topic-035",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-032-item-4",
-        "categoryId": "topic-032",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L030-topic-033-item-5",
+        "categoryId": "topic-033",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -10143,119 +9203,30 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-035-item-5",
-        "categoryId": "topic-035",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-032-item-5",
-        "categoryId": "topic-032",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-036-item-4",
-        "categoryId": "topic-036",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L030-topic-039-item-3",
+        "categoryId": "topic-039",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L030-topic-033-item-4",
         "categoryId": "topic-033",
-        "slotIndex": 4,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
-        "type": "placeItem",
-        "cardId": "L030-topic-033-item-5",
-        "categoryId": "topic-033",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": true
+        "type": "activateCategory",
+        "cardId": "L030-topic-035-category",
+        "categoryId": "topic-035",
+        "slotIndex": 2,
+        "columnIndex": 3
       },
       {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L030-topic-038-category",
-        "categoryId": "topic-038",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L030-topic-037-category",
-        "categoryId": "topic-037",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L030-topic-040-category",
-        "categoryId": "topic-040",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L030-topic-039-category",
-        "categoryId": "topic-039",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
         "type": "deal",
         "batchIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-039-item-3",
-        "categoryId": "topic-039",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-037-item-1",
-        "categoryId": "topic-037",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-039-item-2",
-        "categoryId": "topic-039",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-037-item-2",
-        "categoryId": "topic-037",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-039-item-4",
-        "categoryId": "topic-039",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -10263,146 +9234,305 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-040-item-3",
-        "categoryId": "topic-040",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-037-item-4",
-        "categoryId": "topic-037",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-038-item-4",
-        "categoryId": "topic-038",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-039-item-5",
+        "cardId": "L030-topic-039-item-2",
         "categoryId": "topic-039",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-037-item-5",
+        "cardId": "L030-topic-035-item-2",
+        "categoryId": "topic-035",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-033-item-3",
+        "categoryId": "topic-033",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-033-item-2",
+        "categoryId": "topic-033",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L030-topic-037-category",
         "categoryId": "topic-037",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "slotIndex": 0,
+        "columnIndex": 2
       },
       {
         "type": "deal",
         "batchIndex": 5
       },
       {
-        "type": "placeItem",
-        "cardId": "L030-topic-037-item-3",
-        "categoryId": "topic-037",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
+        "type": "activateCategory",
+        "cardId": "L030-topic-036-category",
+        "categoryId": "topic-036",
+        "slotIndex": 3,
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L030-topic-038-item-1",
-        "categoryId": "topic-038",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-040-item-2",
-        "categoryId": "topic-040",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-040-item-5",
-        "categoryId": "topic-040",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L030-topic-038-item-2",
-        "categoryId": "topic-038",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L030-topic-036-item-2",
+        "categoryId": "topic-036",
+        "columnIndex": 3
       },
       {
         "type": "deal",
         "batchIndex": 6
       },
       {
+        "type": "activateCategory",
+        "cardId": "L030-topic-038-category",
+        "categoryId": "topic-038",
+        "slotIndex": 4,
+        "columnIndex": 3
+      },
+      {
         "type": "placeItem",
-        "cardId": "L030-topic-039-item-1",
-        "categoryId": "topic-039",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L030-topic-037-item-2",
+        "categoryId": "topic-037",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-036-item-5",
+        "categoryId": "topic-036",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-035-item-4",
+        "categoryId": "topic-035",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-038-item-2",
+        "categoryId": "topic-038",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
         "cardId": "L030-topic-038-item-3",
         "categoryId": "topic-038",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L030-topic-038-item-5",
         "categoryId": "topic-038",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-038-item-4",
+        "categoryId": "topic-038",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-035-item-5",
+        "categoryId": "topic-035",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-033-item-1",
+        "categoryId": "topic-033",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-036-item-3",
+        "categoryId": "topic-036",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-036-item-1",
+        "categoryId": "topic-036",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-035-item-3",
+        "categoryId": "topic-035",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L030-topic-040-category",
+        "categoryId": "topic-040",
+        "slotIndex": 1,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-038-item-1",
+        "categoryId": "topic-038",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L030-topic-032-category",
+        "categoryId": "topic-032",
+        "slotIndex": 4,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-035-item-1",
+        "categoryId": "topic-035",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-040-item-3",
+        "categoryId": "topic-040",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-032-item-1",
+        "categoryId": "topic-032",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-037-item-5",
+        "categoryId": "topic-037",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
         "cardId": "L030-topic-040-item-4",
         "categoryId": "topic-040",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-037-item-3",
+        "categoryId": "topic-037",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-032-item-4",
+        "categoryId": "topic-032",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-037-item-4",
+        "categoryId": "topic-037",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-032-item-2",
+        "categoryId": "topic-032",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-037-item-1",
+        "categoryId": "topic-037",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L030-topic-040-item-1",
         "categoryId": "topic-040",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L030-topic-034-category",
+        "categoryId": "topic-034",
+        "slotIndex": 0,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-034-item-5",
+        "categoryId": "topic-034",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-036-item-4",
+        "categoryId": "topic-036",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-034-item-4",
+        "categoryId": "topic-034",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-032-item-3",
+        "categoryId": "topic-032",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-034-item-3",
+        "categoryId": "topic-034",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-032-item-5",
+        "categoryId": "topic-032",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-034-item-1",
+        "categoryId": "topic-034",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-034-item-2",
+        "categoryId": "topic-034",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-040-item-2",
+        "categoryId": "topic-040",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L030-topic-040-item-5",
+        "categoryId": "topic-040",
+        "columnIndex": 1
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 304,
+      "backtracks": 242,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 133,
+      "dealDecisionStates": 39,
+      "forcedMoves": 37
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,I3.5,C0.5|I1.5,I2.5,C2.5|I1.5,I4.5,I1.5,I4.5,I4.5,C3.5|I3.5,I2.5,I0.5,I3.5,C4.5#I0.5,I1.5,I2.5,I4.5,I0.5|I3.5,I3.5,I1.5,I2.5,I4.5|C5.5,C6.5,C7.5,_,C8.5|I8.5,I8.5,I7.5,I8.5,I7.5|I6.5,I5.5,I7.5,I7.5,I8.5|I5.5,I6.5,I6.5,I5.5,I7.5|I5.5,I8.5,I5.5,I6.5,I6.5"
+    "layoutSignature": "9#I0.5,I1.5,C2.5|I0.5,I3.5,I4.5,I1.5,I5.5,I2.5|I1.5,I3.5,I0.5,I5.5|I3.5,I2.5|I5.5,I6.5,I6.5,I7.5,C7.5#I1.5,I0.5,I3.5,I0.5,I2.5|I2.5,I7.5,I3.5,C3.5,C8.5|I1.5,I5.5,C5.5,I8.5,I6.5|C1.5,I6.5,I7.5,I4.5,I7.5|I8.5,I4.5,I8.5,I4.5,I2.5|I8.5,C4.5,C0.5,I8.5,I4.5|I5.5,_,I7.5,I6.5,C6.5"
   },
   {
     "id": "L031",
@@ -10410,11 +9540,11 @@
     "chapter": 2,
     "title": "生活聯想 11",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1155489,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 26369,
+    "seed": 51425409,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -10900,242 +10030,195 @@
     "layout": {
       "initialColumns": [
         [
-          "L031-topic-042-item-2",
-          "L031-topic-045-category"
+          "L031-topic-043-item-1",
+          "L031-topic-047-category"
         ],
         [
           "L031-topic-045-item-3",
-          "L031-topic-041-item-1",
-          "L031-topic-041-category"
-        ],
-        [
-          "L031-topic-042-item-3",
-          "L031-topic-045-item-2",
-          "L031-topic-042-item-1",
-          "L031-topic-043-category"
+          "L031-topic-041-item-3",
+          "L031-topic-041-item-1"
         ],
         [
           "L031-topic-044-item-3",
-          "L031-topic-043-item-1",
-          "L031-topic-044-item-2",
-          "L031-topic-043-item-2",
+          "L031-topic-044-item-4",
+          "L031-topic-043-item-4",
           "L031-topic-044-category"
         ],
         [
-          "L031-topic-041-item-2",
+          "L031-topic-041-item-4",
+          "L031-topic-048-item-5",
+          "L031-topic-041-item-5",
+          "L031-topic-045-category",
+          "L031-topic-047-item-3"
+        ],
+        [
+          "L031-topic-044-item-2",
           "L031-topic-044-item-1",
-          "L031-topic-041-item-3",
-          "L031-topic-043-item-3",
-          "L031-topic-045-item-1",
-          "L031-topic-042-category"
+          "L031-topic-041-category",
+          "L031-topic-048-category",
+          "L031-topic-043-category",
+          "L031-topic-044-item-5"
         ]
       ],
       "drawBatches": [
         [
-          "L031-topic-044-item-4",
-          "L031-topic-044-item-5",
-          "L031-topic-043-item-5",
-          "L031-topic-043-item-4",
-          "L031-topic-041-item-4"
-        ],
-        [
-          "L031-topic-042-item-4",
           "L031-topic-045-item-5",
-          "L031-topic-042-item-5",
-          "L031-topic-041-item-5",
-          "L031-topic-045-item-4"
-        ],
-        [
-          "L031-topic-046-category",
-          "L031-topic-049-category",
-          "L031-topic-047-category",
-          "L031-topic-048-category"
-        ],
-        [
-          "L031-topic-048-item-1",
+          "L031-topic-043-item-2",
           "L031-topic-047-item-5",
-          "L031-topic-047-item-3",
-          "L031-topic-049-item-5",
-          "L031-topic-049-item-4"
+          "L031-topic-047-item-4",
+          "L031-topic-048-item-2"
         ],
         [
-          "L031-topic-046-item-3",
-          "L031-topic-048-item-2",
-          "L031-topic-049-item-3",
-          "L031-topic-048-item-3",
-          "L031-topic-046-item-4"
-        ],
-        [
-          "L031-topic-048-item-4",
+          "L031-topic-043-item-5",
+          "L031-topic-045-item-4",
           "L031-topic-046-item-5",
-          "L031-topic-049-item-2",
-          "L031-topic-046-item-2",
-          "L031-topic-047-item-4"
+          "L031-topic-041-item-2",
+          "L031-topic-047-item-2"
         ],
         [
-          "L031-topic-048-item-5",
+          "L031-topic-046-item-2",
+          "L031-topic-042-category",
           "L031-topic-047-item-1",
+          "L031-topic-045-item-2",
+          "L031-topic-046-category"
+        ],
+        [
+          "L031-topic-042-item-2",
+          "L031-topic-048-item-4",
+          "L031-topic-045-item-1",
           "L031-topic-046-item-1",
-          "L031-topic-047-item-2",
-          "L031-topic-049-item-1"
+          "L031-topic-048-item-1"
+        ],
+        [
+          "L031-topic-049-item-1",
+          "L031-topic-042-item-3",
+          "L031-topic-042-item-4",
+          "L031-topic-046-item-4",
+          "L031-topic-043-item-3"
+        ],
+        [
+          "L031-topic-049-item-2",
+          "L031-topic-046-item-3",
+          "L031-topic-049-category",
+          "L031-topic-048-item-3",
+          "L031-topic-049-item-3"
+        ],
+        [
+          "L031-topic-042-item-5",
+          "L031-topic-049-item-4",
+          "L031-topic-049-item-5",
+          "L031-topic-042-item-1"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L031-topic-045-category",
-        "categoryId": "topic-045",
+        "cardId": "L031-topic-044-category",
+        "categoryId": "topic-044",
         "slotIndex": 0,
-        "columnIndex": 0
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-044-item-5",
+        "categoryId": "topic-044",
+        "columnIndex": 4
       },
       {
         "type": "activateCategory",
-        "cardId": "L031-topic-041-category",
-        "categoryId": "topic-041",
+        "cardId": "L031-topic-047-category",
+        "categoryId": "topic-047",
         "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-041-item-1",
-        "categoryId": "topic-041",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-045-item-3",
-        "categoryId": "topic-045",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "activateCategory",
         "cardId": "L031-topic-043-category",
         "categoryId": "topic-043",
         "slotIndex": 2,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-043-item-4",
+        "categoryId": "topic-043",
         "columnIndex": 2
       },
       {
         "type": "activateCategory",
-        "cardId": "L031-topic-044-category",
-        "categoryId": "topic-044",
+        "cardId": "L031-topic-048-category",
+        "categoryId": "topic-048",
         "slotIndex": 3,
-        "columnIndex": 3
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-043-item-2",
-        "categoryId": "topic-043",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-044-item-2",
+        "cardId": "L031-topic-044-item-4",
         "categoryId": "topic-044",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-043-item-1",
-        "categoryId": "topic-043",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-044-item-3",
-        "categoryId": "topic-044",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "activateCategory",
-        "cardId": "L031-topic-042-category",
-        "categoryId": "topic-042",
+        "cardId": "L031-topic-041-category",
+        "categoryId": "topic-041",
         "slotIndex": 4,
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-042-item-2",
-        "categoryId": "topic-042",
-        "slotIndex": 4,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-042-item-1",
-        "categoryId": "topic-042",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-045-item-2",
-        "categoryId": "topic-045",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-042-item-3",
-        "categoryId": "topic-042",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-045-item-1",
-        "categoryId": "topic-045",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-043-item-3",
-        "categoryId": "topic-043",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-041-item-3",
-        "categoryId": "topic-041",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
         "cardId": "L031-topic-044-item-1",
         "categoryId": "topic-044",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-041-item-2",
+        "cardId": "L031-topic-044-item-3",
+        "categoryId": "topic-044",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-043-item-1",
+        "categoryId": "topic-043",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-044-item-2",
+        "categoryId": "topic-044",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-047-item-3",
+        "categoryId": "topic-047",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L031-topic-045-category",
+        "categoryId": "topic-045",
+        "slotIndex": 0,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-041-item-5",
         "categoryId": "topic-041",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-041-item-1",
+        "categoryId": "topic-041",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-048-item-5",
+        "categoryId": "topic-048",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -11143,43 +10226,51 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-044-item-4",
-        "categoryId": "topic-044",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L031-topic-047-item-5",
+        "categoryId": "topic-047",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-044-item-5",
-        "categoryId": "topic-044",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-043-item-5",
+        "cardId": "L031-topic-043-item-2",
         "categoryId": "topic-043",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-043-item-4",
-        "categoryId": "topic-043",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L031-topic-048-item-2",
+        "categoryId": "topic-048",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-041-item-3",
+        "categoryId": "topic-041",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-045-item-5",
+        "categoryId": "topic-045",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-047-item-4",
+        "categoryId": "topic-047",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-045-item-3",
+        "categoryId": "topic-045",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L031-topic-041-item-4",
         "categoryId": "topic-041",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -11187,43 +10278,15 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-041-item-5",
+        "cardId": "L031-topic-041-item-2",
         "categoryId": "topic-041",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-042-item-4",
-        "categoryId": "topic-042",
-        "slotIndex": 4,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-042-item-5",
-        "categoryId": "topic-042",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-045-item-5",
-        "categoryId": "topic-045",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-045-item-4",
-        "categoryId": "topic-045",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L031-topic-043-item-5",
+        "categoryId": "topic-043",
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -11233,29 +10296,33 @@
         "type": "activateCategory",
         "cardId": "L031-topic-046-category",
         "categoryId": "topic-046",
-        "slotIndex": 0,
-        "columnIndex": 0
+        "slotIndex": 4,
+        "columnIndex": 4
       },
       {
-        "type": "activateCategory",
-        "cardId": "L031-topic-049-category",
-        "categoryId": "topic-049",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L031-topic-047-category",
+        "type": "placeItem",
+        "cardId": "L031-topic-047-item-1",
         "categoryId": "topic-047",
-        "slotIndex": 2,
         "columnIndex": 2
       },
       {
+        "type": "placeItem",
+        "cardId": "L031-topic-046-item-2",
+        "categoryId": "topic-046",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-047-item-2",
+        "categoryId": "topic-047",
+        "columnIndex": 4
+      },
+      {
         "type": "activateCategory",
-        "cardId": "L031-topic-048-category",
-        "categoryId": "topic-048",
-        "slotIndex": 3,
-        "columnIndex": 3
+        "cardId": "L031-topic-042-category",
+        "categoryId": "topic-042",
+        "slotIndex": 1,
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -11263,43 +10330,15 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-048-item-1",
-        "categoryId": "topic-048",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L031-topic-045-item-1",
+        "categoryId": "topic-045",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-047-item-5",
-        "categoryId": "topic-047",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-047-item-3",
-        "categoryId": "topic-047",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-049-item-5",
-        "categoryId": "topic-049",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-049-item-4",
-        "categoryId": "topic-049",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L031-topic-046-item-5",
+        "categoryId": "topic-046",
+        "columnIndex": 2
       },
       {
         "type": "deal",
@@ -11307,87 +10346,104 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-046-item-3",
-        "categoryId": "topic-046",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L031-topic-042-item-4",
+        "categoryId": "topic-042",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-048-item-2",
-        "categoryId": "topic-048",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-049-item-3",
-        "categoryId": "topic-049",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-048-item-3",
-        "categoryId": "topic-048",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L031-topic-043-item-3",
+        "categoryId": "topic-043",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
         "cardId": "L031-topic-046-item-4",
         "categoryId": "topic-046",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-046-item-1",
+        "categoryId": "topic-046",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-042-item-3",
+        "categoryId": "topic-042",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-045-item-2",
+        "categoryId": "topic-045",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-048-item-4",
+        "categoryId": "topic-048",
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 5
       },
       {
-        "type": "placeItem",
-        "cardId": "L031-topic-048-item-4",
-        "categoryId": "topic-048",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L031-topic-049-category",
+        "categoryId": "topic-049",
+        "slotIndex": 2,
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-046-item-5",
+        "cardId": "L031-topic-048-item-3",
+        "categoryId": "topic-048",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-046-item-3",
         "categoryId": "topic-046",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L031-topic-049-item-2",
         "categoryId": "topic-049",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-046-item-2",
-        "categoryId": "topic-046",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L031-topic-049-item-3",
+        "categoryId": "topic-049",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-047-item-4",
-        "categoryId": "topic-047",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L031-topic-048-item-1",
+        "categoryId": "topic-048",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-045-item-4",
+        "categoryId": "topic-045",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-049-item-1",
+        "categoryId": "topic-049",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-042-item-2",
+        "categoryId": "topic-042",
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -11395,58 +10451,45 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-048-item-5",
-        "categoryId": "topic-048",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-046-item-1",
-        "categoryId": "topic-046",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L031-topic-049-item-1",
+        "cardId": "L031-topic-049-item-4",
         "categoryId": "topic-049",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-047-item-1",
-        "categoryId": "topic-047",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L031-topic-042-item-5",
+        "categoryId": "topic-042",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L031-topic-047-item-2",
-        "categoryId": "topic-047",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L031-topic-049-item-5",
+        "categoryId": "topic-049",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L031-topic-042-item-1",
+        "categoryId": "topic-042",
+        "columnIndex": 3
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 268,
+      "backtracks": 206,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 122,
+      "dealDecisionStates": 62,
+      "forcedMoves": 61
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I1.5,I0.5,C2.5|I1.5,I3.5,C3.5|I3.5,I4.5,I3.5,I2.5,I1.5,C0.5|I4.5,I2.5,I4.5,I2.5,C4.5#I4.5,I2.5,I4.5,I3.5,I2.5|I0.5,I0.5,I1.5,I1.5,I3.5|C5.5,C6.5,C7.5,_,C8.5|I8.5,I6.5,I6.5,I7.5,I7.5|I5.5,I7.5,I8.5,I5.5,I8.5|I8.5,I7.5,I5.5,I6.5,I5.5|I8.5,I5.5,I6.5,I7.5,I6.5"
+    "layoutSignature": "9#I0.5,C1.5|I2.5,I2.5,C3.5,C4.5,C0.5,I2.5|I2.5,I2.5,I0.5,C2.5|I3.5,I4.5,I3.5,C5.5,I1.5|I5.5,I3.5,I3.5#I5.5,I4.5,I1.5,I1.5,I0.5|I0.5,I1.5,I6.5,I3.5,I5.5|I6.5,C6.5,I1.5,I5.5,C7.5|I7.5,I4.5,I5.5,I6.5,I4.5|I8.5,I0.5,I7.5,I6.5,I7.5|I8.5,I8.5,C8.5,I4.5,I6.5|I7.5,_,I8.5,I7.5,I8.5"
   },
   {
     "id": "L032",
@@ -11454,11 +10497,11 @@
     "chapter": 2,
     "title": "生活聯想 12",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1163408,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 32694,
+    "seed": 28916593,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -11926,362 +10969,167 @@
     "layout": {
       "initialColumns": [
         [
-          "L032-topic-053-item-1",
-          "L032-topic-050-category"
-        ],
-        [
           "L032-topic-050-item-2",
-          "L032-topic-054-item-2",
-          "L032-topic-051-category"
+          "L032-topic-050-item-4"
         ],
         [
-          "L032-topic-054-item-1",
-          "L032-topic-050-item-1",
-          "L032-topic-051-item-2",
-          "L032-topic-053-category"
+          "L032-topic-056-item-5",
+          "L032-topic-055-item-5",
+          "L032-topic-052-item-1"
         ],
         [
-          "L032-topic-053-item-2",
-          "L032-topic-052-item-1",
-          "L032-topic-051-item-1",
-          "L032-topic-051-item-3",
-          "L032-topic-054-category"
-        ],
-        [
-          "L032-topic-053-item-3",
+          "L032-topic-055-item-3",
+          "L032-topic-056-item-3",
           "L032-topic-052-item-2",
-          "L032-topic-054-item-3",
-          "L032-topic-050-item-3",
-          "L032-topic-052-item-3",
+          "L032-topic-052-item-5"
+        ],
+        [
+          "L032-topic-050-item-5",
+          "L032-topic-050-item-1",
+          "L032-topic-058-item-2",
+          "L032-topic-058-item-5",
           "L032-topic-052-category"
+        ],
+        [
+          "L032-topic-058-item-3",
+          "L032-topic-058-item-4",
+          "L032-topic-050-item-3",
+          "L032-topic-056-item-1",
+          "L032-topic-056-item-2",
+          "L032-topic-055-item-2"
         ]
       ],
       "drawBatches": [
         [
-          "L032-topic-051-item-4",
-          "L032-topic-052-item-4",
-          "L032-topic-053-item-5",
-          "L032-topic-053-item-4",
-          "L032-topic-050-item-4"
-        ],
-        [
-          "L032-topic-054-item-5",
-          "L032-topic-050-item-5",
+          "L032-topic-058-item-1",
+          "L032-topic-057-item-2",
           "L032-topic-051-item-5",
-          "L032-topic-052-item-5",
-          "L032-topic-054-item-4"
+          "L032-topic-051-item-2",
+          "L032-topic-051-item-3"
         ],
         [
-          "L032-topic-056-category",
-          "L032-topic-057-category",
-          "L032-topic-058-category",
+          "L032-topic-050-category",
+          "L032-topic-057-item-5",
+          "L032-topic-054-item-1",
+          "L032-topic-051-item-1",
           "L032-topic-055-category"
         ],
         [
-          "L032-topic-055-item-2",
-          "L032-topic-058-item-1",
-          "L032-topic-056-item-5",
-          "L032-topic-058-item-3",
-          "L032-topic-057-item-1"
-        ],
-        [
-          "L032-topic-056-item-1",
-          "L032-topic-058-item-5",
-          "L032-topic-057-item-2",
-          "L032-topic-058-item-4",
-          "L032-topic-057-item-3"
-        ],
-        [
-          "L032-topic-058-item-2",
-          "L032-topic-057-item-5",
-          "L032-topic-056-item-3",
-          "L032-topic-055-item-3",
-          "L032-topic-055-item-4"
-        ],
-        [
-          "L032-topic-055-item-5",
+          "L032-topic-052-item-4",
+          "L032-topic-057-item-1",
+          "L032-topic-057-category",
           "L032-topic-057-item-4",
-          "L032-topic-056-item-2",
+          "L032-topic-052-item-3"
+        ],
+        [
+          "L032-topic-054-category",
           "L032-topic-055-item-1",
-          "L032-topic-056-item-4"
+          "L032-topic-057-item-3",
+          "L032-topic-056-item-4",
+          "L032-topic-053-item-2"
+        ],
+        [
+          "L032-topic-055-item-4",
+          "L032-topic-056-category",
+          "L032-topic-054-item-5",
+          "L032-topic-058-category",
+          "L032-topic-054-item-2"
+        ],
+        [
+          "L032-topic-054-item-4",
+          "L032-topic-053-item-1",
+          "L032-topic-053-category",
+          "L032-topic-054-item-3",
+          "L032-topic-051-item-4"
+        ],
+        [
+          "L032-topic-053-item-4",
+          "L032-topic-053-item-5",
+          "L032-topic-051-category",
+          "L032-topic-053-item-3"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L032-topic-050-category",
-        "categoryId": "topic-050",
+        "cardId": "L032-topic-052-category",
+        "categoryId": "topic-052",
         "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L032-topic-051-category",
-        "categoryId": "topic-051",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L032-topic-053-category",
-        "categoryId": "topic-053",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-053-item-1",
-        "categoryId": "topic-053",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-051-item-2",
-        "categoryId": "topic-051",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-050-item-1",
-        "categoryId": "topic-050",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L032-topic-054-category",
-        "categoryId": "topic-054",
-        "slotIndex": 3,
         "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L032-topic-054-item-2",
-        "categoryId": "topic-054",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-050-item-2",
-        "categoryId": "topic-050",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-054-item-1",
-        "categoryId": "topic-054",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-051-item-3",
-        "categoryId": "topic-051",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-051-item-1",
-        "categoryId": "topic-051",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L032-topic-052-category",
+        "cardId": "L032-topic-052-item-5",
         "categoryId": "topic-052",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-052-item-1",
-        "categoryId": "topic-052",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-053-item-2",
-        "categoryId": "topic-053",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-052-item-3",
-        "categoryId": "topic-052",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-050-item-3",
-        "categoryId": "topic-050",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-054-item-3",
-        "categoryId": "topic-054",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L032-topic-052-item-2",
         "categoryId": "topic-052",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L032-topic-053-item-3",
-        "categoryId": "topic-053",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L032-topic-052-item-1",
+        "categoryId": "topic-052",
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 0
       },
       {
-        "type": "placeItem",
-        "cardId": "L032-topic-051-item-4",
-        "categoryId": "topic-051",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-052-item-4",
-        "categoryId": "topic-052",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-053-item-5",
-        "categoryId": "topic-053",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-053-item-4",
-        "categoryId": "topic-053",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-050-item-4",
-        "categoryId": "topic-050",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
         "type": "deal",
         "batchIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-050-item-5",
-        "categoryId": "topic-050",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-051-item-5",
-        "categoryId": "topic-051",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-052-item-5",
-        "categoryId": "topic-052",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-054-item-5",
-        "categoryId": "topic-054",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-054-item-4",
-        "categoryId": "topic-054",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
       },
       {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L032-topic-056-category",
-        "categoryId": "topic-056",
-        "slotIndex": 0,
+        "type": "placeItem",
+        "cardId": "L032-topic-052-item-3",
+        "categoryId": "topic-052",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-052-item-4",
+        "categoryId": "topic-052",
         "columnIndex": 0
       },
       {
         "type": "activateCategory",
         "cardId": "L032-topic-057-category",
         "categoryId": "topic-057",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L032-topic-058-category",
-        "categoryId": "topic-058",
-        "slotIndex": 2,
+        "slotIndex": 0,
         "columnIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L032-topic-055-category",
-        "categoryId": "topic-055",
-        "slotIndex": 3,
+        "type": "placeItem",
+        "cardId": "L032-topic-057-item-1",
+        "categoryId": "topic-057",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-057-item-5",
+        "categoryId": "topic-057",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-057-item-4",
+        "categoryId": "topic-057",
         "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-057-item-2",
+        "categoryId": "topic-057",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -12289,43 +11137,16 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L032-topic-055-item-2",
-        "categoryId": "topic-055",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-058-item-1",
-        "categoryId": "topic-058",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-056-item-5",
-        "categoryId": "topic-056",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-058-item-3",
-        "categoryId": "topic-058",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-057-item-1",
+        "cardId": "L032-topic-057-item-3",
         "categoryId": "topic-057",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L032-topic-054-category",
+        "categoryId": "topic-054",
+        "slotIndex": 0,
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -12333,146 +11154,281 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L032-topic-056-item-1",
-        "categoryId": "topic-056",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L032-topic-054-item-5",
+        "categoryId": "topic-054",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L032-topic-058-item-5",
-        "categoryId": "topic-058",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-057-item-2",
-        "categoryId": "topic-057",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-058-item-4",
-        "categoryId": "topic-058",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-057-item-3",
-        "categoryId": "topic-057",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L032-topic-054-item-2",
+        "categoryId": "topic-054",
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 5
       },
       {
-        "type": "placeItem",
-        "cardId": "L032-topic-058-item-2",
-        "categoryId": "topic-058",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-057-item-5",
-        "categoryId": "topic-057",
+        "type": "activateCategory",
+        "cardId": "L032-topic-053-category",
+        "categoryId": "topic-053",
         "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L032-topic-056-item-3",
-        "categoryId": "topic-056",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L032-topic-054-item-1",
+        "categoryId": "topic-054",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L032-topic-055-item-3",
-        "categoryId": "topic-055",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-055-item-4",
-        "categoryId": "topic-055",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L032-topic-053-item-1",
+        "categoryId": "topic-053",
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 6
       },
       {
+        "type": "activateCategory",
+        "cardId": "L032-topic-051-category",
+        "categoryId": "topic-051",
+        "slotIndex": 2,
+        "columnIndex": 2
+      },
+      {
         "type": "placeItem",
-        "cardId": "L032-topic-057-item-4",
-        "categoryId": "topic-057",
+        "cardId": "L032-topic-051-item-5",
+        "categoryId": "topic-051",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-053-item-4",
+        "categoryId": "topic-053",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-051-item-4",
+        "categoryId": "topic-051",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-053-item-5",
+        "categoryId": "topic-053",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-053-item-3",
+        "categoryId": "topic-053",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-054-item-3",
+        "categoryId": "topic-054",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-054-item-4",
+        "categoryId": "topic-054",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-053-item-2",
+        "categoryId": "topic-053",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L032-topic-055-category",
+        "categoryId": "topic-055",
+        "slotIndex": 0,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-051-item-3",
+        "categoryId": "topic-051",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-055-item-4",
+        "categoryId": "topic-055",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-055-item-2",
+        "categoryId": "topic-055",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L032-topic-056-category",
+        "categoryId": "topic-056",
         "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-055-item-5",
-        "categoryId": "topic-055",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L032-topic-055-item-1",
-        "categoryId": "topic-055",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L032-topic-056-item-2",
         "categoryId": "topic-056",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-056-item-1",
+        "categoryId": "topic-056",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-055-item-1",
+        "categoryId": "topic-055",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-055-item-5",
+        "categoryId": "topic-055",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-056-item-3",
+        "categoryId": "topic-056",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-055-item-3",
+        "categoryId": "topic-055",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L032-topic-058-category",
+        "categoryId": "topic-058",
         "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-056-item-5",
+        "categoryId": "topic-056",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L032-topic-050-category",
+        "categoryId": "topic-050",
+        "slotIndex": 3,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-058-item-1",
+        "categoryId": "topic-058",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L032-topic-056-item-4",
         "categoryId": "topic-056",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-051-item-1",
+        "categoryId": "topic-051",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-050-item-3",
+        "categoryId": "topic-050",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-058-item-4",
+        "categoryId": "topic-058",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-051-item-2",
+        "categoryId": "topic-051",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-058-item-3",
+        "categoryId": "topic-058",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-058-item-5",
+        "categoryId": "topic-058",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-058-item-2",
+        "categoryId": "topic-058",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-050-item-4",
+        "categoryId": "topic-050",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-050-item-2",
+        "categoryId": "topic-050",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-050-item-1",
+        "categoryId": "topic-050",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L032-topic-050-item-5",
+        "categoryId": "topic-050",
+        "columnIndex": 3
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 538,
+      "backtracks": 476,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 219,
+      "dealDecisionStates": 83,
+      "forcedMoves": 41
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,I3.5,I1.5,I2.5,C2.5|I0.5,I2.5,I4.5,I4.5,C3.5|I1.5,I3.5,C4.5|I3.5,I1.5,I4.5,C0.5#I4.5,I1.5,I0.5,I2.5,I0.5|I3.5,I3.5,I2.5,I1.5,I4.5|C5.5,_,C6.5,C7.5,C8.5|I6.5,I7.5,I8.5,I8.5,I5.5|I5.5,I7.5,I8.5,I8.5,I7.5|I8.5,I6.5,I6.5,I7.5,I5.5|I6.5,I5.5,I6.5,I7.5,I5.5"
+    "layoutSignature": "9#I0.5,I0.5,I1.5,I1.5,C2.5|I0.5,I0.5|I1.5,I1.5,I0.5,I3.5,I3.5,I4.5|I3.5,I4.5,I2.5|I4.5,I3.5,I2.5,I2.5#I5.5,I1.5,I5.5,I6.5,I5.5|I5.5,C0.5,C4.5,I6.5,I7.5|I6.5,I2.5,I2.5,I6.5,C6.5|I3.5,C7.5,I8.5,I4.5,I6.5|C1.5,I4.5,I7.5,C3.5,I7.5|I7.5,I7.5,I5.5,I8.5,C8.5|I8.5,I8.5,_,I8.5,C5.5"
   },
   {
     "id": "L033",
@@ -12480,11 +11436,11 @@
     "chapter": 2,
     "title": "生活聯想 13",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1171327,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 24801,
+    "seed": 40863618,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -12970,286 +11926,130 @@
     "layout": {
       "initialColumns": [
         [
-          "L033-topic-063-item-1",
-          "L033-topic-063-category"
+          "L033-topic-061-item-3",
+          "L033-topic-059-item-1"
         ],
         [
-          "L033-topic-061-item-2",
-          "L033-topic-060-item-2",
-          "L033-topic-060-category"
+          "L033-topic-064-item-4",
+          "L033-topic-061-item-1",
+          "L033-topic-062-item-4"
         ],
         [
-          "L033-topic-063-item-2",
-          "L033-topic-060-item-3",
+          "L033-topic-066-item-1",
+          "L033-topic-063-item-5",
           "L033-topic-059-item-2",
+          "L033-topic-059-item-3"
+        ],
+        [
+          "L033-topic-060-item-3",
+          "L033-topic-065-item-1",
+          "L033-topic-065-item-5",
+          "L033-topic-063-category",
           "L033-topic-059-category"
         ],
         [
+          "L033-topic-066-item-2",
+          "L033-topic-066-item-4",
+          "L033-topic-064-item-1",
+          "L033-topic-061-item-5",
           "L033-topic-060-item-1",
-          "L033-topic-059-item-3",
-          "L033-topic-061-item-3",
-          "L033-topic-059-item-1",
-          "L033-topic-061-category"
-        ],
-        [
-          "L033-topic-062-item-1",
-          "L033-topic-063-item-3",
-          "L033-topic-062-item-3",
-          "L033-topic-061-item-1",
-          "L033-topic-062-item-2",
-          "L033-topic-062-category"
+          "L033-topic-066-category"
         ]
       ],
       "drawBatches": [
         [
-          "L033-topic-063-item-4",
-          "L033-topic-059-item-5",
-          "L033-topic-061-item-4",
-          "L033-topic-062-item-5",
-          "L033-topic-060-item-5"
-        ],
-        [
-          "L033-topic-061-item-5",
-          "L033-topic-062-item-4",
-          "L033-topic-060-item-4",
-          "L033-topic-059-item-4",
-          "L033-topic-063-item-5"
-        ],
-        [
-          "L033-topic-064-category",
-          "L033-topic-067-category",
           "L033-topic-065-category",
-          "L033-topic-066-category"
+          "L033-topic-062-category",
+          "L033-topic-067-category",
+          "L033-topic-067-item-5",
+          "L033-topic-063-item-3"
         ],
         [
-          "L033-topic-065-item-1",
-          "L033-topic-064-item-3",
-          "L033-topic-067-item-2",
-          "L033-topic-065-item-2",
-          "L033-topic-064-item-2"
-        ],
-        [
-          "L033-topic-066-item-2",
-          "L033-topic-066-item-3",
-          "L033-topic-066-item-5",
-          "L033-topic-066-item-4",
-          "L033-topic-065-item-5"
-        ],
-        [
-          "L033-topic-064-item-1",
-          "L033-topic-066-item-1",
-          "L033-topic-067-item-4",
-          "L033-topic-064-item-4",
-          "L033-topic-064-item-5"
-        ],
-        [
-          "L033-topic-065-item-3",
+          "L033-topic-063-item-2",
           "L033-topic-067-item-3",
-          "L033-topic-065-item-4",
+          "L033-topic-063-item-1",
+          "L033-topic-062-item-1",
+          "L033-topic-059-item-4"
+        ],
+        [
+          "L033-topic-060-category",
+          "L033-topic-059-item-5",
+          "L033-topic-066-item-3",
           "L033-topic-067-item-1",
-          "L033-topic-067-item-5"
+          "L033-topic-067-item-2"
+        ],
+        [
+          "L033-topic-062-item-5",
+          "L033-topic-061-item-4",
+          "L033-topic-064-item-5",
+          "L033-topic-065-item-2",
+          "L033-topic-067-item-4"
+        ],
+        [
+          "L033-topic-063-item-4",
+          "L033-topic-062-item-3",
+          "L033-topic-065-item-4",
+          "L033-topic-062-item-2",
+          "L033-topic-065-item-3"
+        ],
+        [
+          "L033-topic-066-item-5",
+          "L033-topic-060-item-5",
+          "L033-topic-064-item-2",
+          "L033-topic-060-item-4",
+          "L033-topic-061-category"
+        ],
+        [
+          "L033-topic-060-item-2",
+          "L033-topic-061-item-2",
+          "L033-topic-064-item-3",
+          "L033-topic-064-category"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L033-topic-063-category",
-        "categoryId": "topic-063",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-063-item-1",
-        "categoryId": "topic-063",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L033-topic-060-category",
-        "categoryId": "topic-060",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-060-item-2",
-        "categoryId": "topic-060",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
         "cardId": "L033-topic-059-category",
         "categoryId": "topic-059",
-        "slotIndex": 2,
+        "slotIndex": 0,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-059-item-3",
+        "categoryId": "topic-059",
         "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L033-topic-059-item-2",
         "categoryId": "topic-059",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-060-item-3",
-        "categoryId": "topic-060",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-063-item-2",
-        "categoryId": "topic-063",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L033-topic-061-category",
-        "categoryId": "topic-061",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-061-item-2",
-        "categoryId": "topic-061",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L033-topic-059-item-1",
         "categoryId": "topic-059",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-061-item-3",
-        "categoryId": "topic-061",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-059-item-3",
-        "categoryId": "topic-059",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-060-item-1",
-        "categoryId": "topic-060",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "activateCategory",
-        "cardId": "L033-topic-062-category",
-        "categoryId": "topic-062",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-062-item-2",
-        "categoryId": "topic-062",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-061-item-1",
-        "categoryId": "topic-061",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-062-item-3",
-        "categoryId": "topic-062",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-063-item-3",
+        "cardId": "L033-topic-063-category",
         "categoryId": "topic-063",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-062-item-1",
-        "categoryId": "topic-062",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "slotIndex": 1,
+        "columnIndex": 3
       },
       {
         "type": "deal",
         "batchIndex": 0
       },
       {
-        "type": "placeItem",
-        "cardId": "L033-topic-063-item-4",
-        "categoryId": "topic-063",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-059-item-5",
-        "categoryId": "topic-059",
+        "type": "activateCategory",
+        "cardId": "L033-topic-067-category",
+        "categoryId": "topic-067",
         "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-061-item-4",
-        "categoryId": "topic-061",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-062-item-5",
-        "categoryId": "topic-062",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-060-item-5",
-        "categoryId": "topic-060",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "deal",
@@ -13257,75 +12057,93 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-061-item-5",
-        "categoryId": "topic-061",
+        "cardId": "L033-topic-063-item-1",
+        "categoryId": "topic-063",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-063-item-2",
+        "categoryId": "topic-063",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-067-item-3",
+        "categoryId": "topic-067",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L033-topic-062-category",
+        "categoryId": "topic-062",
         "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": true
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-062-item-1",
+        "categoryId": "topic-062",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
         "cardId": "L033-topic-062-item-4",
         "categoryId": "topic-062",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-060-item-4",
-        "categoryId": "topic-060",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-059-item-4",
-        "categoryId": "topic-059",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-063-item-5",
-        "categoryId": "topic-063",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "deal",
-        "batchIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L033-topic-064-category",
-        "categoryId": "topic-064",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L033-topic-067-category",
-        "categoryId": "topic-067",
-        "slotIndex": 1,
         "columnIndex": 1
       },
       {
         "type": "activateCategory",
         "cardId": "L033-topic-065-category",
         "categoryId": "topic-065",
-        "slotIndex": 2,
+        "slotIndex": 4,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-059-item-4",
+        "categoryId": "topic-059",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-063-item-5",
+        "categoryId": "topic-063",
         "columnIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L033-topic-066-category",
-        "categoryId": "topic-066",
-        "slotIndex": 3,
+        "type": "deal",
+        "batchIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-067-item-2",
+        "categoryId": "topic-067",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-067-item-1",
+        "categoryId": "topic-067",
         "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-067-item-5",
+        "categoryId": "topic-067",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-065-item-5",
+        "categoryId": "topic-065",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-059-item-5",
+        "categoryId": "topic-059",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -13333,43 +12151,21 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-065-item-1",
-        "categoryId": "topic-065",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-064-item-3",
-        "categoryId": "topic-064",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-067-item-2",
+        "cardId": "L033-topic-067-item-4",
         "categoryId": "topic-067",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-065-item-2",
-        "categoryId": "topic-065",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L033-topic-062-item-5",
+        "categoryId": "topic-062",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-064-item-2",
-        "categoryId": "topic-064",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L033-topic-063-item-3",
+        "categoryId": "topic-063",
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -13377,43 +12173,59 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-066-item-2",
-        "categoryId": "topic-066",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L033-topic-063-item-4",
+        "categoryId": "topic-063",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-066-item-3",
-        "categoryId": "topic-066",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L033-topic-062-item-2",
+        "categoryId": "topic-062",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-066-item-5",
-        "categoryId": "topic-066",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L033-topic-062-item-3",
+        "categoryId": "topic-062",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-066-item-4",
-        "categoryId": "topic-066",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-065-item-5",
+        "cardId": "L033-topic-065-item-2",
         "categoryId": "topic-065",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-065-item-1",
+        "categoryId": "topic-065",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-065-item-3",
+        "categoryId": "topic-065",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-065-item-4",
+        "categoryId": "topic-065",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L033-topic-060-category",
+        "categoryId": "topic-060",
+        "slotIndex": 0,
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L033-topic-066-category",
+        "categoryId": "topic-066",
+        "slotIndex": 1,
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -13421,102 +12233,159 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-066-item-1",
-        "categoryId": "topic-066",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L033-topic-060-item-4",
+        "categoryId": "topic-060",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-064-item-1",
-        "categoryId": "topic-064",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L033-topic-060-item-3",
+        "categoryId": "topic-060",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-067-item-4",
-        "categoryId": "topic-067",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L033-topic-060-item-5",
+        "categoryId": "topic-060",
+        "columnIndex": 1
       },
       {
-        "type": "placeItem",
-        "cardId": "L033-topic-064-item-4",
-        "categoryId": "topic-064",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L033-topic-064-item-5",
-        "categoryId": "topic-064",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "type": "activateCategory",
+        "cardId": "L033-topic-061-category",
+        "categoryId": "topic-061",
+        "slotIndex": 2,
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 6
       },
       {
-        "type": "placeItem",
-        "cardId": "L033-topic-065-item-3",
-        "categoryId": "topic-065",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L033-topic-064-category",
+        "categoryId": "topic-064",
+        "slotIndex": 3,
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-065-item-4",
-        "categoryId": "topic-065",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L033-topic-060-item-1",
+        "categoryId": "topic-060",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-067-item-3",
-        "categoryId": "topic-067",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L033-topic-060-item-2",
+        "categoryId": "topic-060",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-067-item-1",
-        "categoryId": "topic-067",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L033-topic-066-item-5",
+        "categoryId": "topic-066",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L033-topic-067-item-5",
-        "categoryId": "topic-067",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L033-topic-061-item-2",
+        "categoryId": "topic-061",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-061-item-4",
+        "categoryId": "topic-061",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-061-item-3",
+        "categoryId": "topic-061",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-061-item-1",
+        "categoryId": "topic-061",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-061-item-5",
+        "categoryId": "topic-061",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-064-item-3",
+        "categoryId": "topic-064",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-064-item-4",
+        "categoryId": "topic-064",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-064-item-2",
+        "categoryId": "topic-064",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-064-item-1",
+        "categoryId": "topic-064",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-064-item-5",
+        "categoryId": "topic-064",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-066-item-3",
+        "categoryId": "topic-066",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-066-item-1",
+        "categoryId": "topic-066",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-066-item-4",
+        "categoryId": "topic-066",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L033-topic-066-item-2",
+        "categoryId": "topic-066",
+        "columnIndex": 4
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 255,
+      "backtracks": 193,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 115,
+      "dealDecisionStates": 33,
+      "forcedMoves": 29
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C0.5|I0.5,I1.5,I2.5,C2.5|I1.5,I2.5,I3.5,I2.5,C3.5|I3.5,I1.5,C1.5|I4.5,I0.5,I4.5,I3.5,I4.5,C4.5#I0.5,I3.5,I4.5,I2.5,I1.5|I3.5,I1.5,I2.5,I4.5,I0.5|C5.5,C6.5,C7.5,C8.5,_|I6.5,I8.5,I6.5,I5.5,I5.5|I7.5,I7.5,I7.5,I7.5,I6.5|I5.5,I8.5,I5.5,I7.5,I5.5|I6.5,I6.5,I8.5,I8.5,I8.5"
+    "layoutSignature": "9#I0.5,I0.5,I1.5,I2.5,I3.5,C0.5|I0.5,I4.5,I5.5,I5.5|I1.5,I2.5,I6.5|I2.5,I5.5|I3.5,I7.5,I7.5,C4.5,C5.5#I4.5,C8.5,C6.5,C7.5,I8.5|I5.5,I4.5,I8.5,I4.5,I6.5|I8.5,I0.5,I5.5,C3.5,I8.5|I8.5,I1.5,I2.5,I6.5,I7.5|I7.5,I7.5,I6.5,I4.5,I6.5|C2.5,I1.5,I3.5,I0.5,I3.5|_,I1.5,I2.5,I3.5,C1.5"
   },
   {
     "id": "L034",
@@ -13524,11 +12393,11 @@
     "chapter": 2,
     "title": "生活聯想 14",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1179246,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 139520,
+    "seed": 43908678,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -14014,286 +12883,110 @@
     "layout": {
       "initialColumns": [
         [
-          "L034-topic-071-item-1",
-          "L034-topic-072-category"
-        ],
-        [
           "L034-topic-072-item-1",
-          "L034-topic-069-item-1",
-          "L034-topic-068-category"
-        ],
-        [
-          "L034-topic-072-item-2",
-          "L034-topic-070-item-1",
-          "L034-topic-070-item-3",
-          "L034-topic-071-category"
-        ],
-        [
-          "L034-topic-068-item-3",
-          "L034-topic-069-item-3",
-          "L034-topic-069-item-2",
-          "L034-topic-070-item-2",
-          "L034-topic-069-category"
-        ],
-        [
-          "L034-topic-071-item-3",
-          "L034-topic-068-item-2",
-          "L034-topic-071-item-2",
-          "L034-topic-068-item-1",
-          "L034-topic-072-item-3",
           "L034-topic-070-category"
+        ],
+        [
+          "L034-topic-073-item-2",
+          "L034-topic-073-item-4",
+          "L034-topic-076-item-2"
+        ],
+        [
+          "L034-topic-076-item-4",
+          "L034-topic-072-item-2",
+          "L034-topic-071-item-3",
+          "L034-topic-070-item-1"
+        ],
+        [
+          "L034-topic-075-item-1",
+          "L034-topic-071-item-4",
+          "L034-topic-071-item-2",
+          "L034-topic-072-item-3",
+          "L034-topic-071-item-5"
+        ],
+        [
+          "L034-topic-075-item-5",
+          "L034-topic-075-item-2",
+          "L034-topic-075-item-4",
+          "L034-topic-075-item-3",
+          "L034-topic-075-category",
+          "L034-topic-070-item-2"
         ]
       ],
       "drawBatches": [
         [
-          "L034-topic-071-item-4",
           "L034-topic-072-item-4",
-          "L034-topic-071-item-5",
-          "L034-topic-070-item-5",
+          "L034-topic-073-item-1",
+          "L034-topic-072-category",
+          "L034-topic-074-item-5",
+          "L034-topic-076-item-3"
+        ],
+        [
+          "L034-topic-076-item-1",
+          "L034-topic-070-item-4",
+          "L034-topic-073-item-3",
+          "L034-topic-071-item-1",
           "L034-topic-072-item-5"
         ],
         [
-          "L034-topic-069-item-4",
-          "L034-topic-068-item-4",
-          "L034-topic-069-item-5",
-          "L034-topic-068-item-5",
-          "L034-topic-070-item-4"
-        ],
-        [
-          "L034-topic-075-category",
-          "L034-topic-076-category",
-          "L034-topic-074-category",
-          "L034-topic-073-category"
-        ],
-        [
-          "L034-topic-076-item-5",
-          "L034-topic-076-item-2",
-          "L034-topic-074-item-4",
-          "L034-topic-073-item-4",
-          "L034-topic-074-item-3"
-        ],
-        [
-          "L034-topic-073-item-1",
-          "L034-topic-075-item-5",
-          "L034-topic-076-item-1",
-          "L034-topic-076-item-3",
-          "L034-topic-074-item-5"
-        ],
-        [
-          "L034-topic-075-item-4",
-          "L034-topic-074-item-2",
+          "L034-topic-068-category",
           "L034-topic-074-item-1",
-          "L034-topic-075-item-2",
-          "L034-topic-076-item-4"
+          "L034-topic-073-item-5",
+          "L034-topic-070-item-5",
+          "L034-topic-074-item-4"
         ],
         [
-          "L034-topic-073-item-2",
-          "L034-topic-075-item-3",
-          "L034-topic-073-item-3",
-          "L034-topic-073-item-5",
-          "L034-topic-075-item-1"
+          "L034-topic-070-item-3",
+          "L034-topic-069-item-4",
+          "L034-topic-068-item-2",
+          "L034-topic-076-category",
+          "L034-topic-076-item-5"
+        ],
+        [
+          "L034-topic-069-item-2",
+          "L034-topic-074-category",
+          "L034-topic-069-category",
+          "L034-topic-074-item-3",
+          "L034-topic-071-category"
+        ],
+        [
+          "L034-topic-069-item-3",
+          "L034-topic-068-item-3",
+          "L034-topic-068-item-4",
+          "L034-topic-069-item-1",
+          "L034-topic-068-item-5"
+        ],
+        [
+          "L034-topic-068-item-1",
+          "L034-topic-074-item-2",
+          "L034-topic-073-category",
+          "L034-topic-069-item-5"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L034-topic-072-category",
-        "categoryId": "topic-072",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L034-topic-068-category",
-        "categoryId": "topic-068",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L034-topic-071-category",
-        "categoryId": "topic-071",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-071-item-1",
-        "categoryId": "topic-071",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L034-topic-069-category",
-        "categoryId": "topic-069",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-069-item-1",
-        "categoryId": "topic-069",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-072-item-1",
-        "categoryId": "topic-072",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
         "cardId": "L034-topic-070-category",
         "categoryId": "topic-070",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-070-item-3",
-        "categoryId": "topic-070",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
+        "slotIndex": 0,
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L034-topic-070-item-1",
         "categoryId": "topic-070",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-072-item-2",
-        "categoryId": "topic-072",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L034-topic-070-item-2",
         "categoryId": "topic-070",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-069-item-2",
-        "categoryId": "topic-069",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-069-item-3",
-        "categoryId": "topic-069",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-068-item-3",
-        "categoryId": "topic-068",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-072-item-3",
-        "categoryId": "topic-072",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-068-item-1",
-        "categoryId": "topic-068",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-071-item-2",
-        "categoryId": "topic-071",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-068-item-2",
-        "categoryId": "topic-068",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-071-item-3",
-        "categoryId": "topic-071",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-071-item-4",
-        "categoryId": "topic-071",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-071-item-5",
-        "categoryId": "topic-071",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-072-item-4",
-        "categoryId": "topic-072",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-072-item-5",
-        "categoryId": "topic-072",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-070-item-5",
-        "categoryId": "topic-070",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -14303,72 +12996,16 @@
         "type": "placeItem",
         "cardId": "L034-topic-070-item-4",
         "categoryId": "topic-070",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-069-item-4",
-        "categoryId": "topic-069",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-069-item-5",
-        "categoryId": "topic-069",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-068-item-4",
-        "categoryId": "topic-068",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-068-item-5",
-        "categoryId": "topic-068",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L034-topic-075-category",
-        "categoryId": "topic-075",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L034-topic-076-category",
-        "categoryId": "topic-076",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L034-topic-074-category",
-        "categoryId": "topic-074",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L034-topic-073-category",
-        "categoryId": "topic-073",
-        "slotIndex": 3,
+        "type": "placeItem",
+        "cardId": "L034-topic-070-item-5",
+        "categoryId": "topic-070",
         "columnIndex": 3
       },
       {
@@ -14377,87 +13014,58 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L034-topic-076-item-5",
-        "categoryId": "topic-076",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-076-item-2",
-        "categoryId": "topic-076",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-074-item-4",
-        "categoryId": "topic-074",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-073-item-4",
-        "categoryId": "topic-073",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-074-item-3",
-        "categoryId": "topic-074",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L034-topic-070-item-3",
+        "categoryId": "topic-070",
+        "columnIndex": 0
       },
       {
         "type": "deal",
         "batchIndex": 4
       },
       {
-        "type": "placeItem",
-        "cardId": "L034-topic-073-item-1",
-        "categoryId": "topic-073",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-075-item-5",
-        "categoryId": "topic-075",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-076-item-1",
-        "categoryId": "topic-076",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-076-item-3",
-        "categoryId": "topic-076",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-074-item-5",
+        "type": "activateCategory",
+        "cardId": "L034-topic-074-category",
         "categoryId": "topic-074",
+        "slotIndex": 0,
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L034-topic-069-category",
+        "categoryId": "topic-069",
+        "slotIndex": 1,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-069-item-4",
+        "categoryId": "topic-069",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-069-item-2",
+        "categoryId": "topic-069",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L034-topic-068-category",
+        "categoryId": "topic-068",
         "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-068-item-2",
+        "categoryId": "topic-068",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-074-item-3",
+        "categoryId": "topic-074",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -14465,43 +13073,9 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L034-topic-076-item-4",
-        "categoryId": "topic-076",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-075-item-4",
-        "categoryId": "topic-075",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-074-item-2",
-        "categoryId": "topic-074",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-074-item-1",
-        "categoryId": "topic-074",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L034-topic-075-item-2",
-        "categoryId": "topic-075",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L034-topic-068-item-3",
+        "categoryId": "topic-068",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -14509,58 +13083,266 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L034-topic-073-item-2",
+        "cardId": "L034-topic-069-item-5",
+        "categoryId": "topic-069",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L034-topic-073-category",
         "categoryId": "topic-073",
         "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L034-topic-075-item-3",
-        "categoryId": "topic-075",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L034-topic-068-item-1",
+        "categoryId": "topic-068",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L034-topic-075-item-1",
-        "categoryId": "topic-075",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L034-topic-069-item-1",
+        "categoryId": "topic-069",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L034-topic-073-item-3",
-        "categoryId": "topic-073",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L034-topic-069-item-3",
+        "categoryId": "topic-069",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-074-item-2",
+        "categoryId": "topic-074",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-068-item-4",
+        "categoryId": "topic-068",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L034-topic-073-item-5",
         "categoryId": "topic-073",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-068-item-5",
+        "categoryId": "topic-068",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L034-topic-076-category",
+        "categoryId": "topic-076",
+        "slotIndex": 1,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-076-item-1",
+        "categoryId": "topic-076",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-073-item-3",
+        "categoryId": "topic-073",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L034-topic-072-category",
+        "categoryId": "topic-072",
+        "slotIndex": 2,
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L034-topic-071-category",
+        "categoryId": "topic-071",
+        "slotIndex": 4,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-072-item-4",
+        "categoryId": "topic-072",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-071-item-3",
+        "categoryId": "topic-071",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-071-item-1",
+        "categoryId": "topic-071",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-072-item-1",
+        "categoryId": "topic-072",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-074-item-1",
+        "categoryId": "topic-074",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-073-item-1",
+        "categoryId": "topic-073",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-076-item-2",
+        "categoryId": "topic-076",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-073-item-4",
+        "categoryId": "topic-073",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-073-item-2",
+        "categoryId": "topic-073",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-074-item-5",
+        "categoryId": "topic-074",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-076-item-5",
+        "categoryId": "topic-076",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-071-item-5",
+        "categoryId": "topic-071",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-074-item-4",
+        "categoryId": "topic-074",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-072-item-3",
+        "categoryId": "topic-072",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-072-item-5",
+        "categoryId": "topic-072",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-072-item-2",
+        "categoryId": "topic-072",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-071-item-2",
+        "categoryId": "topic-071",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-071-item-4",
+        "categoryId": "topic-071",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-076-item-4",
+        "categoryId": "topic-076",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-076-item-3",
+        "categoryId": "topic-076",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L034-topic-075-category",
+        "categoryId": "topic-075",
+        "slotIndex": 0,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-075-item-1",
+        "categoryId": "topic-075",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-075-item-3",
+        "categoryId": "topic-075",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-075-item-4",
+        "categoryId": "topic-075",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-075-item-2",
+        "categoryId": "topic-075",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L034-topic-075-item-5",
+        "categoryId": "topic-075",
+        "columnIndex": 4
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 5309,
+      "backtracks": 5247,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 1857,
+      "dealDecisionStates": 420,
+      "forcedMoves": 355
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,I0.5,I2.5,I1.5,C3.5|I1.5,I3.5,I3.5,C0.5|I1.5,I4.5,C2.5|I2.5,I4.5,I4.5,I3.5,C4.5#I0.5,I1.5,I0.5,I1.5,I3.5|I4.5,I3.5,I4.5,I2.5,I2.5|C5.5,_,C6.5,C7.5,C8.5|I7.5,I6.5,I6.5,I7.5,I8.5|I8.5,I6.5,I7.5,I5.5,I7.5|I5.5,I7.5,I6.5,I6.5,I5.5|I8.5,I5.5,I8.5,I5.5,I8.5"
+    "layoutSignature": "9#I0.5,C1.5|I2.5,I0.5,I3.5,I1.5|I4.5,I3.5,I3.5,I0.5,I3.5|I4.5,I4.5,I4.5,I4.5,C4.5,I1.5|I5.5,I5.5,I2.5#I0.5,C0.5,I6.5,I2.5,I5.5|I2.5,I5.5,I3.5,I0.5,I1.5|C7.5,I5.5,I1.5,I6.5,I6.5|I1.5,I7.5,C2.5,I2.5,I8.5|I8.5,C8.5,I6.5,C3.5,C6.5|I8.5,I7.5,I8.5,I7.5,I7.5|I7.5,C5.5,I8.5,_,I6.5"
   },
   {
     "id": "L035",
@@ -14568,11 +13350,11 @@
     "chapter": 2,
     "title": "生活聯想 15",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1187165,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 40994,
+    "seed": 6737802,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -15058,242 +13840,119 @@
     "layout": {
       "initialColumns": [
         [
-          "L035-topic-080-item-1",
-          "L035-topic-081-category"
+          "L035-topic-082-category",
+          "L035-topic-080-item-1"
         ],
         [
-          "L035-topic-078-item-2",
-          "L035-topic-079-item-2",
-          "L035-topic-080-category"
+          "L035-topic-083-item-2",
+          "L035-topic-083-item-1",
+          "L035-topic-083-item-3"
         ],
         [
-          "L035-topic-080-item-2",
-          "L035-topic-078-item-3",
-          "L035-topic-081-item-2",
+          "L035-topic-083-item-4",
+          "L035-topic-079-item-1",
+          "L035-topic-082-item-1",
+          "L035-topic-085-item-2"
+        ],
+        [
+          "L035-topic-084-item-2",
+          "L035-topic-083-category",
+          "L035-topic-078-item-1",
+          "L035-topic-078-item-5",
           "L035-topic-078-category"
         ],
         [
-          "L035-topic-081-item-3",
-          "L035-topic-077-item-3",
-          "L035-topic-077-item-1",
-          "L035-topic-081-item-1",
-          "L035-topic-079-category"
-        ],
-        [
-          "L035-topic-078-item-1",
-          "L035-topic-079-item-1",
-          "L035-topic-080-item-3",
-          "L035-topic-077-item-2",
-          "L035-topic-079-item-3",
-          "L035-topic-077-category"
+          "L035-topic-079-item-4",
+          "L035-topic-082-item-5",
+          "L035-topic-080-item-4",
+          "L035-topic-078-item-3",
+          "L035-topic-085-category",
+          "L035-topic-078-item-4"
         ]
       ],
       "drawBatches": [
         [
-          "L035-topic-079-item-4",
-          "L035-topic-080-item-5",
-          "L035-topic-077-item-5",
-          "L035-topic-078-item-4",
-          "L035-topic-078-item-5"
-        ],
-        [
-          "L035-topic-081-item-4",
-          "L035-topic-081-item-5",
-          "L035-topic-080-item-4",
-          "L035-topic-077-item-4",
-          "L035-topic-079-item-5"
-        ],
-        [
-          "L035-topic-085-category",
-          "L035-topic-084-category",
-          "L035-topic-082-category",
-          "L035-topic-083-category"
-        ],
-        [
-          "L035-topic-084-item-5",
-          "L035-topic-085-item-2",
-          "L035-topic-083-item-3",
-          "L035-topic-083-item-5",
-          "L035-topic-084-item-3"
-        ],
-        [
-          "L035-topic-082-item-5",
-          "L035-topic-084-item-2",
-          "L035-topic-082-item-4",
-          "L035-topic-084-item-4",
-          "L035-topic-083-item-4"
-        ],
-        [
-          "L035-topic-083-item-2",
-          "L035-topic-082-item-3",
-          "L035-topic-082-item-2",
-          "L035-topic-082-item-1",
-          "L035-topic-083-item-1"
-        ],
-        [
+          "L035-topic-080-item-2",
+          "L035-topic-077-category",
+          "L035-topic-078-item-2",
           "L035-topic-085-item-1",
-          "L035-topic-085-item-3",
+          "L035-topic-079-category"
+        ],
+        [
+          "L035-topic-085-item-4",
+          "L035-topic-083-item-5",
+          "L035-topic-080-item-5",
+          "L035-topic-082-item-3",
+          "L035-topic-084-item-5"
+        ],
+        [
+          "L035-topic-084-category",
+          "L035-topic-082-item-2",
+          "L035-topic-081-item-2",
           "L035-topic-084-item-1",
-          "L035-topic-085-item-5",
-          "L035-topic-085-item-4"
+          "L035-topic-081-item-1"
+        ],
+        [
+          "L035-topic-080-item-3",
+          "L035-topic-077-item-2",
+          "L035-topic-079-item-5",
+          "L035-topic-084-item-4",
+          "L035-topic-081-category"
+        ],
+        [
+          "L035-topic-080-category",
+          "L035-topic-079-item-2",
+          "L035-topic-085-item-3",
+          "L035-topic-077-item-4",
+          "L035-topic-085-item-5"
+        ],
+        [
+          "L035-topic-084-item-3",
+          "L035-topic-081-item-4",
+          "L035-topic-082-item-4",
+          "L035-topic-077-item-1",
+          "L035-topic-079-item-3"
+        ],
+        [
+          "L035-topic-077-item-5",
+          "L035-topic-081-item-3",
+          "L035-topic-081-item-5",
+          "L035-topic-077-item-3"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L035-topic-081-category",
-        "categoryId": "topic-081",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L035-topic-080-category",
-        "categoryId": "topic-080",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-080-item-1",
-        "categoryId": "topic-080",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
         "cardId": "L035-topic-078-category",
         "categoryId": "topic-078",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-081-item-2",
-        "categoryId": "topic-081",
         "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-078-item-3",
-        "categoryId": "topic-078",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-080-item-2",
-        "categoryId": "topic-080",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L035-topic-079-category",
-        "categoryId": "topic-079",
-        "slotIndex": 3,
         "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-079-item-2",
-        "categoryId": "topic-079",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-078-item-2",
+        "cardId": "L035-topic-078-item-5",
         "categoryId": "topic-078",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-081-item-1",
-        "categoryId": "topic-081",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L035-topic-078-item-4",
+        "categoryId": "topic-078",
+        "columnIndex": 4
       },
       {
         "type": "activateCategory",
-        "cardId": "L035-topic-077-category",
-        "categoryId": "topic-077",
-        "slotIndex": 4,
+        "cardId": "L035-topic-085-category",
+        "categoryId": "topic-085",
+        "slotIndex": 1,
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-077-item-1",
-        "categoryId": "topic-077",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-077-item-3",
-        "categoryId": "topic-077",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-081-item-3",
-        "categoryId": "topic-081",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-079-item-3",
-        "categoryId": "topic-079",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-077-item-2",
-        "categoryId": "topic-077",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-080-item-3",
-        "categoryId": "topic-080",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-079-item-1",
-        "categoryId": "topic-079",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-078-item-1",
-        "categoryId": "topic-078",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L035-topic-085-item-2",
+        "categoryId": "topic-085",
+        "columnIndex": 2
       },
       {
         "type": "deal",
@@ -15301,43 +13960,41 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-079-item-4",
+        "cardId": "L035-topic-085-item-1",
+        "categoryId": "topic-085",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-078-item-2",
+        "categoryId": "topic-078",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-078-item-1",
+        "categoryId": "topic-078",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L035-topic-079-category",
         "categoryId": "topic-079",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "slotIndex": 2,
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-080-item-5",
-        "categoryId": "topic-080",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L035-topic-078-item-3",
+        "categoryId": "topic-078",
+        "columnIndex": 4
       },
       {
-        "type": "placeItem",
-        "cardId": "L035-topic-077-item-5",
+        "type": "activateCategory",
+        "cardId": "L035-topic-077-category",
         "categoryId": "topic-077",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-078-item-4",
-        "categoryId": "topic-078",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-078-item-5",
-        "categoryId": "topic-078",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
+        "slotIndex": 0,
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -15345,43 +14002,9 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-080-item-4",
-        "categoryId": "topic-080",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-077-item-4",
-        "categoryId": "topic-077",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-079-item-5",
-        "categoryId": "topic-079",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-081-item-4",
-        "categoryId": "topic-081",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-081-item-5",
-        "categoryId": "topic-081",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L035-topic-085-item-4",
+        "categoryId": "topic-085",
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -15389,75 +14012,21 @@
       },
       {
         "type": "activateCategory",
-        "cardId": "L035-topic-085-category",
-        "categoryId": "topic-085",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
         "cardId": "L035-topic-084-category",
         "categoryId": "topic-084",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L035-topic-082-category",
-        "categoryId": "topic-082",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L035-topic-083-category",
-        "categoryId": "topic-083",
         "slotIndex": 3,
-        "columnIndex": 3
+        "columnIndex": 0
       },
       {
         "type": "deal",
         "batchIndex": 3
       },
       {
-        "type": "placeItem",
-        "cardId": "L035-topic-084-item-5",
-        "categoryId": "topic-084",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-085-item-2",
-        "categoryId": "topic-085",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-083-item-3",
-        "categoryId": "topic-083",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-083-item-5",
-        "categoryId": "topic-083",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-084-item-3",
-        "categoryId": "topic-084",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L035-topic-081-category",
+        "categoryId": "topic-081",
+        "slotIndex": 4,
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -15465,43 +14034,125 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-082-item-5",
-        "categoryId": "topic-082",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L035-topic-085-item-5",
+        "categoryId": "topic-085",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-084-item-2",
-        "categoryId": "topic-084",
+        "cardId": "L035-topic-081-item-1",
+        "categoryId": "topic-081",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-079-item-2",
+        "categoryId": "topic-079",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-085-item-3",
+        "categoryId": "topic-085",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L035-topic-080-category",
+        "categoryId": "topic-080",
         "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-082-item-4",
-        "categoryId": "topic-082",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L035-topic-077-item-2",
+        "categoryId": "topic-077",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-079-item-5",
+        "categoryId": "topic-079",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-081-item-2",
+        "categoryId": "topic-081",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-084-item-5",
+        "categoryId": "topic-084",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-080-item-3",
+        "categoryId": "topic-080",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-080-item-4",
+        "categoryId": "topic-080",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-080-item-5",
+        "categoryId": "topic-080",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-080-item-2",
+        "categoryId": "topic-080",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-077-item-4",
+        "categoryId": "topic-077",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
         "cardId": "L035-topic-084-item-4",
         "categoryId": "topic-084",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-083-item-4",
-        "categoryId": "topic-083",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L035-topic-084-item-1",
+        "categoryId": "topic-084",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-080-item-1",
+        "categoryId": "topic-080",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L035-topic-082-category",
+        "categoryId": "topic-082",
+        "slotIndex": 1,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-082-item-5",
+        "categoryId": "topic-082",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-082-item-3",
+        "categoryId": "topic-082",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -15509,43 +14160,27 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-083-item-2",
-        "categoryId": "topic-083",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L035-topic-084-item-3",
+        "categoryId": "topic-084",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-083-item-1",
-        "categoryId": "topic-083",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L035-topic-081-item-4",
+        "categoryId": "topic-081",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-082-item-3",
-        "categoryId": "topic-082",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L035-topic-079-item-3",
+        "categoryId": "topic-079",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-082-item-2",
-        "categoryId": "topic-082",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L035-topic-082-item-1",
-        "categoryId": "topic-082",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L035-topic-077-item-1",
+        "categoryId": "topic-077",
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -15553,58 +14188,118 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-084-item-1",
+        "cardId": "L035-topic-079-item-4",
+        "categoryId": "topic-079",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-081-item-5",
+        "categoryId": "topic-081",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-077-item-3",
+        "categoryId": "topic-077",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-082-item-4",
+        "categoryId": "topic-082",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-077-item-5",
+        "categoryId": "topic-077",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L035-topic-083-category",
+        "categoryId": "topic-083",
+        "slotIndex": 0,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-084-item-2",
         "categoryId": "topic-084",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-085-item-1",
-        "categoryId": "topic-085",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L035-topic-082-item-1",
+        "categoryId": "topic-082",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-085-item-3",
-        "categoryId": "topic-085",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L035-topic-081-item-3",
+        "categoryId": "topic-081",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-085-item-5",
-        "categoryId": "topic-085",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L035-topic-079-item-1",
+        "categoryId": "topic-079",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L035-topic-085-item-4",
-        "categoryId": "topic-085",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L035-topic-082-item-2",
+        "categoryId": "topic-082",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-083-item-4",
+        "categoryId": "topic-083",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-083-item-5",
+        "categoryId": "topic-083",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-083-item-3",
+        "categoryId": "topic-083",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-083-item-1",
+        "categoryId": "topic-083",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L035-topic-083-item-2",
+        "categoryId": "topic-083",
+        "columnIndex": 1
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 995,
+      "backtracks": 933,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 381,
+      "dealDecisionStates": 68,
+      "forcedMoves": 40
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,I1.5,C2.5|I1.5,I3.5,I3.5,I1.5,C4.5|I2.5,I4.5,C0.5|I2.5,I4.5,I0.5,I3.5,I4.5,C3.5#I4.5,I3.5,I2.5,I0.5,I2.5|I1.5,I0.5,I3.5,I1.5,I4.5|C5.5,C6.5,C7.5,C8.5,_|I8.5,I7.5,I7.5,I5.5,I8.5|I6.5,I6.5,I8.5,I8.5,I7.5|I7.5,I6.5,I6.5,I6.5,I7.5|I5.5,I8.5,I5.5,I5.5,I5.5"
+    "layoutSignature": "9#C0.5,I1.5|I2.5,C3.5,I4.5,I4.5,C4.5|I3.5,I3.5,I3.5|I3.5,I5.5,I0.5,I6.5|I5.5,I0.5,I1.5,I4.5,C6.5,I4.5#I1.5,I6.5,C7.5,I4.5,C5.5|I6.5,I0.5,I3.5,I1.5,I2.5|C2.5,I2.5,I0.5,I8.5,I8.5|I1.5,I2.5,I7.5,I5.5,C8.5|C1.5,I7.5,I5.5,I6.5,I6.5|I2.5,I7.5,I8.5,I0.5,I5.5|I7.5,I7.5,I8.5,I8.5,_"
   },
   {
     "id": "L036",
@@ -15612,11 +14307,11 @@
     "chapter": 2,
     "title": "生活聯想 16",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1195084,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 25516,
+    "seed": 41934665,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -16102,406 +14797,191 @@
     "layout": {
       "initialColumns": [
         [
-          "L036-topic-087-item-2",
-          "L036-topic-089-category"
-        ],
-        [
-          "L036-topic-088-item-3",
-          "L036-topic-088-item-1",
-          "L036-topic-090-category"
-        ],
-        [
-          "L036-topic-087-item-1",
-          "L036-topic-090-item-2",
-          "L036-topic-089-item-3",
-          "L036-topic-088-category"
-        ],
-        [
-          "L036-topic-088-item-2",
-          "L036-topic-087-item-3",
           "L036-topic-089-item-1",
-          "L036-topic-089-item-2",
-          "L036-topic-087-category"
+          "L036-topic-093-category"
         ],
         [
+          "L036-topic-086-item-4",
+          "L036-topic-086-category",
+          "L036-topic-092-item-3"
+        ],
+        [
+          "L036-topic-088-item-5",
           "L036-topic-086-item-2",
-          "L036-topic-086-item-3",
-          "L036-topic-090-item-3",
-          "L036-topic-090-item-1",
-          "L036-topic-086-item-1",
-          "L036-topic-086-category"
+          "L036-topic-093-item-2",
+          "L036-topic-093-item-3"
+        ],
+        [
+          "L036-topic-088-item-4",
+          "L036-topic-088-item-2",
+          "L036-topic-086-item-5",
+          "L036-topic-088-item-3",
+          "L036-topic-087-item-1"
+        ],
+        [
+          "L036-topic-089-item-3",
+          "L036-topic-089-item-2",
+          "L036-topic-089-item-4",
+          "L036-topic-087-item-2",
+          "L036-topic-089-item-5",
+          "L036-topic-093-item-4"
         ]
       ],
       "drawBatches": [
         [
-          "L036-topic-088-item-5",
-          "L036-topic-087-item-5",
-          "L036-topic-089-item-5",
-          "L036-topic-090-item-4",
-          "L036-topic-089-item-4"
+          "L036-topic-086-item-3",
+          "L036-topic-090-item-1",
+          "L036-topic-090-item-3",
+          "L036-topic-086-item-1",
+          "L036-topic-094-item-4"
         ],
         [
-          "L036-topic-086-item-5",
-          "L036-topic-086-item-4",
-          "L036-topic-087-item-4",
-          "L036-topic-090-item-5",
-          "L036-topic-088-item-4"
-        ],
-        [
-          "L036-topic-094-category",
-          "L036-topic-092-category",
-          "L036-topic-091-category",
-          "L036-topic-093-category"
+          "L036-topic-094-item-3",
+          "L036-topic-091-item-2",
+          "L036-topic-091-item-4",
+          "L036-topic-088-item-1",
+          "L036-topic-090-item-5"
         ],
         [
           "L036-topic-093-item-5",
-          "L036-topic-094-item-4",
-          "L036-topic-094-item-5",
-          "L036-topic-092-item-2",
-          "L036-topic-092-item-1"
-        ],
-        [
-          "L036-topic-092-item-4",
-          "L036-topic-093-item-3",
           "L036-topic-094-item-1",
-          "L036-topic-092-item-3",
-          "L036-topic-093-item-2"
+          "L036-topic-087-item-4",
+          "L036-topic-087-item-3",
+          "L036-topic-093-item-1"
         ],
         [
-          "L036-topic-091-item-2",
-          "L036-topic-093-item-4",
-          "L036-topic-091-item-1",
-          "L036-topic-091-item-4",
-          "L036-topic-091-item-3"
-        ],
-        [
-          "L036-topic-094-item-2",
           "L036-topic-091-item-5",
-          "L036-topic-094-item-3",
-          "L036-topic-093-item-1",
-          "L036-topic-092-item-5"
+          "L036-topic-091-category",
+          "L036-topic-094-category",
+          "L036-topic-088-category",
+          "L036-topic-090-category"
+        ],
+        [
+          "L036-topic-094-item-5",
+          "L036-topic-091-item-1",
+          "L036-topic-092-item-5",
+          "L036-topic-092-item-4",
+          "L036-topic-092-item-2"
+        ],
+        [
+          "L036-topic-089-category",
+          "L036-topic-090-item-4",
+          "L036-topic-094-item-2",
+          "L036-topic-092-category",
+          "L036-topic-087-item-5"
+        ],
+        [
+          "L036-topic-087-category",
+          "L036-topic-090-item-2",
+          "L036-topic-091-item-3",
+          "L036-topic-092-item-1"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L036-topic-089-category",
-        "categoryId": "topic-089",
+        "cardId": "L036-topic-093-category",
+        "categoryId": "topic-093",
         "slotIndex": 0,
         "columnIndex": 0
       },
       {
-        "type": "activateCategory",
-        "cardId": "L036-topic-090-category",
-        "categoryId": "topic-090",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L036-topic-088-category",
-        "categoryId": "topic-088",
-        "slotIndex": 2,
+        "type": "placeItem",
+        "cardId": "L036-topic-093-item-3",
+        "categoryId": "topic-093",
         "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-088-item-1",
-        "categoryId": "topic-088",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-088-item-3",
-        "categoryId": "topic-088",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-089-item-3",
-        "categoryId": "topic-089",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-090-item-2",
-        "categoryId": "topic-090",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L036-topic-087-category",
-        "categoryId": "topic-087",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-087-item-2",
-        "categoryId": "topic-087",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-087-item-1",
-        "categoryId": "topic-087",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-089-item-2",
-        "categoryId": "topic-089",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-089-item-1",
-        "categoryId": "topic-089",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-087-item-3",
-        "categoryId": "topic-087",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-088-item-2",
-        "categoryId": "topic-088",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L036-topic-086-category",
-        "categoryId": "topic-086",
-        "slotIndex": 4,
+        "cardId": "L036-topic-093-item-4",
+        "categoryId": "topic-093",
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-086-item-1",
-        "categoryId": "topic-086",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-090-item-1",
-        "categoryId": "topic-090",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-090-item-3",
-        "categoryId": "topic-090",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-086-item-3",
-        "categoryId": "topic-086",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-086-item-2",
-        "categoryId": "topic-086",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L036-topic-093-item-2",
+        "categoryId": "topic-093",
+        "columnIndex": 2
       },
       {
         "type": "deal",
         "batchIndex": 0
       },
       {
-        "type": "placeItem",
-        "cardId": "L036-topic-088-item-5",
-        "categoryId": "topic-088",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-087-item-5",
-        "categoryId": "topic-087",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-089-item-5",
-        "categoryId": "topic-089",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-089-item-4",
-        "categoryId": "topic-089",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-090-item-4",
-        "categoryId": "topic-090",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
         "type": "deal",
         "batchIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-087-item-4",
-        "categoryId": "topic-087",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-090-item-5",
-        "categoryId": "topic-090",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-088-item-4",
-        "categoryId": "topic-088",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-086-item-5",
-        "categoryId": "topic-086",
-        "slotIndex": 4,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-086-item-4",
-        "categoryId": "topic-086",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": true
       },
       {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L036-topic-094-category",
-        "categoryId": "topic-094",
-        "slotIndex": 0,
+        "type": "placeItem",
+        "cardId": "L036-topic-093-item-5",
+        "categoryId": "topic-093",
         "columnIndex": 0
       },
       {
-        "type": "activateCategory",
-        "cardId": "L036-topic-092-category",
-        "categoryId": "topic-092",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L036-topic-091-category",
-        "categoryId": "topic-091",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L036-topic-093-category",
+        "type": "placeItem",
+        "cardId": "L036-topic-093-item-1",
         "categoryId": "topic-093",
-        "slotIndex": 3,
-        "columnIndex": 3
+        "columnIndex": 4
       },
       {
         "type": "deal",
         "batchIndex": 3
       },
       {
+        "type": "activateCategory",
+        "cardId": "L036-topic-090-category",
+        "categoryId": "topic-090",
+        "slotIndex": 0,
+        "columnIndex": 4
+      },
+      {
         "type": "placeItem",
-        "cardId": "L036-topic-093-item-5",
-        "categoryId": "topic-093",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L036-topic-090-item-5",
+        "categoryId": "topic-090",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L036-topic-094-category",
+        "categoryId": "topic-094",
+        "slotIndex": 1,
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L036-topic-091-category",
+        "categoryId": "topic-091",
+        "slotIndex": 2,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-094-item-1",
+        "categoryId": "topic-094",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-091-item-2",
+        "categoryId": "topic-091",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-091-item-5",
+        "categoryId": "topic-091",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L036-topic-094-item-4",
         "categoryId": "topic-094",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-094-item-5",
-        "categoryId": "topic-094",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-092-item-2",
-        "categoryId": "topic-092",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-092-item-1",
-        "categoryId": "topic-092",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "deal",
@@ -16509,43 +14989,15 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-092-item-4",
-        "categoryId": "topic-092",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-093-item-3",
-        "categoryId": "topic-093",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-094-item-1",
+        "cardId": "L036-topic-094-item-5",
         "categoryId": "topic-094",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-092-item-3",
-        "categoryId": "topic-092",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-093-item-2",
-        "categoryId": "topic-093",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L036-topic-094-item-3",
+        "categoryId": "topic-094",
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -16553,43 +15005,28 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-091-item-2",
-        "categoryId": "topic-091",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L036-topic-090-item-4",
+        "categoryId": "topic-090",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-093-item-4",
-        "categoryId": "topic-093",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L036-topic-094-item-2",
+        "categoryId": "topic-094",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L036-topic-091-item-1",
         "categoryId": "topic-091",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
-        "type": "placeItem",
-        "cardId": "L036-topic-091-item-4",
-        "categoryId": "topic-091",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L036-topic-091-item-3",
-        "categoryId": "topic-091",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "type": "activateCategory",
+        "cardId": "L036-topic-092-category",
+        "categoryId": "topic-092",
+        "slotIndex": 1,
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -16597,58 +15034,229 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-091-item-5",
-        "categoryId": "topic-091",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L036-topic-092-item-1",
+        "categoryId": "topic-092",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L036-topic-087-category",
+        "categoryId": "topic-087",
+        "slotIndex": 3,
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-093-item-1",
-        "categoryId": "topic-093",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L036-topic-091-item-3",
+        "categoryId": "topic-091",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-090-item-2",
+        "categoryId": "topic-090",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-092-item-4",
+        "categoryId": "topic-092",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
         "cardId": "L036-topic-092-item-5",
         "categoryId": "topic-092",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-090-item-1",
+        "categoryId": "topic-090",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-087-item-4",
+        "categoryId": "topic-087",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-092-item-3",
+        "categoryId": "topic-092",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-087-item-5",
+        "categoryId": "topic-087",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-091-item-4",
+        "categoryId": "topic-091",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-092-item-2",
+        "categoryId": "topic-092",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L036-topic-086-category",
+        "categoryId": "topic-086",
         "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L036-topic-089-category",
+        "categoryId": "topic-089",
+        "slotIndex": 2,
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-094-item-2",
-        "categoryId": "topic-094",
+        "cardId": "L036-topic-090-item-3",
+        "categoryId": "topic-090",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L036-topic-088-category",
+        "categoryId": "topic-088",
         "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L036-topic-094-item-3",
-        "categoryId": "topic-094",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L036-topic-089-item-5",
+        "categoryId": "topic-089",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-087-item-2",
+        "categoryId": "topic-087",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-089-item-4",
+        "categoryId": "topic-089",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-086-item-2",
+        "categoryId": "topic-086",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-089-item-2",
+        "categoryId": "topic-089",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-088-item-5",
+        "categoryId": "topic-088",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-086-item-4",
+        "categoryId": "topic-086",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-089-item-3",
+        "categoryId": "topic-089",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-086-item-3",
+        "categoryId": "topic-086",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-089-item-1",
+        "categoryId": "topic-089",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-087-item-3",
+        "categoryId": "topic-087",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-088-item-1",
+        "categoryId": "topic-088",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-086-item-1",
+        "categoryId": "topic-086",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-087-item-1",
+        "categoryId": "topic-087",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-088-item-3",
+        "categoryId": "topic-088",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-086-item-5",
+        "categoryId": "topic-086",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-088-item-2",
+        "categoryId": "topic-088",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L036-topic-088-item-4",
+        "categoryId": "topic-088",
+        "columnIndex": 3
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 282,
+      "backtracks": 220,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 128,
+      "dealDecisionStates": 35,
+      "forcedMoves": 33
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,I1.5,C3.5|I3.5,I0.5,I1.5,I1.5,C0.5|I3.5,I3.5,C2.5|I4.5,I4.5,I2.5,I2.5,I4.5,C4.5#I3.5,I1.5,I2.5,I0.5,I1.5|I4.5,I0.5,I2.5,I4.5,I3.5|C5.5,C6.5,C7.5,C8.5,_|I7.5,I5.5,I8.5,I5.5,I8.5|I8.5,I5.5,I8.5,I7.5,I7.5|I6.5,I6.5,I6.5,I7.5,I6.5|I5.5,I5.5,I7.5,I6.5,I8.5"
+    "layoutSignature": "9#I0.5,C0.5,I1.5|I2.5,C3.5|I2.5,I2.5,I2.5,I4.5,I2.5,I3.5|I5.5,I0.5,I3.5,I3.5|I5.5,I5.5,I0.5,I5.5,I4.5#I6.5,I0.5,I7.5,I6.5,I0.5|I8.5,I7.5,I6.5,I8.5,I5.5|I7.5,I3.5,I3.5,I4.5,I4.5|C8.5,I8.5,C6.5,C7.5,C5.5|I8.5,I7.5,I1.5,I1.5,I1.5|I6.5,C2.5,I4.5,I7.5,C1.5|I6.5,C4.5,_,I8.5,I1.5"
   },
   {
     "id": "L037",
@@ -16656,11 +15264,11 @@
     "chapter": 2,
     "title": "生活聯想 17",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1203003,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 24781,
+    "seed": 32412245,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -17128,171 +15736,347 @@
     "layout": {
       "initialColumns": [
         [
-          "L037-topic-095-item-2",
+          "L037-topic-101-item-2",
           "L037-topic-097-category"
         ],
         [
-          "L037-topic-097-item-2",
-          "L037-topic-098-item-1",
-          "L037-topic-096-category"
-        ],
-        [
-          "L037-topic-098-item-2",
-          "L037-topic-096-item-2",
-          "L037-topic-097-item-3",
-          "L037-topic-099-category"
-        ],
-        [
-          "L037-topic-095-item-1",
-          "L037-topic-095-item-3",
-          "L037-topic-099-item-1",
-          "L037-topic-097-item-1",
+          "L037-topic-100-category",
+          "L037-topic-102-category",
           "L037-topic-095-category"
         ],
         [
-          "L037-topic-096-item-3",
-          "L037-topic-099-item-2",
-          "L037-topic-099-item-3",
-          "L037-topic-096-item-1",
-          "L037-topic-098-item-3",
-          "L037-topic-098-category"
+          "L037-topic-102-item-1",
+          "L037-topic-102-item-4",
+          "L037-topic-095-item-2",
+          "L037-topic-100-item-2"
+        ],
+        [
+          "L037-topic-097-item-3",
+          "L037-topic-103-category",
+          "L037-topic-096-category",
+          "L037-topic-097-item-5",
+          "L037-topic-095-item-4"
+        ],
+        [
+          "L037-topic-101-item-4",
+          "L037-topic-097-item-4",
+          "L037-topic-095-item-5",
+          "L037-topic-101-item-1",
+          "L037-topic-102-item-5",
+          "L037-topic-101-item-3"
         ]
       ],
       "drawBatches": [
         [
-          "L037-topic-095-item-5",
+          "L037-topic-097-item-2",
+          "L037-topic-101-category",
+          "L037-topic-095-item-3",
+          "L037-topic-095-item-1",
+          "L037-topic-101-item-5"
+        ],
+        [
+          "L037-topic-103-item-3",
+          "L037-topic-100-item-4",
+          "L037-topic-096-item-2",
+          "L037-topic-102-item-3",
+          "L037-topic-100-item-1"
+        ],
+        [
+          "L037-topic-099-item-1",
+          "L037-topic-099-item-3",
+          "L037-topic-099-item-2",
+          "L037-topic-102-item-2",
+          "L037-topic-103-item-5"
+        ],
+        [
+          "L037-topic-096-item-5",
+          "L037-topic-103-item-4",
+          "L037-topic-103-item-2",
+          "L037-topic-096-item-3",
+          "L037-topic-099-item-5"
+        ],
+        [
           "L037-topic-099-item-4",
           "L037-topic-096-item-4",
-          "L037-topic-098-item-5",
-          "L037-topic-097-item-4"
-        ],
-        [
-          "L037-topic-097-item-5",
-          "L037-topic-099-item-5",
-          "L037-topic-095-item-4",
-          "L037-topic-096-item-5",
-          "L037-topic-098-item-4"
-        ],
-        [
-          "L037-topic-103-category",
-          "L037-topic-101-category",
-          "L037-topic-102-category",
-          "L037-topic-100-category"
-        ],
-        [
-          "L037-topic-101-item-4",
-          "L037-topic-103-item-1",
-          "L037-topic-100-item-1",
-          "L037-topic-101-item-2",
-          "L037-topic-102-item-3"
-        ],
-        [
-          "L037-topic-100-item-2",
-          "L037-topic-102-item-2",
-          "L037-topic-101-item-5",
-          "L037-topic-101-item-1",
-          "L037-topic-103-item-3"
-        ],
-        [
-          "L037-topic-102-item-5",
-          "L037-topic-103-item-2",
-          "L037-topic-100-item-4",
-          "L037-topic-100-item-3",
-          "L037-topic-103-item-4"
-        ],
-        [
-          "L037-topic-101-item-3",
-          "L037-topic-103-item-5",
-          "L037-topic-102-item-1",
+          "L037-topic-098-item-3",
           "L037-topic-100-item-5",
-          "L037-topic-102-item-4"
+          "L037-topic-098-category"
+        ],
+        [
+          "L037-topic-100-item-3",
+          "L037-topic-103-item-1",
+          "L037-topic-096-item-1",
+          "L037-topic-097-item-1",
+          "L037-topic-099-category"
+        ],
+        [
+          "L037-topic-098-item-1",
+          "L037-topic-098-item-2",
+          "L037-topic-098-item-5",
+          "L037-topic-098-item-4"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
+        "cardId": "L037-topic-095-category",
+        "categoryId": "topic-095",
+        "slotIndex": 0,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-095-item-4",
+        "categoryId": "topic-095",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
         "cardId": "L037-topic-097-category",
         "categoryId": "topic-097",
-        "slotIndex": 0,
+        "slotIndex": 1,
+        "columnIndex": 0
+      },
+      {
+        "type": "deal",
+        "batchIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-097-item-2",
+        "categoryId": "topic-097",
         "columnIndex": 0
       },
       {
         "type": "activateCategory",
-        "cardId": "L037-topic-096-category",
-        "categoryId": "topic-096",
-        "slotIndex": 1,
+        "cardId": "L037-topic-101-category",
+        "categoryId": "topic-101",
+        "slotIndex": 2,
         "columnIndex": 1
       },
       {
-        "type": "activateCategory",
-        "cardId": "L037-topic-099-category",
-        "categoryId": "topic-099",
-        "slotIndex": 2,
-        "columnIndex": 2
+        "type": "placeItem",
+        "cardId": "L037-topic-101-item-5",
+        "categoryId": "topic-101",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-097-item-3",
-        "categoryId": "topic-097",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-096-item-2",
-        "categoryId": "topic-096",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L037-topic-095-category",
-        "categoryId": "topic-095",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-095-item-2",
-        "categoryId": "topic-095",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-097-item-1",
-        "categoryId": "topic-097",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-099-item-1",
-        "categoryId": "topic-099",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L037-topic-101-item-2",
+        "categoryId": "topic-101",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L037-topic-095-item-3",
         "categoryId": "topic-095",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L037-topic-102-category",
+        "categoryId": "topic-102",
         "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-101-item-3",
+        "categoryId": "topic-101",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L037-topic-100-category",
+        "categoryId": "topic-100",
+        "slotIndex": 4,
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L037-topic-095-item-1",
         "categoryId": "topic-095",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-102-item-5",
+        "categoryId": "topic-102",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-100-item-2",
+        "categoryId": "topic-100",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-095-item-2",
+        "categoryId": "topic-095",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-101-item-1",
+        "categoryId": "topic-101",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-095-item-5",
+        "categoryId": "topic-095",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-097-item-4",
+        "categoryId": "topic-097",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-101-item-4",
+        "categoryId": "topic-101",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-097-item-5",
+        "categoryId": "topic-097",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L037-topic-096-category",
+        "categoryId": "topic-096",
+        "slotIndex": 0,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-102-item-4",
+        "categoryId": "topic-102",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-102-item-1",
+        "categoryId": "topic-102",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L037-topic-103-category",
+        "categoryId": "topic-103",
+        "slotIndex": 2,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-097-item-3",
+        "categoryId": "topic-097",
+        "columnIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-102-item-3",
+        "categoryId": "topic-102",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-100-item-1",
+        "categoryId": "topic-100",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-096-item-2",
+        "categoryId": "topic-096",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-103-item-3",
+        "categoryId": "topic-103",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-100-item-4",
+        "categoryId": "topic-100",
+        "columnIndex": 1
+      },
+      {
+        "type": "deal",
+        "batchIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-103-item-5",
+        "categoryId": "topic-103",
+        "columnIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-096-item-5",
+        "categoryId": "topic-096",
+        "columnIndex": 0
+      },
+      {
+        "type": "deal",
+        "batchIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 5
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-097-item-1",
+        "categoryId": "topic-097",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L037-topic-099-category",
+        "categoryId": "topic-099",
+        "slotIndex": 1,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-100-item-5",
+        "categoryId": "topic-100",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-103-item-1",
+        "categoryId": "topic-103",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-100-item-3",
+        "categoryId": "topic-100",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-096-item-3",
+        "categoryId": "topic-096",
+        "columnIndex": 3
       },
       {
         "type": "activateCategory",
@@ -17303,319 +16087,69 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-098-item-1",
-        "categoryId": "topic-098",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-097-item-2",
-        "categoryId": "topic-097",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-098-item-2",
-        "categoryId": "topic-098",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-098-item-3",
-        "categoryId": "topic-098",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-096-item-1",
-        "categoryId": "topic-096",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-099-item-3",
-        "categoryId": "topic-099",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-099-item-2",
-        "categoryId": "topic-099",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-096-item-3",
-        "categoryId": "topic-096",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-095-item-5",
-        "categoryId": "topic-095",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
         "cardId": "L037-topic-099-item-4",
         "categoryId": "topic-099",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-096-item-4",
-        "categoryId": "topic-096",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-098-item-5",
-        "categoryId": "topic-098",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-097-item-4",
-        "categoryId": "topic-097",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-097-item-5",
-        "categoryId": "topic-097",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": true
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L037-topic-099-item-5",
         "categoryId": "topic-099",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-095-item-4",
-        "categoryId": "topic-095",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-096-item-5",
-        "categoryId": "topic-096",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-098-item-4",
-        "categoryId": "topic-098",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "deal",
-        "batchIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L037-topic-103-category",
-        "categoryId": "topic-103",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L037-topic-101-category",
-        "categoryId": "topic-101",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L037-topic-102-category",
-        "categoryId": "topic-102",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L037-topic-100-category",
-        "categoryId": "topic-100",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "deal",
-        "batchIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-101-item-4",
-        "categoryId": "topic-101",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-103-item-1",
-        "categoryId": "topic-103",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-100-item-1",
-        "categoryId": "topic-100",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-101-item-2",
-        "categoryId": "topic-101",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-102-item-3",
-        "categoryId": "topic-102",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-100-item-2",
-        "categoryId": "topic-100",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
         "cardId": "L037-topic-102-item-2",
         "categoryId": "topic-102",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-101-item-5",
-        "categoryId": "topic-101",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
+        "cardId": "L037-topic-099-item-1",
+        "categoryId": "topic-099",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-101-item-1",
-        "categoryId": "topic-101",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L037-topic-096-item-1",
+        "categoryId": "topic-096",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-103-item-3",
-        "categoryId": "topic-103",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 5
+        "cardId": "L037-topic-098-item-3",
+        "categoryId": "topic-098",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-102-item-5",
-        "categoryId": "topic-102",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L037-topic-096-item-4",
+        "categoryId": "topic-096",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
         "cardId": "L037-topic-103-item-2",
         "categoryId": "topic-103",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-100-item-4",
-        "categoryId": "topic-100",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-100-item-3",
-        "categoryId": "topic-100",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L037-topic-103-item-4",
         "categoryId": "topic-103",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-099-item-2",
+        "categoryId": "topic-099",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L037-topic-099-item-3",
+        "categoryId": "topic-099",
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -17623,58 +16157,45 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-101-item-3",
-        "categoryId": "topic-101",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": true
+        "cardId": "L037-topic-098-item-2",
+        "categoryId": "topic-098",
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-103-item-5",
-        "categoryId": "topic-103",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L037-topic-098-item-1",
+        "categoryId": "topic-098",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-100-item-5",
-        "categoryId": "topic-100",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L037-topic-098-item-5",
+        "categoryId": "topic-098",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L037-topic-102-item-1",
-        "categoryId": "topic-102",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L037-topic-102-item-4",
-        "categoryId": "topic-102",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L037-topic-098-item-4",
+        "categoryId": "topic-098",
+        "columnIndex": 3
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 185,
+      "backtracks": 123,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 81,
+      "dealDecisionStates": 69,
+      "forcedMoves": 24
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I0.5,I2.5,I1.5,C0.5|I1.5,I3.5,C4.5|I3.5,I4.5,I1.5,C2.5|I4.5,I2.5,I2.5,I4.5,I3.5,C3.5#I0.5,I3.5,I2.5,I4.5,I1.5|I1.5,I4.5,I2.5,I0.5,I3.5|C5.5,C6.5,C7.5,C8.5,_|I7.5,I7.5,I5.5,I6.5,I8.5|I6.5,I7.5,I8.5,I7.5,I5.5|I8.5,I6.5,I5.5,I6.5,I5.5|I7.5,I6.5,I5.5,I8.5,I8.5"
+    "layoutSignature": "9#C0.5,C1.5,C2.5|I1.5,I1.5,I2.5,I0.5|I3.5,C4.5,C5.5,I3.5,I2.5|I6.5,C3.5|I6.5,I3.5,I2.5,I6.5,I1.5,I6.5#C6.5,I2.5,I2.5,I3.5,I6.5|I0.5,I5.5,I1.5,I4.5,I0.5|I7.5,I7.5,I1.5,I7.5,I4.5|I4.5,I4.5,I5.5,I5.5,I7.5|I5.5,I8.5,I0.5,I7.5,C8.5|I4.5,I5.5,I3.5,I0.5,C7.5|I8.5,I8.5,I8.5,I8.5,_"
   },
   {
     "id": "L038",
@@ -17682,11 +16203,11 @@
     "chapter": 2,
     "title": "生活聯想 18",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1210922,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 44455,
+    "seed": 46034934,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -18172,286 +16693,130 @@
     "layout": {
       "initialColumns": [
         [
-          "L038-topic-106-item-3",
-          "L038-topic-108-category"
+          "L038-topic-105-category",
+          "L038-topic-111-category"
         ],
         [
-          "L038-topic-105-item-2",
-          "L038-topic-106-item-1",
-          "L038-topic-106-category"
+          "L038-topic-106-item-2",
+          "L038-topic-106-item-4",
+          "L038-topic-110-item-1"
         ],
         [
-          "L038-topic-104-item-2",
-          "L038-topic-108-item-3",
-          "L038-topic-107-item-3",
-          "L038-topic-107-category"
+          "L038-topic-110-item-2",
+          "L038-topic-110-item-4",
+          "L038-topic-105-item-4",
+          "L038-topic-107-item-5"
         ],
         [
           "L038-topic-104-item-3",
-          "L038-topic-104-item-1",
-          "L038-topic-108-item-2",
-          "L038-topic-108-item-1",
-          "L038-topic-104-category"
+          "L038-topic-104-item-2",
+          "L038-topic-112-item-4",
+          "L038-topic-106-item-3",
+          "L038-topic-107-item-3"
         ],
         [
-          "L038-topic-107-item-2",
-          "L038-topic-106-item-2",
-          "L038-topic-107-item-1",
-          "L038-topic-105-item-3",
-          "L038-topic-105-item-1",
-          "L038-topic-105-category"
+          "L038-topic-104-item-5",
+          "L038-topic-106-item-1",
+          "L038-topic-104-item-1",
+          "L038-topic-104-item-4",
+          "L038-topic-111-item-4",
+          "L038-topic-107-category"
         ]
       ],
       "drawBatches": [
         [
           "L038-topic-106-item-5",
-          "L038-topic-108-item-5",
-          "L038-topic-108-item-4",
-          "L038-topic-104-item-5",
-          "L038-topic-106-item-4"
-        ],
-        [
-          "L038-topic-104-item-4",
-          "L038-topic-107-item-5",
-          "L038-topic-105-item-5",
-          "L038-topic-107-item-4",
-          "L038-topic-105-item-4"
-        ],
-        [
-          "L038-topic-110-category",
-          "L038-topic-111-category",
-          "L038-topic-112-category",
-          "L038-topic-109-category"
-        ],
-        [
-          "L038-topic-111-item-2",
-          "L038-topic-109-item-2",
-          "L038-topic-111-item-1",
-          "L038-topic-109-item-4",
-          "L038-topic-112-item-3"
-        ],
-        [
           "L038-topic-112-item-2",
-          "L038-topic-110-item-1",
-          "L038-topic-110-item-3",
-          "L038-topic-109-item-3",
-          "L038-topic-111-item-3"
+          "L038-topic-111-item-3",
+          "L038-topic-105-item-3",
+          "L038-topic-112-item-1"
         ],
         [
-          "L038-topic-111-item-4",
-          "L038-topic-109-item-1",
-          "L038-topic-112-item-1",
-          "L038-topic-111-item-5",
+          "L038-topic-110-item-5",
+          "L038-topic-108-item-1",
+          "L038-topic-108-item-3",
+          "L038-topic-105-item-5",
+          "L038-topic-107-item-2"
+        ],
+        [
+          "L038-topic-106-category",
+          "L038-topic-104-category",
+          "L038-topic-108-category",
+          "L038-topic-110-item-3",
           "L038-topic-109-item-5"
         ],
         [
-          "L038-topic-110-item-4",
-          "L038-topic-110-item-5",
-          "L038-topic-110-item-2",
-          "L038-topic-112-item-4",
-          "L038-topic-112-item-5"
+          "L038-topic-108-item-2",
+          "L038-topic-112-item-3",
+          "L038-topic-109-item-2",
+          "L038-topic-109-item-3",
+          "L038-topic-110-category"
+        ],
+        [
+          "L038-topic-105-item-2",
+          "L038-topic-111-item-1",
+          "L038-topic-108-item-4",
+          "L038-topic-109-item-4",
+          "L038-topic-105-item-1"
+        ],
+        [
+          "L038-topic-112-item-5",
+          "L038-topic-109-category",
+          "L038-topic-107-item-4",
+          "L038-topic-108-item-5",
+          "L038-topic-109-item-1"
+        ],
+        [
+          "L038-topic-111-item-5",
+          "L038-topic-112-category",
+          "L038-topic-107-item-1",
+          "L038-topic-111-item-2"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L038-topic-108-category",
-        "categoryId": "topic-108",
+        "cardId": "L038-topic-111-category",
+        "categoryId": "topic-111",
         "slotIndex": 0,
         "columnIndex": 0
       },
       {
         "type": "activateCategory",
-        "cardId": "L038-topic-106-category",
-        "categoryId": "topic-106",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-106-item-3",
-        "categoryId": "topic-106",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-106-item-1",
-        "categoryId": "topic-106",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
         "cardId": "L038-topic-107-category",
         "categoryId": "topic-107",
-        "slotIndex": 2,
-        "columnIndex": 2
+        "slotIndex": 1,
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
         "cardId": "L038-topic-107-item-3",
         "categoryId": "topic-107",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-108-item-3",
-        "categoryId": "topic-108",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L038-topic-104-category",
-        "categoryId": "topic-104",
-        "slotIndex": 3,
         "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-104-item-2",
-        "categoryId": "topic-104",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-108-item-1",
-        "categoryId": "topic-108",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-108-item-2",
-        "categoryId": "topic-108",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-104-item-1",
-        "categoryId": "topic-104",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-104-item-3",
-        "categoryId": "topic-104",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
       },
       {
         "type": "activateCategory",
         "cardId": "L038-topic-105-category",
         "categoryId": "topic-105",
-        "slotIndex": 4,
+        "slotIndex": 2,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-111-item-4",
+        "categoryId": "topic-111",
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-105-item-2",
-        "categoryId": "topic-105",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-105-item-1",
-        "categoryId": "topic-105",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-105-item-3",
-        "categoryId": "topic-105",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-107-item-1",
+        "cardId": "L038-topic-107-item-5",
         "categoryId": "topic-107",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-106-item-2",
-        "categoryId": "topic-106",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-107-item-2",
-        "categoryId": "topic-107",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "deal",
         "batchIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-106-item-5",
-        "categoryId": "topic-106",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-106-item-4",
-        "categoryId": "topic-106",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-108-item-5",
-        "categoryId": "topic-108",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-108-item-4",
-        "categoryId": "topic-108",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-104-item-5",
-        "categoryId": "topic-104",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -18459,43 +16824,15 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-104-item-4",
-        "categoryId": "topic-104",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-107-item-5",
-        "categoryId": "topic-107",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-107-item-4",
-        "categoryId": "topic-107",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
         "cardId": "L038-topic-105-item-5",
         "categoryId": "topic-105",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-105-item-4",
+        "cardId": "L038-topic-105-item-3",
         "categoryId": "topic-105",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 3
       },
       {
         "type": "deal",
@@ -18503,75 +16840,14 @@
       },
       {
         "type": "activateCategory",
-        "cardId": "L038-topic-110-category",
-        "categoryId": "topic-110",
-        "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L038-topic-111-category",
-        "categoryId": "topic-111",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L038-topic-112-category",
-        "categoryId": "topic-112",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L038-topic-109-category",
-        "categoryId": "topic-109",
+        "cardId": "L038-topic-108-category",
+        "categoryId": "topic-108",
         "slotIndex": 3,
-        "columnIndex": 3
+        "columnIndex": 2
       },
       {
         "type": "deal",
         "batchIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-111-item-2",
-        "categoryId": "topic-111",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-109-item-2",
-        "categoryId": "topic-109",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-111-item-1",
-        "categoryId": "topic-111",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-109-item-4",
-        "categoryId": "topic-109",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-112-item-3",
-        "categoryId": "topic-112",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -18579,87 +16855,26 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-112-item-2",
-        "categoryId": "topic-112",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L038-topic-105-item-2",
+        "categoryId": "topic-105",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-110-item-1",
-        "categoryId": "topic-110",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-110-item-3",
-        "categoryId": "topic-110",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-109-item-3",
-        "categoryId": "topic-109",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-111-item-3",
+        "cardId": "L038-topic-111-item-1",
         "categoryId": "topic-111",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 5
       },
       {
-        "type": "placeItem",
-        "cardId": "L038-topic-111-item-4",
-        "categoryId": "topic-111",
-        "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-111-item-5",
-        "categoryId": "topic-111",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-109-item-1",
+        "type": "activateCategory",
+        "cardId": "L038-topic-109-category",
         "categoryId": "topic-109",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-109-item-5",
-        "categoryId": "topic-109",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L038-topic-112-item-1",
-        "categoryId": "topic-112",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
+        "slotIndex": 4,
+        "columnIndex": 1
       },
       {
         "type": "deal",
@@ -18667,58 +16882,277 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-110-item-4",
-        "categoryId": "topic-110",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L038-topic-107-item-1",
+        "categoryId": "topic-107",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-110-item-5",
-        "categoryId": "topic-110",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
+        "cardId": "L038-topic-111-item-5",
+        "categoryId": "topic-111",
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-110-item-2",
-        "categoryId": "topic-110",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L038-topic-111-item-2",
+        "categoryId": "topic-111",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L038-topic-112-item-4",
+        "cardId": "L038-topic-107-item-4",
+        "categoryId": "topic-107",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-108-item-5",
+        "categoryId": "topic-108",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-109-item-1",
+        "categoryId": "topic-109",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-109-item-4",
+        "categoryId": "topic-109",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-108-item-4",
+        "categoryId": "topic-108",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-109-item-2",
+        "categoryId": "topic-109",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-108-item-3",
+        "categoryId": "topic-108",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-111-item-3",
+        "categoryId": "topic-111",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-105-item-1",
+        "categoryId": "topic-105",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-109-item-3",
+        "categoryId": "topic-109",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L038-topic-112-category",
         "categoryId": "topic-112",
+        "slotIndex": 0,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-105-item-4",
+        "categoryId": "topic-105",
+        "columnIndex": 2
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L038-topic-110-category",
+        "categoryId": "topic-110",
         "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-109-item-5",
+        "categoryId": "topic-109",
+        "columnIndex": 4
       },
       {
         "type": "placeItem",
         "cardId": "L038-topic-112-item-5",
         "categoryId": "topic-112",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-112-item-3",
+        "categoryId": "topic-112",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-107-item-2",
+        "categoryId": "topic-107",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-112-item-1",
+        "categoryId": "topic-112",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-108-item-2",
+        "categoryId": "topic-108",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L038-topic-104-category",
+        "categoryId": "topic-104",
+        "slotIndex": 1,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-108-item-1",
+        "categoryId": "topic-108",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L038-topic-106-category",
+        "categoryId": "topic-106",
+        "slotIndex": 3,
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-110-item-5",
+        "categoryId": "topic-110",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-110-item-3",
+        "categoryId": "topic-110",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-106-item-3",
+        "categoryId": "topic-106",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-104-item-4",
+        "categoryId": "topic-104",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-112-item-4",
+        "categoryId": "topic-112",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-104-item-1",
+        "categoryId": "topic-104",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-112-item-2",
+        "categoryId": "topic-112",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-110-item-1",
+        "categoryId": "topic-110",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-104-item-2",
+        "categoryId": "topic-104",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-110-item-4",
+        "categoryId": "topic-110",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-106-item-5",
+        "categoryId": "topic-106",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-110-item-2",
+        "categoryId": "topic-110",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-106-item-1",
+        "categoryId": "topic-106",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-104-item-5",
+        "categoryId": "topic-104",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-106-item-4",
+        "categoryId": "topic-106",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-104-item-3",
+        "categoryId": "topic-104",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L038-topic-106-item-2",
+        "categoryId": "topic-106",
+        "columnIndex": 1
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 1196,
+      "backtracks": 1134,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 465,
+      "dealDecisionStates": 52,
+      "forcedMoves": 114
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I2.5,I0.5,C0.5|I3.5,I0.5,I3.5,I2.5,I2.5,C2.5|I4.5,I1.5,I3.5,C3.5|I4.5,I4.5,I1.5,I1.5,C4.5#I0.5,I1.5,I0.5,I1.5,I4.5|I4.5,I3.5,I2.5,I2.5,I3.5|C5.5,C6.5,_,C7.5,C8.5|I6.5,I8.5,I7.5,I6.5,I8.5|I7.5,I5.5,I6.5,I5.5,I8.5|I6.5,I8.5,I8.5,I7.5,I6.5|I5.5,I5.5,I7.5,I5.5,I7.5"
+    "layoutSignature": "9#C0.5,C1.5|I2.5,I2.5,I0.5,I3.5|I4.5,I4.5,I2.5|I5.5,I4.5,I5.5,I5.5,I1.5,C3.5|I5.5,I5.5,I6.5,I4.5,I3.5#I4.5,I1.5,I6.5,I6.5,I0.5|I2.5,I7.5,I7.5,I3.5,I0.5|C4.5,C7.5,C5.5,I8.5,I2.5|I7.5,I8.5,I6.5,C2.5,I8.5|I0.5,I7.5,I1.5,I0.5,I8.5|I6.5,I3.5,C8.5,I8.5,I7.5|I1.5,I3.5,C6.5,_,I1.5"
   },
   {
     "id": "L039",
@@ -18726,11 +17160,11 @@
     "chapter": 2,
     "title": "生活聯想 19",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1218841,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 23869,
+    "seed": 19546416,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -19216,362 +17650,219 @@
     "layout": {
       "initialColumns": [
         [
-          "L039-topic-113-item-1",
-          "L039-topic-113-category"
-        ],
-        [
-          "L039-topic-117-item-3",
-          "L039-topic-115-item-3",
-          "L039-topic-116-category"
-        ],
-        [
-          "L039-topic-116-item-3",
-          "L039-topic-117-item-2",
-          "L039-topic-114-item-1",
-          "L039-topic-117-category"
-        ],
-        [
-          "L039-topic-116-item-1",
-          "L039-topic-116-item-2",
-          "L039-topic-117-item-1",
           "L039-topic-115-item-1",
-          "L039-topic-114-category"
+          "L039-topic-113-item-5"
         ],
         [
+          "L039-topic-119-item-3",
+          "L039-topic-113-item-1",
+          "L039-topic-120-category"
+        ],
+        [
+          "L039-topic-121-item-3",
+          "L039-topic-119-item-5",
           "L039-topic-113-item-3",
-          "L039-topic-113-item-2",
-          "L039-topic-115-item-2",
-          "L039-topic-114-item-2",
+          "L039-topic-115-item-2"
+        ],
+        [
           "L039-topic-114-item-3",
-          "L039-topic-115-category"
+          "L039-topic-117-item-3",
+          "L039-topic-114-item-4",
+          "L039-topic-116-item-5",
+          "L039-topic-120-item-1"
+        ],
+        [
+          "L039-topic-113-item-4",
+          "L039-topic-121-item-1",
+          "L039-topic-119-item-4",
+          "L039-topic-117-item-1",
+          "L039-topic-114-item-5",
+          "L039-topic-116-category"
         ]
       ],
       "drawBatches": [
         [
-          "L039-topic-113-item-4",
-          "L039-topic-114-item-4",
-          "L039-topic-116-item-4",
-          "L039-topic-117-item-5",
-          "L039-topic-115-item-4"
-        ],
-        [
-          "L039-topic-117-item-4",
-          "L039-topic-114-item-5",
-          "L039-topic-115-item-5",
-          "L039-topic-113-item-5",
-          "L039-topic-116-item-5"
-        ],
-        [
-          "L039-topic-120-category",
           "L039-topic-121-category",
-          "L039-topic-119-category",
-          "L039-topic-118-category"
+          "L039-topic-115-item-5",
+          "L039-topic-118-category",
+          "L039-topic-114-item-1",
+          "L039-topic-119-item-2"
         ],
         [
-          "L039-topic-119-item-2",
-          "L039-topic-120-item-2",
-          "L039-topic-121-item-4",
-          "L039-topic-119-item-5",
-          "L039-topic-118-item-1"
+          "L039-topic-118-item-3",
+          "L039-topic-120-item-5",
+          "L039-topic-116-item-3",
+          "L039-topic-114-category",
+          "L039-topic-115-category"
         ],
         [
           "L039-topic-120-item-3",
-          "L039-topic-121-item-3",
-          "L039-topic-119-item-3",
-          "L039-topic-119-item-4",
-          "L039-topic-118-item-4"
+          "L039-topic-116-item-4",
+          "L039-topic-116-item-1",
+          "L039-topic-120-item-2",
+          "L039-topic-120-item-4"
         ],
         [
+          "L039-topic-117-item-4",
+          "L039-topic-121-item-4",
           "L039-topic-118-item-5",
-          "L039-topic-120-item-5",
-          "L039-topic-120-item-4",
-          "L039-topic-120-item-1",
-          "L039-topic-121-item-5"
+          "L039-topic-115-item-3",
+          "L039-topic-118-item-1"
         ],
         [
           "L039-topic-121-item-2",
+          "L039-topic-121-item-5",
           "L039-topic-119-item-1",
-          "L039-topic-118-item-3",
-          "L039-topic-121-item-1",
-          "L039-topic-118-item-2"
+          "L039-topic-115-item-4",
+          "L039-topic-117-item-2"
+        ],
+        [
+          "L039-topic-118-item-2",
+          "L039-topic-119-category",
+          "L039-topic-117-item-5",
+          "L039-topic-113-item-2",
+          "L039-topic-116-item-2"
+        ],
+        [
+          "L039-topic-117-category",
+          "L039-topic-113-category",
+          "L039-topic-114-item-2",
+          "L039-topic-118-item-4"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L039-topic-113-category",
-        "categoryId": "topic-113",
+        "cardId": "L039-topic-120-category",
+        "categoryId": "topic-120",
         "slotIndex": 0,
-        "columnIndex": 0
+        "columnIndex": 1
       },
       {
         "type": "placeItem",
-        "cardId": "L039-topic-113-item-1",
-        "categoryId": "topic-113",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L039-topic-120-item-1",
+        "categoryId": "topic-120",
+        "columnIndex": 3
       },
       {
         "type": "activateCategory",
         "cardId": "L039-topic-116-category",
         "categoryId": "topic-116",
         "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L039-topic-117-category",
-        "categoryId": "topic-117",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L039-topic-114-category",
-        "categoryId": "topic-114",
-        "slotIndex": 3,
-        "columnIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-114-item-1",
-        "categoryId": "topic-114",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-117-item-2",
-        "categoryId": "topic-117",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-116-item-3",
-        "categoryId": "topic-116",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L039-topic-115-category",
-        "categoryId": "topic-115",
-        "slotIndex": 4,
         "columnIndex": 4
       },
       {
         "type": "placeItem",
-        "cardId": "L039-topic-115-item-3",
-        "categoryId": "topic-115",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-117-item-3",
-        "categoryId": "topic-117",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-115-item-1",
-        "categoryId": "topic-115",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-117-item-1",
-        "categoryId": "topic-117",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-116-item-2",
+        "cardId": "L039-topic-116-item-5",
         "categoryId": "topic-116",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-116-item-1",
-        "categoryId": "topic-116",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-114-item-3",
-        "categoryId": "topic-114",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-114-item-2",
-        "categoryId": "topic-114",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-115-item-2",
-        "categoryId": "topic-115",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-113-item-2",
-        "categoryId": "topic-113",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-113-item-3",
-        "categoryId": "topic-113",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 3
       },
       {
         "type": "deal",
         "batchIndex": 0
       },
       {
-        "type": "placeItem",
-        "cardId": "L039-topic-113-item-4",
-        "categoryId": "topic-113",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-114-item-4",
-        "categoryId": "topic-114",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-116-item-4",
-        "categoryId": "topic-116",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-117-item-5",
-        "categoryId": "topic-117",
+        "type": "activateCategory",
+        "cardId": "L039-topic-118-category",
+        "categoryId": "topic-118",
         "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-115-item-4",
-        "categoryId": "topic-115",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "deal",
         "batchIndex": 1
       },
       {
-        "type": "placeItem",
-        "cardId": "L039-topic-117-item-4",
-        "categoryId": "topic-117",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-114-item-5",
-        "categoryId": "topic-114",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-115-item-5",
+        "type": "activateCategory",
+        "cardId": "L039-topic-115-category",
         "categoryId": "topic-115",
+        "slotIndex": 3,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-118-item-3",
+        "categoryId": "topic-118",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L039-topic-114-category",
+        "categoryId": "topic-114",
         "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": true
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L039-topic-113-item-5",
-        "categoryId": "topic-113",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-116-item-5",
-        "categoryId": "topic-116",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": true
+        "cardId": "L039-topic-120-item-5",
+        "categoryId": "topic-120",
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L039-topic-120-category",
+        "type": "placeItem",
+        "cardId": "L039-topic-120-item-2",
         "categoryId": "topic-120",
-        "slotIndex": 0,
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-116-item-1",
+        "categoryId": "topic-116",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-116-item-4",
+        "categoryId": "topic-116",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-120-item-3",
+        "categoryId": "topic-120",
         "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-115-item-5",
+        "categoryId": "topic-115",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-116-item-3",
+        "categoryId": "topic-116",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-115-item-2",
+        "categoryId": "topic-115",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-120-item-4",
+        "categoryId": "topic-120",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-114-item-1",
+        "categoryId": "topic-114",
+        "columnIndex": 3
       },
       {
         "type": "activateCategory",
         "cardId": "L039-topic-121-category",
         "categoryId": "topic-121",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L039-topic-119-category",
-        "categoryId": "topic-119",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L039-topic-118-category",
-        "categoryId": "topic-118",
-        "slotIndex": 3,
-        "columnIndex": 3
+        "slotIndex": 0,
+        "columnIndex": 0
       },
       {
         "type": "deal",
@@ -19579,131 +17870,23 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L039-topic-119-item-2",
-        "categoryId": "topic-119",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-120-item-2",
-        "categoryId": "topic-120",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-121-item-4",
-        "categoryId": "topic-121",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-119-item-5",
-        "categoryId": "topic-119",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-118-item-1",
+        "cardId": "L039-topic-118-item-5",
         "categoryId": "topic-118",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-115-item-3",
+        "categoryId": "topic-115",
+        "columnIndex": 3
       },
       {
         "type": "deal",
         "batchIndex": 4
       },
       {
-        "type": "placeItem",
-        "cardId": "L039-topic-120-item-3",
-        "categoryId": "topic-120",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-121-item-3",
-        "categoryId": "topic-121",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-119-item-3",
-        "categoryId": "topic-119",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-119-item-4",
-        "categoryId": "topic-119",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-118-item-4",
-        "categoryId": "topic-118",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
         "type": "deal",
         "batchIndex": 5
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-118-item-5",
-        "categoryId": "topic-118",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-120-item-5",
-        "categoryId": "topic-120",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-120-item-4",
-        "categoryId": "topic-120",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-120-item-1",
-        "categoryId": "topic-120",
-        "slotIndex": 0,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-121-item-5",
-        "categoryId": "topic-121",
-        "slotIndex": 1,
-        "columnIndex": 4,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -19711,58 +17894,222 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L039-topic-119-item-1",
-        "categoryId": "topic-119",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L039-topic-116-item-2",
+        "categoryId": "topic-116",
+        "columnIndex": 4
       },
       {
-        "type": "placeItem",
-        "cardId": "L039-topic-121-item-2",
-        "categoryId": "topic-121",
+        "type": "activateCategory",
+        "cardId": "L039-topic-117-category",
+        "categoryId": "topic-117",
         "slotIndex": 1,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-121-item-1",
-        "categoryId": "topic-121",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L039-topic-118-item-3",
-        "categoryId": "topic-118",
-        "slotIndex": 3,
-        "columnIndex": 2,
-        "completesCategory": false
+        "columnIndex": 0
       },
       {
         "type": "placeItem",
         "cardId": "L039-topic-118-item-2",
         "categoryId": "topic-118",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-117-item-2",
+        "categoryId": "topic-117",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-118-item-1",
+        "categoryId": "topic-118",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-118-item-4",
+        "categoryId": "topic-118",
+        "columnIndex": 3
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L039-topic-113-category",
+        "categoryId": "topic-113",
+        "slotIndex": 2,
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-121-item-2",
+        "categoryId": "topic-121",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-117-item-4",
+        "categoryId": "topic-117",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-113-item-5",
+        "categoryId": "topic-113",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-113-item-2",
+        "categoryId": "topic-113",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-115-item-4",
+        "categoryId": "topic-115",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-114-item-2",
+        "categoryId": "topic-114",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-115-item-1",
+        "categoryId": "topic-115",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L039-topic-119-category",
+        "categoryId": "topic-119",
         "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-119-item-2",
+        "categoryId": "topic-119",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-117-item-5",
+        "categoryId": "topic-117",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-114-item-4",
+        "categoryId": "topic-114",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-117-item-3",
+        "categoryId": "topic-117",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-114-item-5",
+        "categoryId": "topic-114",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-117-item-1",
+        "categoryId": "topic-117",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-121-item-5",
+        "categoryId": "topic-121",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-114-item-3",
+        "categoryId": "topic-114",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-119-item-1",
+        "categoryId": "topic-119",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-119-item-4",
+        "categoryId": "topic-119",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-113-item-3",
+        "categoryId": "topic-113",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-121-item-1",
+        "categoryId": "topic-121",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-119-item-5",
+        "categoryId": "topic-119",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-121-item-4",
+        "categoryId": "topic-121",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-113-item-4",
+        "categoryId": "topic-113",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-113-item-1",
+        "categoryId": "topic-113",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-121-item-3",
+        "categoryId": "topic-121",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L039-topic-119-item-3",
+        "categoryId": "topic-119",
+        "columnIndex": 1
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 210,
+      "backtracks": 148,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 102,
+      "dealDecisionStates": 30,
+      "forcedMoves": 30
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C0.5|I0.5,I0.5,I1.5,I2.5,I2.5,C1.5|I3.5,I1.5,C4.5|I4.5,I3.5,I2.5,C3.5|I4.5,I4.5,I3.5,I1.5,C2.5#I0.5,I1.5,I2.5,I4.5,I3.5|I3.5,I4.5,I2.5,I1.5,I0.5|C5.5,_,C6.5,C7.5,C8.5|I7.5,I8.5,I5.5,I6.5,I7.5|I5.5,I8.5,I6.5,I7.5,I7.5|I8.5,I6.5,I5.5,I5.5,I5.5|I6.5,I8.5,I7.5,I8.5,I6.5"
+    "layoutSignature": "9#I0.5,I1.5,C2.5|I1.5,I3.5,I0.5,I4.5,I5.5,C6.5|I3.5,I0.5,I1.5,I7.5|I5.5,I4.5,I5.5,I6.5,I2.5|I7.5,I1.5#I7.5,I0.5,C8.5,I5.5,C3.5|I2.5,C7.5,I6.5,C5.5,I8.5|I6.5,I2.5,I6.5,I2.5,I2.5|I3.5,I8.5,I8.5,I7.5,I4.5|I3.5,I4.5,I0.5,I7.5,I3.5|C0.5,I6.5,I4.5,I1.5,I8.5|C1.5,_,I5.5,I8.5,C4.5"
   },
   {
     "id": "L040",
@@ -19770,11 +18117,11 @@
     "chapter": 2,
     "title": "生活聯想 20",
     "difficulty": 2,
-    "difficultyScore": 1220,
-    "seed": 1226760,
-    "generatorVersion": "2.1.0",
+    "difficultyScore": 33589,
+    "seed": 29503590,
+    "generatorVersion": "3.0.0",
     "layoutVersion": 2,
-    "moveLimit": 70,
+    "moveLimit": 65,
     "parMoves": 61,
     "categories": [
       {
@@ -20260,286 +18607,110 @@
     "layout": {
       "initialColumns": [
         [
-          "L040-topic-126-item-2",
-          "L040-topic-123-category"
+          "L040-topic-128-item-4",
+          "L040-topic-130-item-4"
         ],
         [
           "L040-topic-126-item-3",
-          "L040-topic-122-item-3",
-          "L040-topic-125-category"
+          "L040-topic-130-item-5",
+          "L040-topic-126-item-5"
         ],
         [
-          "L040-topic-122-item-1",
+          "L040-topic-127-item-1",
+          "L040-topic-127-item-5",
+          "L040-topic-127-item-4",
+          "L040-topic-126-item-2"
+        ],
+        [
+          "L040-topic-126-item-4",
+          "L040-topic-130-category",
+          "L040-topic-129-item-4",
+          "L040-topic-129-item-5",
+          "L040-topic-129-category"
+        ],
+        [
+          "L040-topic-130-item-3",
+          "L040-topic-125-item-4",
+          "L040-topic-128-item-3",
           "L040-topic-125-item-1",
-          "L040-topic-123-item-1",
-          "L040-topic-126-category"
-        ],
-        [
-          "L040-topic-122-item-2",
-          "L040-topic-125-item-3",
-          "L040-topic-124-item-1",
-          "L040-topic-125-item-2",
-          "L040-topic-124-category"
-        ],
-        [
-          "L040-topic-123-item-3",
-          "L040-topic-124-item-2",
-          "L040-topic-126-item-1",
-          "L040-topic-124-item-3",
-          "L040-topic-123-item-2",
-          "L040-topic-122-category"
+          "L040-topic-128-item-2",
+          "L040-topic-123-item-3"
         ]
       ],
       "drawBatches": [
         [
-          "L040-topic-126-item-4",
-          "L040-topic-124-item-5",
-          "L040-topic-125-item-4",
-          "L040-topic-122-item-4",
-          "L040-topic-124-item-4"
+          "L040-topic-127-category",
+          "L040-topic-130-item-1",
+          "L040-topic-130-item-2",
+          "L040-topic-125-item-2",
+          "L040-topic-123-item-2"
         ],
         [
-          "L040-topic-123-item-4",
-          "L040-topic-123-item-5",
-          "L040-topic-126-item-5",
-          "L040-topic-125-item-5",
-          "L040-topic-122-item-5"
-        ],
-        [
-          "L040-topic-129-category",
-          "L040-topic-128-category",
-          "L040-topic-130-category",
-          "L040-topic-127-category"
-        ],
-        [
-          "L040-topic-130-item-4",
-          "L040-topic-127-item-5",
-          "L040-topic-129-item-3",
-          "L040-topic-128-item-3",
-          "L040-topic-127-item-4"
-        ],
-        [
-          "L040-topic-127-item-3",
-          "L040-topic-128-item-1",
-          "L040-topic-128-item-2",
-          "L040-topic-130-item-3",
-          "L040-topic-130-item-1"
-        ],
-        [
-          "L040-topic-130-item-5",
-          "L040-topic-128-item-4",
-          "L040-topic-129-item-4",
-          "L040-topic-127-item-2",
-          "L040-topic-129-item-1"
-        ],
-        [
-          "L040-topic-129-item-2",
-          "L040-topic-129-item-5",
           "L040-topic-128-item-5",
-          "L040-topic-127-item-1",
-          "L040-topic-130-item-2"
+          "L040-topic-129-item-2",
+          "L040-topic-126-item-1",
+          "L040-topic-122-category",
+          "L040-topic-129-item-3"
+        ],
+        [
+          "L040-topic-129-item-1",
+          "L040-topic-127-item-3",
+          "L040-topic-127-item-2",
+          "L040-topic-122-item-4",
+          "L040-topic-124-item-1"
+        ],
+        [
+          "L040-topic-122-item-5",
+          "L040-topic-122-item-2",
+          "L040-topic-125-item-5",
+          "L040-topic-122-item-3",
+          "L040-topic-123-category"
+        ],
+        [
+          "L040-topic-125-category",
+          "L040-topic-125-item-3",
+          "L040-topic-128-category",
+          "L040-topic-126-category",
+          "L040-topic-122-item-1"
+        ],
+        [
+          "L040-topic-124-item-2",
+          "L040-topic-123-item-1",
+          "L040-topic-124-category",
+          "L040-topic-124-item-4",
+          "L040-topic-123-item-4"
+        ],
+        [
+          "L040-topic-123-item-5",
+          "L040-topic-128-item-1",
+          "L040-topic-124-item-3",
+          "L040-topic-124-item-5"
         ]
       ]
     },
     "knownSolution": [
       {
         "type": "activateCategory",
-        "cardId": "L040-topic-123-category",
-        "categoryId": "topic-123",
+        "cardId": "L040-topic-129-category",
+        "categoryId": "topic-129",
         "slotIndex": 0,
-        "columnIndex": 0
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L040-topic-125-category",
-        "categoryId": "topic-125",
-        "slotIndex": 1,
-        "columnIndex": 1
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L040-topic-126-category",
-        "categoryId": "topic-126",
-        "slotIndex": 2,
-        "columnIndex": 2
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-126-item-2",
-        "categoryId": "topic-126",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-123-item-1",
-        "categoryId": "topic-123",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-125-item-1",
-        "categoryId": "topic-125",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L040-topic-124-category",
-        "categoryId": "topic-124",
-        "slotIndex": 3,
         "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L040-topic-125-item-2",
-        "categoryId": "topic-125",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
+        "cardId": "L040-topic-129-item-5",
+        "categoryId": "topic-129",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L040-topic-124-item-1",
-        "categoryId": "topic-124",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-125-item-3",
-        "categoryId": "topic-125",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "activateCategory",
-        "cardId": "L040-topic-122-category",
-        "categoryId": "topic-122",
-        "slotIndex": 4,
-        "columnIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-122-item-3",
-        "categoryId": "topic-122",
-        "slotIndex": 4,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-126-item-3",
-        "categoryId": "topic-126",
-        "slotIndex": 2,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-122-item-1",
-        "categoryId": "topic-122",
-        "slotIndex": 4,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-122-item-2",
-        "categoryId": "topic-122",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-123-item-2",
-        "categoryId": "topic-123",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-124-item-3",
-        "categoryId": "topic-124",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-126-item-1",
-        "categoryId": "topic-126",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-124-item-2",
-        "categoryId": "topic-124",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-123-item-3",
-        "categoryId": "topic-123",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
+        "cardId": "L040-topic-129-item-4",
+        "categoryId": "topic-129",
+        "columnIndex": 3
       },
       {
         "type": "deal",
         "batchIndex": 0
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-126-item-4",
-        "categoryId": "topic-126",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-124-item-5",
-        "categoryId": "topic-124",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-124-item-4",
-        "categoryId": "topic-124",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-125-item-4",
-        "categoryId": "topic-125",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-122-item-4",
-        "categoryId": "topic-122",
-        "slotIndex": 4,
-        "columnIndex": 3,
-        "completesCategory": false
       },
       {
         "type": "deal",
@@ -20547,52 +18718,157 @@
       },
       {
         "type": "placeItem",
-        "cardId": "L040-topic-126-item-5",
-        "categoryId": "topic-126",
-        "slotIndex": 2,
-        "columnIndex": 2,
-        "completesCategory": true
+        "cardId": "L040-topic-129-item-3",
+        "categoryId": "topic-129",
+        "columnIndex": 4
       },
       {
-        "type": "placeItem",
-        "cardId": "L040-topic-125-item-5",
-        "categoryId": "topic-125",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-122-item-5",
+        "type": "activateCategory",
+        "cardId": "L040-topic-122-category",
         "categoryId": "topic-122",
-        "slotIndex": 4,
-        "columnIndex": 4,
-        "completesCategory": true
+        "slotIndex": 1,
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L040-topic-123-item-4",
-        "categoryId": "topic-123",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-123-item-5",
-        "categoryId": "topic-123",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L040-topic-129-item-2",
+        "categoryId": "topic-129",
+        "columnIndex": 1
       },
       {
         "type": "deal",
         "batchIndex": 2
       },
       {
-        "type": "activateCategory",
-        "cardId": "L040-topic-129-category",
+        "type": "placeItem",
+        "cardId": "L040-topic-122-item-4",
+        "categoryId": "topic-122",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-129-item-1",
         "categoryId": "topic-129",
+        "columnIndex": 0
+      },
+      {
+        "type": "deal",
+        "batchIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-122-item-2",
+        "categoryId": "topic-122",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-122-item-5",
+        "categoryId": "topic-122",
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L040-topic-123-category",
+        "categoryId": "topic-123",
+        "slotIndex": 0,
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-122-item-3",
+        "categoryId": "topic-122",
+        "columnIndex": 3
+      },
+      {
+        "type": "deal",
+        "batchIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-122-item-1",
+        "categoryId": "topic-122",
+        "columnIndex": 4
+      },
+      {
+        "type": "deal",
+        "batchIndex": 5
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-123-item-4",
+        "categoryId": "topic-123",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-123-item-1",
+        "categoryId": "topic-123",
+        "columnIndex": 1
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L040-topic-124-category",
+        "categoryId": "topic-124",
+        "slotIndex": 1,
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-124-item-4",
+        "categoryId": "topic-124",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-124-item-1",
+        "categoryId": "topic-124",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-124-item-2",
+        "categoryId": "topic-124",
+        "columnIndex": 0
+      },
+      {
+        "type": "deal",
+        "batchIndex": 6
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-123-item-2",
+        "categoryId": "topic-123",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-124-item-5",
+        "categoryId": "topic-124",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-124-item-3",
+        "categoryId": "topic-124",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-123-item-5",
+        "categoryId": "topic-123",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-123-item-3",
+        "categoryId": "topic-123",
+        "columnIndex": 4
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L040-topic-125-category",
+        "categoryId": "topic-125",
         "slotIndex": 0,
         "columnIndex": 0
       },
@@ -20601,212 +18877,196 @@
         "cardId": "L040-topic-128-category",
         "categoryId": "topic-128",
         "slotIndex": 1,
-        "columnIndex": 1
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-125-item-5",
+        "categoryId": "topic-125",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-128-item-5",
+        "categoryId": "topic-128",
+        "columnIndex": 0
       },
       {
         "type": "activateCategory",
-        "cardId": "L040-topic-130-category",
-        "categoryId": "topic-130",
+        "cardId": "L040-topic-126-category",
+        "categoryId": "topic-126",
         "slotIndex": 2,
-        "columnIndex": 2
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-128-item-2",
+        "categoryId": "topic-128",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-125-item-2",
+        "categoryId": "topic-125",
+        "columnIndex": 3
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-128-item-1",
+        "categoryId": "topic-128",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-125-item-1",
+        "categoryId": "topic-125",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-125-item-3",
+        "categoryId": "topic-125",
+        "columnIndex": 1
       },
       {
         "type": "activateCategory",
         "cardId": "L040-topic-127-category",
         "categoryId": "topic-127",
         "slotIndex": 3,
+        "columnIndex": 0
+      },
+      {
+        "type": "activateCategory",
+        "cardId": "L040-topic-130-category",
+        "categoryId": "topic-130",
+        "slotIndex": 4,
         "columnIndex": 3
-      },
-      {
-        "type": "deal",
-        "batchIndex": 3
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-130-item-4",
-        "categoryId": "topic-130",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-127-item-5",
-        "categoryId": "topic-127",
-        "slotIndex": 3,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-129-item-3",
-        "categoryId": "topic-129",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-128-item-3",
-        "categoryId": "topic-128",
-        "slotIndex": 1,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-127-item-4",
-        "categoryId": "topic-127",
-        "slotIndex": 3,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 4
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-127-item-3",
-        "categoryId": "topic-127",
-        "slotIndex": 3,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-128-item-1",
-        "categoryId": "topic-128",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-128-item-2",
-        "categoryId": "topic-128",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-130-item-3",
-        "categoryId": "topic-130",
-        "slotIndex": 2,
-        "columnIndex": 3,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-130-item-1",
-        "categoryId": "topic-130",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 5
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-130-item-5",
-        "categoryId": "topic-130",
-        "slotIndex": 2,
-        "columnIndex": 0,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-128-item-4",
-        "categoryId": "topic-128",
-        "slotIndex": 1,
-        "columnIndex": 1,
-        "completesCategory": false
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-129-item-4",
-        "categoryId": "topic-129",
-        "slotIndex": 0,
-        "columnIndex": 2,
-        "completesCategory": false
       },
       {
         "type": "placeItem",
         "cardId": "L040-topic-127-item-2",
         "categoryId": "topic-127",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": false
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L040-topic-129-item-1",
-        "categoryId": "topic-129",
-        "slotIndex": 0,
-        "columnIndex": 4,
-        "completesCategory": false
-      },
-      {
-        "type": "deal",
-        "batchIndex": 6
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-128-item-5",
-        "categoryId": "topic-128",
-        "slotIndex": 1,
-        "columnIndex": 2,
-        "completesCategory": true
-      },
-      {
-        "type": "placeItem",
-        "cardId": "L040-topic-127-item-1",
-        "categoryId": "topic-127",
-        "slotIndex": 3,
-        "columnIndex": 3,
-        "completesCategory": true
+        "cardId": "L040-topic-126-item-1",
+        "categoryId": "topic-126",
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
         "cardId": "L040-topic-130-item-2",
         "categoryId": "topic-130",
-        "slotIndex": 2,
-        "columnIndex": 4,
-        "completesCategory": true
+        "columnIndex": 2
       },
       {
         "type": "placeItem",
-        "cardId": "L040-topic-129-item-2",
-        "categoryId": "topic-129",
-        "slotIndex": 0,
-        "columnIndex": 0,
-        "completesCategory": false
+        "cardId": "L040-topic-126-item-4",
+        "categoryId": "topic-126",
+        "columnIndex": 3
       },
       {
         "type": "placeItem",
-        "cardId": "L040-topic-129-item-5",
-        "categoryId": "topic-129",
-        "slotIndex": 0,
-        "columnIndex": 1,
-        "completesCategory": true
+        "cardId": "L040-topic-130-item-4",
+        "categoryId": "topic-130",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-128-item-3",
+        "categoryId": "topic-128",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-125-item-4",
+        "categoryId": "topic-125",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-126-item-2",
+        "categoryId": "topic-126",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-130-item-3",
+        "categoryId": "topic-130",
+        "columnIndex": 4
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-128-item-4",
+        "categoryId": "topic-128",
+        "columnIndex": 0
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-127-item-3",
+        "categoryId": "topic-127",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-130-item-1",
+        "categoryId": "topic-130",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-127-item-4",
+        "categoryId": "topic-127",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-126-item-5",
+        "categoryId": "topic-126",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-130-item-5",
+        "categoryId": "topic-130",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-126-item-3",
+        "categoryId": "topic-126",
+        "columnIndex": 1
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-127-item-5",
+        "categoryId": "topic-127",
+        "columnIndex": 2
+      },
+      {
+        "type": "placeItem",
+        "cardId": "L040-topic-127-item-1",
+        "categoryId": "topic-127",
+        "columnIndex": 2
       }
     ],
     "solverStats": {
       "solved": true,
       "movesUsed": 61,
-      "nodesVisited": 62,
-      "backtracks": 0,
+      "nodesVisited": 532,
+      "backtracks": 470,
       "maxDepth": 61,
-      "maxActiveCategories": 5
+      "maxActiveCategories": 5,
+      "branchingStates": 214,
+      "dealDecisionStates": 110,
+      "forcedMoves": 99
     },
     "contentReview": {
       "checked": true,
       "ambiguityNotes": ""
     },
-    "layoutSignature": "9#I0.5,C1.5|I0.5,I2.5,C3.5|I1.5,I4.5,I0.5,I4.5,I1.5,C2.5|I2.5,I3.5,I1.5,C0.5|I2.5,I3.5,I4.5,I3.5,C4.5#I0.5,I4.5,I4.5,I3.5,I2.5|I1.5,I1.5,I2.5,I0.5,I3.5|C5.5,C6.5,_,C7.5,C8.5|I7.5,I8.5,I8.5,I5.5,I6.5|I8.5,I6.5,I7.5,I6.5,I7.5|I7.5,I6.5,I5.5,I5.5,I8.5|I5.5,I5.5,I7.5,I6.5,I8.5"
+    "layoutSignature": "9#I0.5,C1.5,I2.5,I2.5,C2.5|I0.5,I1.5,I0.5|I1.5,I3.5,I4.5,I3.5,I4.5,I5.5|I4.5,I1.5|I6.5,I6.5,I6.5,I0.5#I3.5,I1.5,I5.5,C6.5,I1.5|C7.5,I2.5,I2.5,I4.5,I0.5|I7.5,I6.5,I8.5,I2.5,I6.5|I7.5,I7.5,C5.5,I7.5,I3.5|C0.5,I3.5,I7.5,C3.5,C4.5|I8.5,I5.5,I5.5,I8.5,C8.5|I8.5,I4.5,_,I5.5,I8.5"
   }
 ]);
 });

@@ -67,6 +67,9 @@
     let backtracks = 0;
     let maxDepth = 0;
     let maxActiveCategories = initial.categorySlots.filter(Boolean).length;
+    let branchingStates = 0;
+    let dealDecisionStates = 0;
+    let forcedMoves = 0;
     let limitReached = false;
     let nodeLimitReached = false;
 
@@ -84,6 +87,9 @@
         backtracks: 0,
         maxDepth: 0,
         maxActiveCategories,
+        branchingStates: 0,
+        dealDecisionStates: 0,
+        forcedMoves: 0,
         durationMs: Date.now() - startedAt,
       };
     }
@@ -123,6 +129,17 @@
       memo.set(key, state.movesUsed);
 
       const moves = canonicalLegalMoves(state, level);
+      if (moves.length === 1) {
+        forcedMoves += 1;
+      } else if (moves.length > 1) {
+        branchingStates += 1;
+      }
+      if (
+        moves.some((move) => move.type === 'deal') &&
+        moves.some((move) => move.type !== 'deal')
+      ) {
+        dealDecisionStates += 1;
+      }
       for (const move of moves) {
         const result = Core.applyLegalAction(state, level, move);
         if (result.state === state || result.outcome === Core.OUTCOME.INVALID_ACTION) {
@@ -157,6 +174,9 @@
       backtracks,
       maxDepth,
       maxActiveCategories,
+      branchingStates,
+      dealDecisionStates,
+      forcedMoves,
       durationMs: Date.now() - startedAt,
     };
   }
@@ -260,4 +280,3 @@
     remainingMinimumMoves,
   });
 });
-

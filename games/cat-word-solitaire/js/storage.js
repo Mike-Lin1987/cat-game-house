@@ -80,6 +80,23 @@
     );
   }
 
+  function normalizeLayoutSignature(value) {
+    return typeof value === 'string' && value.trim() !== ''
+      ? value.trim()
+      : null;
+  }
+
+  function isSessionCompatible(session, level) {
+    return Boolean(
+      isFiveColumnSession(session) &&
+        normalizeLevelId(session.levelId || session.state?.levelId) ===
+          normalizeLevelId(level?.id) &&
+        normalizeLayoutSignature(session.layoutSignature) !== null &&
+        normalizeLayoutSignature(session.layoutSignature) ===
+          normalizeLayoutSignature(level?.layoutSignature),
+    );
+  }
+
   function sanitizeRecord(record) {
     return {
       completed: record?.completed !== false,
@@ -115,6 +132,9 @@
         if (levelId) {
           clean.currentSession = {
             levelId,
+            layoutSignature: normalizeLayoutSignature(
+              raw.currentSession.layoutSignature,
+            ),
             state: raw.currentSession.state,
             undoStack: Array.isArray(raw.currentSession.undoStack)
               ? raw.currentSession.undoStack
@@ -176,6 +196,7 @@
       progress.currentSession = {
         levelId:
           normalizeLevelId(session.levelId || session.state.levelId) || 'L001',
+        layoutSignature: normalizeLayoutSignature(session.layoutSignature),
         state: session.state,
         undoStack: Array.isArray(session.undoStack)
           ? session.undoStack.slice(-MAX_UNDO)
@@ -253,6 +274,6 @@
     saveSettings,
     normalizeLevelId,
     isFiveColumnSession,
+    isSessionCompatible,
   });
 });
-
