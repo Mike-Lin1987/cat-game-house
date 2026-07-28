@@ -14,9 +14,9 @@ const {
 
 test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () => {
   assert.equal(Array.isArray(CAT_GAME_CATALOG), true);
-  assert.equal(CAT_GAME_CATALOG.length, 2);
+  assert.equal(CAT_GAME_CATALOG.length, 3);
 
-  const [game, secondGame] = CAT_GAME_CATALOG;
+  const [game, secondGame, thirdGame] = CAT_GAME_CATALOG;
   assert.deepEqual(
     {
       id: game.id,
@@ -35,6 +35,26 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-grid/index.html',
       tutorialHref: './tutorials/cat-grid/index.html',
       storageKey: 'cat-grid-game:v1',
+      levelCount: 100,
+      offline: true,
+    },
+  );
+  assert.deepEqual(
+    {
+      id: thirdGame.id,
+      title: thirdGame.title,
+      href: thirdGame.href,
+      tutorialHref: thirdGame.tutorialHref,
+      storageKey: thirdGame.storageKey,
+      levelCount: thirdGame.levelCount,
+      offline: thirdGame.offline,
+    },
+    {
+      id: 'cat-word-solitaire',
+      title: '喵語分類接龍',
+      href: './games/cat-word-solitaire/index.html',
+      tutorialHref: './tutorials/cat-word-solitaire/index.html',
+      storageKey: 'cat-word-solitaire:v2',
       levelCount: 100,
       offline: true,
     },

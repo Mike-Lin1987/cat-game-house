@@ -24,12 +24,13 @@ test('入口依 catalog 在遊戲名稱旁建立教學影片連結', () => {
   assert.match(tutorialScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
 });
 
-test('兩款遊戲各有可離線播放的教學頁與 WebM', () => {
+test('三款遊戲各有可離線播放的教學頁與 WebM', () => {
   assert.deepEqual(
     CAT_GAME_CATALOG.map((game) => game.tutorialHref),
     [
       './tutorials/cat-grid/index.html',
       './tutorials/cat-color-connect/index.html',
+      './tutorials/cat-word-solitaire/index.html',
     ],
     '教學頁應使用不與遊戲 index 路由衝突的獨立 hosted 路徑',
   );

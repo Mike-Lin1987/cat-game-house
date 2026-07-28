@@ -8,10 +8,13 @@
     "test": "node --test",
     "generate-levels": "node scripts/generate-levels.js",
     "generate-cat-connect-levels": "node scripts/cat-color-connect/generate-levels.js",
-    "fix-tutorial-video-duration": "node scripts/tutorial-videos/fix-webm-duration.js --duration-ms 24500 games/cat-grid/tutorial.webm games/cat-color-connect/tutorial.webm",
+    "generate-cat-word-layouts": "node scripts/cat-word-solitaire/generate-layouts.js",
+    "fix-tutorial-video-duration": "node scripts/tutorial-videos/fix-webm-duration.js --duration-ms 24500 games/cat-grid/tutorial.webm games/cat-color-connect/tutorial.webm games/cat-word-solitaire/tutorial.webm",
     "validate-cat-connect-levels": "node scripts/cat-color-connect/validate-levels.js",
+    "validate-cat-word-levels": "node scripts/cat-word-solitaire/validate-levels.js",
+    "report-cat-word-levels": "node scripts/cat-word-solitaire/report-levels.js",
     "validate-levels": "node --test tests/levels.test.js tests/packs.test.js",
     "validate-offline": "node scripts/validate-offline.js",
-    "verify": "npm run validate-cat-connect-levels && npm run validate-offline && npm test && npm run build"
+    "verify": "npm run validate-cat-connect-levels && npm run validate-cat-word-levels && npm run validate-offline && npm test && npm run build"
   }
 }

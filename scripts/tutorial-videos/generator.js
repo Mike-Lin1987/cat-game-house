@@ -492,14 +492,187 @@
     drawFooter('#118a83', time / DURATION);
   }
 
+  const solitaireLabels = ['貓玩具', '下午茶', '聲音', '藝術', '夜晚'];
+  const solitaireHints = ['毛線球', '紅茶', '鈴鐺', '畫筆', '月亮'];
+
+  function drawSolitaireCard(x, y, width, height, options = {}) {
+    const {
+      back = false,
+      category = false,
+      label = '',
+      symbol = '🐾',
+      highlighted = false,
+    } = options;
+    roundedRect(
+      x,
+      y,
+      width,
+      height,
+      12,
+      back ? '#16324b' : category ? '#dcae56' : '#fff7e7',
+      highlighted ? '#42a5ff' : '#f2cf82',
+      highlighted ? 6 : 3,
+    );
+    if (back) {
+      roundedRect(x + 7, y + 7, width - 14, height - 14, 8, null, 'rgba(242,207,130,.55)', 2);
+    }
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `${back ? 27 : 30}px ${FONT}`;
+    context.fillStyle = back ? '#dcae56' : '#162333';
+    context.fillText(symbol, x + width / 2, y + height * .43);
+    if (!back && label) {
+      context.font = `800 15px ${FONT}`;
+      context.fillText(label, x + width / 2, y + height * .76);
+    }
+  }
+
+  function drawSolitaireBoard(step, animation = 1) {
+    roundedRect(72, 132, 490, 480, 28, '#071c30', 'rgba(220,174,86,.38)', 3);
+    const slotWidth = 72;
+    const slotGap = 8;
+    const slotY = 158;
+    for (let index = 0; index < 5; index += 1) {
+      const x = 92 + index * (slotWidth + slotGap);
+      const active = step >= 2 && index === 0;
+      roundedRect(
+        x,
+        slotY,
+        slotWidth,
+        78,
+        10,
+        active ? '#dcae56' : '#16324b',
+        active ? '#f2cf82' : 'rgba(220,174,86,.72)',
+        2,
+      );
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.font = active ? `800 13px ${FONT}` : `24px ${FONT}`;
+      context.fillStyle = active ? '#162333' : '#dcae56';
+      context.fillText(active ? '貓玩具' : '🐾', x + slotWidth / 2, slotY + 39);
+    }
+    drawSolitaireCard(508, 158, 36, 58, { back: true });
+    context.textAlign = 'center';
+    context.font = `800 13px ${FONT}`;
+    context.fillStyle = '#f2cf82';
+    context.fillText('34 張', 526, 228);
+
+    const cardWidth = 82;
+    const cardHeight = 108;
+    const overlap = 28;
+    const stackY = 268;
+    for (let column = 0; column < 5; column += 1) {
+      const x = 92 + column * 94;
+      const count = column + 2;
+      for (let index = 0; index < count; index += 1) {
+        const isTop = index === count - 1;
+        const revealHint = step >= 3 && column === 0 && isTop;
+        const revealCategory = !revealHint && isTop;
+        drawSolitaireCard(x, stackY + index * overlap, cardWidth, cardHeight, {
+          back: !isTop,
+          category: revealCategory,
+          label: revealHint ? solitaireHints[column] : solitaireLabels[column],
+          symbol: revealHint ? '🧶' : ['🐈', '🍵', '🔔', '🎨', '🌙'][column],
+          highlighted: (step === 1 && column === 0 && isTop)
+            || (step === 2 && column === 0 && isTop)
+            || (step === 3 && column === 0 && isTop),
+        });
+      }
+    }
+
+    if (step === 1) {
+      context.strokeStyle = '#42a5ff';
+      context.lineWidth = 5;
+      context.setLineDash([10, 8]);
+      context.beginPath();
+      context.moveTo(82, stackY - 12);
+      context.lineTo(552, stackY - 12);
+      context.stroke();
+      context.setLineDash([]);
+      context.font = `800 14px ${FONT}`;
+      context.fillStyle = '#8fc9ff';
+      context.textAlign = 'left';
+      context.fillText('五列牌堆上緣對齊', 92, stackY - 27);
+    }
+
+    if (step === 4) {
+      context.globalAlpha = .92 * animation;
+      roundedRect(126, 370, 382, 104, 22, '#16324b', '#67c987', 5);
+      context.font = `900 34px ${FONT}`;
+      context.fillStyle = '#f2cf82';
+      context.textAlign = 'center';
+      context.fillText('★ ★ ★', 317, 405);
+      context.font = `800 20px ${FONT}`;
+      context.fillStyle = '#fff7e7';
+      context.fillText('完成所有分類！', 317, 446);
+      context.globalAlpha = 1;
+    }
+  }
+
+  function drawSolitaireIntro(time) {
+    drawBackground('#dcae56', time);
+    const appear = ease(progress(time, 0, 1.2));
+    context.globalAlpha = appear;
+    context.font = `170px ${FONT}`;
+    context.fillText('🐈', 120, 205);
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillStyle = '#162333';
+    context.font = `900 65px ${FONT}`;
+    context.fillText('喵語分類接龍', 370, 225);
+    context.font = `700 34px ${FONT}`;
+    context.fillStyle = '#9b6a20';
+    context.fillText('24 秒快速教學', 375, 330);
+    roundedRect(375, 405, 570, 64, 22, '#dcae56');
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 27px ${FONT}`;
+    context.fillStyle = '#162333';
+    context.fillText('翻開牌堆，把提示送回正確分類', 660, 437);
+    context.globalAlpha = 1;
+    drawFooter('#dcae56', time / DURATION);
+  }
+
+  function drawSolitaireTutorial(time) {
+    const local = time - 2.5;
+    let step = 1;
+    let title = '先看五列接龍牌堆';
+    let description = '每關 54 張：開局五列共 20 張，右上牌庫 34 張；五列上緣對齊且只向下延伸。';
+    if (local >= 5) {
+      step = 2;
+      title = '先放入金色分類牌';
+      description = '只能操作每列最下方露出的牌。把金色分類牌放進上方任一空分類槽。';
+    }
+    if (local >= 10) {
+      step = 3;
+      title = '提示牌要送對分類';
+      description = '把奶油白提示牌送進相符的分類；收齊指定提示後，槽位會自動釋放。';
+    }
+    if (local >= 15) {
+      step = 4;
+      title = '適時發牌並清空牌桌';
+      description = '每批最多五張，由左至右發牌。清空牌庫、五列牌堆及全部分類即可過關。';
+    }
+
+    drawBackground('#dcae56', time);
+    drawTopBar('喵語分類接龍教學', '#9b6a20', step);
+    drawSolitaireBoard(step, ease(progress(local, 15, 18.5)));
+    drawCaption(String(step), title, description, '#dcae56');
+    drawFooter('#dcae56', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
       else drawGridTutorial(time);
-    } else if (time < 2.5) {
+    } else if (kind === 'cat-color-connect' && time < 2.5) {
       drawConnectIntro(time);
-    } else {
+    } else if (kind === 'cat-color-connect') {
       drawConnectTutorial(time);
+    } else if (time < 2.5) {
+      drawSolitaireIntro(time);
+    } else {
+      drawSolitaireTutorial(time);
     }
   }
 

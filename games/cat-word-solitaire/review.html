@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>喵語分類接龍｜100 關內容審核</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/review.css">
+  </head>
+  <body class="review-body">
+    <main class="review-shell">
+      <header class="review-header">
+        <div>
+          <h1>喵語分類接龍 · 100 關內容審核</h1>
+          <p>此頁只讀固定關卡，不讀寫正式遊戲進度。</p>
+        </div>
+        <a href="index.html">返回遊戲</a>
+      </header>
+      <section class="review-filters" aria-label="審核篩選">
+        <label>搜尋關卡或分類<input id="review-search" type="search" placeholder="例如 L050、下午茶"></label>
+        <label>章節<select id="review-chapter">
+          <option value="0">全部章節</option>
+          <option value="1">第一章</option>
+          <option value="2">第二章</option>
+          <option value="3">第三章</option>
+          <option value="4">第四章</option>
+          <option value="5">第五章</option>
+        </select></label>
+      </section>
+      <div class="review-layout">
+        <nav id="review-level-list" class="review-level-list" aria-label="100 關清單"></nav>
+        <article id="review-detail" class="review-detail"></article>
+      </div>
+      <nav class="review-navigation" aria-label="上一關與下一關">
+        <button id="review-previous" type="button">上一關</button>
+        <button id="review-next" type="button">下一關</button>
+      </nav>
+    </main>
+    <script src="js/config.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/solver.js"></script>
+    <script src="js/data/levels-001-020.js"></script>
+    <script src="js/data/levels-021-040.js"></script>
+    <script src="js/data/levels-041-060.js"></script>
+    <script src="js/data/levels-061-080.js"></script>
+    <script src="js/data/levels-081-100.js"></script>
+    <script src="js/data/levels-index.js"></script>
+    <script src="js/review.js"></script>
+  </body>
+</html>
+
