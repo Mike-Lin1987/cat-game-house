@@ -44,6 +44,7 @@
     gameSettingsButton: byId('game-settings-button'),
     gameTable: byId('game-table'),
     categorySlots: byId('category-slots'),
+    spareCells: byId('spare-cells'),
     deckCount: byId('deck-count'),
     dealButton: byId('deal-button'),
     tableau: byId('tableau'),
@@ -354,6 +355,8 @@
       [Core.OUTCOME.SLOT_OCCUPIED]: '這個分類槽已被占用',
       [Core.OUTCOME.NO_EMPTY_SLOT]: '五個分類槽都已使用，請先完成一個分類',
       [Core.OUTCOME.CARD_NOT_PLAYABLE]: '只能操作每個牌堆露出的最後一張',
+      [Core.OUTCOME.SPARE_OCCUPIED]: '這個備用格已經有牌',
+      [Core.OUTCOME.COLUMN_NOT_EMPTY]: '只能把牌移到完全空白的牌堆',
       [Core.OUTCOME.CATEGORY_NOT_ACTIVE]: '這個分類還沒有出現',
       [Core.OUTCOME.WRONG_CATEGORY]: '這張牌不屬於這個分類',
       [Core.OUTCOME.DECK_EMPTY]: '牌庫已經發完',
@@ -513,6 +516,47 @@
     applyResult(result);
   }
 
+  function performSelectedOnSpare(spareIndex) {
+    if (!gameState.selectedCardId) {
+      showToast('請先選擇一張露出的牌');
+      return;
+    }
+    applyResult(
+      Core.moveToSpare(
+        gameState,
+        currentLevel,
+        gameState.selectedCardId,
+        spareIndex,
+      ),
+    );
+  }
+
+  function performSelectedOnColumn(columnIndex) {
+    if (!gameState.selectedCardId) {
+      showToast('請先選擇一張露出的牌');
+      return;
+    }
+    applyResult(
+      Core.moveToColumn(
+        gameState,
+        currentLevel,
+        gameState.selectedCardId,
+        columnIndex,
+      ),
+    );
+  }
+
+  function performSelectedOnTarget(target) {
+    if (!target) return;
+    if (target.classList.contains('category-slot')) {
+      performSelectedOnSlot(Number(target.dataset.slotIndex));
+    } else if (target.classList.contains('spare-cell')) {
+      performSelectedOnSpare(Number(target.dataset.spareIndex));
+    } else if (target.classList.contains('empty-pile')) {
+      performSelectedOnColumn(Number(target.dataset.columnIndex));
+    }
+  }
+
   function selectCard(cardId) {
     const next = Core.cloneState(gameState);
     next.selectedCardId =
@@ -549,11 +593,11 @@
   }
 
   function resetDropTargets() {
-    for (const slot of elements.categorySlots.querySelectorAll(
-      '.category-slot',
+    for (const target of document.querySelectorAll(
+      '.category-slot, .spare-cell, .empty-pile',
     )) {
-      delete slot.dataset.dropState;
-      delete slot.dataset.dropHover;
+      delete target.dataset.dropState;
+      delete target.dataset.dropHover;
     }
   }
 
@@ -577,6 +621,24 @@
               slot.dataset.categoryId || null,
             );
       slot.dataset.dropState = Motion.getDropState(isLegal);
+    }
+    for (const spare of elements.spareCells.querySelectorAll('.spare-cell')) {
+      const isLegal = Core.canMoveToSpare(
+        gameState,
+        currentLevel,
+        card.id,
+        Number(spare.dataset.spareIndex),
+      );
+      spare.dataset.dropState = Motion.getDropState(isLegal);
+    }
+    for (const pile of elements.tableau.querySelectorAll('.empty-pile')) {
+      const isLegal = Core.canMoveToColumn(
+        gameState,
+        currentLevel,
+        card.id,
+        Number(pile.dataset.columnIndex),
+      );
+      pile.dataset.dropState = Motion.getDropState(isLegal);
     }
   }
 
@@ -609,25 +671,25 @@
       { x: activeGesture.startX, y: activeGesture.startY },
       { x: event.clientX, y: event.clientY },
     );
-    const hoveredSlot = document
+    const hoveredTarget = document
       .elementFromPoint(event.clientX, event.clientY)
-      ?.closest('.category-slot');
-    for (const slot of elements.categorySlots.querySelectorAll(
-      '.category-slot',
+      ?.closest('.category-slot, .spare-cell, .empty-pile');
+    for (const target of document.querySelectorAll(
+      '.category-slot, .spare-cell, .empty-pile',
     )) {
-      if (slot === hoveredSlot) {
-        slot.dataset.dropHover = 'true';
+      if (target === hoveredTarget) {
+        target.dataset.dropHover = 'true';
       } else {
-        delete slot.dataset.dropHover;
+        delete target.dataset.dropHover;
       }
     }
-    if (hoveredSlot) {
+    if (hoveredTarget) {
       activeGesture.ghost.dataset.dropState =
-        hoveredSlot.dataset.dropState;
+        hoveredTarget.dataset.dropState;
     } else {
       delete activeGesture.ghost.dataset.dropState;
     }
-    activeGesture.hoveredSlot = hoveredSlot || null;
+    activeGesture.hoveredTarget = hoveredTarget || null;
   }
 
   function cleanupGesture(activeGesture) {
@@ -649,11 +711,11 @@
     cleanupGesture(activeGesture);
   }
 
-  async function settleDrag(activeGesture, slot) {
+  async function settleDrag(activeGesture, target) {
     activeGesture.finishing = true;
     window.clearTimeout(activeGesture.longPressTimer);
     const ghost = activeGesture.ghost;
-    const dropState = slot?.dataset.dropState || null;
+    const dropState = target?.dataset.dropState || null;
 
     if (motionEnabled() && ghost && typeof ghost.animate === 'function') {
       const currentTransform = ghost.style.transform;
@@ -662,10 +724,10 @@
       let opacity = 1;
       let duration = 190;
       let easing = 'cubic-bezier(0.2, 0.85, 0.25, 1.25)';
-      if (slot && dropState === Motion.DROP_STATE.VALID) {
+      if (target && dropState === Motion.DROP_STATE.VALID) {
         const snap = Motion.calculateSnapDelta(
           activeGesture.originRect,
-          slot.getBoundingClientRect(),
+          target.getBoundingClientRect(),
         );
         targetTransform =
           `translate3d(${snap.x}px, ${snap.y}px, 0) rotate(0deg) scale(0.88)`;
@@ -685,14 +747,14 @@
     if (activeGesture.cancelled || gesture !== activeGesture) return;
     const cardId = activeGesture.cardId;
     cleanupGesture(activeGesture);
-    if (!slot) return;
+    if (!target) return;
 
     if (gameState.selectedCardId !== cardId) {
       const next = Core.cloneState(gameState);
       next.selectedCardId = cardId;
       gameState = next;
     }
-    performSelectedOnSlot(Number(slot.dataset.slotIndex));
+    performSelectedOnTarget(target);
   }
 
   const handlers = {
@@ -840,17 +902,18 @@
       }
       window.clearTimeout(gesture.longPressTimer);
       if (gesture.dragged) {
-        const slot = document
+        const target = document
           .elementFromPoint(event.clientX, event.clientY)
-          ?.closest('.category-slot');
+          ?.closest('.category-slot, .spare-cell, .empty-pile');
         suppressClickUntil = performance.now() + 500;
-        void settleDrag(gesture, slot || null);
+        void settleDrag(gesture, target || null);
         return;
       }
       clearGesture();
     },
     cardPointerCancel: clearGesture,
     cardClick(event) {
+      event.stopPropagation();
       if (performance.now() < suppressClickUntil) return;
       selectCard(event.currentTarget.dataset.cardId);
     },
@@ -885,6 +948,17 @@
     },
     slotClick(event) {
       performSelectedOnSlot(Number(event.currentTarget.dataset.slotIndex));
+    },
+    spareClick(event) {
+      performSelectedOnSpare(Number(event.currentTarget.dataset.spareIndex));
+    },
+    columnClick(event) {
+      performSelectedOnColumn(Number(event.currentTarget.dataset.columnIndex));
+    },
+    targetKeyDown(event) {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      performSelectedOnTarget(event.currentTarget);
     },
     slotKeyDown(event) {
       if (event.key === 'Enter' || event.key === ' ') {

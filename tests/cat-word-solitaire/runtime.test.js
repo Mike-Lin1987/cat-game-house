@@ -80,6 +80,25 @@ test('手機斷點仍保留五槽在左、牌庫在右', () => {
   assert.match(mobileRule[1], /\.slots-and-deck\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s+auto;/s);
 });
 
+test('遊戲桌提供兩個 spare 暫存格與五個可接牌的空牌堆', () => {
+  const html = read('games/cat-word-solitaire/index.html');
+  const renderer = read('games/cat-word-solitaire/js/renderer.js');
+  const app = read('games/cat-word-solitaire/js/app.js');
+  const styles = read('games/cat-word-solitaire/css/app.css');
+
+  assert.match(html, /id="spare-cells"[^>]*aria-label="兩個備用格"/);
+  assert.match(renderer, /function renderSpareCells\(/);
+  assert.match(renderer, /className = 'spare-cell'/);
+  assert.match(renderer, /empty\.className = 'empty-pile'/);
+  assert.match(renderer, /empty\.type = 'button'/);
+  assert.match(app, /Core\.moveToSpare\(/);
+  assert.match(app, /Core\.moveToColumn\(/);
+  assert.match(app, /\.closest\('\.category-slot, \.spare-cell, \.empty-pile'\)/);
+  assert.match(styles, /\.spare-cells\s*\{/);
+  assert.match(styles, /\.spare-cell\[data-drop-state="valid"\]/);
+  assert.match(styles, /\.empty-pile\[data-drop-state="valid"\]/);
+});
+
 test('新版關卡只恢復 layout signature 相同的未完成牌局', () => {
   const app = read('games/cat-word-solitaire/js/app.js');
 

@@ -27,6 +27,7 @@
       .filter(([, cardIds]) => cardIds.length > 0);
     return JSON.stringify({
       columns: state.columns,
+      spare: state.spareCells.filter(Boolean).sort(),
       active: state.categorySlots.filter(Boolean).sort(),
       collected,
       completed: [...state.completedCategoryIds].sort(),
@@ -39,20 +40,27 @@
       (total, column) => total + column.length,
       0,
     );
+    const spareCards = state.spareCells.filter(Boolean).length;
     const deckCards = level.layout.drawBatches
       .slice(state.drawBatchIndex)
       .reduce((total, batch) => total + batch.length, 0);
     const remainingDeals =
       level.layout.drawBatches.length - state.drawBatchIndex;
-    return tableauCards + deckCards + remainingDeals;
+    return tableauCards + spareCards + deckCards + remainingDeals;
   }
 
-  function canonicalLegalMoves(state, level) {
+  function canonicalLegalMoves(state, level, includeRelocations = true) {
     const moves = Core.getLegalMoves(state, level);
     const firstEmptySlot = state.categorySlots.indexOf(null);
+    const firstEmptySpare = state.spareCells.indexOf(null);
     return moves.filter(
       (move) =>
-        move.type !== 'activateCategory' || move.slotIndex === firstEmptySlot,
+        (includeRelocations ||
+          (move.type !== 'moveToSpare' && move.type !== 'moveToColumn')) &&
+        (move.type !== 'activateCategory' ||
+          move.slotIndex === firstEmptySlot) &&
+        (move.type !== 'moveToSpare' ||
+          move.spareIndex === firstEmptySpare),
     );
   }
 
@@ -62,16 +70,8 @@
     const maxNodes = Number.isInteger(options.maxNodes)
       ? Math.max(1, options.maxNodes)
       : 250000;
-    const memo = new Map();
-    let nodesVisited = 0;
-    let backtracks = 0;
-    let maxDepth = 0;
-    let maxActiveCategories = initial.categorySlots.filter(Boolean).length;
-    let branchingStates = 0;
-    let dealDecisionStates = 0;
-    let forcedMoves = 0;
-    let limitReached = false;
-    let nodeLimitReached = false;
+    const initialMaxActiveCategories =
+      initial.categorySlots.filter(Boolean).length;
 
     if (
       initial.movesUsed + remainingMinimumMoves(initial, level) >
@@ -86,7 +86,7 @@
         nodesVisited: 0,
         backtracks: 0,
         maxDepth: 0,
-        maxActiveCategories,
+        maxActiveCategories: initialMaxActiveCategories,
         branchingStates: 0,
         dealDecisionStates: 0,
         forcedMoves: 0,
@@ -94,89 +94,119 @@
       };
     }
 
-    function visit(state, actions) {
-      nodesVisited += 1;
-      maxDepth = Math.max(maxDepth, actions.length);
-      maxActiveCategories = Math.max(
-        maxActiveCategories,
-        state.categorySlots.filter(Boolean).length,
-      );
-      if (nodesVisited > maxNodes) {
-        nodeLimitReached = true;
-        return null;
-      }
-      if (Core.isLevelComplete(state, level)) {
-        return { state, actions };
-      }
-      if (state.movesUsed >= level.moveLimit || state.failed) {
-        limitReached = true;
-        return null;
-      }
-      if (
-        state.movesUsed + remainingMinimumMoves(state, level) >
-        level.moveLimit
-      ) {
-        limitReached = true;
-        return null;
-      }
+    function runSearch(includeRelocations) {
+      const memo = new Map();
+      let nodesVisited = 0;
+      let backtracks = 0;
+      let maxDepth = 0;
+      let maxActiveCategories = initialMaxActiveCategories;
+      let branchingStates = 0;
+      let dealDecisionStates = 0;
+      let forcedMoves = 0;
+      let limitReached = false;
+      let nodeLimitReached = false;
 
-      const key = normalizeState(state, level);
-      const previousMoves = memo.get(key);
-      if (previousMoves !== undefined && previousMoves <= state.movesUsed) {
+      function visit(state, actions) {
+        nodesVisited += 1;
+        maxDepth = Math.max(maxDepth, actions.length);
+        maxActiveCategories = Math.max(
+          maxActiveCategories,
+          state.categorySlots.filter(Boolean).length,
+        );
+        if (nodesVisited > maxNodes) {
+          nodeLimitReached = true;
+          return null;
+        }
+        if (Core.isLevelComplete(state, level)) {
+          return { state, actions };
+        }
+        if (state.movesUsed >= level.moveLimit || state.failed) {
+          limitReached = true;
+          return null;
+        }
+        if (
+          state.movesUsed + remainingMinimumMoves(state, level) >
+          level.moveLimit
+        ) {
+          limitReached = true;
+          return null;
+        }
+
+        const key = normalizeState(state, level);
+        const previousMoves = memo.get(key);
+        if (previousMoves !== undefined && previousMoves <= state.movesUsed) {
+          backtracks += 1;
+          return null;
+        }
+        memo.set(key, state.movesUsed);
+
+        const moves = canonicalLegalMoves(
+          state,
+          level,
+          includeRelocations,
+        );
+        if (moves.length === 1) {
+          forcedMoves += 1;
+        } else if (moves.length > 1) {
+          branchingStates += 1;
+        }
+        if (
+          moves.some((move) => move.type === 'deal') &&
+          moves.some((move) => move.type !== 'deal')
+        ) {
+          dealDecisionStates += 1;
+        }
+        for (const move of moves) {
+          const result = Core.applyLegalAction(state, level, move);
+          if (
+            result.state === state ||
+            result.outcome === Core.OUTCOME.INVALID_ACTION
+          ) {
+            continue;
+          }
+          const solved = visit(result.state, [...actions, move]);
+          if (solved) {
+            return solved;
+          }
+          if (nodeLimitReached) {
+            return null;
+          }
+        }
         backtracks += 1;
         return null;
       }
-      memo.set(key, state.movesUsed);
 
-      const moves = canonicalLegalMoves(state, level);
-      if (moves.length === 1) {
-        forcedMoves += 1;
-      } else if (moves.length > 1) {
-        branchingStates += 1;
-      }
-      if (
-        moves.some((move) => move.type === 'deal') &&
-        moves.some((move) => move.type !== 'deal')
-      ) {
-        dealDecisionStates += 1;
-      }
-      for (const move of moves) {
-        const result = Core.applyLegalAction(state, level, move);
-        if (result.state === state || result.outcome === Core.OUTCOME.INVALID_ACTION) {
-          continue;
-        }
-        const solved = visit(result.state, [...actions, move]);
-        if (solved) {
-          return solved;
-        }
-        if (nodeLimitReached) {
-          return null;
-        }
-      }
-      backtracks += 1;
-      return null;
+      const solved = visit(initial, []);
+      return {
+        solved: Boolean(solved),
+        reason: solved
+          ? null
+          : nodeLimitReached
+            ? 'node-limit'
+            : limitReached
+              ? 'move-limit'
+              : 'unsolvable',
+        actions: solved?.actions || [],
+        movesUsed: solved?.state.movesUsed ?? initial.movesUsed,
+        finalState: solved?.state || initial,
+        nodesVisited,
+        backtracks,
+        maxDepth,
+        maxActiveCategories,
+        branchingStates,
+        dealDecisionStates,
+        forcedMoves,
+      };
     }
 
-    const solved = visit(initial, []);
+    // 先沿用原本的策略動作搜尋，讓既有 100 關的難度統計保持穩定。
+    // 玩家真的利用暫存格或空牌堆造成新局面時，才啟用搬牌分支。
+    const strategicResult = runSearch(false);
+    const result = strategicResult.solved
+      ? strategicResult
+      : runSearch(true);
     return {
-      solved: Boolean(solved),
-      reason: solved
-        ? null
-        : nodeLimitReached
-          ? 'node-limit'
-          : limitReached
-            ? 'move-limit'
-            : 'unsolvable',
-      actions: solved?.actions || [],
-      movesUsed: solved?.state.movesUsed ?? initial.movesUsed,
-      finalState: solved?.state || initial,
-      nodesVisited,
-      backtracks,
-      maxDepth,
-      maxActiveCategories,
-      branchingStates,
-      dealDecisionStates,
-      forcedMoves,
+      ...result,
       durationMs: Date.now() - startedAt,
     };
   }
@@ -196,10 +226,19 @@
       ? Core.getCategoryById(level, action.categoryId)
       : null;
     let message = '目前可以從牌庫發牌';
+    const sourceLabel = Number.isInteger(action.spareIndex)
+      ? `第 ${action.spareIndex + 1} 個暫存格`
+      : Number.isInteger(action.columnIndex)
+        ? `第 ${action.columnIndex + 1} 個牌堆`
+        : '目前位置';
     if (action.type === 'activateCategory') {
-      message = `可以將「${category.label}」放入第 ${action.slotIndex + 1} 個分類槽`;
+      message = `可以將${sourceLabel}的「${category.label}」放入第 ${action.slotIndex + 1} 個分類槽`;
     } else if (action.type === 'placeItem') {
-      message = `第 ${action.columnIndex + 1} 個牌堆的「${card.label}」可以放進「${category.label}」`;
+      message = `${sourceLabel}的「${card.label}」可以放進「${category.label}」`;
+    } else if (action.type === 'moveToSpare') {
+      message = `可以先將「${card.label || category?.label || '這張牌'}」放到第 ${action.spareIndex + 1} 個暫存格`;
+    } else if (action.type === 'moveToColumn') {
+      message = `可以將「${card.label || category?.label || '這張牌'}」移到第 ${action.columnIndex + 1} 個空牌堆`;
     }
     return { action, message, solution };
   }

@@ -18,16 +18,21 @@
 
   const COLUMN_COUNT = config?.tableauColumnCount || 5;
   const SLOT_COUNT = config?.categorySlotCount || 5;
+  const SPARE_COUNT = config?.spareCellCount || 2;
 
   const OUTCOME = Object.freeze({
     CATEGORY_ACTIVATED: 'category-activated',
     ITEM_PLACED: 'item-placed',
     CATEGORY_COMPLETED: 'category-completed',
+    CARD_STORED: 'card-stored',
+    CARD_MOVED_TO_COLUMN: 'card-moved-to-column',
     DEALT: 'dealt',
     UNDONE: 'undone',
     LEVEL_COMPLETED: 'level-completed',
     STEP_LIMIT_REACHED: 'step-limit-reached',
     SLOT_OCCUPIED: 'slot-occupied',
+    SPARE_OCCUPIED: 'spare-occupied',
+    COLUMN_NOT_EMPTY: 'column-not-empty',
     NO_EMPTY_SLOT: 'no-empty-slot',
     CARD_NOT_PLAYABLE: 'card-not-playable',
     CARD_TYPE_INVALID: 'card-type-invalid',
@@ -61,6 +66,7 @@
       levelId: level.id,
       columns: level.layout.initialColumns.map((column) => [...column]),
       categorySlots: Array(SLOT_COUNT).fill(null),
+      spareCells: Array(SPARE_COUNT).fill(null),
       collectedByCategory: Object.fromEntries(
         level.categories.map((category) => [category.id, []]),
       ),
@@ -106,8 +112,110 @@
     return -1;
   }
 
+  function findPlayableCardSource(state, cardId) {
+    const columnIndex = findCardSourceColumn(state, cardId);
+    if (columnIndex >= 0) {
+      return { type: 'column', index: columnIndex };
+    }
+    const spareIndex = state.spareCells.indexOf(cardId);
+    return spareIndex >= 0 ? { type: 'spare', index: spareIndex } : null;
+  }
+
+  function removeCardFromSource(state, source) {
+    if (source.type === 'column') {
+      state.columns[source.index].pop();
+    } else {
+      state.spareCells[source.index] = null;
+    }
+  }
+
   function categorySlotIndex(state, categoryId) {
     return state.categorySlots.indexOf(categoryId);
+  }
+
+  function canMoveToSpare(state, level, cardId, spareIndex) {
+    return Boolean(
+      getCardById(level, cardId) &&
+        findCardSourceColumn(state, cardId) >= 0 &&
+        Number.isInteger(spareIndex) &&
+        spareIndex >= 0 &&
+        spareIndex < SPARE_COUNT &&
+        state.spareCells[spareIndex] === null,
+    );
+  }
+
+  function moveToSpare(state, level, cardId, spareIndex) {
+    const columnIndex = findCardSourceColumn(state, cardId);
+    if (columnIndex < 0) {
+      return makeResult(state, OUTCOME.CARD_NOT_PLAYABLE);
+    }
+    if (
+      !Number.isInteger(spareIndex) ||
+      spareIndex < 0 ||
+      spareIndex >= SPARE_COUNT ||
+      state.spareCells[spareIndex] !== null
+    ) {
+      return makeResult(state, OUTCOME.SPARE_OCCUPIED);
+    }
+    const next = cloneState(state);
+    next.columns[columnIndex].pop();
+    next.spareCells[spareIndex] = cardId;
+    next.movesUsed += 1;
+    next.selectedCardId = null;
+    const outcome = finalizeState(next, level, OUTCOME.CARD_STORED);
+    return makeResult(next, outcome, [
+      {
+        type: 'card-stored',
+        cardId,
+        columnIndex,
+        spareIndex,
+      },
+    ]);
+  }
+
+  function canMoveToColumn(state, level, cardId, columnIndex) {
+    const source = findPlayableCardSource(state, cardId);
+    return Boolean(
+      getCardById(level, cardId) &&
+        source &&
+        Number.isInteger(columnIndex) &&
+        columnIndex >= 0 &&
+        columnIndex < COLUMN_COUNT &&
+        state.columns[columnIndex].length === 0 &&
+        !(source.type === 'column' && source.index === columnIndex),
+    );
+  }
+
+  function moveToColumn(state, level, cardId, columnIndex) {
+    const source = findPlayableCardSource(state, cardId);
+    if (!source) {
+      return makeResult(state, OUTCOME.CARD_NOT_PLAYABLE);
+    }
+    if (
+      !Number.isInteger(columnIndex) ||
+      columnIndex < 0 ||
+      columnIndex >= COLUMN_COUNT ||
+      state.columns[columnIndex].length !== 0 ||
+      (source.type === 'column' && source.index === columnIndex)
+    ) {
+      return makeResult(state, OUTCOME.COLUMN_NOT_EMPTY);
+    }
+    const next = cloneState(state);
+    removeCardFromSource(next, source);
+    next.columns[columnIndex].push(cardId);
+    next.movesUsed += 1;
+    next.selectedCardId = null;
+    const outcome = finalizeState(next, level, OUTCOME.CARD_MOVED_TO_COLUMN);
+    return makeResult(next, outcome, [
+      {
+        type: 'card-moved-to-column',
+        cardId,
+        sourceType: source.type,
+        sourceColumnIndex: source.type === 'column' ? source.index : undefined,
+        sourceSpareIndex: source.type === 'spare' ? source.index : undefined,
+        columnIndex,
+      },
+    ]);
   }
 
   function canActivateCategory(state, level, cardId, slotIndex) {
@@ -115,7 +223,8 @@
     if (!card || card.cardType !== 'category') {
       return false;
     }
-    if (findCardSourceColumn(state, cardId) < 0) {
+    const source = findPlayableCardSource(state, cardId);
+    if (!source) {
       return false;
     }
     if (
@@ -152,7 +261,8 @@
     if (!card || card.cardType !== 'category') {
       return makeResult(state, OUTCOME.CARD_TYPE_INVALID);
     }
-    if (findCardSourceColumn(state, cardId) < 0) {
+    const source = findPlayableCardSource(state, cardId);
+    if (!source) {
       return makeResult(state, OUTCOME.CARD_NOT_PLAYABLE);
     }
     if (state.completedCategoryIds.includes(card.categoryId)) {
@@ -174,8 +284,7 @@
     }
 
     const next = cloneState(state);
-    const sourceColumn = findCardSourceColumn(next, cardId);
-    next.columns[sourceColumn].pop();
+    removeCardFromSource(next, source);
     next.categorySlots[slotIndex] = card.categoryId;
     next.movesUsed += 1;
     next.selectedCardId = null;
@@ -186,7 +295,9 @@
         cardId,
         categoryId: card.categoryId,
         slotIndex,
-        columnIndex: sourceColumn,
+        sourceType: source.type,
+        columnIndex: source.type === 'column' ? source.index : undefined,
+        spareIndex: source.type === 'spare' ? source.index : undefined,
       },
     ]);
   }
@@ -196,7 +307,7 @@
     return Boolean(
       card &&
         card.cardType === 'item' &&
-        findCardSourceColumn(state, cardId) >= 0 &&
+        findPlayableCardSource(state, cardId) &&
         card.categoryId === categoryId &&
         categorySlotIndex(state, categoryId) >= 0,
     );
@@ -246,8 +357,8 @@
     if (!card || card.cardType !== 'item') {
       return makeResult(state, OUTCOME.CARD_TYPE_INVALID);
     }
-    const sourceColumn = findCardSourceColumn(state, cardId);
-    if (sourceColumn < 0) {
+    const source = findPlayableCardSource(state, cardId);
+    if (!source) {
       return makeResult(state, OUTCOME.CARD_NOT_PLAYABLE);
     }
 
@@ -279,7 +390,7 @@
     }
 
     const next = cloneState(state);
-    next.columns[sourceColumn].pop();
+    removeCardFromSource(next, source);
     next.collectedByCategory[categoryId].push(cardId);
     next.movesUsed += 1;
     next.selectedCardId = null;
@@ -292,7 +403,9 @@
         type: 'item-placed',
         cardId,
         categoryId,
-        columnIndex: sourceColumn,
+        sourceType: source.type,
+        columnIndex: source.type === 'column' ? source.index : undefined,
+        spareIndex: source.type === 'spare' ? source.index : undefined,
       },
       ...completed.map((entry) => ({ type: 'category-completed', ...entry })),
     ];
@@ -336,12 +449,36 @@
     }
     const itemMoves = [];
     const categoryMoves = [];
+    const spareMoves = [];
+    const columnMoves = [];
     const emptySlots = state.categorySlots
       .map((categoryId, slotIndex) => (categoryId === null ? slotIndex : -1))
       .filter((slotIndex) => slotIndex >= 0);
+    const emptySpares = state.spareCells
+      .map((cardId, spareIndex) => (cardId === null ? spareIndex : -1))
+      .filter((spareIndex) => spareIndex >= 0);
+    const emptyColumns = state.columns
+      .map((column, columnIndex) => (column.length === 0 ? columnIndex : -1))
+      .filter((columnIndex) => columnIndex >= 0);
+    const sources = [
+      ...state.columns
+        .map((column, columnIndex) => ({
+          type: 'column',
+          index: columnIndex,
+          cardId: column.at(-1) || null,
+        }))
+        .filter((source) => source.cardId),
+      ...state.spareCells
+        .map((cardId, spareIndex) => ({
+          type: 'spare',
+          index: spareIndex,
+          cardId,
+        }))
+        .filter((source) => source.cardId),
+    ];
 
-    for (let columnIndex = 0; columnIndex < state.columns.length; columnIndex += 1) {
-      const cardId = getPlayableCard(state, columnIndex);
+    for (const source of sources) {
+      const { cardId } = source;
       const card = getCardById(level, cardId);
       if (!card) {
         continue;
@@ -359,7 +496,9 @@
             cardId,
             categoryId: card.categoryId,
             slotIndex,
-            columnIndex,
+            sourceType: source.type,
+            columnIndex: source.type === 'column' ? source.index : undefined,
+            spareIndex: source.type === 'spare' ? source.index : undefined,
             completesCategory: progress.collected + 1 >= progress.required,
           });
         }
@@ -374,20 +513,48 @@
             cardId,
             categoryId: card.categoryId,
             slotIndex,
-            columnIndex,
+            sourceType: source.type,
+            columnIndex: source.type === 'column' ? source.index : undefined,
+            spareIndex: source.type === 'spare' ? source.index : undefined,
           });
         }
+      }
+
+      if (source.type === 'column') {
+        for (const spareIndex of emptySpares) {
+          spareMoves.push({
+            type: 'moveToSpare',
+            cardId,
+            columnIndex: source.index,
+            spareIndex,
+          });
+        }
+      }
+      for (const columnIndex of emptyColumns) {
+        columnMoves.push({
+          type: 'moveToColumn',
+          cardId,
+          sourceType: source.type,
+          sourceColumnIndex:
+            source.type === 'column' ? source.index : undefined,
+          sourceSpareIndex:
+            source.type === 'spare' ? source.index : undefined,
+          columnIndex,
+        });
       }
     }
 
     itemMoves.sort(
       (left, right) =>
         Number(right.completesCategory) - Number(left.completesCategory) ||
-        left.columnIndex - right.columnIndex,
+        (left.columnIndex ?? COLUMN_COUNT + left.spareIndex) -
+          (right.columnIndex ?? COLUMN_COUNT + right.spareIndex),
     );
     categoryMoves.sort(
       (left, right) =>
-        left.slotIndex - right.slotIndex || left.columnIndex - right.columnIndex,
+        left.slotIndex - right.slotIndex ||
+        (left.columnIndex ?? COLUMN_COUNT + left.spareIndex) -
+          (right.columnIndex ?? COLUMN_COUNT + right.spareIndex),
     );
     const moves = [...itemMoves, ...categoryMoves];
     if (canDealNextBatch(state, level)) {
@@ -396,7 +563,7 @@
         batchIndex: state.drawBatchIndex,
       });
     }
-    return moves;
+    return [...moves, ...spareMoves, ...columnMoves];
   }
 
   function applyLegalAction(state, level, action) {
@@ -421,6 +588,18 @@
       }
       return dealNextBatch(state, level);
     }
+    if (action.type === 'moveToSpare') {
+      if (!canMoveToSpare(state, level, action.cardId, action.spareIndex)) {
+        return makeResult(state, OUTCOME.INVALID_ACTION);
+      }
+      return moveToSpare(state, level, action.cardId, action.spareIndex);
+    }
+    if (action.type === 'moveToColumn') {
+      if (!canMoveToColumn(state, level, action.cardId, action.columnIndex)) {
+        return makeResult(state, OUTCOME.INVALID_ACTION);
+      }
+      return moveToColumn(state, level, action.cardId, action.columnIndex);
+    }
     return makeResult(state, OUTCOME.INVALID_ACTION);
   }
 
@@ -434,6 +613,8 @@
         state.columns.every((column) => column.length === 0) &&
         state.categorySlots.length === SLOT_COUNT &&
         state.categorySlots.every((slot) => slot === null) &&
+        state.spareCells.length === SPARE_COUNT &&
+        state.spareCells.every((cardId) => cardId === null) &&
         state.drawBatchIndex === level.layout.drawBatches.length &&
         state.completedCategoryIds.length === level.categories.length &&
         level.categories.every((category) =>
@@ -582,10 +763,19 @@
       ? getCategoryById(level, action.categoryId)
       : null;
     let message = '目前可以從牌庫發牌';
+    const sourceLabel = Number.isInteger(action.spareIndex)
+      ? `第 ${action.spareIndex + 1} 個暫存格`
+      : Number.isInteger(action.columnIndex)
+        ? `第 ${action.columnIndex + 1} 個牌堆`
+        : '目前位置';
     if (action.type === 'activateCategory') {
-      message = `可以將「${category?.label || '分類'}」放入第 ${action.slotIndex + 1} 個分類槽`;
+      message = `可以將${sourceLabel}的「${category?.label || '分類'}」放入第 ${action.slotIndex + 1} 個分類槽`;
     } else if (action.type === 'placeItem') {
-      message = `第 ${action.columnIndex + 1} 個牌堆的「${card?.label || '提示牌'}」可以放進「${category?.label || '分類'}」`;
+      message = `${sourceLabel}的「${card?.label || '提示牌'}」可以放進「${category?.label || '分類'}」`;
+    } else if (action.type === 'moveToSpare') {
+      message = `可以先將「${card?.label || category?.label || '這張牌'}」放到第 ${action.spareIndex + 1} 個暫存格`;
+    } else if (action.type === 'moveToColumn') {
+      message = `可以將「${card?.label || category?.label || '這張牌'}」移到第 ${action.columnIndex + 1} 個空牌堆`;
     }
     return { action, message };
   }
@@ -605,15 +795,21 @@
         parsed.columns.length !== COLUMN_COUNT ||
         parsed.columns.some((column) => !Array.isArray(column)) ||
         !Array.isArray(parsed.categorySlots) ||
-        parsed.categorySlots.length !== SLOT_COUNT
+        parsed.categorySlots.length !== SLOT_COUNT ||
+        (parsed.spareCells !== undefined &&
+          (!Array.isArray(parsed.spareCells) ||
+            parsed.spareCells.length !== SPARE_COUNT))
       ) {
         return null;
       }
       const validCards = new Set(level.cards.map((card) => card.id));
       const columnCards = parsed.columns.flat();
+      const spareCards = (parsed.spareCells || Array(SPARE_COUNT).fill(null))
+        .filter(Boolean);
+      const movableCards = [...columnCards, ...spareCards];
       if (
-        columnCards.some((cardId) => !validCards.has(cardId)) ||
-        new Set(columnCards).size !== columnCards.length
+        movableCards.some((cardId) => !validCards.has(cardId)) ||
+        new Set(movableCards).size !== movableCards.length
       ) {
         return null;
       }
@@ -628,6 +824,9 @@
       const clean = createInitialState(level);
       clean.columns = parsed.columns.map((column) => [...column]);
       clean.categorySlots = [...parsed.categorySlots];
+      clean.spareCells = parsed.spareCells
+        ? [...parsed.spareCells]
+        : Array(SPARE_COUNT).fill(null);
       clean.collectedByCategory = Object.fromEntries(
         level.categories.map((category) => [
           category.id,
@@ -714,6 +913,11 @@
     getCategoryById,
     getPlayableCard,
     findCardSourceColumn,
+    findPlayableCardSource,
+    canMoveToSpare,
+    moveToSpare,
+    canMoveToColumn,
+    moveToColumn,
     canActivateCategory,
     activateCategory,
     canPlaceItem,
@@ -740,4 +944,3 @@
     formatElapsedTime,
   });
 });
-

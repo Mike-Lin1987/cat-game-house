@@ -191,6 +191,56 @@ test('狀態正規化忽略分類槽純位置差異', () => {
   );
 });
 
+test('狀態正規化忽略兩個 spare 的位置但保留暫存牌內容', () => {
+  const level = createWaveLevel(2);
+  const first = Core.createInitialState(level);
+  first.spareCells = ['item-category-1-1', 'item-category-2-1'];
+  const second = Core.cloneState(first);
+  second.spareCells.reverse();
+  assert.equal(
+    Solver.normalizeState(first, level),
+    Solver.normalizeState(second, level),
+  );
+  second.spareCells[0] = null;
+  assert.notEqual(
+    Solver.normalizeState(first, level),
+    Solver.normalizeState(second, level),
+  );
+  assert.equal(
+    Solver.remainingMinimumMoves(first, level),
+    Solver.remainingMinimumMoves(Core.createInitialState(level), level) + 2,
+  );
+});
+
+test('求解器可利用 spare 暫存阻擋牌並完成牌局', () => {
+  const level = createWaveLevel(5, 5);
+  level.categories.forEach((category) => {
+    category.required = 1;
+  });
+  level.cards = level.cards.filter(
+    (card) =>
+      card.cardType === 'category' || card.id.endsWith('-1'),
+  );
+  level.layout = {
+    initialColumns: level.categories.map((category) => [
+      `card-${category.id}`,
+      `item-${category.id}-1`,
+    ]),
+    drawBatches: [],
+  };
+  level.parMoves = 10;
+  level.moveLimit = 15;
+
+  const result = Solver.solveLevel(level, { maxNodes: 10000 });
+  assert.equal(result.solved, true);
+  assert.equal(
+    result.actions.some((action) => action.type === 'moveToSpare'),
+    true,
+  );
+  assert.deepEqual(result.finalState.spareCells, [null, null]);
+  assert.equal(Core.isLevelComplete(result.finalState, level), true);
+});
+
 test('layout signature 忽略欄位純交換但辨識實質牌序差異', () => {
   const level = createWaveLevel(5);
   const swapped = structuredClone(level);

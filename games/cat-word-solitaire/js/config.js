@@ -20,6 +20,7 @@
     initialStockCards: 34,
     categorySlotCount: 5,
     tableauColumnCount: 5,
+    spareCellCount: 2,
     dataVersion: 2,
     storageKey: 'cat-word-solitaire:v2',
     maxUndoStates: 50,

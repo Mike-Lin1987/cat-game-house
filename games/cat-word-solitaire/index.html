@@ -93,6 +93,11 @@
                 <span><strong id="deck-count">0</strong><small>發牌</small></span>
               </button>
             </div>
+            <div class="spare-row">
+              <span class="spare-label">備用格</span>
+              <div id="spare-cells" class="spare-cells" aria-label="兩個備用格"></div>
+              <small>每格可暫放 1 張牌</small>
+            </div>
             <div id="tableau" class="tableau" aria-label="五個接龍牌堆"></div>
           </div>
 
@@ -124,10 +129,12 @@
         <ol>
           <li>每關固定 54 張牌；開局五欄由左至右有 2、3、4、5、6 張，共 20 張，剩餘 34 張在右上牌庫。</li>
           <li>五個牌堆上緣對齊、只向下延伸，只能操作每欄露出的最後一張。</li>
+          <li>上方有兩個備用格，每格可暫放一張露出牌；之後可再移到分類槽或空牌堆。</li>
+          <li>某個牌堆完全清空後，可以把另一張露出牌或備用格中的牌移到該空欄。</li>
           <li>把金色分類牌放進五個空分類槽，再把奶油白提示牌送到正確分類。</li>
           <li>收齊指定提示後，分類會完成並釋放槽位。</li>
           <li>適時按「發牌」，每批最多五張，固定從左至右放入牌堆；過早發牌可能把關鍵牌壓住，請先確認目前可移動的牌。</li>
-          <li>清空五欄、牌庫並完成全部分類即可過關。</li>
+          <li>清空五欄、兩個備用格、牌庫並完成全部分類即可過關。</li>
         </ol>
         <button class="primary-button" data-close-dialog type="button">我知道了</button>
       </div>

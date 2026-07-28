@@ -204,6 +204,63 @@
     );
   }
 
+  function renderSpareCells(
+    elements,
+    level,
+    state,
+    highlightedAction,
+    handlers,
+  ) {
+    elements.spareCells.replaceChildren(
+      ...state.spareCells.map((cardId, spareIndex) => {
+        if (!cardId) {
+          const empty = document.createElement('button');
+          empty.type = 'button';
+          empty.className = 'spare-cell';
+          empty.dataset.spareIndex = spareIndex;
+          empty.dataset.highlighted = String(
+            highlightedAction?.type === 'moveToSpare' &&
+              highlightedAction.spareIndex === spareIndex,
+          );
+          empty.innerHTML =
+            '<span aria-hidden="true">＋</span><small>暫放</small>';
+          empty.setAttribute(
+            'aria-label',
+            `第 ${spareIndex + 1} 個備用格，空白`,
+          );
+          empty.addEventListener('click', handlers.spareClick);
+          empty.addEventListener('keydown', handlers.targetKeyDown);
+          return empty;
+        }
+
+        const cell = document.createElement('section');
+        cell.className = 'spare-cell';
+        cell.dataset.spareIndex = spareIndex;
+        cell.dataset.occupied = 'true';
+        cell.setAttribute(
+          'aria-label',
+          `第 ${spareIndex + 1} 個備用格，已有一張牌`,
+        );
+        const highlighted =
+          highlightedAction?.cardId === cardId &&
+          highlightedAction?.spareIndex === spareIndex &&
+          highlightedAction?.type !== 'moveToSpare';
+        const card = createCard(
+          level,
+          cardId,
+          true,
+          state.selectedCardId === cardId,
+          highlighted,
+          handlers,
+        );
+        card.style.setProperty('--stack-index', 0);
+        card.dataset.spareIndex = spareIndex;
+        cell.append(card);
+        return cell;
+      }),
+    );
+  }
+
   function renderTableau(elements, level, state, highlightedAction, handlers) {
     elements.tableau.replaceChildren(
       ...state.columns.map((column, columnIndex) => {
@@ -216,9 +273,17 @@
           `第 ${columnIndex + 1} 個牌堆，共 ${column.length} 張`,
         );
         if (column.length === 0) {
-          const empty = document.createElement('div');
+          const empty = document.createElement('button');
+          empty.type = 'button';
           empty.className = 'empty-pile';
+          empty.dataset.columnIndex = columnIndex;
+          empty.dataset.highlighted = String(
+            highlightedAction?.type === 'moveToColumn' &&
+              highlightedAction.columnIndex === columnIndex,
+          );
           empty.innerHTML = '<span aria-hidden="true">🐾</span><small>空牌堆</small>';
+          empty.addEventListener('click', handlers.columnClick);
+          empty.addEventListener('keydown', handlers.targetKeyDown);
           pile.append(empty);
           return pile;
         }
@@ -283,6 +348,13 @@
     elements.gameScreen.dataset.animations = String(settings.animations);
     elements.gameScreen.dataset.largeText = String(settings.largeText);
     renderSlots(elements, level, state, highlightedAction, handlers);
+    renderSpareCells(
+      elements,
+      level,
+      state,
+      highlightedAction,
+      handlers,
+    );
     renderTableau(elements, level, state, highlightedAction, handlers);
   }
 
