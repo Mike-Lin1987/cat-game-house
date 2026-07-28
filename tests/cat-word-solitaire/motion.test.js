@@ -48,3 +48,22 @@ test('吸附位移以浮牌與分類槽中心對齊', () => {
     { x: 120, y: -135 },
   );
 });
+
+test('拖曳結算被新手勢取代時仍會清除浮牌代理', async () => {
+  const events = [];
+  const committed = await Motion.runDragSettlement({
+    animate: async () => {
+      events.push('animate');
+    },
+    isCurrent: () => false,
+    commit: async () => {
+      events.push('commit');
+    },
+    cleanup: () => {
+      events.push('cleanup');
+    },
+  });
+
+  assert.equal(committed, false);
+  assert.deepEqual(events, ['animate', 'cleanup']);
+});

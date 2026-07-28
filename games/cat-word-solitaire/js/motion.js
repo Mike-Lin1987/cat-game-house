@@ -77,11 +77,28 @@
     };
   }
 
+  async function runDragSettlement({
+    animate,
+    isCurrent,
+    commit,
+    cleanup,
+  }) {
+    try {
+      await animate();
+      if (!isCurrent()) return false;
+      await commit();
+      return true;
+    } finally {
+      cleanup();
+    }
+  }
+
   return Object.freeze({
     DROP_STATE,
     getDropState,
     createDealMotion,
     createDragTransform,
     calculateSnapDelta,
+    runDragSettlement,
   });
 });

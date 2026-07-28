@@ -715,44 +715,57 @@
     const ghost = activeGesture.ghost;
     const dropState = target?.dataset.dropState || null;
 
-    if (motionEnabled() && ghost && typeof ghost.animate === 'function') {
-      const currentTransform = ghost.style.transform;
-      let targetTransform =
-        'translate3d(0, 0, 0) rotate(0deg) scale(1)';
-      let opacity = 1;
-      let duration = 190;
-      let easing = 'cubic-bezier(0.2, 0.85, 0.25, 1.25)';
-      if (target && dropState === Motion.DROP_STATE.VALID) {
-        const snap = Motion.calculateSnapDelta(
-          activeGesture.originRect,
-          target.getBoundingClientRect(),
-        );
-        targetTransform =
-          `translate3d(${snap.x}px, ${snap.y}px, 0) rotate(0deg) scale(0.88)`;
-        opacity = 0.35;
-        duration = 150;
-        easing = 'cubic-bezier(0.2, 0.8, 0.2, 1)';
-      }
-      await ghost.animate(
-        [
-          { transform: currentTransform, opacity: 1 },
-          { transform: targetTransform, opacity },
-        ],
-        { duration, easing, fill: 'forwards' },
-      ).finished.catch(() => undefined);
-    }
-
-    if (activeGesture.cancelled || gesture !== activeGesture) return;
-    const cardId = activeGesture.cardId;
-    cleanupGesture(activeGesture);
-    if (!target) return;
-
-    if (gameState.selectedCardId !== cardId) {
-      const next = Core.cloneState(gameState);
-      next.selectedCardId = cardId;
-      gameState = next;
-    }
-    performSelectedOnTarget(target);
+    await Motion.runDragSettlement({
+      async animate() {
+        if (
+          !motionEnabled() ||
+          !ghost ||
+          typeof ghost.animate !== 'function'
+        ) {
+          return;
+        }
+        const currentTransform = ghost.style.transform;
+        let targetTransform =
+          'translate3d(0, 0, 0) rotate(0deg) scale(1)';
+        let opacity = 1;
+        let duration = 190;
+        let easing = 'cubic-bezier(0.2, 0.85, 0.25, 1.25)';
+        if (target && dropState === Motion.DROP_STATE.VALID) {
+          const snap = Motion.calculateSnapDelta(
+            activeGesture.originRect,
+            target.getBoundingClientRect(),
+          );
+          targetTransform =
+            `translate3d(${snap.x}px, ${snap.y}px, 0) rotate(0deg) scale(0.88)`;
+          opacity = 0.35;
+          duration = 150;
+          easing = 'cubic-bezier(0.2, 0.8, 0.2, 1)';
+        }
+        await ghost.animate(
+          [
+            { transform: currentTransform, opacity: 1 },
+            { transform: targetTransform, opacity },
+          ],
+          { duration, easing, fill: 'forwards' },
+        ).finished.catch(() => undefined);
+      },
+      isCurrent() {
+        return !activeGesture.cancelled && gesture === activeGesture;
+      },
+      commit() {
+        if (!target) return;
+        const cardId = activeGesture.cardId;
+        if (gameState.selectedCardId !== cardId) {
+          const next = Core.cloneState(gameState);
+          next.selectedCardId = cardId;
+          gameState = next;
+        }
+        performSelectedOnTarget(target);
+      },
+      cleanup() {
+        cleanupGesture(activeGesture);
+      },
+    });
   }
 
   const handlers = {
@@ -845,7 +858,7 @@
       startFresh(currentLevel.id);
     },
     cardPointerDown(event) {
-      if (motionBusy) return;
+      if (motionBusy || gesture) return;
       const element = event.currentTarget;
       try {
         element.setPointerCapture?.(event.pointerId);
