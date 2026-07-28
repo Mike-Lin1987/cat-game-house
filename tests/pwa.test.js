@@ -125,6 +125,8 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   const gameScript = read('js/app.js');
   const connectPage = read('games/cat-color-connect/index.html');
   const connectScript = read('games/cat-color-connect/js/app.js');
+  const wordPage = read('games/cat-word-solitaire/index.html');
+  const wordScript = read('games/cat-word-solitaire/js/app.js');
 
   assert.match(portalScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
   assert.match(portalScript, /\/index\\\.html/);
@@ -135,4 +137,7 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(connectPage, /data-portal-home/);
   assert.match(connectPage, /class="home-cat-icon"/);
   assert.doesNotMatch(connectPage, /class="icon-button home-link"[^>]*>⌂<\/a>/);
+  assert.match(wordScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
+  assert.match(wordScript, /const PORTAL_HREF/);
+  assert.match(wordPage, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home/);
 });

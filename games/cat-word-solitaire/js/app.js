@@ -1,6 +1,13 @@
 (function initializeCatWordGame() {
   'use strict';
 
+  const PORTAL_HREF =
+    window.location.protocol === 'file:' ? '../../index.html' : '../../';
+  const portalHomeLink = document.querySelector('[data-portal-home]');
+  if (portalHomeLink) {
+    portalHomeLink.href = PORTAL_HREF;
+  }
+
   const Config = window.CAT_WORD_CONFIG;
   const Core = window.CatWordCore;
   const Solver = window.CatWordSolver;
@@ -764,4 +771,3 @@
   }
   renderHome();
 })();
-
