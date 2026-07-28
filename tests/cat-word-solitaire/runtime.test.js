@@ -45,6 +45,8 @@ test('發牌與拖曳動效有獨立狀態且可由動畫設定停用', () => {
   assert.match(app, /createDragTransform/);
   assert.match(app, /calculateSnapDelta/);
   assert.match(app, /prefers-reduced-motion/);
+  assert.match(app, /Core\.canActivateCategory\(/);
+  assert.match(app, /Core\.canPlaceItem\(/);
   assert.match(
     app,
     /window\.addEventListener\('pointermove', handlers\.cardPointerMove\)/,
@@ -54,6 +56,8 @@ test('發牌與拖曳動效有獨立狀態且可由動畫設定停用', () => {
     /window\.addEventListener\('pointerup', handlers\.cardPointerUp\)/,
   );
   assert.match(app, /try\s*\{\s*element\.setPointerCapture/);
+  assert.match(app, /function renderHome\(\)\s*\{\s*clearGesture\(\)/);
+  assert.match(app, /function renderLevels\(\)\s*\{\s*clearGesture\(\)/);
 });
 
 test('五列接龍牌堆上緣對齊並只向下延伸', () => {

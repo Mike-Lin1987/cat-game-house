@@ -249,6 +249,7 @@
   }
 
   function renderHome() {
+    clearGesture();
     progress = Storage.loadProgress();
     settings = progress.settings;
     currentScreen = 'home';
@@ -257,6 +258,7 @@
   }
 
   function renderLevels() {
+    clearGesture();
     progress = Storage.loadProgress();
     currentScreen = 'levels';
     Renderer.showScreen(elements, 'levels');
@@ -553,10 +555,22 @@
     for (const slot of elements.categorySlots.querySelectorAll(
       '.category-slot',
     )) {
-      slot.dataset.dropState = Motion.getDropState(
-        card,
-        slot.dataset.categoryId || null,
-      );
+      const slotIndex = Number(slot.dataset.slotIndex);
+      const isLegal =
+        card.cardType === 'category'
+          ? Core.canActivateCategory(
+              gameState,
+              currentLevel,
+              card.id,
+              slotIndex,
+            )
+          : Core.canPlaceItem(
+              gameState,
+              currentLevel,
+              card.id,
+              slot.dataset.categoryId || null,
+            );
+      slot.dataset.dropState = Motion.getDropState(isLegal);
     }
   }
 

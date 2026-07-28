@@ -5,20 +5,9 @@ const test = require('node:test');
 
 const Motion = require('../../games/cat-word-solitaire/js/motion.js');
 
-test('分類牌只把空分類槽標示為合法目標', () => {
-  const card = { cardType: 'category', categoryId: 'transport' };
-
-  assert.equal(Motion.getDropState(card, null), 'valid');
-  assert.equal(Motion.getDropState(card, ''), 'valid');
-  assert.equal(Motion.getDropState(card, 'fruit'), 'invalid');
-});
-
-test('提示牌只把同分類的已啟用槽標示為合法目標', () => {
-  const card = { cardType: 'item', categoryId: 'transport' };
-
-  assert.equal(Motion.getDropState(card, 'transport'), 'valid');
-  assert.equal(Motion.getDropState(card, null), 'invalid');
-  assert.equal(Motion.getDropState(card, 'fruit'), 'invalid');
+test('落點動效只映射 Core 回傳的合法性', () => {
+  assert.equal(Motion.getDropState(true), 'valid');
+  assert.equal(Motion.getDropState(false), 'invalid');
 });
 
 test('五張發牌依欄位錯開並從牌庫中心飛向目標', () => {

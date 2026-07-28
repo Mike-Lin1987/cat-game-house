@@ -15,16 +15,8 @@
     INVALID: 'invalid',
   });
 
-  function getDropState(card, slotCategoryId) {
-    if (!card || (card.cardType !== 'category' && card.cardType !== 'item')) {
-      return DROP_STATE.INVALID;
-    }
-    if (card.cardType === 'category') {
-      return slotCategoryId ? DROP_STATE.INVALID : DROP_STATE.VALID;
-    }
-    return slotCategoryId === card.categoryId
-      ? DROP_STATE.VALID
-      : DROP_STATE.INVALID;
+  function getDropState(isLegal) {
+    return isLegal ? DROP_STATE.VALID : DROP_STATE.INVALID;
   }
 
   function center(rect) {

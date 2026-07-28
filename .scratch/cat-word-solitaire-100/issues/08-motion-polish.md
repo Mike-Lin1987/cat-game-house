@@ -1,6 +1,6 @@
 # Ticket 08：發牌與拖曳動效
 
-- Status: ready-for-agent
+- Status: done
 - Blocked by: 04-runtime-ui
 
 ## 範圍
