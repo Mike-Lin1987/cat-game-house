@@ -528,6 +528,11 @@ button:disabled {
   color: var(--muted);
   background: linear-gradient(180deg, #142c43, #0c2035);
   text-align: center;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    opacity 140ms ease,
+    transform 140ms ease;
 }
 
 .category-slot[data-category-id]:not([data-category-id=""]) {
@@ -540,6 +545,35 @@ button:disabled {
 .category-slot[data-highlighted="true"] {
   outline: 3px solid var(--focus);
   outline-offset: -2px;
+}
+
+.category-slot[data-drop-state="valid"] {
+  border-color: var(--success);
+  border-style: solid;
+  box-shadow:
+    0 0 0 2px rgb(103 201 135 / 0.28),
+    0 8px 18px rgb(0 0 0 / 0.24);
+  transform: translateY(-2px);
+}
+
+.category-slot[data-drop-state="invalid"] {
+  border-color: rgb(232 93 93 / 0.7);
+  opacity: 0.62;
+}
+
+.category-slot[data-drop-state="valid"][data-drop-hover="true"] {
+  color: var(--cream);
+  background: linear-gradient(160deg, #246b4b, #174936);
+  box-shadow:
+    0 0 0 4px rgb(103 201 135 / 0.32),
+    0 12px 24px rgb(0 0 0 / 0.32);
+  transform: translateY(-4px) scale(1.025);
+}
+
+.category-slot[data-drop-state="invalid"][data-drop-hover="true"] {
+  animation: invalid-target-shake 180ms ease-in-out;
+  border-color: var(--error);
+  opacity: 0.9;
 }
 
 .category-slot strong,
@@ -702,8 +736,52 @@ button:disabled {
 
 .playing-card.dragging {
   z-index: 30;
-  opacity: 0.86;
-  transform: scale(1.04) translateY(-4px);
+}
+
+.playing-card.drag-source {
+  opacity: 0.28;
+  filter: saturate(0.45);
+}
+
+.drag-ghost {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+  box-shadow:
+    0 18px 34px rgb(0 0 0 / 0.45),
+    0 0 0 2px rgb(242 207 130 / 0.34);
+}
+
+.drag-ghost[data-drop-state="valid"] {
+  box-shadow:
+    0 18px 34px rgb(0 0 0 / 0.45),
+    0 0 0 4px rgb(103 201 135 / 0.64);
+}
+
+.drag-ghost[data-drop-state="invalid"] {
+  box-shadow:
+    0 18px 34px rgb(0 0 0 / 0.45),
+    0 0 0 4px rgb(232 93 93 / 0.56);
+}
+
+.dealt-card {
+  z-index: 40;
+  will-change: transform, opacity;
+}
+
+.game-screen[data-dealing="true"] .deck-art {
+  animation: deck-flick 350ms ease-in-out 2 alternate;
+}
+
+.game-screen[data-dealing="true"] .deck-button {
+  cursor: wait;
 }
 
 .card-symbol,
@@ -1166,6 +1244,31 @@ dialog::backdrop {
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 1ms !important;
+  }
+}
+
+@keyframes deck-flick {
+  from {
+    transform: translateX(0) rotate(0);
+  }
+
+  to {
+    transform: translateX(-4px) rotate(-2deg);
+  }
+}
+
+@keyframes invalid-target-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-3px);
+  }
+
+  70% {
+    transform: translateX(3px);
   }
 }
 

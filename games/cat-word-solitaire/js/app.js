@@ -12,6 +12,7 @@
   const Core = window.CatWordCore;
   const Solver = window.CatWordSolver;
   const Storage = window.CatWordStorage;
+  const Motion = window.CatWordMotion;
   const Renderer = window.CatWordRenderer;
   const levels = window.CAT_WORD_LEVELS;
   const levelsById = new Map(levels.map((level) => [level.id, level]));
@@ -41,6 +42,7 @@
     elapsed: byId('elapsed'),
     hints: byId('hints'),
     gameSettingsButton: byId('game-settings-button'),
+    gameTable: byId('game-table'),
     categorySlots: byId('category-slots'),
     deckCount: byId('deck-count'),
     dealButton: byId('deal-button'),
@@ -74,9 +76,13 @@
   let lastHintSignature = null;
   let gesture = null;
   let suppressClickUntil = 0;
+  let motionBusy = false;
   let audioContext = null;
   let previousDialogFocus = null;
   let resetArmed = false;
+  const reducedMotionQuery = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  );
 
   function announce(message) {
     elements.liveRegion.textContent = '';
@@ -184,6 +190,64 @@
     progress = Storage.loadProgress();
   }
 
+  function motionEnabled() {
+    return settings.animations && !reducedMotionQuery.matches;
+  }
+
+  function setMotionBusy(busy) {
+    motionBusy = Boolean(busy);
+    elements.gameScreen.dataset.dealing = String(motionBusy);
+    elements.gameTable.setAttribute('aria-busy', String(motionBusy));
+    elements.dealButton.disabled =
+      motionBusy ||
+      !currentLevel ||
+      !gameState ||
+      !Core.canDealNextBatch(gameState, currentLevel) ||
+      gameState.completed ||
+      gameState.failed;
+  }
+
+  function findRenderedCard(cardId) {
+    return [...elements.tableau.querySelectorAll('.playing-card')].find(
+      (card) => card.dataset.cardId === cardId,
+    );
+  }
+
+  async function animateDeal(cardIds) {
+    if (!motionEnabled() || !Array.isArray(cardIds) || cardIds.length === 0) {
+      return;
+    }
+    const deckArt = elements.dealButton.querySelector('.deck-art');
+    const cards = cardIds
+      .map((cardId) => findRenderedCard(cardId))
+      .filter(Boolean);
+    if (!deckArt || cards.length === 0) return;
+
+    setMotionBusy(true);
+    await new Promise((resolve) => window.requestAnimationFrame(resolve));
+    const deckRect = deckArt.getBoundingClientRect();
+    const animations = cards.map((card) => {
+      const columnIndex = Number(card.dataset.columnIndex);
+      const motion = Motion.createDealMotion(
+        deckRect,
+        card.getBoundingClientRect(),
+        columnIndex,
+      );
+      card.classList.add('dealt-card');
+      if (typeof card.animate !== 'function') {
+        return Promise.resolve();
+      }
+      return card.animate(motion.keyframes, motion.options).finished.catch(
+        () => undefined,
+      );
+    });
+    await Promise.all(animations);
+    for (const card of cards) {
+      card.classList.remove('dealt-card');
+    }
+    setMotionBusy(false);
+  }
+
   function renderHome() {
     progress = Storage.loadProgress();
     settings = progress.settings;
@@ -209,6 +273,7 @@
 
   function renderGame() {
     if (!currentLevel || !gameState) return;
+    clearGesture();
     currentScreen = 'game';
     Renderer.showScreen(elements, 'game');
     Renderer.renderGame(
@@ -220,6 +285,11 @@
       highlightedAction,
       handlers,
     );
+    elements.gameScreen.dataset.dealing = String(motionBusy);
+    elements.gameTable.setAttribute('aria-busy', String(motionBusy));
+    if (motionBusy) {
+      elements.dealButton.disabled = true;
+    }
   }
 
   function startFresh(levelId) {
@@ -358,6 +428,9 @@
     const completedEvent = result.events.find(
       (event) => event.type === 'category-completed',
     );
+    const dealtEvent = result.events.find(
+      (event) => event.type === 'dealt',
+    );
     const invalidEvent = result.events.find(
       (event) => event.type === 'invalid-drop',
     );
@@ -377,6 +450,9 @@
 
     saveSession();
     renderGame();
+    if (dealtEvent) {
+      void animateDeal(dealtEvent.cardIds);
+    }
     if (gameState.completed) {
       completeCurrentLevel();
     } else if (gameState.failed) {
@@ -464,11 +540,139 @@
     openDialog(dialogs.zoom);
   }
 
+  function resetDropTargets() {
+    for (const slot of elements.categorySlots.querySelectorAll(
+      '.category-slot',
+    )) {
+      delete slot.dataset.dropState;
+      delete slot.dataset.dropHover;
+    }
+  }
+
+  function prepareDropTargets(card) {
+    for (const slot of elements.categorySlots.querySelectorAll(
+      '.category-slot',
+    )) {
+      slot.dataset.dropState = Motion.getDropState(
+        card,
+        slot.dataset.categoryId || null,
+      );
+    }
+  }
+
+  function beginDrag(activeGesture) {
+    const card = Core.getCardById(currentLevel, activeGesture.cardId);
+    const rect = activeGesture.element.getBoundingClientRect();
+    const ghost = activeGesture.element.cloneNode(true);
+    ghost.classList.add('drag-ghost');
+    ghost.classList.remove('drag-source');
+    ghost.removeAttribute('id');
+    ghost.setAttribute('aria-hidden', 'true');
+    ghost.tabIndex = -1;
+    ghost.style.top = `${rect.top}px`;
+    ghost.style.left = `${rect.left}px`;
+    ghost.style.width = `${rect.width}px`;
+    ghost.style.height = `${rect.height}px`;
+    ghost.style.transform =
+      'translate3d(0, 0, 0) rotate(0deg) scale(1)';
+    document.body.append(ghost);
+
+    activeGesture.originRect = rect;
+    activeGesture.ghost = ghost;
+    activeGesture.element.classList.add('dragging', 'drag-source');
+    document.body.dataset.dragging = 'true';
+    prepareDropTargets(card);
+  }
+
+  function updateDrag(activeGesture, event) {
+    activeGesture.ghost.style.transform = Motion.createDragTransform(
+      { x: activeGesture.startX, y: activeGesture.startY },
+      { x: event.clientX, y: event.clientY },
+    );
+    const hoveredSlot = document
+      .elementFromPoint(event.clientX, event.clientY)
+      ?.closest('.category-slot');
+    for (const slot of elements.categorySlots.querySelectorAll(
+      '.category-slot',
+    )) {
+      if (slot === hoveredSlot) {
+        slot.dataset.dropHover = 'true';
+      } else {
+        delete slot.dataset.dropHover;
+      }
+    }
+    if (hoveredSlot) {
+      activeGesture.ghost.dataset.dropState =
+        hoveredSlot.dataset.dropState;
+    } else {
+      delete activeGesture.ghost.dataset.dropState;
+    }
+    activeGesture.hoveredSlot = hoveredSlot || null;
+  }
+
+  function cleanupGesture(activeGesture) {
+    if (!activeGesture) return;
+    window.clearTimeout(activeGesture.longPressTimer);
+    activeGesture.element?.classList.remove('dragging', 'drag-source');
+    activeGesture.ghost?.remove();
+    resetDropTargets();
+    delete document.body.dataset.dragging;
+    if (gesture === activeGesture) {
+      gesture = null;
+    }
+  }
+
   function clearGesture() {
     if (!gesture) return;
-    window.clearTimeout(gesture.longPressTimer);
-    gesture.element?.classList.remove('dragging');
-    gesture = null;
+    const activeGesture = gesture;
+    activeGesture.cancelled = true;
+    cleanupGesture(activeGesture);
+  }
+
+  async function settleDrag(activeGesture, slot) {
+    activeGesture.finishing = true;
+    window.clearTimeout(activeGesture.longPressTimer);
+    const ghost = activeGesture.ghost;
+    const dropState = slot?.dataset.dropState || null;
+
+    if (motionEnabled() && ghost && typeof ghost.animate === 'function') {
+      const currentTransform = ghost.style.transform;
+      let targetTransform =
+        'translate3d(0, 0, 0) rotate(0deg) scale(1)';
+      let opacity = 1;
+      let duration = 190;
+      let easing = 'cubic-bezier(0.2, 0.85, 0.25, 1.25)';
+      if (slot && dropState === Motion.DROP_STATE.VALID) {
+        const snap = Motion.calculateSnapDelta(
+          activeGesture.originRect,
+          slot.getBoundingClientRect(),
+        );
+        targetTransform =
+          `translate3d(${snap.x}px, ${snap.y}px, 0) rotate(0deg) scale(0.88)`;
+        opacity = 0.35;
+        duration = 150;
+        easing = 'cubic-bezier(0.2, 0.8, 0.2, 1)';
+      }
+      await ghost.animate(
+        [
+          { transform: currentTransform, opacity: 1 },
+          { transform: targetTransform, opacity },
+        ],
+        { duration, easing, fill: 'forwards' },
+      ).finished.catch(() => undefined);
+    }
+
+    if (activeGesture.cancelled || gesture !== activeGesture) return;
+    const cardId = activeGesture.cardId;
+    cleanupGesture(activeGesture);
+    if (!slot) return;
+
+    if (gameState.selectedCardId !== cardId) {
+      const next = Core.cloneState(gameState);
+      next.selectedCardId = cardId;
+      gameState = next;
+    }
+    performSelectedOnSlot(Number(slot.dataset.slotIndex));
   }
 
   const handlers = {
@@ -512,6 +716,7 @@
       renderLevels();
     },
     deal() {
+      if (motionBusy) return;
       applyResult(Core.dealNextBatch(gameState, currentLevel));
     },
     undo() {
@@ -560,8 +765,13 @@
       startFresh(currentLevel.id);
     },
     cardPointerDown(event) {
+      if (motionBusy) return;
       const element = event.currentTarget;
-      element.setPointerCapture?.(event.pointerId);
+      try {
+        element.setPointerCapture?.(event.pointerId);
+      } catch {
+        // Synthetic and accessibility-driven pointer events may not be capturable.
+      }
       gesture = {
         element,
         pointerId: event.pointerId,
@@ -569,6 +779,8 @@
         startX: event.clientX,
         startY: event.clientY,
         dragged: false,
+        finishing: false,
+        cancelled: false,
         longPressTimer: window.setTimeout(() => {
           if (gesture && !gesture.dragged) {
             suppressClickUntil = performance.now() + 500;
@@ -578,36 +790,42 @@
       };
     },
     cardPointerMove(event) {
-      if (!gesture || gesture.pointerId !== event.pointerId) return;
+      if (
+        !gesture ||
+        gesture.pointerId !== event.pointerId ||
+        gesture.finishing
+      ) {
+        return;
+      }
       const distance = Math.hypot(
         event.clientX - gesture.startX,
         event.clientY - gesture.startY,
       );
       if (distance > 8) {
         window.clearTimeout(gesture.longPressTimer);
-        gesture.dragged = true;
-        gesture.element.classList.add('dragging');
+        if (!gesture.dragged) {
+          gesture.dragged = true;
+          beginDrag(gesture);
+        }
+        updateDrag(gesture, event);
       }
     },
     cardPointerUp(event) {
-      if (!gesture || gesture.pointerId !== event.pointerId) return;
+      if (
+        !gesture ||
+        gesture.pointerId !== event.pointerId ||
+        gesture.finishing
+      ) {
+        return;
+      }
       window.clearTimeout(gesture.longPressTimer);
       if (gesture.dragged) {
         const slot = document
           .elementFromPoint(event.clientX, event.clientY)
           ?.closest('.category-slot');
-        const cardId = gesture.cardId;
         suppressClickUntil = performance.now() + 500;
-        clearGesture();
-        if (slot) {
-          if (gameState.selectedCardId !== cardId) {
-            const next = Core.cloneState(gameState);
-            next.selectedCardId = cardId;
-            gameState = next;
-          }
-          performSelectedOnSlot(Number(slot.dataset.slotIndex));
-          return;
-        }
+        void settleDrag(gesture, slot || null);
+        return;
       }
       clearGesture();
     },
@@ -740,6 +958,9 @@
     handlers.backLevels();
   });
 
+  window.addEventListener('pointermove', handlers.cardPointerMove);
+  window.addEventListener('pointerup', handlers.cardPointerUp);
+  window.addEventListener('pointercancel', handlers.cardPointerCancel);
   window.addEventListener('blur', clearGesture);
   document.addEventListener('visibilitychange', clearGesture);
   window.setInterval(() => {

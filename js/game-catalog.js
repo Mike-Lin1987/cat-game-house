@@ -95,6 +95,7 @@
         './games/cat-word-solitaire/js/core.js',
         './games/cat-word-solitaire/js/solver.js',
         './games/cat-word-solitaire/js/storage.js',
+        './games/cat-word-solitaire/js/motion.js',
         './games/cat-word-solitaire/js/renderer.js',
         './games/cat-word-solitaire/js/app.js',
         './games/cat-word-solitaire/js/review.js',

@@ -142,9 +142,6 @@
     }
     if (playable) {
       button.addEventListener('pointerdown', handlers.cardPointerDown);
-      button.addEventListener('pointermove', handlers.cardPointerMove);
-      button.addEventListener('pointerup', handlers.cardPointerUp);
-      button.addEventListener('pointercancel', handlers.cardPointerCancel);
       button.addEventListener('click', handlers.cardClick);
       button.addEventListener('keydown', handlers.cardKeyDown);
     }
@@ -313,4 +310,3 @@
     showScreen,
   });
 });
-

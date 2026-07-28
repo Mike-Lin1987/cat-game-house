@@ -18,17 +18,42 @@ test('遊戲 runtime 可由 file 直接載入且不註冊 Service Worker 或 fet
     'games/cat-word-solitaire/js/core.js',
     'games/cat-word-solitaire/js/solver.js',
     'games/cat-word-solitaire/js/storage.js',
+    'games/cat-word-solitaire/js/motion.js',
     'games/cat-word-solitaire/js/renderer.js',
     'games/cat-word-solitaire/js/app.js',
   ].map(read).join('\n');
 
   assert.match(html, /<script src="js\/config\.js"><\/script>/);
   assert.match(html, /<script src="js\/data\/levels-index\.js"><\/script>/);
+  assert.match(html, /<script src="js\/motion\.js"><\/script>/);
   assert.match(html, /<link rel="icon" href="\.\.\/\.\.\/assets\/icons\/icon\.svg"/);
   assert.doesNotMatch(html, /type=["']module["']/i);
   assert.doesNotMatch(`${html}\n${scripts}`, /\bfetch\s*\(/);
   assert.doesNotMatch(`${html}\n${scripts}`, /serviceWorker\.register/);
   assert.doesNotMatch(`${html}\n${scripts}`, /https?:\/\//i);
+});
+
+test('發牌與拖曳動效有獨立狀態且可由動畫設定停用', () => {
+  const styles = read('games/cat-word-solitaire/css/app.css');
+  const app = read('games/cat-word-solitaire/js/app.js');
+
+  assert.match(styles, /\.drag-ghost/);
+  assert.match(styles, /\.category-slot\[data-drop-state="valid"\]/);
+  assert.match(styles, /\.category-slot\[data-drop-state="invalid"\]/);
+  assert.match(styles, /\.game-screen\[data-dealing="true"\]/);
+  assert.match(app, /createDealMotion/);
+  assert.match(app, /createDragTransform/);
+  assert.match(app, /calculateSnapDelta/);
+  assert.match(app, /prefers-reduced-motion/);
+  assert.match(
+    app,
+    /window\.addEventListener\('pointermove', handlers\.cardPointerMove\)/,
+  );
+  assert.match(
+    app,
+    /window\.addEventListener\('pointerup', handlers\.cardPointerUp\)/,
+  );
+  assert.match(app, /try\s*\{\s*element\.setPointerCapture/);
 });
 
 test('五列接龍牌堆上緣對齊並只向下延伸', () => {
