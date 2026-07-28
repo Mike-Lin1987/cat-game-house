@@ -102,14 +102,29 @@ function moveLimitForChapter(parMoves, chapter) {
   return parMoves + MOVE_BUFFERS[chapter - 1];
 }
 
+function difficultyProfileErrors(stats, profile) {
+  const errors = [];
+  if (!stats?.solved) {
+    errors.push('獨立求解失敗');
+    return errors;
+  }
+  if (stats.nodesVisited < profile.minNodes) {
+    errors.push(`Solver 節點低於門檻 ${profile.minNodes}`);
+  }
+  if (stats.nodesVisited > MAX_SOLVER_NODES) {
+    errors.push(`Solver 節點超過上限 ${MAX_SOLVER_NODES}`);
+  }
+  if (stats.backtracks < profile.minBacktracks) {
+    errors.push(`Solver 回溯低於門檻 ${profile.minBacktracks}`);
+  }
+  if (stats.branchingStates < profile.minBranchingStates) {
+    errors.push(`Solver 分支低於門檻 ${profile.minBranchingStates}`);
+  }
+  return errors;
+}
+
 function meetsDifficultyProfile(stats, profile) {
-  return Boolean(
-    stats?.solved &&
-      stats.nodesVisited >= profile.minNodes &&
-      stats.nodesVisited <= MAX_SOLVER_NODES &&
-      stats.backtracks >= profile.minBacktracks &&
-      stats.branchingStates >= profile.minBranchingStates,
-  );
+  return difficultyProfileErrors(stats, profile).length === 0;
 }
 
 function calculateDifficultyScore(stats, profile = null) {
@@ -133,37 +148,6 @@ function difficultyDistance(stats, profile) {
     (stats.backtracks - profile.minBacktracks) * 8 +
     (stats.branchingStates - profile.minBranchingStates) * 30
   );
-}
-
-function attemptFromSeed(ordinal, seed) {
-  const attempt = (seed - 910000 - ordinal * 7919) / 104729;
-  return Number.isInteger(attempt) &&
-    attempt >= 0 &&
-    attempt < MAX_CANDIDATE_ATTEMPTS
-    ? attempt
-    : null;
-}
-
-function loadPublishedAttemptHints() {
-  try {
-    const published = require(path.join(OUTPUT_DIRECTORY, 'levels-index.js'));
-    if (
-      published.length !== 100 ||
-      published.some((level) => level.generatorVersion !== GENERATOR_VERSION)
-    ) {
-      return new Map();
-    }
-    return new Map(
-      published
-        .map((level) => [
-          level.ordinal,
-          attemptFromSeed(level.ordinal, level.seed),
-        ])
-        .filter(([, attempt]) => attempt !== null),
-    );
-  } catch {
-    return new Map();
-  }
 }
 
 function categoryCountForLevel(ordinal) {
@@ -556,16 +540,21 @@ function serializeIndex() {
   return `(function (root, factory) {
   'use strict';
   const api = factory(
-    root?.CAT_WORD_LEVELS_001_020 ||
-      (typeof module === 'object' && module.exports ? require('./levels-001-020.js') : []),
-    root?.CAT_WORD_LEVELS_021_040 ||
-      (typeof module === 'object' && module.exports ? require('./levels-021-040.js') : []),
-    root?.CAT_WORD_LEVELS_041_060 ||
-      (typeof module === 'object' && module.exports ? require('./levels-041-060.js') : []),
-    root?.CAT_WORD_LEVELS_061_080 ||
-      (typeof module === 'object' && module.exports ? require('./levels-061-080.js') : []),
-    root?.CAT_WORD_LEVELS_081_100 ||
-      (typeof module === 'object' && module.exports ? require('./levels-081-100.js') : []),
+    typeof module === 'object' && module.exports
+      ? require('./levels-001-020.js')
+      : root?.CAT_WORD_LEVELS_001_020 || [],
+    typeof module === 'object' && module.exports
+      ? require('./levels-021-040.js')
+      : root?.CAT_WORD_LEVELS_021_040 || [],
+    typeof module === 'object' && module.exports
+      ? require('./levels-041-060.js')
+      : root?.CAT_WORD_LEVELS_041_060 || [],
+    typeof module === 'object' && module.exports
+      ? require('./levels-061-080.js')
+      : root?.CAT_WORD_LEVELS_061_080 || [],
+    typeof module === 'object' && module.exports
+      ? require('./levels-081-100.js')
+      : root?.CAT_WORD_LEVELS_081_100 || [],
   );
   if (typeof module === 'object' && module.exports) {
     module.exports = api;
@@ -583,36 +572,17 @@ function generateLevels() {
   const { categorySelections, usageByCategory } = selectContent();
   const signatures = new Set();
   const levels = [];
-  const publishedAttemptHints = loadPublishedAttemptHints();
 
   for (let ordinal = 1; ordinal <= 100; ordinal += 1) {
     let accepted = null;
-    let usedPublishedHint = false;
     const chapter = Math.ceil(ordinal / 20);
-    const publishedAttempt = publishedAttemptHints.get(ordinal);
-    if (publishedAttempt !== undefined) {
-      const candidate = createCandidate(
-        ordinal,
-        categorySelections[ordinal - 1],
-        publishedAttempt,
-        { maxNodes: MAX_SOLVER_NODES },
-      );
-      if (candidate) {
-        const signature = Solver.createLayoutSignature(candidate);
-        if (!signatures.has(signature)) {
-          candidate.layoutSignature = signature;
-          accepted = candidate;
-          usedPublishedHint = true;
-        }
-      }
-    }
     const baseNodeLimit = CANDIDATE_SEARCH_NODE_LIMITS[chapter - 1];
     const nodeLimits = [
       baseNodeLimit,
       Math.min(MAX_SOLVER_NODES, baseNodeLimit * 2),
       MAX_SOLVER_NODES,
     ].filter((limit, index, limits) => limits.indexOf(limit) === index);
-    for (const nodeLimit of accepted ? [] : nodeLimits) {
+    for (const nodeLimit of nodeLimits) {
       for (
         let attempt = 0;
         attempt < MAX_CANDIDATE_ATTEMPTS;
@@ -660,8 +630,7 @@ function generateLevels() {
     console.log(
       `${accepted.id}：節點 ${accepted.solverStats.nodesVisited}、` +
         `回溯 ${accepted.solverStats.backtracks}、` +
-        `分支 ${accepted.solverStats.branchingStates}` +
-        (usedPublishedHint ? '（已驗證發布 seed）' : ''),
+        `分支 ${accepted.solverStats.branchingStates}`,
     );
   }
 
@@ -672,8 +641,8 @@ function generateLevels() {
   return levels;
 }
 
-function writeLevels(levels) {
-  fs.mkdirSync(OUTPUT_DIRECTORY, { recursive: true });
+function buildReleaseFiles(levels) {
+  const files = new Map();
   const groups = [
     [1, 20, 'CAT_WORD_LEVELS_001_020', 'levels-001-020.js'],
     [21, 40, 'CAT_WORD_LEVELS_021_040', 'levels-021-040.js'],
@@ -682,14 +651,61 @@ function writeLevels(levels) {
     [81, 100, 'CAT_WORD_LEVELS_081_100', 'levels-081-100.js'],
   ];
   for (const [start, end, globalName, filename] of groups) {
-    const content = serializeArray(globalName, levels.slice(start - 1, end));
-    fs.writeFileSync(path.join(OUTPUT_DIRECTORY, filename), content, 'utf8');
+    files.set(
+      filename,
+      serializeArray(globalName, levels.slice(start - 1, end)),
+    );
   }
-  fs.writeFileSync(
-    path.join(OUTPUT_DIRECTORY, 'levels-index.js'),
-    serializeIndex(),
-    'utf8',
+  files.set('levels-index.js', serializeIndex());
+  return files;
+}
+
+function validateReleaseCandidate(levels) {
+  const { analyzeLevels, assertValid } = require('./validate-levels.js');
+  return assertValid(analyzeLevels(levels, module.exports));
+}
+
+function writeLevels(levels) {
+  validateReleaseCandidate(levels);
+  const releaseFiles = buildReleaseFiles(levels);
+  const parentDirectory = path.dirname(OUTPUT_DIRECTORY);
+  fs.mkdirSync(parentDirectory, { recursive: true });
+  const stagingDirectory = fs.mkdtempSync(
+    path.join(parentDirectory, '.data-staging-'),
   );
+  const backupDirectory = `${stagingDirectory}-backup`;
+
+  try {
+    for (const [filename, content] of releaseFiles) {
+      fs.writeFileSync(path.join(stagingDirectory, filename), content, 'utf8');
+    }
+    const stagedLevels = require(path.join(stagingDirectory, 'levels-index.js'));
+    if (JSON.stringify(stagedLevels) !== JSON.stringify(levels)) {
+      throw new Error('staging 關卡序列化結果與已驗證資料不一致');
+    }
+
+    if (fs.existsSync(OUTPUT_DIRECTORY)) {
+      fs.renameSync(OUTPUT_DIRECTORY, backupDirectory);
+    }
+    try {
+      fs.renameSync(stagingDirectory, OUTPUT_DIRECTORY);
+    } catch (error) {
+      if (
+        !fs.existsSync(OUTPUT_DIRECTORY) &&
+        fs.existsSync(backupDirectory)
+      ) {
+        fs.renameSync(backupDirectory, OUTPUT_DIRECTORY);
+      }
+      throw error;
+    }
+    if (fs.existsSync(backupDirectory)) {
+      fs.rmSync(backupDirectory, { recursive: true, force: true });
+    }
+  } finally {
+    if (fs.existsSync(stagingDirectory)) {
+      fs.rmSync(stagingDirectory, { recursive: true, force: true });
+    }
+  }
 }
 
 function main() {
@@ -710,10 +726,6 @@ function main() {
   );
 }
 
-if (require.main === module) {
-  main();
-}
-
 module.exports = Object.freeze({
   GENERATOR_VERSION,
   TOTAL_CARDS_PER_LEVEL,
@@ -727,14 +739,19 @@ module.exports = Object.freeze({
   itemCountForLevel,
   selectContent,
   moveLimitForChapter,
+  difficultyProfileErrors,
   meetsDifficultyProfile,
   calculateDifficultyScore,
-  attemptFromSeed,
-  loadPublishedAttemptHints,
   buildSemanticCardOrder,
   buildPhysicalSchedule,
   buildLayout,
   createCandidate,
   generateLevels,
+  buildReleaseFiles,
+  validateReleaseCandidate,
   writeLevels,
 });
+
+if (require.main === module) {
+  main();
+}

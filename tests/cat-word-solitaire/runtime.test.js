@@ -27,6 +27,7 @@ test('遊戲 runtime 可由 file 直接載入且不註冊 Service Worker 或 fet
   assert.match(html, /<script src="js\/data\/levels-index\.js"><\/script>/);
   assert.match(html, /<script src="js\/motion\.js"><\/script>/);
   assert.match(html, /<link rel="icon" href="\.\.\/\.\.\/assets\/icons\/icon\.svg"/);
+  assert.doesNotMatch(html, /<link rel="manifest"/);
   assert.doesNotMatch(html, /type=["']module["']/i);
   assert.doesNotMatch(`${html}\n${scripts}`, /\bfetch\s*\(/);
   assert.doesNotMatch(`${html}\n${scripts}`, /serviceWorker\.register/);

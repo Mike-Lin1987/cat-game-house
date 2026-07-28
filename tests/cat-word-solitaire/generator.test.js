@@ -2,6 +2,9 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
 
 const Generator = require('../../scripts/cat-word-solitaire/generate-layouts.js');
 
@@ -35,12 +38,80 @@ test('步數容錯依章節固定為 parMoves 加 5／4／3／2／1', () => {
   }
 });
 
-test('發布 seed 可還原成固定候選編號供重現性驗證', () => {
-  const ordinal = 42;
-  const attempt = 317;
-  const seed = 910000 + ordinal * 7919 + attempt * 104729;
-  assert.equal(Generator.attemptFromSeed(ordinal, seed), attempt);
-  assert.equal(Generator.attemptFromSeed(ordinal, seed + 1), null);
+test('正式檔寫入前必須先通過完整關卡驗證', () => {
+  assert.equal(typeof Generator.validateReleaseCandidate, 'function');
+  assert.throws(
+    () => Generator.validateReleaseCandidate([]),
+    /關卡總數應為 100/,
+  );
+});
+
+test('完整驗證失敗時不覆寫任何正式關卡檔', () => {
+  const dataDirectory = path.resolve(
+    __dirname,
+    '..',
+    '..',
+    'games',
+    'cat-word-solitaire',
+    'js',
+    'data',
+  );
+  const before = new Map(
+    fs
+      .readdirSync(dataDirectory)
+      .filter((filename) => filename.endsWith('.js'))
+      .map((filename) => [
+        filename,
+        fs.readFileSync(path.join(dataDirectory, filename), 'utf8'),
+      ]),
+  );
+  assert.throws(() => Generator.writeLevels([]), /關卡總數應為 100/);
+  for (const [filename, content] of before) {
+    assert.equal(
+      fs.readFileSync(path.join(dataDirectory, filename), 'utf8'),
+      content,
+      filename,
+    );
+  }
+});
+
+test('staging CommonJS 冷讀不會誤用既有全域關卡群組', () => {
+  const levels = require('../../games/cat-word-solitaire/js/data/levels-index.js');
+  const files = Generator.buildReleaseFiles(levels);
+  const stagingDirectory = fs.mkdtempSync(
+    path.join(os.tmpdir(), 'cat-word-staging-'),
+  );
+  const globalNames = [
+    'CAT_WORD_LEVELS_001_020',
+    'CAT_WORD_LEVELS_021_040',
+    'CAT_WORD_LEVELS_041_060',
+    'CAT_WORD_LEVELS_061_080',
+    'CAT_WORD_LEVELS_081_100',
+  ];
+  const previous = new Map(
+    globalNames.map((name) => [name, globalThis[name]]),
+  );
+  try {
+    for (const [filename, content] of files) {
+      fs.writeFileSync(path.join(stagingDirectory, filename), content, 'utf8');
+    }
+    for (const name of globalNames) {
+      globalThis[name] = Object.freeze([{ id: 'stale-global' }]);
+    }
+    const staged = require(path.join(stagingDirectory, 'levels-index.js'));
+    assert.equal(staged.length, 100);
+    assert.equal(staged[0].id, 'L001');
+    assert.equal(staged.at(-1).id, 'L100');
+  } finally {
+    for (const [name, value] of previous) {
+      if (value === undefined) {
+        delete globalThis[name];
+      } else {
+        globalThis[name] = value;
+      }
+    }
+    fs.rmSync(stagingDirectory, { recursive: true, force: true });
+  }
 });
 
 test('候選必須同時通過節點、回溯、分支與效能門檻', () => {

@@ -2,14 +2,6 @@
 
 const Core = require('../../games/cat-word-solitaire/js/core.js');
 const Solver = require('../../games/cat-word-solitaire/js/solver.js');
-const LEVELS = require('../../games/cat-word-solitaire/js/data/levels-index.js');
-const {
-  GENERATOR_VERSION,
-  DIFFICULTY_PROFILES,
-  MAX_SOLVER_NODES,
-  MOVE_BUFFERS,
-  calculateDifficultyScore,
-} = require('./generate-layouts.js');
 
 const EXPECTED_HEIGHTS = Object.freeze([2, 3, 4, 5, 6]);
 const EXPECTED_TOTAL_CARDS = 54;
@@ -32,7 +24,20 @@ function replayKnownSolution(level) {
   };
 }
 
-function analyzeLevels(levels = LEVELS) {
+function loadPublishedLevels() {
+  return require('../../games/cat-word-solitaire/js/data/levels-index.js');
+}
+
+function analyzeLevels(levels = null, generatorContract = null) {
+  const {
+    GENERATOR_VERSION,
+    DIFFICULTY_PROFILES,
+    MAX_SOLVER_NODES,
+    MOVE_BUFFERS,
+    calculateDifficultyScore,
+    difficultyProfileErrors,
+  } = generatorContract || require('./generate-layouts.js');
+  const analyzedLevels = levels || loadPublishedLevels();
   const globalErrors = [];
   const levelResults = [];
   const ids = new Set();
@@ -44,11 +49,11 @@ function analyzeLevels(levels = LEVELS) {
   let itemCardCount = 0;
   let imageCardCount = 0;
 
-  if (levels.length !== 100) {
-    globalErrors.push(`關卡總數應為 100，實際 ${levels.length}`);
+  if (analyzedLevels.length !== 100) {
+    globalErrors.push(`關卡總數應為 100，實際 ${analyzedLevels.length}`);
   }
 
-  for (const [index, level] of levels.entries()) {
+  for (const [index, level] of analyzedLevels.entries()) {
     const errors = [];
     const expectedId = `L${String(index + 1).padStart(3, '0')}`;
     if (level.id !== expectedId) {
@@ -187,18 +192,7 @@ function analyzeLevels(levels = LEVELS) {
         `moveLimit 應為 parMoves + ${MOVE_BUFFERS[level.chapter - 1]}`,
       );
     }
-    if (solution.nodesVisited < profile.minNodes) {
-      errors.push(`Solver 節點低於門檻 ${profile.minNodes}`);
-    }
-    if (solution.nodesVisited > MAX_SOLVER_NODES) {
-      errors.push(`Solver 節點超過上限 ${MAX_SOLVER_NODES}`);
-    }
-    if (solution.backtracks < profile.minBacktracks) {
-      errors.push(`Solver 回溯低於門檻 ${profile.minBacktracks}`);
-    }
-    if (solution.branchingStates < profile.minBranchingStates) {
-      errors.push(`Solver 分支低於門檻 ${profile.minBranchingStates}`);
-    }
+    errors.push(...difficultyProfileErrors(solution, profile));
     for (const field of [
       'nodesVisited',
       'backtracks',
@@ -272,19 +266,19 @@ function analyzeLevels(levels = LEVELS) {
     globalErrors.push(`提示詞最多出現 ${maximumHintUsage} 關`);
   }
 
-  for (let index = 0; index < levels.length; index += 1) {
-    const current = new Set(levels[index].categories.map((category) => category.label));
+  for (let index = 0; index < analyzedLevels.length; index += 1) {
+    const current = new Set(analyzedLevels[index].categories.map((category) => category.label));
     for (
       let neighbor = Math.max(0, index - 9);
       neighbor < index;
       neighbor += 1
     ) {
-      const repeated = levels[neighbor].categories.find((category) =>
+      const repeated = analyzedLevels[neighbor].categories.find((category) =>
         current.has(category.label),
       );
       if (repeated) {
         globalErrors.push(
-          `${levels[index].id} 與 ${levels[neighbor].id} 在相鄰 10 關重複分類 ${repeated.label}`,
+          `${analyzedLevels[index].id} 與 ${analyzedLevels[neighbor].id} 在相鄰 10 關重複分類 ${repeated.label}`,
         );
       }
     }
@@ -298,7 +292,7 @@ function analyzeLevels(levels = LEVELS) {
   }
 
   const chapterAverages = Array.from({ length: 5 }, (_, index) => {
-    const scores = levels
+    const scores = analyzedLevels
       .filter((level) => level.chapter === index + 1)
       .map((level) => level.difficultyScore);
     return scores.reduce((sum, score) => sum + score, 0) / scores.length;
@@ -309,13 +303,16 @@ function analyzeLevels(levels = LEVELS) {
       break;
     }
   }
-  if (levels[0]?.difficultyScore >= levels.at(-1)?.difficultyScore) {
+  if (
+    analyzedLevels[0]?.difficultyScore >=
+    analyzedLevels.at(-1)?.difficultyScore
+  ) {
     globalErrors.push('L001 difficultyScore 必須低於 L100');
   }
 
   const failedLevels = levelResults.filter((result) => result.errors.length > 0);
   const summary = {
-    totalLevels: levels.length,
+    totalLevels: analyzedLevels.length,
     fiveColumnLayouts: levelResults.filter(
       (result) =>
         JSON.stringify(result.columnHeights) === JSON.stringify(EXPECTED_HEIGHTS),
@@ -338,7 +335,7 @@ function analyzeLevels(levels = LEVELS) {
     invalidFifthColumns: levelResults.filter(
       (result) => result.fifthColumnCount !== 6,
     ).length,
-    duplicateLayouts: levels.length - signatures.size,
+    duplicateLayouts: analyzedLevels.length - signatures.size,
     missingCards: levelResults.filter((result) =>
       result.errors.some((error) => error.includes('layout 出現 0 次')),
     ).length,
@@ -399,6 +396,7 @@ if (require.main === module) {
 module.exports = Object.freeze({
   EXPECTED_HEIGHTS,
   EXPECTED_TOTAL_CARDS,
+  loadPublishedLevels,
   analyzeLevels,
   assertValid,
   replayKnownSolution,
