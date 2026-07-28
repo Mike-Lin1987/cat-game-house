@@ -764,7 +764,7 @@
       : null;
     let message = '目前可以從牌庫發牌';
     const sourceLabel = Number.isInteger(action.spareIndex)
-      ? `第 ${action.spareIndex + 1} 個暫存格`
+      ? `第 ${action.spareIndex + 1} 個備用格`
       : Number.isInteger(action.columnIndex)
         ? `第 ${action.columnIndex + 1} 個牌堆`
         : '目前位置';
@@ -773,7 +773,7 @@
     } else if (action.type === 'placeItem') {
       message = `${sourceLabel}的「${card?.label || '提示牌'}」可以放進「${category?.label || '分類'}」`;
     } else if (action.type === 'moveToSpare') {
-      message = `可以先將「${card?.label || category?.label || '這張牌'}」放到第 ${action.spareIndex + 1} 個暫存格`;
+      message = `可以先將「${card?.label || category?.label || '這張牌'}」放到第 ${action.spareIndex + 1} 個備用格`;
     } else if (action.type === 'moveToColumn') {
       message = `可以將「${card?.label || category?.label || '這張牌'}」移到第 ${action.columnIndex + 1} 個空牌堆`;
     }

@@ -191,7 +191,7 @@ test('狀態正規化忽略分類槽純位置差異', () => {
   );
 });
 
-test('狀態正規化忽略兩個 spare 的位置但保留暫存牌內容', () => {
+test('狀態正規化忽略兩個備用格的位置但保留暫存牌內容', () => {
   const level = createWaveLevel(2);
   const first = Core.createInitialState(level);
   first.spareCells = ['item-category-1-1', 'item-category-2-1'];
@@ -212,7 +212,7 @@ test('狀態正規化忽略兩個 spare 的位置但保留暫存牌內容', () =
   );
 });
 
-test('求解器可利用 spare 暫存阻擋牌並完成牌局', () => {
+test('求解器可利用備用格暫存阻擋牌並完成牌局', () => {
   const level = createWaveLevel(5, 5);
   level.categories.forEach((category) => {
     category.required = 1;

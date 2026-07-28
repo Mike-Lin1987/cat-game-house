@@ -15,6 +15,7 @@
 - **入口（portal）**：根目錄的多遊戲選擇頁。
 - **安裝（install）**：透過 Web App Manifest 將遊戲小屋加入手機主畫面。
 - **離線快取（offline cache）**：Service Worker 預先保存入口與 catalog 宣告的遊戲資源。
+- **備用格（spare cell）**：《喵語分類接龍》中可暫放一張露出牌的空格；完成關卡時必須清空。
 
 ## Public seams
 

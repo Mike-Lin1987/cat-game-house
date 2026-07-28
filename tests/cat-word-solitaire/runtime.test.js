@@ -80,7 +80,7 @@ test('手機斷點仍保留五槽在左、牌庫在右', () => {
   assert.match(mobileRule[1], /\.slots-and-deck\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s+auto;/s);
 });
 
-test('遊戲桌提供兩個 spare 暫存格與五個可接牌的空牌堆', () => {
+test('遊戲桌提供兩個備用格與五個可接牌的空牌堆', () => {
   const html = read('games/cat-word-solitaire/index.html');
   const renderer = read('games/cat-word-solitaire/js/renderer.js');
   const app = read('games/cat-word-solitaire/js/app.js');
@@ -93,7 +93,8 @@ test('遊戲桌提供兩個 spare 暫存格與五個可接牌的空牌堆', () =
   assert.match(renderer, /empty\.type = 'button'/);
   assert.match(app, /Core\.moveToSpare\(/);
   assert.match(app, /Core\.moveToColumn\(/);
-  assert.match(app, /\.closest\('\.category-slot, \.spare-cell, \.empty-pile'\)/);
+  assert.match(app, /const DROP_TARGET_SELECTOR\s*=/);
+  assert.match(app, /\.closest\(DROP_TARGET_SELECTOR\)/);
   assert.match(styles, /\.spare-cells\s*\{/);
   assert.match(styles, /\.spare-cell\[data-drop-state="valid"\]/);
   assert.match(styles, /\.empty-pile\[data-drop-state="valid"\]/);

@@ -282,6 +282,10 @@
               highlightedAction.columnIndex === columnIndex,
           );
           empty.innerHTML = '<span aria-hidden="true">🐾</span><small>空牌堆</small>';
+          empty.setAttribute(
+            'aria-label',
+            `第 ${columnIndex + 1} 個空牌堆，可放置選取的牌`,
+          );
           empty.addEventListener('click', handlers.columnClick);
           empty.addEventListener('keydown', handlers.targetKeyDown);
           pile.append(empty);

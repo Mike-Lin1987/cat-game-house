@@ -16,6 +16,8 @@
   const Renderer = window.CatWordRenderer;
   const levels = window.CAT_WORD_LEVELS;
   const levelsById = new Map(levels.map((level) => [level.id, level]));
+  const DROP_TARGET_SELECTOR =
+    '.category-slot, .spare-cell, .empty-pile';
 
   const byId = (id) => document.getElementById(id);
   const elements = {
@@ -593,9 +595,7 @@
   }
 
   function resetDropTargets() {
-    for (const target of document.querySelectorAll(
-      '.category-slot, .spare-cell, .empty-pile',
-    )) {
+    for (const target of document.querySelectorAll(DROP_TARGET_SELECTOR)) {
       delete target.dataset.dropState;
       delete target.dataset.dropHover;
     }
@@ -673,10 +673,8 @@
     );
     const hoveredTarget = document
       .elementFromPoint(event.clientX, event.clientY)
-      ?.closest('.category-slot, .spare-cell, .empty-pile');
-    for (const target of document.querySelectorAll(
-      '.category-slot, .spare-cell, .empty-pile',
-    )) {
+      ?.closest(DROP_TARGET_SELECTOR);
+    for (const target of document.querySelectorAll(DROP_TARGET_SELECTOR)) {
       if (target === hoveredTarget) {
         target.dataset.dropHover = 'true';
       } else {
@@ -904,7 +902,7 @@
       if (gesture.dragged) {
         const target = document
           .elementFromPoint(event.clientX, event.clientY)
-          ?.closest('.category-slot, .spare-cell, .empty-pile');
+          ?.closest(DROP_TARGET_SELECTOR);
         suppressClickUntil = performance.now() + 500;
         void settleDrag(gesture, target || null);
         return;

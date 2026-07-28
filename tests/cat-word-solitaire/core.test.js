@@ -61,7 +61,7 @@ function createLevel(overrides = {}) {
   };
 }
 
-test('初始 state 固定建立五欄、五個分類槽與兩個 spare 暫存格', () => {
+test('初始 state 固定建立五欄、五個分類槽與兩個備用格', () => {
   const state = Core.createInitialState(createLevel());
   assert.equal(state.columns.length, 5);
   assert.equal(state.categorySlots.length, 5);
@@ -79,7 +79,7 @@ test('每欄只有最後一張露出牌可操作，第五欄同等支援', () =>
   assert.equal(Core.findCardSourceColumn(state, 'category-school'), 4);
 });
 
-test('露出牌可移入兩個 spare 暫存格，被覆蓋牌與已占用格會拒絕', () => {
+test('露出牌可移入兩個備用格，被覆蓋牌與已占用格會拒絕', () => {
   const level = createLevel();
   const state = Core.createInitialState(level);
 
@@ -109,7 +109,7 @@ test('露出牌可移入兩個 spare 暫存格，被覆蓋牌與已占用格會�
   assert.strictEqual(occupied.state, stored.state);
 });
 
-test('分類牌與提示牌都能從 spare 移入合法分類槽', () => {
+test('分類牌與提示牌都能從備用格移入合法分類槽', () => {
   const level = createLevel({
     layout: {
       initialColumns: [
@@ -151,7 +151,7 @@ test('分類牌與提示牌都能從 spare 移入合法分類槽', () => {
   assert.deepEqual(placed.state.collectedByCategory.fruit, ['fruit-1']);
 });
 
-test('露出牌與 spare 牌可移到完全空白牌堆，非空牌堆會拒絕', () => {
+test('露出牌與備用格牌可移到完全空白牌堆，非空牌堆會拒絕', () => {
   const level = createLevel({
     layout: {
       initialColumns: [
@@ -194,7 +194,7 @@ test('露出牌與 spare 牌可移到完全空白牌堆，非空牌堆會拒絕'
   assert.deepEqual(restored.state.columns[0], ['category-fruit']);
 });
 
-test('合法動作公開 spare 與空牌堆目標並可由 applyLegalAction 套用', () => {
+test('合法動作公開備用格與空牌堆目標並可由 applyLegalAction 套用', () => {
   const level = createLevel({
     layout: {
       initialColumns: [
@@ -433,7 +433,7 @@ test('提示可指出第五欄動作且不直接替玩家操作', () => {
   assert.deepEqual(state.columns[4], ['category-fruit']);
 });
 
-test('提示能描述從 spare 與移往空牌堆的動作', () => {
+test('提示能描述從備用格與移往空牌堆的動作', () => {
   const level = createLevel({
     layout: {
       initialColumns: [['category-fruit'], ['fruit-1'], [], [], []],
@@ -450,7 +450,7 @@ test('提示能描述從 spare 與移往空牌堆的動作', () => {
   state = Core.moveToSpare(state, level, 'fruit-1', 0).state;
   const spareHint = Core.getHint(state, level);
   assert.equal(spareHint.action.spareIndex, 0);
-  assert.match(spareHint.message, /暫存格/);
+  assert.match(spareHint.message, /備用格/);
 
   state.categorySlots = [null, null, null, null, null];
   const relocationOnly = Core.getLegalMoves(state, level).filter(
@@ -483,7 +483,7 @@ test('撤回恢復盤面但不回退時間、提示，且不能增加剩餘步�
   assert.deepEqual(result.state.columns, snapshot.columns);
 });
 
-test('序列化保留五欄、五槽與 spare，舊 session 會補空 spare', () => {
+test('序列化保留五欄、五槽與備用格，舊 session 會補空備用格', () => {
   const level = createLevel();
   const initial = Core.createInitialState(level);
   const state = Core.moveToSpare(
