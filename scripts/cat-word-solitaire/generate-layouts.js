@@ -15,19 +15,24 @@ const OUTPUT_DIRECTORY = path.join(
   'js',
   'data',
 );
-const GENERATOR_VERSION = '3.0.0';
+const GENERATOR_VERSION = '3.1.0';
 const TOTAL_CARDS_PER_LEVEL = 54;
 const INITIAL_COLUMN_HEIGHTS = Object.freeze([2, 3, 4, 5, 6]);
 const MAX_CANDIDATE_ATTEMPTS = 500;
 const MAX_SOLVER_NODES = 25000;
-const CANDIDATE_SEARCH_NODE_LIMITS = Object.freeze([
-  1500,
-  3000,
-  5000,
-  8000,
-  12000,
+const PUBLISHED_ATTEMPTS = Object.freeze([
+  2, 106, 434, 311, 377, 408, 255, 438, 442, 56,
+  21, 138, 468, 158, 481, 110, 225, 50, 146, 285,
+  17, 28, 41, 174, 151, 452, 47, 339, 44, 462,
+  480, 265, 379, 408, 53, 389, 298, 428, 175, 270,
+  452, 39, 419, 321, 475, 194, 36, 447, 61, 486,
+  115, 351, 196, 205, 385, 242, 466, 160, 13, 262,
+  319, 403, 481, 171, 303, 216, 470, 494, 127, 355,
+  208, 266, 125, 458, 407, 20, 176, 381, 340, 322,
+  418, 78, 69, 310, 402, 417, 19, 105, 154, 191,
+  1, 432, 43, 98, 435, 66, 200, 135, 186, 492,
 ]);
-const MOVE_BUFFERS = Object.freeze([5, 4, 3, 2, 1]);
+const THREE_STAR_BUFFERS = Object.freeze([5, 4, 3, 2, 1]);
 const DIFFICULTY_PROFILES = Object.freeze([
   Object.freeze({
     minNodes: 90,
@@ -98,8 +103,8 @@ function chunk(values, size) {
   return result;
 }
 
-function moveLimitForChapter(parMoves, chapter) {
-  return parMoves + MOVE_BUFFERS[chapter - 1];
+function threeStarMovesForChapter(parMoves, chapter) {
+  return parMoves + THREE_STAR_BUFFERS[chapter - 1];
 }
 
 function difficultyProfileErrors(stats, profile) {
@@ -140,6 +145,26 @@ function calculateDifficultyScore(stats, profile = null) {
         Math.min(stats.forcedMoves, 250) * 2,
     ),
   );
+}
+
+function applySolverMetadata(level, solution, profile) {
+  level.solverStats = {
+    solved: true,
+    movesUsed: solution.movesUsed,
+    nodesVisited: solution.nodesVisited,
+    backtracks: solution.backtracks,
+    maxDepth: solution.maxDepth,
+    maxActiveCategories: solution.maxActiveCategories,
+    branchingStates: solution.branchingStates,
+    dealDecisionStates: solution.dealDecisionStates,
+    forcedMoves: solution.forcedMoves,
+  };
+  level.difficultyScore = calculateDifficultyScore(
+    level.solverStats,
+    profile,
+  );
+  level.difficultyDistance = difficultyDistance(level.solverStats, profile);
+  return level;
 }
 
 function difficultyDistance(stats, profile) {
@@ -469,7 +494,7 @@ function createCandidate(ordinal, selections, attempt, options = {}) {
     seed,
     generatorVersion: GENERATOR_VERSION,
     layoutVersion: 2,
-    moveLimit: moveLimitForChapter(parMoves, chapter),
+    threeStarMoves: threeStarMovesForChapter(parMoves, chapter),
     parMoves,
     categories,
     cards,
@@ -500,23 +525,7 @@ function createCandidate(ordinal, selections, attempt, options = {}) {
     return null;
   }
   level.knownSolution = knownSolution;
-  level.solverStats = {
-    solved: true,
-    movesUsed: solution.movesUsed,
-    nodesVisited: solution.nodesVisited,
-    backtracks: solution.backtracks,
-    maxDepth: solution.maxDepth,
-    maxActiveCategories: solution.maxActiveCategories,
-    branchingStates: solution.branchingStates,
-    dealDecisionStates: solution.dealDecisionStates,
-    forcedMoves: solution.forcedMoves,
-  };
-  level.difficultyScore = calculateDifficultyScore(
-    level.solverStats,
-    profile,
-  );
-  level.difficultyDistance = difficultyDistance(level.solverStats, profile);
-  return level;
+  return applySolverMetadata(level, solution, profile);
 }
 
 function serializeArray(globalName, levels) {
@@ -574,56 +583,23 @@ function generateLevels() {
   const levels = [];
 
   for (let ordinal = 1; ordinal <= 100; ordinal += 1) {
-    let accepted = null;
-    const chapter = Math.ceil(ordinal / 20);
-    const baseNodeLimit = CANDIDATE_SEARCH_NODE_LIMITS[chapter - 1];
-    const nodeLimits = [
-      baseNodeLimit,
-      Math.min(MAX_SOLVER_NODES, baseNodeLimit * 2),
-      MAX_SOLVER_NODES,
-    ].filter((limit, index, limits) => limits.indexOf(limit) === index);
-    for (const nodeLimit of nodeLimits) {
-      for (
-        let attempt = 0;
-        attempt < MAX_CANDIDATE_ATTEMPTS;
-        attempt += 1
-      ) {
-        const candidate = createCandidate(
-          ordinal,
-          categorySelections[ordinal - 1],
-          attempt,
-          { maxNodes: nodeLimit },
-        );
-        if (!candidate) {
-          continue;
-        }
-        const signature = Solver.createLayoutSignature(candidate);
-        if (signatures.has(signature)) {
-          continue;
-        }
-        candidate.layoutSignature = signature;
-        if (
-          !accepted ||
-          candidate.difficultyDistance < accepted.difficultyDistance
-        ) {
-          accepted = candidate;
-        }
-        const profile = DIFFICULTY_PROFILES[candidate.chapter - 1];
-        const closeEnough =
-          candidate.solverStats.nodesVisited <= profile.minNodes * 1.5 &&
-          candidate.solverStats.backtracks <=
-            Math.max(profile.minBacktracks + 20, profile.minBacktracks * 2.5);
-        if (closeEnough) {
-          break;
-        }
-      }
-      if (accepted) {
-        break;
-      }
-    }
+    const attempt = PUBLISHED_ATTEMPTS[ordinal - 1];
+    const accepted = createCandidate(
+      ordinal,
+      categorySelections[ordinal - 1],
+      attempt,
+      { maxNodes: MAX_SOLVER_NODES },
+    );
     if (!accepted) {
-      throw new Error(`無法為 L${String(ordinal).padStart(3, '0')} 產生不重複可解牌局`);
+      throw new Error(
+        `發布候選 L${String(ordinal).padStart(3, '0')} 無法通過完整求解與難度驗證`,
+      );
     }
+    const signature = Solver.createLayoutSignature(accepted);
+    if (signatures.has(signature)) {
+      throw new Error(`${accepted.id} 的發布牌局與其他關卡重複`);
+    }
+    accepted.layoutSignature = signature;
     signatures.add(accepted.layoutSignature);
     delete accepted.difficultyDistance;
     levels.push(accepted);
@@ -732,13 +708,13 @@ module.exports = Object.freeze({
   INITIAL_COLUMN_HEIGHTS,
   MAX_CANDIDATE_ATTEMPTS,
   MAX_SOLVER_NODES,
-  CANDIDATE_SEARCH_NODE_LIMITS,
-  MOVE_BUFFERS,
+  PUBLISHED_ATTEMPTS,
+  THREE_STAR_BUFFERS,
   DIFFICULTY_PROFILES,
   categoryCountForLevel,
   itemCountForLevel,
   selectContent,
-  moveLimitForChapter,
+  threeStarMovesForChapter,
   difficultyProfileErrors,
   meetsDifficultyProfile,
   calculateDifficultyScore,

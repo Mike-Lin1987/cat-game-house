@@ -18,9 +18,9 @@
     "difficulty": 4,
     "difficultyScore": 88642,
     "seed": 34801610,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -981,9 +981,9 @@
     "difficulty": 4,
     "difficultyScore": 95951,
     "seed": 43606765,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -1944,9 +1944,9 @@
     "difficulty": 4,
     "difficultyScore": 93150,
     "seed": 51783546,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -2887,9 +2887,9 @@
     "difficulty": 4,
     "difficultyScore": 107958,
     "seed": 19325475,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -3850,9 +3850,9 @@
     "difficulty": 4,
     "difficultyScore": 89639,
     "seed": 33157622,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -4813,9 +4813,9 @@
     "difficulty": 4,
     "difficultyScore": 88619,
     "seed": 24054118,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -5776,9 +5776,9 @@
     "difficulty": 4,
     "difficultyScore": 91437,
     "seed": 50663203,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -6739,9 +6739,9 @@
     "difficulty": 4,
     "difficultyScore": 88193,
     "seed": 53184618,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -7682,9 +7682,9 @@
     "difficulty": 4,
     "difficultyScore": 123066,
     "seed": 14756994,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -8645,9 +8645,9 @@
     "difficulty": 4,
     "difficultyScore": 95115,
     "seed": 38643125,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -9608,9 +9608,9 @@
     "difficulty": 4,
     "difficultyScore": 100008,
     "seed": 23255881,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -10571,9 +10571,9 @@
     "difficulty": 4,
     "difficultyScore": 87379,
     "seed": 29338082,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -11534,9 +11534,9 @@
     "difficulty": 4,
     "difficultyScore": 97042,
     "seed": 14579212,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -12477,9 +12477,9 @@
     "difficulty": 4,
     "difficultyScore": 93651,
     "seed": 49461888,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -13440,9 +13440,9 @@
     "difficulty": 4,
     "difficultyScore": 102597,
     "seed": 44128628,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -14403,9 +14403,9 @@
     "difficulty": 4,
     "difficultyScore": 89144,
     "seed": 3606424,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -15366,9 +15366,9 @@
     "difficulty": 4,
     "difficultyScore": 98247,
     "seed": 19952067,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -16329,9 +16329,9 @@
     "difficulty": 4,
     "difficultyScore": 93834,
     "seed": 41429431,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -17292,9 +17292,9 @@
     "difficulty": 4,
     "difficultyScore": 91307,
     "seed": 37143461,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {
@@ -18235,9 +18235,9 @@
     "difficulty": 4,
     "difficultyScore": 110361,
     "seed": 35266258,
-    "generatorVersion": "3.0.0",
+    "generatorVersion": "3.1.0",
     "layoutVersion": 2,
-    "moveLimit": 63,
+    "threeStarMoves": 63,
     "parMoves": 61,
     "categories": [
       {

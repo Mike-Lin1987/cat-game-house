@@ -105,6 +105,36 @@ test('遊戲桌提供兩個備用格與五個可接牌的空牌堆', () => {
   assert.match(styles, /\.empty-pile\[data-drop-state="valid"\]/);
 });
 
+test('HUD 即時顯示使用步數、目前星級與下一個評分門檻', () => {
+  const html = read('games/cat-word-solitaire/index.html');
+  const renderer = read('games/cat-word-solitaire/js/renderer.js');
+  const app = read('games/cat-word-solitaire/js/app.js');
+
+  assert.match(html, /<span>步數<\/span><strong id="moves-used">0<\/strong>/);
+  assert.match(html, /id="live-star-rating"/);
+  assert.match(html, /id="next-star-target"/);
+  assert.doesNotMatch(html, /剩餘步數/);
+  assert.match(renderer, /CatWordCore\.getStarRating\(state,\s*level\)/);
+  assert.doesNotMatch(renderer, /state\.failed/);
+  assert.doesNotMatch(app, /步數用盡/);
+  assert.match(app, /\['步數星級'/);
+  assert.match(app, /\['提示星級'/);
+  assert.match(app, /\['最終星級'/);
+});
+
+test('提示求解使用受控的 runtime 節點預算並保留 fallback', () => {
+  const config = read('games/cat-word-solitaire/js/config.js');
+  const app = read('games/cat-word-solitaire/js/app.js');
+  const solver = read('games/cat-word-solitaire/js/solver.js');
+  assert.match(config, /hintMaxNodes:\s*5000/);
+  assert.match(config, /hintMaxDurationMs:\s*120/);
+  assert.match(
+    app,
+    /Solver\.getHint\(gameState,\s*currentLevel,\s*\{\s*maxNodes:\s*Config\.hintMaxNodes,\s*maxDurationMs:\s*Config\.hintMaxDurationMs,\s*\}\)/,
+  );
+  assert.match(solver, /return Core\.getHint\(state,\s*level\)/);
+});
+
 test('新版關卡只恢復 layout signature 相同的未完成牌局', () => {
   const app = read('games/cat-word-solitaire/js/app.js');
 
@@ -118,4 +148,16 @@ test('規則與教學提醒過早發牌可能壓住關鍵牌', () => {
   const tutorial = read('tutorials/cat-word-solitaire/index.html');
   assert.match(game, /過早發牌可能把關鍵牌壓住/);
   assert.match(tutorial, /過早發牌可能把關鍵牌壓住/);
+});
+
+test('規則與教學說明無步數失敗及步數提示組合評分', () => {
+  const game = read('games/cat-word-solitaire/index.html');
+  const tutorial = read('tutorials/cat-word-solitaire/index.html');
+
+  for (const content of [game, tutorial]) {
+    assert.match(content, /步數沒有上限/);
+    assert.match(content, /三星步數門檻/);
+    assert.match(content, /提示次數/);
+    assert.match(content, /較低者/);
+  }
 });

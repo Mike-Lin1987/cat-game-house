@@ -10,7 +10,7 @@ const {
   GENERATOR_VERSION,
   DIFFICULTY_PROFILES,
   MAX_SOLVER_NODES,
-  MOVE_BUFFERS,
+  THREE_STAR_BUFFERS,
 } = require('../../scripts/cat-word-solitaire/generate-layouts.js');
 
 const analysis = analyzeLevels(LEVELS);
@@ -61,18 +61,21 @@ test('全部卡牌、分類引用、parMoves 與內容審核都有效', () => {
   assert.equal(analysis.summary.uncheckedContent, 0);
 });
 
-test('獨立求解器逐關完成且不超過五槽與步數上限', () => {
+test('獨立求解器逐關完成且不超過五槽', () => {
   assert.equal(analysis.summary.solvableWithFiveSlots, 100);
   assert.equal(analysis.summary.unsolved, 0);
-  assert.equal(analysis.summary.overMoveLimit, 0);
 });
 
-test('v3 全關卡符合各章節分支、回溯、節點與步數門檻', () => {
+test('v3.1 全關卡符合各章節分支、回溯、節點與三星門檻', () => {
   for (const [index, level] of LEVELS.entries()) {
     const result = analysis.levels[index];
     const profile = DIFFICULTY_PROFILES[level.chapter - 1];
     assert.equal(level.generatorVersion, GENERATOR_VERSION);
-    assert.equal(level.moveLimit, level.parMoves + MOVE_BUFFERS[level.chapter - 1]);
+    assert.equal(
+      level.threeStarMoves,
+      level.parMoves + THREE_STAR_BUFFERS[level.chapter - 1],
+    );
+    assert.equal(result.twoStarMoves, level.threeStarMoves + 10);
     assert.equal(result.solverNodes >= profile.minNodes, true, level.id);
     assert.equal(
       result.solverBacktracks >= profile.minBacktracks,

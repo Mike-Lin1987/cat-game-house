@@ -33,7 +33,7 @@ function analyzeLevels(levels = null, generatorContract = null) {
     GENERATOR_VERSION,
     DIFFICULTY_PROFILES,
     MAX_SOLVER_NODES,
-    MOVE_BUFFERS,
+    THREE_STAR_BUFFERS,
     calculateDifficultyScore,
     difficultyProfileErrors,
   } = generatorContract || require('./generate-layouts.js');
@@ -175,9 +175,6 @@ function analyzeLevels(levels = null, generatorContract = null) {
     if (!solution.solved) {
       errors.push(`獨立求解失敗：${solution.reason}`);
     }
-    if (solution.movesUsed > level.moveLimit) {
-      errors.push('求解步數超過 moveLimit');
-    }
     if (solution.maxActiveCategories > 5) {
       errors.push('求解時同時啟用超過 5 個分類');
     }
@@ -185,11 +182,11 @@ function analyzeLevels(levels = null, generatorContract = null) {
       errors.push('parMoves 公式錯誤');
     }
     const profile = DIFFICULTY_PROFILES[level.chapter - 1];
-    const expectedMoveLimit =
-      level.parMoves + MOVE_BUFFERS[level.chapter - 1];
-    if (level.moveLimit !== expectedMoveLimit) {
+    const expectedThreeStarMoves =
+      level.parMoves + THREE_STAR_BUFFERS[level.chapter - 1];
+    if (level.threeStarMoves !== expectedThreeStarMoves) {
       errors.push(
-        `moveLimit 應為 parMoves + ${MOVE_BUFFERS[level.chapter - 1]}`,
+        `threeStarMoves 應為 parMoves + ${THREE_STAR_BUFFERS[level.chapter - 1]}`,
       );
     }
     errors.push(...difficultyProfileErrors(solution, profile));
@@ -226,7 +223,8 @@ function analyzeLevels(levels = null, generatorContract = null) {
       fifthColumnCount: level.layout.initialColumns[4].length,
       drawBatchCount: level.layout.drawBatches.length,
       parMoves: level.parMoves,
-      moveLimit: level.moveLimit,
+      threeStarMoves: level.threeStarMoves,
+      twoStarMoves: level.threeStarMoves + 10,
       solverSolved: solution.solved,
       solverMoves: solution.movesUsed,
       solverNodes: solution.nodesVisited,
@@ -326,8 +324,8 @@ function analyzeLevels(levels = null, generatorContract = null) {
     validDefinitions: levelResults.filter((result) => result.errors.length === 0)
       .length,
     unsolved: levelResults.filter((result) => !result.solverSolved).length,
-    overMoveLimit: levelResults.filter(
-      (result) => result.solverMoves > result.moveLimit,
+    aboveThreeStarMoves: levelResults.filter(
+      (result) => result.solverMoves > result.threeStarMoves,
     ).length,
     invalidFourColumnLayouts: levelResults.filter(
       (result) => result.initialColumnCount === 4,

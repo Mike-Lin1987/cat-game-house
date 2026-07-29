@@ -485,6 +485,24 @@ button:disabled {
   font-variant-numeric: tabular-nums;
 }
 
+.hud .move-rating small {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hud #live-star-rating {
+  color: var(--gold);
+  font-size: clamp(0.58rem, 1.8vw, 0.78rem);
+  letter-spacing: 0.04em;
+}
+
+.hud #next-star-target {
+  color: var(--muted);
+  font-size: clamp(0.44rem, 1.35vw, 0.62rem);
+}
+
 .game-table {
   width: min(100%, 960px);
   margin: 0 auto;

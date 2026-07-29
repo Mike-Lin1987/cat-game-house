@@ -31,7 +31,7 @@ function writeReports(analysis) {
 - 通過資料驗證：${summary.validDefinitions} / 100
 - 通過牌局求解：${summary.totalLevels - summary.unsolved} / 100
 - 無法求解：${summary.unsolved}
-- 超過步數限制：${summary.overMoveLimit}
+- 求解步數超過三星門檻：${summary.aboveThreeStarMoves}
 - 舊版4欄關卡：${summary.invalidFourColumnLayouts}
 - 無效第5欄：${summary.invalidFifthColumns}
 - 重複牌局：${summary.duplicateLayouts}
@@ -54,12 +54,12 @@ ${summary.chapterAverages
 
 ## 逐關摘要
 
-| 關卡 | 章 | 總牌 | 分類 | 提示 | 圖片 | 開局欄高 | 發牌批次 | par | 上限 | 求解步數 | 節點 | 回溯 | 分支 | 發牌選擇 | 強制步 | 分數 | 結果 |
-| --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 關卡 | 章 | 總牌 | 分類 | 提示 | 圖片 | 開局欄高 | 發牌批次 | par | 三星門檻 | 二星門檻 | 求解步數 | 節點 | 回溯 | 分支 | 發牌選擇 | 強制步 | 分數 | 結果 |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 ${analysis.levels
   .map(
     (level) =>
-      `| ${level.id} | ${level.chapter} | ${level.totalCardCount} | ${level.categoryCount} | ${level.itemCardCount} | ${level.imageCardCount} | ${level.columnHeights.join('/')} | ${level.drawBatchCount} | ${level.parMoves} | ${level.moveLimit} | ${level.solverMoves} | ${level.solverNodes} | ${level.solverBacktracks} | ${level.solverBranchingStates} | ${level.solverDealDecisionStates} | ${level.solverForcedMoves} | ${level.difficultyScore} | ${level.errors.length === 0 ? '通過' : '失敗'} |`,
+      `| ${level.id} | ${level.chapter} | ${level.totalCardCount} | ${level.categoryCount} | ${level.itemCardCount} | ${level.imageCardCount} | ${level.columnHeights.join('/')} | ${level.drawBatchCount} | ${level.parMoves} | ${level.threeStarMoves} | ${level.twoStarMoves} | ${level.solverMoves} | ${level.solverNodes} | ${level.solverBacktracks} | ${level.solverBranchingStates} | ${level.solverDealDecisionStates} | ${level.solverForcedMoves} | ${level.difficultyScore} | ${level.errors.length === 0 ? '通過' : '失敗'} |`,
   )
   .join('\n')}
 `;
@@ -80,7 +80,8 @@ ${analysis.levels
     'fifthColumnCount',
     'drawBatchCount',
     'parMoves',
-    'moveLimit',
+    'threeStarMoves',
+    'twoStarMoves',
     'solverSolved',
     'solverMoves',
     'solverNodes',

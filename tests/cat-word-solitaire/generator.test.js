@@ -8,8 +8,8 @@ const path = require('node:path');
 
 const Generator = require('../../scripts/cat-word-solitaire/generate-layouts.js');
 
-test('v3 產生器公開五章難度門檻與 25000 節點上限', () => {
-  assert.equal(Generator.GENERATOR_VERSION, '3.0.0');
+test('v3.1 產生器公開五章難度門檻與 25000 節點上限', () => {
+  assert.equal(Generator.GENERATOR_VERSION, '3.1.0');
   assert.equal(Generator.MAX_CANDIDATE_ATTEMPTS, 500);
   assert.equal(Generator.MAX_SOLVER_NODES, 25000);
   assert.deepEqual(
@@ -28,14 +28,29 @@ test('v3 產生器公開五章難度門檻與 25000 節點上限', () => {
   );
 });
 
-test('步數容錯依章節固定為 parMoves 加 5／4／3／2／1', () => {
-  assert.deepEqual(Generator.MOVE_BUFFERS, [5, 4, 3, 2, 1]);
+test('三星步數門檻依章節固定為 parMoves 加 5／4／3／2／1', () => {
+  assert.deepEqual(Generator.THREE_STAR_BUFFERS, [5, 4, 3, 2, 1]);
   for (let chapter = 1; chapter <= 5; chapter += 1) {
     assert.equal(
-      Generator.moveLimitForChapter(61, chapter),
-      61 + Generator.MOVE_BUFFERS[chapter - 1],
+      Generator.threeStarMovesForChapter(61, chapter),
+      61 + Generator.THREE_STAR_BUFFERS[chapter - 1],
     );
   }
+});
+
+test('發布用固定候選索引完整保留 100 關既有牌局', () => {
+  assert.equal(Generator.PUBLISHED_ATTEMPTS.length, 100);
+  assert.equal(Generator.PUBLISHED_ATTEMPTS[0], 2);
+  assert.equal(Generator.PUBLISHED_ATTEMPTS.at(-1), 492);
+  assert.equal(
+    Generator.PUBLISHED_ATTEMPTS.every(
+      (attempt) =>
+        Number.isInteger(attempt) &&
+        attempt >= 0 &&
+        attempt < Generator.MAX_CANDIDATE_ATTEMPTS,
+    ),
+    true,
+  );
 });
 
 test('正式檔寫入前必須先通過完整關卡驗證', () => {

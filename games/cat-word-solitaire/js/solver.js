@@ -70,29 +70,12 @@
     const maxNodes = Number.isInteger(options.maxNodes)
       ? Math.max(1, options.maxNodes)
       : 250000;
+    const maxDurationMs = Number.isFinite(options.maxDurationMs)
+      ? Math.max(0, options.maxDurationMs)
+      : Number.POSITIVE_INFINITY;
+    const deadline = startedAt + maxDurationMs;
     const initialMaxActiveCategories =
       initial.categorySlots.filter(Boolean).length;
-
-    if (
-      initial.movesUsed + remainingMinimumMoves(initial, level) >
-      level.moveLimit
-    ) {
-      return {
-        solved: false,
-        reason: 'move-limit',
-        actions: [],
-        movesUsed: initial.movesUsed,
-        finalState: initial,
-        nodesVisited: 0,
-        backtracks: 0,
-        maxDepth: 0,
-        maxActiveCategories: initialMaxActiveCategories,
-        branchingStates: 0,
-        dealDecisionStates: 0,
-        forcedMoves: 0,
-        durationMs: Date.now() - startedAt,
-      };
-    }
 
     function runSearch(includeRelocations) {
       const memo = new Map();
@@ -103,10 +86,14 @@
       let branchingStates = 0;
       let dealDecisionStates = 0;
       let forcedMoves = 0;
-      let limitReached = false;
       let nodeLimitReached = false;
+      let timeLimitReached = false;
 
       function visit(state, actions) {
+        if (Date.now() >= deadline) {
+          timeLimitReached = true;
+          return null;
+        }
         nodesVisited += 1;
         maxDepth = Math.max(maxDepth, actions.length);
         maxActiveCategories = Math.max(
@@ -119,17 +106,6 @@
         }
         if (Core.isLevelComplete(state, level)) {
           return { state, actions };
-        }
-        if (state.movesUsed >= level.moveLimit || state.failed) {
-          limitReached = true;
-          return null;
-        }
-        if (
-          state.movesUsed + remainingMinimumMoves(state, level) >
-          level.moveLimit
-        ) {
-          limitReached = true;
-          return null;
         }
 
         const key = normalizeState(state, level);
@@ -171,6 +147,9 @@
           if (nodeLimitReached) {
             return null;
           }
+          if (timeLimitReached) {
+            return null;
+          }
         }
         backtracks += 1;
         return null;
@@ -183,9 +162,9 @@
           ? null
           : nodeLimitReached
             ? 'node-limit'
-            : limitReached
-              ? 'move-limit'
-              : 'unsolvable',
+            : timeLimitReached
+              ? 'time-limit'
+            : 'unsolvable',
         actions: solved?.actions || [],
         movesUsed: solved?.state.movesUsed ?? initial.movesUsed,
         finalState: solved?.state || initial,
