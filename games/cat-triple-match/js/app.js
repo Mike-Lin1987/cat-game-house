@@ -1,5 +1,10 @@
 (function () {
   'use strict';
+  const PORTAL_HREF =
+    window.location.protocol === 'file:' ? '../../index.html' : '../../';
+  const portalHomeLink = document.querySelector('[data-portal-home]');
+  if (portalHomeLink) portalHomeLink.href = PORTAL_HREF;
+
   const levels = window.CAT_TRIPLE_LEVELS;
   const Core = window.CatTripleCore;
   const Solver = window.CatTripleSolver;
