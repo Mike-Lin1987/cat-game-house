@@ -144,5 +144,5 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
 
 test('喵語無步數上限與新增鮮奶管線會更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v17';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v18';/);
 });
