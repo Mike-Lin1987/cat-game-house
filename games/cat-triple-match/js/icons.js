@@ -176,12 +176,9 @@
     const icon = icons.find((item) => item.id === id) || icons[0];
     const safeId = escape(icon.id);
     return `<svg class="tile-icon" data-animal="${safeId}" viewBox="0 0 64 64" aria-hidden="true" focusable="false">`
-      + `<defs><linearGradient id="animal-bg-${safeId}" x1="0" y1="0" x2="1" y2="1">`
-      + `<stop stop-color="#fffdf6"/><stop offset=".72" stop-color="${escape(icon.accent)}" stop-opacity=".22"/>`
-      + `<stop offset="1" stop-color="${escape(icon.color)}" stop-opacity=".28"/></linearGradient>`
-      + `<filter id="animal-shadow-${safeId}" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#6b3f25" flood-opacity=".26"/></filter></defs>`
-      + `<rect x="3" y="3" width="58" height="58" rx="14" fill="url(#animal-bg-${safeId})" stroke="${escape(icon.color)}" stroke-opacity=".48" stroke-width="1.5"/>`
-      + `<g filter="url(#animal-shadow-${safeId})">${portraits[icon.id]}</g></svg>`;
+      + `<rect x="3" y="3" width="58" height="58" rx="14" fill="#fffdf6" stroke="${escape(icon.color)}" stroke-opacity=".48" stroke-width="1.5"/>`
+      + `<rect x="5" y="5" width="54" height="54" rx="12" fill="${escape(icon.accent)}" fill-opacity=".16"/>`
+      + `<g>${portraits[icon.id]}</g></svg>`;
   }
 
   function label(id) {

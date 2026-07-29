@@ -35,6 +35,7 @@ test('每種動物提供安全且互不相同的原創 SVG markup', () => {
     assert.match(markup, /^<svg class="tile-icon"/);
     assert.match(markup, /aria-hidden="true"/);
     assert.doesNotMatch(markup, /<script|on\w+=|javascript:/i);
+    assert.doesNotMatch(markup, /<defs|<filter|filter=|\sid=/i);
   }
 });
 
