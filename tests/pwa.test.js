@@ -142,7 +142,7 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(wordPage, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home/);
 });
 
-test('喵語無步數上限與新增鮮奶管線會更新既有 PWA 離線快取', () => {
+test('新增收納遊戲會更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v18';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v19';/);
 });

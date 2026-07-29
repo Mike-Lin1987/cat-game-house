@@ -5,19 +5,22 @@
   "description": "可安裝、可離線且可持續新增遊戲的單機網頁遊戲入口",
   "scripts": {
     "build": "node scripts/build-site.js",
-    "test": "node --test tests/*.test.js tests/cat-color-connect/*.test.js tests/cat-word-solitaire/*.test.js games/cat-milk-pipes/tests/*.test.js",
+    "test": "node --test tests/*.test.js tests/cat-color-connect/*.test.js tests/cat-word-solitaire/*.test.js games/cat-milk-pipes/tests/*.test.js games/cat-storage-master/tests/*.test.js",
     "generate-levels": "node scripts/generate-levels.js",
     "generate-cat-connect-levels": "node scripts/cat-color-connect/generate-levels.js",
     "generate-cat-word-layouts": "node scripts/cat-word-solitaire/generate-layouts.js",
     "generate-cat-milk-pipe-levels": "node games/cat-milk-pipes/scripts/generate-levels.js",
-    "fix-tutorial-video-duration": "node scripts/tutorial-videos/fix-webm-duration.js --duration-ms 24500 games/cat-grid/tutorial.webm games/cat-color-connect/tutorial.webm games/cat-word-solitaire/tutorial.webm games/cat-milk-pipes/tutorial.webm",
+    "fix-tutorial-video-duration": "node scripts/tutorial-videos/fix-webm-duration.js --duration-ms 24500 games/cat-grid/tutorial.webm games/cat-color-connect/tutorial.webm games/cat-word-solitaire/tutorial.webm games/cat-milk-pipes/tutorial.webm games/cat-storage-master/tutorial.webm",
     "validate-cat-connect-levels": "node scripts/cat-color-connect/validate-levels.js",
     "validate-cat-word-levels": "node scripts/cat-word-solitaire/validate-levels.js",
     "report-cat-word-levels": "node scripts/cat-word-solitaire/report-levels.js",
     "validate-cat-milk-pipe-levels": "node games/cat-milk-pipes/scripts/validate-levels.js",
     "report-cat-milk-pipe-levels": "node games/cat-milk-pipes/scripts/generate-report.js",
+    "generate-cat-storage-levels": "node games/cat-storage-master/scripts/generate-levels.js",
+    "validate-cat-storage-levels": "node games/cat-storage-master/scripts/validate-levels.js",
+    "report-cat-storage-levels": "node games/cat-storage-master/scripts/generate-report.js",
     "validate-levels": "node --test tests/levels.test.js tests/packs.test.js",
     "validate-offline": "node scripts/validate-offline.js",
-    "verify": "npm run validate-cat-connect-levels && npm run validate-cat-word-levels && npm run validate-cat-milk-pipe-levels && npm run validate-offline && npm test && npm run build"
+    "verify": "npm run validate-cat-connect-levels && npm run validate-cat-word-levels && npm run validate-cat-milk-pipe-levels && npm run validate-cat-storage-levels && npm run validate-offline && npm test && npm run build"
   }
 }

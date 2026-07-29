@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>貓咪收納大師｜關卡審核</title>
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="./css/review.css">
+  <script src="./js/config.js" defer></script>
+  <script src="./js/core.js" defer></script>
+  <script src="./js/solver.js" defer></script>
+  <script src="./js/renderer.js" defer></script>
+  <script src="./js/data/levels-001-020.js" defer></script>
+  <script src="./js/data/levels-021-040.js" defer></script>
+  <script src="./js/data/levels-041-060.js" defer></script>
+  <script src="./js/data/levels-061-080.js" defer></script>
+  <script src="./js/data/levels-081-100.js" defer></script>
+  <script src="./js/data/levels-index.js" defer></script>
+  <script src="./js/review.js" defer></script>
+</head>
+<body>
+  <main class="review-shell">
+    <header class="review-header">
+      <a href="./index.html">← 返回遊戲</a>
+      <div><p class="eyebrow">開發與人工審核</p><h1>100 關收納檢視器</h1></div>
+    </header>
+    <section class="review-controls" aria-label="關卡篩選">
+      <label for="level-search">搜尋關卡
+        <input id="level-search" name="level-search" type="search" data-search placeholder="L038">
+      </label>
+      <label>章節
+        <select name="chapter-filter" data-chapter-filter>
+          <option value="">全部章節</option>
+          <option value="1">整理入門</option><option value="2">紙箱派對</option>
+          <option value="3">房間整理</option><option value="4">搬家挑戰</option><option value="5">終極收納</option>
+        </select>
+      </label>
+      <label>尺寸 <select name="size-filter" data-size-filter><option value="">全部尺寸</option></select></label>
+      <label class="answer-toggle"><input name="show-answer" type="checkbox" data-show-answer> 顯示完整答案</label>
+    </section>
+    <div class="review-layout">
+      <nav class="review-levels" aria-label="100 關列表" data-level-list></nav>
+      <section class="review-detail" data-review-detail></section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">貓咪收納大師封面</title>
+  <desc id="desc">暖色木製房間中，一隻橘貓從收納箱後探頭，箱內整齊放著毛線球、鮮奶盒、魚乾與貓掌拼塊</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff7e4"/><stop offset="1" stop-color="#efd5ab"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edc18a"/><stop offset=".5" stop-color="#ce925a"/><stop offset="1" stop-color="#a9693e"/></linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e0af79"/><stop offset="1" stop-color="#bf804c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#70482f" flood-opacity=".24"/></filter>
+    <pattern id="grain" width="58" height="22" patternUnits="userSpaceOnUse"><path d="M0 9c16-7 34 7 58 0" fill="none" stroke="#8c5637" stroke-opacity=".13" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="760" height="430" rx="36" fill="url(#bg)"/>
+  <circle cx="93" cy="65" r="70" fill="#b9cc8d" opacity=".46"/>
+  <circle cx="700" cy="375" r="90" fill="#eaa8a4" opacity=".35"/>
+  <path d="M0 98h760M0 177h760M0 256h760" stroke="#c99d69" stroke-opacity=".2" stroke-width="3"/>
+  <g filter="url(#shadow)">
+    <rect x="96" y="106" width="568" height="292" rx="30" fill="url(#wood)" stroke="#8f5b37" stroke-width="7"/>
+    <rect x="119" y="129" width="522" height="246" rx="17" fill="#9c633d" stroke="#f2cd98" stroke-width="6"/>
+    <rect x="129" y="139" width="502" height="226" rx="10" fill="url(#grain)"/>
+    <g fill="url(#tile)" stroke="#9d643e" stroke-width="2">
+      <rect x="130" y="140" width="98" height="74" rx="9"/><rect x="230" y="140" width="98" height="74" rx="9"/>
+      <rect x="330" y="140" width="98" height="74" rx="9"/><rect x="430" y="140" width="98" height="74" rx="9"/><rect x="530" y="140" width="100" height="74" rx="9"/>
+      <rect x="130" y="216" width="98" height="72" rx="9"/><rect x="230" y="216" width="98" height="72" rx="9"/>
+      <rect x="330" y="216" width="98" height="72" rx="9"/><rect x="430" y="216" width="98" height="72" rx="9"/><rect x="530" y="216" width="100" height="72" rx="9"/>
+      <rect x="130" y="290" width="98" height="74" rx="9"/><rect x="230" y="290" width="98" height="74" rx="9"/>
+      <rect x="330" y="290" width="98" height="74" rx="9"/><rect x="430" y="290" width="98" height="74" rx="9"/><rect x="530" y="290" width="100" height="74" rx="9"/>
+    </g>
+  </g>
+  <g transform="translate(126 143)" filter="url(#shadow)">
+    <rect width="94" height="141" rx="19" fill="#a9c9df" stroke="#547991" stroke-width="5"/>
+    <path d="M18 21h58l8 20v84H10V34Z" fill="#eff8f5" stroke="#547991" stroke-width="4"/>
+    <path d="m18 21 28 19h38M46 40v85" fill="none" stroke="#82aec7" stroke-width="4"/>
+    <text x="47" y="83" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="900" fill="#547991">鮮奶</text>
+    <path d="M31 104c9-10 24-10 33 0" fill="none" stroke="#e2978d" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(237 221)" filter="url(#shadow)">
+    <path d="M0 0h184v68H0Z" rx="18" fill="#efa6a5" stroke="#a85f5d" stroke-width="5"/>
+    <ellipse cx="92" cy="41" rx="28" ry="20" fill="#fff0d8"/>
+    <circle cx="68" cy="26" r="10" fill="#f1a5a3"/><circle cx="82" cy="15" r="10" fill="#f1a5a3"/>
+    <circle cx="103" cy="15" r="10" fill="#f1a5a3"/><circle cx="117" cy="26" r="10" fill="#f1a5a3"/>
+  </g>
+  <g transform="translate(435 150)" filter="url(#shadow)">
+    <path d="M0 0h178v68H0Z" rx="18" fill="#edc466" stroke="#b9802f" stroke-width="5"/>
+    <path d="M22 34c20-23 47-23 67 0-20 22-47 22-67 0Zm67 0 22-18v36Z" fill="#fff0bf" stroke="#a56d2c" stroke-width="4"/>
+    <circle cx="43" cy="29" r="3" fill="#70482f"/>
+    <path d="M113 34c15-17 34-17 49 0-15 16-34 16-49 0Z" fill="#fff0bf" stroke="#a56d2c" stroke-width="4"/>
+  </g>
+  <g transform="translate(445 233)" filter="url(#shadow)">
+    <rect width="74" height="126" rx="18" fill="#b7d49a" stroke="#6f9156" stroke-width="5"/>
+    <path d="M17 104c0-31 12-64 18-75 3 22 2 38 1 51 8-25 19-35 23-40-1 30-10 53-20 66" fill="none" stroke="#668e4d" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(531 232)" filter="url(#shadow)">
+    <rect width="79" height="79" rx="18" fill="#bfa9d6" stroke="#7b6198" stroke-width="5"/>
+    <circle cx="40" cy="40" r="25" fill="none" stroke="#8f76aa" stroke-width="7"/>
+    <path d="M19 34c15-12 30-8 42 4M22 52c13-13 25-18 39-15M33 17c-1 17 8 30 24 39" fill="none" stroke="#e9dcf3" stroke-width="4"/>
+  </g>
+  <g transform="translate(478 48)" filter="url(#shadow)">
+    <path d="M42 74C31 30 47 6 83 6s53 25 42 68c24 6 34 23 29 45H13c-6-22 5-40 29-45Z" fill="#eda85f" stroke="#8e5636" stroke-width="6"/>
+    <path d="m47 39 4-32 28 22m42 10-5-32-28 22" fill="#eda85f" stroke="#8e5636" stroke-width="6" stroke-linejoin="round"/>
+    <ellipse cx="84" cy="67" rx="39" ry="32" fill="#fff8e9"/>
+    <circle cx="69" cy="60" r="7" fill="#51382e"/><circle cx="101" cy="60" r="7" fill="#51382e"/>
+    <path d="m84 70-6 5h12Z" fill="#df8375"/><path d="M84 76c-4 8-12 9-18 4m18-4c4 8 12 9 18 4" fill="none" stroke="#70482f" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="30" cy="113" rx="27" ry="16" fill="#fff8e9" stroke="#8e5636" stroke-width="5"/>
+    <ellipse cx="137" cy="113" rx="27" ry="16" fill="#fff8e9" stroke="#8e5636" stroke-width="5"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M151 39h382c18 0 28 20 18 35l-23 34H158l-25-34c-10-15 1-35 18-35Z" fill="#fff8e9" stroke="#c48855" stroke-width="4"/>
+    <text x="342" y="87" text-anchor="middle" font-family="'Microsoft JhengHei',sans-serif" font-size="41" font-weight="900" fill="#70482f" stroke="#fff" stroke-width="7" paint-order="stroke">貓咪收納大師</text>
+  </g>
+</svg>

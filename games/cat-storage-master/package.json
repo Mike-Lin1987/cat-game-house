@@ -1,0 +1,12 @@
+{
+  "name": "cat-storage-master",
+  "version": "1.0.0",
+  "private": true,
+  "description": "可完全離線執行的《貓咪收納大師》",
+  "scripts": {
+    "generate-levels": "node scripts/generate-levels.js",
+    "validate": "node scripts/validate-levels.js",
+    "report": "node scripts/generate-report.js",
+    "test": "node --test tests/*.test.js"
+  }
+}
