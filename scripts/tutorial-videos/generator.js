@@ -5,6 +5,10 @@
   const context = canvas.getContext('2d');
   const output = document.querySelector('output');
   const buttons = [...document.querySelectorAll('[data-render]')];
+  const videoResult = document.querySelector('[data-video-result]');
+  const videoPreview = document.querySelector('[data-video-preview]');
+  const videoDownload = document.querySelector('[data-video-download]');
+  let latestVideoUrl = null;
   const WIDTH = canvas.width;
   const HEIGHT = canvas.height;
   const FPS = 30;
@@ -661,6 +665,293 @@
     drawFooter('#dcae56', time / DURATION);
   }
 
+  function drawMilkPipeCell(x, y, cell, connectors, options = {}) {
+    roundedRect(x, y, cell - 6, cell - 6, 12, options.blocked ? '#d7c19f' : '#f3e6cf');
+    if (options.blocked) {
+      context.fillStyle = 'rgba(56,47,42,.24)';
+      context.beginPath();
+      context.arc(x + cell / 2 - 3, y + cell / 2 - 3, 4, 0, Math.PI * 2);
+      context.fill();
+      return;
+    }
+    const centerX = x + cell / 2 - 3;
+    const centerY = y + cell / 2 - 3;
+    const points = {
+      U: [centerX, y],
+      R: [x + cell - 6, centerY],
+      D: [centerX, y + cell - 6],
+      L: [x, centerY],
+    };
+    context.lineCap = 'round';
+    for (const direction of connectors) {
+      context.strokeStyle = '#275968';
+      context.lineWidth = 22;
+      context.beginPath();
+      context.moveTo(centerX, centerY);
+      context.lineTo(...points[direction]);
+      context.stroke();
+      context.strokeStyle = options.powered ? '#fff' : '#9db4bb';
+      context.lineWidth = 12;
+      context.beginPath();
+      context.moveTo(centerX, centerY);
+      context.lineTo(...points[direction]);
+      context.stroke();
+    }
+    context.fillStyle = options.powered ? '#fff' : '#275968';
+    context.beginPath();
+    context.arc(centerX, centerY, 7, 0, Math.PI * 2);
+    context.fill();
+    if (options.source) drawMilkBottleIcon(centerX, centerY, .62, options.powered);
+    if (options.bowl) {
+      drawMilkCatBowlIcon(centerX, centerY, .68, options.powered, options.variant);
+    }
+    if (options.leak) {
+      context.fillStyle = '#c9614f';
+      context.beginPath();
+      context.arc(x + cell - 11, centerY, 8, 0, Math.PI * 2);
+      context.fill();
+    }
+  }
+
+  function drawMilkBottleIcon(centerX, centerY, scale = 1, powered = false) {
+    context.save();
+    context.translate(centerX, centerY);
+    context.scale(scale, scale);
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+    context.fillStyle = 'rgba(56,47,42,.17)';
+    context.beginPath();
+    context.ellipse(0, 34, 25, 5, 0, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = '#fffaf0';
+    context.strokeStyle = '#275968';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-15, -24);
+    context.lineTo(15, -24);
+    context.lineTo(15, -17);
+    context.bezierCurveTo(15, -12, 22, -10, 22, -2);
+    context.lineTo(22, 25);
+    context.quadraticCurveTo(22, 34, 12, 34);
+    context.lineTo(-12, 34);
+    context.quadraticCurveTo(-22, 34, -22, 25);
+    context.lineTo(-22, -2);
+    context.bezierCurveTo(-22, -10, -15, -12, -15, -17);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.fillStyle = powered ? '#fff' : '#b7cbd1';
+    context.beginPath();
+    context.moveTo(-18, 10);
+    context.quadraticCurveTo(-7, 4, 4, 10);
+    context.quadraticCurveTo(12, 5, 18, 8);
+    context.lineTo(18, 25);
+    context.quadraticCurveTo(18, 30, 11, 30);
+    context.lineTo(-11, 30);
+    context.quadraticCurveTo(-18, 30, -18, 24);
+    context.closePath();
+    context.fill();
+    roundedRect(-17, -32, 34, 12, 4, '#4d91a8', '#275968', 4);
+    context.fillStyle = '#f5dfbd';
+    context.strokeStyle = '#275968';
+    context.lineWidth = 3;
+    context.beginPath();
+    context.arc(0, 1, 14, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+    context.fillStyle = '#dd836f';
+    context.beginPath();
+    context.ellipse(0, 5, 6, 5, 0, 0, Math.PI * 2);
+    context.fill();
+    for (const [x, y] of [[-9, -3], [-3, -7], [4, -7], [10, -2]]) {
+      context.beginPath();
+      context.arc(x, y, 3, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.restore();
+  }
+
+  function drawMilkCatBowlIcon(centerX, centerY, scale = 1, powered = false, variant = 0) {
+    const palettes = [
+      { fur: '#f3b99e', bowl: '#dc806e' },
+      { fur: '#f5c77f', bowl: '#d6a83d' },
+      { fur: '#aab3b8', bowl: '#74a57f' },
+      { fur: '#d7c3aa', bowl: '#688fa6' },
+    ];
+    const palette = palettes[((Number(variant) || 0) % palettes.length + palettes.length)
+      % palettes.length];
+    context.save();
+    context.translate(centerX, centerY);
+    context.scale(scale, scale);
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+    context.fillStyle = 'rgba(56,47,42,.17)';
+    context.beginPath();
+    context.ellipse(0, 35, 30, 5, 0, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = palette.fur;
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-23, -9);
+    context.lineTo(-20, -32);
+    context.lineTo(-5, -17);
+    context.moveTo(5, -17);
+    context.lineTo(20, -32);
+    context.lineTo(23, -9);
+    context.stroke();
+    roundedRect(-24, -20, 48, 39, 19, palette.fur, '#382f2a', 4);
+    context.fillStyle = '#382f2a';
+    for (const x of [-10, 10]) {
+      context.beginPath();
+      context.arc(x, -5, 2.7, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.fillStyle = '#dd836f';
+    context.beginPath();
+    context.moveTo(-4, 3);
+    context.lineTo(4, 3);
+    context.lineTo(0, 7);
+    context.closePath();
+    context.fill();
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 2.5;
+    context.beginPath();
+    context.moveTo(-13, 8);
+    context.lineTo(-31, 5);
+    context.moveTo(-13, 12);
+    context.lineTo(-32, 14);
+    context.moveTo(13, 8);
+    context.lineTo(31, 5);
+    context.moveTo(13, 12);
+    context.lineTo(32, 14);
+    context.stroke();
+    context.fillStyle = palette.bowl;
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-32, 10);
+    context.lineTo(32, 10);
+    context.lineTo(25, 29);
+    context.quadraticCurveTo(23, 35, 14, 35);
+    context.lineTo(-14, 35);
+    context.quadraticCurveTo(-23, 35, -25, 29);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.fillStyle = powered ? '#fff' : '#aebfc3';
+    context.beginPath();
+    context.moveTo(-28, 11);
+    context.quadraticCurveTo(-14, 5, 0, 11);
+    context.quadraticCurveTo(14, 5, 28, 11);
+    context.lineTo(26, 16);
+    context.quadraticCurveTo(12, 11, 0, 16);
+    context.quadraticCurveTo(-12, 11, -26, 16);
+    context.closePath();
+    context.fill();
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 2.5;
+    context.beginPath();
+    if (powered) {
+      context.moveTo(-7, 8);
+      context.quadraticCurveTo(0, 16, 7, 8);
+    } else {
+      context.moveTo(-6, 9);
+      context.quadraticCurveTo(0, 12, 6, 9);
+    }
+    context.stroke();
+    context.restore();
+  }
+
+  function drawMilkPipeBoard(step, animation = 1) {
+    const x = 82;
+    const y = 154;
+    const cell = 84;
+    roundedRect(x - 12, y - 12, cell * 5 + 18, cell * 5 + 18, 28, '#c9b08e', 'rgba(56,47,42,.16)', 2);
+    const layout = [
+      [null, null, null, null, null],
+      [null, { c: ['R', 'D'], source: true }, { c: step >= 2 ? ['R', 'L'] : ['U', 'D'], powered: step >= 2 }, { c: ['D', 'L'], powered: step >= 2 }, null],
+      [{ c: ['R'], bowl: true, variant: 2, powered: step >= 4 }, { c: ['R', 'D'], powered: step >= 4 }, { c: ['U', 'L'], powered: step >= 2 }, { c: step >= 3 ? ['U', 'D'] : ['R', 'L'], powered: step >= 3, leak: step === 1 }, null],
+      [null, { c: ['U', 'R'], powered: step >= 4 }, { c: ['R', 'L'], powered: step >= 4 }, { c: ['U', 'L'], powered: step >= 4 }, null],
+      [null, null, { c: ['U'], bowl: true, variant: 3, powered: step >= 4 }, null, null],
+    ];
+    for (let row = 0; row < 5; row += 1) {
+      for (let column = 0; column < 5; column += 1) {
+        const tile = layout[row][column];
+        drawMilkPipeCell(
+          x + column * cell,
+          y + row * cell,
+          cell,
+          tile?.c || [],
+          tile || { blocked: true },
+        );
+      }
+    }
+    if (step === 1) drawPointer(x + cell * 3.5, y + cell * 2.5, animation);
+    if (step === 4) {
+      context.globalAlpha = .85 * animation;
+      roundedRect(128, 322, 330, 95, 22, '#fffaf0', '#8eaf9a', 5);
+      context.textAlign = 'center';
+      context.font = `900 30px ${FONT}`;
+      context.fillStyle = '#275968';
+      context.fillText('★ ★ ★', 293, 352);
+      context.font = `800 18px ${FONT}`;
+      context.fillStyle = '#382f2a';
+      context.fillText('所有貓咪都喝到鮮奶！', 293, 391);
+      context.globalAlpha = 1;
+    }
+  }
+
+  function drawMilkPipeIntro(time) {
+    drawBackground('#4d91a8', time);
+    const appear = ease(progress(time, 0, 1.2));
+    context.globalAlpha = appear;
+    drawMilkBottleIcon(202, 280, 2.5, true);
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillStyle = '#382f2a';
+    context.font = `900 65px ${FONT}`;
+    context.fillText('貓咪鮮奶管線', 365, 220);
+    context.font = `700 34px ${FONT}`;
+    context.fillStyle = '#275968';
+    context.fillText('24 秒快速教學', 370, 330);
+    roundedRect(370, 405, 600, 64, 22, '#4d91a8');
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 27px ${FONT}`;
+    context.fillStyle = '#fff';
+    context.fillText('旋轉管線，把鮮奶送到每一只碗', 670, 437);
+    context.globalAlpha = 1;
+    drawFooter('#4d91a8', time / DURATION);
+  }
+
+  function drawMilkPipeTutorial(time) {
+    const local = time - 2.5;
+    let step = 1;
+    let title = '點一下，順時針旋轉';
+    let description = '每次有效旋轉計算一步；鮮奶槽、固定格與十字管不會旋轉。';
+    if (local >= 5) {
+      step = 2;
+      title = '白色脈流代表已通奶';
+      description = '鮮奶只沿雙向匹配的接口流動；沒有接到鮮奶槽的管線不會亮起。';
+    }
+    if (local >= 10) {
+      step = 3;
+      title = '紅色水滴提示洩漏';
+      description = '洩漏標示能幫你判讀方向，但不會阻止已經喝到牛奶的貓咪。';
+    }
+    if (local >= 15) {
+      step = 4;
+      title = '每隻貓喝到就通關';
+      description = '所有貓咪碗亮起鮮奶脈流，關卡就會立即完成。';
+    }
+    drawBackground('#4d91a8', time);
+    drawTopBar('貓咪鮮奶管線教學', '#275968', step);
+    drawMilkPipeBoard(step, ease(progress(local % 5, 0, 1)));
+    drawCaption(String(step), title, description, '#4d91a8');
+    drawFooter('#4d91a8', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
@@ -669,6 +960,10 @@
       drawConnectIntro(time);
     } else if (kind === 'cat-color-connect') {
       drawConnectTutorial(time);
+    } else if (kind === 'cat-milk-pipes' && time < 2.5) {
+      drawMilkPipeIntro(time);
+    } else if (kind === 'cat-milk-pipes') {
+      drawMilkPipeTutorial(time);
     } else if (time < 2.5) {
       drawSolitaireIntro(time);
     } else {
@@ -725,18 +1020,27 @@
     await stopped;
     stream.getTracks().forEach((track) => track.stop());
     const blob = new Blob(chunks, { type: recorder.mimeType || 'video/webm' });
-    const url = URL.createObjectURL(blob);
+    if (latestVideoUrl) URL.revokeObjectURL(latestVideoUrl);
+    latestVideoUrl = URL.createObjectURL(blob);
+    videoPreview.src = latestVideoUrl;
+    videoDownload.href = latestVideoUrl;
+    videoDownload.download = `${kind}-tutorial.webm`;
+    videoResult.hidden = false;
+
     const anchor = document.createElement('a');
-    anchor.href = url;
+    anchor.href = latestVideoUrl;
     anchor.download = `${kind}-tutorial.webm`;
     document.body.append(anchor);
     anchor.click();
     anchor.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 3000);
 
     output.value = `${kind} 完成：${(blob.size / 1024 / 1024).toFixed(2)} MB`;
     buttons.forEach((button) => { button.disabled = false; });
   }
+
+  window.addEventListener('beforeunload', () => {
+    if (latestVideoUrl) URL.revokeObjectURL(latestVideoUrl);
+  });
 
   for (const button of buttons) {
     button.addEventListener('click', () => renderVideo(button.dataset.render));

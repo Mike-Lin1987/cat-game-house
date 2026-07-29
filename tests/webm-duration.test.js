@@ -34,11 +34,12 @@ test('WebM duration 修正器新增 8-byte Duration 並可重複執行', () => {
   assert.deepEqual(patchWebmDuration(patched, 24_500), patched);
 });
 
-test('三支發布用 WebM 都有 24.5 秒 duration metadata', () => {
+test('四支發布用 WebM 都有 24.5 秒 duration metadata', () => {
   for (const relativePath of [
     'games/cat-grid/tutorial.webm',
     'games/cat-color-connect/tutorial.webm',
     'games/cat-word-solitaire/tutorial.webm',
+    'games/cat-milk-pipes/tutorial.webm',
   ]) {
     const buffer = fs.readFileSync(path.join(ROOT, relativePath));
     assert.equal(readWebmDuration(buffer), 24_500, relativePath);

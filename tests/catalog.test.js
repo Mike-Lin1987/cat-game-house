@@ -14,7 +14,7 @@ const {
 
 test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () => {
   assert.equal(Array.isArray(CAT_GAME_CATALOG), true);
-  assert.equal(CAT_GAME_CATALOG.length, 3);
+  assert.equal(CAT_GAME_CATALOG.length, 4);
 
   const [game, secondGame, thirdGame] = CAT_GAME_CATALOG;
   assert.deepEqual(
@@ -35,6 +35,27 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-grid/index.html',
       tutorialHref: './tutorials/cat-grid/index.html',
       storageKey: 'cat-grid-game:v1',
+      levelCount: 100,
+      offline: true,
+    },
+  );
+  const fourthGame = CAT_GAME_CATALOG[3];
+  assert.deepEqual(
+    {
+      id: fourthGame.id,
+      title: fourthGame.title,
+      href: fourthGame.href,
+      tutorialHref: fourthGame.tutorialHref,
+      storageKey: fourthGame.storageKey,
+      levelCount: fourthGame.levelCount,
+      offline: fourthGame.offline,
+    },
+    {
+      id: 'cat-milk-pipes',
+      title: '貓咪鮮奶管線',
+      href: './games/cat-milk-pipes/index.html',
+      tutorialHref: './tutorials/cat-milk-pipes/index.html',
+      storageKey: 'cat-milk-pipes:v1',
       levelCount: 100,
       offline: true,
     },
