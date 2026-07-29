@@ -1,8 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc"><title id="title">貓咪三層配對</title><desc id="desc">奶油木質貓屋裡，三層卡牌排列在貓咪面前。</desc>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8e9"/><stop offset="1" stop-color="#edc892"/></linearGradient><linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#df9b5b"/><stop offset="1" stop-color="#9c592f"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#5c331e" flood-opacity=".35"/></filter></defs>
-<rect width="640" height="360" rx="34" fill="url(#bg)"/><circle cx="564" cy="52" r="82" fill="#fff" opacity=".35"/><path d="M0 284h640v76H0z" fill="#d79a5f"/><path d="M0 301h640M0 330h640" stroke="#b77743" stroke-width="3" opacity=".6"/>
-<g transform="translate(50 64)" filter="url(#shadow)"><path d="M22 70 45 25 76 55l33-27 23 43v82H20z" fill="#d89761" stroke="#633a25" stroke-width="8"/><ellipse cx="76" cy="105" rx="56" ry="48" fill="#fff6e7"/><circle cx="57" cy="98" r="7" fill="#57301f"/><circle cx="96" cy="98" r="7" fill="#57301f"/><path d="m71 112 6 5 6-5M77 117q-13 18-25 3M77 117q13 18 25 3" fill="none" stroke="#a55940" stroke-width="4" stroke-linecap="round"/></g>
-<g transform="translate(220 42)" filter="url(#shadow)"><rect x="35" y="18" width="108" height="108" rx="18" fill="#c48a58" stroke="#704025" stroke-width="7"/><rect x="17" y="54" width="108" height="108" rx="18" fill="#e9bd7f" stroke="#704025" stroke-width="7"/><rect x="0" y="91" width="108" height="108" rx="18" fill="#fff7e9" stroke="#704025" stroke-width="7"/><circle cx="54" cy="145" r="26" fill="#eea654"/><circle cx="39" cy="131" r="8" fill="#fff2d5"/><circle cx="69" cy="131" r="8" fill="#fff2d5"/><circle cx="31" cy="151" r="8" fill="#fff2d5"/><circle cx="77" cy="151" r="8" fill="#fff2d5"/><path d="M54 142c-20 0-25 28 0 28s20-28 0-28z" fill="#fff2d5"/></g>
-<g transform="translate(402 75)" filter="url(#shadow)"><rect width="103" height="103" rx="18" fill="#fff7e9" stroke="#704025" stroke-width="7"/><circle cx="52" cy="53" r="29" fill="#82b8d8"/><path d="M35 50h34M39 40l-9-11M64 40l9-11M45 61q7 9 14 0" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/></g>
-<rect x="187" y="284" width="360" height="54" rx="18" fill="url(#wood)" stroke="#704025" stroke-width="6"/><g fill="#fff2d5" stroke="#704025" stroke-width="3"><rect x="202" y="295" width="32" height="32" rx="7"/><rect x="240" y="295" width="32" height="32" rx="7"/><rect x="278" y="295" width="32" height="32" rx="7"/><rect x="316" y="295" width="32" height="32" rx="7"/><rect x="354" y="295" width="32" height="32" rx="7"/><rect x="392" y="295" width="32" height="32" rx="7"/><rect x="430" y="295" width="32" height="32" rx="7"/><rect x="468" y="295" width="32" height="32" rx="7"/><rect x="506" y="295" width="32" height="32" rx="7"/></g>
-<text x="586" y="170" text-anchor="end" font-family="Microsoft JhengHei,sans-serif" font-size="35" font-weight="900" fill="#704025">貓咪</text><text x="586" y="214" text-anchor="end" font-family="Microsoft JhengHei,sans-serif" font-size="35" font-weight="900" fill="#bd7441">三層配對</text><text x="586" y="244" text-anchor="end" font-family="Microsoft JhengHei,sans-serif" font-size="15" font-weight="700" fill="#7c5436">找出三張相同圖案</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">貓咪三層配對動物版</title>
+  <desc id="desc">奶油木質房間中，貓咪、狗狗、兔子與狐狸卡牌層層堆疊，下方是九格暫存槽。</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fffaf0"/><stop offset=".56" stop-color="#f8e4bd"/><stop offset="1" stop-color="#edbd7e"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#e9aa68"/><stop offset="1" stop-color="#bb6c3d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fffdf5"/><stop offset="1" stop-color="#f5dfb7"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#6b351e" flood-opacity=".28"/>
+    </filter>
+    <filter id="card-shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#5e2d1a" flood-opacity=".34"/>
+    </filter>
+
+    <symbol id="animal-cat" viewBox="0 0 64 64">
+      <path d="M15 27 13 10l13 9c4-2 8-2 12 0l13-9-2 17c4 5 5 15 0 21-7 9-27 9-34 0-5-6-4-16 0-21Z" fill="#7d858e" stroke="#53382f" stroke-width="2"/>
+      <path d="m16 15 8 6-7 3Zm32 0-8 6 7 3Z" fill="#ee9a94"/>
+      <path d="M18 42c4-6 9-8 14-8s10 2 14 8c-2 9-9 13-14 13s-12-4-14-13Z" fill="#f5eee3"/>
+      <path d="m25 20 3 7m11-7-3 7M32 18v8" fill="none" stroke="#505861" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="24.5" cy="33" rx="3.5" ry="4.6" fill="#293229"/><ellipse cx="39.5" cy="33" rx="3.5" ry="4.6" fill="#293229"/>
+      <circle cx="23.5" cy="31.5" r="1.1" fill="#fff"/><circle cx="38.5" cy="31.5" r="1.1" fill="#fff"/>
+      <path d="m29 40 3-2 3 2-3 3Z" fill="#e9827d"/><path d="M32 43c-2 3-5 3-7 1m7-1c2 3 5 3 7 1" fill="none" stroke="#6f3f39" stroke-width="1.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="animal-dog" viewBox="0 0 64 64">
+      <path d="M19 24C11 15 10 20 11 33c1 8 5 11 10 5m24-14c8-9 9-4 8 9-1 8-5 11-10 5" fill="#c47f39" stroke="#56372a" stroke-width="2"/>
+      <path d="M18 34c0-13 6-20 14-20s14 7 14 20v8c0 9-6 14-14 14s-14-5-14-14Z" fill="#dda34e" stroke="#56372a" stroke-width="2"/>
+      <path d="M20 40c3-8 21-8 24 0 2 8-5 15-12 15s-14-7-12-15Z" fill="#f1c77f"/>
+      <ellipse cx="25" cy="34" rx="3.2" ry="4" fill="#392e25"/><ellipse cx="39" cy="34" rx="3.2" ry="4" fill="#392e25"/>
+      <circle cx="24" cy="32.8" r="1" fill="#fff"/><circle cx="38" cy="32.8" r="1" fill="#fff"/>
+      <path d="M27 41c2-2 8-2 10 0-1 4-3 5-5 5s-4-1-5-5Z" fill="#4b3125"/><path d="M27 47c2 4 8 4 10 0v2c-1 5-9 5-10 0Z" fill="#eb827a" stroke="#6f3f39" stroke-width="1"/>
+    </symbol>
+    <symbol id="animal-rabbit" viewBox="0 0 64 64">
+      <path d="M19 27 18 9c0-5 6-5 8-1l4 11m15 8 1-18c0-5-6-5-8-1l-4 11" fill="#f7f1e8" stroke="#67483c" stroke-width="2"/>
+      <path d="M21 11v13m22-13v13" stroke="#f2a6a5" stroke-width="4" stroke-linecap="round"/>
+      <path d="M17 35c0-13 6-19 15-19s15 6 15 19v7c0 9-6 14-15 14s-15-5-15-14Z" fill="#f5efe6" stroke="#67483c" stroke-width="2"/>
+      <path d="M20 43c4-7 20-7 24 0-2 9-7 12-12 12s-10-3-12-12Z" fill="#fffaf1"/>
+      <ellipse cx="25" cy="34" rx="3.2" ry="4.2" fill="#4a3429"/><ellipse cx="39" cy="34" rx="3.2" ry="4.2" fill="#4a3429"/>
+      <circle cx="24" cy="32.6" r="1" fill="#fff"/><circle cx="38" cy="32.6" r="1" fill="#fff"/>
+      <path d="m29 41 3-2 3 2-3 3Z" fill="#ef9796"/><path d="M32 44c-1 3-4 4-6 2m6-2c1 3 4 4 6 2" fill="none" stroke="#70453d" stroke-width="1.3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="animal-fox" viewBox="0 0 64 64">
+      <path d="m14 27 1-18 13 10h8L49 9l1 18c5 7 3 18-3 24-7 7-23 7-30 0-6-6-8-17-3-24Z" fill="#ef7d2e" stroke="#5f3928" stroke-width="2"/>
+      <path d="m17 14 8 7-8 4Zm30 0-8 7 8 4Z" fill="#51382e"/>
+      <path d="M14 38c5-4 9-3 13 1l5 5 5-5c4-4 8-5 13-1-1 12-8 18-18 18s-17-6-18-18Z" fill="#fff0d6"/>
+      <ellipse cx="24.5" cy="33" rx="3.3" ry="4.2" fill="#302a25"/><ellipse cx="39.5" cy="33" rx="3.3" ry="4.2" fill="#302a25"/>
+      <circle cx="23.5" cy="31.6" r="1" fill="#fff"/><circle cx="38.5" cy="31.6" r="1" fill="#fff"/>
+      <path d="m28 42 4-2 4 2-4 4Z" fill="#3f2e27"/><path d="M32 46c-2 3-5 3-7 1m7-1c2 3 5 3 7 1" fill="none" stroke="#6b3e33" stroke-width="1.3"/>
+    </symbol>
+  </defs>
+
+  <rect width="640" height="360" rx="34" fill="url(#background)"/>
+  <circle cx="574" cy="30" r="102" fill="#fff" opacity=".34"/>
+  <path d="M0 278h640v82H0z" fill="url(#wood)"/>
+  <path d="M0 301h640M0 333h640" stroke="#a95f36" stroke-width="3" opacity=".55"/>
+  <path d="M32 40c18-18 44-22 64-7-24 1-40 14-48 36-6-10-11-20-16-29Z" fill="#a9b876" opacity=".42"/>
+
+  <g filter="url(#card-shadow)">
+    <g transform="translate(195 38) rotate(5 58 58)">
+      <rect width="116" height="116" rx="22" fill="url(#card)" stroke="#9a5b35" stroke-width="6"/><rect x="9" y="9" width="98" height="98" rx="17" fill="#f7c676" opacity=".28"/>
+      <use href="#animal-dog" x="23" y="22" width="70" height="70"/>
+    </g>
+    <g transform="translate(130 72) rotate(-4 58 58)">
+      <rect width="116" height="116" rx="22" fill="url(#card)" stroke="#9a5b35" stroke-width="6"/><rect x="9" y="9" width="98" height="98" rx="17" fill="#f3aaa8" opacity=".2"/>
+      <use href="#animal-rabbit" x="23" y="19" width="70" height="70"/>
+    </g>
+    <g transform="translate(65 112)">
+      <rect width="122" height="122" rx="23" fill="url(#card)" stroke="#784329" stroke-width="7"/><rect x="10" y="10" width="102" height="102" rx="17" fill="#8a9dac" opacity=".16"/>
+      <use href="#animal-cat" x="25" y="24" width="72" height="72"/><text x="61" y="107" text-anchor="middle" font-family="Microsoft JhengHei,sans-serif" font-size="12" font-weight="800" fill="#6a4938">貓咪</text>
+    </g>
+    <g transform="translate(257 111) rotate(3 58 58)">
+      <rect width="116" height="116" rx="22" fill="url(#card)" stroke="#784329" stroke-width="7"/><rect x="9" y="9" width="98" height="98" rx="17" fill="#f28a3f" opacity=".16"/>
+      <use href="#animal-fox" x="23" y="22" width="70" height="70"/><text x="58" y="102" text-anchor="middle" font-family="Microsoft JhengHei,sans-serif" font-size="12" font-weight="800" fill="#6a4938">狐狸</text>
+    </g>
+  </g>
+
+  <g font-family="Microsoft JhengHei,sans-serif" text-anchor="end">
+    <text x="594" y="91" font-size="34" font-weight="900" fill="#6d3d27">貓咪</text>
+    <text x="594" y="134" font-size="34" font-weight="900" fill="#bd693b">三層配對</text>
+    <rect x="421" y="151" width="173" height="35" rx="17.5" fill="#fff8e8" stroke="#d5995f" stroke-width="2"/>
+    <text x="578" y="175" font-size="17" font-weight="800" fill="#7b4c32">三張相同動物</text>
+    <text x="594" y="211" font-size="14" font-weight="700" fill="#8d674f">層層解鎖・輕鬆消除</text>
+  </g>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="61" y="271" width="518" height="70" rx="23" fill="#8b4f30" stroke="#6f3b25" stroke-width="5"/><rect x="70" y="280" width="500" height="51" rx="15" fill="#ca7d47"/>
+    <g stroke="#6f3b25" stroke-width="2.5">
+      <g><rect x="78" y="286" width="45" height="39" rx="9" fill="#fff6df"/><use href="#animal-cat" x="86" y="288" width="29" height="29"/></g>
+      <g><rect x="132" y="286" width="45" height="39" rx="9" fill="#fff6df"/><use href="#animal-cat" x="140" y="288" width="29" height="29"/></g>
+      <g><rect x="186" y="286" width="45" height="39" rx="9" fill="#fff6df"/><use href="#animal-cat" x="194" y="288" width="29" height="29"/></g>
+      <rect x="240" y="286" width="45" height="39" rx="9" fill="#f3d4a8"/><rect x="294" y="286" width="45" height="39" rx="9" fill="#f3d4a8"/>
+      <rect x="348" y="286" width="45" height="39" rx="9" fill="#f3d4a8"/><rect x="402" y="286" width="45" height="39" rx="9" fill="#f3d4a8"/>
+      <rect x="456" y="286" width="45" height="39" rx="9" fill="#f3d4a8"/><rect x="510" y="286" width="45" height="39" rx="9" fill="#f3d4a8"/>
+    </g>
+  </g>
+</svg>

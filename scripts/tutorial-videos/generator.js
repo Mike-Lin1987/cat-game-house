@@ -64,12 +64,18 @@
     context.globalAlpha = 1;
   }
 
-  function drawTopBar(title, accent, step) {
+  function drawTopBar(title, accent, step, iconKind) {
     roundedRect(38, 28, 1204, 74, 24, 'rgba(255,255,255,.94)', 'rgba(76,55,43,.1)', 2);
     context.font = `900 30px ${FONT}`;
     context.fillStyle = '#2f2926';
     context.textBaseline = 'middle';
-    context.fillText(`🐱  ${title}`, 70, 65);
+    context.textAlign = 'left';
+    if (iconKind === 'animal') {
+      drawTripleAnimal(82, 65, 36, 'cat');
+      context.fillText(title, 111, 65);
+    } else {
+      context.fillText(`🐱  ${title}`, 70, 65);
+    }
     roundedRect(970, 48, 235, 36, 18, `${accent}20`);
     context.font = `800 18px ${FONT}`;
     context.fillStyle = accent;
@@ -1055,16 +1061,97 @@
     drawFooter('#d59059', time / DURATION);
   }
 
-  function drawTriplePaw(x, y, scale, color) {
-    context.fillStyle = color;
-    context.beginPath();
-    context.ellipse(x, y + 9 * scale, 10 * scale, 8 * scale, 0, 0, Math.PI * 2);
-    context.fill();
-    [[-12,-4],[-4,-12],[5,-12],[13,-3]].forEach(([dx, dy]) => {
+  function drawTripleAnimal(x, y, size, kind) {
+    const kinds = ['cat', 'dog', 'rabbit', 'fox'];
+    const animal = kinds.includes(kind) ? kind : 'cat';
+    const palette = {
+      cat: { head: '#7d858e', muzzle: '#f5eee3', outline: '#53382f', nose: '#e9827d' },
+      dog: { head: '#dda34e', muzzle: '#f1c77f', outline: '#56372a', nose: '#4b3125' },
+      rabbit: { head: '#f5efe6', muzzle: '#fffaf1', outline: '#67483c', nose: '#ef9796' },
+      fox: { head: '#ef7d2e', muzzle: '#fff0d6', outline: '#5f3928', nose: '#3f2e27' },
+    }[animal];
+    const scale = size / 64;
+
+    function paintedPath(fill, stroke, width, draw) {
       context.beginPath();
-      context.arc(x + dx * scale, y + dy * scale, 4.5 * scale, 0, Math.PI * 2);
+      draw();
+      context.fillStyle = fill;
       context.fill();
+      if (stroke) {
+        context.strokeStyle = stroke;
+        context.lineWidth = width;
+        context.stroke();
+      }
+    }
+
+    context.save();
+    context.translate(x - size / 2, y - size / 2);
+    context.scale(scale, scale);
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+
+    if (animal === 'cat') {
+      paintedPath(palette.head, palette.outline, 2, () => {
+        context.moveTo(15, 27); context.lineTo(13, 10); context.lineTo(26, 19);
+        context.quadraticCurveTo(32, 16, 38, 19); context.lineTo(51, 10); context.lineTo(49, 27);
+        context.bezierCurveTo(54, 34, 53, 45, 47, 51);
+        context.bezierCurveTo(40, 58, 24, 58, 17, 51);
+        context.bezierCurveTo(11, 45, 10, 34, 15, 27);
+      });
+      context.strokeStyle = '#505861';
+      context.lineWidth = 2;
+      [[25,20,28,27],[39,20,36,27],[32,18,32,26]].forEach(([x1,y1,x2,y2]) => {
+        context.beginPath(); context.moveTo(x1, y1); context.lineTo(x2, y2); context.stroke();
+      });
+    } else if (animal === 'dog') {
+      paintedPath('#c47f39', palette.outline, 2, () => {
+        context.moveTo(20, 24); context.bezierCurveTo(9, 13, 9, 21, 11, 34); context.bezierCurveTo(12, 42, 18, 44, 22, 37);
+        context.moveTo(44, 24); context.bezierCurveTo(55, 13, 55, 21, 53, 34); context.bezierCurveTo(52, 42, 46, 44, 42, 37);
+      });
+      paintedPath(palette.head, palette.outline, 2, () => {
+        context.moveTo(18, 34); context.bezierCurveTo(18, 21, 24, 14, 32, 14);
+        context.bezierCurveTo(40, 14, 46, 21, 46, 34); context.lineTo(46, 42);
+        context.bezierCurveTo(46, 51, 40, 56, 32, 56);
+        context.bezierCurveTo(24, 56, 18, 51, 18, 42); context.closePath();
+      });
+    } else if (animal === 'rabbit') {
+      paintedPath(palette.head, palette.outline, 2, () => {
+        context.moveTo(19, 29); context.lineTo(18, 9); context.bezierCurveTo(18, 4, 24, 4, 26, 8);
+        context.lineTo(30, 20); context.lineTo(34, 20); context.lineTo(38, 8);
+        context.bezierCurveTo(40, 4, 46, 4, 46, 9); context.lineTo(45, 29);
+        context.bezierCurveTo(49, 35, 48, 47, 43, 52);
+        context.bezierCurveTo(37, 58, 27, 58, 21, 52); context.bezierCurveTo(16, 47, 15, 35, 19, 29);
+      });
+      context.strokeStyle = '#f2a6a5'; context.lineWidth = 4;
+      context.beginPath(); context.moveTo(22, 11); context.lineTo(23, 24);
+      context.moveTo(42, 11); context.lineTo(41, 24); context.stroke();
+    } else {
+      paintedPath(palette.head, palette.outline, 2, () => {
+        context.moveTo(14, 27); context.lineTo(15, 9); context.lineTo(28, 19);
+        context.lineTo(36, 19); context.lineTo(49, 9); context.lineTo(50, 27);
+        context.bezierCurveTo(55, 34, 53, 45, 47, 51);
+        context.bezierCurveTo(40, 58, 24, 58, 17, 51); context.bezierCurveTo(11, 45, 9, 34, 14, 27);
+      });
+    }
+
+    paintedPath(palette.muzzle, null, 0, () => {
+      context.moveTo(18, 42); context.bezierCurveTo(22, 36, 27, 34, 32, 34);
+      context.bezierCurveTo(37, 34, 42, 36, 46, 42);
+      context.bezierCurveTo(44, 51, 37, 55, 32, 55);
+      context.bezierCurveTo(27, 55, 20, 51, 18, 42);
     });
+    context.fillStyle = '#2f2925';
+    context.beginPath(); context.ellipse(24.5, 34, 3.2, 4.1, 0, 0, Math.PI * 2); context.fill();
+    context.beginPath(); context.ellipse(39.5, 34, 3.2, 4.1, 0, 0, Math.PI * 2); context.fill();
+    context.fillStyle = '#fff';
+    context.beginPath(); context.arc(23.5, 32.6, 1, 0, Math.PI * 2); context.fill();
+    context.beginPath(); context.arc(38.5, 32.6, 1, 0, Math.PI * 2); context.fill();
+    context.fillStyle = palette.nose;
+    context.beginPath(); context.moveTo(28, 42); context.quadraticCurveTo(32, 39, 36, 42); context.lineTo(32, 46); context.closePath(); context.fill();
+    context.strokeStyle = '#6f3f39'; context.lineWidth = 1.4;
+    context.beginPath(); context.moveTo(32, 46); context.quadraticCurveTo(29, 50, 25, 47);
+    context.moveTo(32, 46); context.quadraticCurveTo(35, 50, 39, 47); context.stroke();
+    context.restore();
   }
 
   function drawTripleBoard(step, tween) {
@@ -1073,18 +1160,19 @@
       [255,180,0],[375,180,0],[495,180,0],
       [315,220,1],[435,220,1],[375,260,2],
     ];
+    const animals = ['cat', 'cat', 'cat', 'dog', 'rabbit', 'fox'];
     cards.forEach(([x, y, layer], index) => {
       const removed = index < Math.max(0, step - 1);
       context.save();
       context.globalAlpha = removed ? Math.max(0, 1 - tween) : 1;
       roundedRect(x + layer * 4, y + layer * 5, 105, 105, 18, '#fff8e9', '#784628', 4);
-      drawTriplePaw(x + 52 + layer * 4, y + 50 + layer * 5, .9, index % 3 ? '#73a9c8' : '#e69358');
+      drawTripleAnimal(x + 52 + layer * 4, y + 50 + layer * 5, 74, animals[index]);
       context.restore();
     });
     roundedRect(805, 170, 360, 88, 20, '#a76738', '#704023', 4);
     for (let index = 0; index < 9; index += 1) {
       roundedRect(820 + index * 37, 187, 31, 50, 7, index < Math.min(3, step) ? '#fff6dd' : '#74462f', '#61371f', 2);
-      if (index < Math.min(3, step)) drawTriplePaw(835 + index * 37, 208, .27, '#e69358');
+      if (index < Math.min(3, step)) drawTripleAnimal(835 + index * 37, 208, 27, 'cat');
     }
     context.fillStyle = '#704023';
     context.textAlign = 'center';
@@ -1098,7 +1186,10 @@
     context.globalAlpha = appear;
     roundedRect(120, 160, 240, 220, 34, '#b8733f');
     roundedRect(175, 205, 112, 112, 20, '#fff8e9', '#704023', 5);
-    drawTriplePaw(231, 257, 1.2, '#e69358');
+    drawTripleAnimal(231, 253, 88, 'cat');
+    drawTripleAnimal(160, 326, 42, 'dog');
+    drawTripleAnimal(231, 338, 42, 'rabbit');
+    drawTripleAnimal(302, 326, 42, 'fox');
     context.textAlign = 'left';
     context.textBaseline = 'top';
     context.fillStyle = '#382f2a';
@@ -1122,11 +1213,11 @@
     let step = 1;
     let title = '先選沒有被遮住的亮色卡牌';
     let description = '更高層卡牌只要有重疊，就會暫時擋住下面的卡牌。';
-    if (local >= 5) { step = 2; title = '相同圖案會自動靠攏'; description = '卡牌進入九格暫存槽後，會依圖案排在一起。'; }
-    if (local >= 10) { step = 3; title = '三張相同圖案立即消除'; description = '第九張若剛好完成配對，會先消除再判斷滿槽。'; }
+    if (local >= 5) { step = 2; title = '相同動物會自動靠攏'; description = '卡牌進入九格暫存槽後，會依動物排在一起。'; }
+    if (local >= 10) { step = 3; title = '三張相同動物立即消除'; description = '第九張若剛好完成配對，會先消除再判斷滿槽。'; }
     if (local >= 15) { step = 4; title = '清空中央與暫存槽就通關'; description = '提示、復原與安全洗牌各可使用三次。'; }
     drawBackground('#bd7441', time);
-    drawTopBar('貓咪三層配對教學', '#704023', step);
+    drawTopBar('貓咪三層配對教學', '#704023', step, 'animal');
     drawTripleBoard(step, ease(progress(local % 5, 0, 1)));
     drawCaption(String(step), title, description, '#bd7441');
     drawFooter('#bd7441', time / DURATION);
