@@ -30,6 +30,8 @@ test('共用 Canvas 產生器可重現第六支原創教學影片', () => {
   assert.match(generatorScript, /function drawTripleAnimal/);
   assert.match(generatorScript, /'cat'.*'dog'.*'rabbit'.*'fox'/s);
   assert.match(generatorScript, /相同動物/);
+  assert.match(generatorScript, /const trayCount = step >= 4 \? 0 : Math\.min\(3, step\)/);
+  assert.match(generatorScript, /const trayOpacity = step === 3 \? 1 - tween : 1/);
   assert.doesNotMatch(generatorScript, /drawTriplePaw/);
 });
 test('遊戲小屋封面以核准動物卡牌呈現三層配對', () => {

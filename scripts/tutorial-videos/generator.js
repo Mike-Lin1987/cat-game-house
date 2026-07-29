@@ -1170,9 +1170,17 @@
       context.restore();
     });
     roundedRect(805, 170, 360, 88, 20, '#a76738', '#704023', 4);
+    const trayCount = step >= 4 ? 0 : Math.min(3, step);
+    const trayOpacity = step === 3 ? 1 - tween : 1;
     for (let index = 0; index < 9; index += 1) {
-      roundedRect(820 + index * 37, 187, 31, 50, 7, index < Math.min(3, step) ? '#fff6dd' : '#74462f', '#61371f', 2);
-      if (index < Math.min(3, step)) drawTripleAnimal(835 + index * 37, 208, 27, 'cat');
+      roundedRect(820 + index * 37, 187, 31, 50, 7, '#74462f', '#61371f', 2);
+      if (index < trayCount) {
+        context.save();
+        context.globalAlpha = trayOpacity;
+        roundedRect(820 + index * 37, 187, 31, 50, 7, '#fff6dd', '#61371f', 2);
+        drawTripleAnimal(835 + index * 37, 208, 27, 'cat');
+        context.restore();
+      }
     }
     context.fillStyle = '#704023';
     context.textAlign = 'center';
