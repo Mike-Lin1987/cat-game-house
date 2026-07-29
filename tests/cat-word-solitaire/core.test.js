@@ -56,7 +56,7 @@ function createLevel(overrides = {}) {
       ],
     },
     parMoves: 20,
-    moveLimit: 30,
+    threeStarMoves: 30,
     ...overrides,
   };
 }
@@ -459,7 +459,7 @@ test('提示能描述從備用格與移往空牌堆的動作', () => {
   assert.ok(relocationOnly);
 });
 
-test('撤回恢復盤面但不回退時間、提示，且不能增加剩餘步數', () => {
+test('撤回恢復盤面但不回退時間、提示，且撤回仍會計入步數', () => {
   const level = createLevel();
   const snapshot = {
     ...Core.createInitialState(level),
@@ -522,12 +522,50 @@ test('序列化保留五欄、五槽與備用格，舊 session 會補空備用�
   );
 });
 
-test('星級依提示次數固定為三、二、一星', () => {
+test('步數與提示星級取較低者，並公開兩個步數門檻', () => {
   const level = createLevel();
   const state = Core.createInitialState(level);
-  assert.equal(Core.calculateStars({ ...state, hintsUsed: 0 }, level), 3);
-  assert.equal(Core.calculateStars({ ...state, hintsUsed: 1 }, level), 2);
-  assert.equal(Core.calculateStars({ ...state, hintsUsed: 2 }, level), 1);
+  assert.deepEqual(Core.getStarRating(state, level), {
+    stars: 3,
+    moveStars: 3,
+    hintStars: 3,
+    threeStarMoves: 30,
+    twoStarMoves: 40,
+  });
+  assert.equal(
+    Core.calculateStars({ ...state, movesUsed: 31, hintsUsed: 0 }, level),
+    2,
+  );
+  assert.equal(
+    Core.calculateStars({ ...state, movesUsed: 41, hintsUsed: 0 }, level),
+    1,
+  );
+  assert.equal(
+    Core.calculateStars({ ...state, movesUsed: 20, hintsUsed: 1 }, level),
+    2,
+  );
+  assert.equal(
+    Core.calculateStars({ ...state, movesUsed: 20, hintsUsed: 2 }, level),
+    1,
+  );
+  assert.equal(
+    Core.calculateStars({ ...state, movesUsed: 35, hintsUsed: 2 }, level),
+    1,
+  );
+});
+
+test('舊 failed 狀態不再阻止合法動作，session 載入後會恢復可遊玩', () => {
+  const level = createLevel();
+  const legacyState = {
+    ...Core.createInitialState(level),
+    movesUsed: 99,
+    failed: true,
+  };
+  assert.equal(Core.getLegalMoves(legacyState, level).length > 0, true);
+
+  const restored = Core.deserializeSession(legacyState, level);
+  assert.equal(restored.failed, false);
+  assert.equal(restored.movesUsed, 99);
 });
 
 test('經過時間固定格式化為分秒', () => {

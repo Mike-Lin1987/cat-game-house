@@ -328,9 +328,7 @@
     )?.title;
     elements.gameLevel.textContent = `第 ${level.chapter} 章 · ${level.id}`;
     elements.gameChapter.textContent = chapterTitle || '';
-    elements.remainingMoves.textContent = String(
-      Math.max(0, level.moveLimit - state.movesUsed),
-    );
+    renderStarRating(elements, state, level);
     elements.elapsed.textContent =
       globalThis.CatWordCore.formatElapsedTime(state.elapsedSeconds);
     elements.hints.textContent = String(state.hintsUsed);
@@ -339,12 +337,11 @@
     );
     elements.dealButton.disabled =
       !globalThis.CatWordCore.canDealNextBatch(state, level) ||
-      state.completed ||
-      state.failed;
+      state.completed;
     elements.dealButton.onclick = handlers.deal;
     elements.undoButton.disabled = undoCount === 0 || state.completed;
     elements.undoButton.onclick = handlers.undo;
-    elements.hintButton.disabled = state.completed || state.failed;
+    elements.hintButton.disabled = state.completed;
     elements.hintButton.onclick = handlers.hint;
     elements.replayButton.onclick = handlers.replay;
     elements.gameBack.onclick = handlers.backLevels;
@@ -362,12 +359,27 @@
     renderTableau(elements, level, state, highlightedAction, handlers);
   }
 
+  function renderStarRating(elements, state, level) {
+    const rating = globalThis.CatWordCore.getStarRating(state, level);
+    elements.movesUsed.textContent = String(state.movesUsed);
+    elements.liveStarRating.textContent =
+      `${'★'.repeat(rating.stars)}${'☆'.repeat(3 - rating.stars)}`;
+    elements.liveStarRating.setAttribute(
+      'aria-label',
+      `目前可得 ${rating.stars} 顆星`,
+    );
+    elements.nextStarTarget.textContent =
+      state.movesUsed <= rating.threeStarMoves
+        ? `三星步數 ≤ ${rating.threeStarMoves}`
+        : state.movesUsed <= rating.twoStarMoves
+          ? `二星步數 ≤ ${rating.twoStarMoves}`
+          : '步數評分 1 星';
+  }
+
   function updateClock(elements, state, level) {
     elements.elapsed.textContent =
       globalThis.CatWordCore.formatElapsedTime(state.elapsedSeconds);
-    elements.remainingMoves.textContent = String(
-      Math.max(0, level.moveLimit - state.movesUsed),
-    );
+    renderStarRating(elements, state, level);
   }
 
   function showScreen(elements, name) {

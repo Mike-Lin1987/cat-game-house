@@ -78,7 +78,7 @@
             <button id="game-back" class="icon-button small" type="button" aria-label="返回選關">←</button>
             <div class="level-heading"><strong id="game-level">第一章 · L001</strong><span id="game-chapter">日常入門</span></div>
             <div class="hud" aria-label="本局狀態">
-              <div><span>剩餘步數</span><strong id="remaining-moves">0</strong></div>
+              <div class="move-rating"><span>步數</span><strong id="moves-used">0</strong><small id="live-star-rating" aria-label="目前可得 3 顆星">★★★</small><small id="next-star-target">三星步數 ≤ 0</small></div>
               <div><span>時間</span><strong id="elapsed">00:00</strong></div>
               <div><span>提示</span><strong id="hints">0</strong></div>
             </div>
@@ -135,6 +135,8 @@
           <li>收齊指定提示後，分類會完成並釋放槽位。</li>
           <li>適時按「發牌」，每批最多五張，固定從左至右放入牌堆；過早發牌可能把關鍵牌壓住，請先確認目前可移動的牌。</li>
           <li>清空五欄、兩個備用格、牌庫並完成全部分類即可過關。</li>
+          <li>步數沒有上限，也不會因步數過多失敗；每關 HUD 會顯示三星步數門檻，超過後 10 步內為二星步數評分，再多則為一星。</li>
+          <li>提示次數的評分為 0 次三星、1 次二星、2 次以上一星；最終星級取步數星級與提示星級的較低者。</li>
         </ol>
         <button class="primary-button" data-close-dialog type="button">我知道了</button>
       </div>

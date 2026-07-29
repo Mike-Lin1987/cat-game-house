@@ -247,13 +247,11 @@
 
   function finalizeState(state, level, fallbackOutcome) {
     state.completed = isLevelComplete(state, level);
+    state.failed = false;
     if (state.completed) {
-      state.failed = false;
       return OUTCOME.LEVEL_COMPLETED;
     }
-    state.failed =
-      Number.isFinite(level.moveLimit) && state.movesUsed >= level.moveLimit;
-    return state.failed ? OUTCOME.STEP_LIMIT_REACHED : fallbackOutcome;
+    return fallbackOutcome;
   }
 
   function activateCategory(state, level, cardId, slotIndex) {
@@ -444,7 +442,7 @@
   }
 
   function getLegalMoves(state, level) {
-    if (state.completed || state.failed) {
+    if (state.completed) {
       return [];
     }
     const itemMoves = [];
@@ -627,14 +625,29 @@
     return level.cards.length + level.layout.drawBatches.length;
   }
 
-  function calculateStars(state) {
-    if (state.hintsUsed === 0) {
-      return 3;
-    }
-    if (state.hintsUsed === 1) {
-      return 2;
-    }
-    return 1;
+  function getStarRating(state, level) {
+    const threeStarMoves = Number.isInteger(level?.threeStarMoves)
+      ? level.threeStarMoves
+      : Number.isInteger(level?.moveLimit)
+        ? level.moveLimit
+        : calculateParMoves(level);
+    const twoStarMoves = threeStarMoves + 10;
+    const movesUsed = Math.max(0, Math.floor(Number(state?.movesUsed) || 0));
+    const hintsUsed = Math.max(0, Math.floor(Number(state?.hintsUsed) || 0));
+    const moveStars =
+      movesUsed <= threeStarMoves ? 3 : movesUsed <= twoStarMoves ? 2 : 1;
+    const hintStars = hintsUsed === 0 ? 3 : hintsUsed === 1 ? 2 : 1;
+    return Object.freeze({
+      stars: Math.min(moveStars, hintStars),
+      moveStars,
+      hintStars,
+      threeStarMoves,
+      twoStarMoves,
+    });
+  }
+
+  function calculateStars(state, level) {
+    return getStarRating(state, level).stars;
   }
 
   function validateLayout(level) {
@@ -746,8 +759,11 @@
     if (level.parMoves !== calculateParMoves(level)) {
       errors.push('parMoves 公式錯誤');
     }
-    if (!Number.isInteger(level.moveLimit) || level.moveLimit < level.parMoves) {
-      errors.push('moveLimit 不得低於 parMoves');
+    if (
+      !Number.isInteger(level.threeStarMoves) ||
+      level.threeStarMoves < level.parMoves
+    ) {
+      errors.push('threeStarMoves 不得低於 parMoves');
     }
     return errors;
   }
@@ -859,7 +875,7 @@
           ? parsed.selectedCardId
           : null;
       clean.completed = isLevelComplete(clean, level);
-      clean.failed = !clean.completed && clean.movesUsed >= level.moveLimit;
+      clean.failed = false;
       return clean;
     } catch {
       return null;
@@ -932,6 +948,7 @@
     detectStalemate,
     isLevelComplete,
     calculateParMoves,
+    getStarRating,
     calculateStars,
     validateLevelDefinition,
     validateLayout,

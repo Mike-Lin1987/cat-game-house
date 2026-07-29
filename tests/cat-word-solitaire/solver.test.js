@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const Core = require('../../games/cat-word-solitaire/js/core.js');
 const Solver = require('../../games/cat-word-solitaire/js/solver.js');
 
-function createWaveLevel(categoryCount = 6, moveLimitOffset = 4) {
+function createWaveLevel(categoryCount = 6, threeStarOffset = 4) {
   const categories = Array.from({ length: categoryCount }, (_, index) => ({
     id: `category-${index + 1}`,
     label: `分類${index + 1}`,
@@ -61,7 +61,7 @@ function createWaveLevel(categoryCount = 6, moveLimitOffset = 4) {
     cards,
     layout: { initialColumns: columns, drawBatches },
     parMoves,
-    moveLimit: parMoves + moveLimitOffset,
+    threeStarMoves: parMoves + threeStarOffset,
   };
 }
 
@@ -109,7 +109,7 @@ test('求解器會使用第五欄與第五槽', () => {
   });
   level.layout.drawBatches = [];
   level.parMoves = 1;
-  level.moveLimit = 10;
+  level.threeStarMoves = 10;
   const state = Core.createInitialState(level);
   state.columns = [
     [],
@@ -166,17 +166,18 @@ test('無分類牌可啟用的牌局回傳無解', () => {
     drawBatches: [],
   };
   level.parMoves = 1;
-  level.moveLimit = 5;
+  level.threeStarMoves = 5;
   const result = Solver.solveLevel(level);
   assert.equal(result.solved, false);
 });
 
-test('低於必要步數的上限會停止求解', () => {
+test('步數評分門檻與舊 moveLimit 都不會停止求解', () => {
   const level = createWaveLevel(5);
-  level.moveLimit = level.parMoves - 1;
+  level.threeStarMoves = level.parMoves - 1;
+  level.moveLimit = 0;
   const result = Solver.solveLevel(level);
-  assert.equal(result.solved, false);
-  assert.equal(result.reason, 'move-limit');
+  assert.equal(result.solved, true);
+  assert.equal(result.movesUsed, level.parMoves);
 });
 
 test('狀態正規化忽略分類槽純位置差異', () => {
@@ -229,7 +230,7 @@ test('求解器可利用備用格暫存阻擋牌並完成牌局', () => {
     drawBatches: [],
   };
   level.parMoves = 10;
-  level.moveLimit = 15;
+  level.threeStarMoves = 15;
 
   const result = Solver.solveLevel(level, { maxNodes: 10000 });
   assert.equal(result.solved, true);

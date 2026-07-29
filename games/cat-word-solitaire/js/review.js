@@ -37,7 +37,7 @@
       ['章節', String(level.chapter)],
       ['layoutVersion', String(level.layoutVersion)],
       ['分類／提示', `${level.categories.length} / ${level.cards.filter((card) => card.cardType === 'item').length}`],
-      ['par／上限', `${level.parMoves} / ${level.moveLimit}`],
+      ['par／三星／二星', `${level.parMoves} / ${level.threeStarMoves} / ${level.threeStarMoves + 10}`],
       ['Solver', solution.solved ? `${solution.movesUsed} 步` : '失敗'],
       ['5槽上限', solution.maxActiveCategories <= 5 ? '通過' : '失敗'],
       ['內容審核', level.contentReview.checked ? '已完成' : '未完成'],

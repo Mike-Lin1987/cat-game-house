@@ -40,7 +40,9 @@
     gameBack: byId('game-back'),
     gameLevel: byId('game-level'),
     gameChapter: byId('game-chapter'),
-    remainingMoves: byId('remaining-moves'),
+    movesUsed: byId('moves-used'),
+    liveStarRating: byId('live-star-rating'),
+    nextStarTarget: byId('next-star-target'),
     elapsed: byId('elapsed'),
     hints: byId('hints'),
     gameSettingsButton: byId('game-settings-button'),
@@ -207,8 +209,7 @@
       !currentLevel ||
       !gameState ||
       !Core.canDealNextBatch(gameState, currentLevel) ||
-      gameState.completed ||
-      gameState.failed;
+      gameState.completed;
   }
 
   function findRenderedCard(cardId) {
@@ -367,7 +368,8 @@
   }
 
   function completeCurrentLevel() {
-    const stars = Core.calculateStars(gameState, currentLevel);
+    const rating = Core.getStarRating(gameState, currentLevel);
+    const stars = rating.stars;
     progress = Storage.updateRecord(
       progress,
       currentLevel,
@@ -392,11 +394,10 @@
       0,
     );
     const stats = [
-      ['使用步數', `${gameState.movesUsed} / ${currentLevel.moveLimit}`],
-      [
-        '剩餘步數',
-        String(Math.max(0, currentLevel.moveLimit - gameState.movesUsed)),
-      ],
+      ['使用步數', String(gameState.movesUsed)],
+      ['步數星級', `${'★'.repeat(rating.moveStars)}${'☆'.repeat(3 - rating.moveStars)}`],
+      ['提示星級', `${'★'.repeat(rating.hintStars)}${'☆'.repeat(3 - rating.hintStars)}`],
+      ['最終星級', `${'★'.repeat(rating.stars)}${'☆'.repeat(3 - rating.stars)}`],
       ['完成時間', Core.formatElapsedTime(gameState.elapsedSeconds)],
       ['提示次數', String(gameState.hintsUsed)],
     ];
@@ -468,11 +469,6 @@
     }
     if (gameState.completed) {
       completeCurrentLevel();
-    } else if (gameState.failed) {
-      showBlockedDialog(
-        '步數用盡',
-        '本局已用完可用步數，可以撤回最後一步或重新開始。',
-      );
     } else if (Core.detectStalemate(gameState, currentLevel)) {
       showBlockedDialog(
         '目前沒有可執行的動作',
@@ -1073,8 +1069,7 @@
       currentScreen !== 'game' ||
       document.visibilityState !== 'visible' ||
       !gameState ||
-      gameState.completed ||
-      gameState.failed
+      gameState.completed
     ) {
       return;
     }

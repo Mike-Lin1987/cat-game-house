@@ -73,27 +73,6 @@
     const initialMaxActiveCategories =
       initial.categorySlots.filter(Boolean).length;
 
-    if (
-      initial.movesUsed + remainingMinimumMoves(initial, level) >
-      level.moveLimit
-    ) {
-      return {
-        solved: false,
-        reason: 'move-limit',
-        actions: [],
-        movesUsed: initial.movesUsed,
-        finalState: initial,
-        nodesVisited: 0,
-        backtracks: 0,
-        maxDepth: 0,
-        maxActiveCategories: initialMaxActiveCategories,
-        branchingStates: 0,
-        dealDecisionStates: 0,
-        forcedMoves: 0,
-        durationMs: Date.now() - startedAt,
-      };
-    }
-
     function runSearch(includeRelocations) {
       const memo = new Map();
       let nodesVisited = 0;
@@ -103,7 +82,6 @@
       let branchingStates = 0;
       let dealDecisionStates = 0;
       let forcedMoves = 0;
-      let limitReached = false;
       let nodeLimitReached = false;
 
       function visit(state, actions) {
@@ -119,17 +97,6 @@
         }
         if (Core.isLevelComplete(state, level)) {
           return { state, actions };
-        }
-        if (state.movesUsed >= level.moveLimit || state.failed) {
-          limitReached = true;
-          return null;
-        }
-        if (
-          state.movesUsed + remainingMinimumMoves(state, level) >
-          level.moveLimit
-        ) {
-          limitReached = true;
-          return null;
         }
 
         const key = normalizeState(state, level);
@@ -183,9 +150,7 @@
           ? null
           : nodeLimitReached
             ? 'node-limit'
-            : limitReached
-              ? 'move-limit'
-              : 'unsolvable',
+            : 'unsolvable',
         actions: solved?.actions || [],
         movesUsed: solved?.state.movesUsed ?? initial.movesUsed,
         finalState: solved?.state || initial,
