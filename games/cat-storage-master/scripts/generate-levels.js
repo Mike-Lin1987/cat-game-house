@@ -6,6 +6,7 @@ const crypto = require('node:crypto');
 
 const core = require('../js/core.js');
 const solver = require('../js/solver.js');
+const { validateLevelSet } = require('./level-validation.js');
 
 const GAME_ROOT = path.resolve(__dirname, '..');
 const REPOSITORY_ROOT = path.resolve(GAME_ROOT, '..', '..');
@@ -373,6 +374,9 @@ function generateAll(options) {
       .sort((a, b) => a.difficultyScore - b.difficultyScore || a.canonicalSignature.localeCompare(b.canonicalSignature));
     chapterLevels.forEach((level, index) => {
       delete level._chapterIndex;
+      const slack = Math.max(0, Number(level.moveLimit) - Number(level.parMoves));
+      level.parMoves = core.calculateParMoves(level);
+      level.moveLimit = level.parMoves + slack;
       const number = (chapter.chapter - 1) * 20 + index + 1;
       level.id = `L${String(number).padStart(3, '0')}`;
       level.title = index === 0 && chapter.chapter === 1
@@ -440,16 +444,37 @@ function parseOptions(argumentsList) {
   return options;
 }
 
-function publish(levels) {
-  fs.rmSync(STAGING_DIRECTORY, { recursive: true, force: true });
-  buildDataFiles(levels, STAGING_DIRECTORY);
-  const stagedLevels = require(path.join(STAGING_DIRECTORY, 'levels-index.js'));
-  if (stagedLevels.length !== 100) throw new Error('staging 關卡數不是 100');
-  fs.mkdirSync(DATA_DIRECTORY, { recursive: true });
-  for (const name of fs.readdirSync(STAGING_DIRECTORY)) {
-    fs.copyFileSync(path.join(STAGING_DIRECTORY, name), path.join(DATA_DIRECTORY, name));
+function publish(levels, directories) {
+  const dataDirectory = directories?.dataDirectory || DATA_DIRECTORY;
+  const stagingDirectory = directories?.stagingDirectory || STAGING_DIRECTORY;
+  const backupDirectory = directories?.backupDirectory
+    || path.join(path.dirname(STAGING_DIRECTORY), 'publish-backup');
+  fs.rmSync(stagingDirectory, { recursive: true, force: true });
+  buildDataFiles(levels, stagingDirectory);
+  const stagedIndexPath = path.join(stagingDirectory, 'levels-index.js');
+  delete require.cache[require.resolve(stagedIndexPath)];
+  const stagedLevels = require(stagedIndexPath);
+  const validation = validateLevelSet(stagedLevels, canonicalSignature);
+  if (!validation.passed) {
+    throw new Error(`staging 驗證失敗：\n${validation.errors.join('\n')}`);
   }
-  return hashDirectory(DATA_DIRECTORY);
+
+  fs.rmSync(backupDirectory, { recursive: true, force: true });
+  let existingMoved = false;
+  try {
+    if (fs.existsSync(dataDirectory)) {
+      fs.renameSync(dataDirectory, backupDirectory);
+      existingMoved = true;
+    }
+    fs.renameSync(stagingDirectory, dataDirectory);
+  } catch (error) {
+    if (!fs.existsSync(dataDirectory) && existingMoved && fs.existsSync(backupDirectory)) {
+      fs.renameSync(backupDirectory, dataDirectory);
+    }
+    throw error;
+  }
+  fs.rmSync(backupDirectory, { recursive: true, force: true });
+  return hashDirectory(dataDirectory);
 }
 
 function main() {
@@ -475,4 +500,5 @@ module.exports = {
   buildDataFiles,
   hashDirectory,
   parseOptions,
+  publish,
 };

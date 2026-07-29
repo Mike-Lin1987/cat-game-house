@@ -316,19 +316,26 @@
   }
 
   function transformDistance(piece, from, target) {
-    const transforms = getUniqueTransforms(piece);
     const targetSignature = cellsSignature(getTransformedCells(piece, target.rotation, target.flipped));
-    const startRotation = normalizeRotation(from.rotation);
-    let best = Infinity;
-    for (const transform of transforms) {
-      if (transform.signature !== targetSignature) continue;
-      const rotationSteps = piece.allowRotate === false
-        ? 0
-        : (transform.rotation - startRotation + 4) % 4;
-      const flipSteps = Boolean(from.flipped) === Boolean(transform.flipped) ? 0 : 1;
-      best = Math.min(best, rotationSteps + flipSteps);
+    const start = {
+      rotation: normalizeRotation(from.rotation),
+      flipped: Boolean(from.flipped && piece.allowFlip),
+    };
+    const queue = [{ ...start, distance: 0 }];
+    const visited = new Set();
+    while (queue.length) {
+      const current = queue.shift();
+      const key = `${current.rotation}:${Number(current.flipped)}`;
+      if (visited.has(key)) continue;
+      visited.add(key);
+      if (cellsSignature(getTransformedCells(piece, current.rotation, current.flipped))
+          === targetSignature) return current.distance;
+      for (const mode of ['rotate', 'flip']) {
+        const next = nextDistinctTransform(piece, current, mode);
+        if (next) queue.push({ ...next, distance: current.distance + 1 });
+      }
     }
-    return Number.isFinite(best) ? best : 0;
+    return 0;
   }
 
   function calculateParMoves(level) {
@@ -366,14 +373,17 @@
         === cellsSignature(getTransformedCells(piece, solution.rotation, solution.flipped));
   }
 
-  function getHint(state, level, previousPieceId) {
+  function getHint(state, level, previousPieceIds) {
     const candidates = (level.pieces || [])
       .filter((piece) => !isCorrectPlacement(piece.id, state.placements[piece.id], level))
       .sort((a, b) => {
         const transformDifference = getUniqueTransforms(a).length - getUniqueTransforms(b).length;
         return transformDifference || b.cells.length - a.cells.length || a.id.localeCompare(b.id);
       });
-    const piece = candidates.find((candidate) => candidate.id !== previousPieceId) || candidates[0];
+    const excluded = new Set(
+      Array.isArray(previousPieceIds) ? previousPieceIds : previousPieceIds ? [previousPieceIds] : [],
+    );
+    const piece = candidates.find((candidate) => !excluded.has(candidate.id)) || candidates[0];
     if (!piece) return null;
     const solution = level.solution[piece.id];
     const current = state.placements[piece.id];
@@ -482,17 +492,14 @@
     };
   }
 
-  function deserializeSession(data, level) {
-    if (!data || typeof data !== 'object' || data.levelId !== level.id) return null;
+  function normalizeSessionPlacements(placements, level) {
+    if (!placements || typeof placements !== 'object') return null;
     const pieceIds = new Set((level.pieces || []).map((piece) => piece.id));
-    if (!data.placements || Object.keys(data.placements).some((id) => !pieceIds.has(id))) return null;
-    if ([...pieceIds].some((id) => !data.placements[id])) return null;
+    if (Object.keys(placements).some((id) => !pieceIds.has(id))) return null;
+    if ([...pieceIds].some((id) => !placements[id] || typeof placements[id] !== 'object')) return null;
     const state = createInitialState(level);
-    state.movesUsed = Math.max(0, Math.trunc(Number(data.movesUsed) || 0));
-    state.elapsed = Math.max(0, Math.trunc(Number(data.elapsed) || 0));
-    state.hintsUsed = Math.max(0, Math.trunc(Number(data.hintsUsed) || 0));
     for (const piece of level.pieces) {
-      const placement = data.placements[piece.id];
+      const placement = placements[piece.id];
       const normalized = {
         row: placement.placed ? Number(placement.row) : null,
         column: placement.placed ? Number(placement.column) : null,
@@ -503,11 +510,36 @@
       if (normalized.placed && !canPlacePiece(state, level, piece.id, normalized).valid) return null;
       state.placements[piece.id] = normalized;
     }
-    state.history = [];
+    return state.placements;
+  }
+
+  function deserializeSession(data, level) {
+    if (!data || typeof data !== 'object' || data.levelId !== level.id) return null;
+    const placements = normalizeSessionPlacements(data.placements, level);
+    if (!placements) return null;
+    const state = createInitialState(level);
+    state.movesUsed = Math.max(0, Math.trunc(Number(data.movesUsed) || 0));
+    state.elapsed = Math.max(0, Math.trunc(Number(data.elapsed) || 0));
+    state.hintsUsed = Math.max(0, Math.trunc(Number(data.hintsUsed) || 0));
+    state.placements = placements;
+    state.history = (Array.isArray(data.history) ? data.history : [])
+      .map((snapshot) => normalizeSessionPlacements(snapshot?.placements, level))
+      .filter(Boolean)
+      .slice(-MAX_UNDO)
+      .map((snapshotPlacements) => ({ placements: snapshotPlacements }));
     state.status = isPuzzleComplete(state, level)
       ? 'completed'
       : state.movesUsed >= level.moveLimit ? 'failed' : 'playing';
     return state;
+  }
+
+  function advancePlayTime(state, totalPlaySeconds) {
+    const next = cloneState(state);
+    next.elapsed = Math.max(0, Math.trunc(Number(next.elapsed) || 0)) + 1;
+    return {
+      state: next,
+      totalPlaySeconds: Math.max(0, Math.trunc(Number(totalPlaySeconds) || 0)) + 1,
+    };
   }
 
   function formatElapsedTime(seconds) {
@@ -546,6 +578,7 @@
     validateStoredSolution,
     serializeSession,
     deserializeSession,
+    advancePlayTime,
     formatElapsedTime,
     isConnectedCells,
   };

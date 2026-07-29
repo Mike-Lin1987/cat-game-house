@@ -134,7 +134,8 @@
     </main>`;
   }
 
-  function renderLevelSelect(progress, chapter, page) {
+  function renderLevelSelect(progress, chapter, page, levelCatalog) {
+    const levels = Array.isArray(levelCatalog) ? levelCatalog : [];
     const start = (chapter - 1) * 20 + page * 10;
     const buttons = Array.from({ length: 10 }, (_, offset) => {
       const number = start + offset + 1;
@@ -144,7 +145,7 @@
       return `<button class="level-button ${locked ? 'is-locked' : ''}" type="button"
         data-level-id="${id}" ${locked ? 'disabled aria-disabled="true"' : ''}>
         <span class="level-number">${number}</span>
-        <span class="level-size">${escapeHtml((window.CAT_STORAGE_LEVELS || []).find((level) => level.id === id)?.rows || '')}×${escapeHtml((window.CAT_STORAGE_LEVELS || []).find((level) => level.id === id)?.columns || '')}</span>
+        <span class="level-size">${escapeHtml(levels.find((level) => level.id === id)?.rows || '')}×${escapeHtml(levels.find((level) => level.id === id)?.columns || '')}</span>
         <span class="level-stars" aria-label="${record?.stars || 0} 顆星">${'★'.repeat(record?.stars || 0)}${'☆'.repeat(3 - (record?.stars || 0))}</span>
         <span class="level-record">${record ? `${record.bestMoves} 步 · ${core.formatElapsedTime(record.bestTime)}` : locked ? '尚未解鎖' : '等待收納'}</span>
       </button>`;

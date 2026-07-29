@@ -23,12 +23,13 @@
   let gameState = null;
   let selectedPieceId = null;
   let hintPieceId = null;
-  let previousHintPieceId = null;
+  let previousHintPieceIds = [];
   let hintTimer = null;
   let drag = null;
-  let sessionStartElapsed = 0;
   let timerTicks = 0;
   let dialogReturnFocus = null;
+  let announceTimer = null;
+  let dragAnnouncement = null;
 
   function resolvePortalHref() {
     return window.location.protocol === 'file:' ? FILE_PORTAL_HREF : HOST_PORTAL_HREF;
@@ -37,7 +38,8 @@
   function announce(message) {
     if (liveRegion) {
       liveRegion.textContent = '';
-      window.setTimeout(() => { liveRegion.textContent = message; }, 10);
+      window.clearTimeout(announceTimer);
+      announceTimer = window.setTimeout(() => { liveRegion.textContent = message; }, 10);
     }
     const instruction = document.querySelector('[data-instruction]');
     if (instruction) instruction.textContent = message;
@@ -51,7 +53,7 @@
   function render() {
     if (screen === 'home') app.innerHTML = renderer.renderHome(progress);
     else if (screen === 'levels') {
-      app.innerHTML = renderer.renderLevelSelect(progress, selectedChapter, selectedPage);
+      app.innerHTML = renderer.renderLevelSelect(progress, selectedChapter, selectedPage, levels);
     } else if (screen === 'game' && currentLevel && gameState) {
       app.innerHTML = renderer.renderGame(
         currentLevel,
@@ -117,11 +119,11 @@
   function resetCurrentLevel() {
     if (!currentLevel) return;
     gameState = core.createInitialState(currentLevel);
-    sessionStartElapsed = 0;
     selectedPieceId = null;
     hintPieceId = null;
-    previousHintPieceId = null;
-    storage.saveSession(core.serializeSession(gameState));
+    previousHintPieceIds = [];
+    progress.currentSession = core.serializeSession(gameState);
+    storage.saveProgress(progress);
     closeDialog();
     render();
     announce('已重新開始這一關。');
@@ -129,7 +131,6 @@
 
   function showCompletion() {
     const stars = core.calculateStars(gameState, currentLevel);
-    progress.totalPlaySeconds += Math.max(0, gameState.elapsed - sessionStartElapsed);
     storage.saveProgress(progress);
     storage.updateRecord(currentLevel.id, {
       stars,
@@ -163,7 +164,8 @@
   }
 
   function showFailure() {
-    storage.clearSession();
+    progress.currentSession = null;
+    storage.saveProgress(progress);
     openDialog(`<div class="dialog-cat">${renderer.catDecoration()}</div>
       <h2 class="dialog-title">這次箱子塞不下了</h2>
       <p>已用完 ${currentLevel.moveLimit} 步。重新整理一下順序，再試一次吧！</p>
@@ -184,10 +186,9 @@
     }
     gameState = restored || core.createInitialState(level);
     if (gameState.status !== 'playing') gameState = core.createInitialState(level);
-    sessionStartElapsed = gameState.elapsed;
     selectedPieceId = null;
     hintPieceId = null;
-    previousHintPieceId = null;
+    previousHintPieceIds = [];
     screen = 'game';
     render();
     storage.saveSession(core.serializeSession(gameState));
@@ -199,7 +200,7 @@
     if (screen === 'game' && gameState && gameState.status === 'playing') {
       const session = core.serializeSession(gameState);
       progress.currentSession = session;
-      storage.saveSession(session);
+      storage.saveProgress(progress);
     }
   }
 
@@ -240,9 +241,10 @@
 
   function hint() {
     if (!gameState || gameState.status !== 'playing') return;
-    const result = core.getHint(gameState, currentLevel, previousHintPieceId);
+    const result = core.getHint(gameState, currentLevel, previousHintPieceIds);
     if (!result) return announce('每個拼塊都在正確位置。');
-    previousHintPieceId = result.pieceId;
+    if (previousHintPieceIds.includes(result.pieceId)) previousHintPieceIds = [];
+    previousHintPieceIds.push(result.pieceId);
     hintPieceId = result.pieceId;
     gameState = { ...gameState, hintsUsed: gameState.hintsUsed + 1 };
     persistSession();
@@ -322,6 +324,7 @@
       moved: false,
       latest: null,
     };
+    dragAnnouncement = null;
     selectedPieceId = pieceId;
     event.preventDefault();
   }
@@ -344,9 +347,14 @@
         drag.latest.check.cells,
         drag.latest.check.valid,
       );
-      announce(drag.latest.check.valid ? '可以放在這裡。' : '這個位置不能放置。');
+      const message = drag.latest.check.valid ? '可以放在這裡。' : '這個位置不能放置。';
+      if (message !== dragAnnouncement) {
+        dragAnnouncement = message;
+        announce(message);
+      }
     } else {
       renderer.clearPreview(document.querySelector('[data-board]'));
+      dragAnnouncement = null;
     }
     event.preventDefault();
   }
@@ -357,6 +365,7 @@
     renderer.clearPreview(document.querySelector('[data-board]'));
     dragLayer.replaceChildren();
     drag = null;
+    dragAnnouncement = null;
     if (cancelled) {
       render();
       announce('拖曳已取消，拼塊回到原位。');
@@ -517,7 +526,9 @@
 
   window.setInterval(() => {
     if (screen !== 'game' || !gameState || gameState.status !== 'playing' || dialog.open || document.hidden || drag) return;
-    gameState.elapsed += 1;
+    const advanced = core.advancePlayTime(gameState, progress.totalPlaySeconds);
+    gameState = advanced.state;
+    progress.totalPlaySeconds = advanced.totalPlaySeconds;
     timerTicks += 1;
     const timeElement = document.querySelector('.status-card:nth-child(3) strong');
     if (timeElement) timeElement.textContent = core.formatElapsedTime(gameState.elapsed);

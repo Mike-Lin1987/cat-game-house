@@ -62,3 +62,15 @@ test('LocalStorage 拋錯時讀寫安全降級', () => {
   assert.equal(api.loadProgress().unlockedLevel, 1);
   assert.equal(api.saveProgress({}), false);
 });
+
+test('不相容或缺少資料版本時不沿用舊進度', () => {
+  for (const value of [
+    { version: 999, unlockedLevel: 100, records: { L100: { completed: true } } },
+    { unlockedLevel: 100 },
+  ]) {
+    const progress = storageApi.createStorage(memoryStorage(JSON.stringify(value))).loadProgress();
+    assert.equal(progress.version, 1);
+    assert.equal(progress.unlockedLevel, 1);
+    assert.deepEqual(progress.records, {});
+  }
+});

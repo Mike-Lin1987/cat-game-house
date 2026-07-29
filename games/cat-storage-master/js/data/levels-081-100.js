@@ -896,8 +896,8 @@
     "difficultyScore": 646,
     "seed": 510011,
     "generatorVersion": 1,
-    "parMoves": 18,
-    "moveLimit": 26,
+    "parMoves": 16,
+    "moveLimit": 24,
     "fillableCells": [
       [
         0,
@@ -1772,8 +1772,8 @@
     "difficultyScore": 676,
     "seed": 513003,
     "generatorVersion": 1,
-    "parMoves": 17,
-    "moveLimit": 23,
+    "parMoves": 15,
+    "moveLimit": 21,
     "fillableCells": [
       [
         0,
@@ -6092,8 +6092,8 @@
     "difficultyScore": 702,
     "seed": 511007,
     "generatorVersion": 1,
-    "parMoves": 17,
-    "moveLimit": 25,
+    "parMoves": 15,
+    "moveLimit": 23,
     "fillableCells": [
       [
         0,
@@ -10093,8 +10093,8 @@
     "difficultyScore": 738,
     "seed": 506005,
     "generatorVersion": 1,
-    "parMoves": 16,
-    "moveLimit": 23,
+    "parMoves": 14,
+    "moveLimit": 21,
     "fillableCells": [
       [
         0,
@@ -12910,8 +12910,8 @@
     "difficultyScore": 844,
     "seed": 518001,
     "generatorVersion": 1,
-    "parMoves": 25,
-    "moveLimit": 35,
+    "parMoves": 23,
+    "moveLimit": 33,
     "fillableCells": [
       [
         0,
@@ -13976,8 +13976,8 @@
     "difficultyScore": 851,
     "seed": 512002,
     "generatorVersion": 1,
-    "parMoves": 18,
-    "moveLimit": 25,
+    "parMoves": 16,
+    "moveLimit": 23,
     "fillableCells": [
       [
         0,

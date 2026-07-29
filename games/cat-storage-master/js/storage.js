@@ -43,6 +43,7 @@
   function sanitizeProgress(value) {
     const safe = defaultProgress();
     if (!value || typeof value !== 'object') return safe;
+    if (value.version !== config.dataVersion) return safe;
     safe.unlockedLevel = Math.max(
       1,
       Math.min(config.totalLevels, Math.trunc(Number(value.unlockedLevel) || 1)),

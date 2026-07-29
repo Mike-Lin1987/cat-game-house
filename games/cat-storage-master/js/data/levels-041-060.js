@@ -466,8 +466,8 @@
     "difficultyScore": 419,
     "seed": 316375,
     "generatorVersion": 1,
-    "parMoves": 16,
-    "moveLimit": 24,
+    "parMoves": 14,
+    "moveLimit": 22,
     "fillableCells": [
       [
         0,
@@ -917,8 +917,8 @@
     "difficultyScore": 419,
     "seed": 302323,
     "generatorVersion": 1,
-    "parMoves": 15,
-    "moveLimit": 28,
+    "parMoves": 13,
+    "moveLimit": 26,
     "fillableCells": [
       [
         0,
@@ -1363,8 +1363,8 @@
     "difficultyScore": 425,
     "seed": 300457,
     "generatorVersion": 1,
-    "parMoves": 10,
-    "moveLimit": 23,
+    "parMoves": 8,
+    "moveLimit": 21,
     "fillableCells": [
       [
         0,
@@ -2261,8 +2261,8 @@
     "difficultyScore": 447,
     "seed": 318448,
     "generatorVersion": 1,
-    "parMoves": 17,
-    "moveLimit": 25,
+    "parMoves": 12,
+    "moveLimit": 20,
     "fillableCells": [
       [
         0,
@@ -2712,8 +2712,8 @@
     "difficultyScore": 449,
     "seed": 310038,
     "generatorVersion": 1,
-    "parMoves": 19,
-    "moveLimit": 32,
+    "parMoves": 15,
+    "moveLimit": 28,
     "fillableCells": [
       [
         0,
@@ -3163,8 +3163,8 @@
     "difficultyScore": 466,
     "seed": 307041,
     "generatorVersion": 1,
-    "parMoves": 17,
-    "moveLimit": 27,
+    "parMoves": 15,
+    "moveLimit": 25,
     "fillableCells": [
       [
         0,
@@ -6258,8 +6258,8 @@
     "difficultyScore": 504,
     "seed": 315012,
     "generatorVersion": 1,
-    "parMoves": 15,
-    "moveLimit": 28,
+    "parMoves": 13,
+    "moveLimit": 26,
     "fillableCells": [
       [
         0,
@@ -7381,8 +7381,8 @@
     "difficultyScore": 514,
     "seed": 303015,
     "generatorVersion": 1,
-    "parMoves": 19,
-    "moveLimit": 32,
+    "parMoves": 16,
+    "moveLimit": 29,
     "fillableCells": [
       [
         0,
@@ -8486,8 +8486,8 @@
     "difficultyScore": 517,
     "seed": 313039,
     "generatorVersion": 1,
-    "parMoves": 18,
-    "moveLimit": 31,
+    "parMoves": 17,
+    "moveLimit": 30,
     "fillableCells": [
       [
         0,
@@ -9588,8 +9588,8 @@
     "difficultyScore": 534,
     "seed": 314383,
     "generatorVersion": 1,
-    "parMoves": 20,
-    "moveLimit": 32,
+    "parMoves": 18,
+    "moveLimit": 30,
     "fillableCells": [
       [
         0,
