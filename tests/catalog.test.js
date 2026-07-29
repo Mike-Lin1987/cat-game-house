@@ -14,7 +14,7 @@ const {
 
 test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () => {
   assert.equal(Array.isArray(CAT_GAME_CATALOG), true);
-  assert.equal(CAT_GAME_CATALOG.length, 5);
+  assert.equal(CAT_GAME_CATALOG.length, 6);
 
   const [game, secondGame, thirdGame] = CAT_GAME_CATALOG;
   assert.deepEqual(
@@ -77,6 +77,27 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-storage-master/index.html',
       tutorialHref: './tutorials/cat-storage-master/index.html',
       storageKey: 'cat-storage-master:v1',
+      levelCount: 100,
+      offline: true,
+    },
+  );
+  const sixthGame = CAT_GAME_CATALOG[5];
+  assert.deepEqual(
+    {
+      id: sixthGame.id,
+      title: sixthGame.title,
+      href: sixthGame.href,
+      tutorialHref: sixthGame.tutorialHref,
+      storageKey: sixthGame.storageKey,
+      levelCount: sixthGame.levelCount,
+      offline: sixthGame.offline,
+    },
+    {
+      id: 'cat-triple-match',
+      title: '貓咪三層配對',
+      href: './games/cat-triple-match/index.html',
+      tutorialHref: './tutorials/cat-triple-match/index.html',
+      storageKey: 'cat-triple-match:v1',
       levelCount: 100,
       offline: true,
     },

@@ -1,0 +1,2015 @@
+{
+  "game": "貓咪三層配對",
+  "generatedFromFixedData": true,
+  "passed": true,
+  "summary": {
+    "levels": 100,
+    "solved": 100,
+    "d4Unique": 100,
+    "minTiles": 18,
+    "maxTiles": 108,
+    "maxPeakTrayOccupancy": 8
+  },
+  "levels": [
+    {
+      "id": "L001",
+      "chapter": 1,
+      "tiles": 18,
+      "layers": 3,
+      "symbols": 3,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 19,
+        "backtracks": 0,
+        "maxDepth": 18,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:10:2:s2|0:2:4:s0|0:2:10:s0|0:6:10:s1|0:2:12:s2|0:8:12:s1|0:10:12:s2|1:9:1:s1|1:1:3:s1|1:3:5:s2|1:1:9:s2|1:1:11:s2|1:3:11:s1|2:0:2:s0|2:2:8:s0|2:2:12:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L002",
+      "chapter": 1,
+      "tiles": 18,
+      "layers": 3,
+      "symbols": 6,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 19,
+        "backtracks": 0,
+        "maxDepth": 18,
+        "peakTrayOccupancy": 2,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:10:0:s0|0:0:4:s1|0:4:4:s2|0:4:6:s2|0:6:6:s1|0:8:6:s1|0:8:8:s2|1:3:1:s3|1:9:1:s4|1:1:3:s4|1:1:5:s4|1:3:7:s3|1:9:7:s3|2:2:2:s5|2:0:6:s5|2:8:8:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L003",
+      "chapter": 1,
+      "tiles": 18,
+      "layers": 3,
+      "symbols": 6,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 19,
+        "backtracks": 0,
+        "maxDepth": 18,
+        "peakTrayOccupancy": 2,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:2:s0|0:12:2:s0|0:2:8:s0|0:6:8:s1|0:4:10:s1|0:8:10:s2|0:2:12:s2|0:4:12:s1|0:10:12:s2|1:1:1:s3|1:11:1:s3|1:5:7:s4|1:7:7:s4|1:1:11:s3|1:11:11:s4|2:10:2:s5|2:4:6:s5|2:6:8:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L004",
+      "chapter": 1,
+      "tiles": 18,
+      "layers": 3,
+      "symbols": 6,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 19,
+        "backtracks": 0,
+        "maxDepth": 18,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:2:s0|0:6:2:s1|0:2:6:s2|0:4:6:s1|0:4:10:s0|0:8:10:s2|0:10:10:s0|0:4:12:s2|0:8:12:s1|1:1:1:s3|1:5:1:s3|1:1:7:s4|1:9:9:s4|1:7:11:s4|1:9:11:s3|2:6:0:s5|2:4:2:s5|2:6:12:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L005",
+      "chapter": 1,
+      "tiles": 21,
+      "layers": 3,
+      "symbols": 6,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 22,
+        "backtracks": 0,
+        "maxDepth": 21,
+        "peakTrayOccupancy": 2,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:6:0:s1|0:10:0:s0|0:6:2:s2|0:4:6:s3|0:0:8:s2|0:2:8:s0|0:8:8:s1|0:0:10:s3|0:4:10:s3|0:10:10:s2|0:8:12:s1|1:7:1:s4|1:7:3:s5|1:5:5:s4|1:9:9:s5|1:11:9:s4|1:5:11:s5|2:6:2:s1|2:6:4:s1|2:8:8:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L006",
+      "chapter": 1,
+      "tiles": 21,
+      "layers": 3,
+      "symbols": 7,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 22,
+        "backtracks": 0,
+        "maxDepth": 21,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:2:2:s0|0:4:2:s1|0:6:2:s0|0:8:2:s1|0:10:2:s2|0:10:4:s3|0:2:6:s2|0:10:6:s3|0:10:8:s0|0:10:10:s1|0:6:12:s3|0:8:12:s2|1:1:1:s4|1:3:3:s5|1:11:3:s4|1:9:7:s4|1:11:7:s5|1:5:11:s5|2:2:0:s6|2:12:2:s6|2:10:4:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L007",
+      "chapter": 1,
+      "tiles": 21,
+      "layers": 3,
+      "symbols": 7,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 22,
+        "backtracks": 0,
+        "maxDepth": 21,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:10:2:s0|0:6:4:s1|0:12:4:s2|0:0:6:s2|0:4:6:s1|0:8:6:s1|0:8:8:s3|0:0:10:s3|0:2:10:s2|0:8:10:s0|0:4:12:s0|0:10:12:s3|1:11:1:s4|1:9:7:s4|1:7:9:s5|1:9:9:s5|1:1:11:s5|1:11:11:s4|2:10:8:s6|2:10:10:s6|2:0:12:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L008",
+      "chapter": 1,
+      "tiles": 24,
+      "layers": 3,
+      "symbols": 7,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 25,
+        "backtracks": 0,
+        "maxDepth": 24,
+        "peakTrayOccupancy": 2,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:8:0:s2|0:12:0:s2|0:2:4:s3|0:0:6:s2|0:0:8:s3|0:2:8:s4|0:6:8:s1|0:12:8:s0|0:8:10:s3|0:12:10:s4|0:4:12:s4|0:6:12:s0|0:10:12:s1|1:1:1:s5|1:3:1:s5|1:1:3:s6|1:1:5:s6|1:3:5:s6|1:1:9:s5|2:0:4:s4|2:4:6:s4|2:2:10:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L009",
+      "chapter": 1,
+      "tiles": 24,
+      "layers": 3,
+      "symbols": 7,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 25,
+        "backtracks": 0,
+        "maxDepth": 24,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:4:0:s0|0:6:0:s1|0:8:2:s1|0:10:2:s2|0:12:2:s1|0:4:4:s0|0:8:4:s3|0:2:6:s3|0:12:6:s2|0:0:8:s3|0:0:10:s4|0:4:10:s4|0:12:10:s2|0:10:12:s4|1:3:5:s5|1:11:5:s5|1:11:7:s5|1:5:9:s6|1:3:11:s6|1:11:11:s6|2:2:6:s4|2:4:10:s4|2:6:10:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L010",
+      "chapter": 1,
+      "tiles": 24,
+      "layers": 3,
+      "symbols": 7,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 25,
+        "backtracks": 0,
+        "maxDepth": 24,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:6:0:s1|0:10:0:s2|0:4:2:s3|0:4:4:s4|0:6:4:s3|0:10:4:s4|0:6:6:s2|0:10:6:s1|0:0:8:s3|0:0:10:s0|0:6:10:s1|0:10:10:s0|0:6:12:s4|0:8:12:s2|1:7:1:s5|1:3:3:s5|1:9:3:s6|1:9:7:s5|1:9:9:s6|1:5:11:s6|2:10:6:s4|2:4:10:s4|2:10:10:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L011",
+      "chapter": 1,
+      "tiles": 27,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 28,
+        "backtracks": 0,
+        "maxDepth": 27,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:4:2:s2|0:2:4:s0|0:6:4:s3|0:8:4:s3|0:10:4:s1|0:8:6:s3|0:2:8:s4|0:4:8:s5|0:6:8:s1|0:10:8:s4|0:2:10:s2|0:4:10:s4|0:6:10:s5|0:0:12:s5|0:2:12:s0|0:4:12:s2|1:3:5:s6|1:5:5:s6|1:7:5:s7|1:9:5:s7|1:9:7:s6|1:11:7:s7|2:6:4:s3|2:10:4:s3|2:6:6:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L012",
+      "chapter": 1,
+      "tiles": 27,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 28,
+        "backtracks": 0,
+        "maxDepth": 27,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:8:0:s1|0:12:0:s2|0:4:2:s2|0:6:2:s1|0:0:4:s3|0:10:4:s1|0:0:6:s4|0:4:6:s4|0:6:6:s5|0:12:6:s3|0:8:8:s4|0:12:8:s5|0:2:10:s0|0:4:10:s2|0:6:10:s5|0:12:10:s3|1:5:1:s6|1:9:1:s7|1:11:1:s7|1:1:5:s6|1:7:9:s6|1:11:11:s7|2:4:2:s5|2:6:2:s5|2:2:4:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L013",
+      "chapter": 1,
+      "tiles": 27,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 28,
+        "backtracks": 0,
+        "maxDepth": 27,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:4:0:s1|0:0:2:s1|0:12:2:s2|0:0:4:s3|0:2:4:s4|0:10:4:s5|0:0:6:s0|0:2:6:s3|0:6:6:s4|0:12:6:s2|0:2:8:s2|0:4:8:s5|0:12:8:s4|0:8:10:s1|0:8:12:s5|0:10:12:s3|1:11:3:s6|1:1:5:s7|1:9:5:s7|1:11:5:s7|1:11:7:s6|1:3:9:s6|2:12:2:s0|2:0:6:s0|2:10:8:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L014",
+      "chapter": 1,
+      "tiles": 30,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 31,
+        "backtracks": 0,
+        "maxDepth": 30,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s2|0:10:0:s3|0:4:2:s3|0:10:2:s4|0:12:2:s0|0:0:6:s1|0:6:6:s4|0:12:6:s5|0:2:8:s4|0:4:8:s1|0:6:8:s2|0:8:8:s5|0:0:10:s0|0:10:10:s3|0:4:12:s5|0:6:12:s2|1:3:1:s6|1:7:1:s7|1:9:3:s6|1:7:5:s7|1:11:5:s2|1:5:7:s2|1:9:7:s7|1:5:11:s6|1:9:11:s2|2:6:4:s0|2:12:4:s0|2:10:10:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L015",
+      "chapter": 1,
+      "tiles": 30,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 31,
+        "backtracks": 0,
+        "maxDepth": 30,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:8:0:s2|0:10:0:s3|0:2:2:s4|0:8:2:s5|0:10:4:s5|0:12:4:s3|0:0:6:s4|0:4:6:s4|0:6:6:s3|0:6:8:s2|0:12:8:s1|0:4:10:s2|0:6:10:s5|0:6:12:s0|0:8:12:s0|0:12:12:s1|1:7:1:s1|1:9:1:s6|1:1:3:s6|1:3:3:s7|1:7:3:s7|1:1:5:s1|1:9:5:s1|1:7:11:s7|1:9:11:s6|2:8:0:s2|2:4:2:s2|2:0:6:s2",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L016",
+      "chapter": 1,
+      "tiles": 30,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 31,
+        "backtracks": 0,
+        "maxDepth": 30,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s0|0:2:2:s1|0:10:2:s2|0:0:4:s3|0:2:4:s4|0:4:4:s5|0:10:6:s0|0:0:8:s3|0:4:8:s3|0:12:8:s1|0:2:10:s4|0:4:10:s5|0:8:10:s5|0:6:12:s2|0:10:12:s2|0:12:12:s4|1:3:1:s6|1:3:3:s7|1:5:3:s7|1:9:3:s8|1:11:3:s8|1:1:5:s6|1:11:7:s6|1:1:9:s7|1:11:11:s8|2:4:4:s2|2:12:8:s2|2:2:10:s2",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L017",
+      "chapter": 1,
+      "tiles": 33,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 34,
+        "backtracks": 0,
+        "maxDepth": 33,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:0:2:s1|0:4:2:s3|0:4:4:s4|0:10:4:s5|0:12:4:s5|0:0:8:s0|0:4:8:s1|0:6:8:s4|0:8:8:s4|0:4:10:s0|0:8:10:s2|0:2:12:s5|0:6:12:s3|0:8:12:s2|0:12:12:s3|1:1:3:s6|1:3:3:s7|1:5:5:s6|1:9:5:s7|1:11:5:s6|1:5:7:s7|1:9:7:s8|1:3:9:s8|1:7:9:s8|2:2:4:s5|2:6:4:s3|2:10:4:s5|2:10:6:s5|2:10:8:s3|2:8:10:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L018",
+      "chapter": 1,
+      "tiles": 33,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 34,
+        "backtracks": 0,
+        "maxDepth": 33,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:2:0:s0|0:4:0:s1|0:10:0:s1|0:4:2:s2|0:10:2:s3|0:0:4:s0|0:2:4:s0|0:8:4:s2|0:2:6:s4|0:2:8:s2|0:4:8:s5|0:8:8:s1|0:12:8:s3|0:6:10:s4|0:8:10:s3|0:12:10:s5|0:2:12:s4|0:6:12:s5|1:9:1:s6|1:1:3:s7|1:7:5:s8|1:1:7:s7|1:9:7:s6|1:7:9:s7|1:11:9:s8|1:3:11:s6|1:11:11:s8|2:0:4:s4|2:8:4:s5|2:0:8:s4|2:4:10:s4|2:10:12:s5|2:12:12:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L019",
+      "chapter": 1,
+      "tiles": 33,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 34,
+        "backtracks": 0,
+        "maxDepth": 33,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s0|0:6:0:s2|0:8:0:s2|0:4:2:s1|0:6:2:s0|0:0:4:s3|0:10:4:s4|0:0:6:s5|0:2:6:s1|0:10:6:s2|0:12:6:s3|0:0:8:s4|0:6:8:s3|0:6:10:s5|0:10:10:s4|0:10:12:s5|1:3:1:s6|1:5:1:s6|1:9:1:s7|1:7:3:s8|1:9:3:s6|1:7:7:s8|1:9:7:s8|1:5:11:s7|1:9:11:s7|2:4:2:s4|2:10:4:s3|2:8:6:s4|2:6:8:s3|2:10:8:s3|2:6:10:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L020",
+      "chapter": 1,
+      "tiles": 36,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 37,
+        "backtracks": 0,
+        "maxDepth": 36,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:8:0:s1|0:10:0:s0|0:0:2:s2|0:2:2:s1|0:8:2:s3|0:6:4:s3|0:10:4:s4|0:2:6:s4|0:10:6:s2|0:12:6:s5|0:0:8:s2|0:6:8:s5|0:8:8:s1|0:10:8:s4|0:2:10:s5|0:6:10:s6|0:10:10:s6|0:0:12:s6|0:8:12:s3|1:1:1:s7|1:3:3:s2|1:5:3:s2|1:3:5:s2|1:3:7:s8|1:1:9:s8|1:7:9:s7|1:1:11:s7|1:7:11:s8|2:4:4:s1|2:2:6:s6|2:4:6:s1|2:6:8:s6|2:8:8:s6|2:2:10:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L021",
+      "chapter": 2,
+      "tiles": 36,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 37,
+        "backtracks": 0,
+        "maxDepth": 36,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:12:0:s1|0:2:2:s2|0:4:2:s3|0:6:2:s4|0:8:2:s1|0:8:4:s3|0:10:4:s5|0:12:4:s6|0:0:6:s5|0:2:6:s3|0:8:6:s4|0:12:6:s5|0:0:8:s4|0:4:8:s6|0:8:8:s2|0:10:8:s1|0:12:8:s0|0:0:10:s0|0:4:12:s6|0:8:12:s2|1:11:1:s0|1:1:3:s7|1:9:3:s0|1:11:3:s5|1:3:5:s7|1:7:5:s0|1:7:7:s5|1:7:9:s5|1:9:11:s7|2:10:0:s2|2:8:2:s2|2:8:4:s6|2:6:6:s2|2:6:10:s6|2:8:10:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L022",
+      "chapter": 2,
+      "tiles": 36,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 37,
+        "backtracks": 0,
+        "maxDepth": 36,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s0|0:4:2:s1|0:8:2:s2|0:2:4:s2|0:6:4:s3|0:12:4:s4|0:0:6:s2|0:2:6:s5|0:6:6:s6|0:12:6:s1|0:0:8:s6|0:2:8:s6|0:4:8:s4|0:6:8:s4|0:0:10:s5|0:6:10:s0|0:12:10:s1|0:0:12:s5|0:2:12:s3|0:6:12:s3|1:3:1:s2|1:7:1:s2|1:3:3:s0|1:5:3:s2|1:7:3:s7|1:9:3:s7|1:3:5:s0|1:7:5:s7|1:11:11:s0|2:4:2:s6|2:6:2:s6|2:8:2:s6|2:4:4:s4|2:6:6:s4|2:10:10:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L023",
+      "chapter": 2,
+      "tiles": 36,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 37,
+        "backtracks": 0,
+        "maxDepth": 36,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:2:2:s1|0:6:2:s2|0:0:4:s2|0:2:4:s3|0:12:4:s4|0:0:6:s5|0:4:6:s0|0:10:6:s2|0:12:6:s3|0:0:8:s4|0:6:8:s5|0:10:8:s6|0:0:10:s6|0:4:10:s3|0:0:12:s4|0:2:12:s1|0:6:12:s6|0:8:12:s5|0:10:12:s0|1:3:1:s6|1:7:1:s7|1:7:3:s6|1:1:7:s2|1:3:7:s6|1:5:7:s7|1:9:7:s2|1:11:9:s2|1:1:11:s7|2:4:2:s3|2:8:4:s3|2:2:6:s4|2:4:8:s4|2:10:8:s4|2:0:12:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L024",
+      "chapter": 2,
+      "tiles": 36,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 37,
+        "backtracks": 0,
+        "maxDepth": 36,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:2:0:s0|0:6:0:s1|0:8:0:s2|0:2:2:s1|0:8:2:s3|0:10:2:s2|0:0:4:s4|0:4:4:s5|0:6:4:s6|0:8:4:s6|0:0:6:s5|0:6:6:s3|0:10:6:s5|0:12:6:s6|0:0:8:s0|0:4:8:s4|0:6:8:s0|0:6:10:s4|0:8:10:s1|0:4:12:s3|0:10:12:s2|1:3:1:s4|1:3:3:s7|1:9:3:s3|1:11:3:s7|1:5:5:s4|1:11:5:s7|1:5:7:s3|1:5:9:s4|1:7:9:s3|2:2:0:s5|2:4:2:s6|2:4:4:s6|2:4:8:s5|2:6:8:s6|2:4:10:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L025",
+      "chapter": 2,
+      "tiles": 39,
+      "layers": 3,
+      "symbols": 8,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 40,
+        "backtracks": 0,
+        "maxDepth": 39,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:0:2:s1|0:2:2:s0|0:4:2:s2|0:10:2:s3|0:12:2:s2|0:0:4:s4|0:4:4:s3|0:6:4:s5|0:0:6:s1|0:8:6:s3|0:10:6:s6|0:2:8:s2|0:10:8:s4|0:0:10:s6|0:4:10:s0|0:8:10:s1|0:0:12:s5|0:4:12:s5|0:6:12:s4|0:10:12:s6|1:5:1:s0|1:9:1:s2|1:11:1:s1|1:1:3:s1|1:7:3:s7|1:9:3:s7|1:1:5:s0|1:7:5:s2|1:1:7:s1|1:3:7:s2|1:1:9:s7|1:5:11:s0|2:4:2:s6|2:6:2:s3|2:10:2:s6|2:12:2:s3|2:0:4:s3|2:8:4:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L026",
+      "chapter": 2,
+      "tiles": 39,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 40,
+        "backtracks": 0,
+        "maxDepth": 39,
+        "peakTrayOccupancy": 3,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:2:2:s2|0:4:2:s3|0:6:2:s3|0:10:2:s4|0:2:4:s2|0:8:4:s5|0:10:4:s4|0:12:4:s6|0:0:6:s4|0:4:6:s1|0:8:6:s0|0:12:6:s3|0:4:8:s5|0:6:8:s6|0:8:8:s2|0:10:8:s1|0:8:10:s6|0:4:12:s0|0:10:12:s5|1:1:1:s7|1:5:1:s0|1:1:3:s7|1:3:3:s0|1:5:3:s8|1:7:3:s1|1:9:3:s8|1:11:3:s8|1:3:5:s7|1:7:5:s0|1:5:9:s1|1:5:11:s1|2:4:0:s3|2:2:2:s3|2:6:2:s4|2:6:6:s4|2:4:8:s3|2:4:10:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L027",
+      "chapter": 2,
+      "tiles": 39,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 40,
+        "backtracks": 0,
+        "maxDepth": 39,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:10:0:s1|0:2:2:s2|0:8:2:s4|0:10:2:s5|0:10:4:s6|0:12:4:s4|0:2:6:s2|0:10:6:s0|0:0:8:s5|0:2:8:s3|0:0:10:s4|0:2:10:s6|0:12:10:s5|0:4:12:s0|0:8:12:s3|0:10:12:s6|0:12:12:s1|1:5:1:s0|1:7:1:s7|1:1:3:s7|1:3:3:s8|1:7:3:s6|1:11:3:s0|1:11:5:s6|1:3:7:s8|1:11:7:s7|1:3:11:s0|1:5:11:s8|1:9:11:s6|2:8:0:s3|2:2:2:s5|2:6:2:s3|2:2:4:s5|2:4:6:s3|2:2:12:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L028",
+      "chapter": 2,
+      "tiles": 42,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 43,
+        "backtracks": 0,
+        "maxDepth": 42,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:10:0:s4|0:12:0:s3|0:0:2:s4|0:0:4:s2|0:2:4:s4|0:4:4:s2|0:12:4:s5|0:0:6:s5|0:6:6:s5|0:8:6:s6|0:12:6:s7|0:0:8:s7|0:2:8:s3|0:8:8:s6|0:10:8:s0|0:0:10:s0|0:4:10:s1|0:8:10:s7|0:8:12:s6|0:12:12:s1|1:1:1:s3|1:9:1:s7|1:11:1:s4|1:11:3:s3|1:1:5:s7|1:3:5:s8|1:1:9:s8|1:11:9:s7|1:1:11:s3|1:5:11:s8|1:7:11:s4|1:9:11:s4|2:2:0:s5|2:10:2:s1|2:12:2:s1|2:12:4:s5|2:2:10:s5|2:10:12:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L029",
+      "chapter": 2,
+      "tiles": 42,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 43,
+        "backtracks": 0,
+        "maxDepth": 42,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:10:0:s2|0:4:2:s3|0:6:2:s0|0:8:2:s2|0:10:2:s4|0:6:4:s1|0:12:4:s1|0:0:6:s2|0:6:6:s0|0:8:6:s3|0:12:6:s5|0:2:8:s4|0:8:8:s6|0:10:8:s7|0:12:8:s5|0:2:10:s7|0:4:10:s4|0:6:10:s6|0:4:12:s3|0:8:12:s5|0:10:12:s6|0:12:12:s7|1:9:1:s2|1:3:3:s1|1:5:3:s3|1:11:3:s8|1:7:5:s1|1:11:5:s3|1:1:7:s8|1:3:7:s1|1:3:9:s2|1:9:9:s2|1:3:11:s8|1:9:11:s3|2:10:0:s7|2:12:4:s7|2:2:6:s7|2:2:8:s4|2:8:8:s4|2:2:12:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L030",
+      "chapter": 2,
+      "tiles": 42,
+      "layers": 3,
+      "symbols": 9,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 43,
+        "backtracks": 0,
+        "maxDepth": 42,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:4:0:s1|0:10:0:s2|0:12:0:s3|0:12:2:s4|0:4:4:s5|0:6:4:s3|0:8:4:s4|0:10:4:s6|0:12:4:s7|0:0:6:s1|0:4:6:s0|0:8:6:s6|0:10:6:s5|0:12:6:s2|0:12:8:s7|0:2:10:s4|0:6:10:s6|0:8:10:s7|0:10:10:s5|0:2:12:s3|0:8:12:s2|0:12:12:s1|1:3:1:s0|1:5:1:s4|1:9:1:s5|1:5:3:s8|1:9:3:s4|1:11:3:s8|1:3:5:s4|1:5:5:s8|1:11:5:s0|1:7:7:s0|1:1:9:s5|1:5:9:s5|2:2:0:s6|2:8:2:s3|2:2:4:s6|2:6:8:s3|2:8:8:s6|2:4:10:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L031",
+      "chapter": 2,
+      "tiles": 45,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 46,
+        "backtracks": 0,
+        "maxDepth": 45,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:0:2:s2|0:4:2:s3|0:8:2:s3|0:10:2:s4|0:0:4:s5|0:8:4:s1|0:10:4:s1|0:12:4:s2|0:0:6:s5|0:4:6:s6|0:6:6:s3|0:8:6:s6|0:10:6:s0|0:12:6:s7|0:12:8:s2|0:0:10:s0|0:4:10:s5|0:8:10:s7|0:0:12:s4|0:4:12:s4|0:8:12:s7|0:10:12:s6|1:1:1:s8|1:3:1:s6|1:5:1:s6|1:9:1:s8|1:11:1:s8|1:3:3:s9|1:7:3:s9|1:7:5:s9|1:1:7:s3|1:9:7:s3|1:11:7:s3|1:11:11:s6|2:2:2:s5|2:4:2:s5|2:6:2:s4|2:12:2:s0|2:6:6:s0|2:8:6:s5|2:2:8:s4|2:10:8:s0|2:12:8:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L032",
+      "chapter": 2,
+      "tiles": 45,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 46,
+        "backtracks": 0,
+        "maxDepth": 45,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s1|0:6:0:s2|0:8:0:s3|0:10:0:s0|0:4:2:s1|0:8:2:s2|0:10:2:s4|0:0:4:s5|0:2:4:s6|0:4:4:s5|0:6:4:s3|0:12:4:s6|0:2:6:s6|0:6:6:s7|0:12:6:s4|0:2:8:s7|0:6:8:s2|0:10:8:s7|0:6:10:s0|0:12:10:s3|0:2:12:s4|0:4:12:s5|1:1:1:s8|1:7:3:s8|1:1:5:s1|1:3:5:s1|1:7:5:s1|1:1:7:s9|1:3:7:s6|1:11:7:s6|1:5:9:s9|1:3:11:s8|1:5:11:s9|1:7:11:s6|2:2:0:s3|2:2:2:s0|2:4:4:s0|2:8:4:s5|2:0:6:s5|2:0:8:s3|2:4:8:s5|2:6:8:s3|2:2:10:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L033",
+      "chapter": 2,
+      "tiles": 45,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 46,
+        "backtracks": 0,
+        "maxDepth": 45,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:4:0:s0|0:6:0:s1|0:8:0:s2|0:10:0:s3|0:4:2:s4|0:2:4:s5|0:4:4:s5|0:6:4:s2|0:12:4:s1|0:4:6:s5|0:6:6:s3|0:8:6:s6|0:10:6:s6|0:12:6:s1|0:0:8:s7|0:2:8:s4|0:12:8:s2|0:0:10:s0|0:6:10:s4|0:8:10:s3|0:2:12:s6|0:6:12:s7|0:8:12:s7|1:1:1:s8|1:11:1:s4|1:5:3:s7|1:7:3:s4|1:1:5:s9|1:3:5:s7|1:7:5:s9|1:11:5:s4|1:3:7:s7|1:5:7:s9|1:1:9:s8|1:3:9:s8|2:2:0:s5|2:4:2:s2|2:0:4:s2|2:2:4:s0|2:10:4:s0|2:0:6:s5|2:4:6:s5|2:8:6:s0|2:2:8:s2",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L034",
+      "chapter": 2,
+      "tiles": 48,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 49,
+        "backtracks": 0,
+        "maxDepth": 48,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:12:0:s1|0:0:2:s2|0:2:2:s3|0:6:2:s4|0:0:4:s2|0:4:4:s3|0:6:4:s4|0:10:4:s3|0:12:4:s5|0:0:6:s0|0:2:6:s2|0:8:6:s6|0:0:8:s1|0:4:8:s6|0:8:8:s6|0:12:8:s7|0:2:10:s7|0:4:10:s5|0:8:10:s1|0:0:12:s4|0:2:12:s5|0:10:12:s0|0:12:12:s7|1:11:1:s5|1:1:3:s5|1:5:3:s8|1:9:3:s2|1:11:3:s9|1:7:5:s5|1:9:5:s4|1:5:7:s9|1:7:7:s8|1:7:9:s2|1:9:9:s2|1:11:9:s4|1:1:11:s9|1:3:11:s8|1:9:11:s4|2:12:0:s6|2:8:2:s7|2:2:4:s1|2:6:4:s6|2:6:8:s6|2:8:8:s7|2:4:10:s1|2:6:10:s7|2:0:12:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L035",
+      "chapter": 2,
+      "tiles": 48,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 49,
+        "backtracks": 0,
+        "maxDepth": 48,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:0:2:s1|0:4:2:s2|0:6:2:s3|0:8:2:s0|0:10:2:s4|0:12:2:s5|0:2:4:s6|0:8:4:s2|0:0:6:s5|0:6:6:s0|0:8:6:s7|0:12:6:s1|0:10:8:s4|0:12:8:s7|0:4:10:s3|0:8:10:s2|0:10:10:s5|0:0:12:s6|0:4:12:s7|0:6:12:s3|0:8:12:s4|0:10:12:s6|1:1:1:s6|1:9:1:s7|1:1:3:s8|1:3:3:s0|1:7:3:s9|1:11:3:s7|1:1:5:s0|1:3:5:s9|1:9:5:s8|1:1:7:s6|1:5:7:s6|1:3:9:s0|1:9:9:s7|1:1:11:s9|1:11:11:s8|2:0:4:s1|2:8:4:s3|2:10:4:s2|2:4:6:s1|2:8:6:s2|2:0:8:s1|2:2:10:s2|2:10:10:s3|2:10:12:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L036",
+      "chapter": 2,
+      "tiles": 48,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 49,
+        "backtracks": 0,
+        "maxDepth": 48,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:12:0:s1|0:2:2:s2|0:4:2:s1|0:8:2:s3|0:0:4:s4|0:2:4:s5|0:4:4:s0|0:6:4:s3|0:8:4:s5|0:12:4:s6|0:2:6:s0|0:12:6:s6|0:0:8:s2|0:8:8:s5|0:10:8:s6|0:12:8:s2|0:0:10:s7|0:8:10:s4|0:10:10:s4|0:6:12:s3|0:8:12:s7|0:10:12:s7|0:12:12:s1|1:5:1:s8|1:7:1:s9|1:11:1:s10|1:1:3:s2|1:5:3:s1|1:5:5:s9|1:7:5:s8|1:9:5:s10|1:11:5:s1|1:1:7:s2|1:3:7:s8|1:1:9:s10|1:11:9:s2|1:9:11:s1|1:11:11:s9|2:8:2:s3|2:12:2:s5|2:2:4:s3|2:8:4:s7|2:12:4:s5|2:12:6:s7|2:4:8:s3|2:10:10:s5|2:12:12:s7",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L037",
+      "chapter": 2,
+      "tiles": 51,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 52,
+        "backtracks": 0,
+        "maxDepth": 51,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:10:0:s0|0:2:2:s1|0:4:2:s2|0:8:2:s3|0:12:2:s4|0:0:4:s5|0:4:4:s4|0:6:4:s1|0:12:4:s6|0:0:6:s7|0:2:6:s5|0:6:6:s8|0:12:6:s3|0:2:8:s8|0:4:8:s8|0:6:8:s0|0:8:8:s1|0:12:8:s0|0:2:10:s6|0:4:10:s7|0:6:10:s3|0:8:10:s7|0:10:10:s6|0:4:12:s2|0:6:12:s4|0:8:12:s5|0:10:12:s2|1:1:1:s9|1:3:1:s1|1:5:1:s10|1:9:3:s7|1:11:3:s9|1:3:5:s1|1:5:5:s10|1:5:7:s7|1:7:7:s9|1:11:7:s7|1:9:9:s0|1:1:11:s10|1:5:11:s1|1:7:11:s0|1:9:11:s0|2:4:0:s2|2:6:0:s4|2:8:2:s2|2:12:2:s4|2:2:4:s6|2:8:4:s4|2:4:6:s2|2:6:8:s6|2:10:8:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L038",
+      "chapter": 2,
+      "tiles": 51,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 52,
+        "backtracks": 0,
+        "maxDepth": 51,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s0|0:10:0:s2|0:12:0:s3|0:4:2:s4|0:6:2:s5|0:2:4:s2|0:4:4:s3|0:6:4:s6|0:8:4:s7|0:0:6:s4|0:6:6:s3|0:10:6:s6|0:12:6:s5|0:0:8:s5|0:4:8:s7|0:6:8:s8|0:8:8:s2|0:0:10:s4|0:2:10:s7|0:4:10:s1|0:6:10:s0|0:12:10:s8|0:2:12:s8|0:8:12:s1|0:12:12:s6|1:5:1:s8|1:1:3:s6|1:5:3:s8|1:3:5:s3|1:5:5:s9|1:7:5:s10|1:9:5:s3|1:3:7:s6|1:7:7:s10|1:11:7:s6|1:1:9:s10|1:5:9:s9|1:7:9:s9|1:7:11:s8|1:9:11:s3|2:4:0:s2|2:6:0:s5|2:0:4:s1|2:4:4:s5|2:6:4:s1|2:8:8:s2|2:12:8:s5|2:8:10:s2|2:6:12:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L039",
+      "chapter": 2,
+      "tiles": 51,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 52,
+        "backtracks": 0,
+        "maxDepth": 51,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s0|0:10:0:s0|0:12:0:s2|0:0:2:s3|0:12:2:s4|0:10:4:s5|0:4:6:s5|0:10:6:s6|0:12:6:s1|0:0:8:s7|0:2:8:s6|0:4:8:s4|0:6:8:s7|0:8:8:s2|0:10:8:s6|0:12:8:s7|0:0:10:s8|0:2:10:s2|0:4:10:s3|0:6:10:s5|0:10:10:s4|0:2:12:s3|0:6:12:s1|0:8:12:s8|0:12:12:s8|1:3:1:s4|1:5:1:s5|1:7:1:s9|1:11:1:s10|1:9:3:s4|1:11:3:s5|1:5:5:s1|1:1:7:s5|1:3:7:s10|1:1:9:s10|1:5:9:s1|1:7:9:s1|1:11:9:s9|1:3:11:s9|1:9:11:s4|2:4:0:s0|2:6:0:s8|2:10:0:s8|2:8:2:s6|2:4:8:s0|2:6:8:s6|2:0:10:s8|2:4:10:s0|2:8:12:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L040",
+      "chapter": 2,
+      "tiles": 54,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 55,
+        "backtracks": 0,
+        "maxDepth": 54,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:8:0:s3|0:10:0:s4|0:2:2:s1|0:4:2:s0|0:8:2:s2|0:10:2:s5|0:12:2:s6|0:0:4:s7|0:2:4:s8|0:4:4:s7|0:6:4:s2|0:12:4:s8|0:0:6:s5|0:6:6:s7|0:12:6:s8|0:0:8:s3|0:2:8:s9|0:4:8:s3|0:6:8:s4|0:0:10:s9|0:2:10:s9|0:6:10:s4|0:8:10:s0|0:12:10:s1|0:2:12:s5|0:6:12:s6|0:10:12:s6|1:1:1:s3|1:3:1:s6|1:5:1:s6|1:9:1:s6|1:5:3:s4|1:7:3:s3|1:9:3:s3|1:5:5:s10|1:1:7:s4|1:3:7:s10|1:5:7:s9|1:7:9:s4|1:5:11:s9|1:9:11:s10|1:11:11:s9|2:8:2:s2|2:6:4:s2|2:10:4:s0|2:6:6:s5|2:4:8:s5|2:12:10:s5|2:4:12:s0|2:10:12:s0|2:12:12:s2",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L041",
+      "chapter": 3,
+      "tiles": 54,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 55,
+        "backtracks": 0,
+        "maxDepth": 54,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:4:0:s1|0:12:0:s2|0:4:2:s3|0:6:2:s2|0:0:4:s1|0:4:4:s4|0:8:4:s3|0:10:4:s5|0:12:4:s6|0:0:6:s5|0:4:6:s7|0:14:6:s6|0:6:8:s0|0:8:8:s4|0:10:8:s6|0:14:8:s8|0:0:10:s8|0:4:10:s2|0:12:10:s7|0:14:10:s0|0:2:12:s1|0:4:12:s3|0:8:12:s8|0:2:14:s7|0:6:14:s4|0:8:14:s5|1:3:1:s1|1:3:5:s0|1:5:5:s7|1:1:7:s1|1:3:7:s8|1:5:7:s9|1:9:7:s1|1:11:7:s0|1:3:9:s7|1:7:9:s7|1:1:11:s8|1:9:11:s9|1:13:11:s9|1:1:13:s8|1:7:13:s0|2:2:0:s3|2:2:4:s2|2:6:4:s2|2:0:6:s3|2:4:6:s6|2:6:6:s3|2:0:8:s6|2:2:8:s4|2:10:8:s2|2:2:10:s6|2:6:12:s4|2:12:12:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L042",
+      "chapter": 3,
+      "tiles": 54,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 55,
+        "backtracks": 0,
+        "maxDepth": 54,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:0:2:s3|0:4:2:s4|0:10:2:s5|0:12:2:s6|0:0:4:s7|0:14:4:s8|0:2:6:s7|0:4:6:s4|0:6:6:s2|0:10:6:s1|0:12:8:s6|0:14:8:s3|0:0:10:s5|0:4:10:s4|0:6:10:s6|0:10:10:s7|0:8:12:s5|0:14:12:s3|0:0:14:s0|0:2:14:s8|0:4:14:s1|0:6:14:s8|0:12:14:s2|0:14:14:s0|1:5:1:s7|1:11:1:s3|1:5:3:s4|1:11:3:s0|1:9:5:s0|1:11:5:s4|1:5:7:s7|1:1:9:s3|1:7:9:s9|1:13:9:s9|1:5:11:s9|1:9:11:s0|1:13:11:s4|1:1:13:s3|1:9:13:s7|2:6:0:s6|2:10:0:s1|2:6:2:s2|2:12:2:s5|2:12:6:s2|2:6:8:s6|2:12:8:s1|2:4:10:s5|2:10:10:s2|2:14:10:s5|2:4:12:s6|2:10:12:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L043",
+      "chapter": 3,
+      "tiles": 54,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 55,
+        "backtracks": 0,
+        "maxDepth": 54,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:2:0:s0|0:12:0:s1|0:2:2:s2|0:6:2:s0|0:10:2:s3|0:2:4:s4|0:6:4:s3|0:8:4:s5|0:0:6:s6|0:8:6:s4|0:10:6:s1|0:14:6:s6|0:8:8:s7|0:10:8:s3|0:12:8:s2|0:0:10:s8|0:10:10:s5|0:14:10:s6|0:4:12:s0|0:6:12:s1|0:8:12:s7|0:12:12:s4|0:2:14:s5|0:4:14:s2|0:6:14:s7|0:8:14:s8|0:12:14:s8|1:1:1:s1|1:3:1:s9|1:7:1:s1|1:1:3:s0|1:5:3:s0|1:11:3:s0|1:5:5:s6|1:9:5:s7|1:11:7:s9|1:7:9:s7|1:13:9:s1|1:3:11:s6|1:5:11:s6|1:9:13:s9|1:11:13:s7|2:0:0:s3|2:0:2:s5|2:2:2:s4|2:2:4:s8|2:6:4:s4|2:8:4:s3|2:10:6:s4|2:6:8:s3|2:12:8:s5|2:4:10:s8|2:12:12:s8|2:10:14:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L044",
+      "chapter": 3,
+      "tiles": 54,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 55,
+        "backtracks": 0,
+        "maxDepth": 54,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:0:2:s1|0:8:2:s1|0:12:2:s2|0:0:4:s3|0:6:4:s2|0:8:4:s4|0:10:4:s1|0:12:4:s5|0:14:4:s6|0:4:6:s6|0:8:6:s3|0:12:6:s7|0:0:8:s7|0:8:8:s8|0:12:8:s0|0:2:10:s2|0:6:10:s6|0:8:10:s5|0:2:12:s4|0:8:12:s8|0:0:14:s8|0:2:14:s0|0:4:14:s5|0:6:14:s7|0:8:14:s3|0:10:14:s4|1:7:1:s6|1:7:3:s3|1:13:5:s9|1:3:7:s4|1:9:7:s9|1:13:7:s0|1:1:9:s6|1:3:9:s3|1:5:9:s3|1:13:9:s6|1:7:11:s4|1:1:13:s0|1:3:13:s4|1:7:13:s9|1:9:13:s0|2:6:0:s1|2:14:4:s7|2:14:6:s2|2:4:8:s7|2:10:8:s5|2:6:10:s5|2:8:10:s1|2:2:12:s7|2:6:12:s2|2:0:14:s5|2:2:14:s2|2:4:14:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L045",
+      "chapter": 3,
+      "tiles": 57,
+      "layers": 3,
+      "symbols": 10,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 58,
+        "backtracks": 0,
+        "maxDepth": 57,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s2|0:8:0:s3|0:10:0:s4|0:12:0:s5|0:0:2:s5|0:10:2:s6|0:12:2:s1|0:8:4:s0|0:12:4:s6|0:6:6:s4|0:8:6:s5|0:12:6:s7|0:14:6:s8|0:0:8:s3|0:4:8:s8|0:6:8:s7|0:12:8:s2|0:14:8:s4|0:0:10:s8|0:10:10:s1|0:6:12:s6|0:8:12:s7|0:10:12:s3|0:14:12:s2|0:12:14:s0|1:3:1:s9|1:1:3:s1|1:7:3:s6|1:11:3:s1|1:13:3:s5|1:7:5:s1|1:9:5:s9|1:13:5:s2|1:3:7:s0|1:5:7:s0|1:9:7:s6|1:7:9:s2|1:9:9:s5|1:13:9:s0|1:9:11:s6|1:13:11:s9|1:5:13:s5|1:13:13:s2|2:2:2:s7|2:6:2:s3|2:10:2:s3|2:12:2:s8|2:6:4:s8|2:8:4:s7|2:2:8:s3|2:12:8:s4|2:14:8:s4|2:12:10:s4|2:12:12:s8|2:14:14:s7",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L046",
+      "chapter": 3,
+      "tiles": 57,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 58,
+        "backtracks": 0,
+        "maxDepth": 57,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:8:0:s3|0:12:0:s4|0:0:2:s3|0:4:2:s3|0:4:4:s5|0:6:4:s6|0:10:4:s7|0:12:4:s8|0:14:4:s8|0:2:6:s6|0:4:6:s5|0:6:6:s7|0:8:6:s0|0:0:8:s7|0:6:8:s1|0:10:8:s4|0:14:8:s0|0:0:10:s5|0:2:10:s8|0:4:10:s6|0:10:10:s4|0:12:10:s2|0:10:14:s2|0:12:14:s1|1:5:1:s9|1:7:1:s4|1:9:1:s10|1:13:1:s10|1:9:3:s8|1:13:3:s4|1:1:5:s5|1:5:5:s5|1:11:5:s6|1:3:7:s4|1:9:7:s8|1:3:9:s5|1:5:9:s10|1:11:9:s9|1:13:9:s6|1:1:11:s9|1:3:11:s8|1:9:11:s6|2:6:2:s3|2:0:4:s7|2:2:4:s3|2:8:4:s0|2:14:4:s0|2:6:6:s1|2:12:6:s0|2:2:8:s1|2:14:8:s7|2:12:10:s7|2:14:10:s1|2:10:12:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L047",
+      "chapter": 3,
+      "tiles": 57,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 58,
+        "backtracks": 0,
+        "maxDepth": 57,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s0|0:6:0:s2|0:8:0:s3|0:6:2:s4|0:14:2:s5|0:8:4:s3|0:10:4:s0|0:0:6:s6|0:2:6:s7|0:4:6:s3|0:8:6:s4|0:14:6:s1|0:0:8:s8|0:4:8:s4|0:6:8:s1|0:8:8:s7|0:0:10:s5|0:4:10:s8|0:6:10:s6|0:12:10:s2|0:2:12:s2|0:0:14:s5|0:6:14:s6|0:12:14:s8|0:14:14:s7|1:5:1:s9|1:9:1:s4|1:5:5:s0|1:7:5:s4|1:1:7:s8|1:5:7:s8|1:7:7:s5|1:9:7:s10|1:5:9:s9|1:9:9:s10|1:11:9:s0|1:13:9:s0|1:1:11:s5|1:3:11:s5|1:7:11:s10|1:11:11:s9|1:5:13:s8|1:7:13:s4|2:8:2:s1|2:4:4:s1|2:0:6:s7|2:10:6:s2|2:10:8:s6|2:12:8:s1|2:2:10:s2|2:8:10:s6|2:0:12:s6|2:12:12:s2|2:4:14:s7|2:6:14:s7",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L048",
+      "chapter": 3,
+      "tiles": 60,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 61,
+        "backtracks": 0,
+        "maxDepth": 60,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:0:2:s2|0:2:2:s3|0:4:2:s4|0:6:2:s2|0:8:2:s5|0:2:4:s6|0:4:4:s5|0:6:4:s6|0:8:4:s7|0:10:4:s7|0:12:4:s3|0:0:6:s8|0:2:6:s9|0:4:6:s4|0:0:8:s0|0:4:8:s5|0:8:8:s3|0:2:10:s8|0:4:10:s0|0:6:10:s1|0:10:10:s4|0:0:12:s1|0:10:12:s6|0:14:12:s2|0:6:14:s7|0:8:14:s9|0:10:14:s8|0:12:14:s9|1:9:1:s7|1:5:3:s7|1:7:3:s5|1:9:3:s9|1:11:3:s5|1:13:3:s4|1:3:5:s4|1:5:5:s10|1:3:7:s9|1:5:7:s5|1:1:9:s10|1:5:9:s3|1:9:9:s7|1:5:11:s3|1:13:11:s4|1:5:13:s9|1:7:13:s10|1:9:13:s3|2:8:2:s1|2:12:2:s2|2:4:4:s6|2:8:4:s1|2:0:8:s1|2:0:10:s2|2:10:10:s0|2:14:10:s0|2:4:12:s0|2:6:12:s2|2:8:12:s6|2:12:12:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L049",
+      "chapter": 3,
+      "tiles": 60,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 61,
+        "backtracks": 0,
+        "maxDepth": 60,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s2|0:8:0:s3|0:10:0:s4|0:0:2:s2|0:2:2:s5|0:4:2:s6|0:12:2:s4|0:14:2:s0|0:2:4:s7|0:10:4:s2|0:12:4:s3|0:4:6:s4|0:8:6:s3|0:10:6:s1|0:14:6:s8|0:0:8:s0|0:2:8:s7|0:0:10:s1|0:2:10:s8|0:8:10:s9|0:12:10:s7|0:2:12:s5|0:10:12:s8|0:14:12:s6|0:0:14:s5|0:8:14:s9|0:10:14:s9|0:12:14:s6|1:3:1:s10|1:5:1:s9|1:9:1:s9|1:1:5:s10|1:3:5:s10|1:9:5:s8|1:13:5:s8|1:3:7:s8|1:5:7:s5|1:11:7:s4|1:13:7:s4|1:11:9:s5|1:1:11:s3|1:3:11:s3|1:7:11:s3|1:13:11:s4|1:1:13:s9|1:11:13:s5|2:8:2:s6|2:10:2:s7|2:12:4:s7|2:12:6:s1|2:0:10:s1|2:8:10:s6|2:14:10:s0|2:0:12:s0|2:2:12:s7|2:0:14:s1|2:2:14:s0|2:12:14:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L050",
+      "chapter": 3,
+      "tiles": 60,
+      "layers": 3,
+      "symbols": 11,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 61,
+        "backtracks": 0,
+        "maxDepth": 60,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s2|0:8:0:s3|0:10:0:s4|0:8:2:s3|0:10:2:s5|0:12:2:s6|0:8:4:s7|0:0:6:s8|0:2:6:s7|0:6:6:s0|0:8:6:s3|0:10:6:s7|0:0:8:s4|0:2:8:s5|0:6:8:s9|0:12:8:s5|0:4:10:s9|0:8:10:s2|0:12:10:s8|0:14:10:s6|0:0:12:s9|0:6:12:s4|0:8:12:s1|0:10:12:s1|0:12:12:s6|0:0:14:s0|0:8:14:s2|0:10:14:s8|1:1:1:s6|1:3:1:s10|1:5:1:s2|1:9:1:s8|1:9:3:s8|1:13:3:s2|1:1:5:s2|1:9:5:s7|1:11:5:s0|1:7:7:s6|1:11:7:s8|1:1:9:s10|1:5:9:s0|1:9:9:s10|1:11:9:s0|1:1:11:s6|1:3:11:s7|1:11:11:s7|2:2:0:s1|2:2:2:s1|2:6:2:s5|2:12:2:s5|2:0:4:s5|2:6:6:s4|2:8:6:s9|2:12:6:s9|2:12:8:s1|2:6:10:s4|2:10:12:s4|2:12:12:s9",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L051",
+      "chapter": 3,
+      "tiles": 63,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 64,
+        "backtracks": 0,
+        "maxDepth": 63,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:8:0:s3|0:12:0:s4|0:6:2:s5|0:12:2:s3|0:14:2:s6|0:0:4:s1|0:8:4:s7|0:10:4:s5|0:0:6:s6|0:4:6:s7|0:8:6:s5|0:12:6:s8|0:14:6:s3|0:6:8:s9|0:8:8:s7|0:10:8:s4|0:12:8:s9|0:14:8:s0|0:2:10:s2|0:4:10:s10|0:10:10:s1|0:12:10:s2|0:4:12:s0|0:10:12:s9|0:0:14:s6|0:2:14:s8|0:6:14:s8|0:8:14:s10|0:10:14:s10|0:12:14:s4|1:1:1:s3|1:3:1:s2|1:7:1:s1|1:1:3:s8|1:9:3:s11|1:3:5:s1|1:5:5:s5|1:7:5:s5|1:11:5:s5|1:9:7:s3|1:11:7:s2|1:5:9:s2|1:7:9:s1|1:13:11:s8|1:1:13:s11|1:7:13:s8|1:11:13:s3|1:13:13:s11|2:0:2:s6|2:0:4:s10|2:2:4:s9|2:12:4:s6|2:2:6:s10|2:8:8:s9|2:10:8:s0|2:4:10:s0|2:8:10:s9|2:10:12:s10|2:0:14:s6|2:14:14:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L052",
+      "chapter": 3,
+      "tiles": 63,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 64,
+        "backtracks": 0,
+        "maxDepth": 63,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:8:0:s1|0:10:0:s2|0:12:0:s3|0:2:2:s4|0:8:2:s5|0:12:2:s0|0:4:4:s3|0:8:4:s5|0:12:4:s6|0:6:6:s7|0:0:8:s6|0:4:8:s8|0:6:8:s9|0:8:8:s10|0:10:8:s1|0:12:8:s2|0:0:10:s3|0:6:10:s9|0:10:10:s6|0:12:10:s8|0:14:10:s1|0:0:12:s2|0:8:12:s10|0:10:12:s7|0:12:12:s8|0:0:14:s9|0:2:14:s7|0:4:14:s10|0:6:14:s4|0:10:14:s5|0:14:14:s4|1:1:1:s7|1:3:1:s5|1:7:1:s9|1:1:3:s11|1:7:3:s2|1:9:3:s11|1:9:5:s7|1:1:7:s9|1:5:7:s2|1:7:7:s8|1:13:7:s9|1:1:9:s5|1:3:9:s11|1:9:9:s2|1:11:11:s8|1:1:13:s8|1:11:13:s7|1:13:13:s5|2:8:0:s6|2:2:2:s4|2:6:4:s0|2:8:4:s6|2:0:6:s6|2:6:6:s3|2:14:6:s4|2:2:8:s3|2:0:10:s0|2:14:12:s0|2:0:14:s3|2:10:14:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L053",
+      "chapter": 3,
+      "tiles": 63,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 64,
+        "backtracks": 0,
+        "maxDepth": 63,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:10:0:s3|0:2:2:s4|0:6:2:s4|0:8:2:s3|0:10:2:s2|0:0:4:s2|0:2:4:s5|0:6:4:s0|0:8:4:s6|0:14:4:s7|0:4:6:s5|0:8:6:s8|0:10:6:s9|0:0:8:s6|0:6:8:s7|0:8:8:s0|0:12:8:s10|0:6:10:s8|0:8:10:s5|0:12:10:s10|0:0:12:s9|0:4:12:s6|0:10:12:s7|0:12:12:s1|0:14:12:s3|0:2:14:s10|0:4:14:s1|0:6:14:s4|0:8:14:s9|0:12:14:s8|1:5:1:s7|1:7:1:s7|1:9:1:s4|1:11:3:s8|1:13:3:s1|1:1:5:s8|1:1:7:s8|1:3:7:s1|1:5:7:s7|1:9:7:s4|1:5:9:s4|1:9:9:s11|1:13:9:s2|1:5:11:s1|1:13:11:s2|1:1:13:s11|1:5:13:s2|1:11:13:s11|2:10:0:s6|2:4:2:s6|2:8:2:s10|2:10:2:s3|2:12:2:s0|2:0:4:s10|2:2:6:s6|2:8:6:s0|2:8:10:s3|2:10:10:s10|2:2:12:s0|2:6:12:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L054",
+      "chapter": 3,
+      "tiles": 66,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 67,
+        "backtracks": 0,
+        "maxDepth": 66,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:8:0:s2|0:4:2:s3|0:6:2:s4|0:8:2:s5|0:10:2:s3|0:12:2:s1|0:14:2:s0|0:0:4:s6|0:10:4:s6|0:12:4:s7|0:4:6:s8|0:6:6:s4|0:8:6:s9|0:10:6:s0|0:12:6:s6|0:0:8:s3|0:8:8:s9|0:14:8:s2|0:0:10:s4|0:2:10:s8|0:4:10:s7|0:12:10:s5|0:14:10:s9|0:4:12:s5|0:6:12:s8|0:2:14:s2|0:4:14:s10|0:6:14:s10|0:8:14:s7|0:10:14:s10|0:12:14:s1|1:1:1:s4|1:3:1:s9|1:5:1:s5|1:9:1:s10|1:3:3:s11|1:7:3:s4|1:9:3:s6|1:3:5:s7|1:5:5:s6|1:11:5:s9|1:1:7:s5|1:13:7:s10|1:5:9:s7|1:13:9:s11|1:1:11:s5|1:3:11:s4|1:11:11:s11|1:13:11:s7|1:1:13:s6|1:3:13:s10|1:13:13:s9|2:2:0:s3|2:0:2:s1|2:4:2:s0|2:4:4:s3|2:6:4:s1|2:10:6:s2|2:14:8:s0|2:2:10:s3|2:6:10:s0|2:14:10:s1|2:14:12:s2|2:14:14:s2",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L055",
+      "chapter": 3,
+      "tiles": 66,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 67,
+        "backtracks": 0,
+        "maxDepth": 66,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:6:0:s2|0:4:2:s2|0:10:2:s3|0:12:2:s4|0:14:2:s4|0:0:4:s3|0:2:4:s0|0:6:4:s3|0:10:4:s5|0:12:4:s6|0:14:4:s5|0:8:6:s1|0:10:6:s0|0:12:6:s7|0:2:8:s8|0:4:8:s9|0:8:8:s6|0:10:8:s6|0:14:8:s9|0:4:10:s8|0:6:10:s7|0:10:10:s9|0:12:10:s7|0:14:10:s10|0:0:12:s8|0:4:12:s5|0:12:12:s4|0:2:14:s10|0:8:14:s2|0:10:14:s10|0:12:14:s1|1:1:1:s4|1:5:1:s6|1:7:1:s6|1:9:1:s1|1:11:1:s10|1:7:3:s9|1:3:5:s4|1:9:5:s4|1:13:5:s9|1:1:7:s3|1:7:7:s1|1:11:7:s10|1:3:9:s1|1:5:9:s3|1:9:9:s11|1:13:9:s11|1:1:11:s3|1:3:13:s10|1:5:13:s6|1:7:13:s9|1:11:13:s11|2:8:0:s8|2:10:0:s0|2:12:4:s0|2:2:6:s5|2:12:6:s5|2:0:8:s5|2:8:8:s8|2:8:10:s2|2:10:10:s0|2:2:12:s2|2:4:14:s8|2:10:14:s2",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L056",
+      "chapter": 3,
+      "tiles": 66,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 67,
+        "backtracks": 0,
+        "maxDepth": 66,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:10:0:s0|0:0:2:s1|0:4:2:s2|0:6:2:s3|0:8:2:s4|0:12:2:s5|0:4:4:s0|0:6:4:s6|0:10:4:s0|0:12:4:s6|0:14:4:s2|0:2:6:s7|0:4:6:s1|0:8:6:s8|0:0:8:s7|0:2:8:s8|0:4:8:s1|0:6:8:s6|0:10:8:s9|0:0:10:s3|0:2:10:s9|0:4:10:s5|0:6:10:s9|0:8:10:s5|0:12:10:s4|0:14:10:s2|0:2:12:s10|0:4:12:s3|0:6:12:s8|0:8:12:s10|0:14:12:s4|0:4:14:s7|0:10:14:s10|1:1:1:s0|1:3:1:s7|1:7:3:s11|1:9:3:s5|1:11:3:s1|1:13:3:s1|1:1:5:s12|1:3:5:s11|1:9:5:s7|1:1:7:s7|1:3:7:s2|1:11:7:s5|1:3:9:s2|1:5:9:s12|1:13:9:s11|1:3:11:s5|1:5:11:s2|1:11:11:s0|1:3:13:s1|1:5:13:s0|1:7:13:s12|2:0:2:s3|2:2:2:s6|2:6:2:s3|2:14:2:s3|2:4:6:s10|2:4:8:s6|2:10:8:s6|2:12:8:s8|2:14:10:s8|2:2:12:s8|2:12:12:s10|2:8:14:s10",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L057",
+      "chapter": 3,
+      "tiles": 69,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 70,
+        "backtracks": 0,
+        "maxDepth": 69,
+        "peakTrayOccupancy": 7,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:12:0:s1|0:14:0:s2|0:0:2:s3|0:4:2:s3|0:6:2:s4|0:14:2:s5|0:0:4:s6|0:6:4:s4|0:8:4:s7|0:12:4:s8|0:14:4:s4|0:0:6:s7|0:2:6:s6|0:10:6:s9|0:12:6:s0|0:0:8:s10|0:4:8:s10|0:6:8:s10|0:8:8:s1|0:14:8:s5|0:0:10:s2|0:2:10:s8|0:8:10:s9|0:14:10:s8|0:4:12:s0|0:6:12:s2|0:8:12:s5|0:14:12:s3|0:0:14:s7|0:4:14:s6|0:8:14:s9|1:7:1:s4|1:11:1:s11|1:1:3:s9|1:5:3:s3|1:7:3:s11|1:9:3:s12|1:11:3:s12|1:13:3:s4|1:11:5:s7|1:5:7:s3|1:7:7:s6|1:9:9:s7|1:1:11:s12|1:5:11:s6|1:9:11:s11|1:13:11:s3|1:3:13:s7|1:5:13:s4|1:7:13:s6|1:9:13:s9|1:13:13:s9|2:0:2:s0|2:6:2:s8|2:8:2:s8|2:12:2:s5|2:2:4:s8|2:6:4:s10|2:12:4:s5|2:12:6:s0|2:4:8:s1|2:6:8:s5|2:8:8:s10|2:14:10:s1|2:0:12:s0|2:8:12:s10|2:14:14:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L058",
+      "chapter": 3,
+      "tiles": 69,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 70,
+        "backtracks": 0,
+        "maxDepth": 69,
+        "peakTrayOccupancy": 4,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:4:0:s0|0:6:0:s1|0:10:0:s2|0:12:0:s3|0:10:2:s4|0:6:4:s2|0:10:4:s5|0:12:4:s6|0:14:4:s6|0:0:6:s7|0:4:6:s1|0:6:6:s1|0:8:6:s8|0:10:6:s5|0:14:6:s4|0:0:8:s3|0:2:8:s7|0:4:8:s3|0:6:8:s6|0:10:8:s7|0:12:8:s9|0:0:10:s9|0:2:10:s4|0:4:10:s10|0:8:10:s8|0:12:10:s0|0:0:12:s5|0:2:12:s10|0:4:12:s10|0:10:12:s8|0:6:14:s2|0:10:14:s9|1:7:1:s6|1:7:3:s5|1:9:3:s3|1:13:3:s5|1:3:5:s1|1:9:5:s3|1:1:7:s11|1:5:7:s6|1:7:7:s3|1:9:7:s5|1:11:7:s12|1:13:7:s12|1:1:9:s9|1:5:9:s6|1:9:9:s1|1:11:9:s11|1:1:11:s1|1:3:11:s9|1:5:11:s11|1:3:13:s9|1:5:13:s12|2:8:0:s8|2:6:2:s2|2:6:4:s7|2:12:4:s8|2:0:6:s8|2:2:6:s2|2:8:6:s10|2:10:6:s0|2:6:8:s0|2:12:8:s7|2:4:10:s10|2:6:10:s2|2:8:10:s7|2:4:14:s10|2:6:14:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L059",
+      "chapter": 3,
+      "tiles": 69,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 70,
+        "backtracks": 0,
+        "maxDepth": 69,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:4:2:s3|0:6:2:s1|0:10:2:s3|0:12:2:s2|0:0:4:s2|0:2:4:s4|0:4:4:s0|0:0:6:s5|0:4:6:s6|0:8:6:s7|0:2:8:s8|0:4:8:s9|0:8:8:s10|0:10:8:s7|0:12:8:s6|0:14:8:s7|0:2:10:s8|0:6:10:s6|0:8:10:s1|0:10:10:s10|0:12:10:s9|0:14:10:s5|0:2:12:s9|0:8:12:s4|0:12:12:s5|0:14:12:s8|0:0:14:s4|0:6:14:s10|0:8:14:s0|0:12:14:s3|1:5:1:s10|1:7:1:s11|1:9:1:s7|1:11:1:s7|1:3:3:s1|1:11:3:s12|1:13:3:s9|1:3:5:s10|1:5:5:s11|1:9:5:s7|1:1:7:s5|1:3:7:s12|1:7:7:s1|1:9:7:s5|1:1:9:s9|1:3:9:s12|1:5:9:s10|1:9:9:s5|1:11:9:s9|1:7:11:s1|1:9:13:s11|2:4:0:s4|2:8:0:s8|2:10:0:s0|2:10:2:s6|2:12:4:s6|2:2:6:s4|2:4:6:s3|2:8:6:s6|2:2:8:s8|2:4:8:s4|2:10:8:s3|2:0:10:s0|2:2:10:s3|2:6:12:s8|2:10:12:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L060",
+      "chapter": 3,
+      "tiles": 72,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 73,
+        "backtracks": 0,
+        "maxDepth": 72,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:2:0:s0|0:10:0:s1|0:12:0:s2|0:2:2:s3|0:4:2:s4|0:6:2:s3|0:10:2:s1|0:14:2:s5|0:0:4:s6|0:6:4:s7|0:8:4:s0|0:10:4:s3|0:12:4:s2|0:14:4:s7|0:0:6:s6|0:2:6:s0|0:6:6:s8|0:8:6:s4|0:10:6:s9|0:14:6:s4|0:0:8:s10|0:4:8:s7|0:8:8:s10|0:10:8:s10|0:12:8:s5|0:0:10:s9|0:2:10:s9|0:8:10:s1|0:12:10:s8|0:0:12:s11|0:4:12:s11|0:12:12:s2|0:4:14:s6|0:6:14:s11|0:8:14:s8|0:12:14:s5|1:1:1:s10|1:1:3:s3|1:5:3:s0|1:7:3:s10|1:11:3:s7|1:13:3:s0|1:1:5:s12|1:7:5:s0|1:9:5:s11|1:1:7:s12|1:3:7:s11|1:9:7:s8|1:11:7:s8|1:13:7:s8|1:1:9:s7|1:5:9:s7|1:7:9:s3|1:9:9:s12|1:13:9:s11|1:3:13:s10|1:9:13:s3|2:2:0:s2|2:10:2:s1|2:4:4:s6|2:6:4:s4|2:8:4:s1|2:0:6:s2|2:2:8:s6|2:6:8:s6|2:14:8:s4|2:0:10:s1|2:12:10:s9|2:8:12:s9|2:10:12:s9|2:2:14:s2|2:10:14:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L061",
+      "chapter": 4,
+      "tiles": 72,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 73,
+        "backtracks": 0,
+        "maxDepth": 72,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s1|0:8:0:s2|0:10:0:s1|0:12:0:s3|0:14:0:s4|0:4:2:s5|0:6:2:s6|0:10:2:s7|0:12:2:s6|0:14:2:s7|0:2:4:s8|0:8:4:s9|0:12:4:s0|0:4:6:s9|0:6:6:s10|0:8:6:s5|0:10:6:s10|0:14:6:s2|0:0:8:s11|0:2:8:s7|0:8:8:s11|0:14:8:s4|0:4:10:s3|0:6:10:s6|0:0:12:s8|0:10:12:s5|0:12:12:s0|0:14:12:s11|0:2:14:s8|0:4:14:s9|0:6:14:s4|0:10:14:s2|0:12:14:s10|0:14:14:s3|1:3:1:s10|1:5:1:s3|1:7:1:s1|1:1:3:s3|1:5:3:s7|1:7:3:s7|1:13:3:s7|1:9:5:s5|1:11:5:s9|1:11:7:s3|1:13:7:s6|1:1:9:s9|1:3:9:s1|1:5:9:s6|1:9:9:s9|1:13:9:s10|1:1:11:s1|1:11:11:s10|1:5:13:s5|1:7:13:s6|1:9:13:s5|2:4:0:s0|2:6:0:s0|2:0:2:s8|2:6:2:s0|2:14:2:s11|2:14:4:s2|2:14:6:s11|2:6:8:s11|2:10:8:s4|2:12:8:s2|2:2:10:s8|2:4:10:s2|2:6:12:s4|2:4:14:s4|2:6:14:s8",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L062",
+      "chapter": 4,
+      "tiles": 72,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 73,
+        "backtracks": 0,
+        "maxDepth": 72,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:10:0:s3|0:12:0:s0|0:2:2:s1|0:4:2:s4|0:6:2:s5|0:10:2:s6|0:12:2:s4|0:0:4:s7|0:2:4:s6|0:4:4:s8|0:6:4:s9|0:8:4:s10|0:10:4:s11|0:14:4:s2|0:6:6:s9|0:0:8:s2|0:2:8:s8|0:4:8:s0|0:6:8:s11|0:12:8:s3|0:2:10:s9|0:6:10:s10|0:12:10:s1|0:14:10:s11|0:0:12:s3|0:2:12:s7|0:4:12:s4|0:10:12:s5|0:12:12:s8|0:0:14:s7|0:6:14:s6|0:10:14:s5|0:12:14:s10|1:7:1:s5|1:13:1:s5|1:1:3:s9|1:5:3:s7|1:9:3:s6|1:11:3:s2|1:5:5:s7|1:7:5:s5|1:9:5:s3|1:11:5:s3|1:1:7:s2|1:3:7:s3|1:5:7:s6|1:13:7:s11|1:1:9:s11|1:7:9:s6|1:13:9:s2|1:1:11:s11|1:3:11:s9|1:5:11:s7|1:11:11:s9|2:12:0:s0|2:14:0:s1|2:10:2:s8|2:12:2:s1|2:4:4:s10|2:10:4:s0|2:4:8:s4|2:0:10:s10|2:6:10:s8|2:8:10:s10|2:14:10:s4|2:2:12:s8|2:4:12:s0|2:6:12:s4|2:10:12:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L063",
+      "chapter": 4,
+      "tiles": 72,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 73,
+        "backtracks": 0,
+        "maxDepth": 72,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:10:0:s1|0:12:0:s2|0:6:2:s3|0:10:2:s2|0:12:2:s4|0:14:2:s5|0:0:4:s4|0:4:4:s6|0:6:4:s0|0:8:4:s1|0:14:4:s7|0:0:6:s4|0:4:6:s6|0:6:6:s8|0:12:6:s5|0:14:6:s8|0:0:8:s2|0:2:8:s9|0:4:8:s9|0:8:8:s10|0:10:8:s11|0:12:8:s5|0:0:10:s10|0:2:10:s3|0:8:10:s9|0:10:10:s7|0:0:12:s0|0:2:12:s10|0:10:12:s6|0:12:12:s11|0:14:12:s8|0:8:14:s3|0:12:14:s7|0:14:14:s11|1:5:1:s1|1:7:1:s4|1:11:1:s7|1:13:1:s11|1:7:3:s4|1:9:3:s0|1:13:3:s7|1:11:5:s1|1:13:5:s11|1:3:7:s0|1:9:7:s9|1:13:7:s6|1:1:9:s4|1:5:9:s6|1:7:9:s7|1:3:11:s6|1:7:11:s1|1:9:11:s9|1:1:13:s0|1:3:13:s9|1:11:13:s11|2:14:0:s2|2:8:2:s3|2:12:4:s8|2:8:6:s2|2:4:8:s10|2:6:8:s5|2:8:8:s3|2:14:8:s5|2:0:10:s5|2:8:10:s2|2:10:10:s10|2:0:12:s8|2:12:12:s10|2:2:14:s3|2:10:14:s8",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L064",
+      "chapter": 4,
+      "tiles": 72,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 73,
+        "backtracks": 0,
+        "maxDepth": 72,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:14:0:s2|0:2:2:s3|0:4:2:s4|0:6:2:s5|0:10:2:s6|0:12:2:s7|0:0:4:s1|0:4:4:s3|0:6:4:s3|0:12:4:s8|0:0:6:s1|0:6:6:s7|0:8:6:s5|0:10:6:s4|0:12:6:s8|0:0:8:s8|0:2:8:s6|0:4:8:s9|0:8:8:s10|0:12:8:s5|0:14:8:s2|0:2:10:s9|0:4:10:s0|0:6:10:s0|0:10:10:s2|0:12:10:s11|0:6:12:s11|0:10:12:s11|0:12:12:s9|0:14:12:s6|0:0:14:s10|0:2:14:s4|0:12:14:s10|0:14:14:s7|1:9:1:s9|1:5:3:s11|1:9:3:s2|1:11:3:s6|1:7:5:s8|1:3:7:s0|1:5:7:s0|1:7:7:s6|1:9:7:s1|1:11:7:s2|1:1:9:s2|1:3:9:s11|1:9:9:s8|1:11:9:s9|1:13:9:s0|1:7:11:s1|1:11:11:s1|1:13:11:s9|1:5:13:s8|1:9:13:s11|1:13:13:s6|2:8:0:s5|2:10:0:s3|2:4:2:s10|2:10:2:s10|2:12:2:s5|2:10:4:s7|2:0:8:s4|2:2:8:s7|2:4:8:s4|2:6:8:s5|2:12:8:s7|2:4:12:s4|2:4:14:s3|2:8:14:s3|2:12:14:s10",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L065",
+      "chapter": 4,
+      "tiles": 75,
+      "layers": 3,
+      "symbols": 12,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 76,
+        "backtracks": 0,
+        "maxDepth": 75,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:2:0:s0|0:4:0:s1|0:6:0:s2|0:10:0:s3|0:12:0:s4|0:0:2:s4|0:2:2:s5|0:4:2:s2|0:6:2:s6|0:4:4:s7|0:6:4:s5|0:10:4:s4|0:14:4:s8|0:0:6:s1|0:8:6:s7|0:10:6:s9|0:14:6:s8|0:0:8:s0|0:10:8:s5|0:12:8:s10|0:14:8:s10|0:6:10:s3|0:8:10:s9|0:12:10:s10|0:14:10:s0|0:0:12:s6|0:4:12:s2|0:8:12:s8|0:2:14:s3|0:4:14:s7|0:8:14:s9|0:10:14:s1|0:12:14:s6|1:5:1:s7|1:7:1:s7|1:9:1:s5|1:11:1:s4|1:13:1:s7|1:1:3:s3|1:5:3:s6|1:9:3:s8|1:11:3:s11|1:1:5:s11|1:5:5:s1|1:7:5:s4|1:9:7:s6|1:13:7:s1|1:11:9:s8|1:13:9:s6|1:1:11:s3|1:3:11:s8|1:7:11:s5|1:9:11:s3|1:13:11:s5|1:3:13:s1|1:7:13:s4|1:11:13:s11|2:4:0:s10|2:8:0:s9|2:12:0:s1|2:8:2:s1|2:10:2:s10|2:4:4:s9|2:6:4:s0|2:8:4:s0|2:2:6:s11|2:4:6:s2|2:8:6:s0|2:12:6:s10|2:10:8:s2|2:8:10:s11|2:0:12:s9|2:2:12:s11|2:4:14:s2|2:12:14:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L066",
+      "chapter": 4,
+      "tiles": 75,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 76,
+        "backtracks": 0,
+        "maxDepth": 75,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s0|0:14:0:s0|0:6:2:s1|0:10:2:s2|0:12:2:s3|0:8:4:s4|0:10:4:s5|0:12:4:s6|0:14:4:s7|0:0:6:s8|0:2:6:s7|0:4:6:s6|0:6:6:s9|0:10:6:s8|0:14:6:s1|0:0:8:s5|0:12:8:s5|0:14:8:s6|0:2:10:s3|0:6:10:s2|0:12:10:s2|0:14:10:s10|0:0:12:s9|0:2:12:s10|0:4:12:s4|0:6:12:s9|0:10:12:s7|0:12:12:s10|0:4:14:s1|0:6:14:s4|0:8:14:s8|0:14:14:s3|1:5:1:s11|1:7:1:s9|1:5:3:s11|1:7:3:s4|1:9:3:s12|1:13:3:s7|1:1:5:s2|1:5:5:s12|1:7:5:s8|1:9:5:s7|1:13:5:s3|1:1:7:s11|1:9:7:s4|1:13:7:s2|1:3:9:s7|1:13:9:s3|1:1:11:s9|1:5:11:s8|1:7:11:s9|1:11:11:s4|1:13:11:s8|1:1:13:s3|1:7:13:s2|1:11:13:s12|2:8:2:s10|2:12:2:s10|2:14:2:s5|2:6:4:s0|2:12:4:s5|2:2:6:s11|2:4:6:s6|2:6:6:s6|2:14:6:s0|2:2:8:s0|2:8:8:s10|2:10:8:s11|2:12:8:s5|2:10:10:s11|2:12:10:s1|2:8:12:s1|2:2:14:s6|2:12:14:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L067",
+      "chapter": 4,
+      "tiles": 75,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 76,
+        "backtracks": 0,
+        "maxDepth": 75,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:14:0:s1|0:0:2:s2|0:2:2:s1|0:8:2:s3|0:4:4:s4|0:6:4:s5|0:8:4:s6|0:12:4:s7|0:0:6:s8|0:2:6:s6|0:4:6:s1|0:6:6:s6|0:10:6:s9|0:12:6:s9|0:14:6:s0|0:0:8:s4|0:6:8:s0|0:10:8:s10|0:14:8:s7|0:0:10:s7|0:4:10:s3|0:10:10:s4|0:14:10:s10|0:4:12:s9|0:8:12:s8|0:12:12:s2|0:2:14:s5|0:4:14:s3|0:8:14:s10|0:10:14:s5|0:12:14:s2|0:14:14:s8|1:1:3:s4|1:5:3:s2|1:11:3:s5|1:13:3:s11|1:1:5:s4|1:3:5:s2|1:9:5:s4|1:3:7:s5|1:5:7:s8|1:7:7:s11|1:11:7:s8|1:1:9:s12|1:3:9:s1|1:5:9:s12|1:11:9:s12|1:3:11:s8|1:5:11:s0|1:9:11:s0|1:13:11:s0|1:1:13:s1|1:3:13:s2|1:5:13:s5|1:9:13:s11|1:13:13:s1|2:2:2:s11|2:4:2:s10|2:6:2:s10|2:14:2:s3|2:2:4:s3|2:12:4:s3|2:8:6:s6|2:10:6:s11|2:10:8:s10|2:12:8:s9|2:12:10:s6|2:14:10:s7|2:6:12:s9|2:8:12:s6|2:12:12:s11|2:6:14:s9|2:8:14:s7|2:12:14:s7",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L068",
+      "chapter": 4,
+      "tiles": 78,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 79,
+        "backtracks": 0,
+        "maxDepth": 78,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:4:0:s1|0:6:0:s2|0:14:0:s3|0:2:2:s4|0:6:2:s5|0:8:2:s6|0:10:2:s7|0:12:2:s8|0:2:4:s5|0:6:4:s4|0:10:4:s1|0:12:4:s9|0:4:6:s2|0:8:6:s10|0:10:6:s6|0:14:6:s11|0:0:8:s8|0:2:8:s9|0:6:8:s4|0:8:8:s7|0:0:10:s8|0:4:10:s11|0:6:10:s2|0:0:12:s6|0:4:12:s5|0:6:12:s10|0:10:12:s11|0:12:12:s3|0:14:12:s10|0:2:14:s9|0:4:14:s7|0:6:14:s0|0:8:14:s0|0:10:14:s3|0:12:14:s1|1:7:1:s9|1:11:1:s12|1:13:1:s2|1:5:3:s3|1:9:3:s10|1:13:3:s11|1:3:5:s8|1:5:5:s12|1:1:7:s3|1:3:7:s11|1:5:7:s10|1:11:7:s2|1:13:7:s8|1:3:9:s11|1:7:9:s9|1:3:11:s7|1:7:11:s7|1:9:11:s9|1:13:11:s7|1:1:13:s8|1:3:13:s2|1:5:13:s10|1:7:13:s3|1:13:13:s12|2:6:0:s4|2:12:0:s12|2:10:2:s6|2:2:4:s1|2:6:4:s12|2:14:4:s4|2:2:6:s0|2:10:6:s1|2:2:8:s4|2:4:8:s5|2:6:8:s6|2:8:8:s5|2:10:8:s12|2:10:10:s5|2:14:10:s6|2:0:14:s1|2:4:14:s0|2:12:14:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L069",
+      "chapter": 4,
+      "tiles": 78,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 79,
+        "backtracks": 0,
+        "maxDepth": 78,
+        "peakTrayOccupancy": 7,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:6:0:s1|0:14:0:s2|0:8:2:s3|0:12:2:s4|0:14:2:s1|0:2:4:s4|0:6:4:s5|0:12:4:s5|0:14:4:s6|0:0:6:s2|0:2:6:s6|0:4:6:s5|0:6:6:s7|0:8:6:s7|0:10:6:s8|0:14:6:s9|0:4:8:s10|0:6:8:s7|0:8:8:s3|0:14:8:s10|0:0:10:s3|0:6:10:s11|0:10:10:s9|0:12:10:s11|0:14:10:s2|0:6:12:s9|0:8:12:s1|0:10:12:s10|0:12:12:s8|0:14:12:s0|0:4:14:s6|0:6:14:s11|0:10:14:s4|0:14:14:s8|1:3:1:s4|1:5:1:s3|1:7:1:s2|1:11:1:s10|1:13:1:s12|1:3:3:s4|1:5:3:s4|1:3:5:s11|1:5:5:s5|1:9:5:s2|1:11:5:s11|1:1:7:s10|1:3:7:s5|1:5:9:s10|1:9:9:s3|1:13:9:s12|1:1:11:s2|1:5:11:s0|1:7:11:s12|1:9:11:s5|1:11:11:s3|1:13:11:s0|1:5:13:s0|1:13:13:s11|2:8:0:s1|2:14:2:s6|2:0:6:s8|2:6:6:s9|2:10:6:s1|2:12:6:s6|2:0:10:s7|2:2:10:s7|2:4:10:s12|2:10:10:s9|2:14:10:s8|2:0:12:s12|2:8:12:s7|2:10:12:s12|2:14:12:s9|2:4:14:s8|2:6:14:s6|2:12:14:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L070",
+      "chapter": 4,
+      "tiles": 78,
+      "layers": 3,
+      "symbols": 13,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 79,
+        "backtracks": 0,
+        "maxDepth": 78,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:8:0:s3|0:10:0:s4|0:14:0:s3|0:4:2:s5|0:10:2:s6|0:12:2:s7|0:14:2:s0|0:0:4:s8|0:8:4:s5|0:14:4:s6|0:0:6:s9|0:2:6:s7|0:4:6:s2|0:8:6:s10|0:10:6:s7|0:0:8:s11|0:2:8:s4|0:6:8:s0|0:8:8:s9|0:14:8:s1|0:2:10:s4|0:8:10:s11|0:12:10:s8|0:0:12:s8|0:6:12:s10|0:8:12:s5|0:10:12:s1|0:14:12:s2|0:6:14:s11|0:8:14:s10|0:12:14:s9|0:14:14:s6|1:1:1:s4|1:7:1:s12|1:1:3:s10|1:5:3:s11|1:9:3:s10|1:11:3:s12|1:1:5:s1|1:3:5:s2|1:7:5:s3|1:9:5:s3|1:13:5:s4|1:1:7:s0|1:5:7:s10|1:11:7:s12|1:13:7:s2|1:1:9:s4|1:7:9:s0|1:9:9:s11|1:11:9:s3|1:7:11:s1|1:9:11:s1|1:1:13:s2|1:9:13:s0|1:11:13:s11|2:2:0:s6|2:6:0:s12|2:0:2:s9|2:10:2:s8|2:10:4:s5|2:4:6:s9|2:6:6:s5|2:10:6:s6|2:12:6:s9|2:4:8:s8|2:6:10:s8|2:10:10:s7|2:12:10:s12|2:0:12:s5|2:8:12:s12|2:10:12:s7|2:8:14:s6|2:10:14:s7",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L071",
+      "chapter": 4,
+      "tiles": 81,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 82,
+        "backtracks": 0,
+        "maxDepth": 81,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:10:0:s3|0:14:0:s4|0:4:2:s5|0:6:2:s6|0:8:2:s7|0:10:2:s6|0:12:2:s0|0:0:4:s5|0:2:4:s4|0:4:4:s8|0:6:4:s3|0:10:4:s1|0:12:4:s7|0:14:4:s9|0:2:6:s4|0:6:6:s1|0:10:6:s7|0:12:6:s10|0:14:6:s11|0:0:8:s12|0:12:8:s8|0:14:8:s2|0:0:10:s0|0:8:10:s10|0:10:10:s11|0:14:10:s10|0:4:12:s9|0:6:12:s5|0:8:12:s9|0:0:14:s2|0:2:14:s11|0:4:14:s12|0:6:14:s12|0:8:14:s3|0:12:14:s8|0:14:14:s6|1:3:1:s7|1:7:1:s4|1:11:1:s7|1:13:1:s13|1:1:3:s4|1:3:3:s9|1:5:3:s3|1:9:3:s6|1:13:3:s13|1:3:5:s3|1:9:5:s1|1:11:5:s1|1:13:5:s9|1:9:7:s3|1:13:7:s1|1:1:9:s10|1:9:9:s7|1:5:11:s9|1:9:11:s10|1:3:13:s4|1:5:13:s10|1:7:13:s13|1:9:13:s6|1:11:13:s6|2:10:0:s12|2:12:0:s0|2:12:2:s0|2:14:2:s0|2:8:4:s11|2:10:4:s8|2:4:6:s5|2:12:6:s2|2:2:8:s2|2:2:10:s12|2:10:10:s8|2:4:12:s2|2:12:12:s8|2:2:14:s12|2:4:14:s11|2:6:14:s5|2:8:14:s5|2:10:14:s11",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L072",
+      "chapter": 4,
+      "tiles": 81,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 82,
+        "backtracks": 0,
+        "maxDepth": 81,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s0|0:6:0:s2|0:12:0:s3|0:0:2:s2|0:2:2:s0|0:4:2:s4|0:6:2:s2|0:8:2:s5|0:10:2:s1|0:12:2:s4|0:4:4:s3|0:8:4:s1|0:12:4:s5|0:0:6:s6|0:2:6:s7|0:6:6:s8|0:8:6:s7|0:10:6:s9|0:12:6:s9|0:14:6:s4|0:0:8:s8|0:2:8:s9|0:0:10:s10|0:6:10:s6|0:12:10:s11|0:0:12:s12|0:4:12:s7|0:6:12:s10|0:8:12:s11|0:12:12:s10|0:14:12:s6|0:2:14:s5|0:4:14:s3|0:8:14:s12|0:10:14:s8|0:12:14:s11|0:14:14:s12|1:1:1:s12|1:3:1:s1|1:13:1:s11|1:1:3:s2|1:3:3:s13|1:5:3:s10|1:7:3:s1|1:13:3:s11|1:7:5:s10|1:11:5:s2|1:1:7:s12|1:3:7:s4|1:5:7:s3|1:7:7:s10|1:11:7:s1|1:1:9:s12|1:5:9:s11|1:7:9:s13|1:9:11:s3|1:11:11:s3|1:3:13:s4|1:5:13:s13|1:7:13:s4|1:13:13:s2|2:12:0:s5|2:0:2:s8|2:2:2:s8|2:4:2:s7|2:6:2:s9|2:14:2:s0|2:2:4:s0|2:6:4:s6|2:12:4:s6|2:2:6:s7|2:8:6:s5|2:10:6:s7|2:0:8:s0|2:0:10:s5|2:4:10:s8|2:10:10:s9|2:14:12:s9|2:14:14:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L073",
+      "chapter": 4,
+      "tiles": 81,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 82,
+        "backtracks": 0,
+        "maxDepth": 81,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:12:0:s2|0:0:2:s3|0:2:2:s2|0:6:2:s4|0:8:2:s5|0:12:2:s6|0:14:2:s7|0:0:4:s8|0:2:4:s4|0:6:4:s9|0:12:4:s10|0:2:6:s11|0:6:6:s9|0:8:6:s5|0:14:6:s6|0:0:8:s6|0:2:8:s12|0:4:8:s7|0:6:8:s4|0:10:8:s8|0:12:8:s9|0:0:10:s2|0:2:10:s8|0:4:10:s7|0:8:10:s5|0:10:10:s3|0:12:10:s0|0:14:10:s10|0:2:12:s12|0:8:12:s10|0:12:12:s12|0:14:12:s1|0:0:14:s11|0:2:14:s3|0:6:14:s1|0:10:14:s0|0:12:14:s11|1:1:1:s2|1:3:1:s13|1:5:1:s10|1:1:3:s6|1:9:3:s11|1:11:3:s12|1:13:3:s6|1:3:5:s10|1:9:5:s8|1:13:5:s2|1:7:7:s8|1:9:7:s2|1:13:7:s12|1:1:9:s13|1:3:9:s11|1:5:9:s6|1:9:9:s10|1:11:9:s8|1:13:9:s9|1:9:11:s9|1:11:11:s13|1:13:11:s11|1:9:13:s12|1:11:13:s9|2:0:0:s0|2:2:2:s0|2:8:2:s7|2:10:2:s3|2:14:2:s4|2:8:4:s5|2:12:4:s0|2:10:8:s5|2:12:8:s4|2:0:10:s7|2:2:10:s7|2:4:10:s1|2:6:10:s4|2:8:10:s5|2:10:10:s3|2:14:10:s1|2:14:12:s1|2:10:14:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L074",
+      "chapter": 4,
+      "tiles": 84,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 85,
+        "backtracks": 0,
+        "maxDepth": 84,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:8:0:s3|0:14:0:s4|0:4:2:s5|0:6:2:s6|0:8:2:s7|0:12:2:s8|0:4:4:s9|0:12:4:s2|0:14:4:s10|0:0:6:s8|0:4:6:s4|0:6:6:s11|0:8:6:s8|0:10:6:s4|0:14:6:s11|0:0:8:s5|0:2:8:s7|0:4:8:s3|0:8:8:s12|0:10:8:s13|0:14:8:s6|0:0:10:s13|0:2:10:s0|0:4:10:s3|0:6:10:s10|0:12:10:s5|0:14:10:s12|0:0:12:s9|0:2:12:s7|0:4:12:s1|0:6:12:s12|0:8:12:s1|0:12:12:s10|0:2:14:s0|0:4:14:s2|0:6:14:s6|0:8:14:s13|0:10:14:s9|0:14:14:s11|1:3:1:s10|1:3:3:s2|1:5:3:s5|1:7:3:s5|1:9:3:s3|1:1:5:s2|1:3:5:s11|1:5:5:s13|1:7:5:s2|1:9:5:s7|1:11:5:s3|1:1:7:s4|1:3:7:s7|1:5:7:s11|1:11:7:s3|1:3:9:s7|1:13:9:s13|1:1:11:s10|1:3:11:s10|1:9:11:s4|1:13:11:s13|1:5:13:s11|1:9:13:s4|1:13:13:s5|2:2:0:s9|2:4:0:s6|2:8:2:s6|2:10:2:s1|2:0:4:s9|2:2:4:s0|2:6:4:s8|2:10:4:s1|2:0:6:s8|2:6:6:s12|2:10:6:s12|2:0:8:s1|2:0:10:s8|2:8:10:s9|2:4:12:s12|2:8:12:s0|2:10:12:s6|2:10:14:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L075",
+      "chapter": 4,
+      "tiles": 84,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 85,
+        "backtracks": 0,
+        "maxDepth": 84,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:4:0:s1|0:8:0:s1|0:12:0:s2|0:14:0:s3|0:0:2:s4|0:4:2:s5|0:6:2:s0|0:8:2:s6|0:2:4:s2|0:4:4:s2|0:8:4:s7|0:10:4:s8|0:0:6:s1|0:2:6:s9|0:4:6:s10|0:6:6:s5|0:8:6:s11|0:12:6:s12|0:2:8:s9|0:4:8:s13|0:12:8:s10|0:14:8:s7|0:2:10:s13|0:4:10:s11|0:6:10:s7|0:8:10:s4|0:10:10:s4|0:12:10:s3|0:14:10:s10|0:2:12:s12|0:4:12:s12|0:6:12:s8|0:8:12:s13|0:10:12:s8|0:2:14:s3|0:4:14:s11|0:6:14:s6|0:8:14:s5|0:12:14:s6|0:14:14:s9|1:1:1:s0|1:3:1:s2|1:1:3:s1|1:9:3:s5|1:1:5:s12|1:3:5:s3|1:5:5:s3|1:9:5:s10|1:1:7:s12|1:5:7:s13|1:9:7:s2|1:9:9:s12|1:11:9:s10|1:1:11:s10|1:3:11:s0|1:5:11:s1|1:7:11:s13|1:9:11:s13|1:13:11:s2|1:1:13:s1|1:5:13:s3|1:7:13:s5|1:11:13:s0|1:13:13:s5|2:0:0:s8|2:4:0:s11|2:8:2:s8|2:10:2:s7|2:4:4:s7|2:10:4:s9|2:0:8:s8|2:2:8:s4|2:4:8:s9|2:6:8:s6|2:4:10:s9|2:12:10:s4|2:0:12:s6|2:6:12:s11|2:14:12:s7|2:6:14:s6|2:8:14:s11|2:14:14:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L076",
+      "chapter": 4,
+      "tiles": 84,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 85,
+        "backtracks": 0,
+        "maxDepth": 84,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:8:0:s3|0:10:0:s4|0:0:2:s5|0:2:2:s2|0:4:2:s6|0:6:2:s4|0:10:2:s7|0:12:2:s8|0:14:2:s6|0:2:4:s1|0:4:4:s9|0:6:4:s0|0:8:4:s9|0:10:4:s10|0:12:4:s2|0:0:6:s11|0:2:6:s7|0:4:6:s12|0:6:6:s13|0:8:6:s1|0:10:6:s5|0:12:6:s9|0:0:8:s0|0:4:8:s4|0:6:8:s12|0:8:8:s3|0:14:8:s12|0:4:10:s13|0:6:10:s8|0:8:10:s7|0:10:10:s3|0:12:10:s10|0:2:12:s6|0:4:12:s8|0:8:12:s13|0:0:14:s10|0:4:14:s11|0:6:14:s5|0:8:14:s11|1:3:1:s2|1:5:1:s2|1:7:1:s0|1:9:1:s5|1:13:1:s13|1:3:3:s14|1:9:3:s11|1:1:5:s11|1:3:5:s10|1:9:5:s10|1:11:5:s13|1:13:5:s0|1:1:7:s9|1:5:9:s0|1:7:9:s14|1:11:9:s13|1:1:11:s5|1:3:11:s9|1:5:11:s10|1:7:11:s14|1:11:11:s11|1:13:11:s9|1:1:13:s5|1:5:13:s2|2:4:0:s8|2:10:0:s8|2:14:0:s6|2:8:2:s7|2:14:2:s12|2:8:4:s1|2:14:4:s6|2:2:6:s8|2:4:6:s1|2:10:6:s1|2:12:6:s6|2:12:8:s12|2:2:10:s12|2:12:10:s7|2:14:10:s3|2:0:12:s3|2:4:12:s3|2:12:12:s7",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L077",
+      "chapter": 4,
+      "tiles": 87,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 88,
+        "backtracks": 0,
+        "maxDepth": 87,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:6:0:s0|0:10:0:s1|0:12:0:s2|0:0:2:s2|0:2:2:s3|0:4:2:s4|0:8:2:s5|0:10:2:s6|0:12:2:s5|0:6:4:s7|0:10:4:s8|0:12:4:s9|0:14:4:s7|0:6:6:s7|0:8:6:s5|0:10:6:s10|0:12:6:s1|0:14:6:s10|0:2:8:s6|0:4:8:s11|0:6:8:s9|0:8:8:s6|0:10:8:s12|0:12:8:s11|0:14:8:s3|0:0:10:s13|0:2:10:s2|0:4:10:s11|0:6:10:s4|0:10:10:s8|0:14:10:s9|0:0:12:s12|0:2:12:s4|0:4:12:s1|0:6:12:s13|0:10:12:s3|0:12:12:s13|0:6:14:s8|0:12:14:s10|0:14:14:s12|1:3:1:s3|1:5:1:s6|1:11:1:s1|1:13:1:s6|1:1:3:s12|1:3:3:s1|1:5:3:s1|1:9:3:s6|1:11:3:s8|1:13:3:s14|1:5:5:s4|1:9:5:s2|1:11:5:s12|1:13:5:s3|1:3:7:s8|1:5:7:s4|1:11:7:s14|1:3:9:s2|1:5:9:s7|1:9:9:s7|1:11:9:s3|1:13:9:s2|1:3:11:s12|1:7:11:s4|1:13:11:s8|1:3:13:s7|1:9:13:s14|2:4:0:s11|2:6:0:s11|2:14:0:s0|2:4:2:s10|2:8:2:s13|2:10:2:s10|2:14:2:s10|2:2:4:s9|2:12:4:s11|2:4:6:s9|2:6:6:s9|2:8:6:s13|2:2:8:s0|2:10:8:s13|2:14:10:s5|2:4:12:s0|2:4:14:s5|2:8:14:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L078",
+      "chapter": 4,
+      "tiles": 87,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 88,
+        "backtracks": 0,
+        "maxDepth": 87,
+        "peakTrayOccupancy": 7,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:10:0:s1|0:12:0:s2|0:14:0:s3|0:0:2:s4|0:2:2:s5|0:4:2:s6|0:6:2:s6|0:8:2:s7|0:10:2:s0|0:12:2:s8|0:14:2:s0|0:4:4:s4|0:6:4:s9|0:10:4:s9|0:0:6:s1|0:6:6:s10|0:8:6:s8|0:4:8:s9|0:6:8:s11|0:8:8:s4|0:10:8:s12|0:12:8:s13|0:14:8:s1|0:0:10:s2|0:2:10:s10|0:6:10:s11|0:8:10:s7|0:10:10:s3|0:14:10:s2|0:0:12:s11|0:4:12:s10|0:6:12:s5|0:8:12:s5|0:10:12:s12|0:12:12:s3|0:14:12:s13|0:0:14:s8|0:2:14:s13|0:4:14:s7|0:8:14:s6|0:12:14:s12|1:1:1:s4|1:3:1:s0|1:13:1:s0|1:5:3:s13|1:9:3:s3|1:11:3:s4|1:13:3:s13|1:1:5:s2|1:3:5:s2|1:9:5:s9|1:11:5:s1|1:1:7:s1|1:3:7:s9|1:7:7:s1|1:11:7:s3|1:1:9:s6|1:3:9:s14|1:7:9:s3|1:9:9:s4|1:11:9:s6|1:1:11:s14|1:5:11:s6|1:11:11:s0|1:7:13:s9|1:9:13:s14|1:11:13:s13|1:13:13:s2|2:14:0:s10|2:4:2:s12|2:6:2:s11|2:4:4:s8|2:8:4:s8|2:10:4:s10|2:0:6:s7|2:2:6:s5|2:8:6:s11|2:10:6:s12|2:0:8:s12|2:4:8:s10|2:4:10:s5|2:12:10:s7|2:4:12:s7|2:8:14:s5|2:12:14:s11|2:14:14:s8",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L079",
+      "chapter": 4,
+      "tiles": 87,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 88,
+        "backtracks": 0,
+        "maxDepth": 87,
+        "peakTrayOccupancy": 7,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:8:0:s4|0:10:0:s5|0:12:0:s6|0:2:2:s7|0:4:2:s8|0:6:2:s5|0:10:2:s4|0:14:2:s9|0:0:4:s3|0:2:4:s8|0:4:4:s0|0:6:4:s10|0:8:4:s9|0:10:4:s2|0:12:4:s6|0:14:4:s2|0:0:6:s11|0:2:6:s8|0:4:6:s9|0:10:6:s12|0:12:6:s13|0:2:8:s6|0:8:8:s13|0:0:10:s0|0:2:10:s5|0:4:10:s7|0:8:10:s13|0:10:10:s7|0:0:12:s1|0:2:12:s11|0:4:12:s11|0:8:12:s12|0:10:12:s1|0:12:12:s10|0:0:14:s12|0:4:14:s10|0:10:14:s4|0:12:14:s3|1:3:1:s9|1:5:1:s5|1:11:1:s5|1:13:1:s14|1:1:3:s9|1:3:3:s12|1:11:3:s3|1:13:3:s3|1:1:5:s8|1:5:5:s8|1:7:5:s14|1:9:5:s4|1:1:7:s4|1:3:7:s12|1:9:7:s4|1:11:7:s2|1:13:7:s2|1:1:9:s6|1:3:9:s14|1:7:9:s9|1:11:9:s3|1:9:11:s6|1:13:11:s5|1:5:13:s2|1:7:13:s8|1:9:13:s12|1:11:13:s6|2:2:0:s11|2:4:0:s0|2:10:0:s1|2:12:0:s10|2:10:2:s7|2:2:4:s11|2:12:4:s0|2:14:4:s1|2:8:6:s1|2:12:6:s13|2:14:8:s11|2:0:10:s10|2:8:10:s13|2:14:10:s13|2:4:12:s7|2:6:12:s10|2:10:12:s0|2:6:14:s7",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L080",
+      "chapter": 4,
+      "tiles": 90,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 91,
+        "backtracks": 0,
+        "maxDepth": 90,
+        "peakTrayOccupancy": 7,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:12:0:s2|0:0:2:s3|0:2:2:s4|0:4:2:s5|0:6:2:s6|0:12:2:s0|0:0:4:s7|0:2:4:s8|0:4:4:s8|0:6:4:s2|0:10:4:s9|0:12:4:s2|0:14:4:s9|0:2:6:s10|0:4:6:s10|0:6:6:s3|0:10:6:s11|0:12:6:s6|0:14:6:s5|0:0:8:s11|0:2:8:s12|0:4:8:s0|0:6:8:s4|0:12:8:s1|0:14:8:s4|0:4:10:s5|0:8:10:s13|0:14:10:s3|0:0:12:s11|0:4:12:s12|0:6:12:s6|0:8:12:s10|0:12:12:s8|0:0:14:s7|0:4:14:s13|0:6:14:s7|0:8:14:s13|0:10:14:s1|0:12:14:s12|0:14:14:s9|1:1:1:s7|1:3:1:s7|1:11:1:s1|1:13:1:s10|1:1:3:s10|1:3:3:s1|1:13:3:s8|1:3:5:s13|1:5:5:s8|1:1:7:s14|1:3:7:s13|1:5:7:s0|1:9:7:s14|1:11:7:s0|1:1:9:s2|1:3:9:s14|1:5:9:s4|1:9:9:s7|1:11:9:s4|1:13:9:s10|1:1:11:s0|1:11:11:s13|1:13:11:s1|1:1:13:s8|1:5:13:s4|1:7:13:s2|1:11:13:s2|2:10:0:s3|2:12:0:s12|2:2:2:s6|2:4:2:s3|2:12:2:s6|2:0:4:s11|2:6:4:s14|2:2:6:s12|2:6:6:s12|2:8:6:s11|2:10:6:s9|2:2:8:s9|2:4:8:s11|2:6:8:s5|2:14:8:s14|2:2:10:s5|2:4:10:s9|2:12:10:s5|2:10:12:s3|2:0:14:s14|2:12:14:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L081",
+      "chapter": 5,
+      "tiles": 90,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 91,
+        "backtracks": 0,
+        "maxDepth": 90,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:0:2:s2|0:6:2:s3|0:8:2:s4|0:12:2:s5|0:14:2:s4|0:0:4:s6|0:4:4:s7|0:6:4:s8|0:8:4:s9|0:10:4:s10|0:14:4:s11|0:0:6:s12|0:2:6:s8|0:6:6:s9|0:10:6:s2|0:12:6:s4|0:14:6:s11|0:0:8:s13|0:2:8:s9|0:10:8:s3|0:14:8:s12|0:0:10:s12|0:4:10:s7|0:6:10:s2|0:10:10:s1|0:12:10:s6|0:0:12:s13|0:2:12:s5|0:4:12:s0|0:6:12:s7|0:10:12:s10|0:14:12:s13|0:0:14:s11|0:2:14:s6|0:4:14:s1|0:6:14:s8|0:8:14:s10|0:10:14:s3|0:12:14:s5|0:14:14:s0|1:3:1:s9|1:11:1:s11|1:5:3:s5|1:9:3:s11|1:13:3:s12|1:1:5:s8|1:3:5:s1|1:7:5:s3|1:9:5:s12|1:11:5:s3|1:13:5:s5|1:3:7:s13|1:7:7:s12|1:9:7:s4|1:7:9:s11|1:11:9:s4|1:13:9:s3|1:1:11:s13|1:9:11:s1|1:13:11:s9|1:1:13:s13|1:3:13:s1|1:5:13:s8|1:7:13:s8|1:9:13:s5|1:11:13:s4|1:13:13:s9|2:2:0:s1|2:10:0:s6|2:4:4:s0|2:10:4:s10|2:12:4:s10|2:0:6:s2|2:4:6:s10|2:6:6:s2|2:10:6:s6|2:12:6:s7|2:2:8:s1|2:6:8:s0|2:8:8:s6|2:0:10:s12|2:2:10:s7|2:8:10:s1|2:10:10:s12|2:2:12:s2|2:4:12:s7|2:0:14:s0|2:8:14:s12",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L082",
+      "chapter": 5,
+      "tiles": 90,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 91,
+        "backtracks": 0,
+        "maxDepth": 90,
+        "peakTrayOccupancy": 5,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s0|0:6:0:s2|0:8:0:s0|0:10:0:s3|0:0:2:s4|0:2:2:s5|0:6:2:s5|0:14:2:s2|0:0:4:s6|0:2:4:s7|0:6:4:s8|0:10:4:s6|0:12:4:s8|0:14:4:s9|0:0:6:s4|0:2:6:s8|0:4:6:s3|0:6:6:s10|0:8:6:s9|0:10:6:s11|0:12:6:s3|0:14:6:s11|0:2:8:s7|0:4:8:s12|0:6:8:s13|0:12:8:s11|0:4:10:s10|0:6:10:s1|0:10:10:s12|0:12:10:s5|0:14:10:s10|0:0:12:s2|0:2:12:s13|0:6:12:s9|0:12:12:s12|0:0:14:s6|0:2:14:s1|0:4:14:s7|0:6:14:s4|0:12:14:s13|1:1:1:s0|1:3:1:s10|1:7:1:s1|1:9:1:s10|1:11:1:s2|1:1:3:s1|1:7:3:s12|1:9:3:s11|1:13:3:s11|1:1:5:s4|1:11:5:s1|1:13:5:s13|1:1:7:s12|1:5:7:s4|1:7:7:s7|1:13:7:s0|1:1:9:s2|1:5:9:s7|1:7:9:s11|1:9:9:s10|1:11:9:s4|1:3:11:s7|1:9:11:s2|1:13:11:s0|1:7:13:s12|1:11:13:s13|1:13:13:s13|2:4:0:s8|2:10:0:s8|2:0:2:s6|2:4:2:s3|2:10:2:s3|2:0:4:s7|2:8:4:s9|2:10:4:s5|2:12:4:s8|2:8:6:s3|2:0:8:s13|2:0:10:s9|2:8:10:s5|2:14:10:s7|2:4:12:s7|2:6:12:s13|2:8:12:s13|2:12:12:s6|2:6:14:s5|2:8:14:s9|2:12:14:s6",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L083",
+      "chapter": 5,
+      "tiles": 90,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 91,
+        "backtracks": 0,
+        "maxDepth": 90,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:10:0:s3|0:2:2:s4|0:4:2:s5|0:8:2:s6|0:10:2:s4|0:12:2:s7|0:14:2:s7|0:0:4:s8|0:4:4:s9|0:6:4:s10|0:10:4:s3|0:12:4:s4|0:14:4:s2|0:0:6:s11|0:2:6:s5|0:4:6:s11|0:6:6:s6|0:8:6:s12|0:10:6:s13|0:12:6:s5|0:14:6:s12|0:4:8:s11|0:10:8:s7|0:0:10:s8|0:2:10:s3|0:4:10:s0|0:6:10:s8|0:8:10:s1|0:12:10:s1|0:0:12:s13|0:4:12:s10|0:6:12:s13|0:8:12:s2|0:10:12:s9|0:12:12:s10|0:14:12:s0|0:8:14:s9|0:10:14:s12|0:12:14:s6|1:1:1:s10|1:3:1:s1|1:9:1:s7|1:11:1:s1|1:13:1:s6|1:3:3:s2|1:7:3:s10|1:11:3:s8|1:5:5:s6|1:11:5:s8|1:13:5:s12|1:1:7:s13|1:7:7:s6|1:13:7:s7|1:1:9:s0|1:5:9:s0|1:7:9:s0|1:11:9:s13|1:1:11:s2|1:5:11:s8|1:7:11:s2|1:11:11:s7|1:13:11:s1|1:3:13:s12|1:5:13:s10|1:11:13:s12|1:13:13:s13|2:4:0:s5|2:8:0:s9|2:10:0:s3|2:2:2:s5|2:6:2:s6|2:10:2:s3|2:14:2:s9|2:2:4:s4|2:6:4:s4|2:12:4:s11|2:14:4:s4|2:8:6:s5|2:6:8:s6|2:8:8:s6|2:12:8:s12|2:0:10:s9|2:4:10:s12|2:12:10:s11|2:4:12:s11|2:8:12:s12|2:12:12:s3",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L084",
+      "chapter": 5,
+      "tiles": 90,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 91,
+        "backtracks": 0,
+        "maxDepth": 90,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:8:0:s3|0:12:0:s4|0:14:0:s5|0:4:2:s6|0:6:2:s7|0:10:2:s8|0:12:2:s9|0:0:4:s8|0:4:4:s0|0:6:4:s6|0:8:4:s10|0:10:4:s11|0:14:4:s2|0:0:6:s9|0:2:6:s12|0:4:6:s12|0:6:6:s3|0:8:6:s11|0:14:6:s13|0:0:8:s7|0:2:8:s1|0:4:8:s1|0:6:8:s9|0:8:8:s11|0:10:8:s10|0:14:8:s6|0:2:10:s5|0:4:10:s13|0:6:10:s4|0:8:10:s12|0:10:10:s3|0:12:10:s13|0:0:12:s4|0:2:12:s5|0:12:12:s2|0:14:12:s8|0:8:14:s0|0:12:14:s10|0:14:14:s7|1:5:1:s4|1:9:1:s2|1:11:1:s8|1:1:3:s13|1:3:3:s4|1:9:3:s8|1:11:3:s0|1:13:3:s13|1:3:5:s8|1:5:5:s3|1:7:5:s2|1:9:5:s7|1:11:5:s12|1:3:7:s7|1:9:7:s3|1:13:7:s12|1:1:9:s9|1:11:9:s0|1:1:11:s0|1:3:11:s3|1:7:11:s4|1:9:11:s12|1:13:11:s9|1:3:13:s7|1:9:13:s13|1:11:13:s2|1:13:13:s9|2:10:0:s6|2:2:2:s5|2:4:2:s13|2:10:2:s11|2:12:2:s6|2:2:4:s11|2:6:4:s13|2:10:4:s1|2:14:4:s10|2:6:6:s2|2:8:6:s10|2:14:6:s6|2:2:8:s5|2:8:8:s5|2:4:10:s13|2:10:10:s1|2:14:10:s11|2:4:12:s10|2:8:12:s2|2:10:14:s2|2:12:14:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L085",
+      "chapter": 5,
+      "tiles": 93,
+      "layers": 3,
+      "symbols": 14,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 94,
+        "backtracks": 0,
+        "maxDepth": 93,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:12:0:s4|0:14:0:s0|0:0:2:s5|0:4:2:s6|0:8:2:s7|0:10:2:s5|0:12:2:s8|0:14:2:s9|0:0:4:s1|0:2:4:s7|0:4:4:s10|0:8:4:s11|0:10:4:s5|0:0:6:s6|0:4:6:s7|0:6:6:s9|0:8:6:s4|0:14:6:s10|0:0:8:s3|0:2:8:s12|0:4:8:s13|0:8:8:s11|0:14:8:s6|0:0:10:s12|0:2:10:s8|0:4:10:s3|0:6:10:s5|0:8:10:s2|0:10:10:s8|0:14:10:s4|0:0:12:s9|0:4:12:s13|0:6:12:s13|0:8:12:s0|0:10:12:s2|0:12:12:s12|0:14:12:s5|0:0:14:s10|0:2:14:s5|0:8:14:s1|0:12:14:s11|1:1:1:s0|1:3:1:s11|1:5:1:s11|1:9:1:s8|1:11:1:s3|1:3:3:s9|1:3:5:s4|1:5:5:s0|1:7:5:s4|1:9:5:s9|1:1:7:s0|1:7:7:s1|1:13:7:s12|1:1:9:s1|1:5:9:s8|1:9:9:s9|1:1:11:s12|1:3:11:s2|1:5:11:s2|1:7:11:s8|1:11:11:s4|1:13:11:s1|1:1:13:s12|1:5:13:s3|1:7:13:s3|1:9:13:s2|1:13:13:s11|2:2:0:s9|2:6:0:s13|2:4:2:s6|2:8:2:s13|2:10:2:s7|2:6:4:s2|2:10:4:s5|2:2:6:s10|2:6:6:s6|2:10:6:s9|2:0:8:s7|2:4:8:s7|2:8:8:s2|2:10:8:s6|2:4:10:s9|2:6:10:s5|2:8:10:s2|2:12:10:s13|2:4:12:s5|2:14:12:s10|2:4:14:s10",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L086",
+      "chapter": 5,
+      "tiles": 93,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 101,
+        "backtracks": 7,
+        "maxDepth": 93,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:2:0:s0|0:4:0:s1|0:6:0:s2|0:10:0:s3|0:0:2:s3|0:4:2:s0|0:6:2:s4|0:10:2:s4|0:14:2:s5|0:0:4:s6|0:4:4:s7|0:6:4:s8|0:8:4:s9|0:10:4:s2|0:14:4:s10|0:0:6:s10|0:2:6:s7|0:4:6:s11|0:6:6:s12|0:8:6:s7|0:10:6:s11|0:12:6:s13|0:0:8:s14|0:2:8:s6|0:6:8:s1|0:8:8:s14|0:10:8:s8|0:12:8:s2|0:14:8:s5|0:0:10:s13|0:2:10:s12|0:4:10:s8|0:6:10:s5|0:8:10:s13|0:10:10:s4|0:12:10:s9|0:0:12:s11|0:2:12:s1|0:6:12:s12|0:8:12:s3|0:10:12:s10|0:2:14:s14|0:4:14:s9|0:8:14:s6|0:12:14:s0|1:1:1:s9|1:3:1:s4|1:5:1:s11|1:9:1:s14|1:11:1:s9|1:1:3:s11|1:3:3:s1|1:11:3:s2|1:13:3:s9|1:3:5:s4|1:5:5:s2|1:9:5:s6|1:11:5:s6|1:13:5:s13|1:3:7:s1|1:7:7:s13|1:5:9:s1|1:11:9:s12|1:1:11:s4|1:3:11:s2|1:5:11:s14|1:7:11:s14|1:13:11:s12|1:1:13:s11|1:7:13:s13|1:9:13:s12|1:11:13:s6|2:4:0:s8|2:12:0:s8|2:4:2:s8|2:12:2:s2|2:6:4:s3|2:12:4:s3|2:4:6:s7|2:8:6:s0|2:10:8:s3|2:2:10:s0|2:4:10:s10|2:12:10:s2|2:14:10:s5|2:0:12:s2|2:2:12:s0|2:8:12:s5|2:10:12:s7|2:0:14:s5|2:2:14:s10|2:6:14:s7|2:12:14:s10",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L087",
+      "chapter": 5,
+      "tiles": 93,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 94,
+        "backtracks": 0,
+        "maxDepth": 93,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s2|0:8:0:s3|0:12:0:s4|0:14:0:s5|0:0:2:s6|0:2:2:s1|0:4:2:s7|0:8:2:s7|0:10:2:s7|0:0:4:s8|0:6:4:s9|0:12:4:s6|0:14:4:s10|0:4:6:s11|0:6:6:s12|0:10:6:s10|0:0:8:s4|0:2:8:s9|0:4:8:s13|0:6:8:s9|0:10:8:s13|0:12:8:s11|0:14:8:s14|0:0:10:s4|0:2:10:s1|0:4:10:s0|0:6:10:s8|0:8:10:s14|0:10:10:s6|0:14:10:s8|0:0:12:s0|0:4:12:s14|0:6:12:s3|0:8:12:s11|0:12:12:s5|0:14:12:s2|0:2:14:s10|0:4:14:s13|0:6:14:s12|0:8:14:s3|0:10:14:s5|0:14:14:s12|1:3:1:s3|1:5:1:s11|1:9:1:s4|1:3:3:s9|1:7:3:s0|1:13:3:s13|1:1:5:s7|1:3:5:s0|1:7:5:s9|1:9:5:s3|1:11:5:s7|1:13:5:s2|1:1:7:s5|1:3:7:s3|1:5:7:s7|1:7:7:s4|1:9:7:s11|1:13:7:s0|1:5:9:s9|1:11:9:s2|1:1:11:s11|1:11:11:s13|1:1:13:s5|1:5:13:s5|1:7:13:s4|1:9:13:s13|1:11:13:s2|2:6:0:s14|2:8:0:s12|2:10:0:s10|2:6:2:s13|2:8:2:s6|2:10:2:s6|2:14:2:s12|2:12:4:s8|2:14:4:s12|2:0:6:s8|2:2:6:s14|2:6:6:s1|2:8:6:s6|2:4:8:s13|2:6:8:s10|2:0:10:s13|2:4:10:s14|2:0:12:s1|2:12:12:s10|2:0:14:s8|2:4:14:s1",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L088",
+      "chapter": 5,
+      "tiles": 96,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 98,
+        "backtracks": 1,
+        "maxDepth": 96,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s0|0:6:0:s2|0:12:0:s3|0:0:2:s4|0:2:2:s5|0:4:2:s6|0:6:2:s7|0:10:2:s1|0:12:2:s4|0:14:2:s8|0:2:4:s9|0:4:4:s5|0:6:4:s7|0:8:4:s0|0:12:4:s10|0:14:4:s5|0:0:6:s2|0:2:6:s11|0:12:6:s12|0:14:6:s3|0:4:8:s4|0:8:8:s2|0:12:8:s6|0:14:8:s10|0:0:10:s13|0:2:10:s11|0:4:10:s7|0:6:10:s11|0:8:10:s13|0:10:10:s12|0:12:10:s13|0:2:12:s8|0:4:12:s3|0:14:12:s6|0:0:14:s9|0:2:14:s1|0:4:14:s12|0:6:14:s9|0:8:14:s8|0:10:14:s10|1:1:1:s12|1:3:1:s5|1:5:1:s2|1:7:1:s14|1:9:1:s13|1:13:1:s4|1:3:3:s5|1:5:3:s14|1:9:3:s5|1:11:3:s1|1:13:3:s9|1:5:5:s6|1:7:5:s2|1:11:5:s2|1:13:5:s12|1:3:7:s9|1:5:7:s3|1:7:7:s4|1:13:7:s3|1:7:9:s13|1:11:9:s1|1:1:11:s9|1:5:11:s4|1:7:11:s6|1:9:11:s1|1:11:11:s3|1:13:11:s14|1:3:13:s6|1:7:13:s13|1:9:13:s12|2:0:0:s7|2:2:0:s7|2:6:0:s0|2:14:0:s2|2:2:2:s2|2:6:2:s0|2:14:2:s12|2:12:4:s12|2:4:6:s11|2:8:6:s12|2:12:6:s0|2:2:8:s11|2:6:8:s7|2:10:8:s11|2:12:8:s2|2:14:8:s10|2:0:10:s14|2:8:10:s10|2:10:10:s14|2:14:10:s8|2:4:12:s10|2:8:12:s8|2:12:12:s8|2:8:14:s14",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L089",
+      "chapter": 5,
+      "tiles": 96,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 97,
+        "backtracks": 0,
+        "maxDepth": 96,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:12:0:s4|0:14:0:s5|0:0:2:s1|0:6:2:s6|0:8:2:s0|0:10:2:s7|0:12:2:s8|0:2:4:s9|0:4:4:s1|0:0:6:s8|0:2:6:s10|0:4:6:s11|0:6:6:s12|0:10:6:s2|0:12:6:s2|0:0:8:s6|0:4:8:s7|0:6:8:s8|0:10:8:s11|0:12:8:s12|0:14:8:s9|0:0:10:s0|0:2:10:s11|0:4:10:s12|0:6:10:s13|0:10:10:s13|0:12:10:s5|0:0:12:s9|0:4:12:s10|0:10:12:s4|0:12:12:s3|0:14:12:s4|0:0:14:s7|0:4:14:s3|0:6:14:s5|0:8:14:s10|0:10:14:s6|0:12:14:s13|1:5:1:s9|1:7:1:s14|1:9:1:s6|1:11:1:s6|1:3:3:s0|1:5:3:s6|1:9:3:s4|1:3:5:s7|1:5:5:s14|1:9:5:s5|1:13:5:s1|1:5:7:s4|1:7:7:s5|1:13:7:s0|1:5:9:s11|1:7:9:s5|1:9:9:s9|1:13:9:s3|1:1:11:s9|1:3:11:s11|1:5:11:s1|1:7:11:s14|1:11:11:s0|1:13:11:s3|1:1:13:s3|1:3:13:s11|1:7:13:s4|1:9:13:s7|1:11:13:s7|1:13:13:s1|2:6:0:s13|2:10:0:s7|2:4:2:s10|2:10:2:s5|2:4:4:s2|2:8:4:s12|2:4:6:s14|2:8:6:s8|2:12:6:s13|2:14:6:s14|2:8:8:s13|2:0:10:s2|2:2:10:s12|2:4:10:s10|2:10:10:s7|2:14:10:s2|2:0:12:s8|2:2:12:s8|2:4:12:s7|2:6:12:s5|2:12:12:s10|2:14:12:s12|2:12:14:s14|2:14:14:s5",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L090",
+      "chapter": 5,
+      "tiles": 96,
+      "layers": 3,
+      "symbols": 15,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 97,
+        "backtracks": 0,
+        "maxDepth": 96,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:10:0:s3|0:12:0:s4|0:14:0:s5|0:4:2:s6|0:6:2:s4|0:8:2:s7|0:10:2:s8|0:12:2:s5|0:14:2:s9|0:0:4:s10|0:2:4:s2|0:6:4:s11|0:8:4:s2|0:10:4:s5|0:12:4:s6|0:0:6:s0|0:2:6:s7|0:4:6:s8|0:6:6:s11|0:8:6:s11|0:14:6:s9|0:2:8:s1|0:6:8:s12|0:8:8:s4|0:12:8:s1|0:14:8:s8|0:0:10:s0|0:4:10:s12|0:6:10:s13|0:8:10:s10|0:10:10:s10|0:2:12:s9|0:4:12:s12|0:8:12:s3|0:0:14:s13|0:2:14:s6|0:8:14:s7|0:12:14:s13|1:1:1:s3|1:7:1:s3|1:1:3:s14|1:3:3:s4|1:7:3:s7|1:9:3:s2|1:13:3:s1|1:1:5:s8|1:3:5:s10|1:5:5:s4|1:7:5:s10|1:11:5:s2|1:13:5:s12|1:1:7:s1|1:7:7:s12|1:9:7:s14|1:11:7:s14|1:13:7:s1|1:1:9:s7|1:9:9:s6|1:11:9:s4|1:3:11:s6|1:5:11:s6|1:7:11:s10|1:9:11:s3|1:3:13:s12|1:7:13:s8|1:9:13:s8|1:11:13:s2|1:13:13:s7|2:0:0:s3|2:6:0:s14|2:12:2:s5|2:2:4:s13|2:10:4:s9|2:12:4:s11|2:14:4:s12|2:2:6:s11|2:8:6:s0|2:10:6:s3|2:12:6:s3|2:2:8:s5|2:6:8:s12|2:8:8:s5|2:10:8:s12|2:12:8:s9|2:14:8:s13|2:0:10:s0|2:4:12:s9|2:6:12:s14|2:12:12:s13|2:2:14:s11|2:8:14:s14|2:14:14:s0",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L091",
+      "chapter": 5,
+      "tiles": 99,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 100,
+        "backtracks": 0,
+        "maxDepth": 99,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:4:0:s1|0:6:0:s2|0:8:0:s3|0:10:0:s4|0:12:0:s3|0:14:0:s5|0:2:2:s6|0:6:2:s7|0:8:2:s8|0:12:2:s0|0:14:2:s9|0:0:4:s10|0:2:4:s7|0:4:4:s10|0:6:4:s11|0:8:4:s12|0:10:4:s10|0:12:4:s3|0:14:4:s11|0:4:6:s9|0:6:6:s4|0:8:6:s7|0:12:6:s1|0:14:6:s6|0:0:8:s2|0:2:8:s8|0:6:8:s11|0:12:8:s5|0:0:10:s8|0:4:10:s13|0:6:10:s14|0:10:10:s1|0:12:10:s14|0:14:10:s2|0:4:12:s6|0:6:12:s12|0:8:12:s5|0:10:12:s4|0:14:12:s14|0:6:14:s9|0:10:14:s13|0:12:14:s13|0:14:14:s12|1:1:1:s11|1:3:1:s8|1:5:1:s4|1:7:1:s15|1:9:1:s14|1:1:3:s8|1:5:3:s2|1:11:3:s4|1:13:3:s6|1:3:5:s7|1:5:5:s11|1:7:5:s6|1:13:5:s14|1:1:7:s5|1:7:7:s11|1:9:7:s5|1:13:7:s15|1:1:9:s1|1:3:9:s6|1:7:9:s8|1:9:9:s7|1:11:9:s1|1:13:9:s15|1:1:11:s14|1:3:11:s2|1:5:11:s7|1:7:11:s1|1:9:11:s2|1:9:13:s4|1:13:13:s5|2:0:2:s9|2:6:2:s0|2:8:2:s10|2:0:4:s10|2:4:4:s9|2:10:4:s0|2:0:6:s9|2:4:6:s0|2:8:6:s7|2:0:8:s15|2:2:8:s13|2:10:8:s12|2:14:8:s15|2:0:10:s3|2:8:10:s10|2:14:10:s3|2:0:12:s13|2:2:12:s3|2:4:12:s13|2:6:12:s15|2:10:12:s7|2:14:12:s7|2:10:14:s12|2:12:14:s12",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L092",
+      "chapter": 5,
+      "tiles": 99,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 100,
+        "backtracks": 0,
+        "maxDepth": 99,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:8:0:s4|0:4:2:s5|0:10:2:s6|0:12:2:s7|0:0:4:s6|0:2:4:s8|0:4:4:s1|0:6:4:s2|0:8:4:s0|0:10:4:s7|0:14:4:s5|0:0:6:s3|0:2:6:s9|0:4:6:s10|0:6:6:s10|0:8:6:s5|0:10:6:s4|0:12:6:s8|0:14:6:s11|0:0:8:s12|0:6:8:s12|0:8:8:s13|0:10:8:s6|0:12:8:s13|0:14:8:s11|0:2:10:s2|0:4:10:s7|0:6:10:s14|0:8:10:s11|0:10:10:s14|0:12:10:s3|0:14:10:s14|0:2:12:s13|0:4:12:s1|0:6:12:s0|0:2:14:s9|0:4:14:s8|0:6:14:s12|0:8:14:s10|0:10:14:s9|0:12:14:s4|1:3:1:s5|1:5:1:s1|1:9:1:s3|1:11:1:s15|1:13:1:s5|1:5:3:s11|1:9:3:s12|1:11:3:s4|1:13:3:s1|1:1:5:s3|1:3:5:s3|1:9:5:s0|1:11:5:s0|1:13:5:s15|1:5:7:s15|1:7:7:s11|1:11:7:s2|1:3:9:s9|1:5:9:s1|1:9:9:s12|1:11:9:s2|1:13:9:s5|1:5:11:s9|1:7:11:s9|1:9:11:s0|1:11:11:s4|1:1:13:s12|1:5:13:s2|1:7:13:s4|1:13:13:s11|2:4:0:s2|2:6:0:s13|2:10:0:s13|2:10:2:s10|2:12:2:s10|2:10:4:s13|2:14:4:s7|2:0:6:s8|2:2:6:s6|2:10:6:s7|2:12:6:s2|2:2:8:s14|2:4:8:s15|2:14:8:s14|2:2:10:s15|2:4:10:s2|2:0:12:s10|2:2:12:s8|2:6:12:s7|2:8:12:s8|2:10:12:s6|2:12:12:s6|2:2:14:s15|2:8:14:s14",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L093",
+      "chapter": 5,
+      "tiles": 99,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 102,
+        "backtracks": 2,
+        "maxDepth": 99,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s0|0:6:0:s2|0:10:0:s3|0:12:0:s4|0:14:0:s5|0:0:2:s2|0:2:2:s5|0:4:2:s6|0:6:2:s7|0:8:2:s7|0:10:2:s8|0:12:2:s5|0:0:4:s6|0:2:4:s9|0:4:4:s10|0:6:4:s11|0:8:4:s12|0:10:4:s13|0:14:4:s9|0:2:6:s0|0:6:6:s1|0:8:6:s14|0:12:6:s10|0:14:6:s2|0:2:8:s12|0:10:8:s12|0:12:8:s4|0:0:10:s3|0:4:10:s4|0:8:10:s11|0:10:10:s6|0:14:10:s3|0:2:12:s14|0:4:12:s8|0:6:12:s1|0:10:12:s13|0:0:14:s9|0:4:14:s8|0:6:14:s13|0:8:14:s14|0:10:14:s7|0:12:14:s10|0:14:14:s11|1:5:1:s4|1:7:1:s15|1:9:1:s13|1:13:1:s9|1:1:3:s8|1:11:3:s7|1:13:3:s13|1:1:5:s10|1:3:5:s8|1:5:5:s4|1:7:5:s15|1:9:5:s9|1:13:5:s9|1:1:7:s10|1:9:7:s7|1:11:7:s10|1:13:7:s1|1:1:9:s5|1:5:9:s4|1:9:9:s15|1:1:11:s13|1:3:11:s5|1:5:11:s14|1:9:11:s8|1:13:11:s14|1:1:13:s1|1:3:13:s14|1:7:13:s5|1:9:13:s1|1:13:13:s7|2:4:0:s12|2:12:0:s12|2:14:0:s2|2:0:2:s15|2:4:2:s11|2:8:2:s0|2:10:2:s8|2:2:4:s2|2:0:6:s11|2:4:6:s0|2:10:6:s2|2:12:6:s6|2:14:6:s8|2:2:8:s11|2:10:8:s12|2:14:8:s3|2:0:10:s3|2:6:10:s15|2:12:10:s3|2:0:12:s6|2:2:12:s15|2:4:12:s6|2:12:12:s0|2:0:14:s8",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L094",
+      "chapter": 5,
+      "tiles": 102,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 103,
+        "backtracks": 0,
+        "maxDepth": 102,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:4:0:s1|0:6:0:s1|0:8:0:s2|0:12:0:s3|0:14:0:s4|0:0:2:s5|0:2:2:s6|0:10:2:s7|0:12:2:s8|0:14:2:s9|0:0:4:s6|0:2:4:s2|0:4:4:s10|0:6:4:s3|0:8:4:s5|0:10:4:s11|0:14:4:s11|0:2:6:s8|0:4:6:s12|0:8:6:s13|0:10:6:s0|0:12:6:s4|0:0:8:s9|0:2:8:s9|0:4:8:s6|0:6:8:s11|0:8:8:s7|0:10:8:s13|0:12:8:s13|0:2:10:s4|0:4:10:s14|0:6:10:s12|0:8:10:s10|0:10:10:s10|0:14:10:s1|0:0:12:s15|0:2:12:s14|0:4:12:s8|0:10:12:s15|0:14:12:s14|0:0:14:s12|0:2:14:s7|0:4:14:s3|0:10:14:s2|0:12:14:s15|0:14:14:s5|1:3:1:s0|1:9:1:s2|1:11:1:s1|1:1:3:s3|1:3:3:s3|1:5:3:s0|1:7:3:s9|1:9:3:s2|1:1:5:s5|1:5:5:s12|1:7:5:s13|1:9:5:s12|1:11:5:s6|1:1:7:s6|1:3:7:s2|1:9:7:s13|1:11:7:s9|1:1:9:s6|1:5:9:s1|1:9:9:s13|1:11:9:s1|1:1:11:s12|1:7:11:s10|1:11:11:s9|1:1:13:s3|1:3:13:s10|1:5:13:s10|1:9:13:s5|1:11:13:s5|1:13:13:s0|2:12:0:s14|2:0:2:s14|2:6:2:s15|2:8:2:s2|2:10:2:s15|2:12:2:s8|2:4:4:s4|2:8:4:s11|2:4:6:s5|2:6:6:s11|2:10:6:s2|2:12:6:s11|2:6:8:s5|2:8:8:s4|2:10:8:s4|2:0:10:s14|2:2:10:s7|2:4:10:s5|2:12:10:s7|2:0:12:s7|2:6:12:s8|2:8:12:s15|2:10:12:s8|2:12:12:s2",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L095",
+      "chapter": 5,
+      "tiles": 102,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 103,
+        "backtracks": 0,
+        "maxDepth": 102,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:4:0:s1|0:6:0:s2|0:10:0:s3|0:12:0:s4|0:14:0:s5|0:0:2:s6|0:2:2:s7|0:4:2:s1|0:6:2:s8|0:8:2:s9|0:10:2:s5|0:12:2:s10|0:14:2:s11|0:0:4:s11|0:2:4:s3|0:4:4:s2|0:6:4:s4|0:10:4:s12|0:12:4:s6|0:14:4:s13|0:0:6:s10|0:2:6:s7|0:4:6:s11|0:12:6:s4|0:14:6:s14|0:0:8:s12|0:6:8:s12|0:8:8:s1|0:0:10:s7|0:2:10:s0|0:4:10:s15|0:6:10:s14|0:8:10:s15|0:12:10:s13|0:14:10:s2|0:0:12:s13|0:2:12:s14|0:4:12:s6|0:6:12:s9|0:8:12:s5|0:12:12:s10|0:14:12:s3|0:0:14:s8|0:4:14:s8|0:6:14:s15|0:14:14:s9|1:3:1:s15|1:9:1:s11|1:11:1:s1|1:13:1:s1|1:5:3:s2|1:11:3:s2|1:13:3:s13|1:1:5:s4|1:5:5:s9|1:7:5:s15|1:11:5:s2|1:1:7:s8|1:3:7:s11|1:7:7:s13|1:11:7:s5|1:13:7:s4|1:1:9:s13|1:3:9:s9|1:5:9:s9|1:9:9:s7|1:11:9:s15|1:1:11:s11|1:3:11:s8|1:5:11:s5|1:7:11:s8|1:11:11:s7|1:13:11:s1|1:3:13:s5|1:9:13:s4|1:13:13:s7|2:4:0:s13|2:8:0:s0|2:8:2:s12|2:10:2:s13|2:0:4:s3|2:4:4:s6|2:10:4:s3|2:14:4:s14|2:6:6:s10|2:10:6:s6|2:2:8:s12|2:10:8:s12|2:12:8:s14|2:14:8:s7|2:6:10:s14|2:10:10:s10|2:12:10:s3|2:0:12:s7|2:4:12:s6|2:8:12:s7|2:4:14:s0|2:8:14:s13|2:10:14:s0|2:12:14:s10",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L096",
+      "chapter": 5,
+      "tiles": 102,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 103,
+        "backtracks": 0,
+        "maxDepth": 102,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:8:0:s4|0:10:0:s5|0:12:0:s6|0:14:0:s0|0:0:2:s7|0:2:2:s8|0:4:2:s9|0:6:2:s2|0:8:2:s8|0:10:2:s10|0:12:2:s11|0:4:4:s7|0:8:4:s12|0:10:4:s12|0:12:4:s8|0:0:6:s11|0:2:6:s10|0:6:6:s6|0:8:6:s5|0:10:6:s1|0:12:6:s13|0:0:8:s7|0:2:8:s12|0:4:8:s14|0:10:8:s4|0:12:8:s15|0:14:8:s1|0:0:10:s5|0:2:10:s15|0:4:10:s4|0:8:10:s2|0:12:10:s11|0:14:10:s14|0:0:12:s13|0:4:12:s3|0:6:12:s3|0:8:12:s14|0:10:12:s9|0:14:12:s13|0:0:14:s0|0:2:14:s10|0:4:14:s9|0:8:14:s15|0:10:14:s6|1:1:1:s8|1:5:1:s4|1:7:1:s7|1:9:1:s14|1:3:3:s13|1:5:3:s3|1:3:5:s15|1:5:5:s14|1:7:5:s9|1:11:5:s4|1:1:7:s9|1:5:7:s9|1:7:7:s6|1:9:7:s13|1:11:7:s2|1:13:7:s2|1:1:9:s8|1:3:9:s7|1:9:9:s14|1:11:9:s13|1:1:11:s7|1:5:11:s8|1:7:11:s4|1:11:11:s15|1:1:13:s6|1:3:13:s6|1:5:13:s3|1:7:13:s15|1:9:13:s3|1:13:13:s2|2:2:0:s12|2:0:2:s4|2:2:2:s8|2:4:2:s8|2:6:2:s10|2:10:2:s0|2:4:4:s10|2:10:4:s11|2:12:4:s11|2:0:6:s12|2:4:6:s0|2:6:8:s0|2:8:8:s4|2:14:8:s5|2:0:10:s10|2:2:10:s1|2:4:10:s12|2:6:10:s1|2:10:10:s1|2:8:12:s5|2:10:12:s5|2:2:14:s11|2:6:14:s4|2:8:14:s8",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L097",
+      "chapter": 5,
+      "tiles": 105,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 106,
+        "backtracks": 0,
+        "maxDepth": 105,
+        "peakTrayOccupancy": 7,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s2|0:6:0:s3|0:8:0:s4|0:10:0:s5|0:14:0:s6|0:0:2:s7|0:2:2:s8|0:4:2:s1|0:6:2:s8|0:8:2:s9|0:12:2:s10|0:14:2:s5|0:0:4:s11|0:2:4:s12|0:6:4:s13|0:8:4:s14|0:12:4:s9|0:14:4:s15|0:0:6:s13|0:2:6:s3|0:4:6:s12|0:8:6:s2|0:10:6:s15|0:14:6:s11|0:0:8:s1|0:4:8:s4|0:8:8:s11|0:10:8:s0|0:12:8:s15|0:14:8:s2|0:4:10:s8|0:6:10:s10|0:10:10:s5|0:12:10:s6|0:0:12:s10|0:2:12:s13|0:4:12:s3|0:6:12:s14|0:8:12:s7|0:10:12:s14|0:12:12:s4|0:14:12:s0|0:2:14:s9|0:8:14:s12|0:10:14:s6|0:12:14:s7|1:1:1:s9|1:5:1:s8|1:7:1:s1|1:3:3:s13|1:5:3:s10|1:9:3:s3|1:11:3:s5|1:13:3:s3|1:1:5:s1|1:3:5:s5|1:7:5:s9|1:11:5:s13|1:13:5:s8|1:1:7:s1|1:3:7:s2|1:5:7:s10|1:11:7:s11|1:13:7:s3|1:1:9:s13|1:3:9:s6|1:9:9:s11|1:13:9:s9|1:5:11:s6|1:7:11:s12|1:9:11:s12|1:13:11:s11|1:1:13:s6|1:3:13:s2|1:5:13:s12|1:7:13:s5|1:9:13:s2|1:11:13:s8|1:13:13:s10|2:0:2:s3|2:2:2:s14|2:4:2:s3|2:6:2:s15|2:14:2:s14|2:0:4:s15|2:2:4:s0|2:4:4:s7|2:12:4:s4|2:4:6:s12|2:6:6:s9|2:14:6:s12|2:6:8:s0|2:8:8:s12|2:2:10:s14|2:0:12:s3|2:2:12:s0|2:4:12:s9|2:6:12:s9|2:4:14:s7|2:6:14:s4|2:8:14:s7|2:10:14:s15|2:12:14:s4",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L098",
+      "chapter": 5,
+      "tiles": 105,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 106,
+        "backtracks": 0,
+        "maxDepth": 105,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:6:0:s1|0:12:0:s2|0:14:0:s2|0:0:2:s3|0:2:2:s4|0:4:2:s5|0:6:2:s5|0:8:2:s6|0:12:2:s7|0:14:2:s8|0:2:4:s9|0:4:4:s8|0:6:4:s10|0:8:4:s11|0:10:4:s1|0:12:4:s2|0:4:6:s12|0:6:6:s5|0:8:6:s12|0:10:6:s0|0:12:6:s3|0:14:6:s13|0:0:8:s9|0:4:8:s3|0:6:8:s8|0:10:8:s13|0:12:8:s10|0:14:8:s12|0:4:10:s1|0:6:10:s14|0:8:10:s9|0:10:10:s4|0:12:10:s15|0:0:12:s15|0:2:12:s13|0:4:12:s10|0:8:12:s7|0:12:12:s11|0:14:12:s6|0:0:14:s15|0:2:14:s6|0:4:14:s7|0:6:14:s14|0:8:14:s11|0:10:14:s4|0:14:14:s14|1:3:1:s14|1:5:1:s4|1:7:1:s7|1:9:1:s10|1:13:1:s1|1:1:3:s13|1:3:3:s8|1:11:3:s13|1:13:3:s4|1:5:5:s10|1:9:5:s12|1:11:5:s9|1:13:5:s0|1:3:7:s4|1:5:7:s7|1:7:7:s8|1:9:7:s13|1:11:7:s7|1:13:7:s0|1:1:9:s1|1:3:9:s3|1:5:9:s12|1:9:9:s14|1:11:9:s3|1:1:11:s1|1:7:11:s3|1:9:11:s9|1:13:11:s10|1:1:13:s0|1:3:13:s9|1:5:13:s12|1:9:13:s8|1:11:13:s14|2:6:0:s9|2:10:0:s6|2:12:0:s2|2:6:2:s5|2:10:2:s11|2:12:2:s11|2:14:2:s9|2:0:4:s5|2:2:4:s8|2:4:4:s10|2:6:4:s9|2:10:4:s8|2:14:6:s15|2:0:8:s15|2:10:8:s10|2:14:8:s6|2:8:10:s10|2:10:10:s11|2:14:10:s5|2:0:12:s2|2:4:12:s6|2:4:14:s2|2:8:14:s15|2:12:14:s8",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L099",
+      "chapter": 5,
+      "tiles": 105,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 106,
+        "backtracks": 0,
+        "maxDepth": 105,
+        "peakTrayOccupancy": 8,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s1|0:4:0:s0|0:6:0:s2|0:12:0:s3|0:14:0:s4|0:0:2:s5|0:2:2:s6|0:4:2:s7|0:6:2:s8|0:10:2:s9|0:14:2:s10|0:0:4:s11|0:4:4:s0|0:8:4:s3|0:10:4:s9|0:14:4:s7|0:0:6:s11|0:2:6:s12|0:4:6:s12|0:8:6:s1|0:10:6:s7|0:12:6:s10|0:14:6:s13|0:0:8:s13|0:2:8:s5|0:4:8:s1|0:10:8:s4|0:12:8:s14|0:14:8:s6|0:0:10:s15|0:2:10:s9|0:4:10:s6|0:6:10:s2|0:10:10:s14|0:14:10:s8|0:0:12:s14|0:2:12:s8|0:4:12:s10|0:12:12:s4|0:14:12:s5|0:0:14:s2|0:2:14:s13|0:4:14:s12|0:8:14:s15|0:10:14:s15|0:12:14:s11|0:14:14:s3|1:1:1:s2|1:3:1:s2|1:5:1:s3|1:7:1:s10|1:11:1:s9|1:13:1:s11|1:1:3:s6|1:3:3:s7|1:7:3:s12|1:9:3:s12|1:11:3:s6|1:13:3:s1|1:1:5:s3|1:3:5:s12|1:5:5:s3|1:7:5:s9|1:7:7:s1|1:9:7:s11|1:11:7:s5|1:13:7:s7|1:1:9:s1|1:3:9:s2|1:5:9:s11|1:9:9:s8|1:11:9:s5|1:13:9:s10|1:5:11:s6|1:7:11:s10|1:13:11:s8|1:3:13:s9|1:5:13:s5|1:7:13:s7|1:11:13:s8|2:2:0:s9|2:12:0:s9|2:0:2:s14|2:2:2:s0|2:4:4:s15|2:6:4:s4|2:4:6:s0|2:6:6:s15|2:8:6:s0|2:10:6:s8|2:12:6:s12|2:2:8:s8|2:8:8:s9|2:12:8:s12|2:14:8:s14|2:4:10:s4|2:8:10:s12|2:10:10:s13|2:12:10:s4|2:4:12:s8|2:6:12:s13|2:10:12:s13|2:10:14:s14|2:12:14:s15",
+      "valid": true,
+      "errors": []
+    },
+    {
+      "id": "L100",
+      "chapter": 5,
+      "tiles": 108,
+      "layers": 3,
+      "symbols": 16,
+      "solver": {
+        "solved": true,
+        "nodesVisited": 109,
+        "backtracks": 0,
+        "maxDepth": 108,
+        "peakTrayOccupancy": 6,
+        "budgetExceeded": false,
+        "budgetReason": null
+      },
+      "knownPeakTrayOccupancy": 2,
+      "signature": "0:0:0:s0|0:2:0:s0|0:4:0:s1|0:8:0:s2|0:10:0:s3|0:12:0:s4|0:0:2:s5|0:2:2:s6|0:4:2:s7|0:8:2:s8|0:12:2:s9|0:14:2:s10|0:0:4:s11|0:4:4:s4|0:6:4:s9|0:12:4:s12|0:14:4:s13|0:0:6:s14|0:2:6:s5|0:4:6:s4|0:8:6:s1|0:10:6:s2|0:12:6:s13|0:14:6:s8|0:0:8:s7|0:4:8:s1|0:8:8:s10|0:10:8:s10|0:12:8:s6|0:14:8:s9|0:4:10:s14|0:6:10:s15|0:10:10:s15|0:12:10:s5|0:14:10:s15|0:0:12:s6|0:2:12:s11|0:4:12:s0|0:8:12:s12|0:10:12:s7|0:12:12:s11|0:0:14:s3|0:2:14:s3|0:4:14:s13|0:8:14:s8|0:10:14:s12|0:12:14:s2|0:14:14:s14|1:3:1:s10|1:5:1:s10|1:9:1:s8|1:13:1:s2|1:3:3:s6|1:5:3:s14|1:7:3:s6|1:9:3:s11|1:1:5:s15|1:7:5:s1|1:11:5:s0|1:13:5:s1|1:1:7:s15|1:5:7:s11|1:7:7:s14|1:9:7:s8|1:11:7:s4|1:13:7:s2|1:1:9:s15|1:5:9:s10|1:7:9:s4|1:11:9:s6|1:13:9:s4|1:3:11:s11|1:5:11:s1|1:9:11:s0|1:11:11:s5|1:1:13:s0|1:3:13:s2|1:5:13:s14|1:7:13:s5|1:9:13:s5|1:13:13:s8|2:2:0:s7|2:6:0:s13|2:10:0:s0|2:12:0:s7|2:2:2:s5|2:8:2:s3|2:12:2:s8|2:8:4:s13|2:12:4:s8|2:2:6:s9|2:10:6:s3|2:14:6:s4|2:8:8:s4|2:4:10:s0|2:6:10:s9|2:8:10:s5|2:10:10:s4|2:12:10:s3|2:2:12:s5|2:10:12:s12|2:12:12:s8|2:0:14:s12|2:4:14:s0|2:6:14:s13|2:10:14:s12|2:12:14:s7|2:14:14:s9",
+      "valid": true,
+      "errors": []
+    }
+  ]
+}
