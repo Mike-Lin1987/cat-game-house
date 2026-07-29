@@ -12,15 +12,15 @@
     "symbols": [
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       }
     ],
     "tiles": [
@@ -194,27 +194,27 @@
     "symbols": [
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "bowl",
-        "label": "貓碗"
+        "label": "倉鼠"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       }
     ],
     "tiles": [
@@ -388,27 +388,27 @@
     "symbols": [
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       }
     ],
     "tiles": [
@@ -582,27 +582,27 @@
     "symbols": [
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "milk",
-        "label": "鮮奶"
+        "label": "狗狗"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       }
     ],
     "tiles": [
@@ -776,27 +776,27 @@
     "symbols": [
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       },
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "feather",
-        "label": "逗貓棒"
+        "label": "羊駝"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       }
     ],
     "tiles": [
@@ -994,31 +994,31 @@
     "symbols": [
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "milk",
-        "label": "鮮奶"
+        "label": "狗狗"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       }
     ],
     "tiles": [
@@ -1216,31 +1216,31 @@
     "symbols": [
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       }
     ],
     "tiles": [
@@ -1438,31 +1438,31 @@
     "symbols": [
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       },
       {
         "id": "bowl",
-        "label": "貓碗"
+        "label": "倉鼠"
       },
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       }
     ],
     "tiles": [
@@ -1684,31 +1684,31 @@
     "symbols": [
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "milk",
-        "label": "鮮奶"
+        "label": "狗狗"
       },
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       }
     ],
     "tiles": [
@@ -1930,31 +1930,31 @@
     "symbols": [
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       }
     ],
     "tiles": [
@@ -2176,35 +2176,35 @@
     "symbols": [
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       },
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       }
     ],
     "tiles": [
@@ -2450,35 +2450,35 @@
     "symbols": [
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       },
       {
         "id": "milk",
-        "label": "鮮奶"
+        "label": "狗狗"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "bowl",
-        "label": "貓碗"
+        "label": "倉鼠"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       }
     ],
     "tiles": [
@@ -2724,35 +2724,35 @@
     "symbols": [
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       },
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       },
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       }
     ],
     "tiles": [
@@ -2998,35 +2998,35 @@
     "symbols": [
       {
         "id": "bowl",
-        "label": "貓碗"
+        "label": "倉鼠"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       },
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "feather",
-        "label": "逗貓棒"
+        "label": "羊駝"
       }
     ],
     "tiles": [
@@ -3296,35 +3296,35 @@
     "symbols": [
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "bowl",
-        "label": "貓碗"
+        "label": "倉鼠"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       }
     ],
     "tiles": [
@@ -3594,39 +3594,39 @@
     "symbols": [
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       },
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       }
     ],
     "tiles": [
@@ -3896,39 +3896,39 @@
     "symbols": [
       {
         "id": "milk",
-        "label": "鮮奶"
+        "label": "狗狗"
       },
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "feather",
-        "label": "逗貓棒"
+        "label": "羊駝"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       }
     ],
     "tiles": [
@@ -4222,39 +4222,39 @@
     "symbols": [
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "feather",
-        "label": "逗貓棒"
+        "label": "羊駝"
       },
       {
         "id": "bowl",
-        "label": "貓碗"
+        "label": "倉鼠"
       },
       {
         "id": "milk",
-        "label": "鮮奶"
+        "label": "狗狗"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       }
     ],
     "tiles": [
@@ -4548,39 +4548,39 @@
     "symbols": [
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "salmon",
-        "label": "鮭魚玩具"
+        "label": "浣熊"
       },
       {
         "id": "feather",
-        "label": "逗貓棒"
+        "label": "羊駝"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "paw",
-        "label": "肉球餅乾"
+        "label": "棕熊"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "fish",
-        "label": "小魚"
+        "label": "企鵝"
       },
       {
         "id": "box",
-        "label": "紙箱"
+        "label": "熊貓"
       },
       {
         "id": "bell",
-        "label": "鈴鐺"
+        "label": "老虎"
       }
     ],
     "tiles": [
@@ -4874,39 +4874,39 @@
     "symbols": [
       {
         "id": "blue-cushion",
-        "label": "小魚抱枕"
+        "label": "梅花鹿"
       },
       {
         "id": "fishbone",
-        "label": "魚骨"
+        "label": "貓咪"
       },
       {
         "id": "cushion",
-        "label": "肉球抱枕"
+        "label": "無尾熊"
       },
       {
         "id": "can",
-        "label": "罐罐"
+        "label": "狐狸"
       },
       {
         "id": "mouse",
-        "label": "玩具鼠"
+        "label": "獅子"
       },
       {
         "id": "grass",
-        "label": "貓草"
+        "label": "水獺"
       },
       {
         "id": "yarn",
-        "label": "毛線球"
+        "label": "兔子"
       },
       {
         "id": "scratcher",
-        "label": "貓抓板"
+        "label": "貓頭鷹"
       },
       {
         "id": "feather",
-        "label": "逗貓棒"
+        "label": "羊駝"
       }
     ],
     "tiles": [
