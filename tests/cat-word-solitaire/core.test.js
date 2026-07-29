@@ -532,26 +532,36 @@ test('步數與提示星級取較低者，並公開兩個步數門檻', () => {
     threeStarMoves: 30,
     twoStarMoves: 40,
   });
-  assert.equal(
-    Core.calculateStars({ ...state, movesUsed: 31, hintsUsed: 0 }, level),
-    2,
-  );
-  assert.equal(
-    Core.calculateStars({ ...state, movesUsed: 41, hintsUsed: 0 }, level),
-    1,
-  );
-  assert.equal(
-    Core.calculateStars({ ...state, movesUsed: 20, hintsUsed: 1 }, level),
-    2,
-  );
-  assert.equal(
-    Core.calculateStars({ ...state, movesUsed: 20, hintsUsed: 2 }, level),
-    1,
-  );
-  assert.equal(
-    Core.calculateStars({ ...state, movesUsed: 35, hintsUsed: 2 }, level),
-    1,
-  );
+  const cases = [
+    { movesUsed: 30, hintsUsed: 0, moveStars: 3, hintStars: 3, stars: 3 },
+    { movesUsed: 30, hintsUsed: 1, moveStars: 3, hintStars: 2, stars: 2 },
+    { movesUsed: 30, hintsUsed: 2, moveStars: 3, hintStars: 1, stars: 1 },
+    { movesUsed: 31, hintsUsed: 0, moveStars: 2, hintStars: 3, stars: 2 },
+    { movesUsed: 31, hintsUsed: 1, moveStars: 2, hintStars: 2, stars: 2 },
+    { movesUsed: 31, hintsUsed: 2, moveStars: 2, hintStars: 1, stars: 1 },
+    { movesUsed: 41, hintsUsed: 0, moveStars: 1, hintStars: 3, stars: 1 },
+    { movesUsed: 41, hintsUsed: 1, moveStars: 1, hintStars: 2, stars: 1 },
+    { movesUsed: 41, hintsUsed: 2, moveStars: 1, hintStars: 1, stars: 1 },
+  ];
+  for (const expected of cases) {
+    const rating = Core.getStarRating({ ...state, ...expected }, level);
+    assert.deepEqual(
+      {
+        moveStars: rating.moveStars,
+        hintStars: rating.hintStars,
+        stars: rating.stars,
+      },
+      {
+        moveStars: expected.moveStars,
+        hintStars: expected.hintStars,
+        stars: expected.stars,
+      },
+    );
+    assert.equal(
+      Core.calculateStars({ ...state, ...expected }, level),
+      expected.stars,
+    );
+  }
 });
 
 test('舊 failed 狀態不再阻止合法動作，session 載入後會恢復可遊玩', () => {
@@ -566,6 +576,90 @@ test('舊 failed 狀態不再阻止合法動作，session 載入後會恢復可�
   const restored = Core.deserializeSession(legacyState, level);
   assert.equal(restored.failed, false);
   assert.equal(restored.movesUsed, 99);
+});
+
+test('超過舊步數門檻後仍可移牌、發牌、提示、撤回及完成', () => {
+  const level = createLevel({
+    categories: [{ id: 'fruit', label: '水果', required: 1, symbol: '🍎' }],
+    cards: [
+      { id: 'category-fruit', cardType: 'category', categoryId: 'fruit' },
+      {
+        id: 'fruit-1',
+        cardType: 'item',
+        displayType: 'text',
+        text: '蘋果',
+        label: '蘋果',
+        categoryId: 'fruit',
+      },
+    ],
+    layout: {
+      initialColumns: [['category-fruit'], ['fruit-1'], [], [], []],
+      drawBatches: [],
+    },
+    parMoves: 2,
+    threeStarMoves: 2,
+  });
+  const overThreshold = {
+    ...Core.createInitialState(level),
+    movesUsed: 99,
+    failed: true,
+  };
+  const stored = Core.moveToSpare(
+    overThreshold,
+    level,
+    'category-fruit',
+    0,
+  );
+  assert.equal(stored.outcome, Core.OUTCOME.CARD_STORED);
+  assert.equal(stored.state.failed, false);
+
+  const restored = Core.restoreSnapshot(
+    stored.state,
+    structuredClone(overThreshold),
+    level,
+  );
+  assert.equal(restored.outcome, Core.OUTCOME.UNDONE);
+  assert.equal(restored.state.failed, false);
+  assert.equal(restored.state.movesUsed > level.threeStarMoves, true);
+
+  const hinted = Core.useHint(restored.state);
+  assert.equal(hinted.failed, false);
+  assert.equal(hinted.hintsUsed, 1);
+
+  const activated = Core.activateCategory(
+    hinted,
+    level,
+    'category-fruit',
+    0,
+  );
+  assert.equal(activated.outcome, Core.OUTCOME.CATEGORY_ACTIVATED);
+  assert.equal(activated.state.failed, false);
+  const completed = Core.placeItem(
+    activated.state,
+    level,
+    'fruit-1',
+    'fruit',
+  );
+  assert.equal(completed.outcome, Core.OUTCOME.LEVEL_COMPLETED);
+  assert.equal(completed.state.completed, true);
+  assert.equal(completed.state.failed, false);
+
+  const dealLevel = createLevel({
+    layout: {
+      initialColumns: [[], [], [], [], []],
+      drawBatches: [['category-fruit']],
+    },
+  });
+  const dealState = {
+    ...Core.createInitialState(dealLevel),
+    movesUsed: 99,
+    failed: true,
+  };
+  const dealt = Core.dealNextBatch(dealState, dealLevel);
+  assert.equal(dealt.outcome, Core.OUTCOME.DEALT);
+  assert.equal(dealt.state.failed, false);
+  assert.equal(dealt.state.movesUsed, 100);
+  assert.notEqual(dealt.outcome, Core.OUTCOME.STEP_LIMIT_REACHED);
 });
 
 test('經過時間固定格式化為分秒', () => {

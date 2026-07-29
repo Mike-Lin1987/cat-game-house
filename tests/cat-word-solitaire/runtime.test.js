@@ -122,6 +122,19 @@ test('HUD 即時顯示使用步數、目前星級與下一個評分門檻', () =
   assert.match(app, /\['最終星級'/);
 });
 
+test('提示求解使用受控的 runtime 節點預算並保留 fallback', () => {
+  const config = read('games/cat-word-solitaire/js/config.js');
+  const app = read('games/cat-word-solitaire/js/app.js');
+  const solver = read('games/cat-word-solitaire/js/solver.js');
+  assert.match(config, /hintMaxNodes:\s*5000/);
+  assert.match(config, /hintMaxDurationMs:\s*120/);
+  assert.match(
+    app,
+    /Solver\.getHint\(gameState,\s*currentLevel,\s*\{\s*maxNodes:\s*Config\.hintMaxNodes,\s*maxDurationMs:\s*Config\.hintMaxDurationMs,\s*\}\)/,
+  );
+  assert.match(solver, /return Core\.getHint\(state,\s*level\)/);
+});
+
 test('新版關卡只恢復 layout signature 相同的未完成牌局', () => {
   const app = read('games/cat-word-solitaire/js/app.js');
 

@@ -180,6 +180,24 @@ test('步數評分門檻與舊 moveLimit 都不會停止求解', () => {
   assert.equal(result.movesUsed, level.parMoves);
 });
 
+test('runtime 時間預算用盡時立即停止搜尋並交由提示 fallback', () => {
+  const level = createWaveLevel(5);
+  const state = Core.createInitialState(level);
+  const result = Solver.solveFromState(state, level, {
+    maxNodes: 5000,
+    maxDurationMs: 0,
+  });
+  assert.equal(result.solved, false);
+  assert.equal(result.reason, 'time-limit');
+  assert.equal(result.nodesVisited, 0);
+  const hint = Solver.getHint(state, level, {
+    maxNodes: 5000,
+    maxDurationMs: 0,
+  });
+  assert.ok(hint);
+  assert.equal(hint.solution, undefined);
+});
+
 test('狀態正規化忽略分類槽純位置差異', () => {
   const level = createWaveLevel(2);
   const first = Core.createInitialState(level);

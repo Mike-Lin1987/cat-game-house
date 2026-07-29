@@ -70,6 +70,10 @@
     const maxNodes = Number.isInteger(options.maxNodes)
       ? Math.max(1, options.maxNodes)
       : 250000;
+    const maxDurationMs = Number.isFinite(options.maxDurationMs)
+      ? Math.max(0, options.maxDurationMs)
+      : Number.POSITIVE_INFINITY;
+    const deadline = startedAt + maxDurationMs;
     const initialMaxActiveCategories =
       initial.categorySlots.filter(Boolean).length;
 
@@ -83,8 +87,13 @@
       let dealDecisionStates = 0;
       let forcedMoves = 0;
       let nodeLimitReached = false;
+      let timeLimitReached = false;
 
       function visit(state, actions) {
+        if (Date.now() >= deadline) {
+          timeLimitReached = true;
+          return null;
+        }
         nodesVisited += 1;
         maxDepth = Math.max(maxDepth, actions.length);
         maxActiveCategories = Math.max(
@@ -138,6 +147,9 @@
           if (nodeLimitReached) {
             return null;
           }
+          if (timeLimitReached) {
+            return null;
+          }
         }
         backtracks += 1;
         return null;
@@ -150,6 +162,8 @@
           ? null
           : nodeLimitReached
             ? 'node-limit'
+            : timeLimitReached
+              ? 'time-limit'
             : 'unsolvable',
         actions: solved?.actions || [],
         movesUsed: solved?.state.movesUsed ?? initial.movesUsed,

@@ -904,6 +904,7 @@
 
   function useHint(state) {
     const next = cloneState(state);
+    next.failed = false;
     next.hintsUsed += 1;
     return next;
   }

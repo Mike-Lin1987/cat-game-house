@@ -24,6 +24,8 @@
     dataVersion: 2,
     storageKey: 'cat-word-solitaire:v2',
     maxUndoStates: 50,
+    hintMaxNodes: 5000,
+    hintMaxDurationMs: 120,
     chapters: Object.freeze([
       Object.freeze({ id: 1, title: '日常入門', range: Object.freeze([1, 20]) }),
       Object.freeze({ id: 2, title: '生活聯想', range: Object.freeze([21, 40]) }),

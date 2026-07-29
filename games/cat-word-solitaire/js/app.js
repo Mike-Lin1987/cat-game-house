@@ -827,7 +827,10 @@
     },
     hint() {
       const stateSignature = Solver.normalizeState(gameState, currentLevel);
-      const hint = Solver.getHint(gameState, currentLevel);
+      const hint = Solver.getHint(gameState, currentLevel, {
+        maxNodes: Config.hintMaxNodes,
+        maxDurationMs: Config.hintMaxDurationMs,
+      });
       if (!hint) {
         showToast('目前找不到可行提示');
         return;
