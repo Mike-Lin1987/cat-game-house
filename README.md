@@ -1,6 +1,6 @@
 # 遊戲小屋
 
-一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」、「喵語分類接龍」、「貓咪鮮奶管線」與「貓咪收納大師」，各 100 關，不載入 CDN、外部字型或第三方套件。
+一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」、「喵語分類接龍」、「貓咪鮮奶管線」、「貓咪收納大師」與「貓咪三層配對」，各 100 關，不載入 CDN、外部字型或第三方套件。
 
 ## 開始遊玩
 
@@ -21,7 +21,7 @@
 
 ## 目前遊戲
 
-入口網站的每款遊戲名稱旁都有「教學影片」連結。五支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
+入口網站的每款遊戲名稱旁都有「教學影片」連結。六支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
 
 ### 貓咪方格
 
@@ -107,6 +107,18 @@
 
 內建 L001～L100，共五章、每章 20 關。全部關卡由 BigInt bitmask、MRV 與回溯的 Exact Cover Solver 獨立證明唯一實質解；等價拼塊互換不重複計數，D4 canonical signature 排除旋轉與鏡像重複。
 
+### 貓咪三層配對
+
+規則：
+
+- 只能選取沒有被更高層重疊卡牌遮住的亮色卡牌。
+- 卡牌會依圖案集中進入 9 格暫存槽；每三張相同圖案同步消除。
+- 第 9 張若剛好完成三消，會先消除再判定滿槽，不會誤判失敗。
+- 提示使用限時 Solver；安全洗牌只在認證剩餘盤面仍可完成後才套用。
+- 提示、復原與洗牌各 3 次；失敗後仍可復原上一步。
+
+內建 L001～L100，共五章、每章 20 關。L038 依第二章規格為 36～54 張，L100 固定 108 張。全部關卡皆由不讀 `knownSolution` 的 BigInt Solver 重新完成，峰值暫存槽小於 9，並以 D4 canonical signature 排除旋轉、鏡像與純圖案換名重複。
+
 ## 新增其他遊戲
 
 `js/game-catalog.js` 是入口卡片、路由與離線資源的單一資料來源。標準流程：
@@ -167,6 +179,7 @@ npm run validate-cat-connect-levels
 npm run validate-cat-word-levels
 npm run validate-cat-milk-pipe-levels
 npm run validate-cat-storage-levels
+npm run validate-cat-triple-levels
 npm run validate-offline
 npm run verify
 npm run build
@@ -174,7 +187,7 @@ npm run build
 
 `npm run build` 是 GPT Sites 專用的零依賴靜態複製步驟，輸出至忽略版控的 `dist/`；直接雙擊 source `index.html` 不需要先建置。
 
-教學影片的可重現 Canvas 場景位於 `scripts/tutorial-videos/`。以本機靜態伺服器開啟 `generator.html`，分別產生五支 WebM 後放回各遊戲目錄，再執行：
+教學影片的可重現 Canvas 場景位於 `scripts/tutorial-videos/` 與各遊戲的產生腳本。分別產生六支 WebM 後放回各遊戲目錄，再執行：
 
 ```powershell
 npm run fix-tutorial-video-duration

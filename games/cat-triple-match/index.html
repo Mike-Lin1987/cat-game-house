@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5d6a1">
+  <title>貓咪三層配對</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="home-screen" class="screen home-screen">
+      <div class="sun-glow"></div>
+      <div class="home-cat" aria-hidden="true"><span class="ear left"></span><span class="ear right"></span><span class="face">• ᴗ •</span><span class="paws">ฅ　ฅ</span></div>
+      <p class="eyebrow">CAT'S COZY ROOM</p>
+      <h1>貓咪三層配對</h1>
+      <p class="lead">找出沒有被遮住的卡牌，集滿三張相同圖案，替貓咪整理溫暖小屋。</p>
+      <button id="play-button" class="primary-button">開始配對</button>
+      <a class="text-link" href="../../index.html">回遊戲小屋</a>
+      <div class="home-scene" aria-hidden="true"><span>🧶</span><span>▥</span><span>🥛</span></div>
+    </section>
+    <section id="level-screen" class="screen level-screen" hidden>
+      <header class="wood-header"><button class="round-button" onclick="location.reload()" aria-label="返回">←</button><div><small>五章 · 100 關</small><h2>選擇關卡</h2></div></header>
+      <div id="level-grid" class="level-grid"></div>
+    </section>
+    <section id="game-screen" class="screen game-screen" hidden>
+      <header class="topbar">
+        <button class="round-button" data-show-levels aria-label="返回選關">←</button>
+        <div class="star-chip"><span>★</span><b id="star-total">0</b></div>
+        <div class="level-plaque"><small>PAW MATCH</small><strong id="level-title">第 1 關</strong></div>
+        <div class="remaining-chip"><small>剩餘方塊</small><b id="remaining-count">18</b></div>
+        <button id="settings-button" class="round-button settings-button" aria-label="設定">⚙</button>
+      </header>
+      <div class="room-decor" aria-hidden="true"><span class="plant">♧</span><span class="pennant">🐾</span><span class="cat-peek">／ᐠ｡ꞈ｡ᐟ＼</span></div>
+      <section class="board-frame" aria-label="三層卡牌區">
+        <div id="tile-board" class="tile-board" role="grid"></div>
+      </section>
+      <section class="status-strip"><span>⏱ <b id="timer">00:00</b></span><span>集滿 <b>3</b> 張即可消除</span></section>
+      <section id="tray" class="tray" aria-label="九格暫存槽"></section>
+      <nav class="toolbar" aria-label="遊戲工具">
+        <button id="hint-button"><span class="tool-icon">✦</span><b>提示</b><small id="hint-count">3</small></button>
+        <button id="undo-button"><span class="tool-icon">↶</span><b>復原</b><small id="undo-count">3</small></button>
+        <button id="shuffle-button"><span class="tool-icon">⤨</span><b>洗牌</b><small id="shuffle-count">3</small></button>
+        <button data-replay><span class="tool-icon">↻</span><b>重玩</b></button>
+      </nav>
+    </section>
+  </main>
+  <p id="live-status" class="sr-only" aria-live="polite"></p>
+  <dialog id="result-modal">
+    <div class="modal-cat" aria-hidden="true">ฅ^•ﻌ•^ฅ</div>
+    <h2 id="result-title"></h2><p id="result-body"></p>
+    <div class="modal-actions"><button id="modal-undo">復原一步</button><button data-replay>重新挑戰</button><button id="next-level">下一關</button><button id="close-modal">關閉</button></div>
+  </dialog>
+  <dialog id="settings-modal"><h2>遊戲設定</h2><label class="setting-row"><span>配對動畫</span><input id="animation-setting" type="checkbox" checked></label><p>音效固定關閉，遊戲不會播放聲音。</p><div class="modal-actions"><button id="close-settings">完成</button></div></dialog>
+  <script src="js/config.js"></script><script src="js/icons.js"></script><script src="js/core.js"></script>
+  <script src="js/solver.js"></script><script src="js/storage.js"></script><script src="js/renderer.js"></script>
+  <script src="js/data/levels-001-020.js"></script><script src="js/data/levels-021-040.js"></script>
+  <script src="js/data/levels-041-060.js"></script><script src="js/data/levels-061-080.js"></script>
+  <script src="js/data/levels-081-100.js"></script><script src="js/data/levels-index.js"></script><script src="js/app.js"></script>
+</body>
+</html>

@@ -70,23 +70,40 @@ function findElement(buffer, elementId, start, end) {
   return null;
 }
 
+function findInfoElement(buffer) {
+  let searchOffset = 0;
+  while (searchOffset < buffer.length) {
+    const infoOffset = buffer.indexOf(INFO_ID, searchOffset);
+    if (infoOffset < 0) return null;
+    try {
+      const infoSize = readVint(buffer, infoOffset + INFO_ID.length);
+      const infoDataOffset = infoOffset + INFO_ID.length + infoSize.length;
+      const infoDataEnd = infoDataOffset + infoSize.value;
+      if (infoDataEnd <= buffer.length) {
+        const scaleElement = findElement(
+          buffer,
+          TIMECODE_SCALE_ID,
+          infoDataOffset,
+          infoDataEnd,
+        );
+        if (scaleElement) {
+          return { infoOffset, infoSize, infoDataOffset, infoDataEnd, scaleElement };
+        }
+      }
+    } catch {
+      // SeekHead 內含 Info ID bytes，但不是 Info element；繼續尋找真正元素。
+    }
+    searchOffset = infoOffset + INFO_ID.length;
+  }
+  return null;
+}
+
 function patchWebmDuration(buffer, durationMs) {
-  const infoOffset = buffer.indexOf(INFO_ID);
-  if (infoOffset < 0) {
+  const info = findInfoElement(buffer);
+  if (!info) {
     throw new Error('找不到 WebM Info element');
   }
-  const infoSize = readVint(buffer, infoOffset + INFO_ID.length);
-  const infoDataOffset = infoOffset + INFO_ID.length + infoSize.length;
-  const infoDataEnd = infoDataOffset + infoSize.value;
-  const scaleElement = findElement(
-    buffer,
-    TIMECODE_SCALE_ID,
-    infoDataOffset,
-    infoDataEnd,
-  );
-  if (!scaleElement) {
-    throw new Error('找不到 WebM TimecodeScale');
-  }
+  const { infoOffset, infoSize, infoDataOffset, infoDataEnd, scaleElement } = info;
   const timecodeScale = readUnsigned(
     buffer.subarray(scaleElement.dataOffset, scaleElement.dataEnd),
   );
@@ -101,11 +118,13 @@ function patchWebmDuration(buffer, durationMs) {
     infoDataEnd,
   );
   if (existingDuration) {
-    if (existingDuration.dataEnd - existingDuration.dataOffset !== 8) {
-      throw new Error('既有 WebM Duration 不是 8-byte float');
+    const durationLength = existingDuration.dataEnd - existingDuration.dataOffset;
+    if (durationLength !== 4 && durationLength !== 8) {
+      throw new Error('既有 WebM Duration 不是 4-byte 或 8-byte float');
     }
     const patched = Buffer.from(buffer);
-    durationData.copy(patched, existingDuration.dataOffset);
+    if (durationLength === 4) patched.writeFloatBE(durationTicks, existingDuration.dataOffset);
+    else durationData.copy(patched, existingDuration.dataOffset);
     return patched;
   }
 
@@ -126,34 +145,27 @@ function patchWebmDuration(buffer, durationMs) {
 }
 
 function readWebmDuration(buffer) {
-  const infoOffset = buffer.indexOf(INFO_ID);
-  if (infoOffset < 0) return null;
-  const infoSize = readVint(buffer, infoOffset + INFO_ID.length);
-  const infoDataOffset = infoOffset + INFO_ID.length + infoSize.length;
-  const infoDataEnd = infoDataOffset + infoSize.value;
-  const scaleElement = findElement(
-    buffer,
-    TIMECODE_SCALE_ID,
-    infoDataOffset,
-    infoDataEnd,
-  );
+  const info = findInfoElement(buffer);
+  if (!info) return null;
+  const { infoDataOffset, infoDataEnd, scaleElement } = info;
   const durationElement = findElement(
     buffer,
     DURATION_ID,
     infoDataOffset,
     infoDataEnd,
   );
-  if (
-    !scaleElement ||
-    !durationElement ||
-    durationElement.dataEnd - durationElement.dataOffset !== 8
-  ) {
+  const durationLength = durationElement
+    ? durationElement.dataEnd - durationElement.dataOffset
+    : 0;
+  if (!scaleElement || !durationElement || (durationLength !== 4 && durationLength !== 8)) {
     return null;
   }
   const scale = readUnsigned(
     buffer.subarray(scaleElement.dataOffset, scaleElement.dataEnd),
   );
-  const durationTicks = buffer.readDoubleBE(durationElement.dataOffset);
+  const durationTicks = durationLength === 4
+    ? buffer.readFloatBE(durationElement.dataOffset)
+    : buffer.readDoubleBE(durationElement.dataOffset);
   return durationTicks * scale / 1_000_000;
 }
 
