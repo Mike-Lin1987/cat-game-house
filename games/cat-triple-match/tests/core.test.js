@@ -72,3 +72,28 @@ test('第九張形成配對時先消除，不會誤判失敗', () => {
   assert.notEqual(result.state.status, 'failed');
   assert.equal(result.state.trayTileIds.length, 6);
 });
+
+test('洗牌預覽保留中央圖案多重集合，認證後才扣除次數並可復原', () => {
+  const level = levelFixture();
+  const state = core.createInitialState(level);
+  const mapping = { ...state.symbolByTileId, a1: 'milk', b1: 'fishbone' };
+  const preview = core.previewShuffle(state, mapping);
+  assert.ok(preview);
+  assert.equal(state.toolRemaining.shuffle, 3);
+  const committed = core.commitShuffle(state, mapping);
+  assert.equal(committed.state.toolRemaining.shuffle, 2);
+  assert.equal(committed.state.history.length, 1);
+  assert.deepEqual(committed.effects, [{ type: 'shuffle' }]);
+  assert.equal(core.previewShuffle(state, { ...mapping, a2: 'unknown' }), null);
+});
+
+test('session 拒絕非法圖案、偽造 completed 與損壞 history', () => {
+  const level = levelFixture();
+  const state = core.createInitialState(level);
+  const serialized = core.serializeSession(state);
+  assert.equal(core.deserializeSession({ ...serialized, symbolByTileId: { ...serialized.symbolByTileId, a1: 'unknown' } }, level), null);
+  const restored = core.deserializeSession({ ...serialized, status: 'completed', history: [null] }, level);
+  assert.ok(restored);
+  assert.equal(restored.status, 'playing');
+  assert.deepEqual(restored.history, []);
+});

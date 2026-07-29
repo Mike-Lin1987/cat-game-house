@@ -9,7 +9,7 @@
       const left = tile.x / size * 100;
       const top = tile.y / size * 100;
       const tileSize = 2 / size * 100;
-      return `<button class="game-tile layer-${tile.layer}${exposed ? ' exposed' : ' blocked'}"`
+      return `<button role="gridcell" class="game-tile layer-${tile.layer}${exposed ? ' exposed' : ' blocked'}"`
         + ` data-tile-id="${tile.id}" style="--x:${left}%;--y:${top}%;--s:${tileSize}%;--layer:${tile.layer}"`
         + ` aria-label="${icons.label(symbol)}，${exposed ? '可選取' : '被上層卡牌遮住'}" ${exposed ? '' : 'disabled'}>`
         + `${icons.markup(symbol)}<span class="layer-mark">${tile.layer + 1}</span></button>`;

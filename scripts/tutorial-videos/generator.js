@@ -1055,6 +1055,83 @@
     drawFooter('#d59059', time / DURATION);
   }
 
+  function drawTriplePaw(x, y, scale, color) {
+    context.fillStyle = color;
+    context.beginPath();
+    context.ellipse(x, y + 9 * scale, 10 * scale, 8 * scale, 0, 0, Math.PI * 2);
+    context.fill();
+    [[-12,-4],[-4,-12],[5,-12],[13,-3]].forEach(([dx, dy]) => {
+      context.beginPath();
+      context.arc(x + dx * scale, y + dy * scale, 4.5 * scale, 0, Math.PI * 2);
+      context.fill();
+    });
+  }
+
+  function drawTripleBoard(step, tween) {
+    roundedRect(115, 130, 650, 360, 30, '#b8733f', '#704023', 5);
+    const cards = [
+      [255,180,0],[375,180,0],[495,180,0],
+      [315,220,1],[435,220,1],[375,260,2],
+    ];
+    cards.forEach(([x, y, layer], index) => {
+      const removed = index < Math.max(0, step - 1);
+      context.save();
+      context.globalAlpha = removed ? Math.max(0, 1 - tween) : 1;
+      roundedRect(x + layer * 4, y + layer * 5, 105, 105, 18, '#fff8e9', '#784628', 4);
+      drawTriplePaw(x + 52 + layer * 4, y + 50 + layer * 5, .9, index % 3 ? '#73a9c8' : '#e69358');
+      context.restore();
+    });
+    roundedRect(805, 170, 360, 88, 20, '#a76738', '#704023', 4);
+    for (let index = 0; index < 9; index += 1) {
+      roundedRect(820 + index * 37, 187, 31, 50, 7, index < Math.min(3, step) ? '#fff6dd' : '#74462f', '#61371f', 2);
+      if (index < Math.min(3, step)) drawTriplePaw(835 + index * 37, 208, .27, '#e69358');
+    }
+    context.fillStyle = '#704023';
+    context.textAlign = 'center';
+    context.font = `800 22px ${FONT}`;
+    context.fillText('9 格暫存槽', 985, 292);
+  }
+
+  function drawTripleIntro(time) {
+    drawBackground('#bd7441', time);
+    const appear = ease(progress(time, 0, 1.2));
+    context.globalAlpha = appear;
+    roundedRect(120, 160, 240, 220, 34, '#b8733f');
+    roundedRect(175, 205, 112, 112, 20, '#fff8e9', '#704023', 5);
+    drawTriplePaw(231, 257, 1.2, '#e69358');
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillStyle = '#382f2a';
+    context.font = `900 65px ${FONT}`;
+    context.fillText('貓咪三層配對', 405, 205);
+    context.font = `700 34px ${FONT}`;
+    context.fillStyle = '#704023';
+    context.fillText('24 秒快速教學', 410, 310);
+    roundedRect(410, 390, 650, 64, 22, '#bd7441');
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 27px ${FONT}`;
+    context.fillStyle = '#fff';
+    context.fillText('選亮牌、湊三張，把貓屋整理乾淨', 735, 422);
+    context.globalAlpha = 1;
+    drawFooter('#bd7441', time / DURATION);
+  }
+
+  function drawTripleTutorial(time) {
+    const local = time - 2.5;
+    let step = 1;
+    let title = '先選沒有被遮住的亮色卡牌';
+    let description = '更高層卡牌只要有重疊，就會暫時擋住下面的卡牌。';
+    if (local >= 5) { step = 2; title = '相同圖案會自動靠攏'; description = '卡牌進入九格暫存槽後，會依圖案排在一起。'; }
+    if (local >= 10) { step = 3; title = '三張相同圖案立即消除'; description = '第九張若剛好完成配對，會先消除再判斷滿槽。'; }
+    if (local >= 15) { step = 4; title = '清空中央與暫存槽就通關'; description = '提示、復原與安全洗牌各可使用三次。'; }
+    drawBackground('#bd7441', time);
+    drawTopBar('貓咪三層配對教學', '#704023', step);
+    drawTripleBoard(step, ease(progress(local % 5, 0, 1)));
+    drawCaption(String(step), title, description, '#bd7441');
+    drawFooter('#bd7441', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
@@ -1071,6 +1148,10 @@
       drawStorageIntro(time);
     } else if (kind === 'cat-storage-master') {
       drawStorageTutorial(time);
+    } else if (kind === 'cat-triple-match' && time < 2.5) {
+      drawTripleIntro(time);
+    } else if (kind === 'cat-triple-match') {
+      drawTripleTutorial(time);
     } else if (time < 2.5) {
       drawSolitaireIntro(time);
     } else {

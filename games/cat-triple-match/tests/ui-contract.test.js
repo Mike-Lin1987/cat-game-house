@@ -18,6 +18,15 @@ test('file runtime、UMD、Pointer Events 與九格暫存槽契約完整', () =>
   assert.match(css, /prefers-reduced-motion/);
   assert.match(html, /aria-live="polite"/);
   assert.match(html, /id="settings-modal"/);
+  assert.match(app, /settingsModal\.open/);
+  assert.match(app, /state\.status !== 'completed'/);
+  assert.match(app, /querySelector\('\.game-tile\.exposed'\)\?\.focus/);
+});
+test('共用 Canvas 產生器可重現第六支原創教學影片', () => {
+  const generatorHtml = fs.readFileSync(path.resolve(ROOT, '..', '..', 'scripts', 'tutorial-videos', 'generator.html'), 'utf8');
+  const generatorScript = fs.readFileSync(path.resolve(ROOT, '..', '..', 'scripts', 'tutorial-videos', 'generator.js'), 'utf8');
+  assert.match(generatorHtml, /data-render="cat-triple-match"/);
+  assert.match(generatorScript, /drawTripleTutorial/);
 });
 test('review 提供搜尋、章節／張數篩選、metrics 與 known solution 播放', () => {
   const html = read('review.html');

@@ -70,7 +70,13 @@
       saveProgress(progress);
       return progress.settings;
     }
-    return { loadProgress, saveProgress, saveSession, clearSession, updateRecord, saveSettings };
+    function addPlaySeconds(seconds) {
+      const progress = loadProgress();
+      progress.totalPlaySeconds += Math.max(0, Math.trunc(Number(seconds) || 0));
+      saveProgress(progress);
+      return progress;
+    }
+    return { loadProgress, saveProgress, saveSession, clearSession, updateRecord, saveSettings, addPlaySeconds };
   }
   return { defaultProgress: defaults, sanitizeProgress: sanitize, createStorage, ...createStorage(defaultStorage) };
 });

@@ -333,10 +333,50 @@
     return { tileId, message: `提示：可以先選取${tile.layer === 2 ? '上層' : tile.layer === 1 ? '中層' : '底層'}的${label}。` };
   }
 
+  function previewShuffle(state, nextSymbols) {
+    if (!state || state.status !== 'playing' || !nextSymbols || typeof nextSymbols !== 'object') return null;
+    const remaining = state.remainingTileIds || [];
+    if (remaining.some((id) => typeof nextSymbols[id] !== 'string')) return null;
+    const before = remaining.map((id) => state.symbolByTileId[id]).sort();
+    const after = remaining.map((id) => nextSymbols[id]).sort();
+    if (before.length !== after.length || before.some((symbol, index) => symbol !== after[index])) return null;
+    const next = cloneState(state);
+    for (const id of remaining) next.symbolByTileId[id] = nextSymbols[id];
+    return next;
+  }
+
+  function commitShuffle(state, nextSymbols) {
+    if (!state || state.toolRemaining.shuffle <= 0) return { state: cloneState(state), effects: [] };
+    const preview = previewShuffle(state, nextSymbols);
+    if (!preview) return { state: cloneState(state), effects: [] };
+    preview.history.push(createUndoSnapshot(state));
+    if (preview.history.length > config.maxUndoStates) {
+      preview.history.splice(0, preview.history.length - config.maxUndoStates);
+    }
+    preview.toolRemaining.shuffle -= 1;
+    preview.toolUsed.shuffle += 1;
+    return { state: preview, effects: [{ type: 'shuffle' }] };
+  }
+
   function serializeSession(state) {
     const copy = cloneState(state);
     copy.history = copy.history.slice(-config.maxUndoStates);
     return copy;
+  }
+
+  function hasValidSymbolAssignment(record, level, allIds) {
+    if (!record || typeof record !== 'object') return false;
+    const allowed = new Set((level.symbols || []).map((symbol) => symbol.id));
+    const expectedCounts = {};
+    const actualCounts = {};
+    for (const tile of level.tiles || []) expectedCounts[tile.symbol] = (expectedCounts[tile.symbol] || 0) + 1;
+    for (const id of allIds) {
+      const symbol = record[id];
+      if (!allowed.has(symbol)) return false;
+      actualCounts[symbol] = (actualCounts[symbol] || 0) + 1;
+    }
+    return Object.keys(expectedCounts).every((symbol) => actualCounts[symbol] === expectedCounts[symbol])
+      && Object.keys(actualCounts).every((symbol) => actualCounts[symbol] === expectedCounts[symbol]);
   }
 
   function deserializeSession(data, level) {
@@ -348,7 +388,7 @@
     const combined = groups.flat();
     if (combined.length !== allIds.size || new Set(combined).size !== allIds.size
         || combined.some((id) => !allIds.has(id))) return null;
-    if (!data.symbolByTileId || [...allIds].some((id) => typeof data.symbolByTileId[id] !== 'string')) return null;
+    if (!hasValidSymbolAssignment(data.symbolByTileId, level, allIds)) return null;
     const state = createInitialState(level);
     state.remainingTileIds = [...data.remainingTileIds];
     state.trayTileIds = [...data.trayTileIds];
@@ -365,9 +405,14 @@
       shuffle: Math.max(0, Math.trunc(Number(data.toolUsed?.shuffle) || 0)),
     };
     state.elapsed = Math.max(0, Math.trunc(Number(data.elapsed) || 0));
-    state.status = data.status === 'failed' ? 'failed' : data.status === 'completed' ? 'completed' : 'playing';
+    state.status = 'playing';
     state.history = (Array.isArray(data.history) ? data.history : [])
       .filter((snapshot) => {
+        if (!snapshot || typeof snapshot !== 'object'
+            || !Array.isArray(snapshot.remainingTileIds)
+            || !Array.isArray(snapshot.trayTileIds)
+            || !Array.isArray(snapshot.clearedTileIds)
+            || !hasValidSymbolAssignment(snapshot.symbolByTileId, level, allIds)) return false;
         const ids = [
           ...(snapshot.remainingTileIds || []),
           ...(snapshot.trayTileIds || []),
@@ -379,6 +424,13 @@
       .slice(-config.maxUndoStates)
       .map(cloneSnapshot);
     if (state.trayTileIds.length > config.trayCapacity) return null;
+    const trayCounts = {};
+    for (const id of state.trayTileIds) {
+      const symbol = state.symbolByTileId[id];
+      trayCounts[symbol] = (trayCounts[symbol] || 0) + 1;
+      if (trayCounts[symbol] >= config.matchSize) return null;
+    }
+    updateTerminalStatus(state);
     return state;
   }
 
@@ -410,6 +462,8 @@
     validateLevelDefinition,
     replayKnownSolution,
     getHint,
+    previewShuffle,
+    commitShuffle,
     serializeSession,
     deserializeSession,
     formatElapsedTime,

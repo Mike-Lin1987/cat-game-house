@@ -12,7 +12,7 @@ function memoryStorage(initial) {
   };
 }
 test('損壞資料與不可用 LocalStorage 安全降級', () => {
-  assert.equal(Storage.createStorage(memoryStorage({ 'cat-storage-master:v1': '{' })).loadProgress().unlockedLevel, 1);
+  assert.equal(Storage.createStorage(memoryStorage({ 'cat-triple-match:v1': '{' })).loadProgress().unlockedLevel, 1);
   assert.equal(Storage.createStorage(null).saveProgress({}), false);
 });
 test('session round-trip 保存三個互斥集合與最多 50 筆歷史', () => {
@@ -31,4 +31,10 @@ test('最佳紀錄優先星數、輔助次數及時間並逐關解鎖', () => {
   const progress = api.loadProgress();
   assert.equal(progress.unlockedLevel, 2);
   assert.equal(progress.records.L001.bestAssists, 1);
+});
+test('累計遊玩秒數可持久化', () => {
+  const api = Storage.createStorage(memoryStorage());
+  api.addPlaySeconds(12);
+  api.addPlaySeconds(8);
+  assert.equal(api.loadProgress().totalPlaySeconds, 20);
 });
