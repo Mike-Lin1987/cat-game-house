@@ -127,6 +127,8 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   const connectScript = read('games/cat-color-connect/js/app.js');
   const wordPage = read('games/cat-word-solitaire/index.html');
   const wordScript = read('games/cat-word-solitaire/js/app.js');
+  const triplePage = read('games/cat-triple-match/index.html');
+  const tripleScript = read('games/cat-triple-match/js/app.js');
 
   assert.match(portalScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
   assert.match(portalScript, /\/index\\\.html/);
@@ -140,9 +142,12 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(wordScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
   assert.match(wordScript, /const PORTAL_HREF/);
   assert.match(wordPage, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home/);
+  assert.match(tripleScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
+  assert.match(tripleScript, /const PORTAL_HREF/);
+  assert.match(triplePage, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home/);
 });
 
-test('分類接龍無步數上限、新增鮮奶管線、收納遊戲與三層配對遊戲會更新既有 PWA 離線快取', () => {
+test('修正三層配對返回入口會更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v20';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v21';/);
 });
