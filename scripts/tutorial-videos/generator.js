@@ -952,6 +952,109 @@
     drawFooter('#4d91a8', time / DURATION);
   }
 
+  function drawStoragePiece(x, y, cells, color, scale, alpha = 1) {
+    context.save();
+    context.globalAlpha = alpha;
+    context.translate(x, y);
+    context.fillStyle = color;
+    context.strokeStyle = '#70482f';
+    context.lineWidth = 3;
+    for (const [row, column] of cells) {
+      roundedRect(column * scale, row * scale, scale + 1, scale + 1, 9, color);
+      context.strokeRect(column * scale + 2, row * scale + 2, scale - 4, scale - 4);
+    }
+    context.fillStyle = 'rgba(255,255,255,.62)';
+    context.beginPath();
+    context.arc(scale * .52, scale * .52, scale * .2, 0, Math.PI * 2);
+    context.fill();
+    context.restore();
+  }
+
+  function drawStorageBoard(step, tween) {
+    const boardX = 160;
+    const boardY = 145;
+    const cell = 74;
+    roundedRect(boardX - 22, boardY - 22, cell * 6 + 44, cell * 5 + 44, 30, '#b87949');
+    roundedRect(boardX - 8, boardY - 8, cell * 6 + 16, cell * 5 + 16, 20, '#8d5a38');
+    for (let row = 0; row < 5; row += 1) {
+      for (let column = 0; column < 6; column += 1) {
+        roundedRect(boardX + column * cell, boardY + row * cell, cell - 3, cell - 3, 10, '#d7a36d');
+        context.strokeStyle = 'rgba(112,72,47,.35)';
+        context.lineWidth = 2;
+        context.strokeRect(boardX + column * cell + 4, boardY + row * cell + 4, cell - 11, cell - 11);
+      }
+    }
+    const pieces = [
+      { cells: [[0,0],[1,0],[2,0]], color: '#efa6a5', from: [700, 175], to: [boardX, boardY] },
+      { cells: [[0,0],[1,0],[1,1]], color: '#a9c9df', from: [805, 180], to: [boardX + cell, boardY + cell * 2] },
+      { cells: [[0,0],[0,1],[1,1]], color: '#edc466', from: [720, 390], to: [boardX + cell * 3, boardY] },
+      { cells: [[0,0],[0,1],[1,0],[1,1]], color: '#bfa9d6', from: [880, 380], to: [boardX + cell * 4, boardY + cell * 3] },
+    ];
+    pieces.forEach((piece, index) => {
+      const placed = index < step;
+      const localTween = index === step - 1 ? tween : placed ? 1 : 0;
+      const x = piece.from[0] + (piece.to[0] - piece.from[0]) * localTween;
+      const y = piece.from[1] + (piece.to[1] - piece.from[1]) * localTween;
+      drawStoragePiece(x, y, piece.cells, piece.color, placed ? cell : 48);
+    });
+    context.fillStyle = '#70482f';
+    context.font = `800 23px ${FONT}`;
+    context.textAlign = 'center';
+    context.fillText('待放拼塊區', 865, 125);
+  }
+
+  function drawStorageIntro(time) {
+    drawBackground('#d59059', time);
+    const appear = ease(progress(time, 0, 1.2));
+    context.globalAlpha = appear;
+    roundedRect(120, 150, 215, 215, 35, '#c98d57');
+    drawStoragePiece(154, 184, [[0,0],[0,1],[1,0]], '#efa6a5', 72);
+    drawStoragePiece(226, 256, [[0,0],[0,1],[1,1]], '#a9c9df', 72);
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillStyle = '#382f2a';
+    context.font = `900 65px ${FONT}`;
+    context.fillText('貓咪收納大師', 390, 205);
+    context.font = `700 34px ${FONT}`;
+    context.fillStyle = '#70482f';
+    context.fillText('24 秒快速教學', 395, 310);
+    roundedRect(395, 390, 660, 64, 22, '#d59059');
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 27px ${FONT}`;
+    context.fillStyle = '#fff';
+    context.fillText('拖曳、旋轉、翻面，把用品完整收好', 725, 422);
+    context.globalAlpha = 1;
+    drawFooter('#d59059', time / DURATION);
+  }
+
+  function drawStorageTutorial(time) {
+    const local = time - 2.5;
+    let step = 1;
+    let title = '拖曳拼塊，綠框即可放置';
+    let description = '保留手指抓住的位置，放開後會吸附到最近的棋盤格。';
+    if (local >= 5) {
+      step = 2;
+      title = '旋轉與翻面找出正確方向';
+      description = '先選取拼塊；第三章起，部分拼塊需要水平翻面。';
+    }
+    if (local >= 10) {
+      step = 3;
+      title = '不能重疊，也不能蓋住障礙';
+      description = '紅框表示越界、重疊或碰到固定物品，放開會安全退回。';
+    }
+    if (local >= 15) {
+      step = 4;
+      title = '所有用品收進箱子就完成';
+      description = '每個可填格都要覆蓋，而且待放區不能留下任何拼塊。';
+    }
+    drawBackground('#d59059', time);
+    drawTopBar('貓咪收納大師教學', '#70482f', step);
+    drawStorageBoard(step, ease(progress(local % 5, 0, 1)));
+    drawCaption(String(step), title, description, '#d59059');
+    drawFooter('#d59059', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
@@ -964,6 +1067,10 @@
       drawMilkPipeIntro(time);
     } else if (kind === 'cat-milk-pipes') {
       drawMilkPipeTutorial(time);
+    } else if (kind === 'cat-storage-master' && time < 2.5) {
+      drawStorageIntro(time);
+    } else if (kind === 'cat-storage-master') {
+      drawStorageTutorial(time);
     } else if (time < 2.5) {
       drawSolitaireIntro(time);
     } else {

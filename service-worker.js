@@ -3,7 +3,7 @@
 importScripts('./js/game-catalog.js');
 
 const CACHE_PREFIX = 'game-house';
-const CACHE_VERSION = 'v17';
+const CACHE_VERSION = 'v19';
 const CACHE_NAME = `${CACHE_PREFIX}:${CACHE_VERSION}`;
 const PORTAL_ASSETS = [
   './',

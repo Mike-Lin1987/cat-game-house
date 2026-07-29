@@ -1,0 +1,229 @@
+'use strict';
+
+const assert = require('node:assert/strict');
+const test = require('node:test');
+
+const core = require('../js/core.js');
+
+function levelFixture() {
+  return {
+    id: 'L001',
+    rows: 2,
+    columns: 3,
+    fillableCells: [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]],
+    blockedCells: [],
+    fixedItems: [],
+    moveLimit: 8,
+    parMoves: 3,
+    pieces: [
+      {
+        id: 'a',
+        label: '魚乾',
+        theme: 'dried-fish',
+        cells: [[0, 0], [1, 0], [1, 1]],
+        initialRotation: 0,
+        initialFlipped: false,
+        allowRotate: true,
+        allowFlip: false,
+      },
+      {
+        id: 'b',
+        label: '鮮奶盒',
+        theme: 'milk',
+        cells: [[0, 0], [0, 1], [1, 1]],
+        initialRotation: 0,
+        initialFlipped: false,
+        allowRotate: true,
+        allowFlip: false,
+      },
+    ],
+    solution: {
+      a: { row: 0, column: 0, rotation: 0, flipped: false },
+      b: { row: 0, column: 1, rotation: 0, flipped: false },
+    },
+  };
+}
+
+test('拼塊座標可正規化、旋轉、翻面並去除對稱變形', () => {
+  assert.deepEqual(core.normalizeCells([[2, 1], [1, 1], [2, 2]]), [[0, 0], [1, 0], [1, 1]]);
+  assert.deepEqual(core.rotateCells([[0, 0], [1, 0], [1, 1]]), [[0, 0], [0, 1], [1, 0]]);
+  assert.deepEqual(core.flipCells([[0, 0], [1, 0], [1, 1]]), [[0, 1], [1, 0], [1, 1]]);
+  assert.equal(core.getUniqueTransforms({
+    cells: [[0, 0], [0, 1], [1, 0], [1, 1]],
+    allowRotate: true,
+    allowFlip: true,
+  }).length, 1);
+});
+
+test('合法放置會建立占用，重疊、越界與非可填格會被拒絕', () => {
+  const level = levelFixture();
+  let state = core.createInitialState(level);
+  assert.equal(core.canPlacePiece(state, level, 'a', { row: 0, column: 0, rotation: 0, flipped: false }).valid, true);
+  state = core.placePiece(state, level, 'a', { row: 0, column: 0, rotation: 0, flipped: false });
+  assert.equal(core.buildOccupancy(state, level)['0,0'], 'a');
+  assert.equal(core.canPlacePiece(state, level, 'b', { row: 0, column: 0, rotation: 0, flipped: false }).valid, false);
+  assert.equal(core.canPlacePiece(state, level, 'b', { row: 1, column: 1, rotation: 0, flipped: false }).valid, false);
+});
+
+test('全部可填格恰好覆蓋且所有拼塊已使用才完成', () => {
+  const level = levelFixture();
+  let state = core.createInitialState(level);
+  state = core.placePiece(state, level, 'a', level.solution.a);
+  assert.equal(core.isPuzzleComplete(state, level), false);
+  state = core.placePiece(state, level, 'b', level.solution.b);
+  assert.equal(core.isPuzzleComplete(state, level), true);
+  assert.equal(state.status, 'completed');
+});
+
+test('有效旋轉、翻面、取回與復原遵守步數規則', () => {
+  const level = levelFixture();
+  level.pieces[0].allowFlip = true;
+  let state = core.createInitialState(level);
+  state = core.rotatePiece(state, level, 'a');
+  assert.equal(state.movesUsed, 1);
+  state = core.flipPiece(state, level, 'a');
+  assert.equal(state.movesUsed, 2);
+  state = core.placePiece(state, level, 'a', { row: 0, column: 0, rotation: 0, flipped: false });
+  state = core.removePiece(state, level, 'a');
+  assert.equal(state.movesUsed, 4);
+  const beforeUndoTime = state.elapsed = 17;
+  state = core.undo(state, level);
+  assert.equal(state.placements.a.placed, true);
+  assert.equal(state.movesUsed, 5);
+  assert.equal(state.elapsed, beforeUndoTime);
+});
+
+test('parMoves、星級、提示與 session 安全還原符合公開規則', () => {
+  const level = levelFixture();
+  level.pieces[0].initialRotation = 3;
+  assert.equal(core.calculateParMoves(level), 3);
+  const state = core.createInitialState(level);
+  const hint = core.getHint(state, level);
+  assert.equal(Boolean(hint && hint.pieceId), true);
+  assert.equal(core.calculateStars({ ...state, status: 'completed', movesUsed: 4, hintsUsed: 0 }, level), 3);
+  const restored = core.deserializeSession(core.serializeSession(state), level);
+  assert.equal(restored.movesUsed, 0);
+  assert.equal(core.deserializeSession({ placements: { bad: {} } }, level), null);
+  assert.equal(core.formatElapsedTime(156), '02:36');
+});
+
+test('parMoves 依實際可操作的相異變形計算，不高估對稱拼塊', () => {
+  const level = {
+    id: 'L001',
+    rows: 2,
+    columns: 1,
+    fillableCells: [[0, 0], [1, 0]],
+    blockedCells: [],
+    fixedItems: [],
+    moveLimit: 3,
+    pieces: [{
+      id: 'domino',
+      cells: [[0, 0], [0, 1]],
+      initialRotation: 0,
+      initialFlipped: false,
+      allowRotate: true,
+      allowFlip: false,
+    }],
+    solution: {
+      domino: { row: 0, column: 0, rotation: 3, flipped: false },
+    },
+  };
+  let state = core.createInitialState(level);
+  state = core.rotatePiece(state, level, 'domino');
+  state = core.placePiece(state, level, 'domino', {
+    row: 0,
+    column: 0,
+    rotation: state.placements.domino.rotation,
+    flipped: false,
+  });
+  assert.equal(state.status, 'completed');
+  assert.equal(state.movesUsed, 2);
+  assert.equal(core.calculateParMoves(level), 2);
+});
+
+test('提示會輪替全部未完成拼塊後才重新開始', () => {
+  const level = {
+    ...levelFixture(),
+    rows: 1,
+    columns: 3,
+    fillableCells: [[0, 0], [0, 1], [0, 2]],
+    pieces: ['a', 'b', 'c'].map((id) => ({
+      id,
+      label: id,
+      cells: [[0, 0]],
+      initialRotation: 0,
+      initialFlipped: false,
+      allowRotate: false,
+      allowFlip: false,
+    })),
+    solution: Object.fromEntries(['a', 'b', 'c'].map((id, column) => [
+      id,
+      { row: 0, column, rotation: 0, flipped: false },
+    ])),
+  };
+  const state = core.createInitialState(level);
+  const history = [];
+  for (let index = 0; index < 3; index += 1) {
+    const hint = core.getHint(state, level, history);
+    history.push(hint.pieceId);
+  }
+  assert.deepEqual(history, ['a', 'b', 'c']);
+  assert.equal(core.getHint(state, level, history).pieceId, 'a');
+});
+
+test('session round-trip 會安全保留最多 100 筆有效復原歷史', () => {
+  const level = levelFixture();
+  let state = core.createInitialState(level);
+  state = core.placePiece(state, level, 'a', level.solution.a);
+  const serialized = core.serializeSession({
+    ...state,
+    history: Array.from({ length: 105 }, () => state.history[0]),
+  });
+  assert.equal(serialized.history.length, 100);
+  const restored = core.deserializeSession(serialized, level);
+  assert.equal(restored.history.length, 100);
+  const undone = core.undo(restored, level);
+  assert.equal(undone.placements.a.placed, false);
+
+  serialized.history.push({ placements: { unknown: {} } });
+  const safelyRestored = core.deserializeSession(serialized, level);
+  assert.equal(safelyRestored.history.length, 100);
+});
+
+test('最後一步同時達到 moveLimit 並完成時以通關優先', () => {
+  const level = {
+    id: 'L001',
+    rows: 1,
+    columns: 1,
+    fillableCells: [[0, 0]],
+    blockedCells: [],
+    fixedItems: [],
+    moveLimit: 1,
+    parMoves: 1,
+    pieces: [{
+      id: 'a',
+      cells: [[0, 0]],
+      initialRotation: 0,
+      initialFlipped: false,
+      allowRotate: false,
+      allowFlip: false,
+    }],
+    solution: { a: { row: 0, column: 0, rotation: 0, flipped: false } },
+  };
+  const completed = core.placePiece(
+    core.createInitialState(level),
+    level,
+    'a',
+    level.solution.a,
+  );
+  assert.equal(completed.movesUsed, level.moveLimit);
+  assert.equal(completed.status, 'completed');
+});
+
+test('累計遊玩秒數與關卡 elapsed 會同步遞增', () => {
+  const state = core.createInitialState(levelFixture());
+  const advanced = core.advancePlayTime(state, 41);
+  assert.equal(advanced.state.elapsed, 1);
+  assert.equal(advanced.totalPlaySeconds, 42);
+  assert.equal(state.elapsed, 0);
+});
