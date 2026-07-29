@@ -661,6 +661,165 @@
     drawFooter('#dcae56', time / DURATION);
   }
 
+  function drawMilkPipeCell(x, y, cell, connectors, options = {}) {
+    roundedRect(x, y, cell - 6, cell - 6, 12, options.blocked ? '#d7c19f' : '#f3e6cf');
+    if (options.blocked) {
+      context.fillStyle = 'rgba(56,47,42,.24)';
+      context.beginPath();
+      context.arc(x + cell / 2 - 3, y + cell / 2 - 3, 4, 0, Math.PI * 2);
+      context.fill();
+      return;
+    }
+    const centerX = x + cell / 2 - 3;
+    const centerY = y + cell / 2 - 3;
+    const points = {
+      U: [centerX, y],
+      R: [x + cell - 6, centerY],
+      D: [centerX, y + cell - 6],
+      L: [x, centerY],
+    };
+    context.lineCap = 'round';
+    for (const direction of connectors) {
+      context.strokeStyle = '#275968';
+      context.lineWidth = 22;
+      context.beginPath();
+      context.moveTo(centerX, centerY);
+      context.lineTo(...points[direction]);
+      context.stroke();
+      context.strokeStyle = options.powered ? '#fff' : '#9db4bb';
+      context.lineWidth = 12;
+      context.beginPath();
+      context.moveTo(centerX, centerY);
+      context.lineTo(...points[direction]);
+      context.stroke();
+    }
+    context.fillStyle = options.powered ? '#fff' : '#275968';
+    context.beginPath();
+    context.arc(centerX, centerY, 7, 0, Math.PI * 2);
+    context.fill();
+    if (options.source) {
+      roundedRect(centerX - 20, centerY - 20, 40, 40, 12, '#fff', '#275968', 4);
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.font = `900 14px ${FONT}`;
+      context.fillStyle = '#275968';
+      context.fillText('奶', centerX, centerY);
+    }
+    if (options.bowl) {
+      context.fillStyle = options.powered ? '#8eaf9a' : '#dd836f';
+      context.beginPath();
+      context.moveTo(centerX - 23, centerY + 8);
+      context.lineTo(centerX + 23, centerY + 8);
+      context.lineTo(centerX + 16, centerY + 27);
+      context.lineTo(centerX - 16, centerY + 27);
+      context.closePath();
+      context.fill();
+      drawCatFace(centerX - 15, centerY - 34, 30, '#382f2a', '#4d91a8');
+    }
+    if (options.leak) {
+      context.fillStyle = '#c9614f';
+      context.beginPath();
+      context.arc(x + cell - 11, centerY, 8, 0, Math.PI * 2);
+      context.fill();
+    }
+  }
+
+  function drawMilkPipeBoard(step, animation = 1) {
+    const x = 82;
+    const y = 154;
+    const cell = 84;
+    roundedRect(x - 12, y - 12, cell * 5 + 18, cell * 5 + 18, 28, '#c9b08e', 'rgba(56,47,42,.16)', 2);
+    const layout = [
+      [null, null, null, null, null],
+      [null, { c: ['R', 'D'], source: true }, { c: step >= 2 ? ['R', 'L'] : ['U', 'D'], powered: step >= 2 }, { c: ['D', 'L'], powered: step >= 2 }, null],
+      [{ c: ['R'], bowl: true, powered: step >= 4 }, { c: ['R', 'D'], powered: step >= 4 }, { c: ['U', 'L'], powered: step >= 2 }, { c: step >= 3 ? ['U', 'D'] : ['R', 'L'], powered: step >= 3, leak: step === 1 }, null],
+      [null, { c: ['U', 'R'], powered: step >= 4 }, { c: ['R', 'L'], powered: step >= 4 }, { c: ['U', 'L'], powered: step >= 4 }, null],
+      [null, null, { c: ['U'], bowl: true, powered: step >= 4 }, null, null],
+    ];
+    for (let row = 0; row < 5; row += 1) {
+      for (let column = 0; column < 5; column += 1) {
+        const tile = layout[row][column];
+        drawMilkPipeCell(
+          x + column * cell,
+          y + row * cell,
+          cell,
+          tile?.c || [],
+          tile || { blocked: true },
+        );
+      }
+    }
+    if (step === 1) drawPointer(x + cell * 3.5, y + cell * 2.5, animation);
+    if (step === 4) {
+      context.globalAlpha = .85 * animation;
+      roundedRect(128, 322, 330, 95, 22, '#fffaf0', '#8eaf9a', 5);
+      context.textAlign = 'center';
+      context.font = `900 30px ${FONT}`;
+      context.fillStyle = '#275968';
+      context.fillText('★ ★ ★', 293, 352);
+      context.font = `800 18px ${FONT}`;
+      context.fillStyle = '#382f2a';
+      context.fillText('所有貓咪都喝到鮮奶！', 293, 391);
+      context.globalAlpha = 1;
+    }
+  }
+
+  function drawMilkPipeIntro(time) {
+    drawBackground('#4d91a8', time);
+    const appear = ease(progress(time, 0, 1.2));
+    context.globalAlpha = appear;
+    roundedRect(112, 190, 180, 180, 45, '#fff', '#275968', 13);
+    context.fillStyle = '#dceef4';
+    context.fillRect(125, 285, 154, 72);
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 34px ${FONT}`;
+    context.fillStyle = '#275968';
+    context.fillText('鮮奶', 202, 250);
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillStyle = '#382f2a';
+    context.font = `900 65px ${FONT}`;
+    context.fillText('貓咪鮮奶管線', 365, 220);
+    context.font = `700 34px ${FONT}`;
+    context.fillStyle = '#275968';
+    context.fillText('24 秒快速教學', 370, 330);
+    roundedRect(370, 405, 600, 64, 22, '#4d91a8');
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 27px ${FONT}`;
+    context.fillStyle = '#fff';
+    context.fillText('旋轉管線，把鮮奶送到每一只碗', 670, 437);
+    context.globalAlpha = 1;
+    drawFooter('#4d91a8', time / DURATION);
+  }
+
+  function drawMilkPipeTutorial(time) {
+    const local = time - 2.5;
+    let step = 1;
+    let title = '點一下，順時針旋轉';
+    let description = '每次有效旋轉計算一步；鮮奶槽、固定格與十字管不會旋轉。';
+    if (local >= 5) {
+      step = 2;
+      title = '白色脈流代表已通奶';
+      description = '鮮奶只沿雙向匹配的接口流動；沒有接到鮮奶槽的管線不會亮起。';
+    }
+    if (local >= 10) {
+      step = 3;
+      title = '找出每一個洩漏接口';
+      description = '接口不能指向棋盤外、障礙格，也不能接到沒有相反接口的管線。';
+    }
+    if (local >= 15) {
+      step = 4;
+      title = '全部接通，而且不能繞圈';
+      description = '所有管線與貓咪碗都要通奶，整個網路必須是一棵沒有迴圈的樹。';
+    }
+    drawBackground('#4d91a8', time);
+    drawTopBar('貓咪鮮奶管線教學', '#275968', step);
+    drawMilkPipeBoard(step, ease(progress(local % 5, 0, 1)));
+    drawCaption(String(step), title, description, '#4d91a8');
+    drawFooter('#4d91a8', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
@@ -669,6 +828,10 @@
       drawConnectIntro(time);
     } else if (kind === 'cat-color-connect') {
       drawConnectTutorial(time);
+    } else if (kind === 'cat-milk-pipes' && time < 2.5) {
+      drawMilkPipeIntro(time);
+    } else if (kind === 'cat-milk-pipes') {
+      drawMilkPipeTutorial(time);
     } else if (time < 2.5) {
       drawSolitaireIntro(time);
     } else {

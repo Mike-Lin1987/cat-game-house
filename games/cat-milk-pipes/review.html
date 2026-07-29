@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>貓咪鮮奶管線｜關卡審核</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">開發與人工審核</p><h1 style="font-size:clamp(2.4rem,6vw,5rem)">100 關管線檢查台</h1></div>
+      <a class="secondary-button" href="index.html">返回遊戲</a>
+    </div>
+    <section class="status-rack" aria-label="篩選">
+      <label for="review-search"><span>搜尋關卡</span><input id="review-search" name="review-search" type="search" data-review-search placeholder="L050 或標題"></label>
+      <label for="review-chapter"><span>章節</span><select id="review-chapter" name="review-chapter" data-review-chapter><option value="">全部</option><option value="1">第一章</option><option value="2">第二章</option><option value="3">第三章</option><option value="4">第四章</option><option value="5">第五章</option></select></label>
+      <label for="review-size"><span>尺寸</span><select id="review-size" name="review-size" data-review-size><option value="">全部</option><option>5</option><option>6</option><option>7</option><option>8</option><option>10</option></select></label>
+      <button type="button" data-toggle-solution>顯示解答</button>
+    </section>
+    <div class="board-layout">
+      <nav class="level-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));max-height:720px;overflow:auto" data-review-list aria-label="關卡清單"></nav>
+      <article class="board-panel" data-review-detail></article>
+    </div>
+    <nav class="pager"><button type="button" data-review-previous>上一關</button><span data-review-position></span><button type="button" data-review-next>下一關</button></nav>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/solver.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/data/levels-001-020.js"></script>
+  <script src="js/data/levels-021-040.js"></script>
+  <script src="js/data/levels-041-060.js"></script>
+  <script src="js/data/levels-061-080.js"></script>
+  <script src="js/data/levels-081-100.js"></script>
+  <script src="js/data/levels-index.js"></script>
+  <script src="js/review.js"></script>
+</body>
+</html>

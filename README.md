@@ -1,6 +1,6 @@
 # 遊戲小屋
 
-一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」與「喵語分類接龍」，各 100 關，不載入 CDN、外部字型或第三方套件。
+一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」、「喵語分類接龍」與「貓咪鮮奶管線」，各 100 關，不載入 CDN、外部字型或第三方套件。
 
 ## 開始遊玩
 
@@ -21,7 +21,7 @@
 
 ## 目前遊戲
 
-入口網站的每款遊戲名稱旁都有「教學影片」連結。三支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
+入口網站的每款遊戲名稱旁都有「教學影片」連結。四支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
 
 ### 貓咪方格
 
@@ -80,6 +80,18 @@
 
 內建 L001～L100，共五章、每章 20 關。所有關卡皆由獨立 Solver 重新驗證可解、最多同時使用五個分類槽，並檢查固定 54 張牌、五欄階梯與 layout signature 不重複。
 
+### 貓咪鮮奶管線
+
+規則：
+
+- 點擊或用鍵盤旋轉管線，讓鮮奶槽連到所有貓咪碗。
+- 所有有效管線都必須從鮮奶槽抵達，接口不得指向棋盤外、障礙格或未匹配管線。
+- 完整網路不能形成迴圈，匹配邊數必須等於有效格數減一。
+- 提示只指出一格方向錯誤的管線；復原本身也計算一步。
+- 支援 320px 的 10×10 完整棋盤、放大面板、鍵盤 grid 導覽與 reduced motion。
+
+內建 L001～L100，共五章、每章 20 關，尺寸依序為 5×5、6×6、7×7、8×8、10×10。固定關卡皆由 rotation CSP Solver 重新證明唯一解、無洩漏、無迴圈、全部連通，並用 D4 canonical signature 排除旋轉與鏡像重複。
+
 ## 新增其他遊戲
 
 `js/game-catalog.js` 是入口卡片、路由與離線資源的單一資料來源。標準流程：
@@ -122,6 +134,7 @@ npm run validate-cat-connect-levels
 ```powershell
 npm run generate-cat-word-layouts
 npm run validate-cat-word-levels
+npm run validate-cat-milk-pipe-levels
 npm run report-cat-word-levels
 ```
 
@@ -143,7 +156,7 @@ npm run build
 
 `npm run build` 是 GPT Sites 專用的零依賴靜態複製步驟，輸出至忽略版控的 `dist/`；直接雙擊 source `index.html` 不需要先建置。
 
-教學影片的可重現 Canvas 場景位於 `scripts/tutorial-videos/`。以本機靜態伺服器開啟 `generator.html`，分別產生三支 WebM 後放回各遊戲目錄，再執行：
+教學影片的可重現 Canvas 場景位於 `scripts/tutorial-videos/`。以本機靜態伺服器開啟 `generator.html`，分別產生四支 WebM 後放回各遊戲目錄，再執行：
 
 ```powershell
 npm run fix-tutorial-video-duration
@@ -162,6 +175,7 @@ npm run generate-levels
 - 貓咪方格進度使用 `localStorage` key `cat-grid-game:v1`，搬到獨立路由後仍保持相同資料結構。
 - 貓咪彩色連線進度使用 `localStorage` key `cat-color-connect:v1`，包含各尺寸解鎖、最佳紀錄、設定與未完成 session。
 - 喵語分類接龍進度使用 `localStorage` key `cat-word-solitaire:v2`，包含章節解鎖、最佳紀錄、設定與五欄未完成 session；舊四欄 session 會安全清除。
+- 貓咪鮮奶管線進度使用 `localStorage` key `cat-milk-pipes:v1`，包含逐關解鎖、最佳星級／步數／時間、設定、累計時間與未完成 rotation session。
 - 入口會在 HTTPS 環境自動向瀏覽器申請 persistent storage，降低系統因容量壓力自動清除進度的機率。
 - 「備份進度」會將 catalog 宣告的全部遊戲進度匯出成單一 JSON；「還原進度」只接受目前 catalog 中 storage key 相符的遊戲，寫入失敗時會回復原值。
 - persistent storage 不能抵抗使用者清除網站資料；iPhone／iPad 的新主畫面圖示也可能使用獨立儲存空間，因此重新安裝前仍應保留備份檔。
@@ -177,6 +191,7 @@ npm run generate-levels
 - `games/cat-grid/index.html`：貓咪方格獨立入口。
 - `games/cat-color-connect/`：貓咪彩色連線獨立 runtime、固定關卡及資料驅動 UI。
 - `games/cat-word-solitaire/`：喵語分類接龍獨立 runtime、固定 54 張牌關卡、Solver 與內容 review 頁。
+- `games/cat-milk-pipes/`：貓咪鮮奶管線獨立 runtime、固定樹狀關卡、rotation Solver、generator 與 review 頁。
 - `tutorials/*/index.html`、`games/*/tutorial.webm`：各遊戲的離線教學頁與影片。
 - `assets/tutorials/`、`scripts/tutorial-videos/`：共用教學頁樣式及可重現影片產製工具。
 - `styles.css`、`js/app.js`：貓咪方格 UI 與遊戲流程。

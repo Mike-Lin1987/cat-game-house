@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>貓咪鮮奶管線</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="milk-mist" aria-hidden="true"></div>
+  <header class="app-header">
+    <a class="portal-link" href="../../index.html" data-portal-home aria-label="回到遊戲小屋">
+      <span aria-hidden="true">⌂</span><span>遊戲小屋</span>
+    </a>
+    <div class="brand-lockup">
+      <span class="brand-drop" aria-hidden="true">●</span>
+      <strong data-game-title>貓咪鮮奶管線</strong>
+    </div>
+    <button class="icon-button" type="button" data-open-settings aria-label="開啟設定">⚙</button>
+  </header>
+
+  <main class="app-shell">
+    <section class="screen home-screen is-active" data-screen="home">
+      <div class="hero-copy">
+        <p class="eyebrow">旋轉管線 · 送奶到每一只碗</p>
+        <h1>讓鮮奶沿著<br><span>正確的路</span>流動</h1>
+        <p class="hero-intro">轉動每一段管線，接好所有貓咪碗。沒有洩漏、沒有斷線，也不繞圈。</p>
+        <div class="hero-actions">
+          <button class="primary-button" type="button" data-start>開始送奶</button>
+          <button class="secondary-button" type="button" data-continue hidden>繼續這一關</button>
+          <button class="text-button" type="button" data-open-levels>選擇關卡</button>
+        </div>
+      </div>
+      <div class="hero-station" aria-label="鮮奶管線示意">
+        <div class="station-tank"><span>鮮奶</span></div>
+        <svg viewBox="0 0 420 330" aria-hidden="true">
+          <path class="hero-pipe-shadow" d="M95 86H210V160H325V245H255"></path>
+          <path class="hero-pipe-milk" d="M95 86H210V160H325V245H255"></path>
+        </svg>
+        <div class="station-cat cat-one" aria-hidden="true">ᓚᘏᗢ<div class="station-bowl"></div></div>
+        <div class="station-cat cat-two" aria-hidden="true">ᓚᘏᗢ<div class="station-bowl"></div></div>
+        <div class="station-label">
+          <span>送奶進度</span>
+          <strong data-home-progress>0 / 100</strong>
+          <small data-home-stars>0 / 300 顆星</small>
+        </div>
+      </div>
+      <div class="rule-strip" aria-label="過關重點">
+        <div><b>01</b><span>全部接通</span></div>
+        <div><b>02</b><span>零個漏點</span></div>
+        <div><b>03</b><span>不形成迴圈</span></div>
+      </div>
+    </section>
+
+    <section class="screen levels-screen" data-screen="levels">
+      <div class="section-heading">
+        <div><p class="eyebrow">100 個固定關卡</p><h2>今天送哪一區？</h2></div>
+        <button class="secondary-button compact" type="button" data-home>返回首頁</button>
+      </div>
+      <div class="chapter-tabs" role="tablist" aria-label="章節" data-chapter-tabs></div>
+      <div class="level-grid" data-level-grid></div>
+      <nav class="pager" aria-label="關卡分頁">
+        <button type="button" data-page-previous>上一頁</button>
+        <span data-page-label>第 1 / 2 頁</span>
+        <button type="button" data-page-next>下一頁</button>
+      </nav>
+    </section>
+
+    <section class="screen game-screen" data-screen="game">
+      <div class="game-heading">
+        <button class="back-button" type="button" data-back-levels>← 選關</button>
+        <div><p class="eyebrow" data-chapter-name>送奶入門</p><h2 data-level-title>第一杯鮮奶</h2></div>
+        <div class="total-stars" aria-label="目前總星數">★ <span data-total-stars>0</span></div>
+      </div>
+      <div class="status-rack">
+        <div><span>關卡</span><strong data-level-number>L001</strong></div>
+        <div><span>棋盤</span><strong data-board-size>5×5</strong></div>
+        <div><span>剩餘步數</span><strong data-moves>0</strong></div>
+        <div><span>時間</span><strong data-time>00:00</strong></div>
+      </div>
+      <div class="board-layout">
+        <div class="board-panel">
+          <div class="board-summary" aria-live="polite">
+            <span>貓咪碗 <b data-bowls>0 / 0</b></span>
+            <span>通奶管線 <b data-powered>0 / 0</b></span>
+            <span>洩漏 <b data-leaks>0</b></span>
+          </div>
+          <div class="board-home" data-board-home>
+            <div class="pipe-board" role="grid" data-board aria-label="鮮奶管線棋盤"></div>
+          </div>
+          <p class="status-message" data-status-message aria-live="polite">點一下管線，讓鮮奶流向貓咪碗。</p>
+        </div>
+        <aside class="tool-panel" aria-label="遊戲工具">
+          <button type="button" data-hint><span aria-hidden="true">✦</span><b>提示</b><small>指出方向錯誤的格子</small></button>
+          <button type="button" data-undo><span aria-hidden="true">↶</span><b>復原</b><small>復原也會計算一步</small></button>
+          <button type="button" data-restart><span aria-hidden="true">↻</span><b>重玩</b><small>重設本關管線方向</small></button>
+          <button type="button" data-large-board><span aria-hidden="true">⛶</span><b>放大棋盤</b><small>在面板內檢視與操作</small></button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="modal" data-result-dialog>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-result aria-label="關閉">×</button>
+      <p class="eyebrow" data-result-eyebrow>送奶成功</p>
+      <h2 data-result-title>關卡完成</h2>
+      <div class="result-stars" data-result-stars aria-label="獲得星級">★★★</div>
+      <div class="result-grid" data-result-details></div>
+      <div class="modal-actions">
+        <button class="secondary-button" type="button" data-result-replay>再玩一次</button>
+        <button class="secondary-button" type="button" data-result-levels>返回選關</button>
+        <button class="primary-button" type="button" data-result-next>下一關</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal" data-settings-dialog>
+    <form class="modal-card settings-card" method="dialog">
+      <button class="modal-close" type="submit" aria-label="關閉">×</button>
+      <p class="eyebrow">遊戲設定</p>
+      <h2>依你的步調送奶</h2>
+      <label class="setting-row"><span><b>柔和動畫</b><small>鮮奶脈流與完成動態</small></span><input type="checkbox" data-setting-animations></label>
+      <label class="setting-row"><span><b>即時洩漏提示</b><small>顯示尚未接好的接口</small></span><input type="checkbox" data-setting-leaks></label>
+      <label class="setting-row"><span><b>預設放大棋盤</b><small>開始關卡時開啟大棋盤</small></span><input type="checkbox" data-setting-large></label>
+      <button class="primary-button" type="submit" data-save-settings>儲存設定</button>
+    </form>
+  </dialog>
+
+  <dialog class="large-board-dialog" data-large-dialog>
+    <div class="large-board-toolbar">
+      <strong>放大棋盤</strong>
+      <button type="button" data-close-large>關閉</button>
+    </div>
+    <div class="large-board-scroll" data-large-host></div>
+  </dialog>
+
+  <div class="sr-only" aria-live="assertive" data-announcer></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/solver.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/data/levels-001-020.js"></script>
+  <script src="js/data/levels-021-040.js"></script>
+  <script src="js/data/levels-041-060.js"></script>
+  <script src="js/data/levels-061-080.js"></script>
+  <script src="js/data/levels-081-100.js"></script>
+  <script src="js/data/levels-index.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
