@@ -697,24 +697,9 @@
     context.beginPath();
     context.arc(centerX, centerY, 7, 0, Math.PI * 2);
     context.fill();
-    if (options.source) {
-      roundedRect(centerX - 20, centerY - 20, 40, 40, 12, '#fff', '#275968', 4);
-      context.textAlign = 'center';
-      context.textBaseline = 'middle';
-      context.font = `900 14px ${FONT}`;
-      context.fillStyle = '#275968';
-      context.fillText('奶', centerX, centerY);
-    }
+    if (options.source) drawMilkBottleIcon(centerX, centerY, .62, options.powered);
     if (options.bowl) {
-      context.fillStyle = options.powered ? '#8eaf9a' : '#dd836f';
-      context.beginPath();
-      context.moveTo(centerX - 23, centerY + 8);
-      context.lineTo(centerX + 23, centerY + 8);
-      context.lineTo(centerX + 16, centerY + 27);
-      context.lineTo(centerX - 16, centerY + 27);
-      context.closePath();
-      context.fill();
-      drawCatFace(centerX - 15, centerY - 34, 30, '#382f2a', '#4d91a8');
+      drawMilkCatBowlIcon(centerX, centerY, .68, options.powered, options.variant);
     }
     if (options.leak) {
       context.fillStyle = '#c9614f';
@@ -722,6 +707,156 @@
       context.arc(x + cell - 11, centerY, 8, 0, Math.PI * 2);
       context.fill();
     }
+  }
+
+  function drawMilkBottleIcon(centerX, centerY, scale = 1, powered = false) {
+    context.save();
+    context.translate(centerX, centerY);
+    context.scale(scale, scale);
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+    context.fillStyle = 'rgba(56,47,42,.17)';
+    context.beginPath();
+    context.ellipse(0, 34, 25, 5, 0, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = '#fffaf0';
+    context.strokeStyle = '#275968';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-15, -24);
+    context.lineTo(15, -24);
+    context.lineTo(15, -17);
+    context.bezierCurveTo(15, -12, 22, -10, 22, -2);
+    context.lineTo(22, 25);
+    context.quadraticCurveTo(22, 34, 12, 34);
+    context.lineTo(-12, 34);
+    context.quadraticCurveTo(-22, 34, -22, 25);
+    context.lineTo(-22, -2);
+    context.bezierCurveTo(-22, -10, -15, -12, -15, -17);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.fillStyle = powered ? '#fff' : '#b7cbd1';
+    context.beginPath();
+    context.moveTo(-18, 10);
+    context.quadraticCurveTo(-7, 4, 4, 10);
+    context.quadraticCurveTo(12, 5, 18, 8);
+    context.lineTo(18, 25);
+    context.quadraticCurveTo(18, 30, 11, 30);
+    context.lineTo(-11, 30);
+    context.quadraticCurveTo(-18, 30, -18, 24);
+    context.closePath();
+    context.fill();
+    roundedRect(-17, -32, 34, 12, 4, '#4d91a8', '#275968', 4);
+    context.fillStyle = '#f5dfbd';
+    context.strokeStyle = '#275968';
+    context.lineWidth = 3;
+    context.beginPath();
+    context.arc(0, 1, 14, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+    context.fillStyle = '#dd836f';
+    context.beginPath();
+    context.ellipse(0, 5, 6, 5, 0, 0, Math.PI * 2);
+    context.fill();
+    for (const [x, y] of [[-9, -3], [-3, -7], [4, -7], [10, -2]]) {
+      context.beginPath();
+      context.arc(x, y, 3, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.restore();
+  }
+
+  function drawMilkCatBowlIcon(centerX, centerY, scale = 1, powered = false, variant = 0) {
+    const palettes = [
+      { fur: '#f3b99e', bowl: '#dc806e' },
+      { fur: '#f5c77f', bowl: '#d6a83d' },
+      { fur: '#aab3b8', bowl: '#74a57f' },
+      { fur: '#d7c3aa', bowl: '#688fa6' },
+    ];
+    const palette = palettes[((Number(variant) || 0) % palettes.length + palettes.length)
+      % palettes.length];
+    context.save();
+    context.translate(centerX, centerY);
+    context.scale(scale, scale);
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+    context.fillStyle = 'rgba(56,47,42,.17)';
+    context.beginPath();
+    context.ellipse(0, 35, 30, 5, 0, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = palette.fur;
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-23, -9);
+    context.lineTo(-20, -32);
+    context.lineTo(-5, -17);
+    context.moveTo(5, -17);
+    context.lineTo(20, -32);
+    context.lineTo(23, -9);
+    context.stroke();
+    roundedRect(-24, -20, 48, 39, 19, palette.fur, '#382f2a', 4);
+    context.fillStyle = '#382f2a';
+    for (const x of [-10, 10]) {
+      context.beginPath();
+      context.arc(x, -5, 2.7, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.fillStyle = '#dd836f';
+    context.beginPath();
+    context.moveTo(-4, 3);
+    context.lineTo(4, 3);
+    context.lineTo(0, 7);
+    context.closePath();
+    context.fill();
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 2.5;
+    context.beginPath();
+    context.moveTo(-13, 8);
+    context.lineTo(-31, 5);
+    context.moveTo(-13, 12);
+    context.lineTo(-32, 14);
+    context.moveTo(13, 8);
+    context.lineTo(31, 5);
+    context.moveTo(13, 12);
+    context.lineTo(32, 14);
+    context.stroke();
+    context.fillStyle = palette.bowl;
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-32, 10);
+    context.lineTo(32, 10);
+    context.lineTo(25, 29);
+    context.quadraticCurveTo(23, 35, 14, 35);
+    context.lineTo(-14, 35);
+    context.quadraticCurveTo(-23, 35, -25, 29);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.fillStyle = powered ? '#fff' : '#aebfc3';
+    context.beginPath();
+    context.moveTo(-28, 11);
+    context.quadraticCurveTo(-14, 5, 0, 11);
+    context.quadraticCurveTo(14, 5, 28, 11);
+    context.lineTo(26, 16);
+    context.quadraticCurveTo(12, 11, 0, 16);
+    context.quadraticCurveTo(-12, 11, -26, 16);
+    context.closePath();
+    context.fill();
+    context.strokeStyle = '#382f2a';
+    context.lineWidth = 2.5;
+    context.beginPath();
+    if (powered) {
+      context.moveTo(-7, 8);
+      context.quadraticCurveTo(0, 16, 7, 8);
+    } else {
+      context.moveTo(-6, 9);
+      context.quadraticCurveTo(0, 12, 6, 9);
+    }
+    context.stroke();
+    context.restore();
   }
 
   function drawMilkPipeBoard(step, animation = 1) {
@@ -732,9 +867,9 @@
     const layout = [
       [null, null, null, null, null],
       [null, { c: ['R', 'D'], source: true }, { c: step >= 2 ? ['R', 'L'] : ['U', 'D'], powered: step >= 2 }, { c: ['D', 'L'], powered: step >= 2 }, null],
-      [{ c: ['R'], bowl: true, powered: step >= 4 }, { c: ['R', 'D'], powered: step >= 4 }, { c: ['U', 'L'], powered: step >= 2 }, { c: step >= 3 ? ['U', 'D'] : ['R', 'L'], powered: step >= 3, leak: step === 1 }, null],
+      [{ c: ['R'], bowl: true, variant: 2, powered: step >= 4 }, { c: ['R', 'D'], powered: step >= 4 }, { c: ['U', 'L'], powered: step >= 2 }, { c: step >= 3 ? ['U', 'D'] : ['R', 'L'], powered: step >= 3, leak: step === 1 }, null],
       [null, { c: ['U', 'R'], powered: step >= 4 }, { c: ['R', 'L'], powered: step >= 4 }, { c: ['U', 'L'], powered: step >= 4 }, null],
-      [null, null, { c: ['U'], bowl: true, powered: step >= 4 }, null, null],
+      [null, null, { c: ['U'], bowl: true, variant: 3, powered: step >= 4 }, null, null],
     ];
     for (let row = 0; row < 5; row += 1) {
       for (let column = 0; column < 5; column += 1) {
@@ -767,14 +902,7 @@
     drawBackground('#4d91a8', time);
     const appear = ease(progress(time, 0, 1.2));
     context.globalAlpha = appear;
-    roundedRect(112, 190, 180, 180, 45, '#fff', '#275968', 13);
-    context.fillStyle = '#dceef4';
-    context.fillRect(125, 285, 154, 72);
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-    context.font = `900 34px ${FONT}`;
-    context.fillStyle = '#275968';
-    context.fillText('鮮奶', 202, 250);
+    drawMilkBottleIcon(202, 280, 2.5, true);
     context.textAlign = 'left';
     context.textBaseline = 'top';
     context.fillStyle = '#382f2a';

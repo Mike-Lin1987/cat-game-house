@@ -49,3 +49,16 @@ test('累計遊玩秒數可保存與還原', () => {
   assert.equal(Storage.saveProgress(progress, store), true);
   assert.equal(Storage.loadProgress(store).stats.totalPlaySeconds, 42);
 });
+
+test('損壞資料中的範圍外完成紀錄會被捨棄', () => {
+  const progress = Storage.normalizeProgress({
+    ...Storage.createDefaultProgress(),
+    records: {
+      L001: { completed: true, stars: 3, bestMoves: 8, bestTime: 20 },
+      L000: { completed: true, stars: 3, bestMoves: 1, bestTime: 1 },
+      L101: { completed: true, stars: 3, bestMoves: 1, bestTime: 1 },
+      L999: { completed: true, stars: 3, bestMoves: 1, bestTime: 1 },
+    },
+  });
+  assert.deepEqual(Object.keys(progress.records), ['L001']);
+});

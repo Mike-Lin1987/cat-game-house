@@ -95,10 +95,32 @@ button.pipe-cell { cursor: pointer; }.pipe-cell[aria-disabled="true"] { cursor: 
 .pipe-fill { stroke: #9db4bb; stroke-width: 14; fill: none; stroke-linecap: round; transition: stroke .18s; }
 .pipe-cell.powered .pipe-fill { stroke: #fff; stroke-dasharray: 12 8; animation: milk-flow 1.15s linear infinite; filter: drop-shadow(0 0 4px #fff); }
 .pipe-center { fill: var(--blue-dark); }.pipe-cell.powered .pipe-center { fill: #fff; }
-.role-icon { position: absolute; inset: 24%; display: grid; place-items: center; z-index: 2; border-radius: 50%; font-size: clamp(.5rem, 2.1vw, 1.25rem); font-weight: 900; line-height: 1; }
-.role-icon.source { color: var(--blue-dark); background: #fff; border: 3px solid var(--blue-dark); }.role-icon.bowl { inset: auto 17% 7%; height: 31%; color: var(--cocoa); background: var(--clay-soft); border: 2px solid var(--cocoa); border-top: 0; border-radius: 0 0 50% 50%; }
-.pipe-cell.powered .role-icon.bowl::before { content: "⌣"; color: var(--blue-dark); }
-.pipe-cell:not(.powered) .role-icon.bowl::before { content: "·"; }
+.role-icon { position: absolute; left: 50%; top: 50%; z-index: 2; width: 72%; height: 72%; overflow: visible; pointer-events: none; transform: translate(-50%, -50%); filter: drop-shadow(0 2px 1px rgba(61,44,31,.18)); }
+.source-icon { width: 64%; height: 76%; }.bowl-icon { width: 78%; height: 78%; }
+.icon-shadow { fill: rgba(68,48,31,.17); }
+.milk-bottle, .bottle-label { fill: #f8fdff; stroke: var(--blue-dark); stroke-width: 4; stroke-linejoin: round; }
+.milk-wave { fill: #b7cbd1; transition: fill .2s, filter .2s; }
+.bottle-shade { fill: #c9e3eb; opacity: .72; }
+.bottle-cap { fill: var(--blue); stroke: var(--blue-dark); stroke-width: 4; }
+.cap-shine, .bottle-highlight { fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; opacity: .9; }
+.bottle-label { fill: #f5dfbd; stroke-width: 3; }
+.paw-pad, .paw-toe { fill: var(--clay); }
+.bowl-icon { --cat-fur: #f3b99e; --cat-patch: #fff5e7; --bowl-color: #dc806e; --bowl-dark: #b95f52; --badge-color: #f7dfb7; }
+.bowl-variant-1 { --cat-fur: #f5c77f; --cat-patch: #fff0d0; --bowl-color: #d6a83d; --bowl-dark: #ad7d25; --badge-color: #fff0c7; }
+.bowl-variant-2 { --cat-fur: #aab3b8; --cat-patch: #f1f4f4; --bowl-color: #74a57f; --bowl-dark: #4f7f60; --badge-color: #e4f0d9; }
+.bowl-variant-3 { --cat-fur: #d7c3aa; --cat-patch: #fff8ea; --bowl-color: #688fa6; --bowl-dark: #486f85; --badge-color: #dceef4; }
+.cat-ear, .cat-face { fill: var(--cat-fur); stroke: var(--cocoa); stroke-width: 4; stroke-linejoin: round; }
+.cat-ear-inner { fill: #f7d5c6; }
+.cat-patch, .cat-muzzle { fill: var(--cat-patch); }
+.cat-brow, .cat-mouth, .cat-whiskers, .bowl-rim, .bowl-paw { fill: none; stroke: var(--cocoa); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.cat-eye { fill: var(--cocoa); }.cat-eye-shine { fill: white; }.cat-nose { fill: var(--clay); stroke: var(--cocoa); stroke-width: 2; stroke-linejoin: round; }
+.bowl-body { fill: var(--bowl-color); stroke: var(--cocoa); stroke-width: 4; stroke-linejoin: round; }
+.bowl-milk { fill: #aebfc3; transition: fill .2s, filter .2s; }
+.bowl-badge { fill: var(--badge-color); stroke: var(--bowl-dark); stroke-width: 2; }
+.badge-pad, .badge-toe { fill: var(--bowl-dark); }
+.happy-mouth { display: none; }
+.pipe-cell.powered .milk-wave, .pipe-cell.powered .bowl-milk { fill: #fff; filter: drop-shadow(0 0 4px #fff); }
+.pipe-cell.powered .waiting-mouth { display: none; }.pipe-cell.powered .happy-mouth { display: block; }
 .locked-mark { position: absolute; top: 3px; right: 4px; font-size: clamp(.45rem, 1.5vw, .8rem); color: var(--cocoa); }
 .leak-drop { position: absolute; z-index: 3; width: clamp(5px, 1.3vw, 10px); height: clamp(5px, 1.3vw, 10px); border-radius: 50% 50% 55% 45%; background: var(--danger); box-shadow: 0 0 0 2px rgba(255,255,255,.8); animation: leak-pulse 1s ease-in-out infinite; }
 .leak-U { top: 0; left: 50%; transform: translate(-50%, -25%) rotate(45deg); }.leak-R { right: 0; top: 50%; transform: translate(25%, -50%) rotate(45deg); }.leak-D { bottom: 0; left: 50%; transform: translate(-50%, 25%) rotate(45deg); }.leak-L { left: 0; top: 50%; transform: translate(-25%, -50%) rotate(45deg); }

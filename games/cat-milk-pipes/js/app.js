@@ -234,6 +234,7 @@
     if (target.matches('[data-start]')) loadLevel(`L${String(Math.min(progress.unlockedLevel, 100)).padStart(3, '0')}`);
     else if (target.matches('[data-continue]')) loadLevel(progress.currentSession.levelId, true);
     else if (target.matches('[data-open-levels], [data-back-levels], [data-result-levels]')) {
+      persistSession();
       if (resultDialog.open) resultDialog.close();
       showScreen('levels');
     } else if (target.matches('[data-home]')) showScreen('home');

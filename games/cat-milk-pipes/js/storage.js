@@ -56,7 +56,8 @@
       },
     };
     for (const [id, record] of Object.entries(value.records || {})) {
-      if (/^L\d{3}$/.test(id) && record?.completed) {
+      const index = /^L\d{3}$/.test(id) ? Number(id.slice(1)) : 0;
+      if (index >= 1 && index <= Config.totalLevels && record?.completed) {
         progress.records[id] = {
           completed: true,
           stars: Math.min(3, Math.max(1, Number(record.stars) || 1)),

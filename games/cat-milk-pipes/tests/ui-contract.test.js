@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
+const Renderer = require('../js/renderer.js');
 
 const ROOT = path.resolve(__dirname, '..');
 const read = (relativePath) => fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
@@ -61,4 +62,19 @@ test('響應式棋盤保留 CSS Grid、320px 與 reduced motion', () => {
   assert.match(styles, /\.pipe-board\s*\{[^}]*width:\s*min\(100%,\s*620px\)/s);
   assert.match(styles, /\.pipe-cell\s*\{[^}]*min-width:\s*0/s);
   assert.match(styles, /body\s*\{[^}]*overflow-x:\s*hidden/s);
+});
+
+test('鮮奶槽與貓咪碗使用可縮放的原創 SVG 圖示', () => {
+  const renderer = read('js/renderer.js');
+  assert.match(renderer, /class="role-icon source-icon"/);
+  assert.match(renderer, /class="role-icon bowl-icon\b/);
+  assert.match(renderer, /class="cat-whiskers"/);
+  assert.doesNotMatch(renderer, /role-icon source"[^>]*>奶</);
+});
+
+test('貓咪碗提供四種固定配色但不改變關卡資料', () => {
+  for (let variant = 0; variant < 4; variant += 1) {
+    assert.match(Renderer.roleSvgFor('bowl', variant), new RegExp(`bowl-variant-${variant}`));
+  }
+  assert.equal(Renderer.roleSvgFor('pipe', 0), '');
 });
