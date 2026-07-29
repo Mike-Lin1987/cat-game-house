@@ -175,7 +175,7 @@
         .sort((a, b) => a[1].length - b[1].length || a[0].localeCompare(b[0]));
       if (!unresolved.length) {
         const state = materialize(level, domains);
-        if (Core.isPuzzleComplete(state, level)) {
+        if (Core.isStrictNetworkSolution(state, level)) {
           solutions.push(state.rotations);
         } else {
           backtracks += 1;

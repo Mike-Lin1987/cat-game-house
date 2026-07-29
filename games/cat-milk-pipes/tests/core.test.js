@@ -58,7 +58,7 @@ test('完整樹狀網路會點亮全部格與貓咪碗並完成', () => {
   assert.equal(Core.isPuzzleComplete(state, level), true);
 });
 
-test('有迴圈或未連接管線時不能完成', () => {
+test('所有貓咪喝到牛奶就完成，即使其餘管線仍有迴圈', () => {
   const level = {
     id: 'LOOP',
     size: 2,
@@ -77,7 +77,22 @@ test('有迴圈或未連接管線時不能完成', () => {
   };
   const state = Core.createInitialState(level);
   assert.equal(Core.detectCycle(state, level), true);
-  assert.equal(Core.isPuzzleComplete(state, level), false);
+  assert.equal(Core.countConnectedBowls(state, level), 1);
+  assert.equal(Core.isPuzzleComplete(state, level), true);
+  assert.equal(Core.isStrictNetworkSolution(state, level), false);
+});
+
+test('未接上的漏水管線不阻止貓咪喝奶通關', () => {
+  const level = lineLevel();
+  level.tiles[0][0] = {
+    role: 'pipe', shape: 'end', solutionRotation: 0, initialRotation: 0, locked: true,
+  };
+  const state = Core.createInitialState(level);
+  state.rotations[1][1] = 1;
+  state.rotations[1][2] = 3;
+  assert.equal(Core.findLeaks(state, level).length > 0, true);
+  assert.equal(Core.isPuzzleComplete(state, level), true);
+  assert.equal(Core.isStrictNetworkSolution(state, level), false);
 });
 
 test('optimalMoves、星級、提示與 session 安全還原符合規則', () => {

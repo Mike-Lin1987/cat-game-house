@@ -306,6 +306,12 @@
 
   function isPuzzleComplete(state, level) {
     const analysis = analyzeBoard(state, level);
+    return analysis.bowlCount > 0
+      && analysis.connectedBowls === analysis.bowlCount;
+  }
+
+  function isStrictNetworkSolution(state, level) {
+    const analysis = analyzeBoard(state, level);
     return analysis.activeTileCount > 1
       && analysis.leaks.length === 0
       && analysis.components.length === 1
@@ -416,7 +422,7 @@
     }
     const analysis = analyzeBoard(state, level);
     return {
-      valid: isPuzzleComplete(state, level),
+      valid: isStrictNetworkSolution(state, level),
       ...analysis,
     };
   }
@@ -494,6 +500,7 @@
     countConnectedBowls,
     analyzeBoard,
     isPuzzleComplete,
+    isStrictNetworkSolution,
     calculateOptimalMoves,
     calculateStars,
     getHint,

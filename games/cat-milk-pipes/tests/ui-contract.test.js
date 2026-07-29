@@ -53,6 +53,13 @@ test('畫面提供完整操作、Modal 與 review 契約', () => {
   assert.match(read('review.html'), /data-toggle-solution/);
 });
 
+test('首頁清楚說明所有貓咪喝到牛奶即通關', () => {
+  const page = read('index.html');
+  assert.match(page, /只要每隻貓都喝到牛奶，就能立即通關/);
+  assert.match(page, /全亮立即通關/);
+  assert.doesNotMatch(page, /零個漏點|不形成迴圈/);
+});
+
 test('響應式棋盤保留 CSS Grid、320px 與 reduced motion', () => {
   const styles = read('css/app.css');
   assert.match(styles, /\.pipe-board\s*\{[^}]*display:\s*grid/s);

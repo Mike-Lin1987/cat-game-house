@@ -5,6 +5,10 @@
   const context = canvas.getContext('2d');
   const output = document.querySelector('output');
   const buttons = [...document.querySelectorAll('[data-render]')];
+  const videoResult = document.querySelector('[data-video-result]');
+  const videoPreview = document.querySelector('[data-video-preview]');
+  const videoDownload = document.querySelector('[data-video-download]');
+  let latestVideoUrl = null;
   const WIDTH = canvas.width;
   const HEIGHT = canvas.height;
   const FPS = 30;
@@ -933,13 +937,13 @@
     }
     if (local >= 10) {
       step = 3;
-      title = '找出每一個洩漏接口';
-      description = '接口不能指向棋盤外、障礙格，也不能接到沒有相反接口的管線。';
+      title = '紅色水滴提示洩漏';
+      description = '洩漏標示能幫你判讀方向，但不會阻止已經喝到牛奶的貓咪。';
     }
     if (local >= 15) {
       step = 4;
-      title = '全部接通，而且不能繞圈';
-      description = '所有管線與貓咪碗都要通奶，整個網路必須是一棵沒有迴圈的樹。';
+      title = '每隻貓喝到就通關';
+      description = '所有貓咪碗亮起鮮奶脈流，關卡就會立即完成。';
     }
     drawBackground('#4d91a8', time);
     drawTopBar('貓咪鮮奶管線教學', '#275968', step);
@@ -1016,18 +1020,27 @@
     await stopped;
     stream.getTracks().forEach((track) => track.stop());
     const blob = new Blob(chunks, { type: recorder.mimeType || 'video/webm' });
-    const url = URL.createObjectURL(blob);
+    if (latestVideoUrl) URL.revokeObjectURL(latestVideoUrl);
+    latestVideoUrl = URL.createObjectURL(blob);
+    videoPreview.src = latestVideoUrl;
+    videoDownload.href = latestVideoUrl;
+    videoDownload.download = `${kind}-tutorial.webm`;
+    videoResult.hidden = false;
+
     const anchor = document.createElement('a');
-    anchor.href = url;
+    anchor.href = latestVideoUrl;
     anchor.download = `${kind}-tutorial.webm`;
     document.body.append(anchor);
     anchor.click();
     anchor.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 3000);
 
     output.value = `${kind} 完成：${(blob.size / 1024 / 1024).toFixed(2)} MB`;
     buttons.forEach((button) => { button.disabled = false; });
   }
+
+  window.addEventListener('beforeunload', () => {
+    if (latestVideoUrl) URL.revokeObjectURL(latestVideoUrl);
+  });
 
   for (const button of buttons) {
     button.addEventListener('click', () => renderVideo(button.dataset.render));
