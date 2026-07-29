@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" role="img" aria-labelledby="title desc">
+  <title id="title">貓咪鮮奶管線封面</title>
+  <desc id="desc">溫暖的奶油木框送奶站裡，鮮奶從玻璃奶瓶沿著發光管線送到三隻不同毛色的貓咪</desc>
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fff4dc"/>
+      <stop offset=".48" stop-color="#e8bf88"/>
+      <stop offset="1" stop-color="#c98f58"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fffdf5"/>
+      <stop offset="1" stop-color="#f8e6c8"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffffff" stop-opacity=".98"/>
+      <stop offset=".5" stop-color="#dff4fb" stop-opacity=".88"/>
+      <stop offset="1" stop-color="#a7d7e7" stop-opacity=".95"/>
+    </linearGradient>
+    <linearGradient id="milk" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d9f3fb"/>
+    </linearGradient>
+    <linearGradient id="blueMetal" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#8fd2e6"/>
+      <stop offset=".5" stop-color="#4a94b2"/>
+      <stop offset="1" stop-color="#27647d"/>
+    </linearGradient>
+    <linearGradient id="titleRibbon" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ccebf5"/>
+    </linearGradient>
+    <linearGradient id="coralBowl" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffc4ae"/>
+      <stop offset="1" stop-color="#df7968"/>
+    </linearGradient>
+    <linearGradient id="sageBowl" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#d7e6b7"/>
+      <stop offset="1" stop-color="#8dae78"/>
+    </linearGradient>
+    <linearGradient id="goldBowl" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffe6a5"/>
+      <stop offset="1" stop-color="#e6a84f"/>
+    </linearGradient>
+    <pattern id="pawPattern" width="72" height="72" patternUnits="userSpaceOnUse">
+      <g fill="#c89561" opacity=".12" transform="translate(12 14) rotate(-12)">
+        <ellipse cx="13" cy="20" rx="10" ry="8"/>
+        <circle cx="3" cy="7" r="4"/>
+        <circle cx="12" cy="3" r="4"/>
+        <circle cx="22" cy="7" r="4"/>
+      </g>
+    </pattern>
+    <filter id="outerShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#6a4227" flood-opacity=".28"/>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#62432f" flood-opacity=".24"/>
+    </filter>
+    <filter id="milkGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="720" height="460" rx="38" fill="#f6e7cf"/>
+  <g filter="url(#outerShadow)">
+    <rect x="9" y="9" width="702" height="442" rx="34" fill="url(#frame)" stroke="#9b6941" stroke-width="4"/>
+    <rect x="24" y="24" width="672" height="412" rx="25" fill="url(#panel)" stroke="#fff6e5" stroke-width="5"/>
+    <rect x="31" y="31" width="658" height="398" rx="20" fill="url(#pawPattern)" stroke="#d1a16e" stroke-width="2"/>
+  </g>
+
+  <g opacity=".7">
+    <path d="M43 102h634M43 365h634" fill="none" stroke="#e8bd88" stroke-width="2" stroke-dasharray="4 10"/>
+    <circle cx="52" cy="54" r="7" fill="#f5d5ad"/>
+    <circle cx="668" cy="54" r="7" fill="#f5d5ad"/>
+    <circle cx="52" cy="406" r="7" fill="#f5d5ad"/>
+    <circle cx="668" cy="406" r="7" fill="#f5d5ad"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <path d="M167 42c16-21 42-23 63-10 17-21 52-22 70 0 20-18 52-15 66 6 22-16 53-7 62 16 29-3 48 19 41 43H154c-5-21 0-41 13-55z" fill="url(#titleRibbon)" stroke="#5ca0ba" stroke-width="5"/>
+    <path d="M181 93h278" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+    <text x="311" y="80" text-anchor="middle" font-family="'Microsoft JhengHei','Noto Sans TC',sans-serif" font-size="39" font-weight="900" letter-spacing="2" fill="#70452f" stroke="#fff7e9" stroke-width="8" paint-order="stroke">貓咪鮮奶管線</text>
+    <text x="311" y="80" text-anchor="middle" font-family="'Microsoft JhengHei','Noto Sans TC',sans-serif" font-size="39" font-weight="900" letter-spacing="2" fill="#70452f">貓咪鮮奶管線</text>
+  </g>
+
+  <g transform="translate(52 126)" filter="url(#softShadow)">
+    <path d="M32 5h62v24H32z" rx="8" fill="url(#blueMetal)" stroke="#285f77" stroke-width="4"/>
+    <path d="M25 28h76c9 0 16 8 16 17v129c0 14-11 25-25 25H34c-14 0-25-11-25-25V45c0-9 7-17 16-17z" fill="url(#glass)" stroke="#37788f" stroke-width="5"/>
+    <path d="M18 108h90v65c0 10-8 18-18 18H36c-10 0-18-8-18-18z" fill="url(#milk)"/>
+    <path d="M25 40h22" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+    <rect x="22" y="68" width="82" height="70" rx="20" fill="#fffaf1" stroke="#e9b987" stroke-width="3"/>
+    <g fill="#71acc1" transform="translate(48 80)">
+      <ellipse cx="15" cy="26" rx="14" ry="11"/>
+      <circle cx="2" cy="10" r="6"/>
+      <circle cx="13" cy="4" r="6"/>
+      <circle cx="27" cy="10" r="6"/>
+    </g>
+    <text x="63" y="130" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#3e7890">FRESH MILK</text>
+    <path d="M116 68h24c9 0 16 7 16 16v14h-30V91h-10z" fill="url(#blueMetal)" stroke="#285f77" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#softShadow)">
+    <path d="M208 215H286V270H374V176H480V250H582V310" stroke="#2e687e" stroke-width="34"/>
+    <path d="M374 270H312V310M480 250V310" stroke="#2e687e" stroke-width="34"/>
+    <path d="M208 215H286V270H374V176H480V250H582V310" stroke="#98cbdc" stroke-width="24"/>
+    <path d="M374 270H312V310M480 250V310" stroke="#98cbdc" stroke-width="24"/>
+    <path d="M208 215H286V270H374V176H480V250H582V310" stroke="#f8feff" stroke-width="13"/>
+    <path d="M374 270H312V310M480 250V310" stroke="#f8feff" stroke-width="13"/>
+    <path d="M208 215H286V270H374V176H480V250H582V310" stroke="#fff" stroke-width="5" stroke-dasharray="2 21" filter="url(#milkGlow)" opacity=".95"/>
+    <path d="M374 270H312V310M480 250V310" stroke="#fff" stroke-width="5" stroke-dasharray="2 21" filter="url(#milkGlow)" opacity=".95"/>
+  </g>
+
+  <g fill="#37788f" stroke="#edfaff" stroke-width="3">
+    <rect x="274" y="201" width="24" height="28" rx="8"/>
+    <rect x="362" y="257" width="24" height="28" rx="8"/>
+    <rect x="362" y="163" width="24" height="28" rx="8"/>
+    <rect x="468" y="163" width="24" height="28" rx="8"/>
+    <rect x="468" y="237" width="24" height="28" rx="8"/>
+    <rect x="570" y="237" width="24" height="28" rx="8"/>
+  </g>
+
+  <g transform="translate(256 302)" filter="url(#softShadow)">
+    <path d="M7 18 16-9 35 8c13-6 29-6 42 0L96-9l9 27v24H7z" fill="#d98263" stroke="#70452f" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="56" cy="37" rx="45" ry="37" fill="#fff8ed" stroke="#70452f" stroke-width="4"/>
+    <path d="M18 22c14-9 27-11 39-4-3 13-14 20-33 20z" fill="#cc684f" opacity=".9"/>
+    <circle cx="42" cy="36" r="4.5" fill="#4c362c"/><circle cx="70" cy="36" r="4.5" fill="#4c362c"/>
+    <path d="m53 47 4-3 4 3-4 5z" fill="#e6877b"/>
+    <path d="M57 52q-9 8-16 1m16-1q9 8 16 1" fill="none" stroke="#70452f" stroke-width="3" stroke-linecap="round"/>
+    <path d="M9 65h96l-13 34H22z" fill="url(#coralBowl)" stroke="#70452f" stroke-width="5" stroke-linejoin="round"/>
+    <ellipse cx="57" cy="66" rx="44" ry="9" fill="#fff" stroke="#d98d78" stroke-width="3"/>
+    <path d="M40 66q17-9 34 0" fill="none" stroke="#d8f3fa" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(424 302)" filter="url(#softShadow)">
+    <path d="M7 18 16-9 35 8c13-6 29-6 42 0L96-9l9 27v24H7z" fill="#978b82" stroke="#70452f" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="56" cy="37" rx="45" ry="37" fill="#fff8ed" stroke="#70452f" stroke-width="4"/>
+    <path d="M57 1c17 2 28 10 39 24-16 4-28 0-39-10z" fill="#6f6560"/>
+    <circle cx="42" cy="36" r="4.5" fill="#4c362c"/><circle cx="70" cy="36" r="4.5" fill="#4c362c"/>
+    <path d="m53 47 4-3 4 3-4 5z" fill="#e6877b"/>
+    <path d="M57 52q-9 8-16 1m16-1q9 8 16 1" fill="none" stroke="#70452f" stroke-width="3" stroke-linecap="round"/>
+    <path d="M9 65h96l-13 34H22z" fill="url(#sageBowl)" stroke="#70452f" stroke-width="5" stroke-linejoin="round"/>
+    <ellipse cx="57" cy="66" rx="44" ry="9" fill="#fff" stroke="#99ba87" stroke-width="3"/>
+    <path d="M40 66q17-9 34 0" fill="none" stroke="#d8f3fa" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(536 302)" filter="url(#softShadow)">
+    <path d="M7 18 16-9 35 8c13-6 29-6 42 0L96-9l9 27v24H7z" fill="#e2a34b" stroke="#70452f" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="56" cy="37" rx="45" ry="37" fill="#fff8ed" stroke="#70452f" stroke-width="4"/>
+    <path d="M18 16c11-9 23-12 36-8l-9 23-27 5zm68 1c-9-8-18-10-27-7l9 21 25 5z" fill="#dda049"/>
+    <circle cx="42" cy="36" r="4.5" fill="#4c362c"/><path d="M68 36q5-5 10 0" fill="none" stroke="#4c362c" stroke-width="4" stroke-linecap="round"/>
+    <path d="m53 47 4-3 4 3-4 5z" fill="#e6877b"/>
+    <path d="M57 52q-9 8-16 1m16-1q9 8 16 1" fill="none" stroke="#70452f" stroke-width="3" stroke-linecap="round"/>
+    <path d="M9 65h96l-13 34H22z" fill="url(#goldBowl)" stroke="#70452f" stroke-width="5" stroke-linejoin="round"/>
+    <ellipse cx="57" cy="66" rx="44" ry="9" fill="#fff" stroke="#e6b75c" stroke-width="3"/>
+    <path d="M40 66q17-9 34 0" fill="none" stroke="#d8f3fa" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#fff" stroke="#6aa9bd" stroke-width="2" opacity=".95">
+    <path d="M214 142c10 14 11 22 0 27-11-5-10-13 0-27z"/>
+    <path d="M626 171c9 13 10 20 0 25-10-5-9-12 0-25z"/>
+    <path d="M514 120c7 10 8 16 0 20-8-4-7-10 0-20z"/>
+  </g>
+  <g fill="#f5bd67">
+    <path d="m650 111 5 11 12 2-9 8 2 12-10-6-11 6 3-12-9-8 12-2z"/>
+    <circle cx="239" cy="124" r="5"/>
+    <circle cx="613" cy="141" r="4"/>
+  </g>
+</svg>
