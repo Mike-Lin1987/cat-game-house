@@ -14,7 +14,7 @@ const {
 
 test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () => {
   assert.equal(Array.isArray(CAT_GAME_CATALOG), true);
-  assert.equal(CAT_GAME_CATALOG.length, 6);
+  assert.equal(CAT_GAME_CATALOG.length, 7);
 
   const [game, secondGame, thirdGame] = CAT_GAME_CATALOG;
   assert.deepEqual(
@@ -98,6 +98,27 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-triple-match/index.html',
       tutorialHref: './tutorials/cat-triple-match/index.html',
       storageKey: 'cat-triple-match:v1',
+      levelCount: 100,
+      offline: true,
+    },
+  );
+  const seventhGame = CAT_GAME_CATALOG[6];
+  assert.deepEqual(
+    {
+      id: seventhGame.id,
+      title: seventhGame.title,
+      href: seventhGame.href,
+      tutorialHref: seventhGame.tutorialHref,
+      storageKey: seventhGame.storageKey,
+      levelCount: seventhGame.levelCount,
+      offline: seventhGame.offline,
+    },
+    {
+      id: 'cat-courier',
+      title: '貓咪快遞員',
+      href: './games/cat-courier/index.html',
+      tutorialHref: './tutorials/cat-courier/index.html',
+      storageKey: 'cat-courier:v1',
       levelCount: 100,
       offline: true,
     },

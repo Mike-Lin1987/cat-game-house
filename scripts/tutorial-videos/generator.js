@@ -73,6 +73,9 @@
     if (iconKind === 'animal') {
       drawTripleAnimal(82, 65, 36, 'cat');
       context.fillText(title, 111, 65);
+    } else if (iconKind === 'courier') {
+      drawHelmetCourier(62, 41, 48, false);
+      context.fillText(title, 118, 65);
     } else {
       context.fillText(`🐱  ${title}`, 70, 65);
     }
@@ -1231,6 +1234,308 @@
     drawFooter('#bd7441', time / DURATION);
   }
 
+  function drawCourierHouse(x, y, color, item, order) {
+    context.save();
+    context.translate(x, y);
+    context.fillStyle = color;
+    context.strokeStyle = '#704023';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-36, -4);
+    context.lineTo(0, -36);
+    context.lineTo(36, -4);
+    context.lineTo(30, 3);
+    context.lineTo(30, 35);
+    context.lineTo(-30, 35);
+    context.lineTo(-30, 3);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    roundedRect(-20, 3, 40, 30, 8, '#fff7e6', '#704023', 2);
+    context.fillStyle = '#704023';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 19px ${FONT}`;
+    context.fillText(item, 0, 18);
+    roundedRect(23, -43, 29, 29, 14, '#fff8e8', '#aa6132', 2);
+    context.fillStyle = '#704023';
+    context.font = `900 16px ${FONT}`;
+    context.fillText(String(order), 37, -28);
+    context.restore();
+  }
+
+  function drawHelmetCourier(x, y, size, withScooter = true) {
+    context.save();
+    context.translate(x, y);
+    const scale = size / 70;
+    context.scale(scale, scale);
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
+    context.strokeStyle = '#402f2a';
+    context.lineWidth = 2.4;
+
+    if (withScooter) {
+      context.fillStyle = '#263640';
+      for (const wheelX of [18, 54]) {
+        context.beginPath();
+        context.arc(wheelX, 58, 7, 0, Math.PI * 2);
+        context.fill();
+        context.stroke();
+        context.fillStyle = '#d9e2e7';
+        context.beginPath();
+        context.arc(wheelX, 58, 3, 0, Math.PI * 2);
+        context.fill();
+        context.fillStyle = '#263640';
+      }
+      context.fillStyle = '#f47a1f';
+      context.beginPath();
+      context.moveTo(13, 51);
+      context.lineTo(49, 51);
+      context.lineTo(61, 38);
+      context.lineTo(44, 38);
+      context.lineTo(36, 48);
+      context.lineTo(22, 48);
+      context.closePath();
+      context.fill();
+      context.stroke();
+      roundedRect(3, 34, 17, 16, 4, '#f6b93b', '#402f2a', 2.4);
+      context.strokeStyle = '#fff7e8';
+      context.lineWidth = 2.2;
+      context.beginPath();
+      context.moveTo(7, 39);
+      context.lineTo(16, 39);
+      context.moveTo(11.5, 36);
+      context.lineTo(11.5, 46);
+      context.stroke();
+      context.strokeStyle = '#402f2a';
+      context.lineWidth = 2.4;
+      context.fillStyle = '#f47a1f';
+      context.beginPath();
+      context.roundRect(30, 29, 20, 21, 8);
+      context.fill();
+      context.stroke();
+    }
+
+    context.fillStyle = '#aeb5bb';
+    context.beginPath();
+    context.ellipse(40, 27, 16, 15, 0, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+    context.fillStyle = '#f4eee7';
+    context.beginPath();
+    context.ellipse(40, 36, 12, 7, 0, 0, Math.PI * 2);
+    context.fill();
+
+    context.fillStyle = '#17324d';
+    context.beginPath();
+    context.moveTo(21, 27);
+    context.bezierCurveTo(20, 12, 28, 4, 40, 4);
+    context.bezierCurveTo(54, 4, 62, 13, 60, 29);
+    context.lineTo(53, 31);
+    context.bezierCurveTo(48, 24, 31, 22, 23, 31);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = '#fff7e8';
+    context.beginPath();
+    context.moveTo(27, 11);
+    context.bezierCurveTo(31, 7, 35, 6, 39, 6);
+    context.lineTo(35, 25);
+    context.lineTo(29, 26);
+    context.closePath();
+    context.fill();
+    context.fillStyle = '#f47a1f';
+    context.beginPath();
+    context.moveTo(39, 5);
+    context.bezierCurveTo(44, 5, 48, 7, 51, 10);
+    context.lineTo(50, 26);
+    context.lineTo(43, 25);
+    context.closePath();
+    context.fill();
+    context.fillStyle = '#f6b93b';
+    context.beginPath();
+    context.moveTo(51, 10);
+    context.bezierCurveTo(55, 13, 57, 17, 58, 21);
+    context.lineTo(56, 28);
+    context.lineTo(51, 26);
+    context.closePath();
+    context.fill();
+
+    context.fillStyle = '#1f2630';
+    context.beginPath();
+    context.moveTo(22, 20);
+    context.bezierCurveTo(31, 13, 48, 13, 59, 20);
+    context.lineTo(57, 29);
+    context.bezierCurveTo(46, 24, 34, 24, 22, 28);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.strokeStyle = '#557991';
+    context.lineWidth = 1.8;
+    context.beginPath();
+    context.bezierCurveTo(29, 18, 45, 17, 53, 20);
+    context.stroke();
+
+    for (const eyeX of [34, 47]) {
+      context.fillStyle = '#f6b93b';
+      context.beginPath();
+      context.ellipse(eyeX, 31, 3.5, 4.5, 0, 0, Math.PI * 2);
+      context.fill();
+      context.strokeStyle = '#402f2a';
+      context.lineWidth = 1.5;
+      context.stroke();
+      context.fillStyle = '#1a1b1c';
+      context.beginPath();
+      context.arc(eyeX, 32, 1.8, 0, Math.PI * 2);
+      context.fill();
+      context.fillStyle = '#fff';
+      context.beginPath();
+      context.arc(eyeX - .8, 30.2, .7, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.strokeStyle = '#402f2a';
+    context.lineWidth = 1.7;
+    context.fillStyle = '#5a4541';
+    context.beginPath();
+    context.moveTo(38, 37);
+    context.lineTo(40.5, 39);
+    context.lineTo(43, 37);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.beginPath();
+    context.moveTo(36, 42);
+    context.quadraticCurveTo(40, 45, 45, 42);
+    context.stroke();
+    context.restore();
+  }
+
+  const courierPath = [
+    [0,5],[1,5],[2,5],[2,4],[2,3],[3,3],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],
+  ];
+
+  function drawCourierBoard(step, tween) {
+    const originX = 112;
+    const originY = 135;
+    const cell = 70;
+    roundedRect(originX - 14, originY - 14, 448, 448, 30, '#c69158', '#704023', 6);
+    for (let row = 0; row < 6; row += 1) {
+      for (let column = 0; column < 6; column += 1) {
+        const isRoad = courierPath.some(([r, c]) => r === row && c === column)
+          || (row === 4 && column === 4) || (row === 3 && column === 4);
+        context.fillStyle = isRoad ? '#898d88' : ['#9cc66e', '#8fbd65'][(row + column) % 2];
+        context.fillRect(originX + column * cell, originY + row * cell, cell, cell);
+        context.strokeStyle = 'rgba(84,73,51,.2)';
+        context.lineWidth = 1.5;
+        context.strokeRect(originX + column * cell, originY + row * cell, cell, cell);
+        if (isRoad) {
+          context.strokeStyle = 'rgba(255,245,192,.7)';
+          context.lineWidth = 3;
+          context.setLineDash([10, 9]);
+          context.beginPath();
+          context.moveTo(originX + column * cell + 14, originY + row * cell + 35);
+          context.lineTo(originX + column * cell + 56, originY + row * cell + 35);
+          context.stroke();
+          context.setLineDash([]);
+        } else if ((row + column) % 3 === 0) {
+          context.fillStyle = '#5d9e49';
+          context.beginPath();
+          context.arc(originX + column * cell + 35, originY + row * cell + 36, 18, 0, Math.PI * 2);
+          context.fill();
+        }
+      }
+    }
+    const visibleCount = Math.min(
+      courierPath.length,
+      step === 1 ? Math.floor(1 + tween * 4)
+        : step === 2 ? Math.floor(5 + tween * 4)
+          : step === 3 ? Math.floor(9 + tween * 4) : courierPath.length,
+    );
+    context.save();
+    context.strokeStyle = '#ffe37a';
+    context.lineWidth = 18;
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
+    context.shadowColor = '#ffbd2e';
+    context.shadowBlur = 18;
+    context.beginPath();
+    courierPath.slice(0, visibleCount).forEach(([row, column], index) => {
+      const x = originX + column * cell + cell / 2;
+      const y = originY + row * cell + cell / 2;
+      if (index === 0) context.moveTo(x, y);
+      else context.lineTo(x, y);
+    });
+    context.stroke();
+    context.strokeStyle = '#ffad22';
+    context.lineWidth = 7;
+    context.shadowBlur = 0;
+    context.stroke();
+    context.restore();
+    drawCourierHouse(originX + 5.5 * cell, originY + 2.5 * cell, '#5c9fc1', '奶', 1);
+    drawCourierHouse(originX + 1.5 * cell, originY + 4.5 * cell, '#e5aa3d', '魚', 2);
+    drawCourierHouse(originX + 1.5 * cell, originY + .5 * cell, '#e48183', '箱', 3);
+    const courierIndex = Math.max(0, visibleCount - 1);
+    const courierCell = courierPath[courierIndex];
+    drawHelmetCourier(
+      originX + courierCell[1] * cell + 2,
+      originY + courierCell[0] * cell + 1,
+      66,
+    );
+  }
+
+  function drawCourierIntro(time) {
+    drawBackground('#d8893f', time);
+    const appear = ease(progress(time, 0, 1.2));
+    context.globalAlpha = appear;
+    roundedRect(100, 150, 270, 260, 38, '#d99a5e', '#704023', 5);
+    context.strokeStyle = '#858985';
+    context.lineWidth = 34;
+    context.lineCap = 'round';
+    context.beginPath();
+    context.moveTo(130, 360);
+    context.lineTo(230, 360);
+    context.lineTo(230, 260);
+    context.lineTo(330, 260);
+    context.stroke();
+    context.strokeStyle = '#ffb52d';
+    context.lineWidth = 8;
+    context.stroke();
+    drawHelmetCourier(118, 284, 128);
+    drawCourierHouse(330, 246, '#5c9fc1', '奶', 1);
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillStyle = '#382f2a';
+    context.font = `900 65px ${FONT}`;
+    context.fillText('貓咪快遞員', 420, 205);
+    context.font = `700 34px ${FONT}`;
+    context.fillStyle = '#7c4727';
+    context.fillText('24 秒快速教學', 425, 310);
+    roundedRect(425, 390, 660, 64, 22, '#d8893f');
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 27px ${FONT}`;
+    context.fillStyle = '#fff';
+    context.fillText('照順序、看箭頭、用最少油量送達', 755, 422);
+    context.globalAlpha = 1;
+    drawFooter('#d8893f', time / DURATION);
+  }
+
+  function drawCourierTutorial(time) {
+    const local = time - 2.5;
+    let step = 1;
+    let title = '從快遞員起點畫出道路';
+    let description = '只能上下左右前進，草地、水池與障礙物都不能通行。';
+    if (local >= 5) { step = 2; title = '依任務卡順序送到貓咪家'; description = '不能提前進入後面的站點，完成順序會即時勾選。'; }
+    if (local >= 10) { step = 3; title = '不走回頭路並遵守單行道'; description = '道路格不能重複；拖回舊格可以裁切並重新規劃。'; }
+    if (local >= 15) { step = 4; title = '在油量內抵達最後一站'; description = '路線完成後按「出發」，最短路線且不用提示可得三星。'; }
+    drawBackground('#d8893f', time);
+    drawTopBar('貓咪快遞員教學', '#7c4727', step, 'courier');
+    drawCourierBoard(step, ease(progress(local % 5, 0, 1)));
+    drawCaption(String(step), title, description, '#d8893f');
+    drawFooter('#d8893f', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
@@ -1251,6 +1556,10 @@
       drawTripleIntro(time);
     } else if (kind === 'cat-triple-match') {
       drawTripleTutorial(time);
+    } else if (kind === 'cat-courier' && time < 2.5) {
+      drawCourierIntro(time);
+    } else if (kind === 'cat-courier') {
+      drawCourierTutorial(time);
     } else if (time < 2.5) {
       drawSolitaireIntro(time);
     } else {

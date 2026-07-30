@@ -1,0 +1,12 @@
+{
+  "name": "cat-courier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "可直接離線執行的貓咪配送路線益智遊戲",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "generate-levels": "node scripts/generate-levels.js",
+    "validate": "node scripts/validate-levels.js",
+    "report": "node scripts/generate-report.js"
+  }
+}

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">貓咪快遞員</title>
+  <desc id="desc">戴著深藍橘紋安全帽的灰貓快遞員，騎著橘色小機車穿梭奶油木質社區。</desc>
+  <defs>
+    <linearGradient id="cover-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fff9ed"/>
+      <stop offset=".58" stop-color="#f7dfb7"/>
+      <stop offset="1" stop-color="#b9ddeb"/>
+    </linearGradient>
+    <linearGradient id="cover-visor" x1="0" y1="0" x2="1" y2=".9">
+      <stop stop-color="#33495b"/>
+      <stop offset=".45" stop-color="#111b25"/>
+      <stop offset="1" stop-color="#213b50"/>
+    </linearGradient>
+    <linearGradient id="cover-fur" x1=".2" y1="0" x2=".8" y2="1">
+      <stop stop-color="#d4d8dc"/>
+      <stop offset="1" stop-color="#929da6"/>
+    </linearGradient>
+    <linearGradient id="cover-scooter" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ff9b35"/>
+      <stop offset="1" stop-color="#e85f19"/>
+    </linearGradient>
+    <filter id="cover-shadow" x="-30%" y="-30%" width="170%" height="180%">
+      <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#5a3824" flood-opacity=".28"/>
+    </filter>
+    <filter id="cover-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="640" height="360" rx="34" fill="url(#cover-bg)"/>
+  <circle cx="585" cy="20" r="105" fill="#fff" opacity=".32"/>
+  <circle cx="74" cy="39" r="4" fill="#f47a1f" opacity=".35"/>
+  <circle cx="98" cy="24" r="8" fill="#f6b93b" opacity=".28"/>
+  <path d="M0 300h640v60H0z" fill="#d79858"/>
+  <path d="M0 322h640M0 344h640" stroke="#a9633c" stroke-width="3" opacity=".45"/>
+
+  <g font-family="Microsoft JhengHei,sans-serif">
+    <text x="40" y="62" font-size="30" font-weight="900" fill="#17324d">貓咪</text>
+    <text x="40" y="108" font-size="43" font-weight="900" fill="#d85f1d">快遞員</text>
+    <rect x="39" y="123" width="214" height="34" rx="17" fill="#fff9ea" stroke="#dfa05f" stroke-width="2"/>
+    <text x="56" y="146" font-size="17" font-weight="800" fill="#704023">照順序，把心意送到家</text>
+  </g>
+
+  <g transform="translate(32 172)" filter="url(#cover-shadow)">
+    <rect width="338" height="137" rx="23" fill="#b77d4a" stroke="#704023" stroke-width="5"/>
+    <rect x="10" y="10" width="318" height="117" rx="15" fill="#91bd67"/>
+    <path d="M22 106h133V72h78V30h84" fill="none" stroke="#838986" stroke-width="31" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22 106h133V72h78V30h84" fill="none" stroke="#fff2c1" stroke-width="3" stroke-dasharray="9 9"/>
+    <path d="M25 106h128V72h80V31h75" fill="none" stroke="#f6b93b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#cover-glow)"/>
+    <g transform="translate(270 3)">
+      <path d="M0 29 24 6l24 23v32H0z" fill="#fff7e8" stroke="#704023" stroke-width="3"/>
+      <path d="M-3 29 24 2l27 27" fill="none" stroke="#5d99bb" stroke-width="9"/>
+      <circle cx="24" cy="42" r="8" fill="#b9e5f1"/>
+    </g>
+    <g transform="translate(126 46)">
+      <path d="M0 29 24 6l24 23v32H0z" fill="#fff7e8" stroke="#704023" stroke-width="3"/>
+      <path d="M-3 29 24 2l27 27" fill="none" stroke="#e58183" stroke-width="9"/>
+      <rect x="15" y="32" width="19" height="16" fill="#d28b3f" stroke="#704023" stroke-width="2"/>
+    </g>
+  </g>
+
+  <g transform="translate(448 12)" filter="url(#cover-shadow)" stroke="#402f2a" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-16 276h156l25 36H-7z" fill="url(#cover-scooter)" stroke-width="5"/>
+    <circle cx="18" cy="317" r="19" fill="#263640" stroke-width="5"/>
+    <circle cx="127" cy="317" r="19" fill="#263640" stroke-width="5"/>
+    <circle cx="18" cy="317" r="8" fill="#d9e2e7" stroke-width="3"/>
+    <circle cx="127" cy="317" r="8" fill="#d9e2e7" stroke-width="3"/>
+    <rect x="-40" y="242" width="58" height="53" rx="9" fill="#f6b93b" stroke-width="5"/>
+    <path d="M-26 258H4M-11 247v37" stroke="#fff7e8" stroke-width="5"/>
+    <path d="M38 246c-9-29-5-53 14-71h58c20 19 24 43 14 72z" fill="#f47a1f" stroke-width="5"/>
+
+    <ellipse cx="82" cy="160" rx="76" ry="75" fill="url(#cover-fur)" stroke-width="6"/>
+    <path d="M23 176c20 36 91 43 120 0-11 43-37 65-65 65-30 0-50-22-55-65z" fill="#f4eee7" stroke="none"/>
+
+    <g data-part="helmet">
+      <path d="M-1 146C-7 67 28 22 83 22c63 0 100 48 92 127l-31 13c-24-37-95-45-135 0z" fill="#17324d" stroke-width="7"/>
+      <path d="M22 90c12-28 31-45 56-53l34 8c-31 21-43 57-44 102l-29 1c-2-22-7-42-17-58z" fill="#fff7e8" stroke="none"/>
+      <path d="M78 37c14-4 30-2 43 4-25 30-31 63-25 108l-24-3c-4-41-1-77 6-109z" fill="#f47a1f" stroke="none"/>
+      <path d="M110 44c10 4 20 11 29 21-17 27-22 56-17 91l-20-5c-6-39-3-75 8-107z" fill="#f6b93b" stroke="none"/>
+      <path d="M4 112c45-35 116-37 170-2l-8 49c-51-24-105-26-162-4z" fill="url(#cover-visor)" stroke-width="6"/>
+      <path d="M23 112c32-18 78-23 116-8" fill="none" stroke="#6489a4" stroke-width="7" opacity=".65"/>
+      <path d="M147 95c19 5 27 16 25 29" fill="none" stroke="#a9d9f0" stroke-width="6" opacity=".55"/>
+    </g>
+
+    <ellipse cx="52" cy="170" rx="15" ry="20" fill="#f6b93b" stroke-width="4"/>
+    <ellipse cx="111" cy="170" rx="15" ry="20" fill="#f6b93b" stroke-width="4"/>
+    <ellipse cx="54" cy="173" rx="8" ry="12" fill="#17191b" stroke="none"/>
+    <ellipse cx="113" cy="173" rx="8" ry="12" fill="#17191b" stroke="none"/>
+    <circle cx="49" cy="164" r="4" fill="#fff" stroke="none"/>
+    <circle cx="108" cy="164" r="4" fill="#fff" stroke="none"/>
+    <path d="m76 194 7 5 7-5c0 9-3 14-7 14s-7-5-7-14z" fill="#5a4541" stroke-width="3"/>
+    <path d="M65 210c10 10 25 10 36 0" fill="none" stroke-width="4"/>
+    <path d="M134 218l22 42" fill="none" stroke="#17324d" stroke-width="8"/>
+    <path d="M150 253h34" fill="none" stroke-width="7"/>
+  </g>
+
+  <g transform="translate(40 320)" font-family="Microsoft JhengHei,sans-serif">
+    <circle cx="9" cy="9" r="8" fill="#f6b93b"/>
+    <path d="M28 9h106" stroke="#fff1bd" stroke-width="5" stroke-linecap="round"/>
+    <text x="149" y="15" font-size="16" font-weight="900" fill="#fff7e8">規劃路線・節省油量</text>
+  </g>
+</svg>
