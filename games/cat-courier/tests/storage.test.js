@@ -41,6 +41,7 @@ test('完成紀錄保留高星、少油量與短時間並解鎖下一關', () =>
   Storage.updateRecord(store, 'L001', { stars: 3, fuelUsed: 6, elapsed: 60 });
   Storage.updateRecord(store, 'L001', { stars: 3, fuelUsed: 4, elapsed: 55 });
   Storage.updateRecord(store, 'L001', { stars: 3, fuelUsed: 4, elapsed: 30 });
+  Storage.updateRecord(store, 'L001', { stars: 2, fuelUsed: 1, elapsed: 1 });
   const progress = Storage.loadProgress(store);
   assert.equal(progress.unlockedLevel, 2);
   assert.deepEqual(progress.records.L001, {

@@ -17,6 +17,7 @@ test('遊戲 runtime 可由 file 直接載入且不使用網路、fetch、ES Mod
     read('js/solver.js'), read('js/storage.js'), read('js/icons.js'),
   ].join('\n');
   assert.doesNotMatch(runtimeFiles, /type=["']module|(?:^|\s)(?:import|export)\s|fetch\s*\(|serviceWorker|https?:\/\//m);
+  assert.equal((html.match(/<script defer src=/g) || []).length, 13);
   assert.match(html, /js\/data\/levels-001-020\.js/);
   assert.match(html, /js\/data\/levels-081-100\.js/);
 });
@@ -30,6 +31,7 @@ test('Pointer Events、快速拖曳、鍵盤 grid 與完整工具列契約存在
   }
   assert.match(app, /setPointerCapture/);
   assert.match(app, /interpolateCells/);
+  assert.match(app, /state\.status !== 'animating'/);
   assert.match(app, /ArrowUp/);
   assert.match(app, /Backspace/);
   assert.match(renderer, /role="grid"/);
@@ -64,9 +66,19 @@ test('首頁、選關、結果與 review 提供完整可離線流程', () => {
     elapsedText: '00:12', hintsUsed: 0, finalLevel: false,
   });
   assert.match(home, /開始遊戲/);
-  assert.match(home, /href="\.\.\/\.\.\/"/);
+  assert.match(home, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home/);
   assert.match(select, /第 1 關/);
   assert.match(result, /下一關/);
+  const failure = Renderer.modalMarkup('failure');
+  assert.match(failure, /油量用完了/);
+  assert.match(failure, /data-action="failure-clear"/);
+  const finalResult = Renderer.modalMarkup('complete', {
+    stars: 3, fuelUsed: 52, optimalSteps: 52, fuelRemaining: 2,
+    elapsedText: '04:12', hintsUsed: 0, finalLevel: true,
+    completedCount: 100, totalStars: 287, totalPlayText: '180:04', notThreeStarCount: 9,
+  });
+  assert.match(finalResult, /總遊玩時間 180:04/);
+  assert.match(finalResult, /未滿 3 星關卡 9 關/);
   const review = read('review.html') + read('js/review.js');
   assert.match(review, /review-search/);
   assert.match(review, /review-chapter/);

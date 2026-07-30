@@ -15,6 +15,10 @@
   const prev = root.document.getElementById('review-prev');
   const next = root.document.getElementById('review-next');
   const position = root.document.getElementById('review-position');
+  const portalHomeLink = root.document.querySelector('[data-portal-home]');
+  if (portalHomeLink) {
+    portalHomeLink.href = root.location.protocol === 'file:' ? '../../index.html' : '../../';
+  }
   let filtered = Levels;
   let index = 0;
   let showSolution = false;
@@ -24,6 +28,14 @@
   function terrainIcon(terrain) {
     return ['tree', 'crate', 'barrier', 'fence', 'water', 'bridge'].includes(terrain)
       ? Icons.get(terrain) : '';
+  }
+
+  function edgeArrow(edge) {
+    const rowDelta = edge.to[0] - edge.from[0];
+    const columnDelta = edge.to[1] - edge.from[1];
+    return ({ '-1,0': '↑', '0,1': '→', '1,0': '↓', '0,-1': '←' })[
+      `${rowDelta},${columnDelta}`
+    ] || '';
   }
 
   function render() {
@@ -56,7 +68,7 @@
             return `<div class="review-cell ${terrain} ${isStart ? 'start' : ''}" title="${terrain}">
               ${terrainIcon(terrain)}
               ${stop ? `${Icons.get(stop.item)}<span class="order">${stop.order + 1}</span>` : ''}
-              ${edge ? '<span class="arrow">➜</span>' : ''}
+              ${edge ? `<span class="arrow" aria-label="單行道 ${edgeArrow(edge)}">${edgeArrow(edge)}</span>` : ''}
             </div>`;
           }).join('')).join('')}
           <svg class="review-route" viewBox="0 0 ${level.columns} ${level.rows}" preserveAspectRatio="none" aria-hidden="true">

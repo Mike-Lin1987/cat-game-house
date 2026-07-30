@@ -131,6 +131,7 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   const tripleScript = read('games/cat-triple-match/js/app.js');
   const courierPage = read('games/cat-courier/index.html');
   const courierRenderer = read('games/cat-courier/js/renderer.js');
+  const courierScript = read('games/cat-courier/js/app.js');
 
   assert.match(portalScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
   assert.match(portalScript, /\/index\\\.html/);
@@ -148,7 +149,9 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(tripleScript, /const PORTAL_HREF/);
   assert.match(triplePage, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home/);
   assert.match(courierPage, /href="\.\.\/\.\.\/manifest\.webmanifest"/);
-  assert.match(courierRenderer, /href="\.\.\/\.\.\/"[^>]*aria-label="回到遊戲小屋"/);
+  assert.match(courierRenderer, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home[^>]*aria-label="回到遊戲小屋"/);
+  assert.match(courierScript, /root\.location\.protocol\s*===\s*['"]file:['"]/);
+  assert.match(courierScript, /const PORTAL_HREF/);
 });
 
 test('加入貓咪快遞員會更新既有 PWA 離線快取', () => {

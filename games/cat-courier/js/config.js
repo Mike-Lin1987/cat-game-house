@@ -6,13 +6,13 @@
   'use strict';
 
   return Object.freeze({
-    title: '貓咪快遞員',
-    levelCount: 100,
+    gameTitle: '貓咪快遞員',
+    totalLevels: 100,
     chapterCount: 5,
-    hintsPerLevel: 3,
-    historyLimit: 100,
+    maxHintsPerAttempt: 3,
+    maxUndoPathStates: 100,
     dataVersion: 1,
-    generatorVersion: 1,
+    generatorVersion: 2,
     storageKey: 'cat-courier:v1',
     passableTerrain: Object.freeze(['road', 'bridge', 'plaza']),
     items: Object.freeze([

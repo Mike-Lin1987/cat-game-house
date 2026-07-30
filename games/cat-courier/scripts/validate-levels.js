@@ -35,6 +35,7 @@ function analyzeLevels(levels = Levels) {
       obstacleCount: level.metrics.obstacleCount,
       oneWayEdgeCount: level.oneWayEdges.length,
       branchCellCount: level.metrics.branchCellCount,
+      detourLoopCount: level.metrics.detourLoopCount,
       optimalSteps: level.optimalSteps,
       fuelLimit: level.fuelLimit,
       optimalSolutionCount: solved.optimalSolutionCount,
@@ -47,6 +48,11 @@ function analyzeLevels(levels = Levels) {
       duplicate,
       valid,
       errors: [...definitionErrors, ...stored.errors],
+      stopOrderValid: ![...definitionErrors, ...stored.errors]
+        .some((error) => /配送站|stops|提前進入/.test(error)),
+      oneWayValid: ![...definitionErrors, ...stored.errors]
+        .some((error) => /單行道|oneWay/.test(error)),
+      placeholderCount: (JSON.stringify(level).match(/TODO|TBD|placeholder/gi) || []).length,
     };
   });
   const summary = {
@@ -59,6 +65,10 @@ function analyzeLevels(levels = Levels) {
     invalidStoredSolutions: rows.filter((row) => !row.storedSolutionValid).length,
     exceededFuelLimits: rows.filter((row) => row.optimalSteps > row.fuelLimit).length,
     duplicateCanonicalBoards: rows.filter((row) => row.duplicate).length,
+    stopOrderFailures: rows.filter((row) => !row.stopOrderValid).length,
+    oneWayFailures: rows.filter((row) => !row.oneWayValid).length,
+    missingStops: rows.filter((row) => row.stopCount < 2).length,
+    placeholderCount: rows.reduce((sum, row) => sum + row.placeholderCount, 0),
     totalStops: rows.reduce((sum, row) => sum + row.stopCount, 0),
     totalOneWayEdges: rows.reduce((sum, row) => sum + row.oneWayEdgeCount, 0),
     averageOptimalSteps: Number((rows.reduce((sum, row) => sum + row.optimalSteps, 0) / rows.length).toFixed(2)),
@@ -67,7 +77,9 @@ function analyzeLevels(levels = Levels) {
 }
 
 function assertValid(analysis) {
-  if (analysis.summary.totalLevels !== 100 || analysis.summary.validData !== 100) {
+  if (analysis.summary.totalLevels !== 100 || analysis.summary.validData !== 100
+    || analysis.summary.stopOrderFailures || analysis.summary.oneWayFailures
+    || analysis.summary.missingStops || analysis.summary.placeholderCount) {
     const failures = analysis.levels.filter((level) => !level.valid)
       .map((level) => `${level.id}：${level.errors.join('、') || '求解或去重驗證失敗'}`);
     throw new Error(failures.join('\n') || '關卡總數或驗證摘要不符');

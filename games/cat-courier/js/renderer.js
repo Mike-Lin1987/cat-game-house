@@ -1,10 +1,12 @@
 (function (root, factory) {
+  const config = typeof module === 'object' && module.exports
+    ? require('./config.js') : root.CAT_COURIER_CONFIG;
   const icons = typeof module === 'object' && module.exports
     ? require('./icons.js') : root.CatCourierIcons;
-  const api = factory(icons);
+  const api = factory(config, icons);
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.CatCourierRenderer = api;
-})(typeof globalThis !== 'undefined' ? globalThis : this, function (Icons) {
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (Config, Icons) {
   'use strict';
 
   const TERRAIN_LABELS = Object.freeze({
@@ -33,7 +35,7 @@
 
   function topNav(title, subtitle = '') {
     return `<header class="page-topbar">
-      <a class="round-button back-house" href="../../" aria-label="回到遊戲小屋">←</a>
+      <a class="round-button back-house" href="../../index.html" data-portal-home aria-label="回到遊戲小屋">←</a>
       <div class="page-title">
         <span class="paw-kicker">🐾 ${escapeHtml(subtitle || '離線路線益智')}</span>
         <h1>${escapeHtml(title)}</h1>
@@ -269,11 +271,22 @@
         <div class="modal-actions"><button type="button" data-action="close-modal">取消</button><button class="primary-action" type="button" data-action="confirm-restart">重來</button></div>
       </section></div>`;
     }
+    if (type === 'failure') {
+      return `<div class="modal-backdrop" data-modal="failure"><section class="modal-card compact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <div class="result-cat">${Icons.get('fuel')}</div>
+        <h2 id="modal-title">油量用完了</h2>
+        <p>目前路線還沒送完全部物品。可以回到地圖裁切路線，或清除後重新規劃。</p>
+        <div class="modal-actions">
+          <button type="button" data-action="close-modal">回到規劃</button>
+          <button class="primary-action" type="button" data-action="failure-clear">清除路線</button>
+        </div>
+      </section></div>`;
+    }
     if (type === 'complete') {
       return `<div class="modal-backdrop celebration" data-modal="complete"><section class="modal-card result-card" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
         <div class="result-cat">${Icons.get('courier')}</div>
         <p class="eyebrow">全部送達</p>
-        <h2 id="modal-title">${data.finalLevel ? '恭喜完成全部 100 關' : '配送任務完成！'}</h2>
+        <h2 id="modal-title">${data.finalLevel ? `恭喜完成全部 ${Config.totalLevels} 關` : '配送任務完成！'}</h2>
         ${starsMarkup(data.stars, '本關獲得')}
         <dl class="result-stats">
           <div><dt>使用油量</dt><dd>${data.fuelUsed}</dd></div>
@@ -282,7 +295,10 @@
           <div><dt>完成時間</dt><dd>${escapeHtml(data.elapsedText)}</dd></div>
           <div><dt>使用提示</dt><dd>${data.hintsUsed}</dd></div>
         </dl>
-        ${data.finalLevel ? `<p>已完成 ${data.completedCount}/100 關，累積 ${data.totalStars}/300 顆星。</p>` : ''}
+        ${data.finalLevel ? `<div class="final-summary">
+          <p>已完成 ${data.completedCount}/${Config.totalLevels} 關，累積 ${data.totalStars}/${Config.totalLevels * 3} 顆星。</p>
+          <p>總遊玩時間 ${escapeHtml(data.totalPlayText)}，未滿 3 星關卡 ${data.notThreeStarCount} 關。</p>
+        </div>` : ''}
         <div class="modal-actions">
           <button type="button" data-action="confirm-restart">再玩一次</button>
           ${data.finalLevel ? '' : '<button class="primary-action" type="button" data-action="next-level">下一關</button>'}

@@ -10,7 +10,8 @@
   const app = root.document.getElementById('courier-app');
   const modalRoot = root.document.getElementById('courier-modal-root');
   const live = root.document.getElementById('courier-live');
-  if (!app || !modalRoot || Levels.length !== Config.levelCount) return;
+  const PORTAL_HREF = root.location.protocol === 'file:' ? '../../index.html' : '../../';
+  if (!app || !modalRoot || Levels.length !== Config.totalLevels) return;
 
   let progress = Storage.loadProgress();
   let settings = progress.settings;
@@ -30,6 +31,7 @@
   let animationIndex = -1;
   let animationTimer = null;
   let saveTick = 0;
+  let unsavedPlaySeconds = 0;
 
   function announce(text) {
     message = text;
@@ -87,6 +89,8 @@
       Renderer.renderGame(app, currentLevel, state, progress, viewModel());
       restoreGridFocus();
     }
+    const portalHomeLink = app.querySelector('[data-portal-home]');
+    if (portalHomeLink) portalHomeLink.href = PORTAL_HREF;
   }
 
   function openModal(type, data) {
@@ -108,8 +112,15 @@
     }
   }
 
+  function flushPlayTime() {
+    if (unsavedPlaySeconds <= 0) return;
+    Storage.addPlayTime(undefined, unsavedPlaySeconds);
+    unsavedPlaySeconds = 0;
+  }
+
   function showHome() {
     saveCurrentSession();
+    flushPlayTime();
     screen = 'home';
     currentLevel = null;
     state = null;
@@ -120,6 +131,7 @@
 
   function showLevels() {
     saveCurrentSession();
+    flushPlayTime();
     if (currentLevel) {
       const number = currentLevelNumber();
       chapter = Math.ceil(number / 20);
@@ -148,6 +160,7 @@
 
   function restartLevel() {
     if (!currentLevel) return;
+    flushPlayTime();
     state = Core.createInitialState(currentLevel);
     message = `重新開始。下一站：${currentLevel.stops[0].label}`;
     hintCell = null;
@@ -197,6 +210,10 @@
     else if (next) announce(`下一站：${next.label}，還剩 ${Core.calculateFuelRemaining(state, currentLevel)} 格油量。`);
     saveCurrentSession();
     render();
+    if (!Core.isRouteComplete(state, currentLevel)
+      && Core.calculateFuelRemaining(state, currentLevel) === 0) {
+      openModal('failure');
+    }
     return true;
   }
 
@@ -240,12 +257,20 @@
       render();
       return;
     }
+    if (hint.duplicate) {
+      announce('路線沒有改變，請先調整路線再使用提示。');
+      return;
+    }
     state.hintsUsed += 1;
     state.hintRemaining -= 1;
     state.lastHintKey = hint.key;
     hintCell = hint.nextCell;
-    const directionLabel = { up: '上', right: '右', down: '下', left: '左' }[hint.direction];
-    announce(`提示：下一步可以往${directionLabel}。`);
+    if (hint.deadEnd) {
+      announce('目前路線無法完成，請退回高亮的錯誤轉折。');
+    } else {
+      const directionLabel = { up: '上', right: '右', down: '下', left: '左' }[hint.direction];
+      announce(`提示：下一步可以往${directionLabel}。`);
+    }
     saveCurrentSession();
     render();
     root.clearTimeout(hintTimer);
@@ -273,7 +298,8 @@
   }
 
   function completionData(stars) {
-    const records = Storage.loadProgress().records;
+    const completedProgress = Storage.loadProgress();
+    const records = completedProgress.records;
     return {
       stars,
       fuelUsed: Core.calculateFuelUsed(state),
@@ -284,12 +310,17 @@
       finalLevel: currentLevel.id === 'L100',
       completedCount: Object.values(records).filter((record) => record.completed).length,
       totalStars: Object.values(records).reduce((sum, record) => sum + (record.stars || 0), 0),
+      totalPlayText: Core.formatElapsedTime(completedProgress.totalPlaySeconds),
+      notThreeStarCount: Config.totalLevels
+        - Object.values(records).filter((record) => record.stars === 3).length,
     };
   }
 
   function finishLevel() {
+    if (!state || state.status !== 'animating') return;
     clearAnimation();
     state.status = 'completed';
+    flushPlayTime();
     const stars = Core.calculateFinalStars(state, currentLevel);
     Storage.updateRecord(undefined, currentLevel.id, {
       stars,
@@ -332,7 +363,7 @@
 
   function nextLevel() {
     const nextNumber = currentLevelNumber() + 1;
-    if (nextNumber <= Config.levelCount) {
+    if (nextNumber <= Config.totalLevels) {
       startLevel(`L${String(nextNumber).padStart(3, '0')}`);
     } else {
       showLevels();
@@ -345,7 +376,7 @@
     if (action === 'home') showHome();
     if (action === 'levels') showLevels();
     if (action === 'start') {
-      const targetNumber = Math.min(progress.unlockedLevel, Config.levelCount);
+      const targetNumber = Math.min(progress.unlockedLevel, Config.totalLevels);
       startLevel(`L${String(targetNumber).padStart(3, '0')}`);
     }
     if (action === 'continue') {
@@ -368,6 +399,10 @@
     if (action === 'close-modal') closeModal();
     if (action === 'hint') showHint();
     if (action === 'clear') clearRoute();
+    if (action === 'failure-clear') {
+      closeModal();
+      clearRoute();
+    }
     if (action === 'restart') openModal('restart');
     if (action === 'confirm-restart') restartLevel();
     if (action === 'depart') animateDeparture();
@@ -379,7 +414,7 @@
       render();
     }
     if (action === 'reset-progress') {
-      if (root.confirm('確定要清除 100 關的完成紀錄與未完成路線嗎？')) {
+      if (root.confirm(`確定要清除 ${Config.totalLevels} 關的完成紀錄與未完成路線嗎？`)) {
         progress = Storage.resetProgress();
         closeModal();
         showHome();
@@ -463,16 +498,17 @@
       closeModal();
       return;
     }
-    if (modalType === 'complete' || modalType === 'restart') return;
-    if (modalType && event.key === 'Tab') {
-      const focusables = [...modalRoot.querySelectorAll('button:not(:disabled),input:not(:disabled)')];
-      if (!focusables.length) return;
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      if (event.shiftKey && root.document.activeElement === first) {
-        event.preventDefault(); last.focus();
-      } else if (!event.shiftKey && root.document.activeElement === last) {
-        event.preventDefault(); first.focus();
+    if (modalType) {
+      if (event.key === 'Tab') {
+        const focusables = [...modalRoot.querySelectorAll('button:not(:disabled),input:not(:disabled)')];
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (event.shiftKey && root.document.activeElement === first) {
+          event.preventDefault(); last.focus();
+        } else if (!event.shiftKey && root.document.activeElement === last) {
+          event.preventDefault(); first.focus();
+        }
       }
       return;
     }
@@ -513,16 +549,26 @@
   });
 
   root.document.addEventListener('visibilitychange', () => {
-    if (root.document.hidden) saveCurrentSession();
+    if (root.document.hidden) {
+      saveCurrentSession();
+      flushPlayTime();
+    }
   });
-  root.addEventListener('beforeunload', saveCurrentSession);
+  root.addEventListener('beforeunload', () => {
+    saveCurrentSession();
+    flushPlayTime();
+  });
 
   root.setInterval(() => {
     if (screen !== 'game' || !state || state.status !== 'playing'
       || modalType || root.document.hidden || pointerActive) return;
     state.elapsed += 1;
+    unsavedPlaySeconds += 1;
     saveTick += 1;
-    if (saveTick % 5 === 0) saveCurrentSession();
+    if (saveTick % 5 === 0) {
+      saveCurrentSession();
+      flushPlayTime();
+    }
     render();
   }, 1000);
 

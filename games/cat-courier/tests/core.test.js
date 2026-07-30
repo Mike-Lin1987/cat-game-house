@@ -2,7 +2,9 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const Config = require('../js/config.js');
 const Core = require('../js/core.js');
+const Solver = require('../js/solver.js');
 
 function level(overrides = {}) {
   return {
@@ -29,6 +31,32 @@ function level(overrides = {}) {
     ...overrides,
   };
 }
+
+test('共用設定公開規格名稱並由 Core 使用提示與歷史上限', () => {
+  assert.equal(Config.gameTitle, '貓咪快遞員');
+  assert.equal(Config.totalLevels, 100);
+  assert.equal(Config.storageKey, 'cat-courier:v1');
+  assert.equal(Config.maxHintsPerAttempt, 3);
+  assert.equal(Config.maxUndoPathStates, 100);
+  assert.equal(Core.createInitialState(level()).hintRemaining, Config.maxHintsPerAttempt);
+});
+
+test('提示會標出死路轉折，且相同盤面不重複消耗同一提示', () => {
+  const sample = level();
+  const deadEndState = {
+    ...Core.createInitialState(sample),
+    path: [[2, 0], [2, 1], [1, 1], [0, 1], [0, 0]],
+  };
+  const recovery = Core.getHint(deadEndState, sample, Solver);
+  assert.equal(recovery.available, true);
+  assert.equal(recovery.deadEnd, true);
+  assert.deepEqual(recovery.nextCell, [0, 1]);
+
+  const initial = Core.createInitialState(sample);
+  const first = Core.getHint(initial, sample, Solver);
+  initial.lastHintKey = first.key;
+  assert.equal(Core.getHint(initial, sample, Solver).duplicate, true);
+});
 
 test('正交相鄰合法，斜角與跳格不合法', () => {
   assert.equal(Core.areOrthogonallyAdjacent([1, 1], [1, 2]), true);

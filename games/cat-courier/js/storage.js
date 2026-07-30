@@ -54,13 +54,13 @@
     const progress = createDefaultProgress(value.settings);
     progress.unlockedLevel = Math.max(
       1,
-      Math.min(Config.levelCount, Math.floor(Number(value.unlockedLevel) || 1)),
+      Math.min(Config.totalLevels, Math.floor(Number(value.unlockedLevel) || 1)),
     );
     if (value.records && typeof value.records === 'object') {
       for (const [levelId, record] of Object.entries(value.records)) {
         const number = Number(levelId.slice(1));
         const normalized = normalizeRecord(record);
-        if (/^L\d{3}$/.test(levelId) && number >= 1 && number <= Config.levelCount && normalized) {
+        if (/^L\d{3}$/.test(levelId) && number >= 1 && number <= Config.totalLevels && normalized) {
           progress.records[levelId] = normalized;
         }
       }
@@ -99,20 +99,24 @@
     const stars = Math.max(1, Math.min(3, Math.floor(Number(result.stars) || 1)));
     const fuelUsed = Math.max(0, Math.floor(Number(result.fuelUsed) || 0));
     const elapsed = Math.max(0, Math.floor(Number(result.elapsed) || 0));
-    progress.records[levelId] = {
+    const candidate = {
       completed: true,
-      stars: Math.max(existing?.stars || 0, stars),
-      bestFuelUsed: existing
-        ? Math.min(existing.bestFuelUsed || fuelUsed, fuelUsed)
-        : fuelUsed,
-      bestTime: existing
-        ? Math.min(existing.bestTime || elapsed, elapsed)
-        : elapsed,
+      stars,
+      bestFuelUsed: fuelUsed,
+      bestTime: elapsed,
     };
+    const candidateIsBetter = !existing
+      || candidate.stars > existing.stars
+      || (candidate.stars === existing.stars
+        && candidate.bestFuelUsed < existing.bestFuelUsed)
+      || (candidate.stars === existing.stars
+        && candidate.bestFuelUsed === existing.bestFuelUsed
+        && candidate.bestTime < existing.bestTime);
+    progress.records[levelId] = candidateIsBetter ? candidate : existing;
     const levelNumber = Number(levelId.slice(1));
     progress.unlockedLevel = Math.max(
       progress.unlockedLevel,
-      Math.min(Config.levelCount, levelNumber + 1),
+      Math.min(Config.totalLevels, levelNumber + 1),
     );
     progress.currentSession = null;
     saveProgress(storage, progress);

@@ -12,13 +12,13 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 204790,
+    "difficultyScore": 205356,
     "seed": 220937,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
-        "grass",
-        "grass",
+        "road",
+        "road",
         "grass",
         "grass",
         "grass",
@@ -27,7 +27,7 @@
       ],
       [
         "road",
-        "barrier",
+        "road",
         "water",
         "crate",
         "fence",
@@ -36,7 +36,7 @@
       ],
       [
         "road",
-        "grass",
+        "road",
         "water",
         "crate",
         "crate",
@@ -188,18 +188,19 @@
     ],
     "optimalSteps": 15,
     "optimalSolutionCount": 1,
-    "fuelLimit": 19,
+    "fuelLimit": 22,
     "metrics": {
-      "passableCellCount": 19,
+      "passableCellCount": 23,
       "stopCount": 3,
-      "obstacleCount": 30,
+      "obstacleCount": 26,
       "oneWayEdgeCount": 0,
       "branchCellCount": 3,
+      "detourLoopCount": 2,
       "bridgeCount": 1,
       "solverNodes": 17,
       "solverBacktracks": 1,
       "solverMaxDepth": 15,
-      "canonicalSignature": "7x7;grass,grass,grass,grass,grass,fence,tree/road,barrier,water,crate,fence,grass,fence/road,grass,water,crate,crate,grass,barrier/plaza,grass,grass,grass,fence,road,fence/road,bridge,road,road,plaza,road,road/crate,barrier,grass,tree,fence,water,road/road,road,road,road,road,plaza,road;S:6,0;P:0@6,5|1@4,4|2@3,0;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0"
+      "canonicalSignature": "7x7;road,crate,road,plaza,road,road,road/road,barrier,bridge,grass,road,road,road/road,grass,road,grass,water,water,grass/road,tree,road,grass,crate,crate,grass/road,fence,plaza,fence,crate,fence,grass/plaza,water,road,road,grass,grass,fence/road,road,road,fence,barrier,fence,tree;S:0,0;P:0@5,0|1@4,2|2@0,3;O:;R:0,0>1,0>2,0>3,0>4,0>5,0>6,0>6,1>6,2>5,2>4,2>3,2>2,2>1,2>0,2>0,3"
     }
   },
   {
@@ -209,13 +210,13 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205014,
+    "difficultyScore": 205580,
     "seed": 221934,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
-        "grass",
-        "water",
+        "road",
+        "road",
         "grass",
         "crate",
         "grass",
@@ -223,8 +224,8 @@
         "tree"
       ],
       [
-        "grass",
-        "grass",
+        "road",
+        "road",
         "crate",
         "tree",
         "grass",
@@ -391,16 +392,17 @@
     "optimalSolutionCount": 1,
     "fuelLimit": 21,
     "metrics": {
-      "passableCellCount": 20,
+      "passableCellCount": 24,
       "stopCount": 3,
-      "obstacleCount": 29,
+      "obstacleCount": 25,
       "oneWayEdgeCount": 0,
       "branchCellCount": 3,
+      "detourLoopCount": 2,
       "bridgeCount": 1,
       "solverNodes": 19,
       "solverBacktracks": 2,
       "solverMaxDepth": 16,
-      "canonicalSignature": "7x7;grass,grass,plaza,road,road,fence,road/water,grass,road,grass,bridge,grass,road/grass,crate,crate,road,road,fence,road/crate,tree,crate,grass,road,tree,road/grass,grass,grass,water,plaza,grass,road/barrier,grass,grass,road,road,crate,plaza/tree,fence,tree,crate,road,road,road;S:0,6;P:0@5,6|1@4,4|2@0,2;O:;R:0,6>1,6>2,6>3,6>4,6>5,6>6,6>6,5>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,3>0,2"
+      "canonicalSignature": "7x7;road,fence,road,road,plaza,road,road/road,grass,bridge,grass,road,road,road/road,fence,road,road,crate,crate,grass/road,tree,road,grass,crate,tree,crate/road,grass,plaza,water,grass,grass,grass/plaza,crate,road,road,grass,grass,barrier/road,road,road,crate,tree,fence,tree;S:0,0;P:0@5,0|1@4,2|2@0,4;O:;R:0,0>1,0>2,0>3,0>4,0>5,0>6,0>6,1>6,2>5,2>4,2>3,2>2,2>1,2>0,2>0,3>0,4"
     }
   },
   {
@@ -410,16 +412,16 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205004,
+    "difficultyScore": 205590,
     "seed": 222931,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
         "road",
         "road",
-        "crate",
-        "grass",
+        "road",
+        "road",
         "water",
         "water"
       ],
@@ -427,8 +429,8 @@
         "plaza",
         "tree",
         "road",
-        "barrier",
-        "crate",
+        "road",
+        "road",
         "fence",
         "fence"
       ],
@@ -590,18 +592,19 @@
     ],
     "optimalSteps": 16,
     "optimalSolutionCount": 1,
-    "fuelLimit": 21,
+    "fuelLimit": 22,
     "metrics": {
-      "passableCellCount": 20,
+      "passableCellCount": 24,
       "stopCount": 3,
-      "obstacleCount": 29,
+      "obstacleCount": 25,
       "oneWayEdgeCount": 0,
       "branchCellCount": 3,
+      "detourLoopCount": 2,
       "bridgeCount": 1,
-      "solverNodes": 18,
-      "solverBacktracks": 1,
+      "solverNodes": 20,
+      "solverBacktracks": 3,
       "solverMaxDepth": 16,
-      "canonicalSignature": "7x7;fence,barrier,water,grass,grass,fence,water/fence,road,grass,grass,fence,fence,water/plaza,road,water,grass,water,crate,grass/road,grass,road,barrier,grass,barrier,crate/road,bridge,road,road,plaza,road,road/tree,water,grass,grass,water,tree,road/road,road,road,road,road,plaza,road;S:6,0;P:0@6,5|1@4,4|2@2,0;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0"
+      "canonicalSignature": "7x7;fence,barrier,water,grass,grass,fence,water/fence,road,grass,grass,fence,fence,water/plaza,road,water,grass,water,road,road/road,grass,road,barrier,grass,road,road/road,bridge,road,road,plaza,road,road/tree,water,grass,grass,water,tree,road/road,road,road,road,road,plaza,road;S:6,0;P:0@6,5|1@4,4|2@2,0;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0"
     }
   },
   {
@@ -611,13 +614,13 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205228,
+    "difficultyScore": 205804,
     "seed": 223928,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
-        "grass",
-        "grass",
+        "road",
+        "road",
         "road",
         "road",
         "road",
@@ -625,8 +628,8 @@
         "road"
       ],
       [
-        "tree",
-        "grass",
+        "road",
+        "road",
         "plaza",
         "barrier",
         "bridge",
@@ -797,16 +800,17 @@
     "optimalSolutionCount": 1,
     "fuelLimit": 23,
     "metrics": {
-      "passableCellCount": 21,
+      "passableCellCount": 25,
       "stopCount": 3,
-      "obstacleCount": 28,
+      "obstacleCount": 24,
       "oneWayEdgeCount": 0,
       "branchCellCount": 3,
+      "detourLoopCount": 2,
       "bridgeCount": 1,
-      "solverNodes": 20,
-      "solverBacktracks": 2,
+      "solverNodes": 21,
+      "solverBacktracks": 3,
       "solverMaxDepth": 17,
-      "canonicalSignature": "7x7;crate,grass,crate,fence,grass,tree,grass/grass,fence,grass,water,water,grass,grass/grass,tree,barrier,grass,road,plaza,road/grass,road,grass,road,tree,barrier,road/road,road,road,plaza,road,bridge,road/road,grass,grass,grass,water,grass,water/road,plaza,road,road,road,road,road;S:6,6;P:0@6,1|1@4,3|2@2,5;O:;R:6,6>6,5>6,4>6,3>6,2>6,1>6,0>5,0>4,0>4,1>4,2>4,3>4,4>4,5>4,6>3,6>2,6>2,5"
+      "canonicalSignature": "7x7;crate,grass,crate,fence,grass,road,road/grass,fence,grass,water,water,road,road/grass,tree,barrier,grass,road,plaza,road/grass,road,grass,road,tree,barrier,road/road,road,road,plaza,road,bridge,road/road,grass,grass,grass,water,grass,water/road,plaza,road,road,road,road,road;S:6,6;P:0@6,1|1@4,3|2@2,5;O:;R:6,6>6,5>6,4>6,3>6,2>6,1>6,0>5,0>4,0>4,1>4,2>4,3>4,4>4,5>4,6>3,6>2,6>2,5"
     }
   },
   {
@@ -816,9 +820,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205615,
+    "difficultyScore": 206181,
     "seed": 224925,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "water",
@@ -848,16 +852,16 @@
         "road"
       ],
       [
-        "fence",
-        "grass",
-        "crate",
+        "road",
+        "road",
+        "road",
         "grass",
         "road",
         "water",
         "road"
       ],
       [
-        "fence",
+        "road",
         "road",
         "plaza",
         "grass",
@@ -1004,18 +1008,19 @@
     ],
     "optimalSteps": 18,
     "optimalSolutionCount": 1,
-    "fuelLimit": 22,
+    "fuelLimit": 24,
     "metrics": {
-      "passableCellCount": 23,
+      "passableCellCount": 27,
       "stopCount": 3,
-      "obstacleCount": 26,
+      "obstacleCount": 22,
       "oneWayEdgeCount": 0,
       "branchCellCount": 4,
+      "detourLoopCount": 2,
       "bridgeCount": 1,
       "solverNodes": 21,
       "solverBacktracks": 2,
       "solverMaxDepth": 18,
-      "canonicalSignature": "7x7;plaza,road,road,grass,fence,fence,water/road,grass,road,road,tree,grass,fence/road,grass,road,water,crate,crate,tree/road,water,road,grass,crate,grass,fence/road,barrier,plaza,grass,plaza,road,fence/road,grass,bridge,barrier,road,tree,grass/road,tree,road,road,road,road,road;S:6,0;P:0@0,0|1@4,2|2@4,4;O:;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4"
+      "canonicalSignature": "7x7;plaza,road,road,grass,fence,fence,water/road,grass,road,road,tree,grass,fence/road,grass,road,water,crate,crate,tree/road,water,road,grass,road,road,road/road,barrier,plaza,grass,plaza,road,road/road,grass,bridge,barrier,road,tree,grass/road,tree,road,road,road,road,road;S:6,0;P:0@0,0|1@4,2|2@4,4;O:;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4"
     }
   },
   {
@@ -1025,9 +1030,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205625,
+    "difficultyScore": 206750,
     "seed": 225922,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "water",
@@ -1062,7 +1067,7 @@
         "fence",
         "road",
         "road",
-        "grass",
+        "road",
         "road"
       ],
       [
@@ -1071,7 +1076,7 @@
         "barrier",
         "grass",
         "road",
-        "tree",
+        "road",
         "road"
       ],
       [
@@ -1132,7 +1137,28 @@
         "houseStyle": "blue"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          3,
+          4
+        ],
+        "to": [
+          3,
+          5
+        ]
+      },
+      {
+        "from": [
+          4,
+          4
+        ],
+        "to": [
+          4,
+          5
+        ]
+      }
+    ],
     "solutionPath": [
       [
         0,
@@ -1215,16 +1241,17 @@
     "optimalSolutionCount": 1,
     "fuelLimit": 23,
     "metrics": {
-      "passableCellCount": 23,
+      "passableCellCount": 25,
       "stopCount": 3,
-      "obstacleCount": 26,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 24,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 4,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 22,
-      "solverBacktracks": 3,
+      "solverNodes": 26,
+      "solverBacktracks": 7,
       "solverMaxDepth": 18,
-      "canonicalSignature": "7x7;grass,barrier,grass,grass,fence,barrier,water/crate,grass,water,grass,road,fence,road/grass,water,barrier,fence,plaza,road,road/road,grass,grass,road,fence,barrier,road/road,road,road,road,plaza,bridge,road/road,tree,tree,grass,water,barrier,grass/plaza,road,road,road,road,road,road;S:6,6;P:0@6,0|1@4,4|2@2,4;O:;R:6,6>6,5>6,4>6,3>6,2>6,1>6,0>5,0>4,0>4,1>4,2>4,3>4,4>4,5>4,6>3,6>2,6>2,5>2,4"
+      "canonicalSignature": "7x7;grass,barrier,grass,grass,fence,barrier,water/crate,grass,water,grass,road,fence,road/grass,water,barrier,fence,plaza,road,road/road,grass,grass,road,fence,barrier,road/road,road,road,road,plaza,bridge,road/road,tree,road,road,water,barrier,grass/plaza,road,road,road,road,road,road;S:6,6;P:0@6,0|1@4,4|2@2,4;O:4,2>5,2|4,3>5,3;R:6,6>6,5>6,4>6,3>6,2>6,1>6,0>5,0>4,0>4,1>4,2>4,3>4,4>4,5>4,6>3,6>2,6>2,5>2,4"
     }
   },
   {
@@ -1234,9 +1261,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205829,
+    "difficultyScore": 206944,
     "seed": 226919,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "grass",
@@ -1269,8 +1296,8 @@
         "water",
         "road",
         "grass",
-        "fence",
-        "grass",
+        "road",
+        "road",
         "grass",
         "road"
       ],
@@ -1341,7 +1368,28 @@
         "houseStyle": "yellow"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          2,
+          3
+        ],
+        "to": [
+          3,
+          3
+        ]
+      },
+      {
+        "from": [
+          2,
+          4
+        ],
+        "to": [
+          3,
+          4
+        ]
+      }
+    ],
     "solutionPath": [
       [
         6,
@@ -1426,18 +1474,19 @@
     ],
     "optimalSteps": 19,
     "optimalSolutionCount": 1,
-    "fuelLimit": 23,
+    "fuelLimit": 25,
     "metrics": {
-      "passableCellCount": 24,
+      "passableCellCount": 26,
       "stopCount": 3,
-      "obstacleCount": 25,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 23,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 4,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 22,
-      "solverBacktracks": 2,
+      "solverNodes": 25,
+      "solverBacktracks": 5,
       "solverMaxDepth": 19,
-      "canonicalSignature": "7x7;barrier,fence,road,road,road,grass,road/grass,barrier,road,grass,bridge,crate,road/road,road,road,grass,plaza,crate,road/water,tree,plaza,fence,road,grass,road/tree,grass,road,grass,road,crate,road/grass,grass,tree,road,road,fence,road/grass,water,barrier,water,road,road,plaza;S:0,6;P:0@6,6|1@2,4|2@3,2;O:;R:0,6>1,6>2,6>3,6>4,6>5,6>6,6>6,5>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,3>0,2>1,2>2,2>3,2"
+      "canonicalSignature": "7x7;barrier,fence,road,road,road,grass,road/grass,barrier,road,grass,bridge,crate,road/road,road,road,road,plaza,crate,road/water,tree,plaza,road,road,grass,road/tree,grass,road,grass,road,crate,road/grass,grass,tree,road,road,fence,road/grass,water,barrier,water,road,road,plaza;S:0,6;P:0@6,6|1@2,4|2@3,2;O:2,2>2,3|3,2>3,3;R:0,6>1,6>2,6>3,6>4,6>5,6>6,6>6,5>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,3>0,2>1,2>2,2>3,2"
     }
   },
   {
@@ -1447,9 +1496,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205946,
+    "difficultyScore": 207071,
     "seed": 227916,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "grass",
@@ -1499,8 +1548,8 @@
       [
         "road",
         "grass",
-        "crate",
-        "grass",
+        "road",
+        "road",
         "water",
         "grass",
         "barrier"
@@ -1554,7 +1603,28 @@
         "houseStyle": "green"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          4,
+          2
+        ],
+        "to": [
+          5,
+          2
+        ]
+      },
+      {
+        "from": [
+          4,
+          3
+        ],
+        "to": [
+          5,
+          3
+        ]
+      }
+    ],
     "solutionPath": [
       [
         6,
@@ -1643,18 +1713,19 @@
     ],
     "optimalSteps": 20,
     "optimalSolutionCount": 1,
-    "fuelLimit": 25,
+    "fuelLimit": 27,
     "metrics": {
-      "passableCellCount": 25,
+      "passableCellCount": 27,
       "stopCount": 3,
-      "obstacleCount": 24,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 22,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 4,
+      "detourLoopCount": 1,
       "bridgeCount": 0,
-      "solverNodes": 23,
-      "solverBacktracks": 2,
+      "solverNodes": 27,
+      "solverBacktracks": 6,
       "solverMaxDepth": 20,
-      "canonicalSignature": "7x7;barrier,grass,fence,fence,fence,tree,grass/road,tree,barrier,crate,road,grass,barrier/road,road,road,road,plaza,water,road/road,grass,tree,grass,grass,fence,road/road,plaza,road,road,road,road,road/barrier,grass,water,grass,crate,grass,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,1|2@2,4;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4"
+      "canonicalSignature": "7x7;barrier,grass,fence,fence,fence,tree,grass/road,tree,barrier,crate,road,grass,barrier/road,road,road,road,plaza,water,road/road,grass,tree,grass,grass,fence,road/road,plaza,road,road,road,road,road/barrier,grass,water,road,road,grass,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,1|2@2,4;O:4,3>5,3|4,4>5,4;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4"
     }
   },
   {
@@ -1664,9 +1735,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 205936,
+    "difficultyScore": 206522,
     "seed": 228913,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -1715,8 +1786,8 @@
       ],
       [
         "grass",
-        "grass",
-        "grass",
+        "road",
+        "road",
         "tree",
         "road",
         "road",
@@ -1727,8 +1798,8 @@
         "grass",
         "crate",
         "water",
-        "fence",
-        "grass",
+        "road",
+        "road",
         "fence"
       ]
     ],
@@ -1860,18 +1931,19 @@
     ],
     "optimalSteps": 20,
     "optimalSolutionCount": 1,
-    "fuelLimit": 26,
+    "fuelLimit": 23,
     "metrics": {
-      "passableCellCount": 25,
+      "passableCellCount": 29,
       "stopCount": 3,
-      "obstacleCount": 24,
+      "obstacleCount": 20,
       "oneWayEdgeCount": 0,
       "branchCellCount": 4,
+      "detourLoopCount": 2,
       "bridgeCount": 0,
-      "solverNodes": 22,
-      "solverBacktracks": 1,
+      "solverNodes": 24,
+      "solverBacktracks": 3,
       "solverMaxDepth": 20,
-      "canonicalSignature": "7x7;barrier,grass,crate,water,fence,grass,fence/grass,grass,grass,tree,road,road,crate/road,road,road,road,plaza,grass,road/road,barrier,fence,fence,crate,grass,road/road,plaza,road,road,road,road,road/crate,water,tree,fence,grass,barrier,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,1|2@2,4;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4"
+      "canonicalSignature": "7x7;barrier,grass,crate,water,road,road,fence/grass,road,road,tree,road,road,crate/road,road,road,road,plaza,grass,road/road,barrier,fence,fence,crate,grass,road/road,plaza,road,road,road,road,road/crate,water,tree,fence,grass,barrier,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,1|2@2,4;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4"
     }
   },
   {
@@ -1881,9 +1953,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 206257,
+    "difficultyScore": 206843,
     "seed": 229910,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -1918,8 +1990,8 @@
         "road",
         "water",
         "road",
-        "grass",
-        "grass"
+        "road",
+        "road"
       ],
       [
         "road",
@@ -1927,8 +1999,8 @@
         "road",
         "crate",
         "road",
-        "grass",
-        "water"
+        "road",
+        "road"
       ],
       [
         "road",
@@ -2083,16 +2155,17 @@
     "optimalSolutionCount": 1,
     "fuelLimit": 26,
     "metrics": {
-      "passableCellCount": 26,
+      "passableCellCount": 30,
       "stopCount": 3,
-      "obstacleCount": 23,
+      "obstacleCount": 19,
       "oneWayEdgeCount": 0,
       "branchCellCount": 4,
+      "detourLoopCount": 2,
       "bridgeCount": 1,
-      "solverNodes": 24,
-      "solverBacktracks": 2,
+      "solverNodes": 26,
+      "solverBacktracks": 4,
       "solverMaxDepth": 21,
-      "canonicalSignature": "7x7;fence,barrier,fence,grass,water,water,road/crate,road,grass,grass,grass,grass,road/grass,plaza,road,road,road,road,road/plaza,barrier,barrier,water,crate,grass,road/road,road,road,road,road,bridge,plaza/plaza,grass,grass,fence,grass,grass,grass/road,road,road,road,road,road,road;S:6,6;P:0@5,0|1@4,6|2@2,1;O:;R:6,6>6,5>6,4>6,3>6,2>6,1>6,0>5,0>4,0>4,1>4,2>4,3>4,4>4,5>4,6>3,6>2,6>2,5>2,4>2,3>2,2>2,1"
+      "canonicalSignature": "7x7;fence,barrier,fence,road,road,water,road/crate,road,grass,road,road,grass,road/grass,plaza,road,road,road,road,road/plaza,barrier,barrier,water,crate,grass,road/road,road,road,road,road,bridge,plaza/plaza,grass,grass,fence,grass,grass,grass/road,road,road,road,road,road,road;S:6,6;P:0@5,0|1@4,6|2@2,1;O:;R:6,6>6,5>6,4>6,3>6,2>6,1>6,0>5,0>4,0>4,1>4,2>4,3>4,4>4,5>4,6>3,6>2,6>2,5>2,4>2,3>2,2>2,1"
     }
   },
   {
@@ -2102,9 +2175,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 206971,
+    "difficultyScore": 208507,
     "seed": 230907,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "grass",
@@ -2119,7 +2192,7 @@
         "grass",
         "grass",
         "road",
-        "grass",
+        "road",
         "bridge",
         "grass",
         "road"
@@ -2128,7 +2201,7 @@
         "plaza",
         "road",
         "road",
-        "crate",
+        "road",
         "road",
         "barrier",
         "road"
@@ -2220,7 +2293,38 @@
         "houseStyle": "green"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          0,
+          3
+        ],
+        "to": [
+          1,
+          3
+        ]
+      },
+      {
+        "from": [
+          1,
+          2
+        ],
+        "to": [
+          1,
+          3
+        ]
+      },
+      {
+        "from": [
+          2,
+          2
+        ],
+        "to": [
+          2,
+          3
+        ]
+      }
+    ],
     "solutionPath": [
       [
         0,
@@ -2317,18 +2421,19 @@
     ],
     "optimalSteps": 22,
     "optimalSolutionCount": 1,
-    "fuelLimit": 25,
+    "fuelLimit": 26,
     "metrics": {
-      "passableCellCount": 28,
+      "passableCellCount": 30,
       "stopCount": 4,
-      "obstacleCount": 21,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 19,
+      "oneWayEdgeCount": 3,
       "branchCellCount": 5,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 26,
-      "solverBacktracks": 3,
+      "solverNodes": 31,
+      "solverBacktracks": 8,
       "solverMaxDepth": 22,
-      "canonicalSignature": "7x7;grass,grass,plaza,grass,road,road,road/road,road,road,grass,road,fence,plaza/water,grass,road,fence,road,barrier,road/tree,crate,road,tree,plaza,water,road/plaza,road,road,crate,road,barrier,road/grass,grass,road,grass,bridge,grass,road/grass,road,plaza,road,road,crate,road;S:6,6;P:0@1,6|1@3,4|2@6,2|3@0,2;O:;R:6,6>5,6>4,6>3,6>2,6>1,6>0,6>0,5>0,4>1,4>2,4>3,4>4,4>5,4>6,4>6,3>6,2>5,2>4,2>3,2>2,2>1,2>0,2"
+      "canonicalSignature": "7x7;grass,grass,plaza,grass,road,road,road/road,road,road,grass,road,fence,plaza/water,grass,road,fence,road,barrier,road/tree,crate,road,tree,plaza,water,road/plaza,road,road,road,road,barrier,road/grass,grass,road,road,bridge,grass,road/grass,road,plaza,road,road,crate,road;S:6,6;P:0@1,6|1@3,4|2@6,2|3@0,2;O:4,2>4,3|5,2>5,3|6,3>5,3;R:6,6>5,6>4,6>3,6>2,6>1,6>0,6>0,5>0,4>1,4>2,4>3,4>4,4>5,4>6,4>6,3>6,2>5,2>4,2>3,2>2,2>1,2>0,2"
     }
   },
   {
@@ -2338,9 +2443,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207175,
+    "difficultyScore": 208300,
     "seed": 231904,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -2382,7 +2487,7 @@
         "road",
         "barrier",
         "road",
-        "barrier",
+        "road",
         "road",
         "road",
         "tree"
@@ -2391,7 +2496,7 @@
         "plaza",
         "grass",
         "road",
-        "barrier",
+        "road",
         "road",
         "crate",
         "road"
@@ -2456,7 +2561,28 @@
         "houseStyle": "pink"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          4,
+          4
+        ],
+        "to": [
+          4,
+          3
+        ]
+      },
+      {
+        "from": [
+          5,
+          4
+        ],
+        "to": [
+          5,
+          3
+        ]
+      }
+    ],
     "solutionPath": [
       [
         0,
@@ -2557,18 +2683,19 @@
     ],
     "optimalSteps": 23,
     "optimalSolutionCount": 1,
-    "fuelLimit": 29,
+    "fuelLimit": 28,
     "metrics": {
-      "passableCellCount": 29,
+      "passableCellCount": 31,
       "stopCount": 4,
-      "obstacleCount": 20,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 18,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 5,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 26,
-      "solverBacktracks": 2,
+      "solverNodes": 30,
+      "solverBacktracks": 6,
       "solverMaxDepth": 23,
-      "canonicalSignature": "7x7;grass,road,tree,barrier,tree,road,road/water,road,fence,barrier,road,crate,plaza/road,plaza,road,road,road,road,road/road,grass,grass,tree,barrier,barrier,crate/road,bridge,road,plaza,road,road,road/crate,grass,water,fence,barrier,grass,road/road,road,road,road,road,plaza,road;S:6,0;P:0@6,5|1@4,3|2@2,1|3@1,6;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6"
+      "canonicalSignature": "7x7;grass,road,tree,barrier,tree,road,road/water,road,fence,barrier,road,crate,plaza/road,plaza,road,road,road,road,road/road,grass,grass,tree,road,road,crate/road,bridge,road,plaza,road,road,road/crate,grass,water,fence,barrier,grass,road/road,road,road,road,road,plaza,road;S:6,0;P:0@6,5|1@4,3|2@2,1|3@1,6;O:2,4>3,4|2,5>3,5;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6"
     }
   },
   {
@@ -2578,9 +2705,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207175,
+    "difficultyScore": 208711,
     "seed": 232901,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "water",
@@ -2614,8 +2741,8 @@
         "tree",
         "grass",
         "tree",
-        "water",
-        "grass",
+        "road",
+        "road",
         "road"
       ],
       [
@@ -2696,7 +2823,38 @@
         "houseStyle": "blue"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          2,
+          4
+        ],
+        "to": [
+          3,
+          4
+        ]
+      },
+      {
+        "from": [
+          2,
+          5
+        ],
+        "to": [
+          3,
+          5
+        ]
+      },
+      {
+        "from": [
+          3,
+          6
+        ],
+        "to": [
+          3,
+          5
+        ]
+      }
+    ],
     "solutionPath": [
       [
         6,
@@ -2797,18 +2955,19 @@
     ],
     "optimalSteps": 23,
     "optimalSolutionCount": 1,
-    "fuelLimit": 27,
+    "fuelLimit": 26,
     "metrics": {
-      "passableCellCount": 29,
+      "passableCellCount": 31,
       "stopCount": 4,
-      "obstacleCount": 20,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 18,
+      "oneWayEdgeCount": 3,
       "branchCellCount": 5,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 26,
-      "solverBacktracks": 2,
+      "solverNodes": 31,
+      "solverBacktracks": 7,
       "solverMaxDepth": 23,
-      "canonicalSignature": "7x7;grass,crate,grass,plaza,road,plaza,water/road,tree,grass,fence,road,tree,plaza/road,plaza,road,road,road,road,road/road,grass,water,tree,grass,tree,grass/road,bridge,road,plaza,road,road,road/grass,grass,water,grass,crate,water,road/road,road,road,road,road,plaza,road;S:6,0;P:0@6,5|1@4,3|2@2,1|3@1,6;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6"
+      "canonicalSignature": "7x7;grass,crate,grass,plaza,road,plaza,water/road,tree,grass,fence,road,tree,plaza/road,plaza,road,road,road,road,road/road,road,road,tree,grass,tree,grass/road,bridge,road,plaza,road,road,road/grass,grass,water,grass,crate,water,road/road,road,road,road,road,plaza,road;S:6,0;P:0@6,5|1@4,3|2@2,1|3@1,6;O:2,1>3,1|2,2>3,2|3,0>3,1;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6"
     }
   },
   {
@@ -2818,9 +2977,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207399,
+    "difficultyScore": 208524,
     "seed": 233898,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "plaza",
@@ -2873,7 +3032,7 @@
         "road",
         "grass",
         "bridge",
-        "crate",
+        "road",
         "road"
       ],
       [
@@ -2882,7 +3041,7 @@
         "road",
         "road",
         "road",
-        "tree",
+        "road",
         "road"
       ]
     ],
@@ -2936,7 +3095,28 @@
         "houseStyle": "yellow"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          5,
+          4
+        ],
+        "to": [
+          5,
+          5
+        ]
+      },
+      {
+        "from": [
+          6,
+          4
+        ],
+        "to": [
+          6,
+          5
+        ]
+      }
+    ],
     "solutionPath": [
       [
         6,
@@ -3041,18 +3221,19 @@
     ],
     "optimalSteps": 24,
     "optimalSolutionCount": 1,
-    "fuelLimit": 31,
+    "fuelLimit": 29,
     "metrics": {
-      "passableCellCount": 30,
+      "passableCellCount": 32,
       "stopCount": 4,
-      "obstacleCount": 19,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 17,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 5,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 28,
-      "solverBacktracks": 3,
+      "solverNodes": 32,
+      "solverBacktracks": 7,
       "solverMaxDepth": 24,
-      "canonicalSignature": "7x7;barrier,barrier,road,crate,road,grass,plaza/road,tree,road,barrier,road,fence,road/road,road,plaza,road,road,road,road/road,grass,grass,fence,tree,fence,fence/road,bridge,plaza,road,road,road,road/tree,crate,barrier,fence,grass,water,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,2|2@2,2|3@0,6;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6>0,6"
+      "canonicalSignature": "7x7;barrier,barrier,road,crate,road,grass,plaza/road,tree,road,barrier,road,fence,road/road,road,plaza,road,road,road,road/road,grass,grass,fence,tree,fence,fence/road,bridge,plaza,road,road,road,road/road,road,barrier,fence,grass,water,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,2|2@2,2|3@0,6;O:4,0>5,0|4,1>5,1;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6>0,6"
     }
   },
   {
@@ -3062,9 +3243,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207613,
+    "difficultyScore": 208738,
     "seed": 234895,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -3095,7 +3276,7 @@
       ],
       [
         "road",
-        "crate",
+        "road",
         "road",
         "fence",
         "road",
@@ -3104,7 +3285,7 @@
       ],
       [
         "road",
-        "grass",
+        "road",
         "road",
         "grass",
         "road",
@@ -3180,7 +3361,28 @@
         "houseStyle": "green"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          3,
+          2
+        ],
+        "to": [
+          3,
+          1
+        ]
+      },
+      {
+        "from": [
+          4,
+          2
+        ],
+        "to": [
+          4,
+          1
+        ]
+      }
+    ],
     "solutionPath": [
       [
         0,
@@ -3289,18 +3491,19 @@
     ],
     "optimalSteps": 25,
     "optimalSolutionCount": 1,
-    "fuelLimit": 31,
+    "fuelLimit": 32,
     "metrics": {
-      "passableCellCount": 31,
+      "passableCellCount": 33,
       "stopCount": 4,
-      "obstacleCount": 18,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 16,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 5,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 29,
-      "solverBacktracks": 3,
+      "solverNodes": 33,
+      "solverBacktracks": 7,
       "solverMaxDepth": 25,
-      "canonicalSignature": "7x7;plaza,road,road,grass,road,road,road/road,grass,road,grass,road,grass,plaza/road,grass,road,grass,road,road,fence/road,crate,road,fence,road,grass,crate/road,water,plaza,fence,plaza,plaza,fence/road,barrier,bridge,tree,road,fence,plaza/road,tree,road,road,road,road,road;S:6,0;P:0@0,0|1@4,2|2@4,4|3@1,6;O:;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6"
+      "canonicalSignature": "7x7;plaza,road,road,grass,road,road,road/road,grass,road,grass,road,grass,plaza/road,road,road,grass,road,road,fence/road,road,road,fence,road,grass,crate/road,water,plaza,fence,plaza,plaza,fence/road,barrier,bridge,tree,road,fence,plaza/road,tree,road,road,road,road,road;S:6,0;P:0@0,0|1@4,2|2@4,4|3@1,6;O:2,2>2,1|3,2>3,1;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6"
     }
   },
   {
@@ -3310,9 +3513,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207603,
+    "difficultyScore": 208728,
     "seed": 235892,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -3344,8 +3547,8 @@
       [
         "road",
         "barrier",
-        "fence",
-        "grass",
+        "road",
+        "road",
         "water",
         "grass",
         "barrier"
@@ -3428,7 +3631,28 @@
         "houseStyle": "pink"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          4,
+          2
+        ],
+        "to": [
+          3,
+          2
+        ]
+      },
+      {
+        "from": [
+          4,
+          3
+        ],
+        "to": [
+          3,
+          3
+        ]
+      }
+    ],
     "solutionPath": [
       [
         0,
@@ -3537,18 +3761,19 @@
     ],
     "optimalSteps": 25,
     "optimalSolutionCount": 1,
-    "fuelLimit": 28,
+    "fuelLimit": 29,
     "metrics": {
-      "passableCellCount": 31,
+      "passableCellCount": 33,
       "stopCount": 4,
-      "obstacleCount": 18,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 16,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 5,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 28,
-      "solverBacktracks": 2,
+      "solverNodes": 32,
+      "solverBacktracks": 6,
       "solverMaxDepth": 25,
-      "canonicalSignature": "7x7;plaza,road,road,barrier,road,road,road/road,grass,road,grass,road,fence,plaza/road,fence,road,water,road,grass,road/road,grass,road,grass,road,road,grass/road,grass,plaza,fence,plaza,fence,grass/road,grass,bridge,barrier,road,tree,road/road,grass,road,road,road,road,road;S:6,0;P:0@0,0|1@4,2|2@4,4|3@1,6;O:;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6"
+      "canonicalSignature": "7x7;plaza,road,road,barrier,road,road,road/road,grass,road,grass,road,fence,plaza/road,fence,road,water,road,grass,road/road,grass,road,road,road,road,grass/road,grass,plaza,road,plaza,fence,grass/road,grass,bridge,barrier,road,tree,road/road,grass,road,road,road,road,road;S:6,0;P:0@0,0|1@4,2|2@4,4|3@1,6;O:3,4>3,3|4,4>4,3;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6"
     }
   },
   {
@@ -3558,9 +3783,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207720,
+    "difficultyScore": 209256,
     "seed": 236889,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -3609,8 +3834,8 @@
       ],
       [
         "road",
-        "tree",
-        "tree",
+        "road",
+        "road",
         "grass",
         "water",
         "tree",
@@ -3676,7 +3901,38 @@
         "houseStyle": "blue"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          4,
+          1
+        ],
+        "to": [
+          5,
+          1
+        ]
+      },
+      {
+        "from": [
+          5,
+          0
+        ],
+        "to": [
+          5,
+          1
+        ]
+      },
+      {
+        "from": [
+          4,
+          2
+        ],
+        "to": [
+          5,
+          2
+        ]
+      }
+    ],
     "solutionPath": [
       [
         6,
@@ -3789,18 +4045,19 @@
     ],
     "optimalSteps": 26,
     "optimalSolutionCount": 1,
-    "fuelLimit": 32,
+    "fuelLimit": 30,
     "metrics": {
-      "passableCellCount": 32,
+      "passableCellCount": 34,
       "stopCount": 4,
-      "obstacleCount": 17,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 15,
+      "oneWayEdgeCount": 3,
       "branchCellCount": 5,
+      "detourLoopCount": 1,
       "bridgeCount": 0,
-      "solverNodes": 29,
-      "solverBacktracks": 2,
+      "solverNodes": 34,
+      "solverBacktracks": 7,
       "solverMaxDepth": 26,
-      "canonicalSignature": "7x7;plaza,road,crate,road,plaza,road,road/road,crate,road,barrier,water,grass,road/road,road,road,plaza,road,road,road/road,crate,grass,barrier,grass,tree,barrier/road,plaza,road,road,road,road,road/barrier,tree,water,grass,tree,tree,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,1|2@2,3|3@0,4;O:;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6>0,6>0,5>0,4"
+      "canonicalSignature": "7x7;plaza,road,crate,road,plaza,road,road/road,crate,road,barrier,water,grass,road/road,road,road,plaza,road,road,road/road,crate,grass,barrier,grass,tree,barrier/road,plaza,road,road,road,road,road/barrier,tree,water,grass,road,road,road/road,road,road,road,road,road,plaza;S:6,0;P:0@6,6|1@4,1|2@2,3|3@0,4;O:4,4>5,4|4,5>5,5|5,6>5,5;R:6,0>6,1>6,2>6,3>6,4>6,5>6,6>5,6>4,6>4,5>4,4>4,3>4,2>4,1>4,0>3,0>2,0>2,1>2,2>2,3>2,4>2,5>2,6>1,6>0,6>0,5>0,4"
     }
   },
   {
@@ -3810,9 +4067,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207502,
+    "difficultyScore": 208627,
     "seed": 237886,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -3825,7 +4082,7 @@
       ],
       [
         "road",
-        "water",
+        "road",
         "plaza",
         "grass",
         "road",
@@ -3834,7 +4091,7 @@
       ],
       [
         "road",
-        "grass",
+        "road",
         "road",
         "grass",
         "road",
@@ -3928,263 +4185,28 @@
         "houseStyle": "yellow"
       }
     ],
-    "oneWayEdges": [],
-    "solutionPath": [
-      [
-        0,
-        0
-      ],
-      [
-        1,
-        0
-      ],
-      [
-        2,
-        0
-      ],
-      [
-        3,
-        0
-      ],
-      [
-        4,
-        0
-      ],
-      [
-        5,
-        0
-      ],
-      [
-        6,
-        0
-      ],
-      [
-        6,
-        1
-      ],
-      [
-        6,
-        2
-      ],
-      [
-        5,
-        2
-      ],
-      [
-        4,
-        2
-      ],
-      [
-        3,
-        2
-      ],
-      [
-        2,
-        2
-      ],
-      [
-        1,
-        2
-      ],
-      [
-        0,
-        2
-      ],
-      [
-        0,
-        3
-      ],
-      [
-        0,
-        4
-      ],
-      [
-        1,
-        4
-      ],
-      [
-        2,
-        4
-      ],
-      [
-        3,
-        4
-      ],
-      [
-        4,
-        4
-      ],
-      [
-        5,
-        4
-      ],
-      [
-        6,
-        4
-      ],
-      [
-        6,
-        5
-      ],
-      [
-        6,
-        6
-      ],
-      [
-        5,
-        6
-      ],
-      [
-        4,
-        6
-      ],
-      [
-        3,
-        6
-      ]
-    ],
-    "optimalSteps": 27,
-    "optimalSolutionCount": 1,
-    "fuelLimit": 32,
-    "metrics": {
-      "passableCellCount": 30,
-      "stopCount": 4,
-      "obstacleCount": 19,
-      "oneWayEdgeCount": 0,
-      "branchCellCount": 2,
-      "bridgeCount": 1,
-      "solverNodes": 29,
-      "solverBacktracks": 1,
-      "solverMaxDepth": 27,
-      "canonicalSignature": "7x7;plaza,road,road,grass,road,road,road/road,tree,road,grass,road,fence,road/road,crate,road,crate,plaza,tree,bridge/road,water,road,crate,road,crate,plaza/road,grass,road,grass,road,fence,road/road,water,plaza,grass,road,road,fence/road,barrier,road,road,road,grass,water;S:6,0;P:0@0,0|1@5,2|2@2,4|3@3,6;O:;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6>2,6>3,6"
-    }
-  },
-  {
-    "id": "L039",
-    "chapter": 2,
-    "title": "忙碌街角",
-    "rows": 7,
-    "columns": 7,
-    "difficulty": 2,
-    "difficultyScore": 207858,
-    "seed": 238883,
-    "generatorVersion": 1,
-    "terrain": [
-      [
-        "road",
-        "barrier",
-        "road",
-        "road",
-        "road",
-        "road",
-        "road"
-      ],
-      [
-        "road",
-        "grass",
-        "plaza",
-        "grass",
-        "road",
-        "grass",
-        "road"
-      ],
-      [
-        "road",
-        "crate",
-        "road",
-        "grass",
-        "road",
-        "road",
-        "barrier"
-      ],
-      [
-        "road",
-        "grass",
-        "road",
-        "fence",
-        "road",
-        "grass",
-        "plaza"
-      ],
-      [
-        "road",
-        "tree",
-        "road",
-        "crate",
-        "plaza",
-        "water",
-        "bridge"
-      ],
-      [
-        "road",
-        "tree",
-        "road",
-        "barrier",
-        "road",
-        "water",
-        "road"
-      ],
-      [
-        "plaza",
-        "road",
-        "road",
-        "barrier",
-        "road",
-        "road",
-        "road"
-      ]
-    ],
-    "start": [
-      0,
-      0
-    ],
-    "stops": [
+    "oneWayEdges": [
       {
-        "id": "stop-1",
-        "order": 0,
-        "item": "paw-cookie",
-        "label": "貓掌餅乾",
-        "position": [
-          6,
-          0
-        ],
-        "houseStyle": "pink"
-      },
-      {
-        "id": "stop-2",
-        "order": 1,
-        "item": "parcel",
-        "label": "包裹",
-        "position": [
+        "from": [
           1,
           2
         ],
-        "houseStyle": "blue"
+        "to": [
+          1,
+          1
+        ]
       },
       {
-        "id": "stop-3",
-        "order": 2,
-        "item": "mouse",
-        "label": "玩具老鼠",
-        "position": [
-          4,
-          4
+        "from": [
+          2,
+          2
         ],
-        "houseStyle": "yellow"
-      },
-      {
-        "id": "stop-4",
-        "order": 3,
-        "item": "flowers",
-        "label": "花束",
-        "position": [
-          3,
-          6
-        ],
-        "houseStyle": "green"
+        "to": [
+          2,
+          1
+        ]
       }
     ],
-    "oneWayEdges": [],
     "solutionPath": [
       [
         0,
@@ -4306,13 +4328,302 @@
       "passableCellCount": 32,
       "stopCount": 4,
       "obstacleCount": 17,
-      "oneWayEdgeCount": 0,
-      "branchCellCount": 4,
+      "oneWayEdgeCount": 2,
+      "branchCellCount": 2,
+      "detourLoopCount": 1,
       "bridgeCount": 1,
-      "solverNodes": 30,
-      "solverBacktracks": 2,
+      "solverNodes": 33,
+      "solverBacktracks": 5,
       "solverMaxDepth": 27,
-      "canonicalSignature": "7x7;plaza,road,road,barrier,road,road,road/road,tree,road,barrier,road,water,road/road,tree,road,crate,plaza,water,bridge/road,grass,road,fence,road,grass,plaza/road,crate,road,grass,road,road,barrier/road,grass,plaza,grass,road,grass,road/road,barrier,road,road,road,road,road;S:6,0;P:0@0,0|1@5,2|2@2,4|3@3,6;O:;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6>2,6>3,6"
+      "canonicalSignature": "7x7;plaza,road,road,grass,road,road,road/road,tree,road,grass,road,fence,road/road,crate,road,crate,plaza,tree,bridge/road,water,road,crate,road,crate,plaza/road,road,road,grass,road,fence,road/road,road,plaza,grass,road,road,fence/road,barrier,road,road,road,grass,water;S:6,0;P:0@0,0|1@5,2|2@2,4|3@3,6;O:4,2>4,1|5,2>5,1;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6>2,6>3,6"
+    }
+  },
+  {
+    "id": "L039",
+    "chapter": 2,
+    "title": "忙碌街角",
+    "rows": 7,
+    "columns": 7,
+    "difficulty": 2,
+    "difficultyScore": 209394,
+    "seed": 238883,
+    "generatorVersion": 2,
+    "terrain": [
+      [
+        "road",
+        "barrier",
+        "road",
+        "road",
+        "road",
+        "road",
+        "road"
+      ],
+      [
+        "road",
+        "grass",
+        "plaza",
+        "grass",
+        "road",
+        "grass",
+        "road"
+      ],
+      [
+        "road",
+        "crate",
+        "road",
+        "grass",
+        "road",
+        "road",
+        "barrier"
+      ],
+      [
+        "road",
+        "grass",
+        "road",
+        "fence",
+        "road",
+        "grass",
+        "plaza"
+      ],
+      [
+        "road",
+        "tree",
+        "road",
+        "crate",
+        "plaza",
+        "road",
+        "bridge"
+      ],
+      [
+        "road",
+        "tree",
+        "road",
+        "barrier",
+        "road",
+        "road",
+        "road"
+      ],
+      [
+        "plaza",
+        "road",
+        "road",
+        "barrier",
+        "road",
+        "road",
+        "road"
+      ]
+    ],
+    "start": [
+      0,
+      0
+    ],
+    "stops": [
+      {
+        "id": "stop-1",
+        "order": 0,
+        "item": "paw-cookie",
+        "label": "貓掌餅乾",
+        "position": [
+          6,
+          0
+        ],
+        "houseStyle": "pink"
+      },
+      {
+        "id": "stop-2",
+        "order": 1,
+        "item": "parcel",
+        "label": "包裹",
+        "position": [
+          1,
+          2
+        ],
+        "houseStyle": "blue"
+      },
+      {
+        "id": "stop-3",
+        "order": 2,
+        "item": "mouse",
+        "label": "玩具老鼠",
+        "position": [
+          4,
+          4
+        ],
+        "houseStyle": "yellow"
+      },
+      {
+        "id": "stop-4",
+        "order": 3,
+        "item": "flowers",
+        "label": "花束",
+        "position": [
+          3,
+          6
+        ],
+        "houseStyle": "green"
+      }
+    ],
+    "oneWayEdges": [
+      {
+        "from": [
+          4,
+          6
+        ],
+        "to": [
+          4,
+          5
+        ]
+      },
+      {
+        "from": [
+          5,
+          6
+        ],
+        "to": [
+          5,
+          5
+        ]
+      },
+      {
+        "from": [
+          6,
+          5
+        ],
+        "to": [
+          5,
+          5
+        ]
+      }
+    ],
+    "solutionPath": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    "optimalSteps": 27,
+    "optimalSolutionCount": 1,
+    "fuelLimit": 34,
+    "metrics": {
+      "passableCellCount": 34,
+      "stopCount": 4,
+      "obstacleCount": 15,
+      "oneWayEdgeCount": 3,
+      "branchCellCount": 4,
+      "detourLoopCount": 1,
+      "bridgeCount": 1,
+      "solverNodes": 35,
+      "solverBacktracks": 7,
+      "solverMaxDepth": 27,
+      "canonicalSignature": "7x7;plaza,road,road,barrier,road,road,road/road,tree,road,barrier,road,road,road/road,tree,road,crate,plaza,road,bridge/road,grass,road,fence,road,grass,plaza/road,crate,road,grass,road,road,barrier/road,grass,plaza,grass,road,grass,road/road,barrier,road,road,road,road,road;S:6,0;P:0@0,0|1@5,2|2@2,4|3@3,6;O:0,5>1,5|1,6>1,5|2,6>2,5;R:6,0>5,0>4,0>3,0>2,0>1,0>0,0>0,1>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,3>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,5>0,6>1,6>2,6>3,6"
     }
   },
   {
@@ -4322,9 +4633,9 @@
     "rows": 7,
     "columns": 7,
     "difficulty": 2,
-    "difficultyScore": 207813,
+    "difficultyScore": 208938,
     "seed": 239880,
-    "generatorVersion": 1,
+    "generatorVersion": 2,
     "terrain": [
       [
         "road",
@@ -4358,8 +4669,8 @@
         "grass",
         "barrier",
         "crate",
-        "fence",
-        "grass",
+        "road",
+        "road",
         "grass"
       ],
       [
@@ -4440,7 +4751,28 @@
         "houseStyle": "pink"
       }
     ],
-    "oneWayEdges": [],
+    "oneWayEdges": [
+      {
+        "from": [
+          4,
+          4
+        ],
+        "to": [
+          3,
+          4
+        ]
+      },
+      {
+        "from": [
+          4,
+          5
+        ],
+        "to": [
+          3,
+          5
+        ]
+      }
+    ],
     "solutionPath": [
       [
         0,
@@ -4561,18 +4893,19 @@
     ],
     "optimalSteps": 28,
     "optimalSolutionCount": 1,
-    "fuelLimit": 31,
+    "fuelLimit": 35,
     "metrics": {
-      "passableCellCount": 31,
+      "passableCellCount": 33,
       "stopCount": 4,
-      "obstacleCount": 18,
-      "oneWayEdgeCount": 0,
+      "obstacleCount": 16,
+      "oneWayEdgeCount": 2,
       "branchCellCount": 2,
+      "detourLoopCount": 1,
       "bridgeCount": 2,
-      "solverNodes": 30,
-      "solverBacktracks": 1,
+      "solverNodes": 34,
+      "solverBacktracks": 5,
       "solverMaxDepth": 28,
-      "canonicalSignature": "7x7;barrier,plaza,road,road,plaza,grass,road/road,grass,road,grass,bridge,grass,road/plaza,grass,road,barrier,road,grass,road/road,grass,road,crate,road,grass,road/bridge,grass,road,fence,road,grass,road/road,grass,plaza,grass,road,water,road/road,road,road,grass,road,plaza,road;S:0,6;P:0@6,5|1@0,4|2@5,2|3@2,0;O:;R:0,6>1,6>2,6>3,6>4,6>5,6>6,6>6,5>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,3>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,1>6,0>5,0>4,0>3,0>2,0"
+      "canonicalSignature": "7x7;barrier,plaza,road,road,plaza,grass,road/road,grass,road,grass,bridge,grass,road/plaza,grass,road,barrier,road,grass,road/road,grass,road,crate,road,grass,road/bridge,grass,road,road,road,grass,road/road,grass,plaza,road,road,water,road/road,road,road,grass,road,plaza,road;S:0,6;P:0@6,5|1@0,4|2@5,2|3@2,0;O:4,2>4,3|5,2>5,3;R:0,6>1,6>2,6>3,6>4,6>5,6>6,6>6,5>6,4>5,4>4,4>3,4>2,4>1,4>0,4>0,3>0,2>1,2>2,2>3,2>4,2>5,2>6,2>6,1>6,0>5,0>4,0>3,0>2,0"
     }
   }
 ];

@@ -1,11 +1,13 @@
 (function (root, factory) {
-  const api = factory();
+  const config = typeof module === 'object' && module.exports
+    ? require('./config.js') : root.CAT_COURIER_CONFIG;
+  const api = factory(config);
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.CatCourierCore = api;
-})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (Config) {
   'use strict';
 
-  const PASSABLE = new Set(['road', 'bridge', 'plaza']);
+  const PASSABLE = new Set(Config.passableTerrain);
   const DIRECTIONS = Object.freeze({
     up: [-1, 0],
     right: [0, 1],
@@ -83,7 +85,7 @@
       stopProgress: 0,
       elapsed: 0,
       hintsUsed: 0,
-      hintRemaining: 3,
+      hintRemaining: Config.maxHintsPerAttempt,
       status: 'playing',
       history: [],
       lastHintKey: '',
@@ -179,7 +181,9 @@
     const next = cloneState(state);
     if (addHistory) {
       next.history.push(snapshotForHistory(state));
-      if (next.history.length > 100) next.history.splice(0, next.history.length - 100);
+      if (next.history.length > Config.maxUndoPathStates) {
+        next.history.splice(0, next.history.length - Config.maxUndoPathStates);
+      }
     }
     next.path = path.map(cloneCell);
     next.stopProgress = calculateStopProgress(level, next.path);
@@ -245,14 +249,30 @@
     }
     const result = solver.solveFromPartialPath(level, state.path, { maxSolutions: 1 });
     if (!result.solved || result.shortestPath.length <= state.path.length) {
+      for (let end = state.path.length - 1; end > 0; end -= 1) {
+        const viablePrefix = state.path.slice(0, end);
+        const recovery = solver.solveFromPartialPath(level, viablePrefix, { maxSolutions: 1 });
+        if (recovery.solved) {
+          const key = `dead:${state.path.map((cell) => cellKey(...cell)).join('>')}`;
+          return {
+            available: true,
+            deadEnd: true,
+            nextCell: cloneCell(state.path[end]),
+            key,
+            duplicate: state.lastHintKey === key,
+          };
+        }
+      }
       return { available: false, reason: 'dead-end' };
     }
     const nextCell = result.shortestPath[state.path.length];
+    const key = `next:${state.path.map((cell) => cellKey(...cell)).join('>')}:${cellKey(...nextCell)}`;
     return {
       available: true,
       nextCell: cloneCell(nextCell),
       direction: getDirection(state.path[state.path.length - 1], nextCell),
-      key: `${cellKey(...state.path[state.path.length - 1])}>${cellKey(...nextCell)}`,
+      key,
+      duplicate: state.lastHintKey === key,
     };
   }
 
@@ -322,9 +342,10 @@
       elapsed: Math.max(0, Math.floor(Number(state.elapsed) || 0)),
       hintsUsed: Math.max(0, Math.floor(Number(state.hintsUsed) || 0)),
       hintRemaining: Math.max(0, Math.floor(Number(state.hintRemaining) || 0)),
+      lastHintKey: typeof state.lastHintKey === 'string' ? state.lastHintKey.slice(0, 500) : '',
       status: ['playing', 'animating', 'completed'].includes(state.status)
         ? state.status : 'playing',
-      history: (state.history || []).slice(-100).map((entry) => ({
+      history: (state.history || []).slice(-Config.maxUndoPathStates).map((entry) => ({
         path: (entry.path || []).map(cloneCell),
       })),
     };
@@ -339,10 +360,15 @@
     state.stopProgress = pathResult.stopProgress;
     state.elapsed = Math.max(0, Math.floor(Number(data.elapsed) || 0));
     state.hintsUsed = Math.max(0, Math.floor(Number(data.hintsUsed) || 0));
-    state.hintRemaining = Math.max(0, Math.min(3, Math.floor(Number(data.hintRemaining) || 0)));
+    state.hintRemaining = Math.max(
+      0,
+      Math.min(Config.maxHintsPerAttempt, Math.floor(Number(data.hintRemaining) || 0)),
+    );
+    state.lastHintKey = typeof data.lastHintKey === 'string' ? data.lastHintKey.slice(0, 500) : '';
     state.status = data.status === 'completed' ? 'completed' : 'playing';
     state.history = Array.isArray(data.history)
-      ? data.history.slice(-100).filter((entry) => validatePath(level, entry.path).valid)
+      ? data.history.slice(-Config.maxUndoPathStates)
+        .filter((entry) => validatePath(level, entry.path).valid)
         .map((entry) => ({ path: entry.path.map(cloneCell) }))
       : [];
     return state;

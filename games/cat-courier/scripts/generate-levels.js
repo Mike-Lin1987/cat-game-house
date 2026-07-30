@@ -5,7 +5,7 @@ const path = require('node:path');
 const Core = require('../js/core.js');
 const Solver = require('../js/solver.js');
 
-const GENERATOR_VERSION = 1;
+const GENERATOR_VERSION = 2;
 const DATA_DIRECTORY = path.join(__dirname, '..', 'js', 'data');
 const STAGING_DIRECTORY = path.join(__dirname, '..', '.staging', 'data');
 const CACHE_DIRECTORY = path.join(__dirname, '..', '.generation-cache');
@@ -118,6 +118,101 @@ function addBranches(terrain, desired, rng) {
   return added;
 }
 
+function passableNeighbors(terrain, cell) {
+  return [[-1, 0], [0, 1], [1, 0], [0, -1]].map(([dr, dc]) => (
+    [cell[0] + dr, cell[1] + dc]
+  )).filter(([row, column]) => (
+    row >= 0 && column >= 0 && row < terrain.length && column < terrain.length
+      && Core.isPassableTerrain(terrain[row][column])
+  ));
+}
+
+function addDetourLoops(terrain, desired, rng) {
+  const added = [];
+  for (let count = 0; count < desired; count += 1) {
+    const candidates = [];
+    for (let row = 0; row < terrain.length; row += 1) {
+      for (let column = 0; column < terrain.length; column += 1) {
+        const start = [row, column];
+        if (!Core.isPassableTerrain(terrain[row][column])) continue;
+        for (const [dr, dc, sideRow, sideColumn] of [
+          [0, 1, -1, 0], [0, 1, 1, 0],
+          [1, 0, 0, -1], [1, 0, 0, 1],
+        ]) {
+          const end = [row + dr, column + dc];
+          const detourStart = [row + sideRow, column + sideColumn];
+          const detourEnd = [end[0] + sideRow, end[1] + sideColumn];
+          const cells = [end, detourStart, detourEnd];
+          if (cells.some(([targetRow, targetColumn]) => (
+            targetRow < 0 || targetColumn < 0
+              || targetRow >= terrain.length || targetColumn >= terrain.length
+          ))) continue;
+          if (!Core.isPassableTerrain(terrain[end[0]][end[1]])
+            || Core.isPassableTerrain(terrain[detourStart[0]][detourStart[1]])
+            || Core.isPassableTerrain(terrain[detourEnd[0]][detourEnd[1]])) continue;
+          const startNeighbors = passableNeighbors(terrain, detourStart);
+          const endNeighbors = passableNeighbors(terrain, detourEnd);
+          if (startNeighbors.length === 1 && endNeighbors.length === 1
+            && Core.sameCell(startNeighbors[0], start) && Core.sameCell(endNeighbors[0], end)) {
+            candidates.push([detourStart, detourEnd]);
+          }
+        }
+      }
+    }
+    if (!candidates.length) break;
+    const loop = shuffled(candidates, rng)[0];
+    for (const cell of loop) terrain[cell[0]][cell[1]] = 'road';
+    added.push(loop);
+  }
+  return added;
+}
+
+function addGuardedDetourLoop(terrain, corridor, rng) {
+  const corridorIndex = new Map(corridor.map((cell, index) => [cell.join(','), index]));
+  const candidates = [];
+  for (let row = 0; row < terrain.length; row += 1) {
+    for (let column = 0; column < terrain.length; column += 1) {
+      const start = [row, column];
+      const startIndex = corridorIndex.get(start.join(','));
+      if (startIndex === undefined) continue;
+      for (const [dr, dc, sideRow, sideColumn] of [
+        [0, 1, -1, 0], [0, 1, 1, 0],
+        [1, 0, 0, -1], [1, 0, 0, 1],
+      ]) {
+        const end = [row + dr, column + dc];
+        const endIndex = corridorIndex.get(end.join(','));
+        const detourStart = [row + sideRow, column + sideColumn];
+        const detourEnd = [end[0] + sideRow, end[1] + sideColumn];
+        if (endIndex === undefined || Math.abs(startIndex - endIndex) !== 1) continue;
+        if ([detourStart, detourEnd].some(([targetRow, targetColumn]) => (
+          targetRow < 0 || targetColumn < 0
+            || targetRow >= terrain.length || targetColumn >= terrain.length
+            || Core.isPassableTerrain(terrain[targetRow][targetColumn])
+        ))) continue;
+        const startNeighbors = passableNeighbors(terrain, detourStart);
+        const endNeighbors = passableNeighbors(terrain, detourEnd);
+        if (!startNeighbors.some((cell) => Core.sameCell(cell, start))
+          || !endNeighbors.some((cell) => Core.sameCell(cell, end))) continue;
+        const maximumAnchorIndex = Math.max(startIndex, endIndex);
+        const extras = [
+          ...startNeighbors.filter((cell) => !Core.sameCell(cell, start))
+            .map((cell) => ({ from: cell, to: detourStart })),
+          ...endNeighbors.filter((cell) => !Core.sameCell(cell, end))
+            .map((cell) => ({ from: cell, to: detourEnd })),
+        ];
+        if (!extras.length || extras.some((edge) => (
+          (corridorIndex.get(edge.from.join(',')) ?? -1) <= maximumAnchorIndex
+        ))) continue;
+        candidates.push({ cells: [detourStart, detourEnd], guardEdges: extras });
+      }
+    }
+  }
+  if (!candidates.length) return null;
+  const chosen = shuffled(candidates, rng)[0];
+  for (const cell of chosen.cells) terrain[cell[0]][cell[1]] = 'road';
+  return chosen;
+}
+
 function transformedSignature(level, transformIndex) {
   const size = level.rows;
   const transformedTerrain = Array.from({ length: size }, () => Array(size).fill(''));
@@ -168,9 +263,19 @@ function buildCandidate(chapter, ordinal, attempt = 0) {
     terrain[cell[0]][cell[1]] = index > 0 && index % 13 === 0 && chapter.number >= 2
       ? 'bridge' : 'road';
   });
+  const desiredLoops = Math.min(3, chapter.number);
   const desiredBranches = Math.round(chapter.branches[0]
     + (chapter.branches[1] - chapter.branches[0]) * progress);
   const branchCells = addBranches(terrain, desiredBranches, rng);
+  const detourLoops = addDetourLoops(terrain, desiredLoops, rng);
+  const guardOneWayEdges = [];
+  if (!detourLoops.length) {
+    const guardedLoop = addGuardedDetourLoop(terrain, corridor, rng);
+    if (guardedLoop) {
+      detourLoops.push(guardedLoop.cells);
+      guardOneWayEdges.push(...guardedLoop.guardEdges);
+    }
+  }
   const stopCount = Math.round(chapter.stops[0]
     + (chapter.stops[1] - chapter.stops[0]) * progress);
   const stopIndices = [];
@@ -198,9 +303,10 @@ function buildCandidate(chapter, ordinal, attempt = 0) {
     to: cell,
     index: index + 1,
   })).filter((edge) => !stopIndices.includes(edge.index));
-  const oneWayEdges = shuffled(availableEdges, rng).slice(0, oneWayCount)
+  const oneWayEdges = guardOneWayEdges.concat(shuffled(availableEdges, rng)
+    .slice(0, Math.max(0, oneWayCount - guardOneWayEdges.length))
     .sort((a, b) => a.index - b.index)
-    .map((edge) => ({ from: [...edge.from], to: [...edge.to] }));
+    .map((edge) => ({ from: [...edge.from], to: [...edge.to] })));
   const level = {
     id: `L${String(absoluteIndex).padStart(3, '0')}`,
     chapter: chapter.number,
@@ -235,6 +341,7 @@ function buildCandidate(chapter, ordinal, attempt = 0) {
     + desiredSteps * 211
     + stopCount * 317
     + branchCells.length * 173
+    + detourLoops.length * 283
     + oneWayEdges.length * 401
     + bridgeCount * 97
     + solved.nodesVisited * 3
@@ -245,6 +352,7 @@ function buildCandidate(chapter, ordinal, attempt = 0) {
     obstacleCount: chapter.size * chapter.size - passableCellCount,
     oneWayEdgeCount: oneWayEdges.length,
     branchCellCount: branchCells.length,
+    detourLoopCount: detourLoops.length,
     bridgeCount,
     solverNodes: solved.nodesVisited,
     solverBacktracks: solved.backtracks,
@@ -256,10 +364,13 @@ function buildCandidate(chapter, ordinal, attempt = 0) {
 }
 
 function generateLevels(options = {}) {
-  const signatures = new Set();
-  const levels = [];
+  const levels = Array.isArray(options.initialLevels)
+    ? options.initialLevels.map((level) => JSON.parse(JSON.stringify(level))) : [];
+  const signatures = new Set(levels.map((level) => level.metrics.canonicalSignature));
   for (const chapter of CHAPTERS) {
     for (let ordinal = 0; ordinal < 20; ordinal += 1) {
+      const absoluteIndex = (chapter.number - 1) * 20 + ordinal;
+      if (levels[absoluteIndex]) continue;
       let level = null;
       for (let attempt = 0; attempt < 200 && !level; attempt += 1) {
         const candidate = buildCandidate(chapter, ordinal, attempt);
@@ -268,10 +379,37 @@ function generateLevels(options = {}) {
       if (!level) throw new Error(`無法產生第 ${chapter.number} 章第 ${ordinal + 1} 關`);
       signatures.add(level.metrics.canonicalSignature);
       levels.push(level);
-      if (options.onProgress) options.onProgress(levels.length, level);
+      if (options.onProgress) options.onProgress(levels.length, level, levels);
     }
   }
   return levels;
+}
+
+function loadGenerationCache(directory = CACHE_DIRECTORY) {
+  try {
+    const levels = JSON.parse(fs.readFileSync(path.join(directory, 'levels.json'), 'utf8'));
+    if (!Array.isArray(levels) || levels.length > 100) return null;
+    const signatures = new Set();
+    for (const [index, level] of levels.entries()) {
+      if (level.id !== `L${String(index + 1).padStart(3, '0')}`
+        || Core.validateLevelDefinition(level).length
+        || !level.metrics?.canonicalSignature
+        || signatures.has(level.metrics.canonicalSignature)) return null;
+      signatures.add(level.metrics.canonicalSignature);
+    }
+    return levels;
+  } catch {
+    return null;
+  }
+}
+
+function saveGenerationCache(levels, directory = CACHE_DIRECTORY) {
+  fs.mkdirSync(directory, { recursive: true });
+  fs.writeFileSync(path.join(directory, 'levels.json'), `${JSON.stringify(levels, null, 2)}\n`);
+}
+
+function clearGenerationCache(directory = CACHE_DIRECTORY) {
+  fs.rmSync(directory, { recursive: true, force: true });
 }
 
 function validateGeneratedLevels(levels) {
@@ -383,11 +521,19 @@ function parseOptions(argv) {
 
 if (require.main === module) {
   const options = parseOptions(process.argv.slice(2));
+  if (options.force) clearGenerationCache();
+  const cachedLevels = options.resume && !options.force ? loadGenerationCache() : null;
   const levels = generateLevels({
-    onProgress(index, level) {
+    initialLevels: cachedLevels || [],
+    onProgress(index, level, progressLevels) {
+      saveGenerationCache(progressLevels);
       process.stdout.write(`${level.id}：${level.rows}×${level.columns}、${level.stops.length} 站、最佳 ${level.optimalSteps} 步\n`);
     },
   });
+  saveGenerationCache(levels);
+  if (cachedLevels?.length) {
+    process.stdout.write(`已從快取恢復 ${cachedLevels.length} 關並接續產生。\n`);
+  }
   const selected = levels.filter((level) => (
     (!options.chapter || level.chapter === options.chapter)
     && (!options.level || level.id === options.level)
@@ -410,8 +556,13 @@ module.exports = {
   GENERATOR_VERSION,
   createRng,
   buildCandidate,
+  addDetourLoops,
+  addGuardedDetourLoop,
   canonicalSignature,
   generateLevels,
+  loadGenerationCache,
+  saveGenerationCache,
+  clearGenerationCache,
   validateGeneratedLevels,
   writeLevels,
   parseOptions,

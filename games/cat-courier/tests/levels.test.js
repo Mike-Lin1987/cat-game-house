@@ -2,6 +2,9 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
 const Core = require('../js/core.js');
 const Solver = require('../js/solver.js');
 const Levels = require('../js/data/levels-index.js');
@@ -30,6 +33,26 @@ test('全部關卡資料、保存答案、油量與配送順序合法', () => {
     assert.ok(level.fuelLimit >= level.optimalSteps, level.id);
     assert.ok(level.stops.length >= 2, level.id);
     assert.ok(level.metrics.branchCellCount >= 1, level.id);
+  }
+});
+
+test('每關都有較長替代環路而非單一路徑樹，第五章至少兩個環路', () => {
+  for (const level of Levels) {
+    let passableCells = 0;
+    let undirectedEdges = 0;
+    for (let row = 0; row < level.rows; row += 1) {
+      for (let column = 0; column < level.columns; column += 1) {
+        if (!Core.isPassableTerrain(level.terrain[row][column])) continue;
+        passableCells += 1;
+        if (row + 1 < level.rows
+          && Core.isPassableTerrain(level.terrain[row + 1][column])) undirectedEdges += 1;
+        if (column + 1 < level.columns
+          && Core.isPassableTerrain(level.terrain[row][column + 1])) undirectedEdges += 1;
+      }
+    }
+    const cycleRank = undirectedEdges - passableCells + 1;
+    assert.ok(cycleRank >= 1, `${level.id} 不得是單一路徑樹`);
+    if (level.chapter === 5) assert.ok(cycleRank >= 2, `${level.id} 應有多個替代環路`);
   }
 });
 
@@ -71,4 +94,22 @@ test('固定 seed 重新建立相同 100 關', () => {
     JSON.stringify(regenerated),
     JSON.stringify(Levels),
   );
+});
+
+test('resume 使用已驗證前綴接續產生，force 可清除快取', (context) => {
+  const cacheDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'cat-courier-cache-'));
+  context.after(() => fs.rmSync(cacheDirectory, { recursive: true, force: true }));
+  Generator.saveGenerationCache(Levels.slice(0, 12), cacheDirectory);
+  const cached = Generator.loadGenerationCache(cacheDirectory);
+  assert.equal(cached.length, 12);
+  assert.equal(
+    JSON.stringify(Generator.generateLevels({ initialLevels: cached })),
+    JSON.stringify(Levels),
+  );
+  assert.deepEqual(
+    Generator.parseOptions(['--chapter=3', '--level=L050', '--resume', '--force']),
+    { chapter: 3, level: 'L050', resume: true, force: true },
+  );
+  Generator.clearGenerationCache(cacheDirectory);
+  assert.equal(Generator.loadGenerationCache(cacheDirectory), null);
 });
