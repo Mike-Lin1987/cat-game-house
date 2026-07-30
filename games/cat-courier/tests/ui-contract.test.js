@@ -1,0 +1,76 @@
+'use strict';
+
+const fs = require('node:fs');
+const path = require('node:path');
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const Renderer = require('../js/renderer.js');
+const Storage = require('../js/storage.js');
+
+const root = path.join(__dirname, '..');
+const read = (filename) => fs.readFileSync(path.join(root, filename), 'utf8');
+
+test('遊戲 runtime 可由 file 直接載入且不使用網路、fetch、ES Module 或 Service Worker', () => {
+  const html = read('index.html');
+  const runtimeFiles = [
+    html, read('js/app.js'), read('js/renderer.js'), read('js/core.js'),
+    read('js/solver.js'), read('js/storage.js'), read('js/icons.js'),
+  ].join('\n');
+  assert.doesNotMatch(runtimeFiles, /type=["']module|(?:^|\s)(?:import|export)\s|fetch\s*\(|serviceWorker|https?:\/\//m);
+  assert.match(html, /js\/data\/levels-001-020\.js/);
+  assert.match(html, /js\/data\/levels-081-100\.js/);
+});
+
+test('Pointer Events、快速拖曳、鍵盤 grid 與完整工具列契約存在', () => {
+  const app = read('js/app.js');
+  const html = read('index.html');
+  const renderer = read('js/renderer.js');
+  for (const eventName of ['pointerdown', 'pointermove', 'pointerup', 'pointercancel']) {
+    assert.match(app, new RegExp(eventName));
+  }
+  assert.match(app, /setPointerCapture/);
+  assert.match(app, /interpolateCells/);
+  assert.match(app, /ArrowUp/);
+  assert.match(app, /Backspace/);
+  assert.match(renderer, /role="grid"/);
+  assert.match(renderer, /role="gridcell"/);
+  for (const action of ['hint', 'clear', 'restart', 'depart', 'skip-animation']) {
+    assert.match(renderer, new RegExp(`data-action="${action}"`));
+  }
+  assert.match(html, /aria-live="polite"/);
+});
+
+test('木質 CSS Grid、SVG route、320px 與 reduced motion 規格完整', () => {
+  const css = read('css/app.css');
+  const renderer = read('js/renderer.js');
+  assert.match(css, /\.courier-map\s*\{/);
+  assert.match(css, /grid-template-columns:\s*repeat\(var\(--map-columns\)/);
+  assert.match(css, /@media \(max-width: 370px\)/);
+  assert.match(css, /prefers-reduced-motion/);
+  assert.match(css, /overflow-x:\s*hidden/);
+  assert.match(renderer, /class="route-overlay"/);
+  assert.match(renderer, /<polyline class="route-glow"/);
+});
+
+test('首頁、選關、結果與 review 提供完整可離線流程', () => {
+  const progress = Storage.createDefaultProgress();
+  const home = Renderer.homeMarkup(progress, false);
+  const levels = [{
+    id: 'L001', chapter: 1, title: '第一瓶鮮奶', rows: 6, columns: 6, stops: [{}, {}],
+  }];
+  const select = Renderer.levelSelectMarkup(levels, progress, 1, 0);
+  const result = Renderer.modalMarkup('complete', {
+    stars: 3, fuelUsed: 8, optimalSteps: 8, fuelRemaining: 4,
+    elapsedText: '00:12', hintsUsed: 0, finalLevel: false,
+  });
+  assert.match(home, /開始遊戲/);
+  assert.match(home, /href="\.\.\/\.\.\/"/);
+  assert.match(select, /第 1 關/);
+  assert.match(result, /下一關/);
+  const review = read('review.html') + read('js/review.js');
+  assert.match(review, /review-search/);
+  assert.match(review, /review-chapter/);
+  assert.match(review, /review-solution/);
+  assert.match(review, /逐格播放/);
+  assert.match(review, /canonicalSignature/);
+});

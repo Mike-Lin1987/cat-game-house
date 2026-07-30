@@ -28,6 +28,11 @@
 - **遮擋者（blocker）**：與較低層卡牌有正面積重疊、尚未移除的更高層卡牌。
 - **暫存槽（match tray）**：《貓咪三層配對》中依圖案分組保存已選卡牌的 9 格區域；三張相同圖案同步消除。
 - **安全洗牌（certified shuffle）**：只重排中央剩餘卡牌圖案，並在 Solver 認證盤面仍可完成後才提交的工具動作。
+- **配送路線（delivery route）**：《貓咪快遞員》中從起點開始、只使用正交相鄰可通行格且不重複格子的玩家 path。
+- **配送站（delivery stop）**：帶有連續 order 的貓咪家；玩家必須依序進入，最後停在最末站。
+- **單行道路（one-way edge）**：只允許 `from → to` 的相鄰可通行格連線；未標示的相鄰道路預設雙向。
+- **油量上限（fuel limit）**：單關允許的最大移動步數；`fuelUsed` 固定為 `path.length - 1`。
+- **唯一最短配送（unique shortest delivery）**：不讀保存答案的 Solver 找到的最佳步數路線剛好一條；較長合法路線不要求唯一。
 
 ## Public seams
 

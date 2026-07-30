@@ -1231,6 +1231,158 @@
     drawFooter('#bd7441', time / DURATION);
   }
 
+  function drawCourierHouse(x, y, color, item, order) {
+    context.save();
+    context.translate(x, y);
+    context.fillStyle = color;
+    context.strokeStyle = '#704023';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.moveTo(-36, -4);
+    context.lineTo(0, -36);
+    context.lineTo(36, -4);
+    context.lineTo(30, 3);
+    context.lineTo(30, 35);
+    context.lineTo(-30, 35);
+    context.lineTo(-30, 3);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    roundedRect(-20, 3, 40, 30, 8, '#fff7e6', '#704023', 2);
+    context.fillStyle = '#704023';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 19px ${FONT}`;
+    context.fillText(item, 0, 18);
+    roundedRect(23, -43, 29, 29, 14, '#fff8e8', '#aa6132', 2);
+    context.fillStyle = '#704023';
+    context.font = `900 16px ${FONT}`;
+    context.fillText(String(order), 37, -28);
+    context.restore();
+  }
+
+  const courierPath = [
+    [0,5],[1,5],[2,5],[2,4],[2,3],[3,3],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],
+  ];
+
+  function drawCourierBoard(step, tween) {
+    const originX = 112;
+    const originY = 135;
+    const cell = 70;
+    roundedRect(originX - 14, originY - 14, 448, 448, 30, '#c69158', '#704023', 6);
+    for (let row = 0; row < 6; row += 1) {
+      for (let column = 0; column < 6; column += 1) {
+        const isRoad = courierPath.some(([r, c]) => r === row && c === column)
+          || (row === 4 && column === 4) || (row === 3 && column === 4);
+        context.fillStyle = isRoad ? '#898d88' : ['#9cc66e', '#8fbd65'][(row + column) % 2];
+        context.fillRect(originX + column * cell, originY + row * cell, cell, cell);
+        context.strokeStyle = 'rgba(84,73,51,.2)';
+        context.lineWidth = 1.5;
+        context.strokeRect(originX + column * cell, originY + row * cell, cell, cell);
+        if (isRoad) {
+          context.strokeStyle = 'rgba(255,245,192,.7)';
+          context.lineWidth = 3;
+          context.setLineDash([10, 9]);
+          context.beginPath();
+          context.moveTo(originX + column * cell + 14, originY + row * cell + 35);
+          context.lineTo(originX + column * cell + 56, originY + row * cell + 35);
+          context.stroke();
+          context.setLineDash([]);
+        } else if ((row + column) % 3 === 0) {
+          context.fillStyle = '#5d9e49';
+          context.beginPath();
+          context.arc(originX + column * cell + 35, originY + row * cell + 36, 18, 0, Math.PI * 2);
+          context.fill();
+        }
+      }
+    }
+    const visibleCount = Math.min(
+      courierPath.length,
+      step === 1 ? Math.floor(1 + tween * 4)
+        : step === 2 ? Math.floor(5 + tween * 4)
+          : step === 3 ? Math.floor(9 + tween * 4) : courierPath.length,
+    );
+    context.save();
+    context.strokeStyle = '#ffe37a';
+    context.lineWidth = 18;
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
+    context.shadowColor = '#ffbd2e';
+    context.shadowBlur = 18;
+    context.beginPath();
+    courierPath.slice(0, visibleCount).forEach(([row, column], index) => {
+      const x = originX + column * cell + cell / 2;
+      const y = originY + row * cell + cell / 2;
+      if (index === 0) context.moveTo(x, y);
+      else context.lineTo(x, y);
+    });
+    context.stroke();
+    context.strokeStyle = '#ffad22';
+    context.lineWidth = 7;
+    context.shadowBlur = 0;
+    context.stroke();
+    context.restore();
+    drawCourierHouse(originX + 5.5 * cell, originY + 2.5 * cell, '#5c9fc1', '奶', 1);
+    drawCourierHouse(originX + 1.5 * cell, originY + 4.5 * cell, '#e5aa3d', '魚', 2);
+    drawCourierHouse(originX + 1.5 * cell, originY + .5 * cell, '#e48183', '箱', 3);
+    const courierIndex = Math.max(0, visibleCount - 1);
+    const courierCell = courierPath[courierIndex];
+    drawCatFace(originX + courierCell[1] * cell + 35, originY + courierCell[0] * cell + 25, 52, '#e39a5d', '#7d6659');
+    roundedRect(originX + courierCell[1] * cell + 15, originY + courierCell[0] * cell + 47, 44, 17, 8, '#ef942e', '#704023', 2);
+  }
+
+  function drawCourierIntro(time) {
+    drawBackground('#d8893f', time);
+    const appear = ease(progress(time, 0, 1.2));
+    context.globalAlpha = appear;
+    roundedRect(100, 150, 270, 260, 38, '#d99a5e', '#704023', 5);
+    context.strokeStyle = '#858985';
+    context.lineWidth = 34;
+    context.lineCap = 'round';
+    context.beginPath();
+    context.moveTo(130, 360);
+    context.lineTo(230, 360);
+    context.lineTo(230, 260);
+    context.lineTo(330, 260);
+    context.stroke();
+    context.strokeStyle = '#ffb52d';
+    context.lineWidth = 8;
+    context.stroke();
+    drawCatFace(145, 324, 78, '#e39a5d', '#7d6659');
+    drawCourierHouse(330, 246, '#5c9fc1', '奶', 1);
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillStyle = '#382f2a';
+    context.font = `900 65px ${FONT}`;
+    context.fillText('貓咪快遞員', 420, 205);
+    context.font = `700 34px ${FONT}`;
+    context.fillStyle = '#7c4727';
+    context.fillText('24 秒快速教學', 425, 310);
+    roundedRect(425, 390, 660, 64, 22, '#d8893f');
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.font = `900 27px ${FONT}`;
+    context.fillStyle = '#fff';
+    context.fillText('照順序、看箭頭、用最少油量送達', 755, 422);
+    context.globalAlpha = 1;
+    drawFooter('#d8893f', time / DURATION);
+  }
+
+  function drawCourierTutorial(time) {
+    const local = time - 2.5;
+    let step = 1;
+    let title = '從快遞員起點畫出道路';
+    let description = '只能上下左右前進，草地、水池與障礙物都不能通行。';
+    if (local >= 5) { step = 2; title = '依任務卡順序送到貓咪家'; description = '不能提前進入後面的站點，完成順序會即時勾選。'; }
+    if (local >= 10) { step = 3; title = '不走回頭路並遵守單行道'; description = '道路格不能重複；拖回舊格可以裁切並重新規劃。'; }
+    if (local >= 15) { step = 4; title = '在油量內抵達最後一站'; description = '路線完成後按「出發」，最短路線且不用提示可得三星。'; }
+    drawBackground('#d8893f', time);
+    drawTopBar('貓咪快遞員教學', '#7c4727', step);
+    drawCourierBoard(step, ease(progress(local % 5, 0, 1)));
+    drawCaption(String(step), title, description, '#d8893f');
+    drawFooter('#d8893f', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
@@ -1251,6 +1403,10 @@
       drawTripleIntro(time);
     } else if (kind === 'cat-triple-match') {
       drawTripleTutorial(time);
+    } else if (kind === 'cat-courier' && time < 2.5) {
+      drawCourierIntro(time);
+    } else if (kind === 'cat-courier') {
+      drawCourierTutorial(time);
     } else if (time < 2.5) {
       drawSolitaireIntro(time);
     } else {

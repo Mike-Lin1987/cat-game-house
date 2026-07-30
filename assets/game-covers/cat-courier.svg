@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">貓咪快遞員</title>
+  <desc id="desc">奶油木質社區中，貓咪快遞員騎著橘色小機車，沿發光路線依序前往三座貓咪家。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8e9"/><stop offset=".6" stop-color="#f5d6a3"/><stop offset="1" stop-color="#d99a5e"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e9aa68"/><stop offset="1" stop-color="#b96e3d"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="170%" height="180%"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#60361f" flood-opacity=".3"/></filter>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="640" height="360" rx="34" fill="url(#bg)"/>
+  <circle cx="574" cy="28" r="102" fill="#fff" opacity=".35"/>
+  <path d="M0 286h640v74H0z" fill="url(#wood)"/><path d="M0 311h640M0 338h640" stroke="#a55d35" stroke-width="3" opacity=".55"/>
+  <g transform="translate(32 54)" filter="url(#shadow)">
+    <rect width="365" height="220" rx="26" fill="#d7aa70" stroke="#87502d" stroke-width="7"/>
+    <path d="M12 12h341v196H12z" fill="#96c36a" stroke="#6f764d" stroke-width="2"/>
+    <path d="M25 172H220V118H92V62H290V33" fill="none" stroke="#858985" stroke-width="38" stroke-linejoin="round"/>
+    <path d="M25 172H220V118H92V62H290V33" fill="none" stroke="#fff1b0" stroke-width="4" stroke-dasharray="12 12"/>
+    <path d="M25 172H220V118H92V62H290V33" fill="none" stroke="#ffb52d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    <g transform="translate(270 7)"><path d="M0 35 27 8l27 27v36H0z" fill="#fff4d7" stroke="#75462b" stroke-width="4"/><path d="M-4 36 27 3l31 33" fill="none" stroke="#5a95ba" stroke-width="12"/><circle cx="27" cy="49" r="10" fill="#a9dcf0"/><path d="M24 40h6v4l3 4v8H21v-8l3-4z" fill="#fff" stroke="#3d7593" stroke-width="1.5"/></g>
+    <g transform="translate(65 35)"><path d="M0 35 27 8l27 27v36H0z" fill="#fff4d7" stroke="#75462b" stroke-width="4"/><path d="M-4 36 27 3l31 33" fill="none" stroke="#e5aa3d" stroke-width="12"/><path d="M14 50c7-11 21-11 28 0-7 10-21 10-28 0z" fill="#83bdd0" stroke="#3c6473" stroke-width="2"/></g>
+    <g transform="translate(190 91)"><path d="M0 35 27 8l27 27v36H0z" fill="#fff4d7" stroke="#75462b" stroke-width="4"/><path d="M-4 36 27 3l31 33" fill="none" stroke="#e48183" stroke-width="12"/><rect x="16" y="40" width="23" height="20" fill="#d28b3f" stroke="#7b4824" stroke-width="2"/><path d="m16 40 12 7 11-7" fill="none" stroke="#7b4824" stroke-width="2"/></g>
+    <g transform="translate(7 144)">
+      <circle cx="21" cy="45" r="10" fill="#3d4c55"/><circle cx="63" cy="45" r="10" fill="#3d4c55"/>
+      <path d="M17 37h39l14-15H43l-7 13" fill="#ef9a2f" stroke="#5c3624" stroke-width="4"/>
+      <path d="M22 24c0-15 10-25 24-25s25 10 25 25v10H22z" fill="#fff7e8" stroke="#5c3624" stroke-width="4"/>
+      <path d="M24 4 32-9 42 1M62 2 74-9l3 20" fill="#e49b63" stroke="#5c3624" stroke-width="4"/>
+      <circle cx="39" cy="18" r="3" fill="#5c3624"/><circle cx="56" cy="18" r="3" fill="#5c3624"/><path d="m46 23 3 3 3-3M42 29c4 4 10 4 14 0" fill="none" stroke="#5c3624" stroke-width="2.5"/>
+      <path d="M35 1c6-8 22-9 31 0" fill="#4e91bb" stroke="#5c3624" stroke-width="3"/>
+    </g>
+  </g>
+  <g font-family="Microsoft JhengHei,sans-serif" text-anchor="end">
+    <text x="604" y="92" font-size="34" font-weight="900" fill="#6d3d27">貓咪</text>
+    <text x="604" y="137" font-size="40" font-weight="900" fill="#c56d34">快遞員</text>
+    <rect x="430" y="157" width="174" height="38" rx="19" fill="#fff8e8" stroke="#d18b4d" stroke-width="2"/>
+    <text x="586" y="183" font-size="18" font-weight="800" fill="#7b4c32">依序送達每一站</text>
+    <text x="604" y="222" font-size="14" font-weight="700" fill="#8d674f">規劃路線・節省油量</text>
+  </g>
+  <g transform="translate(430 246)" filter="url(#shadow)">
+    <rect width="172" height="54" rx="18" fill="#8b4f30"/><rect x="7" y="7" width="158" height="40" rx="12" fill="#cf8148"/>
+    <circle cx="34" cy="27" r="12" fill="#a9dcf0" stroke="#fff6df" stroke-width="4"/>
+    <path d="M57 27h24M90 27h24M123 27h24" stroke="#ffe37a" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="80" cy="27" r="7" fill="#e9b34b"/><circle cx="114" cy="27" r="7" fill="#e98488"/><circle cx="148" cy="27" r="7" fill="#96c857"/>
+  </g>
+</svg>

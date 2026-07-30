@@ -129,6 +129,8 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   const wordScript = read('games/cat-word-solitaire/js/app.js');
   const triplePage = read('games/cat-triple-match/index.html');
   const tripleScript = read('games/cat-triple-match/js/app.js');
+  const courierPage = read('games/cat-courier/index.html');
+  const courierRenderer = read('games/cat-courier/js/renderer.js');
 
   assert.match(portalScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
   assert.match(portalScript, /\/index\\\.html/);
@@ -145,9 +147,11 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(tripleScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
   assert.match(tripleScript, /const PORTAL_HREF/);
   assert.match(triplePage, /href="\.\.\/\.\.\/index\.html"[^>]*data-portal-home/);
+  assert.match(courierPage, /href="\.\.\/\.\.\/manifest\.webmanifest"/);
+  assert.match(courierRenderer, /href="\.\.\/\.\.\/"[^>]*aria-label="回到遊戲小屋"/);
 });
 
-test('修正三層配對返回入口會更新既有 PWA 離線快取', () => {
+test('加入貓咪快遞員會更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v21';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v22';/);
 });
