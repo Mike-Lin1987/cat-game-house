@@ -182,6 +182,7 @@ button:disabled { cursor: not-allowed; filter: grayscale(.45); opacity: .55; }
 }
 .courier-map {
   position: relative; display: grid; grid-template-columns: repeat(var(--map-columns), minmax(0,1fr));
+  grid-template-rows: repeat(var(--map-rows), minmax(0,1fr));
   aspect-ratio: 1; border: 2px solid #6f764d; border-radius: 15px; overflow: hidden;
   background: var(--grass); touch-action: none; isolation: isolate;
 }

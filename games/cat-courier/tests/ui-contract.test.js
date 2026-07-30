@@ -47,6 +47,11 @@ test('木質 CSS Grid、SVG route、320px 與 reduced motion 規格完整', () =
   const renderer = read('js/renderer.js');
   assert.match(css, /\.courier-map\s*\{/);
   assert.match(css, /grid-template-columns:\s*repeat\(var\(--map-columns\)/);
+  assert.match(
+    css,
+    /grid-template-rows:\s*repeat\(var\(--map-rows\),\s*minmax\(0,\s*1fr\)\)/,
+    '棋盤必須明確等分每一列，不能由 SVG 或配送站內容決定 implicit row 高度',
+  );
   assert.match(css, /@media \(max-width: 370px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /overflow-x:\s*hidden/);
