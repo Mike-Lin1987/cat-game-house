@@ -6,7 +6,7 @@
   'use strict';
 
   const LABELS = Object.freeze({
-    courier: '騎著小機車的貓咪快遞員',
+    courier: '戴著深藍橘紋安全帽、騎小機車的灰貓快遞員',
     milk: '鮮奶',
     'dried-fish': '魚乾',
     parcel: '包裹',
@@ -34,17 +34,28 @@
 
   const ART = Object.freeze({
     courier: `
-      <g stroke="#5c3624" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="23" cy="45" r="8" fill="#3d4c55"/><circle cx="52" cy="45" r="8" fill="#3d4c55"/>
-        <path d="M21 39h25l8-10H37l-5 8" fill="#ef9a2f"/>
-        <path d="M18 32c0-9 6-16 15-16s16 7 16 16v7H18z" fill="#fff7e8"/>
-        <path d="M20 19l5-10 7 8M45 18l8-9 3 13" fill="#e49b63"/>
-        <circle cx="29" cy="28" r="2.2" fill="#5c3624" stroke="none"/><circle cx="41" cy="28" r="2.2" fill="#5c3624" stroke="none"/>
-        <path d="M34 31l2 2 2-2M31 35c3 3 7 3 10 0" fill="none"/>
-        <path d="M27 16c4-6 15-7 21 0" fill="#4e91bb"/>
-        <path d="M26 16h24" fill="none"/>
-        <rect x="7" y="27" width="15" height="15" rx="3" fill="#ca7d3d"/>
-        <path d="M11 33h7M14.5 29v9" stroke="#7e482c"/>
+      <g stroke="#402f2a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="19" cy="53" r="7" fill="#263640"/><circle cx="53" cy="53" r="7" fill="#263640"/>
+        <circle cx="19" cy="53" r="3" fill="#d9e2e7"/><circle cx="53" cy="53" r="3" fill="#d9e2e7"/>
+        <path d="M16 47h34l9-12H43l-7 10H24" fill="#f47a1f"/>
+        <path d="M12 39h17l5 10H12z" fill="#17324d"/>
+        <rect x="5" y="30" width="15" height="14" rx="3" fill="#f6b93b"/>
+        <path d="M9 34h7M12.5 31v10" stroke="#fff7e8"/>
+        <path d="M32 40c-4-6-4-11-1-16h16c4 4 5 10 3 17" fill="#f47a1f"/>
+        <ellipse cx="40" cy="27.5" rx="15.5" ry="14" fill="#aeb5bb"/>
+        <path d="M29 35c5 4 17 4 22-1" fill="#f4eee7" stroke="none"/>
+        <g data-part="helmet">
+          <path d="M22 26C21 12 29 5 40 5c13 0 21 8 20 22l-7 2c-5-6-21-8-29 0z" fill="#17324d"/>
+          <path d="M28 10c6-4 15-4 21 0l5 13-5 1-5-13-5-4-4 17-6 1z" fill="#fff7e8" stroke="none"/>
+          <path d="M38 6c4 0 8 1 11 3l4 14-5 1-4-13-6-2z" fill="#f47a1f" stroke="none"/>
+          <path d="M23 20c10-7 24-7 36 0l-2 8c-12-5-22-6-34-1z" fill="#1f2630"/>
+          <path d="M28 20c7-3 16-3 24 0" fill="none" stroke="#557991" stroke-width="2"/>
+        </g>
+        <ellipse cx="34" cy="29" rx="3.2" ry="4.2" fill="#f6b93b"/><ellipse cx="47" cy="29" rx="3.2" ry="4.2" fill="#f6b93b"/>
+        <circle cx="34" cy="29.5" r="1.7" fill="#201d1b" stroke="none"/><circle cx="47" cy="29.5" r="1.7" fill="#201d1b" stroke="none"/>
+        <circle cx="33" cy="28" r=".7" fill="#fff" stroke="none"/><circle cx="46" cy="28" r=".7" fill="#fff" stroke="none"/>
+        <path d="m38 34 2 1.6 2-1.6M36 38c3 2 6 2 9 0" fill="none"/>
+        <path d="M52 38l5 7" fill="none" stroke="#17324d" stroke-width="3"/>
       </g>`,
     milk: `<path d="M25 10h18v8l5 7v30H20V25l5-7z" fill="#edf8fb" stroke="#3d7593" stroke-width="3"/><path d="M24 31h20v19H24z" fill="#a9dcf0"/><path d="M26 10h16" stroke="#3d7593" stroke-width="5"/><path d="M29 39c4-5 9-5 13 0" fill="none" stroke="#fff" stroke-width="3"/>`,
     'dried-fish': `<path d="M15 34c8-13 23-16 34-5l8-7-2 12 2 12-8-7c-11 11-26 8-34-5z" fill="#8cc6d5" stroke="#3c6473" stroke-width="3"/><circle cx="27" cy="31" r="2.5" fill="#3c6473"/><path d="M36 27l-7 14M43 28l-7 14" stroke="#eaf7f8" stroke-width="2.5"/>`,

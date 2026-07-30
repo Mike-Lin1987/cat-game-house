@@ -73,6 +73,9 @@
     if (iconKind === 'animal') {
       drawTripleAnimal(82, 65, 36, 'cat');
       context.fillText(title, 111, 65);
+    } else if (iconKind === 'courier') {
+      drawHelmetCourier(62, 41, 48, false);
+      context.fillText(title, 118, 65);
     } else {
       context.fillText(`🐱  ${title}`, 70, 65);
     }
@@ -1261,6 +1264,153 @@
     context.restore();
   }
 
+  function drawHelmetCourier(x, y, size, withScooter = true) {
+    context.save();
+    context.translate(x, y);
+    const scale = size / 70;
+    context.scale(scale, scale);
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
+    context.strokeStyle = '#402f2a';
+    context.lineWidth = 2.4;
+
+    if (withScooter) {
+      context.fillStyle = '#263640';
+      for (const wheelX of [18, 54]) {
+        context.beginPath();
+        context.arc(wheelX, 58, 7, 0, Math.PI * 2);
+        context.fill();
+        context.stroke();
+        context.fillStyle = '#d9e2e7';
+        context.beginPath();
+        context.arc(wheelX, 58, 3, 0, Math.PI * 2);
+        context.fill();
+        context.fillStyle = '#263640';
+      }
+      context.fillStyle = '#f47a1f';
+      context.beginPath();
+      context.moveTo(13, 51);
+      context.lineTo(49, 51);
+      context.lineTo(61, 38);
+      context.lineTo(44, 38);
+      context.lineTo(36, 48);
+      context.lineTo(22, 48);
+      context.closePath();
+      context.fill();
+      context.stroke();
+      roundedRect(3, 34, 17, 16, 4, '#f6b93b', '#402f2a', 2.4);
+      context.strokeStyle = '#fff7e8';
+      context.lineWidth = 2.2;
+      context.beginPath();
+      context.moveTo(7, 39);
+      context.lineTo(16, 39);
+      context.moveTo(11.5, 36);
+      context.lineTo(11.5, 46);
+      context.stroke();
+      context.strokeStyle = '#402f2a';
+      context.lineWidth = 2.4;
+      context.fillStyle = '#f47a1f';
+      context.beginPath();
+      context.roundRect(30, 29, 20, 21, 8);
+      context.fill();
+      context.stroke();
+    }
+
+    context.fillStyle = '#aeb5bb';
+    context.beginPath();
+    context.ellipse(40, 27, 16, 15, 0, 0, Math.PI * 2);
+    context.fill();
+    context.stroke();
+    context.fillStyle = '#f4eee7';
+    context.beginPath();
+    context.ellipse(40, 36, 12, 7, 0, 0, Math.PI * 2);
+    context.fill();
+
+    context.fillStyle = '#17324d';
+    context.beginPath();
+    context.moveTo(21, 27);
+    context.bezierCurveTo(20, 12, 28, 4, 40, 4);
+    context.bezierCurveTo(54, 4, 62, 13, 60, 29);
+    context.lineTo(53, 31);
+    context.bezierCurveTo(48, 24, 31, 22, 23, 31);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    context.fillStyle = '#fff7e8';
+    context.beginPath();
+    context.moveTo(27, 11);
+    context.bezierCurveTo(31, 7, 35, 6, 39, 6);
+    context.lineTo(35, 25);
+    context.lineTo(29, 26);
+    context.closePath();
+    context.fill();
+    context.fillStyle = '#f47a1f';
+    context.beginPath();
+    context.moveTo(39, 5);
+    context.bezierCurveTo(44, 5, 48, 7, 51, 10);
+    context.lineTo(50, 26);
+    context.lineTo(43, 25);
+    context.closePath();
+    context.fill();
+    context.fillStyle = '#f6b93b';
+    context.beginPath();
+    context.moveTo(51, 10);
+    context.bezierCurveTo(55, 13, 57, 17, 58, 21);
+    context.lineTo(56, 28);
+    context.lineTo(51, 26);
+    context.closePath();
+    context.fill();
+
+    context.fillStyle = '#1f2630';
+    context.beginPath();
+    context.moveTo(22, 20);
+    context.bezierCurveTo(31, 13, 48, 13, 59, 20);
+    context.lineTo(57, 29);
+    context.bezierCurveTo(46, 24, 34, 24, 22, 28);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.strokeStyle = '#557991';
+    context.lineWidth = 1.8;
+    context.beginPath();
+    context.bezierCurveTo(29, 18, 45, 17, 53, 20);
+    context.stroke();
+
+    for (const eyeX of [34, 47]) {
+      context.fillStyle = '#f6b93b';
+      context.beginPath();
+      context.ellipse(eyeX, 31, 3.5, 4.5, 0, 0, Math.PI * 2);
+      context.fill();
+      context.strokeStyle = '#402f2a';
+      context.lineWidth = 1.5;
+      context.stroke();
+      context.fillStyle = '#1a1b1c';
+      context.beginPath();
+      context.arc(eyeX, 32, 1.8, 0, Math.PI * 2);
+      context.fill();
+      context.fillStyle = '#fff';
+      context.beginPath();
+      context.arc(eyeX - .8, 30.2, .7, 0, Math.PI * 2);
+      context.fill();
+    }
+    context.strokeStyle = '#402f2a';
+    context.lineWidth = 1.7;
+    context.fillStyle = '#5a4541';
+    context.beginPath();
+    context.moveTo(38, 37);
+    context.lineTo(40.5, 39);
+    context.lineTo(43, 37);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.beginPath();
+    context.moveTo(36, 42);
+    context.quadraticCurveTo(40, 45, 45, 42);
+    context.stroke();
+    context.restore();
+  }
+
   const courierPath = [
     [0,5],[1,5],[2,5],[2,4],[2,3],[3,3],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],
   ];
@@ -1327,8 +1477,11 @@
     drawCourierHouse(originX + 1.5 * cell, originY + .5 * cell, '#e48183', '箱', 3);
     const courierIndex = Math.max(0, visibleCount - 1);
     const courierCell = courierPath[courierIndex];
-    drawCatFace(originX + courierCell[1] * cell + 35, originY + courierCell[0] * cell + 25, 52, '#e39a5d', '#7d6659');
-    roundedRect(originX + courierCell[1] * cell + 15, originY + courierCell[0] * cell + 47, 44, 17, 8, '#ef942e', '#704023', 2);
+    drawHelmetCourier(
+      originX + courierCell[1] * cell + 2,
+      originY + courierCell[0] * cell + 1,
+      66,
+    );
   }
 
   function drawCourierIntro(time) {
@@ -1348,7 +1501,7 @@
     context.strokeStyle = '#ffb52d';
     context.lineWidth = 8;
     context.stroke();
-    drawCatFace(145, 324, 78, '#e39a5d', '#7d6659');
+    drawHelmetCourier(118, 284, 128);
     drawCourierHouse(330, 246, '#5c9fc1', '奶', 1);
     context.textAlign = 'left';
     context.textBaseline = 'top';
@@ -1377,7 +1530,7 @@
     if (local >= 10) { step = 3; title = '不走回頭路並遵守單行道'; description = '道路格不能重複；拖回舊格可以裁切並重新規劃。'; }
     if (local >= 15) { step = 4; title = '在油量內抵達最後一站'; description = '路線完成後按「出發」，最短路線且不用提示可得三星。'; }
     drawBackground('#d8893f', time);
-    drawTopBar('貓咪快遞員教學', '#7c4727', step);
+    drawTopBar('貓咪快遞員教學', '#7c4727', step, 'courier');
     drawCourierBoard(step, ease(progress(local % 5, 0, 1)));
     drawCaption(String(step), title, description, '#d8893f');
     drawFooter('#d8893f', time / DURATION);

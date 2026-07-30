@@ -156,5 +156,5 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
 
 test('加入貓咪快遞員會更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v22';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v23';/);
 });
