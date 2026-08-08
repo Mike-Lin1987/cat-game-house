@@ -25,7 +25,7 @@ function tileCountFor(levelNumber) {
   if (levelNumber === 1) return 18;
   if (levelNumber === 100) return 108;
   const chapter = chapterFor(levelNumber);
-  const ranges = [[18, 36], [36, 54], [54, 72], [72, 90], [90, 108]];
+  const ranges = [[18, 36], [36, 54], [54, 72], [72, 90], [90, 108], [108, 126]];
   const [min, max] = ranges[chapter - 1];
   const within = (levelNumber - 1) % 20;
   return Math.min(max, min + 3 * Math.floor((within * ((max - min) / 3)) / 19));
@@ -103,7 +103,7 @@ function makeLevel(levelNumber, attempt = 0) {
     id: `L${String(levelNumber).padStart(3, '0')}`,
     number: levelNumber,
     chapter,
-    title: chapter === 1 ? '暖爐初遇' : chapter === 2 ? '窗邊午後' : chapter === 3 ? '毛線小徑' : chapter === 4 ? '月光閣樓' : '星夜貓屋',
+    title: chapter === 1 ? '暖爐初遇' : chapter === 2 ? '窗邊午後' : chapter === 3 ? '毛線小徑' : chapter === 4 ? '月光閣樓' : chapter === 5 ? '星夜貓屋' : '銀河天台',
     layout: { unitColumns: size, unitRows: size, maxLayers: Math.max(...tiles.map((tile) => tile.layer)) + 1 },
     symbols: iconIds.map((id) => ({ id, label: Icons.label(id) })),
     tiles,

@@ -7,7 +7,7 @@
 
   return Object.freeze({
     gameTitle: '貓咪三層配對',
-    totalLevels: 100,
+    totalLevels: 120,
     trayCapacity: 9,
     matchSize: 3,
     maxLayers: 3,

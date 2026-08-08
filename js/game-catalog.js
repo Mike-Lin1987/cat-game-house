@@ -203,7 +203,7 @@
       tutorialHref: './tutorials/cat-triple-match/index.html',
       storageKey: 'cat-triple-match:v1',
       cover: './assets/game-covers/cat-triple-match.svg',
-      levelCount: 100,
+      levelCount: 120,
       offline: true,
       accent: '#bd7441',
       offlineAssets: Object.freeze([
@@ -228,6 +228,7 @@
         './games/cat-triple-match/js/data/levels-041-060.js',
         './games/cat-triple-match/js/data/levels-061-080.js',
         './games/cat-triple-match/js/data/levels-081-100.js',
+        './games/cat-triple-match/js/data/levels-101-120.js',
         './games/cat-triple-match/js/data/levels-index.js',
         './assets/game-covers/cat-triple-match.svg',
       ]),

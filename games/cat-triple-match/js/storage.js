@@ -14,7 +14,7 @@
   function sanitize(value) {
     const result = defaults();
     if (!value || typeof value !== 'object' || value.version !== config.dataVersion) return result;
-    result.unlockedLevel = Math.max(1, Math.min(100, Math.trunc(Number(value.unlockedLevel) || 1)));
+    result.unlockedLevel = Math.max(1, Math.min(config.totalLevels, Math.trunc(Number(value.unlockedLevel) || 1)));
     result.totalPlaySeconds = Math.max(0, Math.trunc(Number(value.totalPlaySeconds) || 0));
     result.settings.animations = value.settings?.animations !== false;
     for (const [id, record] of Object.entries(value.records || {})) {
@@ -59,7 +59,7 @@
         || (candidate.stars === old.stars && candidate.bestAssists === old.bestAssists
           && candidate.bestTime < old.bestTime)) progress.records[levelId] = candidate;
       const number = Number(levelId.slice(1));
-      progress.unlockedLevel = Math.max(progress.unlockedLevel, Math.min(100, number + 1));
+      progress.unlockedLevel = Math.max(progress.unlockedLevel, Math.min(config.totalLevels, number + 1));
       progress.currentSession = null;
       saveProgress(progress);
       return progress;

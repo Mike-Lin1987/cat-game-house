@@ -6,6 +6,7 @@
   if (portalHomeLink) portalHomeLink.href = PORTAL_HREF;
 
   const levels = window.CAT_TRIPLE_LEVELS;
+  const Config = window.CAT_TRIPLE_CONFIG;
   const Core = window.CatTripleCore;
   const Solver = window.CatTripleSolver;
   const Icons = window.CatTripleIcons;
@@ -100,10 +101,10 @@
     const assists = state.toolUsed.hint + state.toolUsed.shuffle;
     progress = Storage.updateRecord(level.id, { stars, time: state.elapsed, assists });
     elements.stars.textContent = totalStars();
-    const totalMessage = level.number === 100
+    const totalMessage = level.number === Config.totalLevels
       ? `　總遊玩時間 ${Core.formatElapsedTime(progress.totalPlaySeconds)}`
       : '';
-    openResult(level.number === 100 ? '星夜貓屋全數完成！' : '配對完成！',
+    openResult(level.number === Config.totalLevels ? `${level.title}全數完成！` : '配對完成！',
       `${'★'.repeat(stars)}　用時 ${Core.formatElapsedTime(state.elapsed)}${totalMessage}`, false);
   }
   function openResult(title, body, failed) {
@@ -192,7 +193,7 @@
   }));
   document.querySelector('#next-level').addEventListener('click', () => {
     if (!state || state.status !== 'completed') return;
-    elements.modal.close(); if (level.number < 100) loadLevel(level.number + 1, false); else { renderLevels(); show('levels'); }
+    elements.modal.close(); if (level.number < Config.totalLevels) loadLevel(level.number + 1, false); else { renderLevels(); show('levels'); }
   });
   document.querySelector('#close-modal').addEventListener('click', () => elements.modal.close());
   const settingsModal = document.querySelector('#settings-modal');

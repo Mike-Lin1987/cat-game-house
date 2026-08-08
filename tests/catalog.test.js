@@ -99,9 +99,15 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-triple-match/index.html',
       tutorialHref: './tutorials/cat-triple-match/index.html',
       storageKey: 'cat-triple-match:v1',
-      levelCount: 100,
+      levelCount: 120,
       offline: true,
     },
+  );
+  assert.equal(
+    sixthGame.offlineAssets.includes(
+      './games/cat-triple-match/js/data/levels-101-120.js',
+    ),
+    true,
   );
   const seventhGame = CAT_GAME_CATALOG[6];
   assert.deepEqual(

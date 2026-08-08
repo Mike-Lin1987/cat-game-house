@@ -55,6 +55,21 @@ test('review 提供搜尋、章節／張數篩選、metrics 與 known solution �
   assert.match(script, /buildBlockerMap/);
   assert.match(script, /nodesVisited/);
 });
+test('第六章入口載入 L101-L120 並以設定值處理最後一關', () => {
+  const html = read('index.html');
+  const reviewHtml = read('review.html');
+  const app = read('js/app.js');
+  const reviewScript = read('js/review.js');
+
+  assert.match(html, /六章 · 120 關/);
+  assert.match(html, /levels-101-120\.js/);
+  assert.match(reviewHtml, /<option>6<\/option>/);
+  assert.match(reviewHtml, /109-126/);
+  assert.match(reviewHtml, /levels-101-120\.js/);
+  assert.match(app, /Config\.totalLevels/);
+  assert.doesNotMatch(app, /level\.number (?:===|<) 100/);
+  assert.match(reviewScript, /levels\.length - 1/);
+});
 test('新遊戲不註冊 Service Worker 且只引用本機資源', () => {
   const tutorial = fs.readFileSync(
     path.resolve(ROOT, '..', '..', 'tutorials', 'cat-triple-match', 'index.html'),

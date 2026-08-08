@@ -32,6 +32,20 @@ test('最佳紀錄優先星數、輔助次數及時間並逐關解鎖', () => {
   assert.equal(progress.unlockedLevel, 2);
   assert.equal(progress.records.L001.bestAssists, 1);
 });
+test('第 119 關完成後解鎖第 120 關並保留新版進度上限', () => {
+  const api = Storage.createStorage(memoryStorage());
+  const progress = api.updateRecord('L119', { stars: 2, assists: 1, time: 180 });
+  assert.equal(progress.unlockedLevel, 120);
+
+  const restored = Storage.createStorage(memoryStorage({
+    'cat-triple-match:v1': JSON.stringify({
+      version: 1,
+      unlockedLevel: 120,
+      records: {},
+    }),
+  })).loadProgress();
+  assert.equal(restored.unlockedLevel, 120);
+});
 test('累計遊玩秒數可持久化', () => {
   const api = Storage.createStorage(memoryStorage());
   api.addPlaySeconds(12);

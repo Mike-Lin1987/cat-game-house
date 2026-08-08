@@ -8,4 +8,4 @@ if (!report.valid) {
   process.stderr.write(`驗證失敗：${report.results.filter((item) => !item.valid).length} 關\n`);
   process.exit(1);
 }
-process.stdout.write('貓咪三層配對：100/100 關驗證通過，D4 signature 100/100 不重複。\n');
+process.stdout.write(`貓咪三層配對：${levels.length}/${levels.length} 關驗證通過，D4 signature ${levels.length}/${levels.length} 不重複。\n`);

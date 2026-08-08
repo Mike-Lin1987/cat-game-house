@@ -1,5 +1,6 @@
 const Core = require('../js/core.js');
 const Solver = require('../js/solver.js');
+const Config = require('../js/config.js');
 const { canonicalSignature, tileCountFor } = require('./level-factory.js');
 
 function validateAll(levels) {
@@ -14,6 +15,7 @@ function validateAll(levels) {
     if (level.tiles.length !== tileCountFor(expectedNumber)) errors.push('張數不符章節契約');
     if (expectedNumber === 38 && (level.tiles.length < 36 || level.tiles.length > 54)) errors.push('L038 張數錯誤');
     if (expectedNumber === 100 && level.tiles.length !== 108) errors.push('L100 必須 108 張');
+    if (expectedNumber === 120 && level.tiles.length !== 126) errors.push('L120 必須 126 張');
     const signature = canonicalSignature(level);
     if (signature !== level.canonicalSignature) errors.push('canonical signature 不一致');
     if (signatures.has(signature)) errors.push('D4 重複');
@@ -41,6 +43,6 @@ function validateAll(levels) {
       signature, valid: errors.length === 0, errors,
     });
   }
-  return { valid: levels.length === 100 && results.every((item) => item.valid), results };
+  return { valid: levels.length === Config.totalLevels && results.every((item) => item.valid), results };
 }
 module.exports = { validateAll };

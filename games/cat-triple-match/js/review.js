@@ -10,5 +10,5 @@
     const counts={};l.tiles.forEach(t=>counts[t.symbol]=(counts[t.symbol]||0)+1);$('details').textContent=Object.entries(counts).map(([id,count])=>`${Icons.label(id)} (${id}): ${count} 張`).join('\n')+`\n\ncanonical signature:\n${l.canonicalSignature}`;
     $('step-label').textContent=`${step} / ${l.knownSolution.length}`;renderList();}
   $('level-list').addEventListener('click',e=>{const b=e.target.closest('[data-index]');if(b){index=Number(b.dataset.index);step=0;render();}});
-  ['search','chapter','tiles'].forEach(id=>$(id).addEventListener('input',renderList));$('prev').onclick=()=>{index=Math.max(0,index-1);step=0;render();};$('next').onclick=()=>{index=Math.min(99,index+1);step=0;render();};$('reset').onclick=()=>{step=0;render();};$('step').onclick=()=>{step=Math.min(levels[index].knownSolution.length,step+1);render();};render();
+  ['search','chapter','tiles'].forEach(id=>$(id).addEventListener('input',renderList));$('prev').onclick=()=>{index=Math.max(0,index-1);step=0;render();};$('next').onclick=()=>{index=Math.min(levels.length - 1,index+1);step=0;render();};$('reset').onclick=()=>{step=0;render();};$('step').onclick=()=>{step=Math.min(levels[index].knownSolution.length,step+1);render();};render();
 })();
