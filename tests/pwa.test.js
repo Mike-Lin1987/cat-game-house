@@ -158,7 +158,7 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(courierScript, /const PORTAL_HREF/);
 });
 
-test('新增三層配對第六章會同步更新既有 PWA 離線快取', () => {
+test('功能更新會同步更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v25';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v26';/);
 });

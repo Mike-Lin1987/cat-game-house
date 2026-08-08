@@ -642,6 +642,12 @@ button:disabled {
   border: 3px solid var(--line-strong);
   border-radius: clamp(10px, 1.6vw, 18px);
   background: var(--line-strong);
+  touch-action: none;
+}
+
+.game-board.is-swipe-marking,
+.game-board.is-swipe-marking .board-cell {
+  cursor: crosshair;
 }
 
 .board-cell {

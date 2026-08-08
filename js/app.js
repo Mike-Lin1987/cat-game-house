@@ -98,6 +98,11 @@
   let pendingConfirmAction = null;
   let lastDialogTrigger = null;
   let hintTimeout = null;
+  let swipeMarkGesture = null;
+  let pendingSwipeClick = null;
+  let pendingSwipeClickTimeout = null;
+  const SWIPE_START_DISTANCE = 8;
+  const SYNTHETIC_CLICK_TIMEOUT = 750;
   const state = {
     screen: 'select',
     expandedPackId: packs[0].id,
@@ -460,7 +465,7 @@
             ${renderBoard()}
             <p class="game-status">
               ${icon(state.completed ? 'star' : 'fish')}
-              <span>${state.completed ? '關卡完成！棋盤已鎖定。' : '進行中：點一下標記 X，0.5 秒內再點一下放置貓咪；稍後再點可取消。'}</span>
+              <span>${state.completed ? '關卡完成！棋盤已鎖定。' : '進行中：滑過多格可連續標記 X；點一下標記 X，0.5 秒內再點一下放置貓咪。'}</span>
             </p>
           </section>
         </div>
@@ -689,19 +694,14 @@
     const elapsedSincePreviousClick = isSameCell
       ? clickedAt - state.lastCellClick.clickedAt
       : Infinity;
-    const previousState = state.board[row][column];
     const nextState = Core.resolveTimedCellState(
-      previousState,
+      state.board[row][column],
       elapsedSincePreviousClick,
     );
     state.lastCellClick = { row, column, clickedAt };
-    if (nextState === previousState) {
+    if (!applyCellTransition(row, column, nextState)) {
       return;
     }
-
-    state.history.push({ row, column, previousState, nextState });
-    state.board[row][column] = nextState;
-    state.moves += 1;
 
     if (Core.isLevelComplete(state.board, state.currentLevel)) {
       completeLevel();
@@ -714,6 +714,182 @@
         `[data-action="cycle-cell"][data-row="${row}"][data-column="${column}"]`,
       )
       ?.focus();
+  }
+
+  function applyCellTransition(row, column, nextState) {
+    const previousState = state.board[row][column];
+    if (nextState === previousState) {
+      return false;
+    }
+
+    state.history.push({ row, column, previousState, nextState });
+    state.board[row][column] = nextState;
+    state.moves += 1;
+    return true;
+  }
+
+  function getCellCoordinates(cell) {
+    if (!cell?.matches('[data-action="cycle-cell"]')) {
+      return null;
+    }
+
+    return {
+      row: Number(cell.dataset.row),
+      column: Number(cell.dataset.column),
+    };
+  }
+
+  function markSwipeCell(cell) {
+    const coordinates = getCellCoordinates(cell);
+    if (!coordinates || !swipeMarkGesture) {
+      return false;
+    }
+
+    const { row, column } = coordinates;
+    const key = `${row},${column}`;
+    if (swipeMarkGesture.processedCells.has(key)) {
+      return false;
+    }
+    swipeMarkGesture.processedCells.add(key);
+
+    if (state.board[row][column] !== Core.CELL_STATE.EMPTY) {
+      return false;
+    }
+
+    applyCellTransition(row, column, Core.CELL_STATE.X);
+    swipeMarkGesture.markedCells += 1;
+
+    cell.innerHTML = '<span class="x-mark" aria-hidden="true"></span>';
+    cell.setAttribute(
+      'aria-label',
+      `第 ${row + 1} 橫列，第 ${column + 1} 直欄，區域 ${state.currentLevel.regions[row][column] + 1}，X 記號`,
+    );
+    app.querySelector('#hud-moves').textContent = String(state.moves);
+    return true;
+  }
+
+  function cellAtPointer(event) {
+    const target = document
+      .elementFromPoint(event.clientX, event.clientY)
+      ?.closest('[data-action="cycle-cell"]');
+    return target?.closest('.game-board') === swipeMarkGesture?.board
+      ? target
+      : null;
+  }
+
+  function beginSwipeMarking(event) {
+    clearPendingSwipeClick();
+    if (
+      state.completed ||
+      swipeMarkGesture ||
+      event.isPrimary === false ||
+      (event.pointerType === 'mouse' && event.button !== 0)
+    ) {
+      return;
+    }
+
+    const cell = event.target.closest('[data-action="cycle-cell"]');
+    const coordinates = getCellCoordinates(cell);
+    if (
+      !coordinates ||
+      state.board[coordinates.row][coordinates.column] !== Core.CELL_STATE.EMPTY
+    ) {
+      return;
+    }
+
+    const board = cell.closest('.game-board');
+    swipeMarkGesture = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startCell: cell,
+      board,
+      processedCells: new Set(),
+      markedCells: 0,
+      isSwipeActive: false,
+    };
+    board.setPointerCapture?.(event.pointerId);
+  }
+
+  function continueSwipeMarking(event) {
+    if (event.pointerId !== swipeMarkGesture?.pointerId) {
+      return;
+    }
+
+    if (!swipeMarkGesture.isSwipeActive) {
+      const distance = Math.hypot(
+        event.clientX - swipeMarkGesture.startX,
+        event.clientY - swipeMarkGesture.startY,
+      );
+      if (distance < SWIPE_START_DISTANCE) {
+        return;
+      }
+      swipeMarkGesture.isSwipeActive = true;
+      swipeMarkGesture.board.classList.add('is-swipe-marking');
+      markSwipeCell(swipeMarkGesture.startCell);
+    }
+
+    event.preventDefault();
+    const cell = cellAtPointer(event);
+    if (cell) {
+      markSwipeCell(cell);
+    }
+  }
+
+  function endSwipeMarking(event) {
+    if (event.pointerId !== swipeMarkGesture?.pointerId) {
+      return;
+    }
+
+    const gesture = swipeMarkGesture;
+    swipeMarkGesture = null;
+    gesture.board.classList.remove('is-swipe-marking');
+    if (gesture.board.hasPointerCapture?.(event.pointerId)) {
+      gesture.board.releasePointerCapture(event.pointerId);
+    }
+
+    if (!gesture.isSwipeActive) {
+      return;
+    }
+
+    event.preventDefault();
+    state.lastCellClick = null;
+    queuePendingSwipeClick(event.pointerId);
+    render();
+    announce(`已滑動標記 ${gesture.markedCells} 格 X。`);
+  }
+
+  function clearPendingSwipeClick() {
+    pendingSwipeClick = null;
+    window.clearTimeout(pendingSwipeClickTimeout);
+    pendingSwipeClickTimeout = null;
+  }
+
+  function queuePendingSwipeClick(pointerId) {
+    clearPendingSwipeClick();
+    const token = { pointerId };
+    pendingSwipeClick = token;
+    pendingSwipeClickTimeout = window.setTimeout(() => {
+      if (pendingSwipeClick === token) {
+        clearPendingSwipeClick();
+      }
+    }, SYNTHETIC_CLICK_TIMEOUT);
+  }
+
+  function shouldSuppressSwipeClick(event) {
+    if (!pendingSwipeClick || event.detail === 0) {
+      return false;
+    }
+
+    if (
+      Number.isFinite(event.pointerId) &&
+      event.pointerId !== pendingSwipeClick.pointerId
+    ) {
+      return false;
+    }
+
+    clearPendingSwipeClick();
+    return true;
   }
 
   function useHint(trigger) {
@@ -786,6 +962,11 @@
     }
   }
 
+  app.addEventListener('pointerdown', beginSwipeMarking);
+  app.addEventListener('pointermove', continueSwipeMarking);
+  app.addEventListener('pointerup', endSwipeMarking);
+  app.addEventListener('pointercancel', endSwipeMarking);
+
   app.addEventListener('click', (event) => {
     const button = event.target.closest('[data-action]');
     if (!button) {
@@ -794,6 +975,10 @@
     }
 
     const action = button.dataset.action;
+    if (action === 'cycle-cell' && shouldSuppressSwipeClick(event)) {
+      event.preventDefault();
+      return;
+    }
     if (action !== 'cycle-cell') {
       state.lastCellClick = null;
     }
