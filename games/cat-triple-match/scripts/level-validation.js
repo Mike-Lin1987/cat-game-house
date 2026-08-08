@@ -13,9 +13,7 @@ function validateAll(levels) {
   for (const level of levels) {
     const errors = Core.validateLevelDefinition(level);
     const expectedNumber = results.length + 1;
-    const chapter = Config.chapters.find(
-      (item) => expectedNumber >= item.startLevel && expectedNumber <= item.endLevel,
-    );
+    const chapter = Config.chapterForLevel(expectedNumber);
     if (level.number !== expectedNumber || level.id !== `L${String(expectedNumber).padStart(3, '0')}`) errors.push('ID 或順序錯誤');
     if (!chapter || level.chapter !== chapter.number) errors.push('章節錯誤');
     if (level.tiles.length !== tileCountFor(expectedNumber)) errors.push('張數不符章節契約');

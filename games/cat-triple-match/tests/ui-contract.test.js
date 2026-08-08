@@ -9,8 +9,9 @@ const read = (file) => fs.readFileSync(path.join(ROOT, file), 'utf8');
 test('file runtime、UMD、Pointer Events 與九格暫存槽契約完整', () => {
   const html = read('index.html');
   const app = read('js/app.js');
+  const loader = read('js/levels-loader.js');
   const css = read('css/app.css');
-  assert.doesNotMatch(html + app, /\bfetch\s*\(|type=["']module["']|https?:\/\//);
+  assert.doesNotMatch(html + app + loader, /\bfetch\s*\(|type=["']module["']|https?:\/\//);
   assert.match(app, /addEventListener\('pointerup'/);
   assert.match(app, /addEventListener\('pointercancel'/);
   assert.match(app, /ArrowLeft/);
@@ -61,6 +62,7 @@ test('第六章入口載入 L101-L120 並以設定值處理最後一關', () => 
   const reviewHtml = read('review.html');
   const app = read('js/app.js');
   const reviewScript = read('js/review.js');
+  const levelLoader = read('js/levels-loader.js');
 
   assert.equal(Config.chapters.length, 6);
   assert.deepEqual(Config.chapters.at(-1), {
@@ -72,12 +74,18 @@ test('第六章入口載入 L101-L120 並以設定值處理最後一關', () => 
     maxTiles: 126,
   });
   assert.equal(Config.totalLevels, Config.chapters.at(-1).endLevel);
+  assert.equal(Config.chapterForLevel(120).title, '銀河天台');
   assert.match(html, /id="level-summary"/);
   assert.doesNotMatch(html, /六章 · 120 關/);
-  assert.match(html, /levels-101-120\.js/);
+  assert.match(html, /levels-loader\.js" data-entry="app\.js"/);
+  assert.doesNotMatch(html, /levels-101-120\.js/);
   assert.match(reviewHtml, /id="review-heading"/);
   assert.doesNotMatch(reviewHtml, /<option>6<\/option>|109-126/);
-  assert.match(reviewHtml, /levels-101-120\.js/);
+  assert.match(reviewHtml, /levels-loader\.js" data-entry="review\.js"/);
+  assert.doesNotMatch(reviewHtml, /levels-101-120\.js/);
+  assert.match(levelLoader, /Config\.chapters/);
+  assert.match(levelLoader, /levels-index\.js/);
+  assert.match(levelLoader, /dataset\.entry/);
   assert.match(app, /Config\.totalLevels/);
   assert.match(app, /Config\.chapters\.length/);
   assert.doesNotMatch(app, /level\.number (?:===|<) 100/);
@@ -89,7 +97,10 @@ test('新遊戲不註冊 Service Worker 且只引用本機資源', () => {
     path.resolve(ROOT, '..', '..', 'tutorials', 'cat-triple-match', 'index.html'),
     'utf8',
   );
-  const runtime = [...['index.html', 'review.html', 'js/app.js'].map(read), tutorial].join('\n');
+  const runtime = [
+    ...['index.html', 'review.html', 'js/app.js', 'js/levels-loader.js'].map(read),
+    tutorial,
+  ].join('\n');
   assert.doesNotMatch(runtime, /serviceWorker|navigator\.serviceWorker/);
   assert.doesNotMatch(runtime.replaceAll('http://www.w3.org/2000/svg', ''), /https?:\/\//);
 });

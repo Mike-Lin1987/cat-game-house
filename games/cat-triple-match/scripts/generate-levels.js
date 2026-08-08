@@ -26,9 +26,7 @@ const levels = [];
 const signatures = new Set();
 for (let number = 1; number <= totalLevels; number += 1) {
   if (requestedLevel && number !== requestedLevel) continue;
-  const chapter = Config.chapters.find(
-    (item) => number >= item.startLevel && number <= item.endLevel,
-  );
+  const chapter = Config.chapterForLevel(number);
   if (requestedChapter && chapter.number !== requestedChapter) continue;
   let level = resumedLevels.get(number);
   if (!level) {

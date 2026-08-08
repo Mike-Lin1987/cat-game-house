@@ -28,6 +28,11 @@
     (total, pack) => total + pack.levelCount,
     0,
   );
+  const padLevel = (number) => String(number).padStart(3, '0');
+  const tripleLevelAssets = tripleConfig.chapters.map(
+    (chapter) => './games/cat-triple-match/js/data/'
+      + `levels-${padLevel(chapter.startLevel)}-${padLevel(chapter.endLevel)}.js`,
+  );
 
   const CAT_GAME_CATALOG = Object.freeze([
     Object.freeze({
@@ -230,12 +235,8 @@
         './games/cat-triple-match/js/renderer.js',
         './games/cat-triple-match/js/app.js',
         './games/cat-triple-match/js/review.js',
-        './games/cat-triple-match/js/data/levels-001-020.js',
-        './games/cat-triple-match/js/data/levels-021-040.js',
-        './games/cat-triple-match/js/data/levels-041-060.js',
-        './games/cat-triple-match/js/data/levels-061-080.js',
-        './games/cat-triple-match/js/data/levels-081-100.js',
-        './games/cat-triple-match/js/data/levels-101-120.js',
+        './games/cat-triple-match/js/levels-loader.js',
+        ...tripleLevelAssets,
         './games/cat-triple-match/js/data/levels-index.js',
         './assets/game-covers/cat-triple-match.svg',
       ]),

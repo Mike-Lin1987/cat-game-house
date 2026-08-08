@@ -13,10 +13,16 @@
     { number: 5, title: '星夜貓屋', startLevel: 81, endLevel: 100, minTiles: 90, maxTiles: 108 },
     { number: 6, title: '銀河天台', startLevel: 101, endLevel: 120, minTiles: 108, maxTiles: 126 },
   ].map((chapter) => Object.freeze(chapter)));
+  function chapterForLevel(levelNumber) {
+    return chapters.find(
+      (chapter) => levelNumber >= chapter.startLevel && levelNumber <= chapter.endLevel,
+    ) || null;
+  }
 
   return Object.freeze({
     gameTitle: '貓咪三層配對',
     chapters,
+    chapterForLevel,
     totalLevels: chapters[chapters.length - 1].endLevel,
     trayCapacity: 9,
     matchSize: 3,

@@ -20,9 +20,7 @@ function shuffle(values, random) {
   return copy;
 }
 function chapterFor(levelNumber) {
-  const chapter = Config.chapters.find(
-    (item) => levelNumber >= item.startLevel && levelNumber <= item.endLevel,
-  );
+  const chapter = Config.chapterForLevel(levelNumber);
   if (!chapter) throw new RangeError(`關卡編號超出設定範圍：${levelNumber}`);
   return chapter.number;
 }
