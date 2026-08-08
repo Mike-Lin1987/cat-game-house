@@ -56,7 +56,7 @@ test('Service Worker 從 catalog 衍生遊戲快取且只代理同來源 GET', (
 
   assert.match(
     serviceWorker,
-    /importScripts\(['"]\.\/js\/packs\.js['"], ['"]\.\/js\/game-catalog\.js['"]\)/,
+    /importScripts\(['"]\.\/js\/packs\.js['"], ['"]\.\/games\/cat-triple-match\/js\/config\.js['"], ['"]\.\/js\/game-catalog\.js['"]\)/,
   );
   assert.match(serviceWorker, /CAT_GAME_CATALOG/);
   assert.match(serviceWorker, /request\.method\s*!==\s*['"]GET['"]/);
@@ -158,7 +158,7 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(courierScript, /const PORTAL_HREF/);
 });
 
-test('更新遊戲內容會同步更新既有 PWA 離線快取', () => {
+test('新增三層配對第六章會同步更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v24';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v25';/);
 });

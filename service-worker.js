@@ -1,9 +1,9 @@
 'use strict';
 
-importScripts('./js/packs.js', './js/game-catalog.js');
+importScripts('./js/packs.js', './games/cat-triple-match/js/config.js', './js/game-catalog.js');
 
 const CACHE_PREFIX = 'game-house';
-const CACHE_VERSION = 'v24';
+const CACHE_VERSION = 'v25';
 const CACHE_NAME = `${CACHE_PREFIX}:${CACHE_VERSION}`;
 const PORTAL_ASSETS = [
   './',

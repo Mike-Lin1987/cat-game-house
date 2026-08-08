@@ -1,6 +1,7 @@
 const Icons = require('../js/icons.js');
 const Core = require('../js/core.js');
 const Solver = require('../js/solver.js');
+const Config = require('../js/config.js');
 
 function mulberry32(seed) {
   return function random() {
@@ -19,16 +20,19 @@ function shuffle(values, random) {
   return copy;
 }
 function chapterFor(levelNumber) {
-  return Math.ceil(levelNumber / 20);
+  const chapter = Config.chapterForLevel(levelNumber);
+  if (!chapter) throw new RangeError(`關卡編號超出設定範圍：${levelNumber}`);
+  return chapter.number;
 }
 function tileCountFor(levelNumber) {
-  if (levelNumber === 1) return 18;
-  if (levelNumber === 100) return 108;
-  const chapter = chapterFor(levelNumber);
-  const ranges = [[18, 36], [36, 54], [54, 72], [72, 90], [90, 108]];
-  const [min, max] = ranges[chapter - 1];
-  const within = (levelNumber - 1) % 20;
-  return Math.min(max, min + 3 * Math.floor((within * ((max - min) / 3)) / 19));
+  const chapter = Config.chapters[chapterFor(levelNumber) - 1];
+  const within = levelNumber - chapter.startLevel;
+  const chapterSpan = chapter.endLevel - chapter.startLevel;
+  return Math.min(
+    chapter.maxTiles,
+    chapter.minTiles
+      + 3 * Math.floor((within * ((chapter.maxTiles - chapter.minTiles) / 3)) / chapterSpan),
+  );
 }
 function positions(offset, columns, rows, layer) {
   const result = [];
@@ -68,6 +72,7 @@ function canonicalSignature(level) {
 function makeLevel(levelNumber, attempt = 0) {
   const random = mulberry32(0xC47A0000 + levelNumber * 977 + attempt * 65537);
   const chapter = chapterFor(levelNumber);
+  const chapterConfig = Config.chapters[chapter - 1];
   const count = tileCountFor(levelNumber);
   const size = chapter <= 2 ? 14 : 16;
   let layer2Count = levelNumber === 1 ? 3 : Math.max(3, Math.floor(count * (0.18 + chapter * 0.015) / 3) * 3);
@@ -90,7 +95,10 @@ function makeLevel(levelNumber, attempt = 0) {
   if (top.length < layer2Count) top = selectSupported(positions(1, size, size, 2), layer2Count, middle, random);
   if (base.length + middle.length + top.length !== count) throw new Error(`L${levelNumber} 版面容量不足`);
   const orderedRemoval = [...top, ...middle, ...base];
-  const symbolCount = levelNumber === 1 ? 3 : Math.min(16, 4 + chapter * 2 + Math.floor(((levelNumber - 1) % 20) / 5));
+  const symbolCount = levelNumber === 1 ? 3 : Math.min(
+    16,
+    4 + chapter * 2 + Math.floor((levelNumber - chapterConfig.startLevel) / 5),
+  );
   const iconIds = shuffle(Icons.icons.map((icon) => icon.id), random).slice(0, symbolCount);
   const tripleSymbols = [];
   for (let triple = 0; triple < count / 3; triple += 1) tripleSymbols.push(iconIds[triple % iconIds.length]);
@@ -103,7 +111,7 @@ function makeLevel(levelNumber, attempt = 0) {
     id: `L${String(levelNumber).padStart(3, '0')}`,
     number: levelNumber,
     chapter,
-    title: chapter === 1 ? '暖爐初遇' : chapter === 2 ? '窗邊午後' : chapter === 3 ? '毛線小徑' : chapter === 4 ? '月光閣樓' : '星夜貓屋',
+    title: chapterConfig.title,
     layout: { unitColumns: size, unitRows: size, maxLayers: Math.max(...tiles.map((tile) => tile.layer)) + 1 },
     symbols: iconIds.map((id) => ({ id, label: Icons.label(id) })),
     tiles,

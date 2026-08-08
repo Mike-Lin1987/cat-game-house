@@ -4,9 +4,9 @@ const levels = require('../js/data/levels-index.js');
 const { validateAll } = require('../scripts/level-validation.js');
 const Icons = require('../js/icons.js');
 
-test('L001-L100 全部通過結構、Solver、槽位與 D4 驗證', () => {
+test('L001-L120 全部通過結構、Solver、槽位與 D4 驗證', () => {
   const report = validateAll(levels);
-  assert.equal(levels.length, 100);
+  assert.equal(levels.length, 120);
   assert.deepEqual(report.results.filter((item) => !item.valid), []);
   assert.equal(report.valid, true);
 });

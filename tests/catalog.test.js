@@ -5,8 +5,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
 const packs = require('../js/packs.js');
+const tripleConfig = require('../games/cat-triple-match/js/config.js');
 
 const ROOT = path.resolve(__dirname, '..');
+const catalogSource = fs.readFileSync(path.join(ROOT, 'js', 'game-catalog.js'), 'utf8');
 const {
   CAT_GAME_CATALOG,
   normalizeLocalAssetPath,
@@ -99,10 +101,18 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-triple-match/index.html',
       tutorialHref: './tutorials/cat-triple-match/index.html',
       storageKey: 'cat-triple-match:v1',
-      levelCount: 100,
+      levelCount: tripleConfig.totalLevels,
       offline: true,
     },
   );
+  assert.equal(
+    sixthGame.offlineAssets.includes(
+      './games/cat-triple-match/js/data/levels-101-120.js',
+    ),
+    true,
+  );
+  assert.match(catalogSource, /tripleConfig\.chapters\.map/);
+  assert.doesNotMatch(catalogSource, /levels-101-120\.js/);
   const seventhGame = CAT_GAME_CATALOG[6];
   assert.deepEqual(
     {

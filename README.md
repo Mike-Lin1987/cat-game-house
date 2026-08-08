@@ -1,6 +1,6 @@
 # 遊戲小屋
 
-一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」、「喵語分類接龍」、「貓咪鮮奶管線」、「貓咪收納大師」、「貓咪三層配對」與「貓咪快遞員」；「貓咪方格」365 關，其餘遊戲各 100 關，不載入 CDN、外部字型或第三方套件。
+一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」、「喵語分類接龍」、「貓咪鮮奶管線」、「貓咪收納大師」、「貓咪三層配對」與「貓咪快遞員」；「貓咪方格」365 關、「貓咪三層配對」120 關，其餘遊戲各 100 關，不載入 CDN、外部字型或第三方套件。
 
 ## 開始遊玩
 
@@ -117,7 +117,7 @@
 - 提示使用限時 Solver；安全洗牌只在認證剩餘盤面仍可完成後才套用。
 - 提示、復原與洗牌各 3 次；失敗後仍可復原上一步。
 
-內建 L001～L100，共五章、每章 20 關。L038 依第二章規格為 36～54 張，L100 固定 108 張。全部關卡皆由不讀 `knownSolution` 的 BigInt Solver 重新完成，峰值暫存槽小於 9，並以 D4 canonical signature 排除旋轉、鏡像與純圖案換名重複。
+內建 L001～L120，共六章、每章 20 關。L038 依第二章規格為 36～54 張，L100 固定 108 張，第六章「銀河天台」由 108 張漸進至 L120 的 126 張。全部關卡皆由不讀 `knownSolution` 的 BigInt Solver 重新完成，峰值暫存槽小於 9，並以 D4 canonical signature 排除旋轉、鏡像與純圖案換名重複。
 
 ### 貓咪快遞員
 
@@ -238,6 +238,7 @@ npm run generate-levels
 - `games/cat-word-solitaire/`：喵語分類接龍獨立 runtime、固定 54 張牌關卡、Solver 與內容 review 頁。
 - `games/cat-milk-pipes/`：貓咪鮮奶管線獨立 runtime、固定樹狀關卡、rotation Solver、generator 與 review 頁。
 - `games/cat-storage-master/`：貓咪收納大師獨立 runtime、100 關固定 Exact Cover 關卡、Solver、generator 與 review 頁。
+- `games/cat-triple-match/`：貓咪三層配對獨立 runtime、120 關固定三層配對關卡、Solver、generator 與 review 頁。
 - `tutorials/*/index.html`、`games/*/tutorial.webm`：各遊戲的離線教學頁與影片。
 - `assets/tutorials/`、`scripts/tutorial-videos/`：共用教學頁樣式及可重現影片產製工具。
 - `styles.css`、`js/app.js`：貓咪方格 UI 與遊戲流程。

@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const { makeLevel } = require('./level-factory.js');
+const Config = require('../js/config.js');
 
 const gameRoot = path.resolve(__dirname, '..');
 const dataRoot = path.join(gameRoot, 'js', 'data');
@@ -12,6 +13,7 @@ const levelArg = args.indexOf('--level');
 const chapterArg = args.indexOf('--chapter');
 const resume = args.includes('--resume');
 const force = args.includes('--force');
+const totalLevels = Config.totalLevels;
 if (resume && force) throw new Error('--resume 與 --force 不可同時使用');
 const requestedLevel = levelArg >= 0 ? Number(args[levelArg + 1]) : null;
 const requestedChapter = chapterArg >= 0 ? Number(args[chapterArg + 1]) : null;
@@ -22,9 +24,10 @@ if (resume && fs.existsSync(path.join(dataRoot, 'levels-index.js'))) {
 }
 const levels = [];
 const signatures = new Set();
-for (let number = 1; number <= 100; number += 1) {
+for (let number = 1; number <= totalLevels; number += 1) {
   if (requestedLevel && number !== requestedLevel) continue;
-  if (requestedChapter && Math.ceil(number / 20) !== requestedChapter) continue;
+  const chapter = Config.chapterForLevel(number);
+  if (requestedChapter && chapter.number !== requestedChapter) continue;
   let level = resumedLevels.get(number);
   if (!level) {
     for (let attempt = 0; attempt < 100; attempt += 1) {
@@ -46,15 +49,19 @@ if (fs.existsSync(backupRoot)) {
 }
 fs.rmSync(stagingRoot, { recursive: true, force: true });
 fs.mkdirSync(stagingRoot, { recursive: true });
-for (let chapter = 1; chapter <= 5; chapter += 1) {
-  const chapterLevels = levels.slice((chapter - 1) * 20, chapter * 20);
-  const start = String((chapter - 1) * 20 + 1).padStart(3, '0');
-  const end = String(chapter * 20).padStart(3, '0');
+const commonJsChunks = [];
+const browserChunks = [];
+for (const chapter of Config.chapters) {
+  const chapterLevels = levels.filter((level) => level.chapter === chapter.number);
+  const start = String(chapter.startLevel).padStart(3, '0');
+  const end = String(chapter.endLevel).padStart(3, '0');
   const globalName = `CAT_TRIPLE_LEVELS_${start}_${end}`;
   const source = `(function(root,factory){const data=factory();if(typeof module==='object'&&module.exports)module.exports=data;else root.${globalName}=data;})(typeof globalThis!=='undefined'?globalThis:this,function(){return ${JSON.stringify(chapterLevels, null, 2)};});\n`;
   fs.writeFileSync(path.join(stagingRoot, `levels-${start}-${end}.js`), source);
+  commonJsChunks.push(`require('./levels-${start}-${end}.js')`);
+  browserChunks.push(`root.${globalName}||[]`);
 }
-const indexSource = `(function(root,factory){const data=factory(root);if(typeof module==='object'&&module.exports)module.exports=data;else root.CAT_TRIPLE_LEVELS=data;})(typeof globalThis!=='undefined'?globalThis:this,function(root){if(typeof module==='object'&&module.exports)return [].concat(require('./levels-001-020.js'),require('./levels-021-040.js'),require('./levels-041-060.js'),require('./levels-061-080.js'),require('./levels-081-100.js'));return [].concat(root.CAT_TRIPLE_LEVELS_001_020||[],root.CAT_TRIPLE_LEVELS_021_040||[],root.CAT_TRIPLE_LEVELS_041_060||[],root.CAT_TRIPLE_LEVELS_061_080||[],root.CAT_TRIPLE_LEVELS_081_100||[]);});\n`;
+const indexSource = `(function(root,factory){const data=factory(root);if(typeof module==='object'&&module.exports)module.exports=data;else root.CAT_TRIPLE_LEVELS=data;})(typeof globalThis!=='undefined'?globalThis:this,function(root){if(typeof module==='object'&&module.exports)return [].concat(${commonJsChunks.join(',')});return [].concat(${browserChunks.join(',')});});\n`;
 fs.writeFileSync(path.join(stagingRoot, 'levels-index.js'), indexSource);
 const stagedIndex = path.join(stagingRoot, 'levels-index.js');
 delete require.cache[require.resolve(stagedIndex)];
@@ -82,4 +89,4 @@ try {
   throw error;
 }
 const digest = crypto.createHash('sha256').update(JSON.stringify(levels)).digest('hex');
-process.stdout.write(`已產生 100 關，資料 SHA-256 ${digest}\n`);
+process.stdout.write(`已產生 ${totalLevels} 關，資料 SHA-256 ${digest}\n`);
