@@ -52,8 +52,12 @@ test('入口與遊戲頁共用 manifest 並以正確相對路徑註冊 Service W
 
 test('Service Worker 從 catalog 衍生遊戲快取且只代理同來源 GET', () => {
   const serviceWorker = read('service-worker.js');
+  const cacheDefinition = serviceWorker.replace(/importScripts\([^;]+\);/, '');
 
-  assert.match(serviceWorker, /importScripts\(['"]\.\/js\/game-catalog\.js['"]\)/);
+  assert.match(
+    serviceWorker,
+    /importScripts\(['"]\.\/js\/packs\.js['"], ['"]\.\/js\/game-catalog\.js['"]\)/,
+  );
   assert.match(serviceWorker, /CAT_GAME_CATALOG/);
   assert.match(serviceWorker, /request\.method\s*!==\s*['"]GET['"]/);
   assert.match(serviceWorker, /url\.origin\s*!==\s*self\.location\.origin/);
@@ -61,7 +65,7 @@ test('Service Worker 從 catalog 衍生遊戲快取且只代理同來源 GET', (
   for (const game of CAT_GAME_CATALOG) {
     for (const asset of game.offlineAssets) {
       assert.equal(
-        serviceWorker.includes(asset),
+        cacheDefinition.includes(asset),
         false,
         '遊戲資源應由 catalog 取得，不應逐項硬編碼在 Service Worker',
       );
@@ -154,7 +158,7 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(courierScript, /const PORTAL_HREF/);
 });
 
-test('加入貓咪快遞員會更新既有 PWA 離線快取', () => {
+test('更新遊戲內容會同步更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v23';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v24';/);
 });

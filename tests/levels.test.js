@@ -6,8 +6,8 @@ const Core = require('../js/core.js');
 const packs = require('../js/packs.js');
 const levels = require('../js/levels.js');
 
-test('固定關卡總數與各包分布正確', () => {
-  assert.equal(levels.length, 100);
+test('365 個固定關卡與各包擴充分布正確', () => {
+  assert.equal(levels.length, 365);
 
   for (const pack of packs) {
     assert.equal(
