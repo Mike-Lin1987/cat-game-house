@@ -165,3 +165,32 @@ test('自動持久化會先檢查狀態並在需要時提出申請', async () =>
   });
   assert.equal(persistCalls, 1);
 });
+
+test('遊戲專用 validator 拒絕無效備份且不覆寫原進度', () => {
+  const original = JSON.stringify({ version: 1, completedLevelIds: [1] });
+  const storage = createStorage({ 'cat-zhuyin-treasure:v1': original });
+  const catalog = [{
+    id: 'cat-zhuyin-treasure',
+    title: '貓咪注音尋寶隊',
+    storageKey: 'cat-zhuyin-treasure:v1',
+    validateBackup(data) {
+      return data.version === 1 && Array.isArray(data.completedLevelIds);
+    },
+  }];
+  const invalidBackup = {
+    format: 'cat-game-house-progress',
+    version: 1,
+    games: {
+      'cat-zhuyin-treasure': {
+        storageKey: 'cat-zhuyin-treasure:v1',
+        data: {},
+      },
+    },
+  };
+
+  assert.throws(
+    () => ProgressBackup.restoreBackup(storage, catalog, invalidBackup),
+    /備份資料格式無效/,
+  );
+  assert.equal(storage.getItem('cat-zhuyin-treasure:v1'), original);
+});

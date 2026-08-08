@@ -10,7 +10,7 @@
     "generate-cat-connect-levels": "node scripts/cat-color-connect/generate-levels.js",
     "generate-cat-word-layouts": "node scripts/cat-word-solitaire/generate-layouts.js",
     "generate-cat-milk-pipe-levels": "node games/cat-milk-pipes/scripts/generate-levels.js",
-    "fix-tutorial-video-duration": "node scripts/tutorial-videos/fix-webm-duration.js --duration-ms 24500 games/cat-grid/tutorial.webm games/cat-color-connect/tutorial.webm games/cat-word-solitaire/tutorial.webm games/cat-milk-pipes/tutorial.webm games/cat-storage-master/tutorial.webm games/cat-triple-match/tutorial.webm games/cat-courier/tutorial.webm",
+    "fix-tutorial-video-duration": "node scripts/tutorial-videos/fix-webm-duration.js --duration-ms 24500 games/cat-grid/tutorial.webm games/cat-color-connect/tutorial.webm games/cat-word-solitaire/tutorial.webm games/cat-milk-pipes/tutorial.webm games/cat-storage-master/tutorial.webm games/cat-triple-match/tutorial.webm games/cat-courier/tutorial.webm games/cat-zhuyin-treasure/tutorial.webm",
     "validate-cat-connect-levels": "node scripts/cat-color-connect/validate-levels.js",
     "validate-cat-word-levels": "node scripts/cat-word-solitaire/validate-levels.js",
     "report-cat-word-levels": "node scripts/cat-word-solitaire/report-levels.js",
