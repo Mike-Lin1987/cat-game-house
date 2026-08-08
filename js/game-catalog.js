@@ -19,7 +19,7 @@
       tutorialHref: './tutorials/cat-grid/index.html',
       storageKey: 'cat-grid-game:v1',
       cover: './assets/game-covers/cat-grid.svg',
-      levelCount: 100,
+      levelCount: 365,
       offline: true,
       accent: '#ff8e68',
       offlineAssets: Object.freeze([

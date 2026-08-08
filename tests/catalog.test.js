@@ -35,7 +35,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-grid/index.html',
       tutorialHref: './tutorials/cat-grid/index.html',
       storageKey: 'cat-grid-game:v1',
-      levelCount: 100,
+      levelCount: 365,
       offline: true,
     },
   );

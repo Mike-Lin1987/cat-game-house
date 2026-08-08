@@ -18,7 +18,7 @@
       {
         id: 'beginner-6',
         size: 6,
-        levelCount: 15,
+        levelCount: 100,
         title: '6×6 入門',
         seedBase: 610000,
         theme: 'apricot',
@@ -27,7 +27,7 @@
       {
         id: 'advanced-8',
         size: 8,
-        levelCount: 20,
+        levelCount: 100,
         title: '8×8 進階',
         seedBase: 820000,
         theme: 'sage',
@@ -36,7 +36,7 @@
       {
         id: 'challenge-10',
         size: 10,
-        levelCount: 30,
+        levelCount: 100,
         title: '10×10 挑戰',
         seedBase: 1030000,
         theme: 'lavender',
@@ -45,7 +45,7 @@
       {
         id: 'master-12',
         size: 12,
-        levelCount: 35,
+        levelCount: 65,
         title: '12×12 大師',
         seedBase: 1235000,
         theme: 'rose',

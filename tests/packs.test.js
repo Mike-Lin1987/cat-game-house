@@ -4,19 +4,19 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const packs = require('../js/packs.js');
 
-test('四個關卡包合計 100 關且分布符合規格', () => {
+test('四個關卡包合計 365 關且分布符合擴充規格', () => {
   assert.deepEqual(
     packs.map(({ id, size, levelCount }) => ({ id, size, levelCount })),
     [
-      { id: 'beginner-6', size: 6, levelCount: 15 },
-      { id: 'advanced-8', size: 8, levelCount: 20 },
-      { id: 'challenge-10', size: 10, levelCount: 30 },
-      { id: 'master-12', size: 12, levelCount: 35 },
+      { id: 'beginner-6', size: 6, levelCount: 100 },
+      { id: 'advanced-8', size: 8, levelCount: 100 },
+      { id: 'challenge-10', size: 10, levelCount: 100 },
+      { id: 'master-12', size: 12, levelCount: 65 },
     ],
   );
   assert.equal(
     packs.reduce((total, pack) => total + pack.levelCount, 0),
-    100,
+    365,
   );
 });
 

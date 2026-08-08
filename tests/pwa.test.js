@@ -154,7 +154,7 @@ test('入口與遊戲返回連結避開 Sites 的 index.html 重新導向', () =
   assert.match(courierScript, /const PORTAL_HREF/);
 });
 
-test('加入貓咪快遞員會更新既有 PWA 離線快取', () => {
+test('更新遊戲內容會同步更新既有 PWA 離線快取', () => {
   const serviceWorker = read('service-worker.js');
-  assert.match(serviceWorker, /const CACHE_VERSION = 'v23';/);
+  assert.match(serviceWorker, /const CACHE_VERSION = 'v24';/);
 });
