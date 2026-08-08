@@ -13,9 +13,7 @@ const levelArg = args.indexOf('--level');
 const chapterArg = args.indexOf('--chapter');
 const resume = args.includes('--resume');
 const force = args.includes('--force');
-const levelsPerChapter = 20;
 const totalLevels = Config.totalLevels;
-const totalChapters = Math.ceil(totalLevels / levelsPerChapter);
 if (resume && force) throw new Error('--resume 與 --force 不可同時使用');
 const requestedLevel = levelArg >= 0 ? Number(args[levelArg + 1]) : null;
 const requestedChapter = chapterArg >= 0 ? Number(args[chapterArg + 1]) : null;
@@ -28,7 +26,10 @@ const levels = [];
 const signatures = new Set();
 for (let number = 1; number <= totalLevels; number += 1) {
   if (requestedLevel && number !== requestedLevel) continue;
-  if (requestedChapter && Math.ceil(number / 20) !== requestedChapter) continue;
+  const chapter = Config.chapters.find(
+    (item) => number >= item.startLevel && number <= item.endLevel,
+  );
+  if (requestedChapter && chapter.number !== requestedChapter) continue;
   let level = resumedLevels.get(number);
   if (!level) {
     for (let attempt = 0; attempt < 100; attempt += 1) {
@@ -52,10 +53,10 @@ fs.rmSync(stagingRoot, { recursive: true, force: true });
 fs.mkdirSync(stagingRoot, { recursive: true });
 const commonJsChunks = [];
 const browserChunks = [];
-for (let chapter = 1; chapter <= totalChapters; chapter += 1) {
-  const chapterLevels = levels.slice((chapter - 1) * levelsPerChapter, chapter * levelsPerChapter);
-  const start = String((chapter - 1) * levelsPerChapter + 1).padStart(3, '0');
-  const end = String(Math.min(chapter * levelsPerChapter, totalLevels)).padStart(3, '0');
+for (const chapter of Config.chapters) {
+  const chapterLevels = levels.filter((level) => level.chapter === chapter.number);
+  const start = String(chapter.startLevel).padStart(3, '0');
+  const end = String(chapter.endLevel).padStart(3, '0');
   const globalName = `CAT_TRIPLE_LEVELS_${start}_${end}`;
   const source = `(function(root,factory){const data=factory();if(typeof module==='object'&&module.exports)module.exports=data;else root.${globalName}=data;})(typeof globalThis!=='undefined'?globalThis:this,function(){return ${JSON.stringify(chapterLevels, null, 2)};});\n`;
   fs.writeFileSync(path.join(stagingRoot, `levels-${start}-${end}.js`), source);

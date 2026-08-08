@@ -56,7 +56,7 @@ test('Service Worker 從 catalog 衍生遊戲快取且只代理同來源 GET', (
 
   assert.match(
     serviceWorker,
-    /importScripts\(['"]\.\/js\/packs\.js['"], ['"]\.\/js\/game-catalog\.js['"]\)/,
+    /importScripts\(['"]\.\/js\/packs\.js['"], ['"]\.\/games\/cat-triple-match\/js\/config\.js['"], ['"]\.\/js\/game-catalog\.js['"]\)/,
   );
   assert.match(serviceWorker, /CAT_GAME_CATALOG/);
   assert.match(serviceWorker, /request\.method\s*!==\s*['"]GET['"]/);

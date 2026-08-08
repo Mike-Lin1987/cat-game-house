@@ -11,6 +11,10 @@
   const Solver = window.CatTripleSolver;
   const Icons = window.CatTripleIcons;
   const Storage = window.CatTripleStorage;
+  const chapterNumerals = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+  const chapterCount = Config.chapters.length;
+  document.querySelector('#level-summary').textContent =
+    `${chapterNumerals[chapterCount] || chapterCount}章 · ${Config.totalLevels} 關`;
   const elements = {
     home: document.querySelector('#home-screen'), levels: document.querySelector('#level-screen'),
     game: document.querySelector('#game-screen'), board: document.querySelector('#tile-board'),

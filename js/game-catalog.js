@@ -1,20 +1,27 @@
 (function (root, factory) {
+  const commonJs = typeof module === 'object' && module.exports;
   const packs =
-    typeof module === 'object' && module.exports
+    commonJs
       ? require('./packs.js')
       : root.CAT_PUZZLE_PACKS;
-  const api = factory(packs);
-  if (typeof module === 'object' && module.exports) {
+  const tripleConfig = commonJs
+    ? require('../games/cat-triple-match/js/config.js')
+    : root.CAT_TRIPLE_CONFIG;
+  const api = factory(packs, tripleConfig);
+  if (commonJs) {
     module.exports = api;
   } else {
     root.CAT_GAME_CATALOG = api.CAT_GAME_CATALOG;
     root.CatGameCatalog = api;
   }
-})(typeof globalThis !== 'undefined' ? globalThis : this, function (packs) {
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (packs, tripleConfig) {
   'use strict';
 
   if (!Array.isArray(packs)) {
     throw new Error('貓咪方格關卡包尚未載入');
+  }
+  if (!tripleConfig || !Number.isInteger(tripleConfig.totalLevels)) {
+    throw new Error('貓咪三層配對設定尚未載入');
   }
 
   const catGridLevelCount = packs.reduce(
@@ -203,7 +210,7 @@
       tutorialHref: './tutorials/cat-triple-match/index.html',
       storageKey: 'cat-triple-match:v1',
       cover: './assets/game-covers/cat-triple-match.svg',
-      levelCount: 120,
+      levelCount: tripleConfig.totalLevels,
       offline: true,
       accent: '#bd7441',
       offlineAssets: Object.freeze([

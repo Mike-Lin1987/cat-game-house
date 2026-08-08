@@ -1,7 +1,10 @@
 (function(){
   'use strict';
-  const levels=window.CAT_TRIPLE_LEVELS,Core=window.CatTripleCore,Icons=window.CatTripleIcons;
+  const levels=window.CAT_TRIPLE_LEVELS,Config=window.CAT_TRIPLE_CONFIG,Core=window.CatTripleCore,Icons=window.CatTripleIcons;
   const $=(id)=>document.getElementById(id);let index=0,step=0;
+  $('review-heading').textContent=`${Config.gameTitle} · ${Config.totalLevels} 關審核`;
+  $('chapter').insertAdjacentHTML('beforeend',Config.chapters.map(chapter=>`<option value="${chapter.number}">${chapter.number} · ${chapter.title}</option>`).join(''));
+  $('tiles').insertAdjacentHTML('beforeend',Config.chapters.map((chapter,chapterIndex)=>{const min=chapter.minTiles+(chapterIndex===0?0:1);return `<option value="${min}-${chapter.maxTiles}">${min}–${chapter.maxTiles}</option>`;}).join(''));
   function filtered(){const q=$('search').value.trim().toUpperCase(),chapter=$('chapter').value,range=$('tiles').value.split('-').map(Number);return levels.filter(l=>(!q||l.id.includes(q)||String(l.number).includes(q))&&(!chapter||l.chapter===Number(chapter))&&(!range[0]||(l.tiles.length>=range[0]&&l.tiles.length<=range[1])));}
   function renderList(){const list=filtered();$('level-list').innerHTML=list.map(l=>`<button class="level-link${l.number-1===index?' active':''}" data-index="${l.number-1}">${l.id} · ${l.tiles.length} 張</button>`).join('');}
   function render(){const l=levels[index],removed=new Set(l.knownSolution.slice(0,step)),size=l.layout.unitColumns,map=Core.buildBlockerMap(l);$('level-chapter').textContent=`第 ${l.chapter} 章 · ${l.title}`;$('level-name').textContent=`${l.id} / 第 ${l.number} 關`;

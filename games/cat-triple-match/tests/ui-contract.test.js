@@ -2,6 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const Config = require('../js/config.js');
 const ROOT = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(ROOT, file), 'utf8');
 
@@ -61,13 +62,26 @@ test('第六章入口載入 L101-L120 並以設定值處理最後一關', () => 
   const app = read('js/app.js');
   const reviewScript = read('js/review.js');
 
-  assert.match(html, /六章 · 120 關/);
+  assert.equal(Config.chapters.length, 6);
+  assert.deepEqual(Config.chapters.at(-1), {
+    number: 6,
+    title: '銀河天台',
+    startLevel: 101,
+    endLevel: 120,
+    minTiles: 108,
+    maxTiles: 126,
+  });
+  assert.equal(Config.totalLevels, Config.chapters.at(-1).endLevel);
+  assert.match(html, /id="level-summary"/);
+  assert.doesNotMatch(html, /六章 · 120 關/);
   assert.match(html, /levels-101-120\.js/);
-  assert.match(reviewHtml, /<option>6<\/option>/);
-  assert.match(reviewHtml, /109-126/);
+  assert.match(reviewHtml, /id="review-heading"/);
+  assert.doesNotMatch(reviewHtml, /<option>6<\/option>|109-126/);
   assert.match(reviewHtml, /levels-101-120\.js/);
   assert.match(app, /Config\.totalLevels/);
+  assert.match(app, /Config\.chapters\.length/);
   assert.doesNotMatch(app, /level\.number (?:===|<) 100/);
+  assert.match(reviewScript, /Config\.chapters/);
   assert.match(reviewScript, /levels\.length - 1/);
 });
 test('新遊戲不註冊 Service Worker 且只引用本機資源', () => {

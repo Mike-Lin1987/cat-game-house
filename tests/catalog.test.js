@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
 const packs = require('../js/packs.js');
+const tripleConfig = require('../games/cat-triple-match/js/config.js');
 
 const ROOT = path.resolve(__dirname, '..');
 const {
@@ -99,7 +100,7 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-triple-match/index.html',
       tutorialHref: './tutorials/cat-triple-match/index.html',
       storageKey: 'cat-triple-match:v1',
-      levelCount: 120,
+      levelCount: tripleConfig.totalLevels,
       offline: true,
     },
   );
