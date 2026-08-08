@@ -17,7 +17,7 @@ const {
 
 test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () => {
   assert.equal(Array.isArray(CAT_GAME_CATALOG), true);
-  assert.equal(CAT_GAME_CATALOG.length, 7);
+  assert.equal(CAT_GAME_CATALOG.length, 8);
 
   const [game, secondGame, thirdGame] = CAT_GAME_CATALOG;
   assert.deepEqual(
@@ -130,6 +130,27 @@ test('遊戲 catalog 提供穩定、唯一且完整的本機遊戲資料', () =>
       href: './games/cat-courier/index.html',
       tutorialHref: './tutorials/cat-courier/index.html',
       storageKey: 'cat-courier:v1',
+      levelCount: 100,
+      offline: true,
+    },
+  );
+  const eighthGame = CAT_GAME_CATALOG[7];
+  assert.deepEqual(
+    {
+      id: eighthGame.id,
+      title: eighthGame.title,
+      href: eighthGame.href,
+      tutorialHref: eighthGame.tutorialHref,
+      storageKey: eighthGame.storageKey,
+      levelCount: eighthGame.levelCount,
+      offline: eighthGame.offline,
+    },
+    {
+      id: 'cat-zhuyin-treasure',
+      title: '貓咪注音尋寶隊',
+      href: './games/cat-zhuyin-treasure/index.html',
+      tutorialHref: './tutorials/cat-zhuyin-treasure/index.html',
+      storageKey: 'cat-zhuyin-treasure:v1',
       levelCount: 100,
       offline: true,
     },

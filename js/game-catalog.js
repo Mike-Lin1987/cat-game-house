@@ -33,6 +33,14 @@
     (chapter) => './games/cat-triple-match/js/data/'
       + `levels-${padLevel(chapter.startLevel)}-${padLevel(chapter.endLevel)}.js`,
   );
+  const zhuyinQuestionAssets = Object.freeze([
+    'bag', 'ball', 'bamboo', 'basket', 'bird', 'boat', 'book', 'bottle', 'box', 'bug',
+    'cake', 'candy', 'car', 'cat', 'chicken', 'cow', 'cup', 'dog', 'drum', 'eating',
+    'fire', 'fish', 'flower', 'grass', 'hand', 'horse', 'house', 'jujube', 'knife', 'lake',
+    'lamp', 'lion', 'moon', 'mountain', 'mouth', 'pants', 'paper', 'peach', 'pear', 'pearl',
+    'pencil', 'rain', 'rice', 'seven', 'sheep', 'shoe', 'star', 'table', 'tree', 'umbrella',
+    'vegetables', 'water', 'wind',
+  ].map((slug) => `./games/cat-zhuyin-treasure/assets/questions/${slug}.webp`));
 
   const CAT_GAME_CATALOG = Object.freeze([
     Object.freeze({
@@ -277,6 +285,34 @@
         './games/cat-courier/js/data/levels-081-100.js',
         './games/cat-courier/js/data/levels-index.js',
         './assets/game-covers/cat-courier.svg',
+      ]),
+    }),
+    Object.freeze({
+      id: 'cat-zhuyin-treasure',
+      title: '貓咪注音尋寶隊',
+      eyebrow: '注音學習 · 單人',
+      description: '看圖片、聽名稱，從兩張大字卡找出正確注音',
+      href: './games/cat-zhuyin-treasure/index.html',
+      tutorialHref: './tutorials/cat-zhuyin-treasure/index.html',
+      storageKey: 'cat-zhuyin-treasure:v1',
+      cover: './assets/game-covers/cat-zhuyin-treasure.webp',
+      levelCount: 100,
+      offline: true,
+      accent: '#f4776f',
+      offlineAssets: Object.freeze([
+        './games/cat-zhuyin-treasure/index.html',
+        './games/cat-zhuyin-treasure/styles.css',
+        './games/cat-zhuyin-treasure/js/levels.js',
+        './games/cat-zhuyin-treasure/js/core.js',
+        './games/cat-zhuyin-treasure/js/app.js',
+        './games/cat-zhuyin-treasure/tutorial.webm',
+        './games/cat-zhuyin-treasure/assets/mascot/cat-idle.webp',
+        './games/cat-zhuyin-treasure/assets/mascot/cat-happy.webp',
+        './games/cat-zhuyin-treasure/assets/mascot/cat-encourage.webp',
+        './games/cat-zhuyin-treasure/assets/accessories/accessories-sprite.png',
+        './tutorials/cat-zhuyin-treasure/index.html',
+        './assets/game-covers/cat-zhuyin-treasure.webp',
+        ...zhuyinQuestionAssets,
       ]),
     }),
   ]);

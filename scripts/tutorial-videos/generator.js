@@ -1536,6 +1536,125 @@
     drawFooter('#d8893f', time / DURATION);
   }
 
+  function drawZhuyinCat(x, y, scale, mood) {
+    context.save();
+    context.translate(x, y);
+    context.scale(scale, scale);
+    context.fillStyle = '#fff8e9';
+    context.strokeStyle = '#6f4a38';
+    context.lineWidth = 5;
+    context.beginPath();
+    context.moveTo(-72, -50);
+    context.lineTo(-48, -104);
+    context.lineTo(-15, -66);
+    context.lineTo(30, -72);
+    context.lineTo(62, -108);
+    context.lineTo(78, -45);
+    context.quadraticCurveTo(92, 45, 0, 80);
+    context.quadraticCurveTo(-92, 45, -72, -50);
+    context.closePath();
+    context.fill();
+    context.stroke();
+    context.fillStyle = '#d88a52';
+    context.beginPath();
+    context.arc(-38, -38, 26, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = '#4e443e';
+    context.beginPath();
+    context.arc(-28, 3, 7, 0, Math.PI * 2);
+    context.arc(34, 3, 7, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = '#e78383';
+    context.beginPath();
+    context.moveTo(-8, 22);
+    context.lineTo(8, 22);
+    context.lineTo(0, 32);
+    context.closePath();
+    context.fill();
+    context.strokeStyle = '#6f4a38';
+    context.lineWidth = 4;
+    context.beginPath();
+    context.arc(-10, mood === 'happy' ? 32 : 28, 12, 0, Math.PI * .8);
+    context.arc(10, mood === 'happy' ? 32 : 28, 12, Math.PI * .2, Math.PI);
+    context.stroke();
+    context.restore();
+  }
+
+  function drawZhuyinCard(step, time) {
+    roundedRect(92, 142, 1096, 420, 36, '#fffaf0', '#dbb878', 5);
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    if (step === 1) {
+      drawZhuyinCat(330, 352, 1.25, 'happy');
+      context.fillStyle = '#4c7795';
+      context.font = `900 92px ${FONT}`;
+      context.fillText('看圖片，聽一聽', 790, 285);
+      context.fillStyle = '#6f4a38';
+      context.font = `800 50px ${FONT}`;
+      context.fillText('找出正確的注音', 790, 405);
+    } else if (step === 2) {
+      context.fillStyle = '#f1c15b';
+      context.beginPath();
+      context.arc(330, 340, 118, 0, Math.PI * 2);
+      context.fill();
+      context.fillStyle = '#6f4a38';
+      context.font = `900 100px ${FONT}`;
+      context.fillText('魚', 330, 340);
+      const pulse = 1 + Math.sin(time * 5) * .025;
+      context.save();
+      context.translate(820, 275);
+      context.scale(pulse, pulse);
+      roundedRect(-210, -68, 420, 136, 30, '#65a7c5', '#3d6d84', 5);
+      context.fillStyle = '#fff';
+      context.font = `900 74px ${FONT}`;
+      context.fillText('ㄩˊ', 0, 0);
+      context.restore();
+      roundedRect(610, 365, 420, 136, 30, '#f3e4c5', '#c7a971', 5);
+      context.fillStyle = '#6f4a38';
+      context.font = `900 74px ${FONT}`;
+      context.fillText('ㄧˊ', 820, 433);
+    } else if (step === 3) {
+      drawZhuyinCat(330, 352, 1.25, 'happy');
+      context.fillStyle = '#e36d61';
+      context.font = `900 88px ${FONT}`;
+      context.fillText('答對獲得小魚！', 790, 278);
+      context.fillStyle = '#f1ad36';
+      context.font = `900 80px ${FONT}`;
+      context.fillText('🐟  🐟  🐟  🐟  🐟', 790, 390);
+      context.fillStyle = '#6f4a38';
+      context.font = `800 42px ${FONT}`;
+      context.fillText('每 5 條解鎖新裝飾', 790, 478);
+    } else {
+      context.fillStyle = '#f1c15b';
+      context.font = `900 128px ${FONT}`;
+      context.fillText('100', 340, 305);
+      context.fillStyle = '#6f4a38';
+      context.font = `900 54px ${FONT}`;
+      context.fillText('完成 100 關', 340, 445);
+      drawZhuyinCat(815, 340, 1.45, 'happy');
+      context.fillStyle = '#e36d61';
+      context.font = `900 49px ${FONT}`;
+      context.fillText('成為注音尋寶達人！', 815, 515);
+    }
+  }
+
+  function drawZhuyinTutorial(time) {
+    const step = Math.min(4, Math.floor(time / 6.125) + 1);
+    drawBackground('#f5d69a', time);
+    context.textAlign = 'left';
+    context.textBaseline = 'middle';
+    context.fillStyle = '#6f4a38';
+    context.font = `900 50px ${FONT}`;
+    context.fillText('貓咪注音尋寶隊', 92, 82);
+    roundedRect(1015, 47, 170, 62, 22, '#e36d61');
+    context.textAlign = 'center';
+    context.fillStyle = '#fff';
+    context.font = `900 31px ${FONT}`;
+    context.fillText(`第 ${step} 步`, 1100, 78);
+    drawZhuyinCard(step, time);
+    drawFooter('#e36d61', time / DURATION);
+  }
+
   function drawFrame(kind, time) {
     if (kind === 'cat-grid') {
       if (time < 2.5) drawGridIntro(time);
@@ -1560,6 +1679,8 @@
       drawCourierIntro(time);
     } else if (kind === 'cat-courier') {
       drawCourierTutorial(time);
+    } else if (kind === 'cat-zhuyin-treasure') {
+      drawZhuyinTutorial(time);
     } else if (time < 2.5) {
       drawSolitaireIntro(time);
     } else {

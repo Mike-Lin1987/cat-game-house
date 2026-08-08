@@ -1,6 +1,6 @@
 # 遊戲小屋
 
-一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」、「喵語分類接龍」、「貓咪鮮奶管線」、「貓咪收納大師」、「貓咪三層配對」與「貓咪快遞員」；「貓咪方格」365 關、「貓咪三層配對」120 關，其餘遊戲各 100 關，不載入 CDN、外部字型或第三方套件。
+一個可安裝、可離線、可持續增加新遊戲的純 HTML／CSS／JavaScript 單機遊戲入口。目前收錄「貓咪方格」、「貓咪彩色連線」、「喵語分類接龍」、「貓咪鮮奶管線」、「貓咪收納大師」、「貓咪三層配對」、「貓咪快遞員」與「貓咪注音尋寶隊」；「貓咪方格」365 關、「貓咪三層配對」120 關，其餘遊戲各 100 關，不載入 CDN、外部字型或第三方套件。
 
 ## 開始遊玩
 
@@ -21,7 +21,7 @@
 
 ## 目前遊戲
 
-入口網站的每款遊戲名稱旁都有「教學影片」連結。七支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
+入口網站的每款遊戲名稱旁都有「教學影片」連結。八支影片皆使用繁體中文字幕、無旁白，並與遊戲一起加入離線快取。
 
 ### 貓咪方格
 
@@ -131,6 +131,18 @@
 
 內建 L001～L100，共五章、每章 20 關，尺寸依序為 6×6、7×7、8×8、9×9、10×10。全部關卡由不讀 `solutionPath` 的 BigInt visited-mask Solver 重算並證明唯一最短路線；100 個 D4 canonical signature 全部不同。
 
+### 貓咪注音尋寶隊
+
+規則：
+
+- 看圖片或圖示辨認詞彙，再從兩個選項選出正確注音。
+- 題目依序練習基礎圖像、聲母、相近聲母、韻母與聲調，以及雙字詞綜合題。
+- 答錯可以立即重試；答對會獲得一條小魚並進入下一關。
+- 每五條小魚解鎖一件不重複的貓咪裝飾，每十關顯示章節成果。
+- 支援鍵盤選項、`zh-TW` 語音朗讀與柔和提示音；關閉音效時會一併停用朗讀。
+
+內建 L001～L100，共五章、每章 20 關。題庫包含 53 個本機 WebP 插圖詞彙，其餘複習題重用圖片或清楚圖示；所有資產均隨網站離線快取，不呼叫外部圖片或付費 API。
+
 ## 新增其他遊戲
 
 `js/game-catalog.js` 是入口卡片、路由與離線資源的單一資料來源。標準流程：
@@ -200,7 +212,7 @@ npm run build
 
 `npm run build` 是 GPT Sites 專用的零依賴靜態複製步驟，輸出至忽略版控的 `dist/`；直接雙擊 source `index.html` 不需要先建置。
 
-教學影片的可重現 Canvas 場景位於 `scripts/tutorial-videos/` 與各遊戲的產生腳本。分別產生七支 WebM 後放回各遊戲目錄，再執行：
+教學影片的可重現 Canvas 場景位於 `scripts/tutorial-videos/` 與各遊戲的產生腳本。分別產生八支 WebM 後放回各遊戲目錄，再執行：
 
 ```powershell
 npm run fix-tutorial-video-duration
@@ -221,6 +233,7 @@ npm run generate-levels
 - 喵語分類接龍進度使用 `localStorage` key `cat-word-solitaire:v2`，包含章節解鎖、最佳紀錄、設定與五欄未完成 session；舊四欄 session 會安全清除。
 - 貓咪鮮奶管線進度使用 `localStorage` key `cat-milk-pipes:v1`，包含逐關解鎖、最佳星級／步數／時間、設定、累計時間與未完成 rotation session。
 - 貓咪收納大師進度使用 `localStorage` key `cat-storage-master:v1`，包含逐關解鎖、最佳星級／步數／時間、設定、累計時間與未完成 placements session。
+- 貓咪注音尋寶隊進度使用 `localStorage` key `cat-zhuyin-treasure:v1`，包含目前關卡、小魚、裝飾、答題統計及待顯示里程碑。
 - 入口會在 HTTPS 環境自動向瀏覽器申請 persistent storage，降低系統因容量壓力自動清除進度的機率。
 - 「備份進度」會將 catalog 宣告的全部遊戲進度匯出成單一 JSON；「還原進度」只接受目前 catalog 中 storage key 相符的遊戲，寫入失敗時會回復原值。
 - persistent storage 不能抵抗使用者清除網站資料；iPhone／iPad 的新主畫面圖示也可能使用獨立儲存空間，因此重新安裝前仍應保留備份檔。
@@ -239,6 +252,7 @@ npm run generate-levels
 - `games/cat-milk-pipes/`：貓咪鮮奶管線獨立 runtime、固定樹狀關卡、rotation Solver、generator 與 review 頁。
 - `games/cat-storage-master/`：貓咪收納大師獨立 runtime、100 關固定 Exact Cover 關卡、Solver、generator 與 review 頁。
 - `games/cat-triple-match/`：貓咪三層配對獨立 runtime、120 關固定三層配對關卡、Solver、generator 與 review 頁。
+- `games/cat-zhuyin-treasure/`：貓咪注音尋寶隊獨立 runtime、100 關固定題庫、本機插圖與進度狀態機。
 - `tutorials/*/index.html`、`games/*/tutorial.webm`：各遊戲的離線教學頁與影片。
 - `assets/tutorials/`、`scripts/tutorial-videos/`：共用教學頁樣式及可重現影片產製工具。
 - `styles.css`、`js/app.js`：貓咪方格 UI 與遊戲流程。

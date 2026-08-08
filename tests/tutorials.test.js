@@ -24,7 +24,7 @@ test('入口依 catalog 在遊戲名稱旁建立教學影片連結', () => {
   assert.match(tutorialScript, /window\.location\.protocol\s*===\s*['"]file:['"]/);
 });
 
-test('七款遊戲各有可離線播放的教學頁與 WebM', () => {
+test('八款遊戲各有可離線播放的教學頁與 WebM', () => {
   assert.deepEqual(
     CAT_GAME_CATALOG.map((game) => game.tutorialHref),
     [
@@ -35,6 +35,7 @@ test('七款遊戲各有可離線播放的教學頁與 WebM', () => {
       './tutorials/cat-storage-master/index.html',
       './tutorials/cat-triple-match/index.html',
       './tutorials/cat-courier/index.html',
+      './tutorials/cat-zhuyin-treasure/index.html',
     ],
     '教學頁應使用不與遊戲 index 路由衝突的獨立 hosted 路徑',
   );
