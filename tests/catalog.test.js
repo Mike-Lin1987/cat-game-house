@@ -214,6 +214,15 @@ test('catalog 的頁面、封面與離線資源全部位於專案內', () => {
       );
     }
   }
+
+  const zhuyin = CAT_GAME_CATALOG.find((game) => game.id === 'cat-zhuyin-treasure');
+  assert.equal(typeof zhuyin.validateBackup, 'function');
+  for (const dependency of [
+    './assets/tutorials/tutorial.css',
+    './js/tutorial-page.js',
+  ]) {
+    assert.equal(zhuyin.offlineAssets.includes(dependency), true, dependency);
+  }
 });
 
 test('catalog 驗證器會拒絕重複 id 與不安全的遠端路徑', () => {

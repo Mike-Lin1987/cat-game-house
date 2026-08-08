@@ -15,7 +15,22 @@
     ['sailor-cap', '水手帽'], ['feather', '幸運羽毛'], ['bell-collar', '鈴鐺項圈'], ['magic-wand', '星星魔法棒'], ['treasure-key', '寶藏鑰匙'],
   ].map(([id, label], index) => Object.freeze({ id, label, index })));
 
-  const MILESTONE_TYPES = new Set(['reward', 'chapter', 'complete']);
+  const TONE_MARKS = new Set(['ˊ', 'ˇ', 'ˋ', '˙']);
+
+  function phonemeDistance(left, right) {
+    function tokens(value) {
+      const characters = [...value];
+      const tone = TONE_MARKS.has(characters.at(-1)) ? characters.pop() : 'ˉ';
+      return [...characters, tone];
+    }
+    const leftTokens = tokens(left);
+    const rightTokens = tokens(right);
+    if (leftTokens.length !== rightTokens.length) return Number.POSITIVE_INFINITY;
+    return leftTokens.reduce(
+      (total, value, index) => total + (value === rightTokens[index] ? 0 : 1),
+      0,
+    );
+  }
 
   function createInitialProgress() {
     return {
@@ -55,9 +70,27 @@
     }
 
     const pendingMilestones = Array.isArray(source.pendingMilestones)
-      ? source.pendingMilestones
-        .filter((item) => item && typeof item === 'object' && MILESTONE_TYPES.has(item.type))
-        .slice(0, 3)
+      ? source.pendingMilestones.flatMap((item) => {
+        if (!item || typeof item !== 'object') return [];
+        if (item.type === 'reward') {
+          const accessory = ACCESSORIES[(totalFish / 5) - 1];
+          return totalFish % 5 === 0
+            && item.fish === totalFish
+            && accessory
+            && item.accessoryId === accessory.id
+            ? [{ type: 'reward', accessoryId: accessory.id, fish: totalFish }]
+            : [];
+        }
+        if (item.type === 'chapter') {
+          const chapter = totalFish / 10;
+          if (!Number.isInteger(chapter) || item.chapter !== chapter) return [];
+          const start = totalFish - 9;
+          const stars = Array.from({ length: 10 }, (_, offset) => levelStars[String(start + offset)] || 1)
+            .reduce((sum, value) => sum + value, 0);
+          return item.stars === stars ? [{ type: 'chapter', chapter, stars }] : [];
+        }
+        return item.type === 'complete' && totalFish === 100 ? [{ type: 'complete' }] : [];
+      }).slice(0, 3)
       : [];
     const equippedAccessory = unlockedAccessories.includes(source.equippedAccessory)
       ? source.equippedAccessory
@@ -100,6 +133,9 @@
       }
       if (level.zhuyin === level.distractorZhuyin) {
         errors.push(`第 ${index + 1} 關的兩個選項不可相同`);
+      }
+      if (level.zhuyin && level.distractorZhuyin && phonemeDistance(level.zhuyin, level.distractorZhuyin) !== 1) {
+        errors.push(`第 ${index + 1} 關的干擾答案只能改變一個主要音素`);
       }
       if (!level.visual || !['image', 'emoji'].includes(level.visual.type) || !level.visual.value || !level.visual.alt) {
         errors.push(`第 ${index + 1} 關缺少圖片資料`);

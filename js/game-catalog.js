@@ -41,6 +41,51 @@
     'pencil', 'rain', 'rice', 'seven', 'sheep', 'shoe', 'star', 'table', 'tree', 'umbrella',
     'vegetables', 'water', 'wind',
   ].map((slug) => `./games/cat-zhuyin-treasure/assets/questions/${slug}.webp`));
+  const zhuyinAccessoryIds = Object.freeze([
+    'hat', 'scarf', 'backpack', 'glasses', 'bow', 'crown', 'badge', 'cape', 'magnifier', 'compass',
+    'binoculars', 'rain-boots', 'lantern', 'map-pouch', 'flower-garland', 'sailor-cap', 'feather',
+    'bell-collar', 'magic-wand', 'treasure-key',
+  ]);
+
+  function validateZhuyinBackup(data) {
+    if (!data || typeof data !== 'object' || Array.isArray(data) || data.version !== 1) return false;
+    if (!Array.isArray(data.completedLevelIds) || data.completedLevelIds.length > 100) return false;
+    if (data.completedLevelIds.some((id, index) => id !== index + 1)) return false;
+
+    const totalFish = data.completedLevelIds.length;
+    const expectedCurrentLevel = totalFish === 100 ? 100 : totalFish + 1;
+    const expectedAccessories = zhuyinAccessoryIds.slice(0, Math.floor(totalFish / 5));
+    if (data.totalFish !== totalFish || data.currentLevelId !== expectedCurrentLevel) return false;
+    if (data.gameComplete !== (totalFish === 100) || typeof data.soundEnabled !== 'boolean') return false;
+    if (!Array.isArray(data.unlockedAccessories)
+      || data.unlockedAccessories.length !== expectedAccessories.length
+      || data.unlockedAccessories.some((id, index) => id !== expectedAccessories[index])) return false;
+    if (data.equippedAccessory !== null && !expectedAccessories.includes(data.equippedAccessory)) return false;
+    if (!data.levelStars || typeof data.levelStars !== 'object' || Array.isArray(data.levelStars)) return false;
+    if (Object.keys(data.levelStars).length !== totalFish) return false;
+    if (data.completedLevelIds.some((id) => !Number.isInteger(data.levelStars[String(id)])
+      || data.levelStars[String(id)] < 1
+      || data.levelStars[String(id)] > 3)) return false;
+    if (!Array.isArray(data.pendingMilestones) || data.pendingMilestones.length > 3) return false;
+
+    return data.pendingMilestones.every((item) => {
+      if (!item || typeof item !== 'object' || Array.isArray(item)) return false;
+      if (item.type === 'reward') {
+        const index = (totalFish / 5) - 1;
+        return totalFish % 5 === 0
+          && item.fish === totalFish
+          && item.accessoryId === zhuyinAccessoryIds[index];
+      }
+      if (item.type === 'chapter') {
+        if (totalFish % 10 !== 0 || item.chapter !== totalFish / 10) return false;
+        const start = totalFish - 9;
+        const stars = Array.from({ length: 10 }, (_, offset) => data.levelStars[String(start + offset)])
+          .reduce((sum, value) => sum + value, 0);
+        return item.stars === stars;
+      }
+      return item.type === 'complete' && totalFish === 100;
+    });
+  }
 
   const CAT_GAME_CATALOG = Object.freeze([
     Object.freeze({
@@ -295,6 +340,7 @@
       href: './games/cat-zhuyin-treasure/index.html',
       tutorialHref: './tutorials/cat-zhuyin-treasure/index.html',
       storageKey: 'cat-zhuyin-treasure:v1',
+      validateBackup: validateZhuyinBackup,
       cover: './assets/game-covers/cat-zhuyin-treasure.webp',
       levelCount: 100,
       offline: true,
@@ -311,6 +357,8 @@
         './games/cat-zhuyin-treasure/assets/mascot/cat-encourage.webp',
         './games/cat-zhuyin-treasure/assets/accessories/accessories-sprite.png',
         './tutorials/cat-zhuyin-treasure/index.html',
+        './assets/tutorials/tutorial.css',
+        './js/tutorial-page.js',
         './assets/game-covers/cat-zhuyin-treasure.webp',
         ...zhuyinQuestionAssets,
       ]),

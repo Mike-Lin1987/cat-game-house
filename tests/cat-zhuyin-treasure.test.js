@@ -63,3 +63,25 @@ test('損壞進度會修復成連續、有限且可安全顯示的資料', () =>
   assert.deepEqual(repaired.unlockedAccessories, []);
   assert.equal(repaired.soundEnabled, true);
 });
+
+test('損壞的待顯示里程碑會被丟棄而不進入畫面', () => {
+  const repaired = sanitizeProgress({
+    completedLevelIds: [1, 2, 3, 4, 5],
+    levelStars: { 1: 3, 2: 3, 3: 3, 4: 3, 5: 3 },
+    pendingMilestones: [
+      { type: 'reward' },
+      { type: 'chapter', chapter: '<img src=x onerror=alert(1)>', stars: 30 },
+      { type: 'complete' },
+    ],
+  });
+
+  assert.deepEqual(repaired.pendingMilestones, []);
+});
+
+test('每題干擾答案只改變一個主要音素', () => {
+  const broken = levels.map((level) => ({ ...level }));
+  broken[0].distractorZhuyin = 'ㄍㄡˇ';
+
+  assert.deepEqual(validateLevels(levels), []);
+  assert.match(validateLevels(broken).join('\n'), /主要音素/);
+});

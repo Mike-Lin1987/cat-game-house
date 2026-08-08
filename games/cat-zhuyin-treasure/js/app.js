@@ -2,6 +2,7 @@
   'use strict';
 
   const STORAGE_KEY = 'cat-zhuyin-treasure:v1';
+  const PORTAL_HREF = window.location.protocol === 'file:' ? '../../index.html' : '../../';
   const root = document.getElementById('app');
   const toast = document.getElementById('toast');
   const levels = globalThis.CAT_ZHUYIN_LEVELS;
@@ -51,7 +52,7 @@
   function mascot(state, small) {
     const equipped = core.ACCESSORIES.find((item) => item.id === progress.equippedAccessory);
     return `<div class="mascot-wrap${small ? ' mascot-wrap--small' : ''}">
-      <img src="./assets/mascot/cat-${state}.webp" alt="戴著探險帽的三花貓">
+      <img src="./assets/mascot/cat-${state}.webp" alt="三花探險貓">
       ${equipped ? `<span class="accessory-sprite mascot-accessory" style="${spriteStyle(equipped.index)}" aria-label="已裝備${equipped.label}"></span>` : ''}
     </div>`;
   }
@@ -65,7 +66,7 @@
     answerLocked = false;
     const actionLabel = progress.gameComplete ? '再玩一次' : progress.totalFish ? `繼續第 ${progress.currentLevelId} 關` : '開始遊戲';
     root.innerHTML = `<section class="paper">
-      <div class="toolbar"><a class="back-link" href="../../index.html">← 回遊戲小屋</a>${soundButton()}</div>
+      <div class="toolbar"><a class="back-link" href="${PORTAL_HREF}" data-portal-home>← 回遊戲小屋</a>${soundButton()}</div>
       <header class="title"><h1>貓咪注音尋寶隊</h1><p>看圖片，選出正確的注音！</p></header>
       <div class="home-layout">
         ${mascot('idle', false)}

@@ -19,6 +19,10 @@
     return value !== null && typeof value === 'object' && !Array.isArray(value);
   }
 
+  function validateGameProgress(game, data) {
+    return typeof game.validateBackup !== 'function' || game.validateBackup(data) === true;
+  }
+
   function createBackup(storage, catalog, exportedAt = new Date().toISOString()) {
     const games = {};
 
@@ -30,6 +34,9 @@
 
       const data = JSON.parse(rawProgress);
       if (!isDataObject(data)) {
+        throw new TypeError(`${game.title} 的進度格式無效`);
+      }
+      if (!validateGameProgress(game, data)) {
         throw new TypeError(`${game.title} 的進度格式無效`);
       }
 
@@ -75,7 +82,8 @@
       if (
         !isDataObject(entry) ||
         entry.storageKey !== game.storageKey ||
-        !isDataObject(entry.data)
+        !isDataObject(entry.data) ||
+        !validateGameProgress(game, entry.data)
       ) {
         throw new TypeError(`${game.title} 的備份資料格式無效`);
       }
