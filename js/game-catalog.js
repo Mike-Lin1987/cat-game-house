@@ -1,13 +1,26 @@
 (function (root, factory) {
-  const api = factory();
+  const packs =
+    typeof module === 'object' && module.exports
+      ? require('./packs.js')
+      : root.CAT_PUZZLE_PACKS;
+  const api = factory(packs);
   if (typeof module === 'object' && module.exports) {
     module.exports = api;
   } else {
     root.CAT_GAME_CATALOG = api.CAT_GAME_CATALOG;
     root.CatGameCatalog = api;
   }
-})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (packs) {
   'use strict';
+
+  if (!Array.isArray(packs)) {
+    throw new Error('貓咪方格關卡包尚未載入');
+  }
+
+  const catGridLevelCount = packs.reduce(
+    (total, pack) => total + pack.levelCount,
+    0,
+  );
 
   const CAT_GAME_CATALOG = Object.freeze([
     Object.freeze({
@@ -19,7 +32,7 @@
       tutorialHref: './tutorials/cat-grid/index.html',
       storageKey: 'cat-grid-game:v1',
       cover: './assets/game-covers/cat-grid.svg',
-      levelCount: 365,
+      levelCount: catGridLevelCount,
       offline: true,
       accent: '#ff8e68',
       offlineAssets: Object.freeze([
